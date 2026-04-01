@@ -14,9 +14,23 @@ export default defineConfig(({ mode }) => {
           rewrite: (path) => path.replace(/^\/api\/anthropic/, ''),
           configure: (proxy) => {
             proxy.on('proxyReq', (proxyReq) => {
-              const key = env.ANTHROPIC_API_KEY
+              const key = (env.ANTHROPIC_API_KEY || '').trim()
               if (key) proxyReq.setHeader('x-api-key', key)
               proxyReq.setHeader('anthropic-version', '2023-06-01')
+            })
+          },
+        },
+        /** Seen Jeem API — يضيف Bearer من SEENJEEM_TOKEN (محلي فقط؛ لا يُبنى للإنتاج الثابت) */
+        '/api/seenjeem': {
+          target: 'https://api.seenjeemkw.com',
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/api\/seenjeem/, '/api'),
+          configure: (proxy) => {
+            proxy.on('proxyReq', (proxyReq) => {
+              let token = (env.SEENJEEM_TOKEN || '').trim()
+              if (token.toLowerCase().startsWith('bearer '))
+                token = token.slice(7).trim()
+              if (token) proxyReq.setHeader('Authorization', `Bearer ${token}`)
             })
           },
         },
