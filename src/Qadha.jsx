@@ -99,8 +99,19 @@ const CAT_GROUP_ROWS=[
   {ar:"طبيعة وحياة",en:"Nature & Life",ids:new Set(["nature","animals","food","health"])},
   {ar:"رياضة وأسلوب حياة",en:"Sports & Lifestyle",ids:new Set(["sports","soccer","olympics","gaming","cars","business","brands","language"])},
 ];
+/** معالم ومواضيع معروفة بالكويت — تصفية الفئات في وضع قدها؟ + 🇰🇼 */
+const QADHA_KW_HIGHLIGHTS=[
+  {id:null,ar:"كل الفئات",icon:"🇰🇼",ids:null},
+  {id:"majlis",ar:"مجلس الأمة",icon:"🏛️",ids:new Set(["politics","law","media"])},
+  {id:"corniche",ar:"الكورنيش والمطاعم",icon:"🍽️",ids:new Set(["food","landmarks","travel","culture","business"])},
+  {id:"towers",ar:"الأبراج والمعالم",icon:"🗼",ids:new Set(["landmarks","architecture","maps","geography"])},
+  {id:"heritage",ar:"التراث والتاريخ",icon:"🏺",ids:new Set(["history","customs","religion","proverbs","leaders"])},
+  {id:"sea",ar:"البحار والطبيعة",icon:"🌊",ids:new Set(["nature","ocean","animals","space"])},
+  {id:"sport",ar:"الرياضة",icon:"⚽",ids:new Set(["sports","soccer","olympics"])},
+];
+
 function groupCatsForUi(catList,isSeenjeem){
-  if(isSeenjeem)return[{label:"حزم سين جيم · Seen Jeem packs",cats:catList}];
+  if(isSeenjeem)return[{label:"حزم قدها؟ · Qadha? packs",cats:catList}];
   const rows=[];
   CAT_GROUP_ROWS.forEach(g=>{
     const cats=catList.filter(c=>g.ids.has(c.id));
@@ -153,7 +164,7 @@ const shufQ=q=>{const c=q.o[q.a];const s=shuf(q.o);return{...q,o:s,a:s.indexOf(c
 const COUNTRIES=[
 {id:"general",name:"عام",native:"عالمي",flag:"🌍",lang:"ar",dir:"rtl",dialect:"Arabic"},
 {id:"kw",name:"Kuwait",native:"الكويت",flag:"🇰🇼",lang:"ar",dir:"rtl",dialect:"Kuwaiti Arabic dialect"},
-{id:"seenjeem",name:"Seen Jeem",native:"سين جيم",flag:"🎮",lang:"ar",dir:"rtl",dialect:"Arabic"},
+{id:"seenjeem",name:"Qadha?",native:"قدها؟",flag:"🎮",lang:"ar",dir:"rtl",dialect:"Arabic"},
 ];
 
 const LN={en:"English",ar:"العربية",fr:"Français",de:"Deutsch",es:"Español",ja:"日本語",tr:"Türkçe",pt:"Português",hi:"हिन्दी"};
@@ -172,10 +183,10 @@ const BI={
   difficulty:"مستوى الصعوبة · Difficulty",
   normal:"عادي 😊 · Normal 😊",
   hard:"صعب 🔥 · Hard 🔥",
-  seenjeemHint:"سين جيم: أسئلة محلية من بنوك «عالمي» (عربي/إنجليزي + احتياطي) لكل الفئات؛ مع npm run dev يمكن دمج حزم حقيقية من API إن وُجد التوكن. · Seen Jeem: local question banks (global AR/EN + fallbacks) for all categories; with npm run dev + token, live API packs merge in.",
+  seenjeemHint:"قدها؟: أسئلة محلية من بنوك «عالمي» (عربي/إنجليزي + احتياطي) لكل الفئات؛ مع npm run dev يمكن دمج حزم حقيقية من API (سين جيم) إن وُجد التوكن. · Qadha?: local question banks (global AR/EN + fallbacks) for all categories; with npm run dev + token, live Seen Jeem API packs merge in.",
   anthropicHint:"يتم تحديث بنك الأسئلة في الخلفية عند توفر المفتاح، وتُفرغ الذاكرة المؤقتة تلقائياً بعد كل مباراة. · With API key, the question bank refreshes in the background; temp cache clears after each match.",
   seenjeemDev:"بدون خادم التطوير: تُعرض ٦٠ فئة محلية بأسئلة جاهزة. لتجربة حزم API الحية شغّل npm run dev واختيارياً SEENJEEM_TOKEN. · Without dev server: 60 local categories with built-in questions. For live API packs run npm run dev and optionally SEENJEEM_TOKEN.",
-  sjLoading:"جاري تحميل فئات سين جيم… · Loading Seen Jeem categories…",
+  sjLoading:"جاري تحميل فئات قدها؟… · Loading Qadha? categories…",
   alertLoad:"لا توجد أسئلة كافية لهذه الفئات. جرّب فئات أخرى أو أعد المحاولة. · Not enough questions for these categories. Try other categories or retry.",
   alertRematch:"تعذر تجهيز أسئلة المباراة. جرّب ثاني أو غيّر الفئات. · Could not prepare match questions. Try again or change categories.",
   placeholderAns:"اكتب إجابتك هنا... · Type your answer...",
@@ -183,6 +194,7 @@ const BI={
   hardBanner:"الوضع الصعب — اكتب الإجابة · Hard Mode — Type the answer",
   packsAll:"كل الحزم · All packs",
   kuwait:"الكويت · Kuwait",
+  qadhaKwTopics:"موضوعات معروفة بالكويت — اختر تصفية ثم ثماني فئات · Kuwait topics — pick a filter, then 8 categories",
 };
 const catBi=c=>`${c.ar} · ${c.n}`;
 const PTS=[200,200,400,400,600,600];
@@ -195,16 +207,20 @@ const anthropicMessagesUrl = import.meta.env.DEV ? "/api/anthropic/v1/messages" 
 /* ═══════ AI ═══════ */
 async function genQs(cats,country){
   if(country.id==="seenjeem")return fetchSeenJeemPackQuestions(cats);
-  const prompt=`Generate trivia quiz JSON. ${country.id==="general"?"Worldwide general knowledge":"EXCLUSIVELY about "+country.name}.
+  const langRule=country.lang==="ar"
+    ?`LANGUAGE: Arabic ONLY for every "q" and every string in "o". No English words inside Arabic text (except universally fixed symbols like UN, DNA if unavoidable). Perfect Arabic spelling and diacritics where natural. No mixed-script sentences.`
+    :`LANGUAGE: English ONLY for "q" and "o". No Arabic script in English fields.`;
+  const prompt=`You are an expert fact-checked trivia author. Use only verifiable real-world facts (well-known references, no invention). ${langRule}
+Generate trivia quiz JSON. ${country.id==="general"?"Worldwide general knowledge":"EXCLUSIVELY about "+country.name}.
 Categories: ${cats.map(c=>c.n).join(", ")}
 For EACH category generate exactly 60 unique questions with 4 options and 1 correct answer.
-${country.id!=="general"?`ALL questions must be specifically about ${country.name} — its history, culture, people, landmarks, food, sports, traditions, arts, media, science, geography, politics. Use REAL facts.`:"Use diverse topics — history, science, pop culture, geography, sports, arts, literature, technology. REAL facts only."}
-Write in ${country.dialect}.
-CRITICAL RULES:
-- All 4 answer options MUST be very similar and plausible — close numbers, similar names, related concepts
-- NO obviously wrong answers. Every option should make the player think hard
-- Questions should be HARD difficulty
-- Randomize correct answer index (0-3) evenly
+${country.id!=="general"?`ALL questions must be specifically about ${country.name} — its history, culture, people, landmarks, food, sports, traditions, arts, media, science, geography, politics. Use REAL facts only.`:"Use diverse topics — history, science, pop culture, geography, sports, arts, literature, technology. REAL facts only."}
+Write in ${country.dialect} for tone; still obey LANGUAGE rule above for the actual strings in JSON.
+CRITICAL — HIGH DIFFICULTY:
+- Three incorrect options must be PLAUSIBLE and confusable with the truth (same category of answer: dates close together, similar place names, related events). Never silly or joke wrong answers.
+- One clearly correct option when you know the fact; wrong options must tempt someone who is almost right.
+- No duplicate or near-duplicate questions across the set.
+- Randomize correct answer index (0-3) evenly across the set.
 RESPOND WITH ONLY VALID JSON (no markdown, no backticks):
 {"categories":{"catId":[{"q":"question","o":["opt1","opt2","opt3","opt4"],"a":correctIndex}]}}
 Category IDs: ${cats.map(c=>c.id).join(",")}`;
@@ -234,11 +250,15 @@ function clearQuestionCachesFromStorage(){try{localStorage.removeItem("qadha_qca
 async function genBatch(catIds,country){
   const cats=catIds.map(id=>CATS.find(c=>c.id===id)).filter(Boolean);
   if(!cats.length)return null;
-  const prompt=`Generate trivia JSON. ${country.id==="general"?"Worldwide general knowledge":"EXCLUSIVELY about "+country.name}.
+  const langRule=country.lang==="ar"
+    ?`Arabic ONLY in all "q" and "o" strings — no English inside Arabic. Accurate spelling.`
+    :`English ONLY in all "q" and "o" strings — no Arabic script.`;
+  const prompt=`Expert fact-checked trivia. ${langRule}
+${country.id==="general"?"Worldwide general knowledge":"EXCLUSIVELY about "+country.name}.
 Categories: ${cats.map(c=>c.n).join(", ")}
-Each category: 80 unique hard questions, 4 VERY SIMILAR options, 1 correct.
-Write in ${country.dialect}. All options must be plausible and intentionally confusing. Randomize correct 0-3.
-ONLY JSON: {"categories":{"catId":[{"q":"text","o":["a","b","c","d"],"a":num}]}}
+Each category: 80 unique HARD questions. Four options: one correct, three wrong but highly plausible (same «type» of answer — dates, names, places — so the player must think hard). No nonsense distractors.
+Write in ${country.dialect} for tone; obey LANGUAGE rule for JSON strings.
+Randomize correct index 0-3. ONLY JSON: {"categories":{"catId":[{"q":"text","o":["a","b","c","d"],"a":num}]}}
 IDs: ${catIds.join(",")}`;
   try{
     if(!anthropicMessagesUrl)return null;
@@ -309,12 +329,12 @@ function getQuestions(cats,cid,apiResult,opts={}){
     const allUnique=Object.values(unique);
     const unseen=allUnique.filter(q=>!seen.has(qHash(q)));
     const pick=unseen.length>=6?unseen:allUnique;
-    const shuffled=shuf(pick).slice(0,40);
+    const shuffled=shuf(pick).slice(0,120);
     result[c.id]=shuffled;
     shuffled.forEach(q=>seen.add(qHash(q)));
     
     // Update cache
-    cache[cacheKey]=allUnique.slice(0,600);
+    cache[cacheKey]=allUnique.slice(0,900);
   });
   
   saveSeen(seen);
@@ -340,8 +360,11 @@ export default function Qadha(){
   const[sjCats,setSjCats]=useState([]);
   const[sjCatsLoading,setSjCatsLoading]=useState(false);
   const[sjKwOnly,setSjKwOnly]=useState(false);
+  const[qadhaKwHighlight,setQadhaKwHighlight]=useState(null);
   const[openCatGroupIdx,setOpenCatGroupIdx]=useState(0);
   const sjLoadedRef=useRef(false);
+  const matchQHashesRef=useRef(new Map());
+  const nextSetupBtnRef=useRef(null);
   const[themeMode,setThemeMode]=useState(()=>{try{const s=localStorage.getItem("qadha_theme");if(s==="calm"||s==="night"||s==="light")return s}catch{/* ignore */}return"night"});
   const prefetchRef=useRef({done:new Set()});
   const tRef=useRef(null);const bRef=useRef(false);
@@ -416,7 +439,7 @@ export default function Qadha(){
   };
   const th=THEMES[themeMode];
   const isNight=themeMode==="night";
-  /** أيقونة الفئة: نفس مكان الإيموجي في واجهة «قدها؟»؛ لحزم سين جيم قد تُستبدل بصورة الغلاف من الـ API */
+  /** أيقونة الفئة: نفس مكان الإيموجي في واجهة «قدها؟»؛ لوضع الحزم قد تُستبدل بصورة الغلاف من الـ API */
   function CatIcon({cat,sz=22,r=6,border}){
     if(cat.sjCover)return <img src={cat.sjCover} alt="" referrerPolicy="no-referrer" style={{width:sz,height:sz,borderRadius:r,objectFit:"cover",display:"block",...(border?{border}:{})}}/>;
     return <span style={{fontSize:sz,lineHeight:1}}>{cat.icon}</span>;
@@ -453,7 +476,25 @@ export default function Qadha(){
     else{sfx.wrong();if(!bRef.current){setFirstWrong(idx);bRef.current=true;setTimeout(()=>{sfx.steal();setAnswered(false);setSelA(null);setActive(v=>v===1?2:1);setTimer(45)},2000)}else{setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500)}}
   };
 
-  const openQ=(ci,ri)=>{const k=`${ci}-${ri}`;if(used[k])return;sfx.click();setUsed(p=>({...p,[k]:true}));const catId=selCats[ci].id;const qs=qBank[catId]||[];if(qs.length>0){const us=usedQI[catId]||new Set();const av=qs.map((_,i)=>i).filter(i=>!us.has(i));const pi=av.length>0?av[Math.floor(Math.random()*av.length)]:Math.floor(Math.random()*qs.length);const nu=new Set(us);nu.add(pi);setUsedQI(p=>({...p,[catId]:nu}));setCurQ(shufQ(qs[pi]))}else{setCurQ({q:"?",o:["A","B","C","D"],a:0})}setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(45);setTypedAns("");go("question")};
+  const openQ=(ci,ri)=>{
+    const k=`${ci}-${ri}`;if(used[k])return;sfx.click();setUsed(p=>({...p,[k]:true}));
+    const catId=selCats[ci].id;const qs=qBank[catId]||[];
+    if(qs.length>0){
+      const us=usedQI[catId]||new Set();
+      const hFor=i=>qHash(qs[i]);
+      const map=matchQHashesRef.current;
+      let hset=map.get(catId)||new Set();
+      let candidates=qs.map((_,i)=>i).filter(i=>!us.has(i)&&!hset.has(hFor(i)));
+      if(!candidates.length)candidates=qs.map((_,i)=>i).filter(i=>!hset.has(hFor(i)));
+      if(!candidates.length){hset=new Set();map.set(catId,hset);candidates=qs.map((_,i)=>i).filter(i=>!us.has(i));}
+      if(!candidates.length)candidates=qs.map((_,i)=>i);
+      const pi=candidates[Math.floor(Math.random()*candidates.length)];
+      hset.add(hFor(pi));map.set(catId,hset);
+      const nu=new Set(us);nu.add(pi);setUsedQI(p=>({...p,[catId]:nu}));
+      setCurQ(shufQ(qs[pi]));
+    }else{setCurQ({q:"?",o:["A","B","C","D"],a:0})}
+    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(45);setTypedAns("");go("question");
+  };
   const checkTyped=()=>{
     if(answered||!curQ||!typedAns.trim())return;
     clearInterval(tRef.current);sfx.stop();setAnswered(true);
@@ -470,7 +511,7 @@ export default function Qadha(){
     }
   };
   const startGame=async()=>{
-    if(selCats.length!==8)return;sfx.click();sfx.stop();setLoading(true);setLoadProg(0);
+    if(selCats.length!==8)return;sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);
     const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);
     const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);
     const questions=getQuestions(selCats,country.id,r,{sjKw:sjKwOnly});
@@ -495,13 +536,25 @@ export default function Qadha(){
   if(country.id==="seenjeem"&&sjKwOnly&&!sjLocalPacks){
     catSource=catSource.filter(c=>c.sjCountries?.includes(SEENJEEM_KW_COUNTRY_ID)||`${c.ar}${c.n}`.includes("كويت"));
   }
+  if(country.id==="seenjeem"&&sjLocalPacks&&(sjKwOnly||!isSeenJeemDevProxyAvailable())&&qadhaKwHighlight){
+    const hi=QADHA_KW_HIGHLIGHTS.find(h=>h.id===qadhaKwHighlight);
+    if(hi?.ids)catSource=catSource.filter(c=>hi.ids.has(c.id));
+  }
   const fCats=catQ?catSource.filter(c=>c.n.toLowerCase().includes(catQ.toLowerCase())||c.ar.includes(catQ)):catSource;
   const fCountries=countryQ?COUNTRIES.filter(c=>c.name.toLowerCase().includes(countryQ.toLowerCase())||c.native.includes(countryQ)):COUNTRIES;
   const selSet=new Set(selCats.map(c=>c.id));
   const togCat=useCallback(cat=>{setSelCats(p=>p.find(c=>c.id===cat.id)?p.filter(c=>c.id!==cat.id):p.length>=8?p:[...p,cat])},[]);
   const catRows=useMemo(()=>groupCatsForUi(fCats,country.id==="seenjeem"&&sjCats.length>0),[fCats,country.id,sjCats.length]);
   useEffect(()=>{setOpenCatGroupIdx(0)},[country.id,sjKwOnly]);
+  useEffect(()=>{if(!sjKwOnly)setQadhaKwHighlight(null)},[sjKwOnly]);
+  useEffect(()=>{if(country.id!=="seenjeem")setQadhaKwHighlight(null)},[country.id]);
   useEffect(()=>{setOpenCatGroupIdx(i=>{const m=Math.max(0,catRows.length-1);return Math.min(i,m)})},[catRows.length]);
+  useEffect(()=>{
+    if(sc!=="cats"||selCats.length!==8)return;
+    const el=nextSetupBtnRef.current;
+    if(!el)return;
+    requestAnimationFrame(()=>{try{el.scrollIntoView({behavior:"smooth",block:"center"});el.focus({preventScroll:true})}catch{/* ignore */}});
+  },[sc,selCats.length]);
   const flowSteps=[
     {sc:"menu",ic:"🏠",lb:"الرئيسية · Home"},
     {sc:"cats",ic:"🎯",lb:"الدولة والفئات · Country & cats"},
@@ -516,9 +569,9 @@ export default function Qadha(){
   const PwideScroll={...Pwide,flex:1,minHeight:0,justifyContent:"flex-start"};
 
   return(
-    <div style={{...W,width:"100%",background:th.bg,color:th.text,direction:rtl?"rtl":"ltr"}} onClick={()=>sfx.init()}>
+    <div style={{...W,width:"100%",background:th.bg,color:th.text,direction:rtl?"rtl":"ltr",fontWeight:700}} onClick={()=>sfx.init()}>
       <style>{`
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins','Tajawal',sans-serif;color:inherit;-webkit-tap-highlight-color:transparent}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins','Tajawal',sans-serif;color:inherit;-webkit-tap-highlight-color:transparent;font-weight:700}
 button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 @keyframes cb{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
 @keyframes gl{0%,100%{box-shadow:0 0 15px ${th.accentDim}}50%{box-shadow:0 0 35px ${th.accent}66}}
@@ -560,14 +613,16 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 @media(min-width:520px){.catsCardGrid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:800px){.catsCardGrid{grid-template-columns:repeat(4,1fr)}}
 .catsCard{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;text-align:center;padding:0;transition:transform .15s,box-shadow .15s,border-color .15s;font-family:'Tajawal',sans-serif}
-.catsCard:hover{transform:translateY(-2px)}
+.catsCard:not(.catsCardLocked):hover{transform:translateY(-2px)}
+.catsCardLocked{opacity:.34!important;pointer-events:none!important;filter:grayscale(.4) brightness(.92);cursor:default!important;transform:none!important}
+.catsCardLocked .catsCardInfo{pointer-events:none;opacity:.5}
 .catsCardInfo{position:absolute;top:7px;inset-inline-end:7px;width:22px;height:22px;border-radius:50%;font-size:11px;font-weight:900;line-height:22px;font-style:italic;font-family:Georgia,serif;z-index:2;border:none;cursor:pointer;padding:0}
-.catsCardBody{padding:14px 8px 8px;min-height:76px;display:flex;align-items:center;justify-content:center}
-.catsCardBody .emj{font-size:clamp(36px,9vw,48px);line-height:1}
-.catsCardFoot{font-size:10px;font-weight:800;padding:9px 6px;line-height:1.3;min-height:38px;display:flex;align-items:center;justify-content:center}
+.catsCardBody{padding:16px 8px 10px;min-height:92px;display:flex;align-items:center;justify-content:center}
+.catsCardBody .emj{font-size:clamp(48px,12vw,68px);line-height:1}
+.catsCardFoot{font-size:11px;font-weight:800;padding:10px 6px;line-height:1.35;min-height:42px;display:flex;align-items:center;justify-content:center}
 .catsChipRow{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:14px 0;min-height:48px}
 .catsChip{border-radius:12px;padding:6px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:border-color .15s,box-shadow .15s}
-.catsChipSlot{width:48px;height:48px;border-radius:12px;border-width:2px;border-style:dashed}
+.catsChipSlot{width:56px;height:56px;border-radius:12px;border-width:2px;border-style:dashed}
 .catsStepCircle{background:${th.gridCell};border-color:${th.cardBd}}
 .catsStepBtn:hover .catsStepCircle{background:${th.accentDim}}
 .catsStepBtn.catsStepOn .catsStepCircle{background:${th.accentDim};border-color:${th.accent};box-shadow:0 0 0 2px ${th.accentDim}}
@@ -583,6 +638,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .catsSectionTag{background:${th.btnBg};color:${th.btnText};box-shadow:0 2px 14px ${th.accentDim}}
 .catsCard{background:${th.card};border:1px solid ${th.cardBd}}
 .catsCard.catsCardSel{border-color:${th.accent};box-shadow:0 0 0 3px ${th.accentDim}}
+.catsNextReady{animation:pl .55s ease 2;box-shadow:0 0 0 3px ${th.accentDim},0 8px 28px ${th.accentDim}!important}
 .catsCardInfo{background:rgba(${th.accentRgb},.9);color:${th.btnText}}
 .catsCardFoot{background:${th.btnBg};color:${th.btnText}}
 .catsChip{background:${th.card};border:2px solid ${th.cardBd}}
@@ -651,6 +707,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <p className="catsSub">{selCats.length}/8 {tx.sel} · {country.id==="seenjeem"?catSource.length:CATS.length} {tx.catWord}</p>
         {country.id==="seenjeem"&&!isSeenJeemDevProxyAvailable()&&<p style={{textAlign:"center",fontSize:13,color:th.accent,marginBottom:10,fontFamily:"'Tajawal',sans-serif"}}>{BI.seenjeemDev}</p>}
         {country.id==="seenjeem"&&isSeenJeemDevProxyAvailable()&&<div style={{display:"flex",gap:10,marginBottom:14,justifyContent:"center",flexWrap:"wrap"}}><button type="button" onClick={()=>{sfx.click();setSjKwOnly(false)}} style={{padding:"12px 20px",fontSize:14,borderRadius:14,fontFamily:"'Tajawal',sans-serif",fontWeight:700,border:`2px solid ${th.accent}`,cursor:"pointer",background:!sjKwOnly?th.btnBg:"transparent",color:!sjKwOnly?th.btnText:th.accent}}>{BI.packsAll}</button><button type="button" onClick={()=>{sfx.click();setSjKwOnly(true)}} style={{padding:"12px 20px",fontSize:14,borderRadius:14,fontFamily:"'Tajawal',sans-serif",fontWeight:700,border:`2px solid ${th.accent}`,cursor:"pointer",background:sjKwOnly?th.btnBg:"transparent",color:sjKwOnly?th.btnText:th.accent}}>🇰🇼 {BI.kuwait}</button></div>}
+        {country.id==="seenjeem"&&(sjKwOnly||!isSeenJeemDevProxyAvailable())&&sjLocalPacks&&<div style={{marginBottom:16}}><p style={{textAlign:"center",fontSize:12,color:th.textDim2,marginBottom:10,lineHeight:1.55,fontFamily:"'Tajawal',sans-serif",fontWeight:700}}>{BI.qadhaKwTopics}</p><div className="qadhaKwScroll" style={{display:"flex",gap:12,overflowX:"auto",padding:"6px 4px 12px",WebkitOverflowScrolling:"touch",scrollbarWidth:"thin"}}>{QADHA_KW_HIGHLIGHTS.map(h=>(<button key={h.id??"all"} type="button" onClick={()=>{sfx.click();setQadhaKwHighlight(h.id);setSelCats([])}} style={{flexShrink:0,display:"flex",flexDirection:"column",alignItems:"center",gap:8,minWidth:96,maxWidth:120,padding:14,borderRadius:18,border:`2px solid ${qadhaKwHighlight===h.id?th.accent:th.cardBd}`,background:qadhaKwHighlight===h.id?`rgba(${th.accentRgb},.22)`:th.card,cursor:"pointer",boxShadow:qadhaKwHighlight===h.id?`0 0 0 2px ${th.accentDim}`:"none"}}><span style={{fontSize:"clamp(44px,12vw,60px)",lineHeight:1}}>{h.icon}</span><span style={{fontSize:12,fontWeight:800,fontFamily:"'Tajawal',sans-serif",color:th.text,textAlign:"center",lineHeight:1.3}}>{h.ar}</span></button>))}</div></div>}
         {country.id==="seenjeem"&&isSeenJeemDevProxyAvailable()&&<p style={{textAlign:"center",fontSize:12,color:th.textDim2,marginBottom:12,lineHeight:1.5}}>{BI.seenjeemHint}</p>}
         <div className="catsSearchRow">
           <input className="catsSearchInp" placeholder={tx.search} value={catQ} onChange={e=>setCatQ(e.target.value)} aria-label={tx.search}/>
@@ -669,10 +726,10 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
                   {row.cats.map(cat=>{
                     const sel=selSet.has(cat.id);
                     return(
-                      <div key={cat.id} role="button" tabIndex={0} className={`catsCard${sel?" catsCardSel":""}`} onPointerDown={()=>togCat(cat)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();togCat(cat)}}}>
+                      <div key={cat.id} role="button" tabIndex={selCats.length===8&&!sel?-1:0} className={`catsCard${sel?" catsCardSel":""}${selCats.length===8&&!sel?" catsCardLocked":""}`} onPointerDown={()=>togCat(cat)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();togCat(cat)}}}>
                         <button type="button" className="catsCardInfo" title={`${cat.ar} — ${cat.n}`} aria-label="معلومات" onClick={e=>{e.stopPropagation();sfx.click()}}>i</button>
                         <div className="catsCardBody">
-                          {cat.sjCover?<img src={cat.sjCover} alt="" referrerPolicy="no-referrer" style={{width:52,height:52,borderRadius:12,objectFit:"cover"}}/>:<span className="emj">{cat.icon}</span>}
+                          {cat.sjCover?<img src={cat.sjCover} alt="" referrerPolicy="no-referrer" style={{width:68,height:68,borderRadius:14,objectFit:"cover"}}/>:<span className="emj">{cat.icon}</span>}
                         </div>
                         <div className="catsCardFoot">{cat.ar}</div>
                       </div>
@@ -683,9 +740,9 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
             ))}
           </>
         )}
-        <div className="catsChipRow">{selCats.map(cat=><button key={cat.id} type="button" className="catsChip" style={{borderColor:selSet.has(cat.id)?th.accent:undefined,boxShadow:selSet.has(cat.id)?`0 0 0 2px ${th.accentDim}`:undefined}} onClick={()=>togCat(cat)}>{cat.sjCover?<img src={cat.sjCover} alt="" style={{width:40,height:40,borderRadius:10,objectFit:"cover"}}/>:<span style={{fontSize:36,lineHeight:1}}>{cat.icon}</span>}</button>)}{Array.from({length:8-selCats.length}).map((_,i)=><div key={`e${i}`} className="catsChipSlot"/>)}
+        <div className="catsChipRow">{selCats.map(cat=><button key={cat.id} type="button" className="catsChip" style={{borderColor:selSet.has(cat.id)?th.accent:undefined,boxShadow:selSet.has(cat.id)?`0 0 0 2px ${th.accentDim}`:undefined}} onClick={()=>togCat(cat)}>{cat.sjCover?<img src={cat.sjCover} alt="" style={{width:52,height:52,borderRadius:12,objectFit:"cover"}}/>:<span style={{fontSize:44,lineHeight:1}}>{cat.icon}</span>}</button>)}{Array.from({length:8-selCats.length}).map((_,i)=><div key={`e${i}`} className="catsChipSlot"/>)}
         </div>
-        <button type="button" className="bg" style={{width:"100%",padding:18,marginTop:6,opacity:selCats.length!==8?0.45:1}} disabled={selCats.length!==8} onClick={()=>{sfx.click();go("setup")}}>{tx.nextSetup}</button>
+        <button ref={nextSetupBtnRef} type="button" tabIndex={0} className={`bg${selCats.length===8?" catsNextReady":""}`} style={{width:"100%",padding:18,marginTop:6,opacity:selCats.length!==8?0.45:1}} disabled={selCats.length!==8} onClick={()=>{sfx.click();go("setup")}}>{tx.nextSetup}</button>
         <button type="button" className="bs" style={{width:"100%",marginTop:10}} onClick={()=>{sfx.click();go("menu")}}>{tx.back}</button>
       </div></div>}
 
@@ -708,7 +765,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         {bRef.current&&!answered&&<div style={{textAlign:"center",marginBottom:16}}><div style={{display:"inline-block",background:isNight?"rgba(255,138,92,.14)":"rgba(234,88,12,.1)",border:"1px solid rgba(255,138,92,.3)",borderRadius:24,padding:"12px 26px",fontSize:17,color:"#EA580C",fontWeight:700}}>{tx.bounce} {tn(active)}{tx.steal}</div></div>}
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}><div style={{width:"clamp(92px,24vw,112px)",height:"clamp(92px,24vw,112px)",borderRadius:"50%",background:timer<=10?"linear-gradient(135deg,#EF4444,#DC2626)":timer<=20?"linear-gradient(135deg,#F59E0B,#D97706)":"linear-gradient(135deg,#8E44AD,#A855F7)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Cinzel',serif",fontSize:"clamp(34px,8.5vw,42px)",fontWeight:900,animation:timer<=10?"pl .4s infinite":"none",boxShadow:timer<=10?"0 0 30px rgba(255,59,92,.5)":"0 0 15px rgba(168,85,247,.3)"}}>{timer}</div></div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px"}}><span style={{fontFamily:"'Cinzel',serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts}</span><span style={{fontSize:15,color:th.textDim}}>{tn(active)}{tx.turn}</span></div>
-        <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}><p style={{fontSize:"clamp(19px,4.5vw,24px)",fontWeight:600,lineHeight:1.75,color:th.scoreTxt}}>{curQ.q}</p></div>
+        <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}><p style={{fontSize:"clamp(19px,4.5vw,24px)",fontWeight:800,lineHeight:1.75,color:th.scoreTxt}}>{curQ.q}</p></div>
         {revealed&&selA!==null&&selA!==curQ.a&&!hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span></div>}
         {revealed&&hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span><div style={{fontSize:18,color:"#4ADE80",fontWeight:700,marginTop:8}}>{curQ.o[curQ.a]}</div></div>}
         
@@ -717,7 +774,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
             const ic=i===curQ.a;const isSel=i===selA;const isFirst=i===firstWrong;
             let bg=AB[i],bd=AC[i]+"55",col=th.text;
             if(answered){if(ic&&revealed){bg="rgba(74,222,128,.3)";bd="#4ADE80"}else if(isSel&&!ic){bg="rgba(255,59,92,.3)";bd="#FF3B5C"}else if(isFirst&&revealed){bg="rgba(255,59,92,.15)";bd="rgba(255,59,92,.4)"}else if(revealed){bg=th.gridCell;bd=th.cardBd}}
-            return(<button key={i} type="button" onClick={()=>doAns(i)} disabled={answered} className={!answered?"ob":""} style={{background:bg,border:`3px solid ${bd}`,borderRadius:20,padding:"20px 22px",fontSize:"clamp(17px,4.2vw,21px)",fontWeight:600,color:col,cursor:answered?"default":"pointer",transition:"all .3s",width:"100%",textAlign:rtl?"right":"left",display:"flex",alignItems:"center",gap:14,minHeight:64}}><span style={{fontWeight:900,color:!answered?AC[i]:undefined,flexShrink:0,fontSize:17,width:32,height:32,borderRadius:11,background:!answered?`${AC[i]}22`:"transparent",display:"inline-flex",alignItems:"center",justifyContent:"center"}}>{["A","B","C","D"][i]}</span><span style={{flex:1,lineHeight:1.35}}>{opt}{answered&&ic&&revealed&&<span style={{color:"#16A34A",fontWeight:900}}> ✓</span>}{answered&&isSel&&!ic&&<span style={{color:"#FF3B5C",fontWeight:900}}> ✗</span>}{answered&&isFirst&&revealed&&!isSel&&<span style={{color:"#FF3B5C",opacity:.6}}> ✗</span>}</span></button>)
+            return(<button key={i} type="button" onClick={()=>doAns(i)} disabled={answered} className={!answered?"ob":""} style={{background:bg,border:`3px solid ${bd}`,borderRadius:20,padding:"20px 22px",fontSize:"clamp(17px,4.2vw,21px)",fontWeight:800,color:col,cursor:answered?"default":"pointer",transition:"all .3s",width:"100%",textAlign:rtl?"right":"left",display:"flex",alignItems:"center",gap:14,minHeight:64}}><span style={{fontWeight:900,color:!answered?AC[i]:undefined,flexShrink:0,fontSize:17,width:32,height:32,borderRadius:11,background:!answered?`${AC[i]}22`:"transparent",display:"inline-flex",alignItems:"center",justifyContent:"center"}}>{["A","B","C","D"][i]}</span><span style={{flex:1,lineHeight:1.35,fontWeight:800}}>{opt}{answered&&ic&&revealed&&<span style={{color:"#16A34A",fontWeight:900}}> ✓</span>}{answered&&isSel&&!ic&&<span style={{color:"#FF3B5C",fontWeight:900}}> ✗</span>}{answered&&isFirst&&revealed&&!isSel&&<span style={{color:"#FF3B5C",opacity:.6}}> ✗</span>}</span></button>)
           })}
         </div>}
         
@@ -734,7 +791,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       {sc==="results"&&<div style={W}><div style={P}>
         <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"🤝":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p>        <p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p></div>
         <div className="gc" style={{marginBottom:20,border:`2px solid ${th.accent}`,borderRadius:20,padding:24,position:"relative",overflow:"hidden"}}><div style={{position:"absolute",top:0,left:0,right:0,height:4,background:`linear-gradient(90deg,${th.accent},rgba(${th.accentRgb},.5),${th.accent})`}}/><div style={{textAlign:"center",fontSize:11,color:th.textDim,letterSpacing:4,marginBottom:16}}>{tx.vCard}</div><div style={{display:"flex",justifyContent:"space-around",marginBottom:12}}><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6}}>{tn(1)}</div><div style={{fontFamily:"'Cinzel',serif",fontSize:46,fontWeight:900,color:scores[0]>=scores[1]?th.accent:th.textDim2}}>{scores[0]}</div></div><div style={{fontFamily:"'Cinzel',serif",fontSize:22,color:th.textDim2,alignSelf:"center"}}>VS</div><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6,opacity:.85}}>{tn(2)}</div><div style={{fontFamily:"'Cinzel',serif",fontSize:46,fontWeight:900,color:scores[1]>=scores[0]?th.accent:th.textDim2}}>{scores[1]}</div></div></div><div style={{textAlign:"center",fontFamily:"'Tajawal',sans-serif",fontSize:14,color:th.textDim2,marginTop:10}}>قدها؟ 👑 {country.flag}</div></div>
-        <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,{sjKw:sjKwOnly});if(country.id==="seenjeem"){const tot=selCats.reduce((s,c)=>s+(questions[c.id]?.length||0),0);if(tot===0){setLoading(false);alert(BI.alertRematch);return}}setQBank(questions);setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);go("grid")},500)}}>{tx.rematch}</button>
+        <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,{sjKw:sjKwOnly});if(country.id==="seenjeem"){const tot=selCats.reduce((s,c)=>s+(questions[c.id]?.length||0),0);if(tot===0){setLoading(false);alert(BI.alertRematch);return}}setQBank(questions);setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);go("grid")},500)}}>{tx.rematch}</button>
         <button className="bs" style={{width:"100%",padding:16}} onClick={()=>go("menu")}>{tx.menu}</button>
       </div></div>}
     </div>
