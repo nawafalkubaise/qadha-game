@@ -1,0 +1,39 @@
+# قدها؟ — تشغيل عام جاهز للمشاركة
+# الاستخدام: docker compose up -d --build
+# ثم افتح: http://localhost:3001 أو ضع nginx/caddy أمام المنفذ 3001 مع HTTPS
+
+services:
+  qadha:
+    build: .
+    ports:
+      - "3001:3001"
+    # اختياري: انسخ .env.share.example إلى .env ثم فعّل السطر التالي
+    # env_file: .env
+    environment:
+      NODE_ENV: production
+      QADHA_SERVER_PORT: "3001"
+      # خلف بروكسي عكسي (nginx, Caddy, Cloudflare): فعّل الثقة في X-Forwarded-*
+      QADHA_TRUST_PROXY: "1"
+      # مفتاح إضافة أسئلة عبر POST /api/content/questions (اتركه فارغاً لتعطيل المسار)
+      # QADHA_ADMIN_KEY: ""
+      # أصل الواجهة إن كانت على نطاق مختلف عن الحاوية:
+      # QADHA_CORS_ORIGINS: "https://لعبتك.example"
+    volumes:
+      # يبقى ملف المحتوى والـ overlay بعد إعادة التشغيل
+      - qadha_data:/app/server/data
+    restart: unless-stopped
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "const p=process.env.QADHA_SERVER_PORT||process.env.PORT||'3001';fetch('http://127.0.0.1:'+p+'/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))",
+        ]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  qadha_data:

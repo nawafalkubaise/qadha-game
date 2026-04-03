@@ -1,0 +1,13 @@
+# Railway — اربط المستودع؛ Dockerfile يُكتشف تلقائياً.
+# أضف متغيرات من لوحة Railway: QADHA_ADMIN_KEY (اختياري)، PORT يُحقن تلقائياً.
+# إن احتجت منفذاً ثابتاً داخل الحاوية وواجهة خاصة، اضبط QADHA_SERVER_PORT ليطابق إعداد الخدمة.
+
+[build]
+builder = "DOCKERFILE"
+dockerfilePath = "Dockerfile"
+
+[deploy]
+healthcheckPath = "/api/health"
+healthcheckTimeout = 30
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 5

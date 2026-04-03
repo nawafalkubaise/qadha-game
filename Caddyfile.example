@@ -1,0 +1,10 @@
+# انسخ إلى /etc/caddy/Caddyfile أو شغّل: caddy run --config Caddyfile
+# استبدل example.com بنطاقك (DNS يشير لعنوان السيرفر).
+
+example.com {
+	encode gzip
+	reverse_proxy localhost:3001
+}
+
+# إن كان التطبيق على نفس المضيف مع Docker (منفذ مُعرّض):
+# reverse_proxy localhost:3001

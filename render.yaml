@@ -1,0 +1,20 @@
+# Render Blueprint — ربط مستودع Git ثم New → Blueprint أو render.yaml
+# https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: qadha-game
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    # إن لم يقبل free لخدمة Docker عندك، غيّر إلى starter
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: QADHA_TRUST_PROXY
+        value: "1"
+      # Render يحقن PORT تلقائياً؛ الخادم يقرأه.
+      # - key: QADHA_ADMIN_KEY
+      #   sync: false
