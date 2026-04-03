@@ -21,6 +21,15 @@ npm run start:prod
 
 ثم افتح **http://localhost:3001**
 
+## رفع الكود إلى GitHub (خطوة واحدة بعد التسجيل)
+
+```powershell
+& "C:\Program Files\GitHub CLI\gh.exe" auth login
+.\scripts\publish-github.ps1
+```
+
+أو بمفتاح شخصي (PAT · صلاحية `repo`): عيّن `$env:GITHUB_TOKEN` ثم شغّل نفس السكربت. التفاصيل داخل الملف.
+
 ## مشاركة اللعبة مع الناس
 
 كل الخطوات، Docker، HTTPS، Fly / Render / Railway، والنفق السريع موثّقة في:
