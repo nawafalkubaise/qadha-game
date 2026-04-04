@@ -639,9 +639,9 @@ export default function Qadha(){
     {sc:"setup",ic:"⚙️",lb:"الفريق"},
   ];
 
-  const W={width:"100%",minHeight:"100svh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",boxSizing:"border-box"};
-  const WScroll={width:"100%",minHeight:"100svh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"flex-start",boxSizing:"border-box"};
-  const P={width:"100%",maxWidth:"min(820px,100%)",padding:"max(16px,env(safe-area-inset-top)) min(26px,5.5vw) max(28px,env(safe-area-inset-bottom))",margin:0,boxSizing:"border-box",display:"flex",flexDirection:"column",alignItems:"stretch"};
+  const W={width:"100%",minHeight:"min(100dvh,100svh)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",boxSizing:"border-box",paddingLeft:"env(safe-area-inset-left,0px)",paddingRight:"env(safe-area-inset-right,0px)"};
+  const WScroll={width:"100%",minHeight:"min(100dvh,100svh)",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"flex-start",boxSizing:"border-box",paddingLeft:"env(safe-area-inset-left,0px)",paddingRight:"env(safe-area-inset-right,0px)"};
+  const P={width:"100%",maxWidth:"min(820px,100%)",padding:"max(16px,env(safe-area-inset-top)) max(min(26px,5.5vw),env(safe-area-inset-left,0px),env(safe-area-inset-right,0px)) max(28px,env(safe-area-inset-bottom))",margin:0,boxSizing:"border-box",display:"flex",flexDirection:"column",alignItems:"stretch"};
   const Pwide={...P,maxWidth:"min(1080px,100%)"};
   const PScroll={...P,flex:1,minHeight:0,justifyContent:"flex-start"};
   const PwideScroll={...Pwide,flex:1,minHeight:0,justifyContent:"flex-start"};
@@ -730,10 +730,23 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .catGroupTab{flex-shrink:0;padding:10px 14px;border-radius:14px;font-size:12px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;white-space:nowrap;border:1px solid ${th.cardBd};background:${th.card};color:${th.textDim};transition:background .2s,border-color .2s,color .2s}
 .catGroupTab:hover{color:${th.accent};border-color:${th.accentDim}}
 .catGroupTabOn{background:${th.accentDim};border-color:${th.accent};color:${th.accent};box-shadow:0 0 0 2px ${th.accentDim}}
+@media (max-width:520px){.qadha-below-badge{padding-top:calc(env(safe-area-inset-top,0px) + 56px)!important}}
+@media (max-width:480px) and (orientation:portrait){
+.cat-grid{min-height:min(36dvh,300px);max-height:calc(100dvh - 175px);gap:12px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
+.catsCardBody{min-height:clamp(92px,22vw,128px);padding:12px 8px 10px}
+.catsCardEmoji{font-size:clamp(48px,14vw,76px)}
+.catsCardFoot{font-size:10px;min-height:36px;padding:8px 4px}
+.catsStepLbl{font-size:10px;max-width:88px}
+.catsStepCircle{width:42px;height:42px;font-size:16px}
+.grid-cat-lbl{font-size:8px!important;line-height:1.2!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
+.grid-header-row{flex-wrap:wrap;gap:6px}
+.grid-header-row>div{min-width:0}
+}
+@media (max-width:420px){.qadha-hard-row{flex-direction:column!important;align-items:stretch!important}.qadha-hard-row .bg{width:100%;box-sizing:border-box}}
 `}</style>
       {sc!=="splash"&&sc!=="online"&&!loading&&<div style={{position:"fixed",top:"max(10px, env(safe-area-inset-top, 0px))",[rtl?"left":"right"]:10,zIndex:999,display:"flex",alignItems:"center",gap:12,flexWrap:"wrap",maxWidth:"min(96vw,420px)",background:th.badge,border:`1px solid ${th.cardBd}`,borderRadius:24,padding:"12px 16px"}}><span style={{fontSize:28,lineHeight:1}}>{country.flag}</span><span style={{fontSize:12,color:th.accent,fontWeight:700}}>{BI.langBadge}</span><div style={{display:"flex",gap:6,marginInlineStart:8}} role="group" aria-label={BI.themeAria}>{[{k:"calm",i:"🌿",t:BI.themeCalm},{k:"night",i:"🌙",t:BI.themeNight},{k:"light",i:"☀️",t:BI.themeLight}].map(({k,i,t})=>(<button key={k} type="button" title={t} onClick={()=>{sfx.click();setThemeMode(k)}} style={{background:themeMode===k?`rgba(${th.accentRgb},.2)`:"transparent",border:`1px solid ${themeMode===k?th.accent:th.cardBd}`,borderRadius:14,padding:"10px 12px",fontSize:24,cursor:"pointer",lineHeight:1}}>{i}</button>))}</div></div>}
 
-      {sc==="splash"&&<div style={W}><div style={{textAlign:"center"}}><div style={{fontSize:92,animation:"cb 2s ease-in-out infinite"}}>👑</div><h1 style={{fontFamily:"'Tajawal',sans-serif",fontSize:96,fontWeight:900,color:th.gold,textShadow:th.goldGlow,lineHeight:1,margin:"16px 0 0"}}>قدها؟</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:16,color:th.textDim,letterSpacing:2,marginTop:10}}>لعبة أسئلة وثقافة</p><div style={{margin:"36px auto",width:96,height:3,background:`linear-gradient(90deg,transparent,${th.gold},transparent)`}}/><div><span className="ld"/><span className="ld" style={{animationDelay:".2s"}}/><span className="ld" style={{animationDelay:".4s"}}/></div></div></div>}
+      {sc==="splash"&&<div style={{...W,paddingLeft:"max(16px,env(safe-area-inset-left))",paddingRight:"max(16px,env(safe-area-inset-right))",paddingBottom:"max(24px,env(safe-area-inset-bottom))"}}><div style={{textAlign:"center",width:"100%",maxWidth:420}}><div style={{fontSize:"clamp(56px,22vw,92px)",animation:"cb 2s ease-in-out infinite",lineHeight:1}}>👑</div><h1 style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(40px,12vw,96px)",fontWeight:900,color:th.gold,textShadow:th.goldGlow,lineHeight:1.05,margin:"12px 0 0"}}>قدها؟</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.8vw,16px)",color:th.textDim,letterSpacing:2,marginTop:10,lineHeight:1.5}}>لعبة أسئلة وثقافة</p><div style={{margin:"clamp(24px,8vw,36px) auto",width:96,maxWidth:"40%",height:3,background:`linear-gradient(90deg,transparent,${th.gold},transparent)`}}/><div><span className="ld"/><span className="ld" style={{animationDelay:".2s"}}/><span className="ld" style={{animationDelay:".4s"}}/></div></div></div>}
 
       {sc==="online"&&(
         <OnlineLobby
@@ -756,20 +769,20 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         />
       )}
 
-      {sc==="menu"&&<div style={W}><div style={P}>
+      {sc==="menu"&&<div style={W} className="qadha-below-badge"><div style={P}>
         <div style={{textAlign:"center",marginBottom:24}}><div style={{fontSize:"clamp(64px,15vw,100px)",animation:"cb 2s ease-in-out infinite",lineHeight:1}}>👑</div><h1 style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(44px,10vw,64px)",fontWeight:900,color:th.gold,margin:"12px 0 28px"}}>قدها؟</h1><p style={{fontSize:15,color:th.textDim,lineHeight:1.5,maxWidth:400,margin:"0 auto"}}>تطوير: فريق Bojrmakh Q8 — الكويت</p></div>
         <button className="bg" style={{width:"100%",padding:"clamp(20px,4.5vw,26px)",fontSize:"clamp(18px,4vw,22px)",animation:"gl 2s ease-in-out infinite",marginBottom:14,borderRadius:18}} onClick={()=>{sfx.click();setOnlineSession(null);setSelCats([]);go("cats")}}>{tx.start}</button>
         <button type="button" className="bs" style={{width:"100%",padding:16,marginTop:4}} onClick={()=>{sfx.click();go("online")}}>اللعب الجماعي عبر الشبكة</button>
       </div></div>}
 
-      {sc==="country"&&<div style={WScroll}><div style={{...PScroll,width:"100%",maxWidth:"min(820px,100%)"}}>
+      {sc==="country"&&<div style={WScroll} className="qadha-below-badge"><div style={{...PScroll,width:"100%",maxWidth:"min(820px,100%)"}}>
         <h2 className="tl" style={{marginTop:6}}>{tx.country}</h2>
         <input className="inp" placeholder={tx.search} value={countryQ} onChange={e=>setCountryQ(e.target.value)} style={{margin:"16px 0",padding:"18px 20px",fontSize:18,borderRadius:18}}/>
         <div style={{display:"grid",gridTemplateColumns:"1fr",gap:14,flex:1,overflowY:"auto",maxHeight:"calc(100dvh - 240px)",paddingBottom:10}}>{fCountries.map(c=>(<button key={c.id} className="gc hov" style={{display:"flex",alignItems:"center",gap:20,width:"100%",textAlign:rtl?"right":"left",border:country.id===c.id?`3px solid ${th.accent}`:`2px solid ${th.cardBd}`,borderRadius:22,minHeight:112,padding:"20px 22px"}} onClick={()=>{sfx.click();setCountry(c);setSelCats([]);go("cats")}}><span style={{fontSize:"clamp(44px,12vw,58px)",lineHeight:1}}>{c.flag}</span><div style={{flex:1,minWidth:0}}><div style={{fontSize:19,color:th.accent,fontWeight:800,lineHeight:1.35}}>{c.native}</div></div></button>))}</div>
         <button className="bs" style={{width:"100%",marginTop:16,padding:16,fontSize:16}} onClick={()=>go("cats")}>{tx.back}</button>
       </div></div>}
 
-      {sc==="setup"&&<div style={WScroll}><div style={{...PScroll,maxWidth:"min(580px,100%)"}}>
+      {sc==="setup"&&<div style={WScroll} className="qadha-below-badge"><div style={{...PScroll,maxWidth:"min(580px,100%)"}}>
         <nav className="catsSteps" aria-label="خطوات اللعبة" style={{marginBottom:18}}>
           {flowSteps.map(s=>(<button key={s.sc} type="button" className={`catsStepBtn${sc===s.sc?" catsStepOn":""}`} onClick={()=>{if(s.sc===sc)return;if(s.sc==="setup"&&selCats.length!==8){sfx.click();return;}sfx.click();go(s.sc)}}>
             <div className="catsStepCircle">{s.ic}</div>
@@ -788,7 +801,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <button className="bs" style={{width:"100%",marginTop:10}} onClick={()=>go("cats")}>{tx.back}</button>
       </div></div>}
 
-      {sc==="cats"&&<div style={WScroll}><div className="catsBody" style={{...PwideScroll,maxWidth:"min(920px,100%)"}}>
+      {sc==="cats"&&<div style={WScroll} className="qadha-below-badge"><div className="catsBody" style={{...PwideScroll,maxWidth:"min(920px,100%)"}}>
         <nav className="catsSteps" aria-label="خطوات اللعبة" style={{marginBottom:16}}>
           {flowSteps.map(s=>(<button key={s.sc} type="button" className={`catsStepBtn${sc===s.sc?" catsStepOn":""}`} onClick={()=>{if(s.sc===sc)return;if(isOnlineGuest&&(s.sc==="setup"||s.sc==="country")){sfx.click();return;}if(s.sc==="setup"&&selCats.length!==8){sfx.click();return;}sfx.click();go(s.sc)}}>
             <div className="catsStepCircle">{s.ic}</div>
@@ -872,22 +885,22 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <button type="button" className="bs" style={{width:"100%",marginTop:10}} onClick={()=>{sfx.click();setOnlineSession(null);go("menu")}}>{tx.back}</button>
       </div></div>}
 
-      {loading&&<div style={W}><div style={{textAlign:"center",padding:48}}><div style={{fontSize:58,animation:"cb 1.5s ease-in-out infinite",marginBottom:20}}>🧠</div><h2 style={{fontFamily:"'Tajawal',sans-serif",color:th.accent,fontSize:22}}>{tx.loading}</h2><div style={{width:"70%",maxWidth:320,height:7,background:th.gridCell,borderRadius:4,margin:"24px auto",overflow:"hidden"}}><div style={{width:`${loadProg}%`,height:"100%",background:`linear-gradient(90deg,${th.accent},${th.gold})`,borderRadius:4,transition:"width .3s"}}/></div><div style={{display:"flex",justifyContent:"center",gap:10,marginTop:16}}><span style={{fontSize:28}}>{country.flag}</span><span style={{fontSize:16,color:th.accent}}>{country.native}</span></div></div></div>}
+      {loading&&<div style={W} className="qadha-below-badge"><div style={{textAlign:"center",padding:"clamp(28px,8vw,48px) clamp(16px,5vw,48px)"}}><div style={{fontSize:58,animation:"cb 1.5s ease-in-out infinite",marginBottom:20}}>🧠</div><h2 style={{fontFamily:"'Tajawal',sans-serif",color:th.accent,fontSize:22}}>{tx.loading}</h2><div style={{width:"70%",maxWidth:320,height:7,background:th.gridCell,borderRadius:4,margin:"24px auto",overflow:"hidden"}}><div style={{width:`${loadProg}%`,height:"100%",background:`linear-gradient(90deg,${th.accent},${th.gold})`,borderRadius:4,transition:"width .3s"}}/></div><div style={{display:"flex",justifyContent:"center",gap:10,marginTop:16}}><span style={{fontSize:28}}>{country.flag}</span><span style={{fontSize:16,color:th.accent}}>{country.native}</span></div></div></div>}
 
-      {sc==="grid"&&!loading&&<div style={{...W,justifyContent:"flex-start",alignItems:"center",paddingTop:14,width:"100%"}}><div style={{width:"100%",maxWidth:"min(1080px,100%)",padding:"12px min(18px,4.5vw)"}}>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}>
+      {sc==="grid"&&!loading&&<div style={{...W,justifyContent:"flex-start",alignItems:"center",paddingTop:14,width:"100%"}} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(1080px,100%)",padding:"12px min(18px,4.5vw) max(16px,env(safe-area-inset-bottom))"}}>
+        <div className="grid-header-row" style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}>
           <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===1?th.accent:th.textDim2,fontWeight:700}}>{tn(1)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[0]}</div></div>
           <div style={{textAlign:"center"}}><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(17px,4.2vw,21px)",color:th.accent,fontWeight:700}}>قدها؟ {country.flag}</div><div style={{fontSize:12,color:th.textDim}}>◀ {turnLabel(active)} ▶</div></div>
           <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===2?th.accent:th.textDim2,fontWeight:700}}>{tn(2)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[1]}</div></div>
         </div>
         <div style={{display:"grid",gridTemplateColumns:`repeat(${selCats.length},1fr)`,gap:6}}>
-          {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"10px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:68}}><CatIcon cat={cat} sz={62}/></div><div style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div></div>))}
+          {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"8px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"clamp(52px,16vw,68px)"}}><CatIcon cat={cat} sz={56}/></div><div className="grid-cat-lbl" style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div></div>))}
           {PTS.map((pts,ri)=>selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];return(<button key={k} type="button" onClick={()=>!u&&openQ(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:1}}>{u?"✓":pts}</button>)}))}
         </div>
         <div style={{display:"flex",justifyContent:"center",marginTop:12}}><button className="bs sm" onClick={()=>{sfx.click();wipeQuestionCachesAfterGame();scores[0]>scores[1]?sfx.victory():sfx.defeat();go("results")}}>{tx.end}</button></div>
       </div></div>}
 
-      {sc==="question"&&curQ&&<div style={W}><div style={{width:"100%",maxWidth:"min(640px,100%)",padding:"18px min(22px,5.5vw)"}}>
+      {sc==="question"&&curQ&&<div style={W} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(640px,100%)",padding:"14px min(22px,5.5vw) max(20px,env(safe-area-inset-bottom))"}}>
         {bRef.current&&!answered&&<div style={{textAlign:"center",marginBottom:16}}><div style={{display:"inline-block",background:isNight?"rgba(255,138,92,.14)":"rgba(234,88,12,.1)",border:"1px solid rgba(255,138,92,.3)",borderRadius:24,padding:"12px 26px",fontSize:17,color:"#EA580C",fontWeight:700}}>{stealBanner}</div></div>}
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}><div style={{width:"clamp(92px,24vw,112px)",height:"clamp(92px,24vw,112px)",borderRadius:"50%",background:timer<=10?"linear-gradient(135deg,#EF4444,#DC2626)":timer<=20?"linear-gradient(135deg,#F59E0B,#D97706)":"linear-gradient(135deg,#8E44AD,#A855F7)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(34px,8.5vw,42px)",fontWeight:900,animation:timer<=10?"pl .4s infinite":"none",boxShadow:timer<=10?"0 0 30px rgba(255,59,92,.5)":"0 0 15px rgba(168,85,247,.3)"}}>{timer}</div></div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px"}}><span style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts}</span><span style={{fontSize:15,color:th.textDim}}>{turnLabel(active)}</span></div>
@@ -905,7 +918,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         </div>}
         
         {hard&&<div style={{marginBottom:18}}>
-          <div style={{display:"flex",gap:10}}>
+          <div className="qadha-hard-row" style={{display:"flex",gap:10}}>
             <input className="inp" style={{flex:1,fontSize:18,padding:"16px 18px"}} placeholder={BI.placeholderAns} value={typedAns} onChange={e=>setTypedAns(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")checkTyped()}} disabled={answered} autoFocus/>
             <button className="bg" style={{padding:"16px 22px",fontSize:16,opacity:answered?.4:1}} onClick={checkTyped} disabled={answered}>✓</button>
           </div>
@@ -914,7 +927,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         </div>}
       </div></div>}
 
-      {sc==="results"&&<div style={W}><div style={P}>
+      {sc==="results"&&<div style={W} className="qadha-below-badge"><div style={P}>
         <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"🤝":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p>        <p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p></div>
         <div className="gc" style={{marginBottom:20,border:`2px solid ${th.accent}`,borderRadius:20,padding:24,position:"relative",overflow:"hidden"}}><div style={{position:"absolute",top:0,left:0,right:0,height:4,background:`linear-gradient(90deg,${th.accent},rgba(${th.accentRgb},.5),${th.accent})`}}/><div style={{textAlign:"center",fontSize:11,color:th.textDim,letterSpacing:4,marginBottom:16}}>{tx.vCard}</div><div style={{display:"flex",justifyContent:"space-around",marginBottom:12}}><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6}}>{tn(1)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[0]>=scores[1]?th.accent:th.textDim2}}>{scores[0]}</div></div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:22,color:th.textDim2,alignSelf:"center"}}>ضد</div><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6,opacity:.85}}>{tn(2)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[1]>=scores[0]?th.accent:th.textDim2}}>{scores[1]}</div></div></div><div style={{textAlign:"center",fontFamily:"'Tajawal',sans-serif",fontSize:14,color:th.textDim2,marginTop:10}}>قدها؟ 👑 {country.flag}</div></div>
         <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,remoteOverlay);setQBank(questions);setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);go("grid")},500)}}>{tx.rematch}</button>

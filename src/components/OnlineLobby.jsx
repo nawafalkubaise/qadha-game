@@ -66,12 +66,15 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
     <div
       style={{
         width: "100%",
-        minHeight: "100svh",
+        minHeight: "min(100dvh, 100svh)",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "max(16px, env(safe-area-inset-top)) 22px max(28px, env(safe-area-inset-bottom))",
+        overflowY: "auto",
+        WebkitOverflowScrolling: "touch",
+        padding:
+          "max(16px, env(safe-area-inset-top)) max(22px, env(safe-area-inset-left, 0px), env(safe-area-inset-right, 0px)) max(28px, env(safe-area-inset-bottom))",
         boxSizing: "border-box",
         background: th.bg,
         color: th.text,
