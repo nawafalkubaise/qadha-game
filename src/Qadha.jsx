@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useRef, useMemo } from "react";
+import { useState, useEffect, useCallback, useRef, useMemo, Fragment } from "react";
 import { KW } from "./data/kwBank.js";
 import { GCC_BANKS, GCC_COUNTRY_IDS } from "./data/gccBanks.js";
 import { FALLBACK_AR, FALLBACK_EN } from "./triviaFallbacks.js";
@@ -102,12 +102,13 @@ const CATS=[
 
 /** صفوف عرض الفئات (أقسام + بطاقات) */
 const CAT_GROUP_ROWS=[
+  {ar:"سيارات",en:"Cars",ids:new Set(["cars"])},
   {ar:"أماكن وسفر",en:"Places & Travel",ids:new Set(["geography","landmarks","maps","flags","ocean","travel","aviation","space"])},
   {ar:"تاريخ ومجتمع",en:"History & Society",ids:new Set(["history","ancient","leaders","politics","law","religion","customs","proverbs","mythology","psychology","social","economics","currencies"])},
   {ar:"علوم وتقنية",en:"Science & Tech",ids:new Set(["science","chemistry","math","physics","biology","medicine","inventions","tech","weather","gems","dinosaurs"])},
   {ar:"فن وثقافة وإعلام",en:"Arts & Media",ids:new Set(["culture","art","theater","music","dance","movies","anime","comics","photography","horror","architecture","literature","media","fashion","boardgames","riddles"])},
   {ar:"طبيعة وحياة",en:"Nature & Life",ids:new Set(["nature","animals","food","health"])},
-  {ar:"رياضة وأسلوب حياة",en:"Sports & Lifestyle",ids:new Set(["sports","soccer","olympics","gaming","cars","business","brands","language"])},
+  {ar:"رياضة وأسلوب حياة",en:"Sports & Lifestyle",ids:new Set(["sports","soccer","olympics","gaming","business","brands","language"])},
 ];
 function groupCatsForUi(catList){
   const rows=[];
@@ -191,9 +192,48 @@ const BI={
   placeholderAns: "اكتب إجابتك هنا...",
   wrongAns: "❌ إجابة خاطئة",
   hardBanner: "الوضع الصعب — اكتب الإجابة",
+  /** مستوى صف الشبكة (حسب النقاط) — وليس زر «وضع الكتابة» */
+  gridTierEasy: "عادي",
+  gridTierMid: "وسط",
+  gridTierHard: "صعب",
+  gridTierHint: "٢٠٠ عادي · ٤٠٠ وسط · ٦٠٠ صعب",
 };
 const catBi = (c) => c.ar || c.n;
 const PTS=[200,200,400,400,600,600];
+/** مؤقت أقصر تدريجياً للصفوف الأصعب */
+const PTS_TIMER=[45,45,40,40,35,35];
+function ptsTierLabelAr(pts){
+  if(pts<=200)return BI.gridTierEasy;
+  if(pts<=400)return BI.gridTierMid;
+  return BI.gridTierHard;
+}
+function rowTierFromRi(ri){return ri<2?"easy":ri<4?"mid":"hard";}
+/** يقسّم بنك الأسئلة إلى ثلاث مستويات (أقصر نصاً ≈ أسهل، أطول ≈ أصعب) */
+function splitQuestionsByDifficulty(pick){
+  const allUnique=[...pick];
+  if(!allUnique.length)return empty;
+  if(allUnique.length<4){
+    const s=shuf(allUnique);
+    return{easy:s,mid:[],hard:[]};
+  }
+  const scored=allUnique.map(q=>({
+    q,
+    s:String(q.q||"").length+(Array.isArray(q.o)?q.o.map(String).join("").length:0)
+  }));
+  scored.sort((a,b)=>a.s-b.s);
+  const n=scored.length;
+  let i1=Math.max(1,Math.ceil(n/3));
+  let i2=Math.max(i1+1,Math.ceil((2*n)/3));
+  let easy=scored.slice(0,i1).map(x=>x.q);
+  let mid=scored.slice(i1,i2).map(x=>x.q);
+  let hard=scored.slice(i2).map(x=>x.q);
+  const minPer=2;
+  while(easy.length<minPer&&mid.length){easy.push(mid.shift())}
+  while(mid.length<minPer&&hard.length){mid.push(hard.shift())}
+  while(mid.length<minPer&&easy.length>minPer){mid.unshift(easy.pop())}
+  while(hard.length<minPer&&mid.length>minPer){hard.push(mid.pop())}
+  return{easy:shuf(easy),mid:shuf(mid),hard:shuf(hard)};
+}
 const AC=["#2563EB","#D97706","#059669","#DB2777"];
 const AB=["rgba(37,99,235,.1)","rgba(217,119,6,.1)","rgba(5,150,105,.1)","rgba(219,39,119,.1)"];
 
@@ -216,9 +256,10 @@ Categories: ${cats.map(c=>c.n).join(", ")}
 For EACH category generate exactly 60 unique questions with 4 options and 1 correct answer.
 ${!isWorldwideCountry(country.id)?`ALL questions must be specifically about ${country.name} — its history, culture, people, landmarks, food, sports, traditions, arts, media, science, geography, politics. Use REAL facts only.`:"Use diverse topics — history, science, pop culture, geography, sports, arts, literature, technology. REAL facts only."}
 Write in ${country.dialect} for tone; still obey LANGUAGE rule above for the actual strings in JSON.
-CRITICAL — HIGH DIFFICULTY:
-- Three incorrect options must be PLAUSIBLE and confusable with the truth (same category of answer: dates close together, similar place names, related events). Never silly or joke wrong answers.
-- One clearly correct option when you know the fact; wrong options must tempt someone who is almost right.
+CRITICAL — EXPERT / HIGH DIFFICULTY (raise the bar):
+- Wrong answers must be HIGHLY plausible: same «type» as the truth (near dates, homologous models, bordering capitals, easily confused names). No joke options, no obviously wrong outliers.
+- At least half the set should need precise knowledge (not only what «everyone» knows from headlines); include specific numbers, years, technical terms, and niche-but-verifiable facts where appropriate.
+- One unambiguous correct option; distractors should trap someone who is «almost» right.
 - No duplicate or near-duplicate questions across the set.
 - Randomize correct answer index (0-3) evenly across the set.
 RESPOND WITH ONLY VALID JSON (no markdown, no backticks):
@@ -248,7 +289,7 @@ async function genBatch(catIds,country){
   const prompt=`Expert fact-checked trivia. ${langRule}
 ${isWorldwideCountry(country.id)?"Worldwide general knowledge":"EXCLUSIVELY about "+country.name}.
 Categories: ${cats.map(c=>c.n).join(", ")}
-Each category: 80 unique HARD questions. Four options: one correct, three wrong but highly plausible (same «type» of answer — dates, names, places — so the player must think hard). No nonsense distractors.
+Each category: 80 unique EXPERT-LEVEL questions. Four options: one correct; three wrong answers must be highly plausible confusers (near-miss facts, same category of detail). At least half should require precise or specialized knowledge. No nonsense distractors.
 Write in ${country.dialect} for tone; obey LANGUAGE rule for JSON strings.
 Randomize correct index 0-3. ONLY JSON: {"categories":{"catId":[{"q":"text","o":["a","b","c","d"],"a":num}]}}
 IDs: ${catIds.join(",")}`;
@@ -324,9 +365,11 @@ function getQuestions(cats,cid,apiResult,remoteOverlay={}){
     const allUnique=Object.values(unique);
     const unseen=allUnique.filter(q=>!seen.has(qHash(q)));
     const pick=unseen.length>=6?unseen:allUnique;
-    const shuffled=shuf(pick).slice(0,120);
-    result[c.id]=shuffled;
-    shuffled.forEach(q=>seen.add(qHash(q)));
+    const tiers=splitQuestionsByDifficulty(pick);
+    result[c.id]=tiers;
+    for(const tier of["easy","mid","hard"]){
+      for(const q of tiers[tier])seen.add(qHash(q));
+    }
     
     // Update cache
     cache[cacheKey]=allUnique.slice(0,900);
@@ -553,9 +596,18 @@ export default function Qadha(){
 
   const openQ=(ci,ri)=>{
     const k=`${ci}-${ri}`;if(used[k])return;sfx.click();setUsed(p=>({...p,[k]:true}));
-    const catId=selCats[ci].id;const qs=qBank[catId]||[];
+    const catId=selCats[ci].id;
+    const tier=rowTierFromRi(ri);
+    const pack=qBank[catId];
+    let qs=[];
+    if(pack&&typeof pack==="object"&&!Array.isArray(pack)&&Array.isArray(pack.easy)){
+      qs=pack[tier]||[];
+      if(!qs.length)qs=[...(pack.easy||[]),...(pack.mid||[]),...(pack.hard||[])];
+    }else if(Array.isArray(pack))qs=pack;
     if(qs.length>0){
-      const us=usedQI[catId]||new Set();
+      const prev=usedQI[catId]||{easy:[],mid:[],hard:[]};
+      const usedArr=Array.isArray(prev[tier])?prev[tier]:[];
+      const us=new Set(usedArr);
       const hFor=i=>qHash(qs[i]);
       const map=matchQHashesRef.current;
       let hset=map.get(catId)||new Set();
@@ -565,10 +617,15 @@ export default function Qadha(){
       if(!candidates.length)candidates=qs.map((_,i)=>i);
       const pi=candidates[Math.floor(Math.random()*candidates.length)];
       hset.add(hFor(pi));map.set(catId,hset);
-      const nu=new Set(us);nu.add(pi);setUsedQI(p=>({...p,[catId]:nu}));
+      const nu=new Set(us);nu.add(pi);
+      setUsedQI(p=>{
+        const base={easy:[],mid:[],hard:[]};
+        const cur={...base,...p[catId]};
+        return{...p,[catId]:{...cur,[tier]:[...nu]}};
+      });
       setCurQ(shufQ(qs[pi]));
     }else{setCurQ({q:"?",o:["A","B","C","D"],a:0})}
-    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(45);setTypedAns("");go("question");
+    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");go("question");
   };
   const checkTyped=()=>{
     if(answered||!curQ||!typedAns.trim())return;
@@ -893,9 +950,19 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
           <div style={{textAlign:"center"}}><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(17px,4.2vw,21px)",color:th.accent,fontWeight:700}}>قدها؟ {country.flag}</div><div style={{fontSize:12,color:th.textDim}}>◀ {turnLabel(active)} ▶</div></div>
           <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===2?th.accent:th.textDim2,fontWeight:700}}>{tn(2)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[1]}</div></div>
         </div>
-        <div style={{display:"grid",gridTemplateColumns:`repeat(${selCats.length},1fr)`,gap:6}}>
+        <p style={{fontSize:11,color:th.textDim2,textAlign:"center",marginBottom:12,fontFamily:"'Tajawal',sans-serif",lineHeight:1.45}}>{BI.gridTierHint}</p>
+        <div style={{display:"grid",gridTemplateColumns:`minmax(46px,auto) repeat(${selCats.length},1fr)`,gap:6,alignItems:"stretch"}}>
+          <div aria-hidden style={{minHeight:1}} />
           {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"8px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"clamp(52px,16vw,68px)"}}><CatIcon cat={cat} sz={56}/></div><div className="grid-cat-lbl" style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div></div>))}
-          {PTS.map((pts,ri)=>selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];return(<button key={k} type="button" onClick={()=>!u&&openQ(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:1}}>{u?"✓":pts}</button>)}))}
+          {PTS.map((pts,ri)=>(
+            <Fragment key={`row-${ri}`}>
+              <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"8px 4px",textAlign:"center",fontFamily:"'Tajawal',sans-serif",borderRadius:12,background:th.gridCell,border:`1px solid ${th.cardBd}`}}>
+                <span style={{fontSize:9,fontWeight:800,color:th.accent,lineHeight:1.2}}>{ptsTierLabelAr(pts)}</span>
+                <span style={{fontSize:11,fontWeight:900,color:th.gridPts,marginTop:4}}>{pts}</span>
+              </div>
+              {selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];return(<button key={k} type="button" onClick={()=>!u&&openQ(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:1}}>{u?"✓":pts}</button>)})}
+            </Fragment>
+          ))}
         </div>
         <div style={{display:"flex",justifyContent:"center",marginTop:12}}><button className="bs sm" onClick={()=>{sfx.click();wipeQuestionCachesAfterGame();scores[0]>scores[1]?sfx.victory():sfx.defeat();go("results")}}>{tx.end}</button></div>
       </div></div>}
@@ -903,7 +970,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       {sc==="question"&&curQ&&<div style={W} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(640px,100%)",padding:"14px min(22px,5.5vw) max(20px,env(safe-area-inset-bottom))"}}>
         {bRef.current&&!answered&&<div style={{textAlign:"center",marginBottom:16}}><div style={{display:"inline-block",background:isNight?"rgba(255,138,92,.14)":"rgba(234,88,12,.1)",border:"1px solid rgba(255,138,92,.3)",borderRadius:24,padding:"12px 26px",fontSize:17,color:"#EA580C",fontWeight:700}}>{stealBanner}</div></div>}
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}><div style={{width:"clamp(92px,24vw,112px)",height:"clamp(92px,24vw,112px)",borderRadius:"50%",background:timer<=10?"linear-gradient(135deg,#EF4444,#DC2626)":timer<=20?"linear-gradient(135deg,#F59E0B,#D97706)":"linear-gradient(135deg,#8E44AD,#A855F7)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(34px,8.5vw,42px)",fontWeight:900,animation:timer<=10?"pl .4s infinite":"none",boxShadow:timer<=10?"0 0 30px rgba(255,59,92,.5)":"0 0 15px rgba(168,85,247,.3)"}}>{timer}</div></div>
-        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px"}}><span style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts}</span><span style={{fontSize:15,color:th.textDim}}>{turnLabel(active)}</span></div>
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px",flexWrap:"wrap",gap:8}}><span style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts} · {ptsTierLabelAr(curPts)}</span><span style={{fontSize:15,color:th.textDim}}>{turnLabel(active)}</span></div>
         <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}><p style={{fontSize:"clamp(19px,4.5vw,24px)",fontWeight:800,lineHeight:1.75,color:th.scoreTxt}}>{curQ.q}</p></div>
         {revealed&&selA!==null&&selA!==curQ.a&&!hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span></div>}
         {revealed&&hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span><div style={{fontSize:18,color:"#4ADE80",fontWeight:700,marginTop:8}}>{curQ.o[curQ.a]}</div></div>}
