@@ -89,7 +89,7 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
         }}
       >
         <h2 style={{ fontFamily: "'Tajawal',sans-serif", fontSize: 22, color: th.accent, marginBottom: 8, textAlign: "center" }}>
-          اللعب الجماعي · Multiplayer
+          اللعب الجماعي عبر الشبكة
         </h2>
         <p style={{ fontSize: 13, color: th.textDim, textAlign: "center", lineHeight: 1.55, marginBottom: 18 }}>
           شارك كود الغرفة مع من تلعب معه، ثم اضغط متابعة لاختيار الدولة والثمان فئات.
@@ -134,7 +134,7 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
               color: th.btnText,
               fontWeight: 800,
               cursor: "pointer",
-              fontFamily: "'Cinzel',serif",
+              fontFamily: "'Tajawal',sans-serif",
             }}
           >
             إنشاء غرفة
@@ -191,7 +191,7 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
                 color: th.btnText,
                 fontWeight: 800,
                 cursor: "pointer",
-                fontFamily: "'Cinzel',serif",
+                fontFamily: "'Tajawal',sans-serif",
               }}
             >
               دخول
@@ -273,7 +273,7 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
                   color: th.btnText,
                   fontWeight: 800,
                   cursor: "pointer",
-                  fontFamily: "'Cinzel',serif",
+                  fontFamily: "'Tajawal',sans-serif",
                   fontSize: 15,
                 }}
               >
