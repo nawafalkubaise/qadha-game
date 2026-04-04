@@ -24,6 +24,7 @@
     "lint": "eslint .",
     "verify:questions": "node scripts/verify-question-counts.mjs",
     "verify:questions:deep": "node scripts/verify-questions-deep.mjs",
+    "tag:kwbank": "node scripts/tag-kwbank-core.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

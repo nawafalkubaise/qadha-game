@@ -208,31 +208,55 @@ function ptsTierLabelAr(pts){
   return BI.gridTierHard;
 }
 function rowTierFromRi(ri){return ri<2?"easy":ri<4?"mid":"hard";}
-/** يقسّم بنك الأسئلة إلى ثلاث مستويات (أقصر نصاً ≈ أسهل، أطول ≈ أصعب) */
-function splitQuestionsByDifficulty(pick){
-  const allUnique=[...pick];
-  if(!allUnique.length)return empty;
-  if(allUnique.length<4){
-    const s=shuf(allUnique);
-    return{easy:s,mid:[],hard:[]};
-  }
+/** مستوى صريح في البيانات: d = 1 عادي · 2 وسط · 3 صعب (أو easy/mid/hard). بلا d يُوزَّع بالطول ضمن نفس الفئة */
+function questionTierIndex(q){
+  const d=q?.d ?? q?.difficulty;
+  if(d===1||d==="1"||d==="easy")return 1;
+  if(d===2||d==="2"||d==="mid"||d==="medium")return 2;
+  if(d===3||d==="3"||d==="hard")return 3;
+  return 0;
+}
+function splitByLengthIntoTiers(allUnique){
+  if(!allUnique.length)return{easy:[],mid:[],hard:[]};
+  if(allUnique.length<4)return{easy:shuf([...allUnique]),mid:[],hard:[]};
   const scored=allUnique.map(q=>({
     q,
     s:String(q.q||"").length+(Array.isArray(q.o)?q.o.map(String).join("").length:0)
   }));
   scored.sort((a,b)=>a.s-b.s);
   const n=scored.length;
-  let i1=Math.max(1,Math.ceil(n/3));
-  let i2=Math.max(i1+1,Math.ceil((2*n)/3));
-  let easy=scored.slice(0,i1).map(x=>x.q);
-  let mid=scored.slice(i1,i2).map(x=>x.q);
-  let hard=scored.slice(i2).map(x=>x.q);
+  const i1=Math.max(1,Math.ceil(n/3));
+  const i2=Math.max(i1+1,Math.ceil((2*n)/3));
+  return{
+    easy:scored.slice(0,i1).map(x=>x.q),
+    mid:scored.slice(i1,i2).map(x=>x.q),
+    hard:scored.slice(i2).map(x=>x.q)
+  };
+}
+function rebalanceTierArrays(easy,mid,hard){
   const minPer=2;
   while(easy.length<minPer&&mid.length){easy.push(mid.shift())}
   while(mid.length<minPer&&hard.length){mid.push(hard.shift())}
   while(mid.length<minPer&&easy.length>minPer){mid.unshift(easy.pop())}
   while(hard.length<minPer&&mid.length>minPer){hard.push(mid.pop())}
   return{easy:shuf(easy),mid:shuf(mid),hard:shuf(hard)};
+}
+function splitQuestionsByDifficulty(pick){
+  const allUnique=[...pick];
+  if(!allUnique.length)return{easy:[],mid:[],hard:[]};
+  const taggedEasy=[];const taggedMid=[];const taggedHard=[];const untagged=[];
+  for(const q of allUnique){
+    const t=questionTierIndex(q);
+    if(t===1)taggedEasy.push(q);
+    else if(t===2)taggedMid.push(q);
+    else if(t===3)taggedHard.push(q);
+    else untagged.push(q);
+  }
+  const len=splitByLengthIntoTiers(untagged);
+  const easy=[...taggedEasy,...len.easy];
+  const mid=[...taggedMid,...len.mid];
+  const hard=[...taggedHard,...len.hard];
+  return rebalanceTierArrays(easy,mid,hard);
 }
 const AC=["#2563EB","#D97706","#059669","#DB2777"];
 const AB=["rgba(37,99,235,.1)","rgba(217,119,6,.1)","rgba(5,150,105,.1)","rgba(219,39,119,.1)"];
@@ -262,8 +286,9 @@ CRITICAL — EXPERT / HIGH DIFFICULTY (raise the bar):
 - One unambiguous correct option; distractors should trap someone who is «almost» right.
 - No duplicate or near-duplicate questions across the set.
 - Randomize correct answer index (0-3) evenly across the set.
+Each question object MAY include "d": 1 (easier / 200-pt row), 2 (medium / 400), or 3 (hardest / 600). Assign d so easier facts get 1 and specialist facts get 3.
 RESPOND WITH ONLY VALID JSON (no markdown, no backticks):
-{"categories":{"catId":[{"q":"question","o":["opt1","opt2","opt3","opt4"],"a":correctIndex}]}}
+{"categories":{"catId":[{"q":"question","o":["opt1","opt2","opt3","opt4"],"a":correctIndex,"d":1}]}}
 Category IDs: ${cats.map(c=>c.id).join(",")}`;
   try{
     if(!anthropicMessagesUrl||anthropicRemoteDisabled)return null;
@@ -290,8 +315,9 @@ async function genBatch(catIds,country){
 ${isWorldwideCountry(country.id)?"Worldwide general knowledge":"EXCLUSIVELY about "+country.name}.
 Categories: ${cats.map(c=>c.n).join(", ")}
 Each category: 80 unique EXPERT-LEVEL questions. Four options: one correct; three wrong answers must be highly plausible confusers (near-miss facts, same category of detail). At least half should require precise or specialized knowledge. No nonsense distractors.
+Include "d" per question: 1 = easier (200-pt row), 2 = medium (400), 3 = hardest (600). Balance roughly thirds across d values.
 Write in ${country.dialect} for tone; obey LANGUAGE rule for JSON strings.
-Randomize correct index 0-3. ONLY JSON: {"categories":{"catId":[{"q":"text","o":["a","b","c","d"],"a":num}]}}
+Randomize correct index 0-3. ONLY JSON: {"categories":{"catId":[{"q":"text","o":["a","b","c","d"],"a":num,"d":1}]}}
 IDs: ${catIds.join(",")}`;
   try{
     if(!anthropicMessagesUrl||anthropicRemoteDisabled)return null;

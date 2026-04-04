@@ -4,7 +4,11 @@
  */
 import core from "./kwBankCore.json" with { type: "json" };
 
-const q = (question, o, a) => ({ q: question, o, a });
+/** d: 1 عادي (200) · 2 وسط (400) · 3 صعب (600) — اختياري */
+const q = (question, o, a, d) => {
+  const base = { q: question, o, a };
+  return d === 1 || d === 2 || d === 3 ? { ...base, d } : base;
+};
 
 const EXTRA = {
   ancient: [

@@ -94,6 +94,9 @@ function validateCategory(catId, questions, { bankName, isAr }) {
     if (!Number.isInteger(a) || a < 0 || a > 3) {
       errors.push(`#${idx}: فهرس الإجابة a يجب ٠–٣ (القيمة: ${JSON.stringify(a)})`);
     }
+    if (item.d !== undefined && item.d !== null && ![1, 2, 3].includes(item.d)) {
+      errors.push(`#${idx}: حقل d (مستوى الصعوبة) يجب 1 أو 2 أو 3 إن وُجد`);
+    }
     if (typeof q === "string" && q.trim() && Array.isArray(o) && o.length === 4 && Number.isInteger(a) && a >= 0 && a <= 3) {
       const correct = o[a];
       if (typeof correct !== "string" || !correct.trim()) {

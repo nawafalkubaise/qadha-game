@@ -3,7 +3,11 @@
  * (الكويت لها بنك KW في Qadha.jsx)
  * ٨ أسئلة لكل فئة من الـ٦٠.
  */
-const q = (question, options, a) => ({ q: question, o: options, a });
+/** d: 1 عادي · 2 وسط · 3 صعب — اختياري */
+const q = (question, options, a, d) => {
+  const base = { q: question, o: options, a };
+  return d === 1 || d === 2 || d === 3 ? { ...base, d } : base;
+};
 
 export const GCC_COUNTRY_IDS = ["sa", "ae", "qa", "bh", "om"];
 
