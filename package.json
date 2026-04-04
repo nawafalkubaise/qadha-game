@@ -25,6 +25,8 @@
     "verify:questions": "node scripts/verify-question-counts.mjs",
     "verify:questions:deep": "node scripts/verify-questions-deep.mjs",
     "tag:kwbank": "node scripts/tag-kwbank-core.mjs",
+    "open:chrome:portrait": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/open-chrome-portrait.ps1",
+    "open:chrome:portrait:tabs": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/open-chrome-portrait.ps1 -Tabs",
     "preview": "vite preview"
   },
   "dependencies": {
