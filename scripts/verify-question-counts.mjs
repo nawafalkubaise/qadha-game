@@ -6,6 +6,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { GCC_BANKS, GCC_COUNTRY_IDS } from "../src/data/gccBanks.js";
+import { KW } from "../src/data/kwBank.js";
 import { FALLBACK_AR } from "../src/triviaFallbacks.js";
 import { FALLBACK_EN } from "../src/triviaFallbacksEn.js";
 
@@ -21,15 +22,6 @@ function extractBetween(startMarker, endMarker) {
   const b = s.indexOf(endMarker, a);
   if (a < 0 || b < 0) throw new Error(`Missing: ${startMarker}`);
   return s.slice(a + startMarker.length, b).trim();
-}
-
-const kwLiteral = extractBetween("const KW=", "/* ═══════ 🌍 GENERAL KNOWLEDGE QUESTIONS ═══════ */");
-let KW;
-try {
-  KW = new Function(`return ${kwLiteral}`)();
-} catch (e) {
-  console.error("فشل تحميل كائن KW من Qadha.jsx:", e.message);
-  process.exit(1);
 }
 
 const genArLiteral = extractBetween("const GEN_AR=", "const GEN=");

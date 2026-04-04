@@ -113,7 +113,7 @@ function groupCatsForUi(catList){
   const rows=[];
   CAT_GROUP_ROWS.forEach(g=>{
     const cats=catList.filter(c=>g.ids.has(c.id));
-    if(cats.length)rows.push({label:`${g.ar} · ${g.en}`,cats});
+    if(cats.length)rows.push({label:g.ar,cats});
   });
   const used=new Set();
   CAT_GROUP_ROWS.forEach(g=>g.ids.forEach(id=>used.add(id)));
@@ -765,7 +765,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       {sc==="country"&&<div style={WScroll}><div style={{...PScroll,width:"100%",maxWidth:"min(820px,100%)"}}>
         <h2 className="tl" style={{marginTop:6}}>{tx.country}</h2>
         <input className="inp" placeholder={tx.search} value={countryQ} onChange={e=>setCountryQ(e.target.value)} style={{margin:"16px 0",padding:"18px 20px",fontSize:18,borderRadius:18}}/>
-        <div style={{display:"grid",gridTemplateColumns:"1fr",gap:14,flex:1,overflowY:"auto",maxHeight:"calc(100dvh - 240px)",paddingBottom:10}}>{fCountries.map(c=>(<button key={c.id} className="gc hov" style={{display:"flex",alignItems:"center",gap:20,width:"100%",textAlign:rtl?"right":"left",border:country.id===c.id?`3px solid ${th.accent}`:`2px solid ${th.cardBd}`,borderRadius:22,minHeight:112,padding:"20px 22px"}} onClick={()=>{sfx.click();setCountry(c);setSelCats([]);go("cats")}}><span style={{fontSize:"clamp(44px,12vw,58px)",lineHeight:1}}>{c.flag}</span><div style={{flex:1,minWidth:0}}><div style={{fontSize:19,color:th.accent,fontWeight:800}}>{c.name}</div><div style={{fontSize:16,color:th.textDim,marginTop:4}}>{c.native}</div></div><span style={{fontSize:11,color:th.textDim2,background:th.gridCell,borderRadius:12,padding:"8px 12px",fontWeight:700}}>{c.native} · {c.name}</span></button>))}</div>
+        <div style={{display:"grid",gridTemplateColumns:"1fr",gap:14,flex:1,overflowY:"auto",maxHeight:"calc(100dvh - 240px)",paddingBottom:10}}>{fCountries.map(c=>(<button key={c.id} className="gc hov" style={{display:"flex",alignItems:"center",gap:20,width:"100%",textAlign:rtl?"right":"left",border:country.id===c.id?`3px solid ${th.accent}`:`2px solid ${th.cardBd}`,borderRadius:22,minHeight:112,padding:"20px 22px"}} onClick={()=>{sfx.click();setCountry(c);setSelCats([]);go("cats")}}><span style={{fontSize:"clamp(44px,12vw,58px)",lineHeight:1}}>{c.flag}</span><div style={{flex:1,minWidth:0}}><div style={{fontSize:19,color:th.accent,fontWeight:800,lineHeight:1.35}}>{c.native}</div></div></button>))}</div>
         <button className="bs" style={{width:"100%",marginTop:16,padding:16,fontSize:16}} onClick={()=>go("cats")}>{tx.back}</button>
       </div></div>}
 
@@ -780,7 +780,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         {selCats.length!==8&&<p style={{textAlign:"center",fontSize:14,color:th.accent,marginBottom:12,fontFamily:"'Tajawal',sans-serif"}}>ارجع واختر ٨ فئات للمتابعة</p>}
         <p className="lb" style={{marginTop:12,marginBottom:8}}>{tx.mode}</p>
         <div style={{display:"grid",gap:12,marginBottom:18}}>{[["1v1","⚡",tx.duel],["team","👥",tx.teamVs]].map(([m,ic,nm])=>(<button key={m} type="button" className="gc hov" style={{display:"flex",gap:16,alignItems:"center",width:"100%",textAlign:rtl?"right":"left",padding:"18px 20px",borderRadius:20,minHeight:88,border:mode===m?`2px solid ${th.accent}`:undefined}} onClick={()=>{sfx.click();setMode(m)}}><div style={{fontSize:36,width:56,height:56,background:`rgba(${th.accentRgb},.14)`,borderRadius:16,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>{ic}</div><div style={{fontFamily:"'Tajawal',sans-serif",color:th.accent,fontSize:17,fontWeight:800}}>{nm}</div></button>))}</div>
-        <div className="gc" style={{display:"flex",alignItems:"center",gap:10,margin:"0 0 16px",padding:"14px 18px"}}><span style={{fontSize:26}}>{country.flag}</span><span style={{fontSize:15,color:th.accent,fontWeight:600}}>{country.native} · {country.name}</span></div>
+        <div className="gc" style={{display:"flex",alignItems:"center",gap:10,margin:"0 0 16px",padding:"14px 18px"}}><span style={{fontSize:26}}>{country.flag}</span><span style={{fontSize:15,color:th.accent,fontWeight:600}}>{country.native}</span></div>
         <div style={{marginBottom:14}}><label className="lb">{tx.matchN}</label><input className="inp" value={matchName} onChange={e=>setMatchName(e.target.value)}/></div>
         {mode==="1v1"?<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.player} 1</label><input className="inp" value={p1} onChange={e=>setP1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.player} 2</label><input className="inp" value={p2} onChange={e=>setP2(e.target.value)}/></div></div>:<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.team} 1</label><input className="inp" value={t1} onChange={e=>setT1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.team} 2</label><input className="inp" value={t2} onChange={e=>setT2(e.target.value)}/></div></div>}
         <div style={{marginBottom:18}}><label className="lb">{BI.difficulty}</label><div style={{display:"flex",gap:6,marginTop:6}}><button className={!hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(false)}>{BI.normal}</button><button className={hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(true)}>{BI.hard}</button></div></div>
@@ -828,7 +828,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         )}
         <div className="gc" style={{marginBottom:20,padding:"16px 18px",borderRadius:20}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10,gap:10}}>
-            <span style={{fontSize:15,color:th.accent,fontWeight:700}}>{country.native} · {country.name}</span>
+            <span style={{fontSize:15,color:th.accent,fontWeight:700}}>{country.native}</span>
             <button type="button" className="bs sm" disabled={isOnlineGuest} style={{opacity:isOnlineGuest?0.45:1}} onClick={()=>{if(isOnlineGuest)return;sfx.click();go("country")}}>{tx.change}</button>
           </div>
           <input className="inp" placeholder={tx.search} value={countryQ} onChange={e=>setCountryQ(e.target.value)} style={{marginBottom:12,padding:"14px 16px"}}/>
@@ -853,7 +853,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
                     const sel=selSet.has(cat.id);
                     return(
                       <div key={cat.id} role="button" tabIndex={(selCats.length===8&&!sel)||(isOnlineGuest&&!sel)?-1:0} className={`catsCard${sel?" catsCardSel":""}${(selCats.length===8&&!sel)||(isOnlineGuest&&!sel)?" catsCardLocked":""}`} onPointerDown={()=>togCat(cat)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();togCat(cat)}}}>
-                        <button type="button" className="catsCardInfo" title={`${cat.ar} — ${cat.n}`} aria-label="معلومات" onClick={e=>{e.stopPropagation();sfx.click()}}>i</button>
+                        <button type="button" className="catsCardInfo" title={cat.ar} aria-label="معلومات" onClick={e=>{e.stopPropagation();sfx.click()}}>i</button>
                         <div className="catsCardBody">
                           <span className="catsCardEmoji" aria-hidden>{cat.icon}</span>
                         </div>

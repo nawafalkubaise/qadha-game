@@ -2,7 +2,7 @@
  * أسئلة الكويت — دمج النواة (kwBankCore.json) + ٢٥ فئة ناقصة لإكمال ٦٠ فئة.
  * الخيارات الخاطئة من نفس السياق الكويتي/الخليجي حيث ينطبق.
  */
-import core from "./kwBankCore.json";
+import core from "./kwBankCore.json" with { type: "json" };
 
 const q = (question, o, a) => ({ q: question, o, a });
 
