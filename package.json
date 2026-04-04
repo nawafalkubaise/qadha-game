@@ -23,6 +23,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "verify:questions": "node scripts/verify-question-counts.mjs",
+    "verify:questions:deep": "node scripts/verify-questions-deep.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
