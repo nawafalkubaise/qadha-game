@@ -130,6 +130,16 @@ export const FALLBACK_EN = {
     { q: "Self-driving cars rely on?", o: ["Stone", "Sensors and AI", "Wood", "Wind"], a: 1 },
     { q: "Ferrari logo animal?", o: ["Bull", "Prancing horse", "Lion", "Eagle"], a: 1 },
   ],
+  tribes: [
+    { q: "In Arabian context, a tribe is usually a?", o: ["Historical kinship-based social grouping", "Modern stock exchange", "Type of currency", "Administrative district only"], a: 0 },
+    { q: "The term fakhadh commonly means?", o: ["Sub-lineage branch within a larger tribal structure", "A capital city", "A legal code", "A banking method"], a: 0 },
+    { q: "A shared value in Kuwaiti/Saudi tribal heritage is?", o: ["Hospitality and guest protection", "No guest reception", "Climate zoning", "Import tariffs"], a: 0 },
+    { q: "Historic tribal migration in central Arabia was often driven by?", o: ["Water, pasture, and trade routes", "Polar ice", "Subway expansion", "Atlantic shipping lanes"], a: 0 },
+    { q: "A Kuwaiti diwaniya traditionally serves as?", o: ["Social guest hall and discussion forum", "Industrial warehouse", "Rail terminal", "Stadium"], a: 0 },
+    { q: "Nakhwa in tribal usage often implies?", o: ["Solidarity, honor, and readiness to support", "A tax bracket", "A coin type", "A visa category"], a: 0 },
+    { q: "For accurate tribal history work, best practice is?", o: ["Use multiple corroborated sources", "Use one anonymous post", "Rely on rumor only", "Avoid written material"], a: 0 },
+    { q: "In tribal studies, lineage and custom are best described as?", o: ["Lineage = descent; custom = social practice", "Exactly the same concept", "Both weather terms", "Both currency terms"], a: 0 },
+  ],
   health: [
     { q: "Daily fluid intake guideline ~?", o: ["0.5 L", "~2 L including drinks", "5 L", "10 L"], a: 1 },
     { q: "Adult sleep typically?", o: ["3-4 h", "7-9 h", "12 h", "1 h"], a: 1 },
@@ -429,6 +439,16 @@ export const FALLBACK_EN = {
     { q: "DC vs Marvel?", o: ["Same company", "Two publishers", "Sports", "Food"], a: 1 },
     { q: "Asterix origin?", o: ["USA", "France/Belgium", "Japan", "Egypt"], a: 1 },
     { q: "Calvin and Hobbes format?", o: ["Anime", "Comic strip", "Novel", "Film"], a: 1 },
+  ],
+  kuwait_malls: [
+    { q: "A regional shopping center often combines retail with?", o: ["Parking, A/C, dining, cinema", "Desert farming only", "Shipbuilding", "Air traffic control"], a: 0 },
+    { q: "A traditional souk differs from a modern mall mainly by?", o: ["Open lanes and smaller shops", "Single sealed skyscraper only", "No vendors", "Underwater tunnels only"], a: 0 },
+    { q: "Food courts in malls are?", o: ["Cluster of restaurants with shared seating", "Weapons depot", "Livestock pens", "Olympic pools only"], a: 0 },
+    { q: "Retail tenants usually pay the landlord?", o: ["Rent or revenue share", "Personal visitor taxes", "Nothing ever", "Only in barter fish"], a: 0 },
+    { q: "Interior mall maps help shoppers?", o: ["Find units and exits", "Predict earthquakes", "Mint currency", "Repair aircraft"], a: 0 },
+    { q: "Mixed retail-entertainment venues target?", o: ["Families and day trips", "Oil refineries", "Container ports", "Freight only"], a: 0 },
+    { q: "Very large malls may include?", o: ["Cinemas and play zones", "Only grain silos", "Cattle auctions only", "Nuclear plants"], a: 0 },
+    { q: "Escalators in malls mainly move people?", o: ["Between floors", "Across oceans", "Through customs", "Into vaults"], a: 0 },
   ],
   boardgames: [
     { q: "Chess board squares?", o: ["64", "81", "100", "49"], a: 0 },

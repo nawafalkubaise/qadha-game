@@ -9,7 +9,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { GCC_BANKS, GCC_COUNTRY_IDS } from "../src/data/gccBanks.js";
-import { KW } from "../src/data/kwBank.js";
+import { KW_MERGED as KW } from "../src/data/kwBank.js";
 import { FALLBACK_AR } from "../src/triviaFallbacks.js";
 import { FALLBACK_EN } from "../src/triviaFallbacksEn.js";
 

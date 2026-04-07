@@ -3,6 +3,8 @@
  * الخيارات الخاطئة من نفس السياق الكويتي/الخليجي حيث ينطبق.
  */
 import core from "./kwBankCore.json" with { type: "json" };
+import imported from "./kwImportedBank.json" with { type: "json" };
+import kwMallPics from "./kwMallPics.json" with { type: "json" };
 
 /** d: 1 عادي (200) · 2 وسط (400) · 3 صعب (600) — اختياري */
 const q = (question, o, a, d) => {
@@ -261,6 +263,93 @@ const EXTRA = {
     q("النخيل يتحمل غالباً؟", ["حراً وملوحة تربة نسبية", "صقيعاً دائماً", "غياب ضوء كامل", "غمراً مائياً دائماً"], 0),
     q("الغزلان العربية صحراوية توصف بأنّها؟", ["ثدييات عاشبة مهددة في مواطنها", "أسماك عميقة", "طيور بطريق", "برمائيات استوائية"], 0),
   ],
+  kuwait_malls: [...kwMallPics],
+  tribes: [
+    q("«الديوانية» في الكويت تاريخياً تقوم بدور؟", ["مجلس استقبال وتشاور اجتماعي", "مصنع سفن", "محطة قطار", "مخزن نفط"], 0, 1),
+    q("من الألفاظ المتداولة في التقسيم القبلي: «الفخذ» يقصد به؟", ["فرع من فروع القبيلة", "اسم محافظة", "عملة معدنية", "لقب وظيفي حكومي"], 0, 2),
+    q("الهجرات القبلية إلى الكويت قديماً ارتبطت غالباً بـ؟", ["المراعي والمياه والتجارة البحرية/البرية", "الثلوج القطبية", "السكك الأوروبية", "غابات الأمازون"], 0, 2),
+    q("من عادات القبائل في الكويت والسعودية في المناسبات؟", ["إكرام الضيف وإحياء المجلس", "منع التجمع نهائياً", "إغلاق البيوت عن الضيوف", "إلغاء صلة الرحم"], 0, 1),
+    q("مصطلح «النخوة» في السياق القبلي يشير غالباً إلى؟", ["النجدة والاعتزاز بالانتماء", "نوع سلاح", "وحدة وزن", "رتبة عسكرية حديثة"], 0, 2),
+    q("في توثيق تاريخ القبائل، الأدق مهنياً هو؟", ["المقارنة بين مصادر مكتوبة وروايات موثقة", "الاعتماد على رواية فردية فقط", "وسائل التواصل فقط", "تجاهل الوثائق"], 0, 3),
+    q("عند دراسة أنساب القبائل، المقصود بـ«التحالف» غالباً؟", ["ارتباط اجتماعي/سياسي بين جماعات قبلية", "إلغاء الهوية بالكامل", "عملة متداولة", "مهنة حرفية"], 0, 3),
+    q("السلوك الأشهر في مجالس القبائل بالخليج تجاه الضيف؟", ["الترحيب وتقديم القهوة والضيافة", "فرض رسوم دخول", "منع الحديث", "إغلاق المجلس مباشرة"], 0, 1),
+  ],
 };
 
 export const KW = { ...core, ...EXTRA };
+
+/**
+ * دمج إضافات المستخدم من ملف خارجي مع إزالة التكرار
+ * (نفس نص السؤال بعد التطبيع) مع الحفاظ على أسئلة البنك الأساسية أولاً.
+ */
+const normQ = (s) =>
+  String(s || "")
+    .replace(/\u0640/g, "")
+    .replace(/[^\u0600-\u06FF0-9A-Za-z\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+const normA = (s) => String(s || "").trim().replace(/\s+/g, " ").toLowerCase();
+const isArabic = (s) => /[\u0600-\u06FF]/.test(String(s || ""));
+const kind = (s) => {
+  const t = String(s || "");
+  if (/[0-9\u0660-\u0669]{3,4}/.test(t)) return "year";
+  if (/[0-9\u0660-\u0669]/.test(t)) return "number";
+  if (/^(نعم|لا|yes|no)$/i.test(t.trim())) return "yn";
+  if (t.split(/\s+/).filter(Boolean).length <= 2) return "short";
+  return "phrase";
+};
+function overlapTokens(a, b) {
+  const aa = new Set(normA(a).split(" ").filter((x) => x.length >= 2));
+  const bb = normA(b).split(" ").filter((x) => x.length >= 2);
+  let c = 0;
+  bb.forEach((t) => {
+    if (aa.has(t)) c++;
+  });
+  return c;
+}
+function distractorScore(correct, wrong) {
+  let s = 0;
+  if (kind(correct) === kind(wrong)) s += 1;
+  if (isArabic(correct) === isArabic(wrong)) s += 1;
+  if (Math.abs(String(correct).length - String(wrong).length) <= 8) s += 1;
+  if (overlapTokens(correct, wrong) > 0) s += 1;
+  return s;
+}
+function hasAcceptableDistractors(qItem) {
+  const correct = qItem.o[qItem.a];
+  const wrong = qItem.o.filter((_, i) => i !== qItem.a);
+  const scores = wrong.map((w) => distractorScore(correct, w));
+  // نُبقي السؤال إذا على الأقل خياران بدرجة مقبولة، ولا يوجد كل الخيارات سيئة جداً
+  const good = scores.filter((x) => x >= 2).length;
+  const veryBad = scores.filter((x) => x <= 1).length;
+  return good >= 2 && veryBad <= 2;
+}
+
+function mergeBank(base, extra) {
+  const out = {};
+  const allCats = new Set([...Object.keys(base || {}), ...Object.keys(extra || {})]);
+  for (const cat of allCats) {
+    const srcA = Array.isArray(base?.[cat]) ? base[cat] : [];
+    const srcB = Array.isArray(extra?.[cat]) ? extra[cat] : [];
+    const seen = new Set();
+    const arr = [];
+    for (const qItem of [...srcA, ...srcB]) {
+      if (!qItem || typeof qItem !== "object") continue;
+      if (typeof qItem.q !== "string" || !qItem.q.trim()) continue;
+      if (!Array.isArray(qItem.o) || qItem.o.length !== 4) continue;
+      if (!Number.isInteger(qItem.a) || qItem.a < 0 || qItem.a > 3) continue;
+      // تاريخ الكويت المستورد نصياً يحتاج تحريراً يدوياً أدق؛ نتجنبه حتى لا يضعف جودة المشتتات.
+      if (cat === "history" && qItem.src === "user-text") continue;
+      if (qItem.src === "user-text" && !hasAcceptableDistractors(qItem)) continue;
+      const key = qItem.id ? "id:" + String(qItem.id) : normQ(qItem.q) + "|" + String(qItem.img || "").slice(-52);
+      if (!(qItem.id || normQ(qItem.q)) || seen.has(key)) continue;
+      seen.add(key);
+      arr.push(qItem);
+    }
+    out[cat] = arr;
+  }
+  return out;
+}
+
+export const KW_MERGED = mergeBank(KW, imported);

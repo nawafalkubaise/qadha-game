@@ -254,6 +254,11 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
                 </li>
               ))}
             </ul>
+            {Boolean(hostToken) && liveRoom.players.length < 2 && (
+              <p style={{ textAlign: "center", fontSize: 12, color: th.textDim, marginBottom: 8 }}>
+                انتظر دخول لاعب واحد على الأقل قبل المتابعة.
+              </p>
+            )}
             {typeof onStartGame === "function" && (
               <button
                 type="button"
@@ -266,6 +271,7 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
                     voiceToken: hostToken || joinCreds?.playerToken || null,
                   });
                 }}
+                disabled={Boolean(hostToken) && liveRoom.players.length < 2}
                 style={{
                   width: "100%",
                   marginTop: 14,
@@ -276,6 +282,7 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
                   color: th.btnText,
                   fontWeight: 800,
                   cursor: "pointer",
+                  opacity: Boolean(hostToken) && liveRoom.players.length < 2 ? 0.5 : 1,
                   fontFamily: "'Tajawal',sans-serif",
                   fontSize: 15,
                 }}

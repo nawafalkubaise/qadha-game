@@ -24,7 +24,12 @@
     "lint": "eslint .",
     "verify:questions": "node scripts/verify-question-counts.mjs",
     "verify:questions:deep": "node scripts/verify-questions-deep.mjs",
+    "audit:distractors": "node scripts/audit-distractors-quality.mjs",
     "tag:kwbank": "node scripts/tag-kwbank-core.mjs",
+    "import:kuwait": "node scripts/import-kuwait-text-questions.mjs",
+    "refine:kuwait:distractors": "node scripts/refine-imported-distractors.mjs",
+    "verify:dialect:equiv": "node scripts/dialect-equivalence-smoke.mjs",
+    "fetch:malls": "node scripts/fetch-mall-assets.mjs",
     "open:chrome:portrait": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/open-chrome-portrait.ps1",
     "open:chrome:portrait:tabs": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/open-chrome-portrait.ps1 -Tabs",
     "preview": "vite preview"
@@ -46,3 +51,4 @@
     "vite": "^8.0.1"
   }
 }
+

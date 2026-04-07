@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef, useMemo, Fragment } from "react";
-import { KW } from "./data/kwBank.js";
+import { KW_MERGED as KW } from "./data/kwBank.js";
 import { GCC_BANKS, GCC_COUNTRY_IDS } from "./data/gccBanks.js";
 import { FALLBACK_AR, FALLBACK_EN } from "./triviaFallbacks.js";
 import {
@@ -60,6 +60,7 @@ const CATS=[
 {id:"business",n:"Business",ar:"الأعمال",icon:"💼",c:"#22D3EE"},
 {id:"gaming",n:"Games",ar:"ألعاب",icon:"🕹️",c:"#4ADE80"},
 {id:"cars",n:"Cars",ar:"السيارات",icon:"🚙",c:"#F43F5E"},
+{id:"tribes",n:"Tribes",ar:"القبائل",icon:"🏕️",c:"#C084FC"},
 {id:"health",n:"Health",ar:"الصحة",icon:"❤️‍🩹",c:"#22C55E"},
 {id:"travel",n:"Travel",ar:"السفر",icon:"🧳",c:"#2DD4BF"},
 {id:"brands",n:"Brands",ar:"علامات",icon:"🏷️",c:"#F43F5E"},
@@ -98,13 +99,14 @@ const CATS=[
 {id:"boardgames",n:"Board Games",ar:"ألعاب طاولة",icon:"🎲",c:"#FBBF24"},
 {id:"physics",n:"Physics",ar:"الفيزياء",icon:"⚛️",c:"#60A5FA"},
 {id:"biology",n:"Biology",ar:"الأحياء",icon:"🧬",c:"#4ADE80"},
+{id:"kuwait_malls",n:"Kuwait Malls",ar:"مولات الكويت",icon:"🏬",c:"#0D9488"},
 ];
 
 /** صفوف عرض الفئات (أقسام + بطاقات) */
 const CAT_GROUP_ROWS=[
   {ar:"سيارات",en:"Cars",ids:new Set(["cars"])},
-  {ar:"أماكن وسفر",en:"Places & Travel",ids:new Set(["geography","landmarks","maps","flags","ocean","travel","aviation","space"])},
-  {ar:"تاريخ ومجتمع",en:"History & Society",ids:new Set(["history","ancient","leaders","politics","law","religion","customs","proverbs","mythology","psychology","social","economics","currencies"])},
+  {ar:"أماكن وسفر",en:"Places & Travel",ids:new Set(["geography","landmarks","maps","flags","ocean","travel","aviation","space","kuwait_malls"])},
+  {ar:"تاريخ ومجتمع",en:"History & Society",ids:new Set(["history","ancient","leaders","politics","law","religion","customs","proverbs","mythology","psychology","social","economics","currencies","tribes"])},
   {ar:"علوم وتقنية",en:"Science & Tech",ids:new Set(["science","chemistry","math","physics","biology","medicine","inventions","tech","weather","gems","dinosaurs"])},
   {ar:"فن وثقافة وإعلام",en:"Arts & Media",ids:new Set(["culture","art","theater","music","dance","movies","anime","comics","photography","horror","architecture","literature","media","fashion","boardgames","riddles"])},
   {ar:"طبيعة وحياة",en:"Nature & Life",ids:new Set(["nature","animals","food","health"])},
@@ -163,15 +165,41 @@ const shuf=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(M
 const shufQ=q=>{const c=q.o[q.a];const s=shuf(q.o);return{...q,o:s,a:s.indexOf(c)}};
 
 const COUNTRIES=[
-{id:"general_ar",name:"Global AR",native:"عالمي · أسئلة عربية",flag:"🌍",lang:"ar",dir:"rtl",dialect:"Modern Standard Arabic"},
-{id:"general_en",name:"Global EN",native:"عالمي · أسئلة بالإنجليزية",flag:"🌐",lang:"en",dir:"ltr",dialect:"English"},
-{id:"kw",name:"Kuwait",native:"الكويت",flag:"🇰🇼",lang:"ar",dir:"rtl",dialect:"Kuwaiti Arabic dialect"},
-{id:"sa",name:"Saudi Arabia",native:"السعودية",flag:"🇸🇦",lang:"ar",dir:"rtl",dialect:"Saudi Arabic"},
-{id:"ae",name:"UAE",native:"الإمارات",flag:"🇦🇪",lang:"ar",dir:"rtl",dialect:"Emirati Arabic"},
-{id:"qa",name:"Qatar",native:"قطر",flag:"🇶🇦",lang:"ar",dir:"rtl",dialect:"Qatari Arabic"},
-{id:"bh",name:"Bahrain",native:"البحرين",flag:"🇧🇭",lang:"ar",dir:"rtl",dialect:"Bahraini Arabic"},
-{id:"om",name:"Oman",native:"عُمان",flag:"🇴🇲",lang:"ar",dir:"rtl",dialect:"Omani Arabic"},
+{id:"general_ar",name:"Global AR",native:"عالمي · أسئلة عربية",flag:"📚",lang:"ar",dir:"rtl",dialect:"Modern Standard Arabic"},
+{id:"general_en",name:"Global EN",native:"عالمي · أسئلة بالإنجليزية",flag:"🔤",lang:"en",dir:"ltr",dialect:"English"},
+{id:"kw",name:"Kuwait",native:"الكويت",flag:"🇰🇼",flagCode:"kw",lang:"ar",dir:"rtl",dialect:"Kuwaiti Arabic dialect"},
+{id:"sa",name:"Saudi Arabia",native:"السعودية",flag:"🇸🇦",flagCode:"sa",lang:"ar",dir:"rtl",dialect:"Saudi Arabic"},
+{id:"ae",name:"UAE",native:"الإمارات",flag:"🇦🇪",flagCode:"ae",lang:"ar",dir:"rtl",dialect:"Emirati Arabic"},
+{id:"qa",name:"Qatar",native:"قطر",flag:"🇶🇦",flagCode:"qa",lang:"ar",dir:"rtl",dialect:"Qatari Arabic"},
+{id:"bh",name:"Bahrain",native:"البحرين",flag:"🇧🇭",flagCode:"bh",lang:"ar",dir:"rtl",dialect:"Bahraini Arabic"},
+{id:"om",name:"Oman",native:"عُمان",flag:"🇴🇲",flagCode:"om",lang:"ar",dir:"rtl",dialect:"Omani Arabic"},
 ];
+/** علم الدولة: صورة PNG بدل إيموجي الأعلام (أنظمة مثل ويندوز قد تعرض «KW» بدل العلم) */
+function CountryFlag({ country, className, title, spanStyle, w = 28, emojiSize }) {
+  const code = country.flagCode;
+  const wrap = { display: "inline-flex", alignItems: "center", lineHeight: 0, verticalAlign: "middle", ...spanStyle };
+  const es = emojiSize ?? w;
+  if (code) {
+    const imgWidth = spanStyle?.width ? "100%" : w;
+    return (
+      <span className={className} title={title ?? country.native} style={wrap}>
+        <img
+          src={`https://flagcdn.com/w80/${code}.png`}
+          srcSet={`https://flagcdn.com/w160/${code}.png 2x`}
+          alt=""
+          style={{ display: "block", width: imgWidth, height: "auto", objectFit: "cover", borderRadius: 4, boxShadow: "0 1px 3px rgba(0,0,0,.22)" }}
+          decoding="async"
+          loading="lazy"
+        />
+      </span>
+    );
+  }
+  return (
+    <span className={className} title={title} style={{ ...wrap, fontSize: es, lineHeight: 1 }} aria-hidden>
+      {country.flag}
+    </span>
+  );
+}
 const isWorldwideCountry=id=>id==="general_ar"||id==="general_en";
 
 const LN={en:"English",ar:"العربية",fr:"Français",de:"Deutsch",es:"Español",ja:"日本語",tr:"Türkçe",pt:"Português",hi:"हिन्दी"};
@@ -257,6 +285,286 @@ function splitQuestionsByDifficulty(pick){
   const mid=[...taggedMid,...len.mid];
   const hard=[...taggedHard,...len.hard];
   return rebalanceTierArrays(easy,mid,hard);
+}
+function normAnswerText(s){
+  return String(s||"").trim().replace(/\s+/g," ").toLowerCase();
+}
+function isArabicText(s){return /[\u0600-\u06FF]/.test(String(s||""))}
+function answerKind(s){
+  const t=String(s||"").trim();
+  if(/[0-9\u0660-\u0669]{3,4}/.test(t))return"year";
+  if(/[0-9\u0660-\u0669]/.test(t))return"number";
+  if(/[()%]/.test(t))return"ratio";
+  const wc=t.split(/\s+/).filter(Boolean).length;
+  if(wc<=2)return"short";
+  return"phrase";
+}
+function sharedTokens(a,b){
+  const aa=new Set(normAnswerText(a).split(" ").filter(x=>x.length>=2));
+  const bb=normAnswerText(b).split(" ").filter(x=>x.length>=2);
+  let c=0;bb.forEach(t=>{if(aa.has(t))c++});
+  return c;
+}
+function normalizeForTypedAnswer(s){
+  return String(s||"")
+    .toLowerCase()
+    .replace(/[\u064B-\u065F\u0670]/g,"") // حذف التشكيل
+    .replace(/\u0640/g,"") // تطويل
+    .replace(/[أإآٱ]/g,"ا")
+    .replace(/ى/g,"ي")
+    .replace(/ة/g,"ه")
+    .replace(/ؤ/g,"و")
+    .replace(/ئ/g,"ي")
+    .replace(/\b(ال)\s+/g,"")
+    .replace(/[^\w\u0600-\u06FF\s]/g," ")
+    .replace(/\s+/g," ")
+    .trim();
+}
+const DIALECT_EQUIV_GROUPS=[
+  ["طماط","طماطم","تماطم","بندوره","بندورة","طماطه","طماطة"],
+  ["بطاط","بطاطس","بطاطا","بطاطه"],
+  ["كزبره","كزبرة","كسبره","كسبرة","قزبره","قزبرة"],
+  ["جدر","قدر","قدر ضغط","حله ضغط","حلة ضغط"],
+  ["عيش","رز","ارز"],
+  ["روب","لبن","زبادي","يوغرت","يوغورت"],
+  ["سحور","سحور","سحور رمضان","الوجبه قبل الفجر","الوجبة قبل الفجر"],
+  ["فطور","فطور رمضان","افطار","إفطار"],
+  ["حلاوه","حلويات","تحليه","تحلية"],
+  ["مجبوس","كبسه","كبسة"],
+  ["مرقوق","مرقوقه","مرقوقة"],
+  ["جاباتي","شباتي","خبز هندي"],
+  ["دقوس","شطة","صلصه حاره","صلصة حارة"],
+  ["جوال","موبايل","هاتف","تلفون","محمول"],
+  ["حذاء","جوتي","جوتيه","كندره","كندرة","جزمه","جزمة","نعال","شبشب","صندل","سنيكرز"],
+  ["ثلاجه","ثلاجة","براد"],
+  ["كبت","دولاب","خزانه","خزانة"],
+  ["كنسل","الغ","الغي","إلغاء"],
+  ["اوكي","تمام","موافق","حاضر"],
+  ["سياره","سيارة","عربيه","عربية","موتر"],
+  ["دوار","راوند اباوت","roundabout","round about"],
+  ["الدوار","راونداباوت","ميدان"],
+  ["بقاله","بقالة","تموينات","سوبرماركت","سوبر ماركت"],
+  ["جمعيه","جمعية","تعاونيه","تعاونية","coop"],
+  ["دريشه","دريشة","شباك","نافذه","نافذة"],
+  ["سرير","فراش","تخت"],
+  ["حمام","دوره مياه","دورة مياه","تواليت"],
+  ["مستشفى","اسبتال","مشفى"],
+  ["صيدليه","صيدلية","فارمسي","pharmacy"],
+  ["شارع","طريق","درب"],
+  ["دوام","شغل","عمل","وظيفه","وظيفة"],
+  ["بنطلون","سروال","قميص","ثوب"],
+  ["دش","شاور","استحمام"],
+  ["انترنت","نت","شبكه","شبكة","واي فاي","wifi"],
+  ["تطبيق","ابلكيشن","برنامج","app"],
+  ["شاحن","charger","راس شاحن","رأس شاحن"],
+  ["ريموت","جهاز التحكم","كنترول"],
+  ["مكيف","مكيفه","مكيفه","تكييف","ac"],
+  ["نظاره","نظارة","عوينات"],
+  ["محفظه","محفظة","بوك","جزدان"],
+  ["نقود","فلوس","كاش","سيوله","سيولة","مال"],
+  ["فاتوره","فاتورة","حساب"],
+  ["وجبه","وجبة","اكله","أكلة","طبخة"],
+  ["حلو","حلى","تحليه","تحلية","حلويات"],
+  ["غازي","مشروب غازي","بيبسي","كوكاكولا","كولا"],
+  ["قهوه","قهوة","قهوه عربيه","قهوة عربية"],
+  ["شاي","جاي","اتي","أتاي"],
+  ["تمر","رطب","بلح"],
+  ["مطبخ","مطبخ البيت","مطبخ منزلي"],
+  ["سيكل","دراجه","دراجة","بسكليتة","بسكلته","بسكليت"],
+  ["زنوبه","زقاق","سكه","سكة","ممر"],
+  ["مستوصف","مركز صحي","عياده","عيادة","كلينك"],
+  ["جامعه","جامعة","كليه","كلية","college","university"],
+  ["مدرسه","مدرسة","سكول","school"],
+  ["استراحه","استراحة","شاليه","شاليهات","كشتة","كشته"],
+  ["طياره","طائرة","طيران","رحله","رحلة","فلايت","flight"],
+  ["سياره اجره","تكسي","تاكسي","اجره","أجرة"],
+  ["محطه","محطة","بنكزينه","بنزين","وقود"],
+  ["دوار","ميدان","راونداباوت","roundabout","round about"]
+];
+const DIALECT_PHRASE_EQUIV=[
+  ["دوره مياه","حمام"],
+  ["دورة مياه","حمام"],
+  ["راس شاحن","شاحن"],
+  ["رأس شاحن","شاحن"],
+  ["مشروب غازي","غازي"],
+  ["قهوه عربيه","قهوة"],
+  ["قهوة عربية","قهوة"],
+  ["سياره اجره","تاكسي"],
+  ["سيارة أجرة","تاكسي"],
+  ["مركز صحي","مستوصف"],
+  ["جهاز التحكم","ريموت"],
+  ["واي فاي","wifi"],
+];
+const DIALECT_EQUIV_MAP=(()=>{
+  const m=new Map();
+  for(const group of DIALECT_EQUIV_GROUPS){
+    const canon=group[0];
+    for(const w of group)m.set(normalizeForTypedAnswer(w),canon);
+  }
+  return m;
+})();
+function canonicalizeDialectTerms(s){
+  let t=normalizeForTypedAnswer(s);
+  if(!t)return "";
+  const replacePhrase=(text,from,to)=>{
+    const src=text.split(" ").filter(Boolean);
+    const pat=from.split(" ").filter(Boolean);
+    if(!src.length||!pat.length)return text;
+    const out=[];
+    for(let i=0;i<src.length;){
+      let ok=true;
+      for(let j=0;j<pat.length;j++){
+        if(src[i+j]!==pat[j]){ok=false;break;}
+      }
+      if(ok){out.push(to);i+=pat.length;}
+      else{out.push(src[i]);i++;}
+    }
+    return out.join(" ").replace(/\s+/g," ").trim();
+  };
+  for(const [from,to] of DIALECT_PHRASE_EQUIV){
+    const f=normalizeForTypedAnswer(from);
+    const tt=normalizeForTypedAnswer(to);
+    if(!f||!tt)continue;
+    t=replacePhrase(t,f,tt);
+  }
+  return t
+    .split(" ")
+    .map(tok=>DIALECT_EQUIV_MAP.get(tok)||tok)
+    .join(" ")
+    .trim();
+}
+function tokenSimilarityLoose(a,b){
+  const ta=canonicalizeDialectTerms(a).split(" ").filter(x=>x.length>=2);
+  const tb=canonicalizeDialectTerms(b).split(" ").filter(x=>x.length>=2);
+  if(!ta.length||!tb.length)return 0;
+  const A=new Set(ta),B=new Set(tb);
+  let inter=0;A.forEach(t=>{if(B.has(t))inter++});
+  return inter/Math.max(1,Math.min(A.size,B.size));
+}
+function charSimilarityLoose(a,b){
+  const x=canonicalizeDialectTerms(a),y=canonicalizeDialectTerms(b);
+  if(!x||!y)return 0;
+  if(x===y)return 1;
+  const xs=new Set(x.split(""));
+  let hit=0;
+  for(const ch of y){if(xs.has(ch))hit++}
+  return hit/Math.max(x.length,y.length);
+}
+function isTypedAnswerAccepted(typed,correct){
+  const t=canonicalizeDialectTerms(typed);
+  const c=canonicalizeDialectTerms(correct);
+  if(!t||!c)return false;
+  if(t===c||c.includes(t)||t.includes(c))return true;
+  const tokenSim=tokenSimilarityLoose(t,c);
+  const charSim=charSimilarityLoose(t,c);
+  // كلمات قليلة: نحتاج تشابه حروفي أعلى. عبارات أطول: نقبل تشابه المعنى عبر الكلمات.
+  if(c.split(" ").length<=2)return tokenSim>=0.7||charSim>=0.82;
+  return tokenSim>=0.6||(tokenSim>=0.45&&charSim>=0.72);
+}
+function scoreDistractorFit(correct,cand){
+  let s=0;
+  const ck=answerKind(correct),dk=answerKind(cand);
+  if(ck===dk)s+=5;
+  if(isArabicText(correct)===isArabicText(cand))s+=2;
+  s+=Math.max(0,3-Math.abs(String(correct).length-String(cand).length)/6);
+  s+=sharedTokens(correct,cand)*1.5;
+  if(normAnswerText(correct)===normAnswerText(cand))s=-999;
+  return s;
+}
+function smartDistractorsFor(question,correct){
+  const q=normAnswerText(question);
+  const c=String(correct||"").trim();
+  const isAr=isArabicText(c)||isArabicText(q);
+  const nearYear=(y)=>{
+    const n=Number(String(y).replace(/[^\d]/g,""));
+    if(!Number.isFinite(n)||n<1000||n>2100)return[];
+    return [n-2,n-1,n+1,n+2].map(v=>isAr?String(v).replace(/\d/g,d=>"٠١٢٣٤٥٦٧٨٩"[d]):String(v));
+  };
+  const nearInt=(v)=>{
+    const n=Number(String(v).replace(/[^\d]/g,""));
+    if(!Number.isFinite(n))return[];
+    const d=Math.max(1,Math.round(Math.abs(n)*0.1));
+    return [n-d,n+d,Math.max(1,n+2*d)].map(x=>String(Math.round(x)));
+  };
+  const capitalsAr=["الرياض","أبوظبي","الدوحة","المنامة","مسقط","مدينة الكويت","دمشق","القاهرة","عمّان","بغداد"];
+  const capitalsEn=["Riyadh","Abu Dhabi","Doha","Manama","Muscat","Kuwait City","Cairo","Amman","Baghdad","Damascus"];
+  const currenciesAr=["الدينار الكويتي","الريال السعودي","الدرهم الإماراتي","الريال القطري","الدينار البحريني","الريال العماني"];
+  const currenciesEn=["Kuwaiti dinar","Saudi riyal","UAE dirham","Qatari riyal","Bahraini dinar","Omani rial"];
+  const govAr=["إمارة دستورية وراثية","ملكية دستورية","ملكية مطلقة","جمهورية برلمانية"];
+  const govEn=["Constitutional hereditary emirate","Constitutional monarchy","Absolute monarchy","Parliamentary republic"];
+  const islandsAr=["سبع جزر","ثماني جزر","تسع جزر","عشر جزر","إحدى عشرة جزيرة"];
+  const yesNoAr=["نعم","لا","أحيانًا","لا ينطبق"];
+  const yesNoEn=["Yes","No","Sometimes","Not applicable"];
+  const govClassicAr=["إمارة وراثية","إمارة دستورية","ملكية دستورية","جمهورية برلمانية"];
+  const monthsAr=["يناير","فبراير","مارس","أبريل","مايو","يونيو","يوليو","أغسطس","سبتمبر","أكتوبر","نوفمبر","ديسمبر"];
+  const out=[];
+  if(/^(نعم|لا)$/i.test(c))out.push(...(isAr?yesNoAr:yesNoEn));
+  if(/استقلال|تأسس|تحرير|انضم|عام|سنة|متى/.test(q)||(/[0-9\u0660-\u0669]{4}/.test(c)))out.push(...nearYear(c));
+  if(/كم|عدد|مساحة|مساحه|سكان|نسبة|نسبه/.test(q))out.push(...nearInt(c));
+  if(/عاصم/.test(q))out.push(...(isAr?capitalsAr:capitalsEn));
+  if(/عملة|عمله|دينار|ريال|درهم|currency/.test(q))out.push(...(isAr?currenciesAr:currenciesEn));
+  if(/نظام الحكم|govern|government|إمارة|ملكية|جمهورية/.test(q))out.push(...(isAr?[...govAr,...govClassicAr]:govEn));
+  if(/جزر/.test(q))out.push(...islandsAr);
+  if(/متى.*(العيد|يوم|الوطني)|ماهو تاريخ|ما هو تاريخ/.test(q))out.push(...(isAr?monthsAr:["January","February","March","April","May","June","July","August","September","October","November","December"]));
+  if(/ما هي اللغة|اللغه الرسمي|official language/.test(q))out.push(...(isAr?["العربية","الإنجليزية","الفرنسية","الأوردية"]:["Arabic","English","French","Urdu"]));
+  if(/ما هي الدولة التي تحد|يحد|حدود|borders/.test(q))out.push(...(isAr?["العراق","السعودية","إيران","قطر","البحرين","الإمارات"]:["Iraq","Saudi Arabia","Iran","Qatar","Bahrain","UAE"]));
+  return [...new Set(out.map(x=>String(x).trim()).filter(Boolean))];
+}
+function reseedOptions(q,distractors){
+  const correct=q.o[q.a];
+  const pool=[correct,...distractors].filter(Boolean);
+  const unique=[...new Set(pool.map(normAnswerText))];
+  if(unique.length<4)return q;
+  const finalOpts=[correct,...distractors].slice(0,4);
+  const hKey = qHash(q);
+  let h = 0;
+  for (let i = 0; i < hKey.length; i++) h = (h * 31 + hKey.charCodeAt(i)) >>> 0;
+  const rot = h % 4;
+  const o=finalOpts.map((_,i)=>finalOpts[(i+rot)%4]);
+  const a=o.findIndex(x=>normAnswerText(x)===normAnswerText(correct));
+  return a<0?q:{...q,o,a};
+}
+function hardenTierDistractors(tiers){
+  const all=[...(tiers.easy||[]),...(tiers.mid||[]),...(tiers.hard||[])];
+  if(!all.length)return tiers;
+  const answerPool=[...new Set(all.map(q=>q?.o?.[q?.a]).filter(Boolean))];
+  const hardenList=(arr)=>{
+    return arr.map((q)=>{
+      if(!q||!Array.isArray(q.o)||q.o.length!==4||!Number.isInteger(q.a))return q;
+      const correct=q.o[q.a];
+      const ownWrong=q.o.filter((_,i)=>i!==q.a);
+      const smart=smartDistractorsFor(q.q,correct).filter(x=>normAnswerText(x)!==normAnswerText(correct));
+      const sameKindPool=answerPool.filter(x=>answerKind(x)===answerKind(correct)&&normAnswerText(x)!==normAnswerText(correct));
+      const sameScriptPool=sameKindPool.filter(x=>isArabicText(x)===isArabicText(correct));
+      const preferred=(sameScriptPool.length>=3?sameScriptPool:sameKindPool);
+      const broadCandidates=answerPool.filter(x=>normAnswerText(x)!==normAnswerText(correct));
+      const rankedPreferred=preferred
+        .map(c=>({c,s:scoreDistractorFit(correct,c)}))
+        .filter(x=>x.s>=4)
+        .sort((x,y)=>y.s-x.s)
+        .map(x=>x.c);
+      const rankedBroad=broadCandidates
+        .map(c=>({c,s:scoreDistractorFit(correct,c)}))
+        .sort((x,y)=>y.s-x.s)
+        .map(x=>x.c);
+      const chosen=[...new Set([...smart,...rankedPreferred,...rankedBroad])].slice(0,3);
+      for(const old of ownWrong){
+        if(chosen.length>=3)break;
+        if(normAnswerText(old)!==normAnswerText(correct)&&!chosen.some(x=>normAnswerText(x)===normAnswerText(old)))chosen.push(old);
+      }
+      while(chosen.length<3){
+        const f=ownWrong.find(x=>!chosen.some(y=>normAnswerText(y)===normAnswerText(x)))||correct;
+        if(normAnswerText(f)!==normAnswerText(correct)&&!chosen.some(y=>normAnswerText(y)===normAnswerText(f)))chosen.push(f);
+        else break;
+      }
+      return reseedOptions(q,chosen.slice(0,3));
+    });
+  };
+  return{
+    easy:hardenList(tiers.easy||[]),
+    mid:hardenList(tiers.mid||[]),
+    hard:hardenList(tiers.hard||[])
+  };
 }
 const AC=["#2563EB","#D97706","#059669","#DB2777"];
 const AB=["rgba(37,99,235,.1)","rgba(217,119,6,.1)","rgba(5,150,105,.1)","rgba(219,39,119,.1)"];
@@ -387,11 +695,12 @@ function getQuestions(cats,cid,apiResult,remoteOverlay={}){
     }
     
     const unique={};
-    allQs.forEach(q=>{if(q&&q.q&&q.o){const h=qHash(q);if(!unique[h])unique[h]=q}});
+    // آخر نسخة هي التي تفوز (حتى لا تبقى خيارات قديمة سيئة من الكاش)
+    allQs.forEach(q=>{if(q&&q.q&&q.o){const h=qHash(q);unique[h]=q}});
     const allUnique=Object.values(unique);
     const unseen=allUnique.filter(q=>!seen.has(qHash(q)));
     const pick=unseen.length>=6?unseen:allUnique;
-    const tiers=splitQuestionsByDifficulty(pick);
+    const tiers=hardenTierDistractors(splitQuestionsByDifficulty(pick));
     result[c.id]=tiers;
     for(const tier of["easy","mid","hard"]){
       for(const q of tiers[tier])seen.add(qHash(q));
@@ -424,6 +733,8 @@ export default function Qadha(){
   const[onlineSession,setOnlineSession]=useState(null);
   const[micOn,setMicOn]=useState(false);
   const[catsMicStream,setCatsMicStream]=useState(null);
+  const[onlineChat,setOnlineChat]=useState([]);
+  const[chatInput,setChatInput]=useState("");
   const[openCatGroupIdx,setOpenCatGroupIdx]=useState(0);
   const[remoteOverlay,setRemoteOverlay]=useState(()=>readCachedOverlayMeta().overlay);
   const matchQHashesRef=useRef(new Map());
@@ -467,7 +778,7 @@ export default function Qadha(){
     roomCode:onlineSession?.code||"",
     selfId:onlineSession?.playerId||"",
     authToken:onlineSession?.voiceToken||"",
-    enabled:voiceSessReady&&sc==="cats"&&micOn&&!!catsMicStream,
+    enabled:voiceSessReady&&Boolean(onlineSession)&&micOn&&!!catsMicStream,
     localStream:catsMicStream,
     signalTransport:voiceSignalTransport,
     fetchPeerIds:fetchVoicePeers,
@@ -483,55 +794,68 @@ export default function Qadha(){
   },[]);
 
   useEffect(()=>{
-    if(sc==="cats")return;
+    if(onlineSession)return;
     if(micStreamRef.current){
       micStreamRef.current.getTracks().forEach(tr=>tr.stop());
       micStreamRef.current=null;
     }
     setCatsMicStream(null);
     setMicOn(false);
-  },[sc]);
+  },[onlineSession]);
 
-  // ثلاثة أنماط: هادئ، ليلي، فاتح — ألوان نص وأيقونات متناسقة
+  useEffect(()=>{
+    if(!onlineSession||!liveRoom.connected||typeof liveRoom.subscribeSignals!=="function")return;
+    const unsub=liveRoom.subscribeSignals((from,msg)=>{
+      if(!msg||typeof msg!=="object"||msg.type!=="chat")return;
+      const txt=String(msg.text||"").trim();
+      if(!txt)return;
+      const playerName=(liveRoom.room?.players||[]).find(p=>p.id===from)?.name||"لاعب";
+      const row={id:`${Date.now()}-${Math.random().toString(36).slice(2,8)}`,from,playerName,text:txt,at:Date.now()};
+      setOnlineChat(prev=>[...prev.slice(-39),row]);
+    });
+    return()=>{try{unsub&&unsub()}catch{/* ignore */}};
+  },[onlineSession,liveRoom.connected,liveRoom.subscribeSignals,liveRoom.room]);
+
+  // أنماط مريحة للعين: تباين أقل حدة، ألوان متوسطة التشبع، خلفيات محايدة
   const THEMES={
     night:{
-      bg:"linear-gradient(155deg,#0F0F1A,#1A1030 40%,#0F0F1A 70%,#0A0A14)",
-      card:"rgba(20,15,40,.88)",cardBd:"rgba(168,85,247,.15)",
-      text:"#F0F0F5",textDim:"rgba(255,255,255,.42)",textDim2:"rgba(255,255,255,.22)",
-      accent:"#C4B5FD",accentRgb:"196,181,253",accentDim:"rgba(196,181,253,.28)",
-      gold:"#E8D48A",goldGlow:"0 0 40px rgba(232,212,138,.35)",
-      input:"rgba(255,255,255,.06)",inputBd:"rgba(196,181,253,.22)",
-      btnBg:"linear-gradient(135deg,#A855F7,#7C3AED,#A855F7)",btnText:"#FFF",
-      btn2Bg:"rgba(255,255,255,.05)",btn2Hover:"rgba(196,181,253,.12)",
-      badge:"rgba(15,15,30,.92)",gridCell:"rgba(255,255,255,.02)",
-      scoreTxt:"#F0F0F5",placeholder:"rgba(255,255,255,.32)",
-      catMuted:"rgba(255,255,255,.48)",      gridPts:"#C4B5FD",iconGlow:"rgba(196,181,253,.15)",
+      bg:"linear-gradient(155deg,#12161c,#1a222c 44%,#161b22 72%,#12151a)",
+      card:"rgba(30,35,44,.9)",cardBd:"rgba(130,150,175,.11)",
+      text:"#e4e9ef",textDim:"rgba(228,233,239,.46)",textDim2:"rgba(228,233,239,.24)",
+      accent:"#9eb0cc",accentRgb:"158,176,204",accentDim:"rgba(158,176,204,.22)",
+      gold:"#c9b896",goldGlow:"0 0 32px rgba(201,184,150,.22)",
+      input:"rgba(255,255,255,.05)",inputBd:"rgba(158,176,204,.16)",
+      btnBg:"linear-gradient(135deg,#6f8198,#5d6f87,#6f8198)",btnText:"#f6f7f9",
+      btn2Bg:"rgba(255,255,255,.04)",btn2Hover:"rgba(158,176,204,.1)",
+      badge:"rgba(22,26,32,.94)",gridCell:"rgba(255,255,255,.025)",
+      scoreTxt:"#e4e9ef",placeholder:"rgba(228,233,239,.34)",
+      catMuted:"rgba(228,233,239,.5)",gridPts:"#aabdd4",iconGlow:"rgba(158,176,204,.12)",
     },
     light:{
-      bg:"linear-gradient(155deg,#FAFAF8,#F0EDE6 45%,#F7F4ED 72%,#FCFBF8)",
-      card:"rgba(255,255,255,.94)",cardBd:"rgba(91,33,182,.1)",
-      text:"#1E1530",textDim:"rgba(30,21,48,.52)",textDim2:"rgba(30,21,48,.28)",
-      accent:"#6D28D9",accentRgb:"109,40,217",accentDim:"rgba(109,40,217,.18)",
-      gold:"#A16207",goldGlow:"0 0 28px rgba(161,98,7,.22)",
-      input:"rgba(255,255,255,.95)",inputBd:"rgba(109,40,217,.15)",
-      btnBg:"linear-gradient(135deg,#7C3AED,#5B21B6,#7C3AED)",btnText:"#FFF",
-      btn2Bg:"rgba(109,40,217,.06)",btn2Hover:"rgba(109,40,217,.12)",
-      badge:"rgba(255,255,255,.97)",gridCell:"rgba(0,0,0,.025)",
-      scoreTxt:"#1E1530",placeholder:"rgba(30,21,48,.35)",
-      catMuted:"#5B21B6",      gridPts:"#6D28D9",iconGlow:"rgba(109,40,217,.08)",
+      bg:"linear-gradient(155deg,#f4f6fa,#eef1f6 48%,#f6f8fb 74%,#fafbfd)",
+      card:"rgba(255,255,255,.96)",cardBd:"rgba(82,98,120,.09)",
+      text:"#2c3340",textDim:"rgba(44,51,64,.5)",textDim2:"rgba(44,51,64,.26)",
+      accent:"#5a6d8c",accentRgb:"90,109,140",accentDim:"rgba(90,109,140,.14)",
+      gold:"#8b7355",goldGlow:"0 0 24px rgba(139,115,85,.18)",
+      input:"#fafbfd",inputBd:"rgba(90,109,140,.12)",
+      btnBg:"linear-gradient(135deg,#6b7f99,#5a6d8c,#6b7f99)",btnText:"#fff",
+      btn2Bg:"rgba(90,109,140,.05)",btn2Hover:"rgba(90,109,140,.1)",
+      badge:"rgba(255,255,255,.96)",gridCell:"rgba(44,51,64,.03)",
+      scoreTxt:"#2c3340",placeholder:"rgba(44,51,64,.34)",
+      catMuted:"#647896",gridPts:"#5a6d8c",iconGlow:"rgba(90,109,140,.07)",
     },
     calm:{
-      bg:"linear-gradient(160deg,#E8F2EE,#DCEAE3 42%,#E6F0EA 68%,#EDF5F0)",
-      card:"rgba(255,255,255,.9)",cardBd:"rgba(74,124,106,.14)",
-      text:"#243A32",textDim:"rgba(36,58,50,.5)",textDim2:"rgba(36,58,50,.26)",
-      accent:"#3D6B5A",accentRgb:"61,107,90",accentDim:"rgba(61,107,90,.2)",
-      gold:"#9A7B4F",goldGlow:"0 0 26px rgba(154,123,79,.2)",
-      input:"rgba(255,255,255,.92)",inputBd:"rgba(61,107,90,.18)",
-      btnBg:"linear-gradient(135deg,#4A7C6A,#3D6B5A,#4A7C6A)",btnText:"#FAFDFB",
-      btn2Bg:"rgba(61,107,90,.07)",btn2Hover:"rgba(61,107,90,.14)",
-      badge:"rgba(255,255,255,.93)",gridCell:"rgba(61,107,90,.04)",
-      scoreTxt:"#243A32",placeholder:"rgba(36,58,50,.32)",
-      catMuted:"#4A6B5E",gridPts:"#3D6B5A",iconGlow:"rgba(61,107,90,.1)",
+      bg:"linear-gradient(160deg,#eaefee,#e3ebe9 43%,#eef3f1 68%,#f2f6f4)",
+      card:"rgba(255,255,255,.92)",cardBd:"rgba(88,118,108,.11)",
+      text:"#2a3d36",textDim:"rgba(42,61,54,.48)",textDim2:"rgba(42,61,54,.25)",
+      accent:"#4d7268",accentRgb:"77,114,104",accentDim:"rgba(77,114,104,.16)",
+      gold:"#8f7a5c",goldGlow:"0 0 22px rgba(143,122,92,.16)",
+      input:"rgba(255,255,255,.94)",inputBd:"rgba(77,114,104,.14)",
+      btnBg:"linear-gradient(135deg,#5c8276,#4d7268,#5c8276)",btnText:"#fafdfb",
+      btn2Bg:"rgba(77,114,104,.06)",btn2Hover:"rgba(77,114,104,.11)",
+      badge:"rgba(255,255,255,.94)",gridCell:"rgba(77,114,104,.035)",
+      scoreTxt:"#2a3d36",placeholder:"rgba(42,61,54,.32)",
+      catMuted:"#556f66",gridPts:"#4d7268",iconGlow:"rgba(77,114,104,.08)",
     },
   };
   const th=THEMES[themeMode];
@@ -656,9 +980,9 @@ export default function Qadha(){
   const checkTyped=()=>{
     if(answered||!curQ||!typedAns.trim())return;
     clearInterval(tRef.current);sfx.stop();setAnswered(true);
-    const correct=curQ.o[curQ.a].trim().toLowerCase().replace(/[^\w\u0600-\u06FF\s]/g,"");
-    const typed=typedAns.trim().toLowerCase().replace(/[^\w\u0600-\u06FF\s]/g,"");
-    const isMatch=correct===typed||correct.includes(typed)||typed.includes(correct)||(typed.length>2&&correct.startsWith(typed.substring(0,Math.ceil(typed.length*0.6))));
+    const correct=curQ.o[curQ.a];
+    const typed=typedAns;
+    const isMatch=isTypedAnswerAccepted(typed,correct);
     if(isMatch){
       sfx.correct();setRevealed(true);setScores(p=>{const n=[...p];n[active-1]+=curPts;return n});
       setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2000);
@@ -699,7 +1023,14 @@ export default function Qadha(){
       return;
     }
     try{
-      const s=await navigator.mediaDevices.getUserMedia({audio:true,video:false});
+      const s=await navigator.mediaDevices.getUserMedia({
+        audio:{
+          echoCancellation:true,
+          noiseSuppression:true,
+          autoGainControl:true,
+        },
+        video:false
+      });
       micStreamRef.current=s;
       setCatsMicStream(s);
       setMicOn(true);
@@ -707,6 +1038,14 @@ export default function Qadha(){
       alert("تعذر فتح المايك. اسمح باستخدام الميكروفون من إعدادات المتصفح.");
     }
   },[]);
+  const sendChat=useCallback(()=>{
+    const txt=chatInput.trim();
+    if(!txt||!onlineSession||!liveRoom.connected)return;
+    liveRoom.sendSignal(null,{type:"chat",text:txt});
+    const meName=(liveRoom.room?.players||[]).find(p=>p.id===onlineSession.playerId)?.name||"أنا";
+    setOnlineChat(prev=>[...prev.slice(-39),{id:`self-${Date.now()}`,from:onlineSession.playerId||"self",playerName:meName,text:txt,at:Date.now()}]);
+    setChatInput("");
+  },[chatInput,onlineSession,liveRoom]);
   const catRows=useMemo(()=>groupCatsForUi(fCats),[fCats]);
   useEffect(()=>{setOpenCatGroupIdx(0)},[country.id]);
   useEffect(()=>{setOpenCatGroupIdx(i=>{const m=Math.max(0,catRows.length-1);return Math.min(i,m)})},[catRows.length]);
@@ -762,18 +1101,23 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .catsStepCircle{width:46px;height:46px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;margin:0 auto 4px;border:2px solid transparent;transition:background .2s,box-shadow .2s,border-color .2s}
 .catsStepLbl{display:block;font-size:9px;font-family:'Tajawal',sans-serif;line-height:1.2;max-width:72px}
 .catsBody{max-width:920px;margin:0 auto;width:100%}
-.catsTitle{font-family:'Tajawal',sans-serif;font-size:clamp(22px,5.2vw,30px);font-weight:900;text-align:center;margin:0 0 6px}
+.catsTitle{font-family:'Tajawal',sans-serif;font-size:clamp(22px,5.2vw,30px);font-weight:900;text-align:center;margin:0 0 6px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.catsTitleFlag{font-size:clamp(26px,6.5vw,34px);line-height:1}
+.catsTitleFlag img{border-radius:6px;box-shadow:0 2px 8px rgba(0,0,0,.14)}
+.qadha-badge-flag img{border-radius:5px}
 .catsSub{text-align:center;font-size:13px;margin-bottom:14px;font-family:'Tajawal',sans-serif}
 .catsSearchRow{display:flex;direction:rtl;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06);margin-bottom:18px}
 .catsSearchInp{flex:1;border:none;font-size:16px;padding:14px 16px;font-family:'Tajawal',sans-serif;outline:none}
 .catsSearchBtn{width:52px;min-width:52px;border:none;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:filter .15s,opacity .15s}
 .catsSearchBtn:hover{filter:brightness(1.06)}
 .catsSection{border-radius:18px;padding:14px 12px 16px;margin-bottom:16px}
-.catsSectionTag{display:inline-block;font-size:11px;font-weight:800;padding:6px 12px;border-radius:10px;margin-bottom:12px;font-family:'Tajawal',sans-serif}
+.catsSectionTag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:800;padding:6px 12px;border-radius:10px;margin-bottom:12px;font-family:'Tajawal',sans-serif}
+.catsSectionTag .catsSectionFlag{font-size:13px;line-height:1}
 .catsCardGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
 @media(min-width:520px){.catsCardGrid{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:800px){.catsCardGrid{grid-template-columns:repeat(4,1fr)}}
 .catsCard{position:relative;border-radius:14px;overflow:hidden;cursor:pointer;text-align:center;padding:0;transition:transform .15s,box-shadow .15s,border-color .15s;font-family:'Tajawal',sans-serif}
+.catsCardCountryFlag{position:absolute;top:6px;inset-inline-start:6px;font-size:clamp(13px,3.2vw,16px);line-height:1;z-index:1;opacity:.95;filter:drop-shadow(0 1px 2px rgba(0,0,0,.2))}
 .catsCard:not(.catsCardLocked):hover{transform:translateY(-2px)}
 .catsCardLocked{opacity:.34!important;pointer-events:none!important;filter:grayscale(.4) brightness(.92);cursor:default!important;transform:none!important}
 .catsCardLocked .catsCardInfo{pointer-events:none;opacity:.5}
@@ -810,7 +1154,8 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .catsChip.catsChipOn{border-color:${th.accent}!important;box-shadow:0 0 0 3px ${th.accentDim},inset 0 0 20px rgba(${th.accentRgb},.12)!important;transform:scale(1.06)}
 .catsChipSlot{border-color:${th.textDim2}}
 .catGroupTabBar{display:flex;gap:8;overflow-x:auto;padding:4px 2px 14px;margin-bottom:4px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.catGroupTab{flex-shrink:0;padding:10px 14px;border-radius:14px;font-size:12px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;white-space:nowrap;border:1px solid ${th.cardBd};background:${th.card};color:${th.textDim};transition:background .2s,border-color .2s,color .2s}
+.catGroupTab{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;padding:10px 14px;border-radius:14px;font-size:12px;font-weight:700;font-family:'Tajawal',sans-serif;cursor:pointer;white-space:nowrap;border:1px solid ${th.cardBd};background:${th.card};color:${th.textDim};transition:background .2s,border-color .2s,color .2s}
+.catGroupTab .catGroupTabFlag{font-size:15px;line-height:1}
 .catGroupTab:hover{color:${th.accent};border-color:${th.accentDim}}
 .catGroupTabOn{background:${th.accentDim};border-color:${th.accent};color:${th.accent};box-shadow:0 0 0 2px ${th.accentDim}}
 @media (max-width:520px){.qadha-below-badge{padding-top:calc(env(safe-area-inset-top,0px) + 56px)!important}}
@@ -827,7 +1172,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 }
 @media (max-width:420px){.qadha-hard-row{flex-direction:column!important;align-items:stretch!important}.qadha-hard-row .bg{width:100%;box-sizing:border-box}}
 `}</style>
-      {sc!=="splash"&&sc!=="online"&&!loading&&<div style={{position:"fixed",top:"max(10px, env(safe-area-inset-top, 0px))",[rtl?"left":"right"]:10,zIndex:999,display:"flex",alignItems:"center",gap:12,flexWrap:"wrap",maxWidth:"min(96vw,420px)",background:th.badge,border:`1px solid ${th.cardBd}`,borderRadius:24,padding:"12px 16px"}}><span style={{fontSize:28,lineHeight:1}}>{country.flag}</span><span style={{fontSize:12,color:th.accent,fontWeight:700}}>{BI.langBadge}</span><div style={{display:"flex",gap:6,marginInlineStart:8}} role="group" aria-label={BI.themeAria}>{[{k:"calm",i:"🌿",t:BI.themeCalm},{k:"night",i:"🌙",t:BI.themeNight},{k:"light",i:"☀️",t:BI.themeLight}].map(({k,i,t})=>(<button key={k} type="button" title={t} onClick={()=>{sfx.click();setThemeMode(k)}} style={{background:themeMode===k?`rgba(${th.accentRgb},.2)`:"transparent",border:`1px solid ${themeMode===k?th.accent:th.cardBd}`,borderRadius:14,padding:"10px 12px",fontSize:24,cursor:"pointer",lineHeight:1}}>{i}</button>))}</div></div>}
+      {sc!=="splash"&&sc!=="online"&&!loading&&<div style={{position:"fixed",top:"max(10px, env(safe-area-inset-top, 0px))",[rtl?"left":"right"]:10,zIndex:999,display:"flex",alignItems:"center",gap:12,flexWrap:"wrap",maxWidth:"min(96vw,420px)",background:th.badge,border:`1px solid ${th.cardBd}`,borderRadius:24,padding:"12px 16px"}}><CountryFlag country={country} className="qadha-badge-flag" w={28} emojiSize={28} /><span style={{fontSize:12,color:th.accent,fontWeight:700}}>{BI.langBadge}</span><div style={{display:"flex",gap:6,marginInlineStart:8}} role="group" aria-label={BI.themeAria}>{[{k:"calm",i:"🌿",t:BI.themeCalm},{k:"night",i:"🌙",t:BI.themeNight},{k:"light",i:"☀️",t:BI.themeLight}].map(({k,i,t})=>(<button key={k} type="button" title={t} onClick={()=>{sfx.click();setThemeMode(k)}} style={{background:themeMode===k?`rgba(${th.accentRgb},.2)`:"transparent",border:`1px solid ${themeMode===k?th.accent:th.cardBd}`,borderRadius:14,padding:"10px 12px",fontSize:24,cursor:"pointer",lineHeight:1}}>{i}</button>))}</div></div>}
 
       {sc==="splash"&&<div style={{...W,paddingLeft:"max(16px,env(safe-area-inset-left))",paddingRight:"max(16px,env(safe-area-inset-right))",paddingBottom:"max(24px,env(safe-area-inset-bottom))"}}><div style={{textAlign:"center",width:"100%",maxWidth:420}}><div style={{fontSize:"clamp(56px,22vw,92px)",animation:"cb 2s ease-in-out infinite",lineHeight:1}}>👑</div><h1 style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(40px,12vw,96px)",fontWeight:900,color:th.gold,textShadow:th.goldGlow,lineHeight:1.05,margin:"12px 0 0"}}>قدها؟</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.8vw,16px)",color:th.textDim,letterSpacing:2,marginTop:10,lineHeight:1.5}}>لعبة أسئلة وثقافة</p><div style={{margin:"clamp(24px,8vw,36px) auto",width:96,maxWidth:"40%",height:3,background:`linear-gradient(90deg,transparent,${th.gold},transparent)`}}/><div><span className="ld"/><span className="ld" style={{animationDelay:".2s"}}/><span className="ld" style={{animationDelay:".4s"}}/></div></div></div>}
 
@@ -861,7 +1206,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       {sc==="country"&&<div style={WScroll} className="qadha-below-badge"><div style={{...PScroll,width:"100%",maxWidth:"min(820px,100%)"}}>
         <h2 className="tl" style={{marginTop:6}}>{tx.country}</h2>
         <input className="inp" placeholder={tx.search} value={countryQ} onChange={e=>setCountryQ(e.target.value)} style={{margin:"16px 0",padding:"18px 20px",fontSize:18,borderRadius:18}}/>
-        <div style={{display:"grid",gridTemplateColumns:"1fr",gap:14,flex:1,overflowY:"auto",maxHeight:"calc(100dvh - 240px)",paddingBottom:10}}>{fCountries.map(c=>(<button key={c.id} className="gc hov" style={{display:"flex",alignItems:"center",gap:20,width:"100%",textAlign:rtl?"right":"left",border:country.id===c.id?`3px solid ${th.accent}`:`2px solid ${th.cardBd}`,borderRadius:22,minHeight:112,padding:"20px 22px"}} onClick={()=>{sfx.click();setCountry(c);setSelCats([]);go("cats")}}><span style={{fontSize:"clamp(44px,12vw,58px)",lineHeight:1}}>{c.flag}</span><div style={{flex:1,minWidth:0}}><div style={{fontSize:19,color:th.accent,fontWeight:800,lineHeight:1.35}}>{c.native}</div></div></button>))}</div>
+        <div style={{display:"grid",gridTemplateColumns:"1fr",gap:14,flex:1,overflowY:"auto",maxHeight:"calc(100dvh - 240px)",paddingBottom:10}}>{fCountries.map(c=>(<button key={c.id} className="gc hov" style={{display:"flex",alignItems:"center",gap:20,width:"100%",textAlign:rtl?"right":"left",border:country.id===c.id?`3px solid ${th.accent}`:`2px solid ${th.cardBd}`,borderRadius:22,minHeight:112,padding:"20px 22px"}} onClick={()=>{sfx.click();setCountry(c);setSelCats([]);go("cats")}}><CountryFlag country={c} spanStyle={{ width: "clamp(44px,12vw,58px)", flexShrink: 0 }} w={52} emojiSize="clamp(44px,12vw,58px)" /><div style={{flex:1,minWidth:0}}><div style={{fontSize:19,color:th.accent,fontWeight:800,lineHeight:1.35}}>{c.native}</div></div></button>))}</div>
         <button className="bs" style={{width:"100%",marginTop:16,padding:16,fontSize:16}} onClick={()=>go("cats")}>{tx.back}</button>
       </div></div>}
 
@@ -876,7 +1221,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         {selCats.length!==8&&<p style={{textAlign:"center",fontSize:14,color:th.accent,marginBottom:12,fontFamily:"'Tajawal',sans-serif"}}>ارجع واختر ٨ فئات للمتابعة</p>}
         <p className="lb" style={{marginTop:12,marginBottom:8}}>{tx.mode}</p>
         <div style={{display:"grid",gap:12,marginBottom:18}}>{[["1v1","⚡",tx.duel],["team","👥",tx.teamVs]].map(([m,ic,nm])=>(<button key={m} type="button" className="gc hov" style={{display:"flex",gap:16,alignItems:"center",width:"100%",textAlign:rtl?"right":"left",padding:"18px 20px",borderRadius:20,minHeight:88,border:mode===m?`2px solid ${th.accent}`:undefined}} onClick={()=>{sfx.click();setMode(m)}}><div style={{fontSize:36,width:56,height:56,background:`rgba(${th.accentRgb},.14)`,borderRadius:16,display:"flex",alignItems:"center",justifyContent:"center",flexShrink:0}}>{ic}</div><div style={{fontFamily:"'Tajawal',sans-serif",color:th.accent,fontSize:17,fontWeight:800}}>{nm}</div></button>))}</div>
-        <div className="gc" style={{display:"flex",alignItems:"center",gap:10,margin:"0 0 16px",padding:"14px 18px"}}><span style={{fontSize:26}}>{country.flag}</span><span style={{fontSize:15,color:th.accent,fontWeight:600}}>{country.native}</span></div>
+        <div className="gc" style={{display:"flex",alignItems:"center",gap:10,margin:"0 0 16px",padding:"14px 18px"}}><CountryFlag country={country} w={32} emojiSize={26} /><span style={{fontSize:15,color:th.accent,fontWeight:600}}>{country.native}</span></div>
         <div style={{marginBottom:14}}><label className="lb">{tx.matchN}</label><input className="inp" value={matchName} onChange={e=>setMatchName(e.target.value)}/></div>
         {mode==="1v1"?<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.player} 1</label><input className="inp" value={p1} onChange={e=>setP1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.player} 2</label><input className="inp" value={p2} onChange={e=>setP2(e.target.value)}/></div></div>:<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.team} 1</label><input className="inp" value={t1} onChange={e=>setT1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.team} 2</label><input className="inp" value={t2} onChange={e=>setT2(e.target.value)}/></div></div>}
         <div style={{marginBottom:18}}><label className="lb">{BI.difficulty}</label><div style={{display:"flex",gap:6,marginTop:6}}><button className={!hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(false)}>{BI.normal}</button><button className={hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(true)}>{BI.hard}</button></div></div>
@@ -922,16 +1267,36 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
             </div>
           </div>
         )}
+        {onlineSession&&(
+          <div className="gc" style={{marginBottom:16,padding:"14px 16px",borderRadius:18,border:`1px solid ${th.cardBd}`}}>
+            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
+              <span style={{fontSize:14,color:th.accent,fontWeight:800}}>💬 محادثة الغرفة</span>
+              <span style={{fontSize:11,color:th.textDim}}>{liveRoom.connected?"متصلة":"غير متصلة"}</span>
+            </div>
+            <div style={{maxHeight:140,overflowY:"auto",background:th.gridCell,border:`1px solid ${th.cardBd}`,borderRadius:12,padding:"8px 10px",marginBottom:10}}>
+              {onlineChat.length===0&&<p style={{fontSize:12,color:th.textDim,textAlign:"center",padding:"8px 0"}}>لا توجد رسائل بعد</p>}
+              {onlineChat.map(m=>(
+                <p key={m.id} style={{fontSize:12,lineHeight:1.55,color:th.text,marginBottom:6}}>
+                  <span style={{color:th.accent,fontWeight:800}}>{m.playerName}:</span> {m.text}
+                </p>
+              ))}
+            </div>
+            <div style={{display:"flex",gap:8}}>
+              <input className="inp" value={chatInput} onChange={e=>setChatInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")sendChat()}} placeholder="اكتب رسالة سريعة..." style={{flex:1,padding:"10px 12px",fontSize:13}}/>
+              <button type="button" className="bs sm" onClick={sendChat} disabled={!chatInput.trim()||!liveRoom.connected} style={{opacity:!chatInput.trim()||!liveRoom.connected?0.5:1}}>إرسال</button>
+            </div>
+          </div>
+        )}
         <div className="gc" style={{marginBottom:20,padding:"16px 18px",borderRadius:20}}>
           <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:10,gap:10}}>
             <span style={{fontSize:15,color:th.accent,fontWeight:700}}>{country.native}</span>
             <button type="button" className="bs sm" disabled={isOnlineGuest} style={{opacity:isOnlineGuest?0.45:1}} onClick={()=>{if(isOnlineGuest)return;sfx.click();go("country")}}>{tx.change}</button>
           </div>
           <input className="inp" placeholder={tx.search} value={countryQ} onChange={e=>setCountryQ(e.target.value)} style={{marginBottom:12,padding:"14px 16px"}}/>
-          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(140px,1fr))",gap:10,maxHeight:220,overflowY:"auto"}}>{fCountries.map(c=>(<button key={c.id} type="button" disabled={isOnlineGuest} className="gc hov" style={{padding:"12px 10px",borderRadius:14,border:country.id===c.id?`2px solid ${th.accent}`:`1px solid ${th.cardBd}`,display:"flex",flexDirection:"column",alignItems:"center",gap:6,minHeight:88,opacity:isOnlineGuest?0.55:1,cursor:isOnlineGuest?"not-allowed":"pointer"}} onClick={()=>{if(isOnlineGuest)return;sfx.click();setCountry(c);setSelCats([])}}><span style={{fontSize:32}}>{c.flag}</span><span style={{fontSize:12,fontWeight:700,color:th.text,textAlign:"center",lineHeight:1.2}}>{c.native}</span></button>))}</div>
+          <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(140px,1fr))",gap:10,maxHeight:220,overflowY:"auto"}}>{fCountries.map(c=>(<button key={c.id} type="button" disabled={isOnlineGuest} className="gc hov" style={{padding:"12px 10px",borderRadius:14,border:country.id===c.id?`2px solid ${th.accent}`:`1px solid ${th.cardBd}`,display:"flex",flexDirection:"column",alignItems:"center",gap:6,minHeight:88,opacity:isOnlineGuest?0.55:1,cursor:isOnlineGuest?"not-allowed":"pointer"}} onClick={()=>{if(isOnlineGuest)return;sfx.click();setCountry(c);setSelCats([])}}><CountryFlag country={c} w={40} emojiSize={32} /><span style={{fontSize:12,fontWeight:700,color:th.text,textAlign:"center",lineHeight:1.2}}>{c.native}</span></button>))}</div>
         </div>
-        <h2 className="catsTitle">{tx.cats}</h2>
-        <p className="catsSub">{selCats.length}/8 {tx.sel} · {CATS.length} {tx.catWord}</p>
+        <h2 className="catsTitle"><CountryFlag country={country} className="catsTitleFlag" w={36} emojiSize="clamp(26px,6.5vw,34px)" /><span>{tx.cats}</span></h2>
+        <p className="catsSub">{selCats.length}/8 {tx.sel} · {CATS.length} {tx.catWord} · {country.native}</p>
         <div className="catsSearchRow">
           <input className="catsSearchInp" placeholder={tx.search} value={catQ} onChange={e=>setCatQ(e.target.value)} aria-label={tx.search}/>
           <button type="button" className="catsSearchBtn" aria-label="بحث" onClick={()=>sfx.click()}>🔍</button>
@@ -939,16 +1304,17 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         {catRows.length>0&&(
           <>
             {catRows.length>1&&<div className="catGroupTabBar" role="tablist" aria-label="أقسام الفئات">
-              {catRows.map((row,i)=>(<button key={row.label} type="button" role="tab" aria-selected={i===openCatGroupIdx} className={`catGroupTab${i===openCatGroupIdx?" catGroupTabOn":""}`} onClick={()=>{sfx.click();setOpenCatGroupIdx(i)}}>{row.label}</button>))}
+              {catRows.map((row,i)=>(<button key={row.label} type="button" role="tab" aria-selected={i===openCatGroupIdx} className={`catGroupTab${i===openCatGroupIdx?" catGroupTabOn":""}`} onClick={()=>{sfx.click();setOpenCatGroupIdx(i)}}><CountryFlag country={country} className="catGroupTabFlag" w={20} emojiSize={15} />{row.label}</button>))}
             </div>}
             {(catRows.length===1?catRows:[catRows[Math.min(openCatGroupIdx,catRows.length-1)]]).map(row=>(
               <section key={row.label} className="catsSection">
-                <div className="catsSectionTag">{row.label}</div>
+                <div className="catsSectionTag"><CountryFlag country={country} className="catsSectionFlag" w={18} emojiSize={13} />{row.label}</div>
                 <div className="catsCardGrid">
                   {row.cats.map(cat=>{
                     const sel=selSet.has(cat.id);
                     return(
                       <div key={cat.id} role="button" tabIndex={(selCats.length===8&&!sel)||(isOnlineGuest&&!sel)?-1:0} className={`catsCard${sel?" catsCardSel":""}${(selCats.length===8&&!sel)||(isOnlineGuest&&!sel)?" catsCardLocked":""}`} onPointerDown={()=>togCat(cat)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();togCat(cat)}}}>
+                        <CountryFlag country={country} className="catsCardCountryFlag" title={country.native} w="clamp(14px,3.2vw,18px)" emojiSize="clamp(13px,3.2vw,16px)" />
                         <button type="button" className="catsCardInfo" title={cat.ar} aria-label="معلومات" onClick={e=>{e.stopPropagation();sfx.click()}}>i</button>
                         <div className="catsCardBody">
                           <span className="catsCardEmoji" aria-hidden>{cat.icon}</span>
@@ -968,18 +1334,18 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <button type="button" className="bs" style={{width:"100%",marginTop:10}} onClick={()=>{sfx.click();setOnlineSession(null);go("menu")}}>{tx.back}</button>
       </div></div>}
 
-      {loading&&<div style={W} className="qadha-below-badge"><div style={{textAlign:"center",padding:"clamp(28px,8vw,48px) clamp(16px,5vw,48px)"}}><div style={{fontSize:58,animation:"cb 1.5s ease-in-out infinite",marginBottom:20}}>🧠</div><h2 style={{fontFamily:"'Tajawal',sans-serif",color:th.accent,fontSize:22}}>{tx.loading}</h2><div style={{width:"70%",maxWidth:320,height:7,background:th.gridCell,borderRadius:4,margin:"24px auto",overflow:"hidden"}}><div style={{width:`${loadProg}%`,height:"100%",background:`linear-gradient(90deg,${th.accent},${th.gold})`,borderRadius:4,transition:"width .3s"}}/></div><div style={{display:"flex",justifyContent:"center",gap:10,marginTop:16}}><span style={{fontSize:28}}>{country.flag}</span><span style={{fontSize:16,color:th.accent}}>{country.native}</span></div></div></div>}
+      {loading&&<div style={W} className="qadha-below-badge"><div style={{textAlign:"center",padding:"clamp(28px,8vw,48px) clamp(16px,5vw,48px)"}}><div style={{fontSize:58,animation:"cb 1.5s ease-in-out infinite",marginBottom:20}}>🧠</div><h2 style={{fontFamily:"'Tajawal',sans-serif",color:th.accent,fontSize:22}}>{tx.loading}</h2><div style={{width:"70%",maxWidth:320,height:7,background:th.gridCell,borderRadius:4,margin:"24px auto",overflow:"hidden"}}><div style={{width:`${loadProg}%`,height:"100%",background:`linear-gradient(90deg,${th.accent},${th.gold})`,borderRadius:4,transition:"width .3s"}}/></div><div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:10,marginTop:16}}><CountryFlag country={country} w={28} emojiSize={28} /><span style={{fontSize:16,color:th.accent}}>{country.native}</span></div></div></div>}
 
       {sc==="grid"&&!loading&&<div style={{...W,justifyContent:"flex-start",alignItems:"center",paddingTop:14,width:"100%"}} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(1080px,100%)",padding:"12px min(18px,4.5vw) max(16px,env(safe-area-inset-bottom))"}}>
         <div className="grid-header-row" style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}>
           <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===1?th.accent:th.textDim2,fontWeight:700}}>{tn(1)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[0]}</div></div>
-          <div style={{textAlign:"center"}}><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(17px,4.2vw,21px)",color:th.accent,fontWeight:700}}>قدها؟ {country.flag}</div><div style={{fontSize:12,color:th.textDim}}>◀ {turnLabel(active)} ▶</div></div>
+          <div style={{textAlign:"center"}}><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(17px,4.2vw,21px)",color:th.accent,fontWeight:700,display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}><span>قدها؟</span><CountryFlag country={country} w={22} emojiSize={21} /></div><div style={{fontSize:12,color:th.textDim}}>◀ {turnLabel(active)} ▶</div></div>
           <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===2?th.accent:th.textDim2,fontWeight:700}}>{tn(2)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[1]}</div></div>
         </div>
         <p style={{fontSize:11,color:th.textDim2,textAlign:"center",marginBottom:12,fontFamily:"'Tajawal',sans-serif",lineHeight:1.45}}>{BI.gridTierHint}</p>
         <div style={{display:"grid",gridTemplateColumns:`minmax(46px,auto) repeat(${selCats.length},1fr)`,gap:6,alignItems:"stretch"}}>
           <div aria-hidden style={{minHeight:1}} />
-          {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"8px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"clamp(52px,16vw,68px)"}}><CatIcon cat={cat} sz={56}/></div><div className="grid-cat-lbl" style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div></div>))}
+          {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"8px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"clamp(52px,16vw,68px)",flexDirection:"column",gap:3}}><CountryFlag country={country} title={country.native} w={20} emojiSize={15} /><CatIcon cat={cat} sz={56}/></div><div className="grid-cat-lbl" style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div></div>))}
           {PTS.map((pts,ri)=>(
             <Fragment key={`row-${ri}`}>
               <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"8px 4px",textAlign:"center",fontFamily:"'Tajawal',sans-serif",borderRadius:12,background:th.gridCell,border:`1px solid ${th.cardBd}`}}>
@@ -997,7 +1363,14 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         {bRef.current&&!answered&&<div style={{textAlign:"center",marginBottom:16}}><div style={{display:"inline-block",background:isNight?"rgba(255,138,92,.14)":"rgba(234,88,12,.1)",border:"1px solid rgba(255,138,92,.3)",borderRadius:24,padding:"12px 26px",fontSize:17,color:"#EA580C",fontWeight:700}}>{stealBanner}</div></div>}
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}><div style={{width:"clamp(92px,24vw,112px)",height:"clamp(92px,24vw,112px)",borderRadius:"50%",background:timer<=10?"linear-gradient(135deg,#EF4444,#DC2626)":timer<=20?"linear-gradient(135deg,#F59E0B,#D97706)":"linear-gradient(135deg,#8E44AD,#A855F7)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(34px,8.5vw,42px)",fontWeight:900,animation:timer<=10?"pl .4s infinite":"none",boxShadow:timer<=10?"0 0 30px rgba(255,59,92,.5)":"0 0 15px rgba(168,85,247,.3)"}}>{timer}</div></div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px",flexWrap:"wrap",gap:8}}><span style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts} · {ptsTierLabelAr(curPts)}</span><span style={{fontSize:15,color:th.textDim}}>{turnLabel(active)}</span></div>
-        <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}><p style={{fontSize:"clamp(19px,4.5vw,24px)",fontWeight:800,lineHeight:1.75,color:th.scoreTxt}}>{curQ.q}</p></div>
+        <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}>
+          <p style={{fontSize:"clamp(19px,4.5vw,24px)",fontWeight:800,lineHeight:1.75,color:th.scoreTxt}}>{curQ.q}</p>
+          {curQ.img&&(
+            <div style={{marginTop:18}}>
+              <img src={curQ.img} alt="" style={{maxWidth:"100%",width:"min(100%,420px)",maxHeight:"min(42dvh,380px)",objectFit:"contain",borderRadius:16,border:`1px solid ${th.cardBd}`,boxShadow:"0 8px 28px rgba(0,0,0,.12)",background:th.gridCell}} loading="lazy" referrerPolicy="no-referrer" decoding="async"/>
+            </div>
+          )}
+        </div>
         {revealed&&selA!==null&&selA!==curQ.a&&!hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span></div>}
         {revealed&&hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span><div style={{fontSize:18,color:"#4ADE80",fontWeight:700,marginTop:8}}>{curQ.o[curQ.a]}</div></div>}
         
@@ -1022,7 +1395,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 
       {sc==="results"&&<div style={W} className="qadha-below-badge"><div style={P}>
         <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"🤝":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p>        <p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p></div>
-        <div className="gc" style={{marginBottom:20,border:`2px solid ${th.accent}`,borderRadius:20,padding:24,position:"relative",overflow:"hidden"}}><div style={{position:"absolute",top:0,left:0,right:0,height:4,background:`linear-gradient(90deg,${th.accent},rgba(${th.accentRgb},.5),${th.accent})`}}/><div style={{textAlign:"center",fontSize:11,color:th.textDim,letterSpacing:4,marginBottom:16}}>{tx.vCard}</div><div style={{display:"flex",justifyContent:"space-around",marginBottom:12}}><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6}}>{tn(1)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[0]>=scores[1]?th.accent:th.textDim2}}>{scores[0]}</div></div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:22,color:th.textDim2,alignSelf:"center"}}>ضد</div><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6,opacity:.85}}>{tn(2)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[1]>=scores[0]?th.accent:th.textDim2}}>{scores[1]}</div></div></div><div style={{textAlign:"center",fontFamily:"'Tajawal',sans-serif",fontSize:14,color:th.textDim2,marginTop:10}}>قدها؟ 👑 {country.flag}</div></div>
+        <div className="gc" style={{marginBottom:20,border:`2px solid ${th.accent}`,borderRadius:20,padding:24,position:"relative",overflow:"hidden"}}><div style={{position:"absolute",top:0,left:0,right:0,height:4,background:`linear-gradient(90deg,${th.accent},rgba(${th.accentRgb},.5),${th.accent})`}}/><div style={{textAlign:"center",fontSize:11,color:th.textDim,letterSpacing:4,marginBottom:16}}>{tx.vCard}</div><div style={{display:"flex",justifyContent:"space-around",marginBottom:12}}><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6}}>{tn(1)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[0]>=scores[1]?th.accent:th.textDim2}}>{scores[0]}</div></div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:22,color:th.textDim2,alignSelf:"center"}}>ضد</div><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6,opacity:.85}}>{tn(2)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[1]>=scores[0]?th.accent:th.textDim2}}>{scores[1]}</div></div></div><div style={{textAlign:"center",fontFamily:"'Tajawal',sans-serif",fontSize:14,color:th.textDim2,marginTop:10,display:"flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}><span>قدها؟ 👑</span><CountryFlag country={country} w={22} emojiSize={18} /></div></div>
         <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,remoteOverlay);setQBank(questions);setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);go("grid")},500)}}>{tx.rematch}</button>
         <button className="bs" style={{width:"100%",padding:16,marginBottom:8}} onClick={()=>{sfx.click();setSelCats([]);go("cats")}}>{tx.newCats}</button>
         <button className="bs" style={{width:"100%",padding:16}} onClick={()=>{setSelCats([]);go("menu")}}>{tx.menu}</button>
