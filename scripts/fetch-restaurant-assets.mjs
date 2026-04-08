@@ -1,6 +1,6 @@
 /**
- * يجلب روابط التحميل المباشرة من ويكيميديا كومنز ويحمّل إلى public/malls.
- * تشغيل من جذر المشروع: node scripts/fetch-mall-assets.mjs
+ * يجلب صور مطاعم/أماكن مأكولات من كومنز (Kuwait) إلى public/restaurants.
+ * تشغيل من جذر المشروع: node scripts/fetch-restaurant-assets.mjs
  */
 import fs from "fs";
 import path from "path";
@@ -8,25 +8,23 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
-const outDir = path.join(root, "public", "malls");
+const outDir = path.join(root, "public", "restaurants");
 
-/** اسم ملف محلي واضح ← عنوان ملف في كومنز (بدون بادئة File:) */
-/** صور تفضّل زوايا بلا لافتات كبيرة باسم المجمع (مواقف، داخلية، مناظر) */
 const MAP = [
-  ["kuwait-avenues-entrance.jpg", "Avenues Mall Parking lot.jpg"],
-  ["kuwait-souq-sharq-facade.jpg", "Kuwait City Souq Sharq 02.jpg"],
-  ["kuwait-mall-360-zahra.jpg", "Sunset view from in 360 Mall.jpg"],
-  ["kuwait-mubarakiya-day.jpg", "Kuwait City Souq al-Mubarakeya 1.jpg"],
-  ["kuwait-marina-mall-exterior.jpg", "Kuwaitmarinemallview.jpg"],
-  ["kuwait-al-kout-fahaheel.jpg", "Al kouth mall kuwait (2).jpg"],
-  ["kuwait-avenues-grand-avenue.jpg", "Grand Avenue in Kuwait - 2.jpg"],
-  ["kuwait-marina-mall-salmiya.png", "Marina Mall - Salmiya.png"],
-  ["kuwait-avenues-prestige.jpg", "Grand Avenue in Kuwait.jpg"],
-  ["kuwait-souq-sharq-marina-panorama.jpg", "Marina Souq Sharq, ciudad de Kuwait, Kuwait, 2024-08-12, DD 22-27 PAN.jpg"],
-  ["kuwait-avenues-exterior-2007.jpg", "The Avenues Kuwait (cropped).jpg"],
-  ["kuwait-marina-mall-bridge.jpg", "Marina Mall Bridge, Kuwait.jpg"],
-  ["kuwait-avenues-grand-interior.jpg", "Grand avenus.jpg"],
-  ["kuwait-mubarakiya-night.jpg", "Kuwait City Souq al-Mubarakeya at Night 01.jpg"],
+  ["kuwait-rest-kfc-1980.jpg", "KFC restaurant Kuwait City, 1980.jpg"],
+  ["kuwait-rest-mcdonalds.jpg", "Mcdonald's.jpg"],
+  ["kuwait-rest-chilis.jpg", "Chilis Kuwait.jpg"],
+  ["kuwait-rest-hardeez.jpg", "Hardeez Kuwait.jpg"],
+  ["kuwait-rest-burger-king.jpg", "Burgerking1.jpg"],
+  ["kuwait-rest-shrimpy.jpg", "Shrimpy in Jabriya.jpg"],
+  ["kuwait-rest-mughal-mahal.jpg", "Mughal mahal.jpg"],
+  ["kuwait-rest-hard-rock.jpg", "Hrc-kuwait.jpg"],
+  ["kuwait-rest-chocolate-bar.jpg", "The Chocolate Bar - Yum!.jpg"],
+  ["kuwait-rest-shamam-oven.jpg", "Al Shamam Restaurant Oven in Mubarakiya.jpg"],
+  ["kuwait-rest-mubarakiya-cafes.jpg", "Traditional cafes in Mubarakiya.jpg"],
+  ["kuwait-rest-fish-market.jpg", "Mercado del pescado, ciudad de Kuwait, Kuwait, 2024-08-12, DD 30.jpg"],
+  ["kuwait-rest-kiwi-kabab.jpg", "Kiwi 1.jpg"],
+  ["kuwait-rest-pizza-hut-1982.jpg", "Kuwait 1982-0108.jpg"],
 ];
 
 async function commonsUrl(title) {
@@ -36,10 +34,9 @@ async function commonsUrl(title) {
   u.searchParams.set("titles", "File:" + title);
   u.searchParams.set("prop", "imageinfo");
   u.searchParams.set("iiprop", "url");
-  /** مقاسات مسموحة على خوادم ويكيميديا — انظر https://w.wiki/GHai */
   u.searchParams.set("iiurlwidth", "960");
   const r = await fetch(u, {
-    headers: { "User-Agent": "qadha-game-mall-assets/1.0 (educational)" },
+    headers: { "User-Agent": "qadha-game-restaurant-assets/1.0 (educational)" },
   });
   if (!r.ok) throw new Error(String(r.status));
   const j = await r.json();
@@ -66,14 +63,13 @@ async function main() {
     let bin;
     for (let attempt = 0; attempt < 6; attempt++) {
       bin = await fetch(url, {
-        headers: { "User-Agent": "qadha-game-mall-assets/1.0 (educational-quiz)" },
+        headers: { "User-Agent": "qadha-game-restaurant-assets/1.0 (educational-quiz)" },
       });
       if (bin.ok) break;
       if (bin.status === 429 && attempt < 5) {
         await new Promise((r) => setTimeout(r, 5000 + attempt * 4000));
         continue;
       }
-      /** وثيقة HTML خطأ — غالباً حجم مصغرة غير مسموح */
       throw new Error(`GET ${bin.status} ${local}`);
     }
     fs.writeFileSync(dest, Buffer.from(await bin.arrayBuffer()));

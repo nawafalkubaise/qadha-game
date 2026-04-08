@@ -30,6 +30,7 @@
     "refine:kuwait:distractors": "node scripts/refine-imported-distractors.mjs",
     "verify:dialect:equiv": "node scripts/dialect-equivalence-smoke.mjs",
     "fetch:malls": "node scripts/fetch-mall-assets.mjs",
+    "fetch:restaurants": "node scripts/fetch-restaurant-assets.mjs",
     "open:chrome:portrait": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/open-chrome-portrait.ps1",
     "open:chrome:portrait:tabs": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/open-chrome-portrait.ps1 -Tabs",
     "preview": "vite preview"

@@ -5,6 +5,7 @@
 import core from "./kwBankCore.json" with { type: "json" };
 import imported from "./kwImportedBank.json" with { type: "json" };
 import kwMallPics from "./kwMallPics.json" with { type: "json" };
+import kwRestaurantPics from "./kwRestaurantPics.json" with { type: "json" };
 
 /** d: 1 عادي (200) · 2 وسط (400) · 3 صعب (600) — اختياري */
 const q = (question, o, a, d) => {
@@ -264,6 +265,7 @@ const EXTRA = {
     q("الغزلان العربية صحراوية توصف بأنّها؟", ["ثدييات عاشبة مهددة في مواطنها", "أسماك عميقة", "طيور بطريق", "برمائيات استوائية"], 0),
   ],
   kuwait_malls: [...kwMallPics],
+  kuwait_restaurants: [...kwRestaurantPics],
   tribes: [
     q("«الديوانية» في الكويت تاريخياً تقوم بدور؟", ["مجلس استقبال وتشاور اجتماعي", "مصنع سفن", "محطة قطار", "مخزن نفط"], 0, 1),
     q("من الألفاظ المتداولة في التقسيم القبلي: «الفخذ» يقصد به؟", ["فرع من فروع القبيلة", "اسم محافظة", "عملة معدنية", "لقب وظيفي حكومي"], 0, 2),

@@ -74,6 +74,7 @@ const AR = {
   physics: "الفيزياء",
   biology: "الأحياء",
   kuwait_malls: "مولات الكويت",
+  kuwait_restaurants: "مطاعم مشهورة",
 };
 
 const PROFILES = {

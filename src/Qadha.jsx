@@ -100,12 +100,13 @@ const CATS=[
 {id:"physics",n:"Physics",ar:"الفيزياء",icon:"⚛️",c:"#60A5FA"},
 {id:"biology",n:"Biology",ar:"الأحياء",icon:"🧬",c:"#4ADE80"},
 {id:"kuwait_malls",n:"Kuwait Malls",ar:"مولات الكويت",icon:"🏬",c:"#0D9488"},
+{id:"kuwait_restaurants",n:"Kuwait Restaurants",ar:"مطاعم مشهورة",icon:"🍽️",c:"#EA580C"},
 ];
 
 /** صفوف عرض الفئات (أقسام + بطاقات) */
 const CAT_GROUP_ROWS=[
   {ar:"سيارات",en:"Cars",ids:new Set(["cars"])},
-  {ar:"أماكن وسفر",en:"Places & Travel",ids:new Set(["geography","landmarks","maps","flags","ocean","travel","aviation","space","kuwait_malls"])},
+  {ar:"أماكن وسفر",en:"Places & Travel",ids:new Set(["geography","landmarks","maps","flags","ocean","travel","aviation","space","kuwait_malls","kuwait_restaurants"])},
   {ar:"تاريخ ومجتمع",en:"History & Society",ids:new Set(["history","ancient","leaders","politics","law","religion","customs","proverbs","mythology","psychology","social","economics","currencies","tribes"])},
   {ar:"علوم وتقنية",en:"Science & Tech",ids:new Set(["science","chemistry","math","physics","biology","medicine","inventions","tech","weather","gems","dinosaurs"])},
   {ar:"فن وثقافة وإعلام",en:"Arts & Media",ids:new Set(["culture","art","theater","music","dance","movies","anime","comics","photography","horror","architecture","literature","media","fashion","boardgames","riddles"])},
@@ -320,6 +321,17 @@ function normalizeForTypedAnswer(s){
     .replace(/\s+/g," ")
     .trim();
 }
+/** يوحّد الأرقام (هندية/فارسية) إلى 0-9 ليطابق كتابة اللاعب مع خيارات البنك */
+function normalizeDigitsToLatin(s){
+  let out="";
+  for(const ch of String(s||"")){
+    const u=ch.codePointAt(0);
+    if(u>=0x0660&&u<=0x0669){out+=String(u-0x0660);continue;}
+    if(u>=0x06f0&&u<=0x06f9){out+=String(u-0x06f0);continue;}
+    out+=ch;
+  }
+  return out;
+}
 const DIALECT_EQUIV_GROUPS=[
   ["طماط","طماطم","تماطم","بندوره","بندورة","طماطه","طماطة"],
   ["بطاط","بطاطس","بطاطا","بطاطه"],
@@ -427,11 +439,13 @@ function canonicalizeDialectTerms(s){
     if(!f||!tt)continue;
     t=replacePhrase(t,f,tt);
   }
-  return t
-    .split(" ")
-    .map(tok=>DIALECT_EQUIV_MAP.get(tok)||tok)
-    .join(" ")
-    .trim();
+  return normalizeDigitsToLatin(
+    t
+      .split(" ")
+      .map(tok=>DIALECT_EQUIV_MAP.get(tok)||tok)
+      .join(" ")
+      .trim()
+  );
 }
 function tokenSimilarityLoose(a,b){
   const ta=canonicalizeDialectTerms(a).split(" ").filter(x=>x.length>=2);
@@ -454,7 +468,16 @@ function isTypedAnswerAccepted(typed,correct){
   const t=canonicalizeDialectTerms(typed);
   const c=canonicalizeDialectTerms(correct);
   if(!t||!c)return false;
-  if(t===c||c.includes(t)||t.includes(c))return true;
+  if(t===c)return true;
+  /** إجابة أرقام فقط: تطابق كامل لمجموعة أرقام واحدة، أو كل الأرقام متلاصقة (بدون قبول جزء من نطاق مثل ٦٠-١٠٠) */
+  if(/^\d+$/.test(t)){
+    const runs=c.match(/\d+/g)||[];
+    if(!runs.length)return false;
+    if(runs.length===1)return runs[0]===t;
+    const compact=c.replace(/\D/g,"");
+    return compact===t;
+  }
+  if(c.includes(t)||t.includes(c))return true;
   const tokenSim=tokenSimilarityLoose(t,c);
   const charSim=charSimilarityLoose(t,c);
   // كلمات قليلة: نحتاج تشابه حروفي أعلى. عبارات أطول: نقبل تشابه المعنى عبر الكلمات.
@@ -744,6 +767,9 @@ export default function Qadha(){
   const[themeMode,setThemeMode]=useState(()=>{try{const s=localStorage.getItem("qadha_theme");if(s==="calm"||s==="night"||s==="light")return s}catch{/* ignore */}return"night"});
   const prefetchRef=useRef({done:new Set()});
   const tRef=useRef(null);const bRef=useRef(false);
+  /** الوضع الصعب: إجابة صحيحة — لا نعرض «محد عرف» */
+  const hardCorrectRef=useRef(false);
+  const onlineChatEndRef=useRef(null);
   const wipeQuestionCachesAfterGame=useCallback(()=>{
     clearQuestionCachesFromStorage();
     prefetchRef.current.done.clear();
@@ -756,6 +782,7 @@ export default function Qadha(){
 
   const isOnlineHost=onlineSession?.isHost===true;
   const isOnlineGuest=Boolean(onlineSession)&&!onlineSession.isHost;
+  const showOnlineDock=Boolean(onlineSession&&sc!=="online"&&sc!=="splash");
   const liveRoom=useRoomChannel(
     onlineSession?.code||"",
     onlineSession?.voiceToken||"",
@@ -778,7 +805,7 @@ export default function Qadha(){
     roomCode:onlineSession?.code||"",
     selfId:onlineSession?.playerId||"",
     authToken:onlineSession?.voiceToken||"",
-    enabled:voiceSessReady&&Boolean(onlineSession)&&micOn&&!!catsMicStream,
+    enabled:voiceSessReady&&Boolean(onlineSession)&&liveRoom.connected&&micOn&&!!catsMicStream,
     localStream:catsMicStream,
     signalTransport:voiceSignalTransport,
     fetchPeerIds:fetchVoicePeers,
@@ -815,6 +842,12 @@ export default function Qadha(){
     });
     return()=>{try{unsub&&unsub()}catch{/* ignore */}};
   },[onlineSession,liveRoom.connected,liveRoom.subscribeSignals,liveRoom.room]);
+
+  useEffect(()=>{
+    if(!onlineChat.length)return;
+    const el=onlineChatEndRef.current;
+    if(el)try{el.scrollIntoView({behavior:"smooth"})}catch{/* ignore */}
+  },[onlineChat.length]);
 
   // أنماط مريحة للعين: تباين أقل حدة، ألوان متوسطة التشبع، خلفيات محايدة
   const THEMES={
@@ -975,7 +1008,7 @@ export default function Qadha(){
       });
       setCurQ(shufQ(qs[pi]));
     }else{setCurQ({q:"?",o:["A","B","C","D"],a:0})}
-    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");go("question");
+    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");go("question");
   };
   const checkTyped=()=>{
     if(answered||!curQ||!typedAns.trim())return;
@@ -984,6 +1017,7 @@ export default function Qadha(){
     const typed=typedAns;
     const isMatch=isTypedAnswerAccepted(typed,correct);
     if(isMatch){
+      hardCorrectRef.current=true;
       sfx.correct();setRevealed(true);setScores(p=>{const n=[...p];n[active-1]+=curPts;return n});
       setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2000);
     }else{
@@ -1068,8 +1102,9 @@ export default function Qadha(){
   const PScroll={...P,flex:1,minHeight:0,justifyContent:"flex-start"};
   const PwideScroll={...Pwide,flex:1,minHeight:0,justifyContent:"flex-start"};
 
+  const onlineDockPad=showOnlineDock?"min(260px,calc(150px + 22vh))":undefined;
   return(
-    <div style={{...W,width:"100%",background:th.bg,color:th.text,direction:rtl?"rtl":"ltr",fontWeight:700}} onClick={()=>sfx.init()}>
+    <div style={{...W,width:"100%",background:th.bg,color:th.text,direction:rtl?"rtl":"ltr",fontWeight:700,paddingBottom:onlineDockPad}} onClick={()=>sfx.init()}>
       <style>{`
 *{box-sizing:border-box;margin:0;padding:0;font-family:'Tajawal','Poppins',sans-serif;color:inherit;-webkit-tap-highlight-color:transparent;font-weight:700}
 button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
@@ -1163,6 +1198,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .cat-grid{min-height:min(36dvh,300px);max-height:calc(100dvh - 175px);gap:12px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
 .catsCardBody{min-height:clamp(92px,22vw,128px);padding:12px 8px 10px}
 .catsCardEmoji{font-size:clamp(48px,14vw,76px)}
+.catsCardGuest{opacity:.93}
 .catsCardFoot{font-size:10px;min-height:36px;padding:8px 4px}
 .catsStepLbl{font-size:10px;max-width:88px}
 .catsStepCircle{width:42px;height:42px;font-size:16px}
@@ -1205,8 +1241,9 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 
       {sc==="country"&&<div style={WScroll} className="qadha-below-badge"><div style={{...PScroll,width:"100%",maxWidth:"min(820px,100%)"}}>
         <h2 className="tl" style={{marginTop:6}}>{tx.country}</h2>
-        <input className="inp" placeholder={tx.search} value={countryQ} onChange={e=>setCountryQ(e.target.value)} style={{margin:"16px 0",padding:"18px 20px",fontSize:18,borderRadius:18}}/>
-        <div style={{display:"grid",gridTemplateColumns:"1fr",gap:14,flex:1,overflowY:"auto",maxHeight:"calc(100dvh - 240px)",paddingBottom:10}}>{fCountries.map(c=>(<button key={c.id} className="gc hov" style={{display:"flex",alignItems:"center",gap:20,width:"100%",textAlign:rtl?"right":"left",border:country.id===c.id?`3px solid ${th.accent}`:`2px solid ${th.cardBd}`,borderRadius:22,minHeight:112,padding:"20px 22px"}} onClick={()=>{sfx.click();setCountry(c);setSelCats([]);go("cats")}}><CountryFlag country={c} spanStyle={{ width: "clamp(44px,12vw,58px)", flexShrink: 0 }} w={52} emojiSize="clamp(44px,12vw,58px)" /><div style={{flex:1,minWidth:0}}><div style={{fontSize:19,color:th.accent,fontWeight:800,lineHeight:1.35}}>{c.native}</div></div></button>))}</div>
+        {onlineSession&&isOnlineGuest&&<p className="gc" style={{fontSize:13,color:th.textDim,textAlign:"center",margin:"12px 0",padding:12,lineHeight:1.5}}>اختيار الدولة للمضيف فقط.</p>}
+        <input className="inp" placeholder={tx.search} value={countryQ} onChange={e=>{if(isOnlineGuest)return;setCountryQ(e.target.value)}} readOnly={isOnlineGuest} style={{margin:"16px 0",padding:"18px 20px",fontSize:18,borderRadius:18,opacity:isOnlineGuest?0.55:1}}/>
+        <div style={{display:"grid",gridTemplateColumns:"1fr",gap:14,flex:1,overflowY:"auto",maxHeight:"calc(100dvh - 240px)",paddingBottom:10}}>{fCountries.map(c=>(<button key={c.id} className="gc hov" disabled={isOnlineGuest} style={{display:"flex",alignItems:"center",gap:20,width:"100%",textAlign:rtl?"right":"left",border:country.id===c.id?`3px solid ${th.accent}`:`2px solid ${th.cardBd}`,borderRadius:22,minHeight:112,padding:"20px 22px",opacity:isOnlineGuest?0.55:1,cursor:isOnlineGuest?"not-allowed":"pointer"}} onClick={()=>{if(isOnlineGuest)return;sfx.click();setCountry(c);setSelCats([]);go("cats")}}><CountryFlag country={c} spanStyle={{ width: "clamp(44px,12vw,58px)", flexShrink: 0 }} w={52} emojiSize="clamp(44px,12vw,58px)" /><div style={{flex:1,minWidth:0}}><div style={{fontSize:19,color:th.accent,fontWeight:800,lineHeight:1.35}}>{c.native}</div></div></button>))}</div>
         <button className="bs" style={{width:"100%",marginTop:16,padding:16,fontSize:16}} onClick={()=>go("cats")}>{tx.back}</button>
       </div></div>}
 
@@ -1247,44 +1284,10 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
           </div>
         )}
         {onlineSession&&(
-          <div className="gc" style={{position:"relative",marginBottom:16,padding:"14px 16px",borderRadius:18,border:`1px solid ${th.accentDim}`}}>
-            <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:12,justifyContent:"center"}}>
-              <span style={{fontSize:22}}>🎙️</span>
-              <span style={{fontSize:13,color:th.textDim,flex:1,minWidth:200,textAlign:"center",lineHeight:1.5}}>
-                تحدث مع من في الغرفة أثناء اختيار الفئات. فعّل المايك على كل جهاز يريد أن يُسمع.
-              </span>
-              <button type="button" className="bs sm" onClick={()=>{sfx.click();void toggleCatsMic()}}>{micOn?"إيقاف المايك":"تشغيل المايك"}</button>
-            </div>
-            {micOn&&voiceRemoteList.length>0&&(
-              <p style={{fontSize:12,color:th.accent,textAlign:"center",marginTop:10,fontFamily:"'Tajawal',sans-serif"}}>
-                صوت من {voiceRemoteList.length} {voiceRemoteList.length===1?"جهاز":"أجهزة"}
-              </p>
-            )}
-            <div aria-hidden="true" style={{position:"absolute",width:0,height:0,overflow:"hidden"}}>
-              {voiceRemoteList.map(([rid,stream])=>(
-                <audio key={rid} ref={el=>{if(el){el.srcObject=stream;void el.play().catch(()=>{})}}} autoPlay playsInline/>
-              ))}
-            </div>
-          </div>
-        )}
-        {onlineSession&&(
-          <div className="gc" style={{marginBottom:16,padding:"14px 16px",borderRadius:18,border:`1px solid ${th.cardBd}`}}>
-            <div style={{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:10}}>
-              <span style={{fontSize:14,color:th.accent,fontWeight:800}}>💬 محادثة الغرفة</span>
-              <span style={{fontSize:11,color:th.textDim}}>{liveRoom.connected?"متصلة":"غير متصلة"}</span>
-            </div>
-            <div style={{maxHeight:140,overflowY:"auto",background:th.gridCell,border:`1px solid ${th.cardBd}`,borderRadius:12,padding:"8px 10px",marginBottom:10}}>
-              {onlineChat.length===0&&<p style={{fontSize:12,color:th.textDim,textAlign:"center",padding:"8px 0"}}>لا توجد رسائل بعد</p>}
-              {onlineChat.map(m=>(
-                <p key={m.id} style={{fontSize:12,lineHeight:1.55,color:th.text,marginBottom:6}}>
-                  <span style={{color:th.accent,fontWeight:800}}>{m.playerName}:</span> {m.text}
-                </p>
-              ))}
-            </div>
-            <div style={{display:"flex",gap:8}}>
-              <input className="inp" value={chatInput} onChange={e=>setChatInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")sendChat()}} placeholder="اكتب رسالة سريعة..." style={{flex:1,padding:"10px 12px",fontSize:13}}/>
-              <button type="button" className="bs sm" onClick={sendChat} disabled={!chatInput.trim()||!liveRoom.connected} style={{opacity:!chatInput.trim()||!liveRoom.connected?0.5:1}}>إرسال</button>
-            </div>
+          <div className="gc" style={{marginBottom:14,padding:"12px 14px",borderRadius:16,border:`1px solid ${th.cardBd}`}}>
+            <p style={{fontSize:12,color:th.textDim,textAlign:"center",lineHeight:1.55,margin:0,fontFamily:"'Tajawal',sans-serif"}}>
+              المحادثة النصية وزر المايك في <strong style={{color:th.accent}}>أسفل الشاشة</strong> أثناء الجلسة.
+            </p>
           </div>
         )}
         <div className="gc" style={{marginBottom:20,padding:"16px 18px",borderRadius:20}}>
@@ -1297,9 +1300,9 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         </div>
         <h2 className="catsTitle"><CountryFlag country={country} className="catsTitleFlag" w={36} emojiSize="clamp(26px,6.5vw,34px)" /><span>{tx.cats}</span></h2>
         <p className="catsSub">{selCats.length}/8 {tx.sel} · {CATS.length} {tx.catWord} · {country.native}</p>
-        <div className="catsSearchRow">
-          <input className="catsSearchInp" placeholder={tx.search} value={catQ} onChange={e=>setCatQ(e.target.value)} aria-label={tx.search}/>
-          <button type="button" className="catsSearchBtn" aria-label="بحث" onClick={()=>sfx.click()}>🔍</button>
+        <div className="catsSearchRow" style={{opacity:isOnlineGuest?0.55:1}}>
+          <input className="catsSearchInp" placeholder={isOnlineGuest?"بحث للمضيف فقط":tx.search} value={catQ} onChange={e=>{if(isOnlineGuest)return;setCatQ(e.target.value)}} aria-label={tx.search} readOnly={isOnlineGuest} disabled={isOnlineGuest}/>
+          <button type="button" className="catsSearchBtn" aria-label="بحث" disabled={isOnlineGuest} onClick={()=>{if(isOnlineGuest)return;sfx.click()}}>🔍</button>
         </div>
         {catRows.length>0&&(
           <>
@@ -1313,9 +1316,9 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
                   {row.cats.map(cat=>{
                     const sel=selSet.has(cat.id);
                     return(
-                      <div key={cat.id} role="button" tabIndex={(selCats.length===8&&!sel)||(isOnlineGuest&&!sel)?-1:0} className={`catsCard${sel?" catsCardSel":""}${(selCats.length===8&&!sel)||(isOnlineGuest&&!sel)?" catsCardLocked":""}`} onPointerDown={()=>togCat(cat)} onKeyDown={e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();togCat(cat)}}}>
+                      <div key={cat.id} role={isOnlineGuest?"group":"button"} tabIndex={isOnlineGuest?-1:((selCats.length===8&&!sel)?-1:0)} className={`catsCard${sel?" catsCardSel":""}${(selCats.length===8&&!sel)||(isOnlineGuest&&!sel)?" catsCardLocked":""}${isOnlineGuest?" catsCardGuest":""}`} style={isOnlineGuest?{pointerEvents:"none",cursor:"default"}:undefined} onPointerDown={()=>{if(!isOnlineGuest)togCat(cat)}} onKeyDown={e=>{if(isOnlineGuest)return;if(e.key==="Enter"||e.key===" "){e.preventDefault();togCat(cat)}}}>
                         <CountryFlag country={country} className="catsCardCountryFlag" title={country.native} w="clamp(14px,3.2vw,18px)" emojiSize="clamp(13px,3.2vw,16px)" />
-                        <button type="button" className="catsCardInfo" title={cat.ar} aria-label="معلومات" onClick={e=>{e.stopPropagation();sfx.click()}}>i</button>
+                        <button type="button" className="catsCardInfo" style={{pointerEvents:"auto"}} title={cat.ar} aria-label="معلومات" onClick={e=>{e.stopPropagation();sfx.click()}}>i</button>
                         <div className="catsCardBody">
                           <span className="catsCardEmoji" aria-hidden>{cat.icon}</span>
                         </div>
@@ -1372,7 +1375,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
           )}
         </div>
         {revealed&&selA!==null&&selA!==curQ.a&&!hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span></div>}
-        {revealed&&hard&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span><div style={{fontSize:18,color:"#4ADE80",fontWeight:700,marginTop:8}}>{curQ.o[curQ.a]}</div></div>}
+        {revealed&&hard&&!hardCorrectRef.current&&<div style={{textAlign:"center",marginBottom:12}}><span style={{fontSize:14,color:"#FF8A5C",fontWeight:600}}>{tx.nobody}</span><div style={{fontSize:18,color:"#4ADE80",fontWeight:700,marginTop:8}}>{curQ.o[curQ.a]}</div></div>}
         
         {!hard&&<div style={{display:"flex",flexDirection:"column",gap:16,marginBottom:20,width:"100%"}}>
           {curQ.o.map((opt,i)=>{
@@ -1400,6 +1403,47 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <button className="bs" style={{width:"100%",padding:16,marginBottom:8}} onClick={()=>{sfx.click();setSelCats([]);go("cats")}}>{tx.newCats}</button>
         <button className="bs" style={{width:"100%",padding:16}} onClick={()=>{setSelCats([]);go("menu")}}>{tx.menu}</button>
       </div></div>}
+
+      {showOnlineDock&&(
+        <div style={{position:"fixed",left:0,right:0,bottom:0,zIndex:998}} dir="rtl">
+          <div style={{position:"relative",maxWidth:"min(720px,100%)",margin:"0 auto",padding:"10px 14px calc(12px + env(safe-area-inset-bottom))",background:th.badge,borderTop:`2px solid ${th.cardBd}`,boxShadow:"0 -12px 40px rgba(0,0,0,.16)"}}>
+            <div style={{display:"flex",flexWrap:"wrap",alignItems:"center",gap:8,marginBottom:8}}>
+              <span style={{fontSize:12,fontWeight:900,color:th.accent,fontFamily:"'Tajawal',sans-serif",letterSpacing:0.5}}>غرفة {onlineSession.code}</span>
+              <span style={{fontSize:11,color:liveRoom.connected?"#4ADE80":th.textDim,fontWeight:700}}>{liveRoom.connected?"● متصل":"○ جاري الاتصال…"}</span>
+              <span style={{flex:1,minWidth:8}} />
+              <button type="button" className="bs sm" onClick={()=>{sfx.click();void toggleCatsMic()}} style={{fontWeight:800,whiteSpace:"nowrap"}}>
+                {micOn?"🎙️ إيقاف المايك":"🎙️ تشغيل المايك"}
+              </button>
+            </div>
+            {micOn&&voiceRemoteList.length>0&&(
+              <p style={{fontSize:11,color:th.accent,textAlign:"center",marginBottom:6,fontFamily:"'Tajawal',sans-serif"}}>
+                صوت وارد · {voiceRemoteList.length} {voiceRemoteList.length===1?"جهاز":"أجهزة"}
+              </p>
+            )}
+            <p style={{fontSize:10,color:th.textDim2,textAlign:"center",marginBottom:8,lineHeight:1.45,fontFamily:"'Tajawal',sans-serif"}}>
+              النص فوري عبر الخادم. الصوت WebRTC بين المتصفحين (سماح المايك واتصال مستقر).
+            </p>
+            <div style={{maxHeight:"min(120px,22vh)",overflowY:"auto",WebkitOverflowScrolling:"touch",background:th.gridCell,border:`1px solid ${th.cardBd}`,borderRadius:12,padding:"8px 10px",marginBottom:8}}>
+              {onlineChat.length===0&&<p style={{fontSize:11,color:th.textDim,textAlign:"center",padding:6}}>لا توجد رسائل بعد</p>}
+              {onlineChat.map(m=>(
+                <p key={m.id} style={{fontSize:11,lineHeight:1.5,color:th.text,marginBottom:4}}>
+                  <span style={{color:th.accent,fontWeight:800}}>{m.playerName}:</span> {m.text}
+                </p>
+              ))}
+              <span ref={onlineChatEndRef} style={{display:"block",height:1}} />
+            </div>
+            <div style={{display:"flex",gap:8,alignItems:"center"}}>
+              <input className="inp" value={chatInput} onChange={e=>setChatInput(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")sendChat()}} placeholder="رسالة للغرفة…" disabled={!liveRoom.connected} style={{flex:1,padding:"10px 12px",fontSize:13}}/>
+              <button type="button" className="bs sm" onClick={sendChat} disabled={!chatInput.trim()||!liveRoom.connected}>إرسال</button>
+            </div>
+            <div aria-hidden style={{position:"absolute",left:"-9999px",top:0,width:1,height:1,overflow:"hidden"}}>
+              {voiceRemoteList.map(([rid,stream])=>(
+                <audio key={rid} ref={el=>{if(el){el.srcObject=stream;void el.play().catch(()=>{})}}} autoPlay playsInline/>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

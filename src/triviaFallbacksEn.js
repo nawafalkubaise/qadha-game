@@ -440,6 +440,16 @@ export const FALLBACK_EN = {
     { q: "Asterix origin?", o: ["USA", "France/Belgium", "Japan", "Egypt"], a: 1 },
     { q: "Calvin and Hobbes format?", o: ["Anime", "Comic strip", "Novel", "Film"], a: 1 },
   ],
+  kuwait_restaurants: [
+    { q: "Global fast-food brands are usually known for?", o: ["Logos and standardized menus", "Only raw grain sales", "No printed menus ever", "Bookbinding"], a: 0 },
+    { q: "Popular seafood restaurants typically serve?", o: ["Fish and shellfish dishes", "Only wheat berries", "Only soda", "No food"], a: 0 },
+    { q: "Mall cafés differ from full restaurants by often offering?", o: ["Drinks and quick bites", "Only wedding banquets", "Night fishing", "Auto repair"], a: 0 },
+    { q: "A restaurant chain usually means?", o: ["Multiple locations under one brand", "Exactly one location forever", "Vegetable wholesale", "Hay storage"], a: 0 },
+    { q: "A locally famous restaurant may be known for?", o: ["A signature dish or style", "Never opening", "No menu at all", "Banning customers"], a: 0 },
+    { q: "A coastal fish market mainly sells?", o: ["Fresh seafood", "Tires only", "Furniture only", "Rare books"], a: 0 },
+    { q: "Heritage-market eateries often blend?", o: ["Traditional vibe and local food", "Ice skating", "Polar whale hunting", "Japanese rice paddies"], a: 0 },
+    { q: "A mall food court clusters?", o: ["Many eateries in one area", "A central bank", "A surgery ward", "A courthouse"], a: 0 },
+  ],
   kuwait_malls: [
     { q: "A regional shopping center often combines retail with?", o: ["Parking, A/C, dining, cinema", "Desert farming only", "Shipbuilding", "Air traffic control"], a: 0 },
     { q: "A traditional souk differs from a modern mall mainly by?", o: ["Open lanes and smaller shops", "Single sealed skyscraper only", "No vendors", "Underwater tunnels only"], a: 0 },
