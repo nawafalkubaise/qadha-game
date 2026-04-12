@@ -12,8 +12,16 @@ export function loadCache() {
 export function saveCache(c) {
   try {
     localStorage.setItem("qadha_qcache", JSON.stringify(c));
-  } catch {
-    /* ignore */
+  } catch (e) {
+    if (e?.name === "QuotaExceededError" || e?.code === 22) {
+      try {
+        const keys = Object.keys(c);
+        if (keys.length > 10) {
+          keys.slice(0, Math.floor(keys.length / 2)).forEach(k => delete c[k]);
+          localStorage.setItem("qadha_qcache", JSON.stringify(c));
+        }
+      } catch { /* give up */ }
+    }
   }
 }
 

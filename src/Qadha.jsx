@@ -32,6 +32,7 @@ class SFX {
   victory() { const n=this.c?.currentTime||0; if(this.isAr){[293.66,369.99,392,440,523.25,587.33].forEach((f,i)=>{this.oud(f,n+i*0.18,0.35,0.08);if(i%2===0)this.drum(n+i*0.18,0.04)})}else{[523,659,784,1047,1319].forEach((f,i)=>this.t(f,n+i*0.14,0.3,"sine",0.1))} }
   defeat() { const n=this.c?.currentTime||0; [400,350,300,250].forEach((f,i)=>this.t(f,n+i*0.3,0.5,"sawtooth",0.06)); }
   coin() { this.t(1100,this.c?.currentTime||0,0.06,"square",0.05); }
+  dailyDouble() { const n=this.c?.currentTime||0; this.oud(440,n,0.5,0.12);this.oud(554,n+0.15,0.5,0.12);this.oud(659,n+0.3,0.6,0.15);this.drum(n+0.45,0.08); }
   tick(u) { if(this.isAr)this.drum(this.c?.currentTime||0,u?0.06:0.02); else this.t(u?800:400,this.c?.currentTime||0,0.06,"square",u?0.07:0.03); }
   stop() {}
 }
@@ -191,7 +192,35 @@ GCC_COUNTRY_IDS.forEach((id) => {
 
 /* ═══════ UTILS ═══════ */
 const shuf=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
-const shufQ=q=>{const c=q.o[q.a];const s=shuf(q.o);return{...q,o:s,a:s.indexOf(c)}};
+const shufQ=q=>{
+  const ci=q.a;
+  const indices=q.o.map((_,i)=>i);
+  for(let i=indices.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[indices[i],indices[j]]=[indices[j],indices[i]]}
+  const newO=indices.map(i=>q.o[i]);
+  const newA=indices.indexOf(ci);
+  return{...q,o:newO,a:newA};
+};
+
+function calcSpeedBonus(startTime,timerTotal){
+  const elapsed=(Date.now()-startTime)/1000;
+  const pct=elapsed/Math.max(timerTotal,1);
+  if(pct<=0.25)return{mult:1.5,label:"بسرعة البرق! ⚡"};
+  if(pct<=0.5)return{mult:1.25,label:"سريع!"};
+  return{mult:1.0,label:null};
+}
+function streakMult(streak){
+  if(streak>=6)return{mult:2.0,flames:"🔥🔥🔥"};
+  if(streak>=4)return{mult:1.5,flames:"🔥🔥"};
+  if(streak>=2)return{mult:1.25,flames:"🔥"};
+  return{mult:1.0,flames:""};
+}
+function generateDailyDoubles(numCats){
+  const midRow=2+Math.floor(Math.random()*2);
+  const hardRow=4+Math.floor(Math.random()*2);
+  const midCol=Math.floor(Math.random()*numCats);
+  let hardCol;do{hardCol=Math.floor(Math.random()*numCats)}while(hardCol===midCol&&numCats>1);
+  return new Set([`${midCol}-${midRow}`,`${hardCol}-${hardRow}`]);
+}
 
 const COUNTRIES=[
 {id:"general_ar",name:"Global AR",native:"عالمي · أسئلة عربية",flag:"📚",lang:"ar",dir:"rtl",dialect:"Modern Standard Arabic"},
@@ -258,7 +287,19 @@ const BI={
 const catBi = (c) => c.ar || c.n;
 const PTS=[200,200,400,400,600,600];
 /** مؤقت أقصر تدريجياً للصفوف الأصعب */
-const PTS_TIMER=[45,45,40,40,35,35];
+const PTS_TIMER=[30,30,20,20,12,12];
+/** عقوبة الإجابة الخاطئة حسب الصف */
+const PTS_PENALTY=[50,50,100,100,150,150];
+/** أنواع صناديق الغموض */
+const MYSTERY_TYPES=["double","freeSteal","skipTurn","timeThief","bonusPts"];
+function pickMystery(){return MYSTERY_TYPES[Math.floor(Math.random()*MYSTERY_TYPES.length)]}
+/** توليد خلايا عمياء وصناديق غموض */
+function generateBlindCells(numCats){
+  const blinds=new Set();const mysteries=new Map();
+  for(let i=0;i<3;i++){const c=Math.floor(Math.random()*numCats);const r=Math.floor(Math.random()*6);blinds.add(`${c}-${r}`)}
+  for(let i=0;i<2;i++){const c=Math.floor(Math.random()*numCats);const r=Math.floor(Math.random()*6);const k=`${c}-${r}`;if(!mysteries.has(k))mysteries.set(k,pickMystery())}
+  return{blinds,mysteries};
+}
 function ptsTierLabelAr(pts){
   if(pts<=200)return BI.gridTierEasy;
   if(pts<=400)return BI.gridTierMid;
@@ -780,6 +821,25 @@ export default function Qadha(){
   const[usedFifty,setUsedFifty]=useState(false);const[usedExt,setUsedExt]=useState(false);const[hiddenOpts,setHiddenOpts]=useState([]);
   const[hard,setHard]=useState(false);const[qBank,setQBank]=useState({});const[usedQI,setUsedQI]=useState({});
   const[loading,setLoading]=useState(false);const[loadProg,setLoadProg]=useState(0);
+  const[streaks,setStreaks]=useState([0,0]);
+  const[speedBonus,setSpeedBonus]=useState(null);
+  const[dailyDoubles,setDailyDoubles]=useState(new Set());
+  const[ddWager,setDdWager]=useState(null);
+  const[catStars,setCatStars]=useState({});
+  const[usedSwitch,setUsedSwitch]=useState(false);
+  const[usedDouble,setUsedDouble]=useState(false);
+  const[doubleChanceActive,setDoubleChanceActive]=useState(false);
+  const isDailyDoubleRef=useRef(false);
+  const[blindCells,setBlindCells]=useState(new Set());
+  const[mysteryCells,setMysteryCells]=useState(new Map());
+  const[mysteryPopup,setMysteryPopup]=useState(null);
+  const[emojiFloats,setEmojiFloats]=useState([]);
+  const[revengeAvail,setRevengeAvail]=useState([false,false]);
+  const[usedTimeThief,setUsedTimeThief]=useState(false);
+  const[usedCatBlock,setUsedCatBlock]=useState(false);
+  const[blockedCatIdx,setBlockedCatIdx]=useState(null);
+  const[freeStealActive,setFreeStealActive]=useState(false);
+  const[skipTurnActive,setSkipTurnActive]=useState(false);
   const[onlineSession,setOnlineSession]=useState(null);
   const[micOn,setMicOn]=useState(false);
   const[catsMicStream,setCatsMicStream]=useState(null);
@@ -796,6 +856,11 @@ export default function Qadha(){
   const tRef=useRef(null);const bRef=useRef(false);
   /** الوضع الصعب: إجابة صحيحة — لا نعرض «محد عرف» */
   const hardCorrectRef=useRef(false);
+  const curQAnswerRef=useRef(null);
+  const stealTimerRef=useRef(45);
+  const questionStartRef=useRef(0);
+  const lastCellRef=useRef(null);
+  const gridQsP2Ref=useRef({});
   const onlineChatEndRef=useRef(null);
   const wipeQuestionCachesAfterGame=useCallback(()=>{
     clearQuestionCachesFromStorage();
@@ -860,7 +925,13 @@ export default function Qadha(){
   useEffect(()=>{
     if(!onlineSession||!liveRoom.connected||typeof liveRoom.subscribeSignals!=="function")return;
     const unsub=liveRoom.subscribeSignals((from,msg)=>{
-      if(!msg||typeof msg!=="object"||msg.type!=="chat")return;
+      if(!msg||typeof msg!=="object")return;
+      if(msg.type==="emoji"&&msg.emoji){
+        setEmojiFloats(p=>[...p.slice(-8),{id:Date.now()+Math.random(),emoji:msg.emoji,x:10+Math.random()*80}]);
+        setTimeout(()=>setEmojiFloats(p=>p.slice(1)),2200);
+        return;
+      }
+      if(msg.type!=="chat")return;
       const txt=String(msg.text||"").trim();
       if(!txt)return;
       const playerName=(liveRoom.room?.players||[]).find(p=>p.id===from)?.name||"لاعب";
@@ -956,13 +1027,10 @@ export default function Qadha(){
         if(cancelled)return;
         const prev=data.gameState&&typeof data.gameState==="object"?data.gameState:{};
         const gameState={...prev,phase:"cats",countryId:country.id,selCatIds:selCats.map(c=>c.id)};
-        try{
-          await putRoomState(code,token,{clientRev:data.rev,gameState});
-        }catch(e){
-          const m=String(e.message||e);
-          if(m==="rev_conflict"||m.includes("409")){
-            const d2=await getRoom(code);
-            if(!cancelled)await putRoomState(code,token,{clientRev:d2.rev,gameState});
+        for(let _retry=0;_retry<3;_retry++){
+          try{const d=_retry===0?data:await getRoom(code);if(cancelled)return;await putRoomState(code,token,{clientRev:d.rev,gameState});break}catch(e){
+            const m=String(e.message||e);
+            if((m==="rev_conflict"||m.includes("409"))&&_retry<2){await new Promise(r=>setTimeout(r,100*(_retry+1)));continue}
           }
         }
       }catch{/* ignore */}
@@ -996,15 +1064,19 @@ export default function Qadha(){
       try{
         const data=await getRoom(code);if(cancelled)return;
         const prev=data.gameState&&typeof data.gameState==="object"?data.gameState:{};
-        const gameState={...prev,phase:sc,scores,used,active,curPts,curQ:sc==="question"?curQ:null};
-        try{await putRoomState(code,token,{clientRev:data.rev,gameState})}catch(e){
-          const m=String(e.message||e);
-          if(m==="rev_conflict"||m.includes("409")){const d2=await getRoom(code);if(!cancelled)await putRoomState(code,token,{clientRev:d2.rev,gameState})}
+        const safeQ=curQ?{q:curQ.q,o:curQ.o,d:curQ.d,img:curQ.img}:null;
+        const gameState={...prev,phase:sc,scores,used,active,curPts,curQ:sc==="question"?safeQ:null,
+          answerReveal:(answered&&revealed&&curQAnswerRef.current!=null)?{correctIdx:curQAnswerRef.current,selA}:null};
+        for(let _retry=0;_retry<3;_retry++){
+          try{const d=_retry===0?data:await getRoom(code);if(cancelled)return;await putRoomState(code,token,{clientRev:d.rev,gameState});break}catch(e){
+            const m=String(e.message||e);
+            if((m==="rev_conflict"||m.includes("409"))&&_retry<2){await new Promise(r=>setTimeout(r,100*(_retry+1)));continue}
+          }
         }
       }catch{/* ignore */}
     })()},200);
     return()=>{cancelled=true;clearTimeout(t)};
-  },[sc,isOnlineHost,onlineSession?.code,onlineSession?.hostToken,scores,used,active,curQ,curPts]);
+  },[sc,isOnlineHost,onlineSession?.code,onlineSession?.hostToken,scores,used,active,curQ,curPts,answered,revealed,selA]);
 
   /* ═══ Online guest: receive game state updates ═══ */
   useEffect(()=>{
@@ -1014,8 +1086,13 @@ export default function Qadha(){
     if(Array.isArray(gs.scores))setScores(gs.scores);
     if(gs.used&&typeof gs.used==="object")setUsed(gs.used);
     if(typeof gs.active==="number")setActive(gs.active);
-    if(gs.phase==="grid"&&scRef.current==="question")go("grid");
-    if(gs.phase==="question"&&gs.curQ&&scRef.current==="grid"){setCurQ(gs.curQ);setCurPts(gs.curPts||200);go("question")}
+    if(gs.phase==="grid"&&scRef.current==="question"){setRevealed(false);setAnswered(false);go("grid")}
+    if(gs.phase==="question"&&gs.curQ&&scRef.current==="grid"){setCurQ(gs.curQ);setCurPts(gs.curPts||200);setAnswered(false);setRevealed(false);go("question")}
+    if(gs.answerReveal&&gs.answerReveal.correctIdx!=null){
+      setCurQ(prev=>prev?{...prev,a:gs.answerReveal.correctIdx}:prev);
+      if(gs.answerReveal.selA!=null)setSelA(gs.answerReveal.selA);
+      setRevealed(true);setAnswered(true);
+    }
     if(gs.phase==="results"&&scRef.current!=="results")go("results");
   },[onlineSession,isOnlineHost,sc,liveRoom.room,go]);
 
@@ -1024,25 +1101,96 @@ export default function Qadha(){
   useEffect(()=>{
     if(sc==="question"&&!answered&&curQ){
       tRef.current=setInterval(()=>{setTimer(p=>{
-        if(p<=1){clearInterval(tRef.current);sfx.stop();sfx.wrong();setAnswered(true);if(!bRef.current){bRef.current=true;setTimeout(()=>{sfx.steal();setAnswered(false);setSelA(null);setActive(v=>v===1?2:1);setTimer(45)},2000)}else{setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500)}return 0}
+        if(p<=0)return 0;
+        if(p<=1){clearInterval(tRef.current);tRef.current=null;sfx.stop();sfx.wrong();setAnswered(true);setStreaks(sv=>{const n2=[...sv];n2[active-1]=0;return n2});setSpeedBonus(null);
+          if(isDailyDoubleRef.current){setScores(sv2=>{const n3=[...sv2];n3[active-1]=Math.max(0,n3[active-1]-curPts);return n3});setRevealed(true);setTimeout(()=>{isDailyDoubleRef.current=false;bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500);return 0}
+          if(!bRef.current){bRef.current=true;setTimeout(()=>{clearInterval(tRef.current);tRef.current=null;sfx.steal();setUsedFifty(false);setUsedExt(false);setDoubleChanceActive(false);setHiddenOpts([]);setAnswered(false);setSelA(null);setActive(v=>v===1?2:1);setTimer(stealTimerRef.current??45)},2000)}else{setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500)}return 0}
         if(p===11){sfx.stop()}
         if(p<=6)sfx.tick(true);else if(p<=15)sfx.tick(false);
         return p-1})},1000);
-      return()=>{clearInterval(tRef.current);sfx.stop()};
+      return()=>{clearInterval(tRef.current);tRef.current=null;sfx.stop()};
     }
   },[sc,curQ,answered,go]);
 
   const doAns=idx=>{
-    if(answered)return;clearInterval(tRef.current);sfx.stop();setAnswered(true);setSelA(idx);
-    if(idx===curQ.a){sfx.correct();setRevealed(true);setScores(p=>{const n=[...p];n[active-1]+=curPts;return n});setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},1800)}
-    else{sfx.wrong();if(!bRef.current){setFirstWrong(idx);bRef.current=true;setTimeout(()=>{sfx.steal();setAnswered(false);setSelA(null);setActive(v=>v===1?2:1);setTimer(45)},2000)}else{setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500)}}
+    if(answered)return;clearInterval(tRef.current);tRef.current=null;sfx.stop();setAnswered(true);setSelA(idx);
+    const correctIdx=curQAnswerRef.current??curQ.a;
+    if(idx===correctIdx){
+      const sb=calcSpeedBonus(questionStartRef.current,stealTimerRef.current??45);
+      const sm=streakMult(streaks[active-1]);
+      const pts=Math.round(curPts*sb.mult*sm.mult);
+      setSpeedBonus(sb);
+      setStreaks(p=>{const n=[...p];n[active-1]+=1;return n});
+      sfx.correct();setRevealed(true);setScores(p=>{const n=[...p];n[active-1]+=pts;return n});
+      const ci2=lastCellRef.current?.ci;const ri2=lastCellRef.current?.ri;
+      if(ci2!=null){const catId=selCats[ci2].id;const tier=rowTierFromRi(ri2);
+        setCatStars(prev=>{const cat={...(prev[catId]||{})};cat[tier]=true;
+          if(cat.easy&&cat.mid&&cat.hard&&!cat.bonus){cat.bonus=true;setScores(p2=>{const n2=[...p2];n2[active-1]+=300;return n2})}
+          return{...prev,[catId]:cat}});
+      }
+      setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);setSpeedBonus(null);go("grid")},1800);
+    }else{
+      if(doubleChanceActive){setDoubleChanceActive(false);sfx.wrong();setCurPts(p=>Math.round(p/2));setTimeout(()=>{setAnswered(false);setSelA(null)},1000);return}
+      setStreaks(p=>{const n=[...p];n[active-1]=0;return n});setSpeedBonus(null);
+      if(isDailyDoubleRef.current){
+        sfx.wrong();setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-curPts);return n});
+        setRevealed(true);setTimeout(()=>{isDailyDoubleRef.current=false;bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500);return;
+      }
+      sfx.wrong();if(!bRef.current){
+        setFirstWrong(idx);bRef.current=true;
+        if(freeStealActive){setFreeStealActive(false);setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500);return}
+        setTimeout(()=>{sfx.steal();setUsedFifty(false);setUsedExt(false);setDoubleChanceActive(false);setHiddenOpts([]);setAnswered(false);setSelA(null);setActive(v=>v===1?2:1);const st=stealTimerRef.current??30;setTimer(usedTimeThief?Math.max(5,st-8):st);if(usedTimeThief)setUsedTimeThief(false)},2000);
+      }else{
+        const ri2=lastCellRef.current?.ri;const penalty=ri2!=null?(PTS_PENALTY[ri2]||0):0;
+        if(penalty>0)setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-penalty);return n});
+        setRevealed(true);setTimeout(()=>{
+          bRef.current=false;setRevealed(false);setFirstWrong(null);
+          if(skipTurnActive){setSkipTurnActive(false);setActive(v=>v===1?2:1)}
+          go("grid");
+        },2500);
+      }
+    }
   };
 
+  const openDdQuestion=(wagerAmount)=>{
+    if(!ddWager)return;
+    const{ci,ri,cellKey}=ddWager;
+    setUsed(p=>({...p,[cellKey]:true}));
+    const catId=selCats[ci].id;const tier=rowTierFromRi(ri);
+    const isP2Online=onlineSession&&active===2;
+    const activeBankForCat=isP2Online?gridQsP2Ref.current[catId]:null;
+    const pack=activeBankForCat||qBank[catId];
+    let qs=[];
+    if(pack&&typeof pack==="object"&&!Array.isArray(pack)&&Array.isArray(pack.easy)){qs=pack[tier]||[];if(!qs.length)qs=[...(pack.easy||[]),...(pack.mid||[]),...(pack.hard||[])]}else if(Array.isArray(pack))qs=pack;
+    if(qs.length>0){const pi=Math.floor(Math.random()*qs.length);const shuffled=shufQ(qs[pi]);curQAnswerRef.current=shuffled.a;setCurQ(shuffled)}else{const fb={q:"?",o:["A","B","C","D"],a:0};curQAnswerRef.current=0;setCurQ(fb)}
+    lastCellRef.current={ci,ri};stealTimerRef.current=PTS_TIMER[ri]??45;questionStartRef.current=Date.now();
+    isDailyDoubleRef.current=true;setCurPts(wagerAmount);setDdWager(null);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
+  };
   const openQ=(ci,ri)=>{
-    const k=`${ci}-${ri}`;if(used[k])return;sfx.click();setUsed(p=>({...p,[k]:true}));
+    const k=`${ci}-${ri}`;if(used[k])return;
+    if(blockedCatIdx===ci){sfx.wrong();return}
+    sfx.click();
+    if(mysteryCells.has(k)){
+      const type=mysteryCells.get(k);
+      setMysteryCells(prev=>{const m=new Map(prev);m.delete(k);return m});
+      sfx.coin();
+      const labels={double:"نقاط مضاعفة! x2",freeSteal:"سرقة مجانية! 🔓",skipTurn:"تخطي دور الخصم! ⏭️",timeThief:"سرقة وقت! ⏰",bonusPts:"+200 نقطة هدية! 🎁"};
+      setMysteryPopup({type,label:labels[type]||"مفاجأة!"});
+      setTimeout(()=>setMysteryPopup(null),2200);
+      if(type==="double"){setCurPts(p=>p*2)}
+      if(type==="freeSteal"){setFreeStealActive(true)}
+      if(type==="skipTurn"){setSkipTurnActive(true)}
+      if(type==="timeThief"){setUsedTimeThief(true)}
+      if(type==="bonusPts"){setScores(p=>{const n=[...p];n[active-1]+=200;return n})}
+    }
+    if(dailyDoubles.has(k)){sfx.dailyDouble();setDdWager({cellKey:k,ci,ri,maxWager:Math.max(100,scores[active-1]||100)});return}
+    isDailyDoubleRef.current=false;
+    setUsed(p=>({...p,[k]:true}));
     const catId=selCats[ci].id;
     const tier=rowTierFromRi(ri);
-    const pack=qBank[catId];
+    const isP2Online=onlineSession&&active===2;
+    const activeBankForCat=isP2Online?gridQsP2Ref.current[catId]:null;
+    const pack=activeBankForCat||qBank[catId];
     let qs=[];
     if(pack&&typeof pack==="object"&&!Array.isArray(pack)&&Array.isArray(pack.easy)){
       qs=pack[tier]||[];
@@ -1067,30 +1215,52 @@ export default function Qadha(){
         const cur={...base,...p[catId]};
         return{...p,[catId]:{...cur,[tier]:[...nu]}};
       });
-      setCurQ(shufQ(qs[pi]));
-    }else{setCurQ({q:"?",o:["A","B","C","D"],a:0})}
+      const shuffled=shufQ(qs[pi]);
+      curQAnswerRef.current=shuffled.a;
+      setCurQ(shuffled);
+    }else{const fallback={q:"?",o:["A","B","C","D"],a:0};curQAnswerRef.current=0;setCurQ(fallback)}
+    lastCellRef.current={ci,ri};
+    stealTimerRef.current=PTS_TIMER[ri]??45;
+    questionStartRef.current=Date.now();
     setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
   };
   const checkTyped=()=>{
     if(answered||!curQ||!typedAns.trim())return;
-    clearInterval(tRef.current);sfx.stop();setAnswered(true);
-    const correct=curQ.o[curQ.a];
+    clearInterval(tRef.current);tRef.current=null;sfx.stop();setAnswered(true);
+    const correctIdx=curQAnswerRef.current??curQ.a;
+    const correct=curQ.o[correctIdx];
     const typed=typedAns;
     const isMatch=isTypedAnswerAccepted(typed,correct);
     if(isMatch){
       hardCorrectRef.current=true;
-      sfx.correct();setRevealed(true);setScores(p=>{const n=[...p];n[active-1]+=curPts;return n});
-      setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2000);
+      const sb=calcSpeedBonus(questionStartRef.current,stealTimerRef.current??45);
+      const sm=streakMult(streaks[active-1]);
+      const pts=Math.round(curPts*sb.mult*sm.mult);
+      setSpeedBonus(sb);setStreaks(p=>{const n=[...p];n[active-1]+=1;return n});
+      sfx.correct();setRevealed(true);setScores(p=>{const n=[...p];n[active-1]+=pts;return n});
+      const ci2=lastCellRef.current?.ci;const ri2=lastCellRef.current?.ri;
+      if(ci2!=null){const catId=selCats[ci2].id;const tier=rowTierFromRi(ri2);
+        setCatStars(prev=>{const cat={...(prev[catId]||{})};cat[tier]=true;
+          if(cat.easy&&cat.mid&&cat.hard&&!cat.bonus){cat.bonus=true;setScores(p2=>{const n2=[...p2];n2[active-1]+=300;return n2})}
+          return{...prev,[catId]:cat}});
+      }
+      setTimeout(()=>{isDailyDoubleRef.current=false;bRef.current=false;setRevealed(false);setFirstWrong(null);setSpeedBonus(null);go("grid")},2000);
     }else{
+      setStreaks(p=>{const n=[...p];n[active-1]=0;return n});setSpeedBonus(null);
+      if(isDailyDoubleRef.current){
+        sfx.wrong();setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-curPts);return n});
+        setRevealed(true);setTimeout(()=>{isDailyDoubleRef.current=false;bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500);return;
+      }
       sfx.wrong();
-      if(!bRef.current){bRef.current=true;setTimeout(()=>{sfx.steal();setAnswered(false);setSelA(null);setTypedAns("");setActive(v=>v===1?2:1);setTimer(45)},2000)}
+      if(!bRef.current){bRef.current=true;setTimeout(()=>{sfx.steal();setUsedFifty(false);setUsedExt(false);setDoubleChanceActive(false);setHiddenOpts([]);setAnswered(false);setSelA(null);setTypedAns("");setActive(v=>v===1?2:1);setTimer(stealTimerRef.current??45)},2000)}
       else{setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500)}
     }
   };
   const useFiftyFifty=useCallback(()=>{
     if(usedFifty||answered||!curQ||hard)return;
     sfx.click();setUsedFifty(true);
-    const wrong=curQ.o.map((_,i)=>i).filter(i=>i!==curQ.a);
+    const correctIdx=curQAnswerRef.current??curQ.a;
+    const wrong=curQ.o.map((_,i)=>i).filter(i=>i!==correctIdx);
     const shufWrong=[...wrong].sort(()=>Math.random()-0.5);
     setHiddenOpts([shufWrong[0],shufWrong[1]]);
   },[usedFifty,answered,curQ,hard]);
@@ -1098,6 +1268,25 @@ export default function Qadha(){
     if(usedExt||answered)return;
     sfx.click();setUsedExt(true);setTimer(p=>p+15);
   },[usedExt,answered]);
+  const useSwitch=useCallback(()=>{
+    if(usedSwitch||answered||!curQ)return;
+    sfx.click();setUsedSwitch(true);
+    setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-100);return n});
+    const ci=lastCellRef.current?.ci;const ri=lastCellRef.current?.ri;
+    if(ci!=null&&ri!=null){
+      const catId=selCats[ci].id;const tier=rowTierFromRi(ri);
+      const isP2Online=onlineSession&&active===2;
+      const activeBankForCat=isP2Online?gridQsP2Ref.current[catId]:null;
+      const pack=activeBankForCat||qBank[catId];
+      let qs=[];
+      if(pack&&typeof pack==="object"&&!Array.isArray(pack)&&Array.isArray(pack.easy)){qs=pack[tier]||[];if(!qs.length)qs=[...(pack.easy||[]),...(pack.mid||[]),...(pack.hard||[])]}else if(Array.isArray(pack))qs=pack;
+      if(qs.length>1){const newQ=shufQ(qs[Math.floor(Math.random()*qs.length)]);curQAnswerRef.current=newQ.a;setCurQ(newQ);setTimer(stealTimerRef.current??45);questionStartRef.current=Date.now();setHiddenOpts([])}
+    }
+  },[usedSwitch,answered,curQ,active,selCats,qBank,onlineSession]);
+  const useDoubleChance=useCallback(()=>{
+    if(usedDouble||answered||!curQ||hard)return;
+    sfx.click();setUsedDouble(true);setDoubleChanceActive(true);
+  },[usedDouble,answered,curQ,hard]);
   const catsForCountry=useMemo(()=>catsForCountryId(country.id),[country.id]);
   const startGame=async()=>{
     const allowed=new Set(catsForCountry.map(c=>c.id));
@@ -1111,11 +1300,20 @@ export default function Qadha(){
     const r=await genQs(clean,country);clearInterval(pi);setLoadProg(100);
     const questions=getQuestions(clean,country.id,r,remoteOverlay);
     setQBank(questions);
-    setTimeout(()=>{setLoading(false);setScores([0,0]);setUsed({});setUsedQI({});setActive(1);setUsedFifty(false);setUsedExt(false);setHiddenOpts([]);go("grid")},500);
+    if(onlineSession){gridQsP2Ref.current=getQuestions(clean,country.id,r,remoteOverlay)}else{gridQsP2Ref.current={}}
+    setTimeout(()=>{setLoading(false);setScores([0,0]);setUsed({});setUsedQI({});setActive(1);setUsedFifty(false);setUsedExt(false);setUsedSwitch(false);setUsedDouble(false);setDoubleChanceActive(false);setHiddenOpts([]);setStreaks([0,0]);setSpeedBonus(null);setDailyDoubles(generateDailyDoubles(8));setDdWager(null);setCatStars({});const bc=generateBlindCells(8);setBlindCells(bc.blinds);setMysteryCells(bc.mysteries);setMysteryPopup(null);setEmojiFloats([]);setRevengeAvail([false,false]);setUsedTimeThief(false);setUsedCatBlock(false);setBlockedCatIdx(null);setFreeStealActive(false);setSkipTurnActive(false);go("grid")},500);
   };
 
   const isDone=Object.keys(used).length>=48;
   useEffect(()=>{if(sc==="grid"&&isDone){setTimeout(()=>{wipeQuestionCachesAfterGame();scores[0]>scores[1]?sfx.victory():sfx.defeat();go("results")},600)}},[sc,isDone,scores,go,wipeQuestionCachesAfterGame]);
+  useEffect(()=>{
+    if(sc!=="grid")return;
+    const diff=Math.abs(scores[0]-scores[1]);
+    if(diff>=500){
+      const loser=scores[0]<scores[1]?0:1;
+      setRevengeAvail(p=>{if(p[loser])return p;const n=[...p];n[loser]=true;return n});
+    }
+  },[sc,scores]);
 
   const tn=n=>mode==="1v1"?(n===1?(p1||`${tx.player} 1`):(p2||`${tx.player} 2`)):(n===1?(t1||`${tx.team} 1`):(t2||`${tx.team} 2`));
   const turnLabel=n=>(country.lang==="ar"?`${tn(n)} ${T.ar.turn.trim()}`:`${tn(n)}${T.en.turn}`);
@@ -1201,6 +1399,8 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 @keyframes cb{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-6px) rotate(3deg)}}
 @keyframes gl{0%,100%{box-shadow:0 0 15px ${th.accentDim}}50%{box-shadow:0 0 35px ${th.accent}66}}
 @keyframes pl{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes floatUp{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(-60vh)}}
+@keyframes fadeIn{0%{opacity:0;transform:scale(.8)}100%{opacity:1;transform:scale(1)}}
 @keyframes ldA{0%,100%{opacity:.2;transform:scale(.7)}50%{opacity:1;transform:scale(1)}}
 .ld{display:inline-block;width:9px;height:9px;border-radius:50%;background:${th.gold};margin:0 5px;animation:ldA 1.2s ease-in-out infinite}
 .tl{font-family:'Tajawal',sans-serif;font-weight:800;color:${th.accent};letter-spacing:1px;text-align:center;font-size:clamp(26px,5vw,34px);margin-bottom:12px}
@@ -1359,7 +1559,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 
       {sc==="cats"&&<div style={WScroll} className="qadha-below-badge"><div className="catsBody" style={{...PwideScroll,maxWidth:"min(920px,100%)"}}>
         <nav className="catsSteps" aria-label="خطوات اللعبة" style={{marginBottom:16}}>
-          {flowSteps.map(s=>(<button key={s.sc} type="button" className={`catsStepBtn${sc===s.sc?" catsStepOn":""}`} onClick={()=>{if(s.sc===sc)return;if(isOnlineGuest&&(s.sc==="setup"||s.sc==="country")){sfx.click();return;}if(s.sc==="setup"&&selCats.length!==8){sfx.click();return;}sfx.click();go(s.sc)}}>
+          {flowSteps.map(s=>(<button key={s.sc} type="button" className={`catsStepBtn${sc===s.sc?" catsStepOn":""}`} onClick={()=>{if(s.sc===sc)return;if(isOnlineGuest){sfx.click();return;}if(s.sc==="setup"&&selCats.length!==8){sfx.click();return;}sfx.click();go(s.sc)}}>
             <div className="catsStepCircle">{s.ic}</div>
             <span className="catsStepLbl">{s.lb}</span>
           </button>))}
@@ -1432,33 +1632,67 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 
       {sc==="grid"&&!loading&&<div style={{...W,justifyContent:"flex-start",alignItems:"center",paddingTop:14,width:"100%"}} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(1080px,100%)",padding:"12px min(18px,4.5vw) max(16px,env(safe-area-inset-bottom))"}}>
         <div className="grid-header-row" style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}>
-          <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===1?th.accent:th.textDim2,fontWeight:700}}>{tn(1)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[0]}</div></div>
+          <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===1?th.accent:th.textDim2,fontWeight:700}}>{tn(1)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[0]}</div>{streaks[0]>=2&&<div style={{fontSize:13,color:th.gold}}>{streakMult(streaks[0]).flames} x{streakMult(streaks[0]).mult}</div>}</div>
           <div style={{textAlign:"center"}}><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(17px,4.2vw,21px)",color:th.accent,fontWeight:700,display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}><span>قدها؟</span><CountryFlag country={country} w={22} emojiSize={21} /></div><div style={{fontSize:12,color:th.textDim}}>◀ {turnLabel(active)} ▶</div></div>
-          <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===2?th.accent:th.textDim2,fontWeight:700}}>{tn(2)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[1]}</div></div>
+          <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===2?th.accent:th.textDim2,fontWeight:700}}>{tn(2)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[1]}</div>{streaks[1]>=2&&<div style={{fontSize:13,color:th.gold}}>{streakMult(streaks[1]).flames} x{streakMult(streaks[1]).mult}</div>}</div>
         </div>
         <p style={{fontSize:11,color:th.textDim2,textAlign:"center",marginBottom:12,fontFamily:"'Tajawal',sans-serif",lineHeight:1.45}}>{BI.gridTierHint}</p>
         <div style={{display:"grid",gridTemplateColumns:`minmax(46px,auto) repeat(${selCats.length},1fr)`,gap:6,alignItems:"stretch"}}>
           <div aria-hidden style={{minHeight:1}} />
-          {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"8px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"clamp(52px,16vw,68px)",flexDirection:"column",gap:3}}><CountryFlag country={country} title={country.native} w={20} emojiSize={15} /><CatIcon cat={cat} sz={56}/></div><div className="grid-cat-lbl" style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div></div>))}
+          {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"8px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4,position:"relative"}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"clamp(52px,16vw,68px)",flexDirection:"column",gap:3}}><CountryFlag country={country} title={country.native} w={20} emojiSize={15} /><CatIcon cat={cat} sz={56}/></div><div className="grid-cat-lbl" style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div>{catStars[cat.id]?.bonus&&<span style={{position:"absolute",top:2,left:"50%",transform:"translateX(-50%)",fontSize:12}}>⭐</span>}</div>))}
           {PTS.map((pts,ri)=>(
             <Fragment key={`row-${ri}`}>
               <div style={{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:"8px 4px",textAlign:"center",fontFamily:"'Tajawal',sans-serif",borderRadius:12,background:th.gridCell,border:`1px solid ${th.cardBd}`}}>
                 <span style={{fontSize:9,fontWeight:800,color:th.accent,lineHeight:1.2}}>{ptsTierLabelAr(pts)}</span>
                 <span style={{fontSize:11,fontWeight:900,color:th.gridPts,marginTop:4}}>{pts}</span>
               </div>
-              {selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];return(<button key={k} type="button" onClick={()=>!u&&openQ(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:1}}>{u?"✓":pts}</button>)})}
+              {selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];const isDD=dailyDoubles.has(k)&&!u;const isBlind=blindCells.has(k)&&!u;const isMystery=mysteryCells.has(k)&&!u;const isBlocked=blockedCatIdx===ci;return(<button key={k} type="button" onClick={()=>!u&&openQ(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:isMystery?`linear-gradient(135deg,#FDE047aa,#F59E0Baa)`:isBlocked?`linear-gradient(135deg,#EF444422,#EF444411)`:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:isBlocked?"#EF444444":cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u||isBlocked?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:isBlocked?.35:1,position:"relative"}}>{u?"✓":isMystery?"🎁":isBlind?"❓":pts}{isDD&&<span style={{position:"absolute",top:2,right:3,fontSize:8,opacity:0.4}}>✦</span>}</button>)})}
             </Fragment>
           ))}
         </div>
-        <div style={{display:"flex",justifyContent:"center",marginTop:12}}><button className="bs sm" onClick={()=>{sfx.click();wipeQuestionCachesAfterGame();scores[0]>scores[1]?sfx.victory():sfx.defeat();go("results")}}>{tx.end}</button></div>
+        {revengeAvail[active-1]&&<div style={{textAlign:"center",marginTop:12}}><button className="bg sm" style={{background:"linear-gradient(135deg,#EF4444,#DC2626)",color:"#fff",padding:"10px 24px",borderRadius:14,fontSize:15,animation:"pl .6s infinite"}} onClick={()=>{
+          setRevengeAvail(p=>{const n=[...p];n[active-1]=false;return n});
+          const randomCat=selCats[Math.floor(Math.random()*selCats.length)];
+          const pack=qBank[randomCat.id];const qs=pack?.hard||[];
+          if(qs.length){const q=shufQ(qs[Math.floor(Math.random()*qs.length)]);curQAnswerRef.current=q.a;setCurQ(q);setCurPts(curPts*3||600);lastCellRef.current=null;stealTimerRef.current=15;questionStartRef.current=Date.now();isDailyDoubleRef.current=false;setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(15);setTypedAns("");setHiddenOpts([]);go("question")}
+        }}>🔥 جولة الانتقام! x3</button></div>}
+        <div style={{display:"flex",justifyContent:"center",gap:8,marginTop:10,flexWrap:"wrap"}}>
+          {!onlineSession&&<div style={{display:"flex",gap:4,justifyContent:"center"}}>
+            {["😂","😱","👏","🔥","💀"].map(em=><button key={em} type="button" style={{fontSize:18,background:"none",border:"none",cursor:"pointer",padding:"2px 4px"}} onClick={()=>{setEmojiFloats(p=>[...p.slice(-8),{id:Date.now()+Math.random(),emoji:em,x:10+Math.random()*80}]);setTimeout(()=>setEmojiFloats(p=>p.slice(1)),2200)}}>{em}</button>)}
+          </div>}
+          {!usedCatBlock&&<button className="bs sm" style={{fontSize:12,padding:"6px 12px",borderRadius:12,color:"#EF4444",borderColor:"#EF444444"}} onClick={()=>{sfx.click();setUsedCatBlock(true);setBlockedCatIdx(active===1?null:null);
+            const opp=active===1?1:0;
+            const availCols=selCats.map((_,i)=>i).filter(i=>!Object.keys(used).some(k=>k.startsWith(`${i}-`)));
+            if(availCols.length){setBlockedCatIdx(availCols[Math.floor(Math.random()*availCols.length)]);setTimeout(()=>setBlockedCatIdx(null),12000)}
+          }}>🚫 حظر فئة</button>}
+          <button className="bs sm" onClick={()=>{sfx.click();wipeQuestionCachesAfterGame();scores[0]>scores[1]?sfx.victory():sfx.defeat();go("results")}}>{tx.end}</button>
+        </div>
       </div></div>}
+
+      {mysteryPopup&&<div style={{position:"fixed",top:"30%",left:"50%",transform:"translateX(-50%)",zIndex:1001,textAlign:"center",pointerEvents:"none"}}>
+        <div style={{background:th.card,border:`2px solid ${th.gold}`,borderRadius:24,padding:"24px 36px",fontSize:"clamp(22px,5vw,32px)",fontWeight:900,color:th.gold,boxShadow:`0 0 40px rgba(201,184,150,.4)`,animation:"fadeIn .3s"}}>🎁 {mysteryPopup.label}</div>
+      </div>}
+      {emojiFloats.map(e=><span key={e.id} style={{position:"fixed",left:`${e.x}%`,bottom:0,fontSize:32,animation:"floatUp 2s ease-out forwards",pointerEvents:"none",zIndex:1000}}>{e.emoji}</span>)}
+      {blockedCatIdx!=null&&<div style={{position:"fixed",top:12,left:"50%",transform:"translateX(-50%)",zIndex:1000,background:"rgba(239,68,68,.9)",color:"#fff",padding:"8px 20px",borderRadius:14,fontSize:14,fontWeight:700}}>🚫 فئة {selCats[blockedCatIdx]?.ar||""} محظورة!</div>}
+      {ddWager&&<div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.7)",display:"flex",alignItems:"center",justifyContent:"center",zIndex:999}} onClick={e=>e.stopPropagation()}>
+        <div style={{background:th.card,borderRadius:24,padding:"36px 28px",textAlign:"center",maxWidth:380,width:"90%",border:`1px solid ${th.cardBd}`}}>
+          <div style={{fontSize:"clamp(28px,6vw,40px)",marginBottom:10}}>مضاعفة! 🎯</div>
+          <div style={{fontSize:"clamp(14px,3vw,18px)",color:th.textDim,marginBottom:20}}>اختر مبلغ الرهان</div>
+          <input type="range" min={100} max={ddWager.maxWager} step={50} defaultValue={Math.min(200,ddWager.maxWager)} id="dd-wager-slider" style={{width:"100%",marginBottom:8,accentColor:th.accent}} onChange={e=>{const d=document.getElementById("dd-wager-display");if(d)d.textContent=e.target.value}}/>
+          <div id="dd-wager-display" style={{fontSize:"clamp(24px,5vw,36px)",color:th.gold,marginBottom:20,fontWeight:900}}>{Math.min(200,ddWager.maxWager)}</div>
+          <button onClick={()=>{const v=parseInt(document.getElementById("dd-wager-slider")?.value)||200;openDdQuestion(v)}} style={{padding:"14px 36px",borderRadius:16,background:th.btnBg,color:th.btnText,border:"none",fontSize:"clamp(18px,4vw,24px)",cursor:"pointer",fontWeight:900}}>يلا!</button>
+        </div>
+      </div>}
 
       {sc==="question"&&curQ&&<div style={W} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(640px,100%)",padding:"14px min(22px,5.5vw) max(20px,env(safe-area-inset-bottom))"}}>
         {bRef.current&&!answered&&<div style={{textAlign:"center",marginBottom:16}}><div style={{display:"inline-block",background:isNight?"rgba(255,138,92,.14)":"rgba(234,88,12,.1)",border:"1px solid rgba(255,138,92,.3)",borderRadius:24,padding:"12px 26px",fontSize:17,color:"#EA580C",fontWeight:700}}>{stealBanner}</div></div>}
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}><div style={{width:"clamp(92px,24vw,112px)",height:"clamp(92px,24vw,112px)",borderRadius:"50%",background:timer<=10?"linear-gradient(135deg,#EF4444,#DC2626)":timer<=20?"linear-gradient(135deg,#F59E0B,#D97706)":"linear-gradient(135deg,#8E44AD,#A855F7)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(34px,8.5vw,42px)",fontWeight:900,animation:timer<=10?"pl .4s infinite":"none",boxShadow:timer<=10?"0 0 30px rgba(255,59,92,.5)":"0 0 15px rgba(168,85,247,.3)"}}>{timer}</div></div>
-        <div style={{display:"flex",justifyContent:"center",gap:12,marginBottom:14}}>
-          {!hard&&<button type="button" className="bs sm" disabled={usedFifty||answered} style={{opacity:usedFifty?.35:1,fontSize:15,padding:"10px 20px",borderRadius:16}} onClick={useFiftyFifty}>{tx.fifty}</button>}
-          <button type="button" className="bs sm" disabled={usedExt||answered} style={{opacity:usedExt?.35:1,fontSize:15,padding:"10px 20px",borderRadius:16}} onClick={useTimeExt}>{tx.ext}</button>
+        {speedBonus&&speedBonus.label&&<div style={{textAlign:"center",marginBottom:10,fontSize:"clamp(16px,3.5vw,22px)",color:th.gold,fontWeight:900,animation:"fadeIn .3s"}}>{speedBonus.label}</div>}
+        <div style={{display:"flex",justifyContent:"center",gap:8,marginBottom:14,flexWrap:"wrap"}}>
+          {!hard&&<button type="button" className="bs sm" disabled={usedFifty||answered} style={{opacity:usedFifty?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useFiftyFifty}>{tx.fifty}</button>}
+          <button type="button" className="bs sm" disabled={usedExt||answered} style={{opacity:usedExt?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useTimeExt}>{tx.ext}</button>
+          <button type="button" className="bs sm" disabled={usedSwitch||answered} style={{opacity:usedSwitch?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useSwitch}>🔄 تبديل</button>
+          {!hard&&<button type="button" className="bs sm" disabled={usedDouble||answered} style={{opacity:usedDouble?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useDoubleChance}>🎯 فرصة ثانية</button>}
         </div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px",flexWrap:"wrap",gap:8}}><span style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts} · {ptsTierLabelAr(curPts)}</span><span style={{fontSize:15,color:th.textDim}}>{turnLabel(active)}</span></div>
         <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}>
@@ -1493,9 +1727,15 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       </div></div>}
 
       {sc==="results"&&<div style={W} className="qadha-below-badge"><div style={P}>
-        <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"🤝":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p>        <p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p></div>
+        <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"⚡":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:scores[0]===scores[1]?10:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p>
+          {scores[0]===scores[1]&&<button className="bg" style={{padding:"14px 32px",marginBottom:20,fontSize:18,borderRadius:16}} onClick={()=>{
+            const randomCat=selCats[Math.floor(Math.random()*selCats.length)];
+            const pack=qBank[randomCat.id];const qs=pack?.hard||pack?.mid||pack?.easy||[];
+            if(qs.length){const q=shufQ(qs[Math.floor(Math.random()*qs.length)]);curQAnswerRef.current=q.a;setCurQ(q);setCurPts(500);lastCellRef.current=null;stealTimerRef.current=20;questionStartRef.current=Date.now();isDailyDoubleRef.current=false;setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(20);setTypedAns("");setHiddenOpts([]);go("question")}
+          }}>جولة حسم! ⚡</button>}
+        </div>
         <div className="gc" style={{marginBottom:20,border:`2px solid ${th.accent}`,borderRadius:20,padding:24,position:"relative",overflow:"hidden"}}><div style={{position:"absolute",top:0,left:0,right:0,height:4,background:`linear-gradient(90deg,${th.accent},rgba(${th.accentRgb},.5),${th.accent})`}}/><div style={{textAlign:"center",fontSize:11,color:th.textDim,letterSpacing:4,marginBottom:16}}>{tx.vCard}</div><div style={{display:"flex",justifyContent:"space-around",marginBottom:12}}><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6}}>{tn(1)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[0]>=scores[1]?th.accent:th.textDim2}}>{scores[0]}</div></div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:22,color:th.textDim2,alignSelf:"center"}}>ضد</div><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6,opacity:.85}}>{tn(2)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[1]>=scores[0]?th.accent:th.textDim2}}>{scores[1]}</div></div></div><div style={{textAlign:"center",fontFamily:"'Tajawal',sans-serif",fontSize:14,color:th.textDim2,marginTop:10,display:"flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}><span>قدها؟ 👑</span><CountryFlag country={country} w={22} emojiSize={18} /></div></div>
-        <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,remoteOverlay);setQBank(questions);setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);setUsedFifty(false);setUsedExt(false);setHiddenOpts([]);go("grid")},500)}}>{tx.rematch}</button>
+        <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,remoteOverlay);setQBank(questions);if(onlineSession){gridQsP2Ref.current=getQuestions(selCats,country.id,r,remoteOverlay)}setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);setUsedFifty(false);setUsedExt(false);setUsedSwitch(false);setUsedDouble(false);setDoubleChanceActive(false);setHiddenOpts([]);setStreaks([0,0]);setSpeedBonus(null);setDailyDoubles(generateDailyDoubles(8));setDdWager(null);setCatStars({});go("grid")},500)}}>{tx.rematch}</button>
         <button className="bs" style={{width:"100%",padding:16,marginBottom:8}} onClick={()=>{sfx.click();setSelCats([]);go("cats")}}>{tx.newCats}</button>
         <button className="bs" style={{width:"100%",padding:16}} onClick={()=>{setSelCats([]);go("menu")}}>{tx.menu}</button>
       </div></div>}
@@ -1510,6 +1750,14 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
               <button type="button" className="bs sm" onClick={()=>{sfx.click();void toggleCatsMic()}} style={{fontWeight:800,whiteSpace:"nowrap"}}>
                 {micOn?"🎙️ إيقاف المايك":"🎙️ تشغيل المايك"}
               </button>
+            </div>
+            <div style={{display:"flex",gap:6,justifyContent:"center",marginBottom:6}}>
+              {["😂","😱","👏","🔥","💀","❤️"].map(em=><button key={em} type="button" style={{fontSize:22,background:"none",border:"none",cursor:"pointer",padding:"4px 6px",borderRadius:8}} onClick={()=>{
+                sfx.click();
+                setEmojiFloats(p=>[...p.slice(-8),{id:Date.now()+Math.random(),emoji:em,x:10+Math.random()*80}]);
+                setTimeout(()=>setEmojiFloats(p=>p.slice(1)),2200);
+                if(liveRoom.connected)liveRoom.sendSignal(null,{type:"emoji",emoji:em});
+              }}>{em}</button>)}
             </div>
             {micOn&&voiceRemoteList.length>0&&(
               <p style={{fontSize:11,color:th.accent,textAlign:"center",marginBottom:6,fontFamily:"'Tajawal',sans-serif"}}>

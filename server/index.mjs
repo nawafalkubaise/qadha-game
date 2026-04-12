@@ -24,8 +24,12 @@ const EXTRA_CORS_ORIGINS = (process.env.QADHA_CORS_ORIGINS || "")
 const CODE_CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
 function loadStore() {
-  const raw = fs.readFileSync(STORE_PATH, "utf8");
-  return JSON.parse(raw);
+  try {
+    const raw = fs.readFileSync(STORE_PATH, "utf8");
+    return JSON.parse(raw);
+  } catch {
+    return { contentVersion: 1, overlay: {}, fingerprints: {} };
+  }
 }
 
 function saveStore(data) {
@@ -281,17 +285,13 @@ app.post("/api/rooms/:code/join", (req, res) => {
     return;
   }
   const name = String(req.body?.displayName || "لاعب").trim().slice(0, 32) || "لاعب";
-  /* Prevent duplicate players — if same name already exists as non-host, update instead */
-  const existing = room.players.find(p => !p.isHost && p.name === name);
-  let playerId, playerToken;
-  if (existing) {
-    playerId = existing.id;
-    playerToken = existing.playerToken;
-  } else {
-    playerId = randomToken().slice(0, 12);
-    playerToken = randomToken();
-    room.players.push({ id: playerId, name, isHost: false, playerToken });
+  if (room.players.filter(p => !p.isHost).length >= 1) {
+    res.status(409).json({ error: "room_full" });
+    return;
   }
+  const playerId = randomToken().slice(0, 12);
+  const playerToken = randomToken();
+  room.players.push({ id: playerId, name, isHost: false, playerToken });
   ensureSignalInbox(room, playerId);
   ensureWsClients(room);
   room.rev += 1;
