@@ -1,82 +1,22 @@
 [
-  {
-    "q": "Eiffel Tower city?",
-    "o": [
-      "London",
-      "Paris",
-      "Berlin",
-      "Madrid"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Statue of Liberty was a gift from France to?",
-    "o": [
-      "Canada",
-      "United States",
-      "Australia",
-      "Brazil"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Great Wall of China was built mainly for?",
-    "o": [
-      "Trade",
-      "Defense",
-      "Irrigation",
-      "Tourism"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Colosseum is in?",
-    "o": [
-      "Athens",
-      "Rome",
-      "Istanbul",
-      "Cairo"
-    ],
-    "a": 1
-  },
-  {
-    "q": "India Gate is in?",
-    "o": [
-      "Delhi",
-      "Mumbai",
-      "Kolkata",
-      "Bangalore"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Golden Gate Bridge city?",
-    "o": [
-      "New York",
-      "Los Angeles",
-      "San Francisco",
-      "Chicago"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Machu Picchu country?",
-    "o": [
-      "Mexico",
-      "Peru",
-      "Chile",
-      "Colombia"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Arc de Triomphe city?",
-    "o": [
-      "London",
-      "Paris",
-      "Berlin",
-      "Vienna"
-    ],
-    "a": 1
-  }
+  {"q": "Eiffel Tower city?", "o": ["London", "Paris", "Berlin", "Madrid"], "a": 1},
+  {"q": "Statue of Liberty was a gift from France to?", "o": ["Canada", "United States", "Australia", "Brazil"], "a": 1},
+  {"q": "Great Wall of China was built mainly for?", "o": ["Trade", "Defense", "Irrigation", "Tourism"], "a": 1},
+  {"q": "Colosseum is in?", "o": ["Athens", "Rome", "Istanbul", "Cairo"], "a": 1},
+  {"q": "India Gate is in?", "o": ["Delhi", "Mumbai", "Kolkata", "Bangalore"], "a": 0},
+  {"q": "Golden Gate Bridge city?", "o": ["New York", "Los Angeles", "San Francisco", "Chicago"], "a": 2},
+  {"q": "Machu Picchu country?", "o": ["Mexico", "Peru", "Chile", "Colombia"], "a": 1},
+  {"q": "Arc de Triomphe city?", "o": ["London", "Paris", "Berlin", "Vienna"], "a": 1},
+  {"q": "Taj Mahal is in?", "o": ["India", "Pakistan", "Bangladesh", "Iran"], "a": 0},
+  {"q": "Burj Khalifa is in?", "o": ["Dubai", "Abu Dhabi", "Doha", "Riyadh"], "a": 0},
+  {"q": "Petra ancient city is in?", "o": ["Jordan", "Syria", "Lebanon", "Egypt"], "a": 0},
+  {"q": "How many main pyramids at Giza?", "o": ["3", "5", "7", "10"], "a": 0},
+  {"q": "Sydney Opera House is in?", "o": ["Australia", "New Zealand", "UK", "Canada"], "a": 0},
+  {"q": "Acropolis is in?", "o": ["Athens", "Rome", "Cairo", "Istanbul"], "a": 0},
+  {"q": "Hagia Sophia is in?", "o": ["Istanbul", "Athens", "Rome", "Jerusalem"], "a": 0},
+  {"q": "Alhambra palace is in?", "o": ["Granada (Spain)", "Cairo", "Damascus", "Baghdad"], "a": 0},
+  {"q": "Big Ben is in?", "o": ["London", "Paris", "Berlin", "Madrid"], "a": 0},
+  {"q": "Christ the Redeemer is in?", "o": ["Rio de Janeiro", "São Paulo", "Buenos Aires", "Lima"], "a": 0},
+  {"q": "Suez Canal connects?", "o": ["Red Sea and Mediterranean", "Atlantic and Pacific", "Indian and Pacific", "Baltic and North Sea"], "a": 0},
+  {"q": "Sheikh Zayed Grand Mosque is in?", "o": ["Abu Dhabi", "Dubai", "Sharjah", "Kuwait"], "a": 0}
 ]

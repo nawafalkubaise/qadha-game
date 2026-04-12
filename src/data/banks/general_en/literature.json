@@ -1,82 +1,22 @@
 [
-  {
-    "q": "Romeo and Juliet author?",
-    "o": [
-      "Dickens",
-      "Austen",
-      "Shakespeare",
-      "Hemingway"
-    ],
-    "a": 2
-  },
-  {
-    "q": "1984 author?",
-    "o": [
-      "Huxley",
-      "Bradbury",
-      "Orwell",
-      "Tolkien"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Harry Potter author?",
-    "o": [
-      "King",
-      "Meyer",
-      "Rowling",
-      "Collins"
-    ],
-    "a": 2
-  },
-  {
-    "q": "The Alchemist author?",
-    "o": [
-      "Marquez",
-      "Borges",
-      "Coelho",
-      "Allende"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Don Quixote author?",
-    "o": [
-      "Cervantes",
-      "Lorca",
-      "Borges",
-      "Neruda"
-    ],
-    "a": 0
-  },
-  {
-    "q": "The Prince author?",
-    "o": [
-      "Plato",
-      "Aristotle",
-      "Machiavelli",
-      "Socrates"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Lord of the Rings author?",
-    "o": [
-      "Lewis",
-      "Rowling",
-      "Tolkien",
-      "Martin"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Crime and Punishment author?",
-    "o": [
-      "Tolstoy",
-      "Dostoevsky",
-      "Chekhov",
-      "Pushkin"
-    ],
-    "a": 1
-  }
+  {"q": "Romeo and Juliet author?", "o": ["Dickens", "Austen", "Shakespeare", "Hemingway"], "a": 2},
+  {"q": "1984 author?", "o": ["Huxley", "Bradbury", "Orwell", "Tolkien"], "a": 2},
+  {"q": "Harry Potter author?", "o": ["King", "Meyer", "Rowling", "Collins"], "a": 2},
+  {"q": "The Alchemist author?", "o": ["Marquez", "Borges", "Coelho", "Allende"], "a": 2},
+  {"q": "Don Quixote author?", "o": ["Cervantes", "Lorca", "Borges", "Neruda"], "a": 0},
+  {"q": "The Prince author?", "o": ["Plato", "Aristotle", "Machiavelli", "Socrates"], "a": 2},
+  {"q": "Lord of the Rings author?", "o": ["Lewis", "Rowling", "Tolkien", "Martin"], "a": 2},
+  {"q": "Crime and Punishment author?", "o": ["Tolstoy", "Dostoevsky", "Chekhov", "Pushkin"], "a": 1},
+  {"q": "Les Misérables author?", "o": ["Victor Hugo", "Balzac", "Flaubert", "Zola"], "a": 0},
+  {"q": "One Hundred Years of Solitude author?", "o": ["García Márquez", "Borges", "Neruda", "Coelho"], "a": 0},
+  {"q": "Iliad and Odyssey written by?", "o": ["Homer", "Plato", "Aristotle", "Socrates"], "a": 0},
+  {"q": "War and Peace author?", "o": ["Tolstoy", "Dostoevsky", "Chekhov", "Pushkin"], "a": 0},
+  {"q": "Agatha Christie famous for?", "o": ["Mystery novels", "Poetry", "Science fiction", "History"], "a": 0},
+  {"q": "Shakespeare born in?", "o": ["Stratford-upon-Avon", "London", "Oxford", "Cambridge"], "a": 0},
+  {"q": "Naguib Mahfouz won?", "o": ["Nobel Prize", "Oscar", "Grammy", "Pulitzer"], "a": 0},
+  {"q": "The Prophet author?", "o": ["Kahlil Gibran", "Rumi", "Hafez", "Tagore"], "a": 0},
+  {"q": "Brave New World author?", "o": ["Aldous Huxley", "Orwell", "Bradbury", "Wells"], "a": 0},
+  {"q": "Great Gatsby author?", "o": ["F. Scott Fitzgerald", "Hemingway", "Steinbeck", "Faulkner"], "a": 0},
+  {"q": "Sherlock Holmes creator?", "o": ["Arthur Conan Doyle", "Agatha Christie", "Edgar Allan Poe", "Ian Fleming"], "a": 0},
+  {"q": "To Kill a Mockingbird author?", "o": ["Harper Lee", "Steinbeck", "Twain", "Hemingway"], "a": 0}
 ]

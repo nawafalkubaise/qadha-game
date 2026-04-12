@@ -1,82 +1,22 @@
 [
-  {
-    "q": "Apple co-founder?",
-    "o": [
-      "Gates",
-      "Musk",
-      "Steve Jobs",
-      "Bezos"
-    ],
-    "a": 2
-  },
-  {
-    "q": "First iPhone year?",
-    "o": [
-      "2006",
-      "2007",
-      "2008",
-      "2009"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Android creator?",
-    "o": [
-      "Samsung",
-      "Microsoft",
-      "Apple",
-      "Google"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Amazon founder?",
-    "o": [
-      "Gates",
-      "Zuckerberg",
-      "Musk",
-      "Bezos"
-    ],
-    "a": 3
-  },
-  {
-    "q": "WWW stands for?",
-    "o": [
-      "Wide World Web",
-      "World Wide Web",
-      "Web World Wide",
-      "Western Web"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Python is a?",
-    "o": [
-      "CPU microcode layer",
-      "Programming language",
-      "purely visual markup",
-      "embedded database"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Tesla CEO?",
-    "o": [
-      "Bezos",
-      "Gates",
-      "Cook",
-      "Musk"
-    ],
-    "a": 3
-  },
-  {
-    "q": "ChatGPT made by?",
-    "o": [
-      "Google",
-      "Meta",
-      "OpenAI",
-      "Apple"
-    ],
-    "a": 2
-  }
+  {"q": "Apple co-founder?", "o": ["Gates", "Musk", "Steve Jobs", "Bezos"], "a": 2},
+  {"q": "First iPhone year?", "o": ["2006", "2007", "2008", "2009"], "a": 1},
+  {"q": "Android creator?", "o": ["Samsung", "Microsoft", "Apple", "Google"], "a": 3},
+  {"q": "Amazon founder?", "o": ["Gates", "Zuckerberg", "Musk", "Bezos"], "a": 3},
+  {"q": "WWW stands for?", "o": ["Wide World Web", "World Wide Web", "Web World Wide", "Western Web"], "a": 1},
+  {"q": "Python is a?", "o": ["CPU microcode layer", "Programming language", "purely visual markup", "embedded database"], "a": 1},
+  {"q": "Tesla CEO?", "o": ["Bezos", "Gates", "Cook", "Musk"], "a": 3},
+  {"q": "ChatGPT made by?", "o": ["Google", "Meta", "OpenAI", "Apple"], "a": 2},
+  {"q": "Facebook founder?", "o": ["Bezos", "Zuckerberg", "Gates", "Musk"], "a": 1},
+  {"q": "Bluetooth named after a king from?", "o": ["Denmark (Harald Bluetooth)", "England", "France", "Germany"], "a": 0},
+  {"q": "Windows OS made by?", "o": ["Microsoft", "Apple", "Google", "Amazon"], "a": 0},
+  {"q": "First website created in?", "o": ["1991", "1985", "2000", "1995"], "a": 0},
+  {"q": "TikTok is owned by?", "o": ["ByteDance (Chinese)", "Meta", "Google", "Apple"], "a": 0},
+  {"q": "Cloud computing means?", "o": ["Storing and processing data online", "Flying computer", "Wireless only", "3D printing"], "a": 0},
+  {"q": "Blockchain underpins?", "o": ["Cryptocurrencies like Bitcoin", "Printing", "Photography", "Agriculture"], "a": 0},
+  {"q": "Elon Musk founded?", "o": ["SpaceX and co-founded Tesla", "Apple", "Amazon", "Facebook"], "a": 0},
+  {"q": "Wi-Fi uses?", "o": ["Radio waves", "X-rays", "UV light", "Sound waves"], "a": 0},
+  {"q": "First high-level programming language?", "o": ["Fortran", "Python", "Java", "C"], "a": 0},
+  {"q": "3D printers create objects by?", "o": ["Adding material layer by layer", "Paper only", "Water", "Air"], "a": 0},
+  {"q": "Claude AI assistant is made by?", "o": ["Anthropic", "Google", "OpenAI", "Meta"], "a": 0}
 ]

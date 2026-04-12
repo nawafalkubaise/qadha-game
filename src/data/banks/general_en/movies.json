@@ -1,82 +1,22 @@
 [
-  {
-    "q": "Director of Inception?",
-    "o": [
-      "Spielberg",
-      "Tarantino",
-      "Nolan",
-      "Scorsese"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Highest-grossing film ever?",
-    "o": [
-      "Titanic",
-      "Endgame",
-      "Avatar",
-      "Star Wars"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Jack in Titanic?",
-    "o": [
-      "Brad Pitt",
-      "Tom Cruise",
-      "Johnny Depp",
-      "DiCaprio"
-    ],
-    "a": 3
-  },
-  {
-    "q": "2020 Best Picture?",
-    "o": [
-      "1917",
-      "Joker",
-      "Ford v Ferrari",
-      "Parasite"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Godfather directed by?",
-    "o": [
-      "Scorsese",
-      "Kubrick",
-      "Coppola",
-      "De Palma"
-    ],
-    "a": 2
-  },
-  {
-    "q": "First Star Wars year?",
-    "o": [
-      "1975",
-      "1979",
-      "1977",
-      "1981"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Who played Iron Man?",
-    "o": [
-      "Chris Evans",
-      "Robert Downey Jr",
-      "Chris Hemsworth",
-      "Mark Ruffalo"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Pixar's first feature film?",
-    "o": [
-      "Finding Nemo",
-      "Toy Story",
-      "Cars",
-      "Up"
-    ],
-    "a": 1
-  }
+  {"q": "Director of Inception?", "o": ["Spielberg", "Tarantino", "Nolan", "Scorsese"], "a": 2},
+  {"q": "Highest-grossing film ever?", "o": ["Titanic", "Endgame", "Avatar", "Star Wars"], "a": 2},
+  {"q": "Jack in Titanic?", "o": ["Brad Pitt", "Tom Cruise", "Johnny Depp", "DiCaprio"], "a": 3},
+  {"q": "2020 Best Picture?", "o": ["1917", "Joker", "Ford v Ferrari", "Parasite"], "a": 3},
+  {"q": "Godfather directed by?", "o": ["Scorsese", "Kubrick", "Coppola", "De Palma"], "a": 2},
+  {"q": "First Star Wars year?", "o": ["1975", "1979", "1977", "1981"], "a": 2},
+  {"q": "Who played Iron Man?", "o": ["Chris Evans", "Robert Downey Jr", "Chris Hemsworth", "Mark Ruffalo"], "a": 1},
+  {"q": "Pixar's first feature film?", "o": ["Finding Nemo", "Toy Story", "Cars", "Up"], "a": 1},
+  {"q": "Shawshank Redemption directed by?", "o": ["Frank Darabont", "Nolan", "Spielberg", "Tarantino"], "a": 0},
+  {"q": "James Bond most iconic actor?", "o": ["Sean Connery", "Brad Pitt", "Tom Hanks", "Will Smith"], "a": 0},
+  {"q": "Interstellar is about?", "o": ["Space travel and time", "World War", "Romance", "Sports"], "a": 0},
+  {"q": "The Dark Knight stars?", "o": ["Heath Ledger and Christian Bale", "Robert Downey", "Chris Evans", "Scarlett Johansson"], "a": 0},
+  {"q": "First Disney animated feature?", "o": ["Snow White", "Cinderella", "Bambi", "Pinocchio"], "a": 0},
+  {"q": "The Matrix stars?", "o": ["Keanu Reeves", "Tom Cruise", "Brad Pitt", "Will Smith"], "a": 0},
+  {"q": "Palme d'Or is awarded at?", "o": ["Cannes", "Venice", "Berlin", "Toronto"], "a": 0},
+  {"q": "Forrest Gump stars?", "o": ["Tom Hanks", "DiCaprio", "Brad Pitt", "Morgan Freeman"], "a": 0},
+  {"q": "Harry Potter film series has?", "o": ["8 films", "5 films", "10 films", "3 films"], "a": 0},
+  {"q": "Jurassic Park directed by?", "o": ["Spielberg", "Nolan", "Cameron", "Scott"], "a": 0},
+  {"q": "Schindler's List is about?", "o": ["The Holocaust", "Space travel", "Romance", "Sports"], "a": 0},
+  {"q": "E.T. the Extra-Terrestrial directed by?", "o": ["Spielberg", "Lucas", "Cameron", "Kubrick"], "a": 0}
 ]

@@ -1,82 +1,22 @@
 [
-  {
-    "q": "Mona Lisa painter?",
-    "o": [
-      "Picasso",
-      "Raphael",
-      "Da Vinci",
-      "Michelangelo"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Starry Night painter?",
-    "o": [
-      "Monet",
-      "Cézanne",
-      "Renoir",
-      "Van Gogh"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Dalí's movement?",
-    "o": [
-      "Cubism",
-      "Pop Art",
-      "Surrealism",
-      "Impressionism"
-    ],
-    "a": 2
-  },
-  {
-    "q": "David sculptor?",
-    "o": [
-      "Da Vinci",
-      "Bernini",
-      "Donatello",
-      "Michelangelo"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Frida Kahlo's country?",
-    "o": [
-      "Spain",
-      "Brazil",
-      "Mexico",
-      "Argentina"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Origami is?",
-    "o": [
-      "Clay art",
-      "Weaving",
-      "Paper folding",
-      "Painting"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Andy Warhol's movement?",
-    "o": [
-      "Cubism",
-      "Pop Art",
-      "Impressionism",
-      "Baroque"
-    ],
-    "a": 1
-  },
-  {
-    "q": "The Scream painted by?",
-    "o": [
-      "Monet",
-      "Edvard Munch",
-      "Picasso",
-      "Dalí"
-    ],
-    "a": 1
-  }
+  {"q": "Mona Lisa painter?", "o": ["Picasso", "Raphael", "Da Vinci", "Michelangelo"], "a": 2},
+  {"q": "Starry Night painter?", "o": ["Monet", "Cézanne", "Renoir", "Van Gogh"], "a": 3},
+  {"q": "Dalí's movement?", "o": ["Cubism", "Pop Art", "Surrealism", "Impressionism"], "a": 2},
+  {"q": "David sculptor?", "o": ["Da Vinci", "Bernini", "Donatello", "Michelangelo"], "a": 3},
+  {"q": "Frida Kahlo's country?", "o": ["Spain", "Brazil", "Mexico", "Argentina"], "a": 2},
+  {"q": "Origami is?", "o": ["Clay art", "Weaving", "Paper folding", "Painting"], "a": 2},
+  {"q": "Andy Warhol's movement?", "o": ["Cubism", "Pop Art", "Impressionism", "Baroque"], "a": 1},
+  {"q": "The Scream painted by?", "o": ["Monet", "Edvard Munch", "Picasso", "Dalí"], "a": 1},
+  {"q": "Guernica painted by?", "o": ["Picasso", "Dalí", "Monet", "Renoir"], "a": 0},
+  {"q": "Impressionism originated in?", "o": ["France", "Italy", "Germany", "Spain"], "a": 0},
+  {"q": "Statue of David by Michelangelo is in?", "o": ["Florence", "Rome", "Paris", "London"], "a": 0},
+  {"q": "Mona Lisa is displayed in?", "o": ["Louvre", "Metropolitan", "British Museum", "Uffizi"], "a": 0},
+  {"q": "Mosaic art uses?", "o": ["Small pieces of stone and glass", "Printing", "Oil paint only", "Sculpting"], "a": 0},
+  {"q": "Rembrandt was a Dutch painter known for?", "o": ["Portraits and light use", "Sculptures", "Arabic calligraphy", "Origami"], "a": 0},
+  {"q": "Claude Monet pioneered?", "o": ["Impressionism", "Cubism", "Surrealism", "Pop Art"], "a": 0},
+  {"q": "Cubism was founded by?", "o": ["Picasso and Braque", "Dalí", "Warhol", "Monet"], "a": 0},
+  {"q": "Rodin was famous for sculpture?", "o": ["The Thinker", "Liberty", "David", "Venus"], "a": 0},
+  {"q": "Islamic art is known for?", "o": ["Geometric and floral patterns", "Portraits only", "Human sculptures", "Photography"], "a": 0},
+  {"q": "Metropolitan Museum is in?", "o": ["New York", "London", "Paris", "Berlin"], "a": 0},
+  {"q": "Baroque art style is known for?", "o": ["Grandeur and dramatic detail", "Absolute simplicity", "Straight lines only", "No color"], "a": 0}
 ]

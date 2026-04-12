@@ -1,82 +1,22 @@
 [
-  {
-    "q": "First human in space?",
-    "o": [
-      "Armstrong",
-      "Yuri Gagarin",
-      "Aldrin",
-      "Glenn"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Closest planet to the Sun?",
-    "o": [
-      "Venus",
-      "Mercury",
-      "Mars",
-      "Earth"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Planet famous for rings?",
-    "o": [
-      "Jupiter",
-      "Saturn",
-      "Uranus",
-      "Neptune"
-    ],
-    "a": 1
-  },
-  {
-    "q": "James Webb Space Telescope mainly?",
-    "o": [
-      "Visible only",
-      "Infrared",
-      "X-ray only",
-      "Radio only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Milky Way shape?",
-    "o": [
-      "Elliptical",
-      "Spiral",
-      "Irregular",
-      "Spherical"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Sputnik 1 was first?",
-    "o": [
-      "Human flight",
-      "Artificial satellite",
-      "Moon landing",
-      "Space station"
-    ],
-    "a": 1
-  },
-  {
-    "q": "NASA is?",
-    "o": [
-      "Russian",
-      "American",
-      "Chinese",
-      "European"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Moon orbit period around Earth ~?",
-    "o": [
-      "7 days",
-      "27 days",
-      "365 days",
-      "90 days"
-    ],
-    "a": 1
-  }
+  {"q": "First human in space?", "o": ["Armstrong", "Yuri Gagarin", "Aldrin", "Glenn"], "a": 1},
+  {"q": "Closest planet to the Sun?", "o": ["Venus", "Mercury", "Mars", "Earth"], "a": 1},
+  {"q": "Planet famous for rings?", "o": ["Jupiter", "Saturn", "Uranus", "Neptune"], "a": 1},
+  {"q": "James Webb Space Telescope mainly?", "o": ["Visible only", "Infrared", "X-ray only", "Radio only"], "a": 1},
+  {"q": "Milky Way shape?", "o": ["Elliptical", "Spiral", "Irregular", "Spherical"], "a": 1},
+  {"q": "Sputnik 1 was first?", "o": ["Human flight", "Artificial satellite", "Moon landing", "Space station"], "a": 1},
+  {"q": "NASA is?", "o": ["Russian", "American", "Chinese", "European"], "a": 1},
+  {"q": "Moon orbit period around Earth ~?", "o": ["7 days", "27 days", "365 days", "90 days"], "a": 1},
+  {"q": "Largest planet in solar system?", "o": ["Jupiter", "Saturn", "Uranus", "Neptune"], "a": 0},
+  {"q": "Black hole is?", "o": ["Region where gravity prevents light escape", "Bright star", "Distant planet", "Small galaxy"], "a": 0},
+  {"q": "ISS orbits around?", "o": ["Earth", "Moon", "Mars", "Sun directly"], "a": 0},
+  {"q": "Pluto is classified as?", "o": ["Dwarf planet", "Full planet", "Star", "Moon"], "a": 0},
+  {"q": "Light-year measures?", "o": ["Distance", "Time", "Mass", "Temperature"], "a": 0},
+  {"q": "First Arab astronaut?", "o": ["Sultan bin Salman", "Hazza Al Mansouri", "Muhammad Faris", "Neil Armstrong"], "a": 0},
+  {"q": "Comets are mainly made of?", "o": ["Ice and dust", "Iron only", "Toxic gas only", "Gold"], "a": 0},
+  {"q": "Venus is called Earth's twin because?", "o": ["Similar size", "Has water", "Has life", "Same temperature"], "a": 0},
+  {"q": "Mars rover Perseverance launched by?", "o": ["NASA", "ESA", "Roscosmos", "JAXA"], "a": 0},
+  {"q": "Milky Way contains roughly?", "o": ["Hundreds of billions of stars", "One million only", "One thousand", "Ten stars"], "a": 0},
+  {"q": "Moon's gravity compared to Earth is about?", "o": ["One-sixth", "Half", "Same", "Double"], "a": 0},
+  {"q": "The Sun is a type of star called?", "o": ["Yellow dwarf", "Red giant", "Neutron star", "Black hole"], "a": 0}
 ]

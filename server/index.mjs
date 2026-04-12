@@ -46,6 +46,22 @@ function randomToken() {
 /** @type {Map<string, object>} */
 const rooms = new Map();
 
+/* ═══ Room expiry: clean up rooms older than 2 hours ═══ */
+const ROOM_TTL_MS = 2 * 60 * 60 * 1000;
+setInterval(() => {
+  const now = Date.now();
+  for (const [code, room] of rooms) {
+    if (now - room.createdAt > ROOM_TTL_MS) {
+      if (room.wsClients) {
+        for (const ws of room.wsClients) {
+          try { ws.close(); } catch { /* ignore */ }
+        }
+      }
+      rooms.delete(code);
+    }
+  }
+}, 60_000);
+
 function getRoom(code) {
   const c = String(code || "").toUpperCase().trim();
   return rooms.get(c) || null;
@@ -90,10 +106,11 @@ function roomSnapshot(room) {
   };
 }
 
-function broadcastRoom(room) {
+function broadcastRoom(room, excludeWs) {
   if (!room.wsClients?.size) return;
   const payload = JSON.stringify({ type: "snapshot", room: roomSnapshot(room) });
   for (const client of room.wsClients) {
+    if (client === excludeWs) continue;
     if (client.readyState === 1) client.send(payload);
   }
 }
@@ -264,9 +281,17 @@ app.post("/api/rooms/:code/join", (req, res) => {
     return;
   }
   const name = String(req.body?.displayName || "لاعب").trim().slice(0, 32) || "لاعب";
-  const playerId = randomToken().slice(0, 12);
-  const playerToken = randomToken();
-  room.players.push({ id: playerId, name, isHost: false, playerToken });
+  /* Prevent duplicate players — if same name already exists as non-host, update instead */
+  const existing = room.players.find(p => !p.isHost && p.name === name);
+  let playerId, playerToken;
+  if (existing) {
+    playerId = existing.id;
+    playerToken = existing.playerToken;
+  } else {
+    playerId = randomToken().slice(0, 12);
+    playerToken = randomToken();
+    room.players.push({ id: playerId, name, isHost: false, playerToken });
+  }
   ensureSignalInbox(room, playerId);
   ensureWsClients(room);
   room.rev += 1;

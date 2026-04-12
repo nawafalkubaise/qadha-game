@@ -1,0 +1,21 @@
+{
+  "name": "قدها؟ — لعبة أسئلة وثقافة",
+  "short_name": "قدها؟",
+  "description": "لعبة أسئلة وثقافة عربية متعددة اللاعبين",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#12161c",
+  "theme_color": "#1a1523",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment", "education"]
+}

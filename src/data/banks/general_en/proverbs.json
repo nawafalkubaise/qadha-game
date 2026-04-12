@@ -1,82 +1,22 @@
 [
-  {
-    "q": "Complete: “The neighbor before the…” (Arab proverb calque)",
-    "o": [
-      "House",
-      "Fence",
-      "Road",
-      "Town"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Complete: “Patience is the key to…”",
-    "o": [
-      "Relief",
-      "Anger",
-      "Wealth",
-      "Youth"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Complete: “He who strives…” (from: whoever strives, finds)",
-    "o": [
-      "Finds",
-      "Sleeps",
-      "Rests",
-      "Leaves"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Complete: “The monkey in its mother's eye is a…”",
-    "o": [
-      "Gazelle",
-      "Donkey",
-      "Tiger",
-      "Crow"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Complete: “Stretch your legs according to your…” (coverlet proverb)",
-    "o": [
-      "Coverlet",
-      "Shoes",
-      "House",
-      "Road"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Complete: “Prevention is better than…”",
-    "o": [
-      "Cure",
-      "Panic",
-      "Delay",
-      "Silence"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Complete: “When the mind is complete…” (speech version)",
-    "o": [
-      "Speech lessens",
-      "Speech doubles",
-      "Work stops",
-      "Hope ends"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Complete: “Who seeks the heights…” (nights version)",
-    "o": [
-      "Stays up nights",
-      "Sleeps early",
-      "Takes a nap",
-      "Skips meals"
-    ],
-    "a": 0
-  }
+  {"q": "Complete: \"The neighbor before the…\" (Arab proverb calque)", "o": ["House", "Fence", "Road", "Town"], "a": 0},
+  {"q": "Complete: \"Patience is the key to…\"", "o": ["Relief", "Anger", "Wealth", "Youth"], "a": 0},
+  {"q": "Complete: \"He who strives…\" (from: whoever strives, finds)", "o": ["Finds", "Sleeps", "Rests", "Leaves"], "a": 0},
+  {"q": "Complete: \"The monkey in its mother's eye is a…\"", "o": ["Gazelle", "Donkey", "Tiger", "Crow"], "a": 0},
+  {"q": "Complete: \"Stretch your legs according to your…\" (coverlet proverb)", "o": ["Coverlet", "Shoes", "House", "Road"], "a": 0},
+  {"q": "Complete: \"Prevention is better than…\"", "o": ["Cure", "Panic", "Delay", "Silence"], "a": 0},
+  {"q": "Complete: \"When the mind is complete…\" (speech version)", "o": ["Speech lessens", "Speech doubles", "Work stops", "Hope ends"], "a": 0},
+  {"q": "Complete: \"Who seeks the heights…\" (nights version)", "o": ["Stays up nights", "Sleeps early", "Takes a nap", "Skips meals"], "a": 0},
+  {"q": "Complete: \"Actions speak louder than…\"", "o": ["Words", "Music", "Silence", "Money"], "a": 0},
+  {"q": "Complete: \"A bird in the hand is worth two in the…\"", "o": ["Bush", "Tree", "Sky", "Cage"], "a": 0},
+  {"q": "Complete: \"The early bird catches the…\"", "o": ["Worm", "Fly", "Fish", "Seed"], "a": 0},
+  {"q": "Complete: \"Don't judge a book by its…\"", "o": ["Cover", "Title", "Author", "Size"], "a": 0},
+  {"q": "Complete: \"Every cloud has a silver…\"", "o": ["Lining", "Edge", "Border", "Color"], "a": 0},
+  {"q": "Complete: \"Rome was not built in a…\"", "o": ["Day", "Year", "Week", "Month"], "a": 0},
+  {"q": "Complete: \"When in Rome do as the…\"", "o": ["Romans do", "Greeks do", "Kings do", "Priests do"], "a": 0},
+  {"q": "Complete: \"Knowledge is…\"", "o": ["Power", "Money", "Danger", "Weakness"], "a": 0},
+  {"q": "Complete: \"Necessity is the mother of…\"", "o": ["Invention", "Laziness", "Sleep", "Hunger"], "a": 0},
+  {"q": "Complete: \"All that glitters is not…\"", "o": ["Gold", "Silver", "Diamond", "Bright"], "a": 0},
+  {"q": "Complete: \"A healthy mind in a healthy…\"", "o": ["Body", "House", "World", "School"], "a": 0},
+  {"q": "Complete: \"Where there's a will there's a…\"", "o": ["Way", "Wall", "Door", "Window"], "a": 0}
 ]

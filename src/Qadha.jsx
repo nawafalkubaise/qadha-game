@@ -777,6 +777,7 @@ export default function Qadha(){
   const[timer,setTimer]=useState(45);const[answered,setAnswered]=useState(false);const[selA,setSelA]=useState(null);
   const[revealed,setRevealed]=useState(false);const[firstWrong,setFirstWrong]=useState(null);
   const[typedAns,setTypedAns]=useState("");
+  const[usedFifty,setUsedFifty]=useState(false);const[usedExt,setUsedExt]=useState(false);const[hiddenOpts,setHiddenOpts]=useState([]);
   const[hard,setHard]=useState(false);const[qBank,setQBank]=useState({});const[usedQI,setUsedQI]=useState({});
   const[loading,setLoading]=useState(false);const[loadProg,setLoadProg]=useState(0);
   const[onlineSession,setOnlineSession]=useState(null);
@@ -986,6 +987,38 @@ export default function Qadha(){
     if(gs.phase==="setup"&&scRef.current==="cats")go("setup");
   },[onlineSession,isOnlineHost,sc,liveRoom.room,go]);
 
+  /* ═══ Online: sync game state (scores, used cells, active player) from host ═══ */
+  useEffect(()=>{
+    if(!isOnlineHost||!onlineSession?.hostToken||(sc!=="grid"&&sc!=="question"&&sc!=="results"))return;
+    const code=onlineSession.code;const token=onlineSession.hostToken;
+    let cancelled=false;
+    const t=setTimeout(()=>{void(async()=>{
+      try{
+        const data=await getRoom(code);if(cancelled)return;
+        const prev=data.gameState&&typeof data.gameState==="object"?data.gameState:{};
+        const gameState={...prev,phase:sc,scores,used,active,curPts,curQ:sc==="question"?curQ:null};
+        try{await putRoomState(code,token,{clientRev:data.rev,gameState})}catch(e){
+          const m=String(e.message||e);
+          if(m==="rev_conflict"||m.includes("409")){const d2=await getRoom(code);if(!cancelled)await putRoomState(code,token,{clientRev:d2.rev,gameState})}
+        }
+      }catch{/* ignore */}
+    })()},200);
+    return()=>{cancelled=true;clearTimeout(t)};
+  },[sc,isOnlineHost,onlineSession?.code,onlineSession?.hostToken,scores,used,active,curQ,curPts]);
+
+  /* ═══ Online guest: receive game state updates ═══ */
+  useEffect(()=>{
+    if(!onlineSession||isOnlineHost||(sc!=="grid"&&sc!=="question"&&sc!=="results"))return;
+    const gs=liveRoom.room?.gameState;
+    if(!gs||typeof gs!=="object")return;
+    if(Array.isArray(gs.scores))setScores(gs.scores);
+    if(gs.used&&typeof gs.used==="object")setUsed(gs.used);
+    if(typeof gs.active==="number")setActive(gs.active);
+    if(gs.phase==="grid"&&scRef.current==="question")go("grid");
+    if(gs.phase==="question"&&gs.curQ&&scRef.current==="grid"){setCurQ(gs.curQ);setCurPts(gs.curPts||200);go("question")}
+    if(gs.phase==="results"&&scRef.current!=="results")go("results");
+  },[onlineSession,isOnlineHost,sc,liveRoom.room,go]);
+
   useEffect(()=>{if(sc==="splash"){const t=setTimeout(()=>go("menu"),2800);return()=>clearTimeout(t)}},[sc,go]);
 
   useEffect(()=>{
@@ -1036,7 +1069,7 @@ export default function Qadha(){
       });
       setCurQ(shufQ(qs[pi]));
     }else{setCurQ({q:"?",o:["A","B","C","D"],a:0})}
-    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");go("question");
+    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
   };
   const checkTyped=()=>{
     if(answered||!curQ||!typedAns.trim())return;
@@ -1054,6 +1087,17 @@ export default function Qadha(){
       else{setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500)}
     }
   };
+  const useFiftyFifty=useCallback(()=>{
+    if(usedFifty||answered||!curQ||hard)return;
+    sfx.click();setUsedFifty(true);
+    const wrong=curQ.o.map((_,i)=>i).filter(i=>i!==curQ.a);
+    const shufWrong=[...wrong].sort(()=>Math.random()-0.5);
+    setHiddenOpts([shufWrong[0],shufWrong[1]]);
+  },[usedFifty,answered,curQ,hard]);
+  const useTimeExt=useCallback(()=>{
+    if(usedExt||answered)return;
+    sfx.click();setUsedExt(true);setTimer(p=>p+15);
+  },[usedExt,answered]);
   const catsForCountry=useMemo(()=>catsForCountryId(country.id),[country.id]);
   const startGame=async()=>{
     const allowed=new Set(catsForCountry.map(c=>c.id));
@@ -1067,7 +1111,7 @@ export default function Qadha(){
     const r=await genQs(clean,country);clearInterval(pi);setLoadProg(100);
     const questions=getQuestions(clean,country.id,r,remoteOverlay);
     setQBank(questions);
-    setTimeout(()=>{setLoading(false);setScores([0,0]);setUsed({});setUsedQI({});setActive(1);go("grid")},500);
+    setTimeout(()=>{setLoading(false);setScores([0,0]);setUsed({});setUsedQI({});setActive(1);setUsedFifty(false);setUsedExt(false);setHiddenOpts([]);go("grid")},500);
   };
 
   const isDone=Object.keys(used).length>=48;
@@ -1253,6 +1297,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .grid-header-row>div{min-width:0}
 }
 @media (max-width:420px){.qadha-hard-row{flex-direction:column!important;align-items:stretch!important}.qadha-hard-row .bg{width:100%;box-sizing:border-box}}
+@media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}}
 `}</style>
       {sc!=="splash"&&sc!=="online"&&!loading&&<div style={{position:"fixed",top:"max(10px, env(safe-area-inset-top, 0px))",[rtl?"left":"right"]:10,zIndex:999,display:"flex",alignItems:"center",gap:12,flexWrap:"wrap",maxWidth:"min(96vw,420px)",background:th.badge,border:`1px solid ${th.cardBd}`,borderRadius:24,padding:"12px 16px"}}><CountryFlag country={country} className="qadha-badge-flag" w={28} emojiSize={28} /><span style={{fontSize:12,color:th.accent,fontWeight:700}}>{BI.langBadge}</span><div style={{display:"flex",gap:6,marginInlineStart:8}} role="group" aria-label={BI.themeAria}>{[{k:"calm",i:"🌿",t:BI.themeCalm},{k:"night",i:"🌙",t:BI.themeNight},{k:"light",i:"☀️",t:BI.themeLight}].map(({k,i,t})=>(<button key={k} type="button" title={t} onClick={()=>{sfx.click();setThemeMode(k)}} style={{background:themeMode===k?`rgba(${th.accentRgb},.2)`:"transparent",border:`1px solid ${themeMode===k?th.accent:th.cardBd}`,borderRadius:14,padding:"10px 12px",fontSize:24,cursor:"pointer",lineHeight:1}}>{i}</button>))}</div></div>}
 
@@ -1411,6 +1456,10 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       {sc==="question"&&curQ&&<div style={W} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(640px,100%)",padding:"14px min(22px,5.5vw) max(20px,env(safe-area-inset-bottom))"}}>
         {bRef.current&&!answered&&<div style={{textAlign:"center",marginBottom:16}}><div style={{display:"inline-block",background:isNight?"rgba(255,138,92,.14)":"rgba(234,88,12,.1)",border:"1px solid rgba(255,138,92,.3)",borderRadius:24,padding:"12px 26px",fontSize:17,color:"#EA580C",fontWeight:700}}>{stealBanner}</div></div>}
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}><div style={{width:"clamp(92px,24vw,112px)",height:"clamp(92px,24vw,112px)",borderRadius:"50%",background:timer<=10?"linear-gradient(135deg,#EF4444,#DC2626)":timer<=20?"linear-gradient(135deg,#F59E0B,#D97706)":"linear-gradient(135deg,#8E44AD,#A855F7)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(34px,8.5vw,42px)",fontWeight:900,animation:timer<=10?"pl .4s infinite":"none",boxShadow:timer<=10?"0 0 30px rgba(255,59,92,.5)":"0 0 15px rgba(168,85,247,.3)"}}>{timer}</div></div>
+        <div style={{display:"flex",justifyContent:"center",gap:12,marginBottom:14}}>
+          {!hard&&<button type="button" className="bs sm" disabled={usedFifty||answered} style={{opacity:usedFifty?.35:1,fontSize:15,padding:"10px 20px",borderRadius:16}} onClick={useFiftyFifty}>{tx.fifty}</button>}
+          <button type="button" className="bs sm" disabled={usedExt||answered} style={{opacity:usedExt?.35:1,fontSize:15,padding:"10px 20px",borderRadius:16}} onClick={useTimeExt}>{tx.ext}</button>
+        </div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px",flexWrap:"wrap",gap:8}}><span style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts} · {ptsTierLabelAr(curPts)}</span><span style={{fontSize:15,color:th.textDim}}>{turnLabel(active)}</span></div>
         <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}>
           <p style={{fontSize:"clamp(19px,4.5vw,24px)",fontWeight:800,lineHeight:1.75,color:th.scoreTxt}}>{curQ.q}</p>
@@ -1425,6 +1474,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         
         {!hard&&<div style={{display:"flex",flexDirection:"column",gap:16,marginBottom:20,width:"100%"}}>
           {curQ.o.map((opt,i)=>{
+            if(hiddenOpts.includes(i))return null;
             const ic=i===curQ.a;const isSel=i===selA;const isFirst=i===firstWrong;
             let bg=AB[i],bd=AC[i]+"55",col=th.text;
             if(answered){if(ic&&revealed){bg="rgba(74,222,128,.3)";bd="#4ADE80"}else if(isSel&&!ic){bg="rgba(255,59,92,.3)";bd="#FF3B5C"}else if(isFirst&&revealed){bg="rgba(255,59,92,.15)";bd="rgba(255,59,92,.4)"}else if(revealed){bg=th.gridCell;bd=th.cardBd}}
@@ -1445,7 +1495,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       {sc==="results"&&<div style={W} className="qadha-below-badge"><div style={P}>
         <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"🤝":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p>        <p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p></div>
         <div className="gc" style={{marginBottom:20,border:`2px solid ${th.accent}`,borderRadius:20,padding:24,position:"relative",overflow:"hidden"}}><div style={{position:"absolute",top:0,left:0,right:0,height:4,background:`linear-gradient(90deg,${th.accent},rgba(${th.accentRgb},.5),${th.accent})`}}/><div style={{textAlign:"center",fontSize:11,color:th.textDim,letterSpacing:4,marginBottom:16}}>{tx.vCard}</div><div style={{display:"flex",justifyContent:"space-around",marginBottom:12}}><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6}}>{tn(1)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[0]>=scores[1]?th.accent:th.textDim2}}>{scores[0]}</div></div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:22,color:th.textDim2,alignSelf:"center"}}>ضد</div><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6,opacity:.85}}>{tn(2)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[1]>=scores[0]?th.accent:th.textDim2}}>{scores[1]}</div></div></div><div style={{textAlign:"center",fontFamily:"'Tajawal',sans-serif",fontSize:14,color:th.textDim2,marginTop:10,display:"flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}><span>قدها؟ 👑</span><CountryFlag country={country} w={22} emojiSize={18} /></div></div>
-        <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,remoteOverlay);setQBank(questions);setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);go("grid")},500)}}>{tx.rematch}</button>
+        <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,remoteOverlay);setQBank(questions);setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);setUsedFifty(false);setUsedExt(false);setHiddenOpts([]);go("grid")},500)}}>{tx.rematch}</button>
         <button className="bs" style={{width:"100%",padding:16,marginBottom:8}} onClick={()=>{sfx.click();setSelCats([]);go("cats")}}>{tx.newCats}</button>
         <button className="bs" style={{width:"100%",padding:16}} onClick={()=>{setSelCats([]);go("menu")}}>{tx.menu}</button>
       </div></div>}

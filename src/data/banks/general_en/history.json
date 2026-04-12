@@ -1,82 +1,22 @@
 [
-  {
-    "q": "When did World War II end?",
-    "o": [
-      "1944",
-      "1945",
-      "1946",
-      "1943"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Who walked on the moon first?",
-    "o": [
-      "Buzz Aldrin",
-      "Yuri Gagarin",
-      "Neil Armstrong",
-      "John Glenn"
-    ],
-    "a": 2
-  },
-  {
-    "q": "The French Revolution began in?",
-    "o": [
-      "1789",
-      "1776",
-      "1799",
-      "1812"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Who built the Colosseum?",
-    "o": [
-      "Greeks",
-      "Romans",
-      "Ottomans",
-      "Persians"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Berlin Wall fell in?",
-    "o": [
-      "1991",
-      "1987",
-      "1989",
-      "1993"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Who painted Sistine Chapel ceiling?",
-    "o": [
-      "Da Vinci",
-      "Raphael",
-      "Michelangelo",
-      "Botticelli"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Titanic sank in?",
-    "o": [
-      "1910",
-      "1912",
-      "1914",
-      "1916"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Who discovered penicillin?",
-    "o": [
-      "Einstein",
-      "Fleming",
-      "Darwin",
-      "Newton"
-    ],
-    "a": 1
-  }
+  {"q": "When did World War II end?", "o": ["1944", "1945", "1946", "1943"], "a": 2},
+  {"q": "Who walked on the moon first?", "o": ["Buzz Aldrin", "Yuri Gagarin", "Neil Armstrong", "John Glenn"], "a": 2},
+  {"q": "The French Revolution began in?", "o": ["1789", "1776", "1799", "1812"], "a": 0},
+  {"q": "Who built the Colosseum?", "o": ["Greeks", "Romans", "Ottomans", "Persians"], "a": 1},
+  {"q": "Berlin Wall fell in?", "o": ["1991", "1987", "1989", "1993"], "a": 2},
+  {"q": "Who painted Sistine Chapel ceiling?", "o": ["Da Vinci", "Raphael", "Michelangelo", "Botticelli"], "a": 2},
+  {"q": "Titanic sank in?", "o": ["1910", "1912", "1914", "1916"], "a": 1},
+  {"q": "Who discovered penicillin?", "o": ["Einstein", "Fleming", "Darwin", "Newton"], "a": 1},
+  {"q": "Columbus reached America in?", "o": ["1492", "1500", "1470", "1520"], "a": 0},
+  {"q": "The Ottoman Empire fell in?", "o": ["1922", "1914", "1939", "1900"], "a": 0},
+  {"q": "First civilization with writing?", "o": ["Sumerian", "Egyptian", "Chinese", "Greek"], "a": 0},
+  {"q": "The Great Pyramids were built by?", "o": ["Ancient Egyptians", "Babylonians", "Assyrians", "Romans"], "a": 0},
+  {"q": "Printing press inventor?", "o": ["Gutenberg", "Edison", "Newton", "Galileo"], "a": 0},
+  {"q": "India gained independence in?", "o": ["1947", "1950", "1939", "1960"], "a": 0},
+  {"q": "The Cold War was between?", "o": ["USA and USSR", "UK and France", "China and Japan", "Germany and Italy"], "a": 0},
+  {"q": "Battle of Waterloo ended whose reign?", "o": ["Napoleon", "Caesar", "Alexander", "Charlemagne"], "a": 0},
+  {"q": "WWI started in?", "o": ["1914", "1916", "1912", "1918"], "a": 0},
+  {"q": "Industrial Revolution began in?", "o": ["Britain", "France", "Germany", "USA"], "a": 0},
+  {"q": "Fall of Constantinople was in?", "o": ["1453", "1400", "1492", "1500"], "a": 0},
+  {"q": "First South Pole expedition led by?", "o": ["Amundsen", "Scott", "Cook", "Magellan"], "a": 0}
 ]

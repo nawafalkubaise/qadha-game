@@ -1,82 +1,22 @@
 [
-  {
-    "q": "2022 FIFA World Cup winner?",
-    "o": [
-      "France",
-      "Brazil",
-      "Germany",
-      "Argentina"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Basketball players per team on court?",
-    "o": [
-      "4",
-      "6",
-      "5",
-      "7"
-    ],
-    "a": 2
-  },
-  {
-    "q": "40-40 in tennis called?",
-    "o": [
-      "Advantage",
-      "Match point",
-      "Deuce",
-      "Break"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Marathon distance?",
-    "o": [
-      "41.5 km",
-      "42.195 km",
-      "43.1 km",
-      "42.8 km"
-    ],
-    "a": 1
-  },
-  {
-    "q": "2020 Olympics hosted by?",
-    "o": [
-      "China",
-      "Brazil",
-      "Japan",
-      "Korea"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Slam dunk is in?",
-    "o": [
-      "Volleyball",
-      "Tennis",
-      "Basketball",
-      "Football"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Cricket originated in?",
-    "o": [
-      "India",
-      "Australia",
-      "England",
-      "South Africa"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Olympic motto is?",
-    "o": [
-      "Win!",
-      "Faster Higher Stronger",
-      "Best Always",
-      "Go Gold"
-    ],
-    "a": 1
-  }
+  {"q": "2022 FIFA World Cup winner?", "o": ["France", "Brazil", "Germany", "Argentina"], "a": 3},
+  {"q": "Basketball players per team on court?", "o": ["4", "6", "5", "7"], "a": 2},
+  {"q": "40-40 in tennis called?", "o": ["Advantage", "Match point", "Deuce", "Break"], "a": 2},
+  {"q": "Marathon distance?", "o": ["41.5 km", "42.195 km", "43.1 km", "42.8 km"], "a": 1},
+  {"q": "2020 Olympics hosted by?", "o": ["China", "Brazil", "Japan", "Korea"], "a": 2},
+  {"q": "Slam dunk is in?", "o": ["Volleyball", "Tennis", "Basketball", "Football"], "a": 2},
+  {"q": "Cricket originated in?", "o": ["India", "Australia", "England", "South Africa"], "a": 2},
+  {"q": "Olympic motto is?", "o": ["Win!", "Faster Higher Stronger", "Best Always", "Go Gold"], "a": 1},
+  {"q": "Lionel Messi is from?", "o": ["Brazil", "Argentina", "Spain", "Portugal"], "a": 1},
+  {"q": "Muhammad Ali was champion in?", "o": ["Boxing", "Wrestling", "Judo", "Taekwondo"], "a": 0},
+  {"q": "English Premier League abbreviation?", "o": ["EPL", "La Liga", "Bundesliga", "Serie A"], "a": 0},
+  {"q": "2024 Olympics held in?", "o": ["Paris", "Los Angeles", "Tokyo", "London"], "a": 0},
+  {"q": "Usain Bolt is from?", "o": ["Jamaica", "USA", "Kenya", "Ethiopia"], "a": 0},
+  {"q": "Golf is played with?", "o": ["Club and small ball", "Net and ball", "Gloves and ring", "Stick and large ball"], "a": 0},
+  {"q": "Rugby originated in?", "o": ["England", "USA", "Australia", "France"], "a": 0},
+  {"q": "Cristiano Ronaldo is from?", "o": ["Portugal", "Brazil", "Spain", "France"], "a": 0},
+  {"q": "Wimbledon is held in?", "o": ["London", "Paris", "New York", "Melbourne"], "a": 0},
+  {"q": "Football players per team on field?", "o": ["11", "10", "9", "12"], "a": 0},
+  {"q": "Formula 1 races feature?", "o": ["High-speed cars", "Bicycles", "Horses", "Boats"], "a": 0},
+  {"q": "FIFA was founded in?", "o": ["1904", "1900", "1910", "1920"], "a": 0}
 ]

@@ -1,82 +1,22 @@
 [
-  {
-    "q": "Fastest bird in a dive (peregrine)?",
-    "o": [
-      "Eagle",
-      "Peregrine falcon",
-      "Owl",
-      "Pigeon"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Giant panda diet mainly?",
-    "o": [
-      "Meat",
-      "Bamboo",
-      "Fish",
-      "Honey"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Only mammal capable of true sustained flight?",
-    "o": [
-      "Mouse",
-      "Bat",
-      "Squirrel",
-      "Lemur"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Blue whale eats mainly?",
-    "o": [
-      "Large fish",
-      "Krill",
-      "Seaweed",
-      "Birds"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Sloth is slow partly due to?",
-    "o": [
-      "Laziness only",
-      "Very low metabolism",
-      "Illness",
-      "Age"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Giraffe tongue is?",
-    "o": [
-      "Short",
-      "Very long",
-      "None",
-      "Thick only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Crocodile habitat?",
-    "o": [
-      "Arctic",
-      "Wetlands and water",
-      "Dry desert",
-      "Mountains"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Bees waggle dance communicates?",
-    "o": [
-      "Fun",
-      "Food location",
-      "Fear",
-      "Mating"
-    ],
-    "a": 1
-  }
+  {"q": "Fastest bird in a dive (peregrine)?", "o": ["Eagle", "Peregrine falcon", "Owl", "Pigeon"], "a": 1},
+  {"q": "Giant panda diet mainly?", "o": ["Meat", "Bamboo", "Fish", "Honey"], "a": 1},
+  {"q": "Only mammal capable of true sustained flight?", "o": ["Mouse", "Bat", "Squirrel", "Lemur"], "a": 1},
+  {"q": "Blue whale eats mainly?", "o": ["Large fish", "Krill", "Seaweed", "Birds"], "a": 1},
+  {"q": "Sloth is slow partly due to?", "o": ["Laziness only", "Very low metabolism", "Illness", "Age"], "a": 1},
+  {"q": "Giraffe tongue is?", "o": ["Short", "Very long", "None", "Thick only"], "a": 1},
+  {"q": "Crocodile habitat?", "o": ["Arctic", "Wetlands and water", "Dry desert", "Mountains"], "a": 1},
+  {"q": "Bees waggle dance communicates?", "o": ["Fun", "Food location", "Fear", "Mating"], "a": 1},
+  {"q": "Largest animal on Earth?", "o": ["Blue whale", "African elephant", "Giraffe", "Great white shark"], "a": 0},
+  {"q": "Octopus has how many hearts?", "o": ["3", "1", "2", "4"], "a": 0},
+  {"q": "Chameleon changes color for?", "o": ["Communication and temperature", "Breathing", "Eating", "Hearing"], "a": 0},
+  {"q": "Dolphins are classified as?", "o": ["Mammals", "Fish", "Reptiles", "Amphibians"], "a": 0},
+  {"q": "Ostrich is the largest bird and?", "o": ["Cannot fly", "Fastest flier", "Smallest bird", "Lives in water"], "a": 0},
+  {"q": "Cheetah top speed reaches?", "o": ["120 km/h", "80 km/h", "50 km/h", "150 km/h"], "a": 0},
+  {"q": "Penguins mostly live in?", "o": ["Southern hemisphere", "Tropical forests", "Sahara desert", "Arctic only"], "a": 0},
+  {"q": "Spiders are not insects because they have?", "o": ["8 legs", "6 legs", "Wings", "Fins"], "a": 0},
+  {"q": "Kangaroos are native to?", "o": ["Australia", "Africa", "Asia", "Europe"], "a": 0},
+  {"q": "Squid defends itself by?", "o": ["Squirting ink", "Biting only", "Kicking", "Screaming"], "a": 0},
+  {"q": "Cats sleep approximately per day?", "o": ["12-16 hours", "4 hours", "20 hours", "8 hours only"], "a": 0},
+  {"q": "Elephants communicate using?", "o": ["Infrasound and trumpeting", "Dancing only", "Color changes", "Digging"], "a": 0}
 ]
