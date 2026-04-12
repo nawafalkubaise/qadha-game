@@ -1,0 +1,82 @@
+[
+  {
+    "q": "A famous Kuwaiti dish is?",
+    "o": [
+      "Machboos",
+      "Sushi",
+      "Taco",
+      "Pizza"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Harees is often made from?",
+    "o": [
+      "Wheat and meat",
+      "Rice only",
+      "Fish only",
+      "Potato"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Marqooq usually features?",
+    "o": [
+      "Thin dough with stew",
+      "Pasta only",
+      "Toasted bread",
+      "Fruit salad"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Luqaimat is generally a?",
+    "o": [
+      "Dessert",
+      "Main course",
+      "Salad",
+      "Soup"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Mutabbaq zubaidi is linked with?",
+    "o": [
+      "Fish",
+      "Chicken",
+      "Beef",
+      "Desserts"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Aish mummawash combines?",
+    "o": [
+      "Rice and lentils",
+      "Rice and pasta",
+      "Wheat and meat",
+      "Bread and dates"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tashreeb typically includes?",
+    "o": [
+      "Bread with broth",
+      "Raw fish",
+      "Pasta",
+      "Cold sweets"
+    ],
+    "a": 0
+  },
+  {
+    "q": "In diwaniyas, people often serve?",
+    "o": [
+      "Coffee and dates",
+      "Green tea only",
+      "Juice only",
+      "Soup"
+    ],
+    "a": 0
+  }
+]

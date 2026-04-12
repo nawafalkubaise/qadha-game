@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Who wrote Hamlet?",
+    "o": [
+      "Shakespeare",
+      "Molière",
+      "Ibsen",
+      "Shaw"
+    ],
+    "a": 0
+  },
+  {
+    "q": "The Globe Theatre is linked to?",
+    "o": [
+      "Paris",
+      "London",
+      "Rome",
+      "Athens"
+    ],
+    "a": 1
+  },
+  {
+    "q": "La Scala opera house is in?",
+    "o": [
+      "Rome",
+      "Milan",
+      "Venice",
+      "Naples"
+    ],
+    "a": 1
+  },
+  {
+    "q": "The Blue Bird playwright?",
+    "o": [
+      "Maeterlinck",
+      "Shaw",
+      "Ibsen",
+      "Chekhov"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Traditional Chinese opera form often called?",
+    "o": [
+      "Kabuki",
+      "Peking opera",
+      "Noh",
+      "Kathak"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Wayang shadow puppetry is famous in?",
+    "o": [
+      "China",
+      "Indonesia",
+      "India",
+      "Turkey"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Antigone was written by?",
+    "o": [
+      "Sophocles",
+      "Euripides",
+      "Aeschylus",
+      "Aristotle"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Broadway is a theatre district in?",
+    "o": [
+      "Los Angeles",
+      "New York",
+      "Chicago",
+      "Boston"
+    ],
+    "a": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Sum of triangle angles?",
+    "o": [
+      "90°",
+      "180°",
+      "270°",
+      "360°"
+    ],
+    "a": 1
+  },
+  {
+    "q": "2³ equals?",
+    "o": [
+      "6",
+      "8",
+      "9",
+      "4"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Which is prime?",
+    "o": [
+      "1",
+      "2",
+      "9",
+      "15"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Circle circumference 2πr, r=3, π≈3.14 ~?",
+    "o": [
+      "9.42",
+      "18.84",
+      "6",
+      "12"
+    ],
+    "a": 1
+  },
+  {
+    "q": "3-4-5 triangle relates to?",
+    "o": [
+      "Pythagoras",
+      "Euclid only",
+      "Newton",
+      "Archimedes only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Any number times zero?",
+    "o": [
+      "1",
+      "0",
+      "Undefined",
+      "Same number"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Mean of 2,4,6?",
+    "o": [
+      "3",
+      "4",
+      "5",
+      "12"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Slope of horizontal line?",
+    "o": [
+      "0",
+      "1",
+      "Undefined",
+      "2"
+    ],
+    "a": 0
+  }
+]

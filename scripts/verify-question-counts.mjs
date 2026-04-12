@@ -5,8 +5,17 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { GCC_BANKS, GCC_COUNTRY_IDS } from "../src/data/gccBanks.js";
-import { KW_MERGED as KW } from "../src/data/kwBank.js";
+import imported from "../src/data/kwImportedBank.json" with { type: "json" };
+import { mergeKwBank } from "../src/data/kwMergeImported.js";
+import {
+  readCountryBankFromFs,
+  readAllGccBanksFromFs,
+  GCC_COUNTRY_IDS_FS,
+} from "./lib/readBanksFs.mjs";
+
+const KW = mergeKwBank(readCountryBankFromFs("kw"), imported);
+const GCC_BANKS = readAllGccBanksFromFs();
+const GCC_COUNTRY_IDS = GCC_COUNTRY_IDS_FS;
 import { FALLBACK_AR } from "../src/triviaFallbacks.js";
 import { FALLBACK_EN } from "../src/triviaFallbacksEn.js";
 
@@ -17,37 +26,33 @@ const s = fs.readFileSync(qadhaPath, "utf8");
 const catsBlock = s.split("const CATS=")[1].split("];")[0];
 const catIds = [...catsBlock.matchAll(/\{id:"([^"]+)"/g)].map((m) => m[1]);
 
-function extractBetween(startMarker, endMarker) {
-  const a = s.indexOf(startMarker);
-  const b = s.indexOf(endMarker, a);
-  if (a < 0 || b < 0) throw new Error(`Missing: ${startMarker}`);
-  return s.slice(a + startMarker.length, b).trim();
+const banksRoot = path.join(__dirname, "..", "src", "data", "banks");
+
+function readBankFromDisk(countryId, ids) {
+  const dir = path.join(banksRoot, countryId);
+  const bank = {};
+  for (const id of ids) {
+    const fp = path.join(dir, `${id}.json`);
+    if (fs.existsSync(fp)) {
+      try {
+        bank[id] = JSON.parse(fs.readFileSync(fp, "utf8"));
+      } catch {
+        bank[id] = [];
+      }
+    }
+  }
+  return bank;
 }
 
-const genArLiteral = extractBetween("const GEN_AR=", "const GEN=");
-let GEN_AR;
-try {
-  GEN_AR = new Function(`return ${genArLiteral}`)();
-} catch (e) {
-  console.error("فشل GEN_AR:", e.message);
-  process.exit(1);
-}
-
-const genLiteral = extractBetween("const GEN=", "const fillMissing");
-let GEN;
-try {
-  GEN = new Function(`return ${genLiteral}`)();
-} catch (e) {
-  console.error("فشل GEN:", e.message);
-  process.exit(1);
-}
+const GEN_AR = readBankFromDisk("general_ar", catIds);
+const GEN = readBankFromDisk("general_en", catIds);
 
 /** مطابقة لـ fillMissing في Qadha.jsx (بلا فرع placeholder إن اكتملت المصادر) */
 function filledBank(base, isAr) {
   const fb = isAr ? FALLBACK_AR : FALLBACK_EN;
   const bank = structuredClone(base);
   for (const id of catIds) {
-    if (bank[id]) continue;
+    if (bank[id] && bank[id].length > 0) continue;
     if (fb[id]) bank[id] = structuredClone(fb[id]);
     else if (isAr && GEN_AR[id]) bank[id] = structuredClone(GEN_AR[id]);
     else if (!isAr && GEN[id]) bank[id] = structuredClone(GEN[id]);

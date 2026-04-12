@@ -47,8 +47,13 @@ export default function OnlineLobby({ th, onBack, onStartGame }) {
       setErr("أدخل كود الغرفة");
       return;
     }
+    const playerName = name.trim();
+    if (playerName.length < 2) {
+      setErr("اكتب اسمك (حرفين على الأقل)");
+      return;
+    }
     try {
-      const jr = await joinRoom(c, name.trim() || "لاعب");
+      const jr = await joinRoom(c, playerName);
       setCode(c);
       setHostToken("");
       setJoinCreds({ playerId: jr.playerId, playerToken: jr.playerToken });

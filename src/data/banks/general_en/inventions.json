@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Telephone credited to?",
+    "o": [
+      "Edison",
+      "Bell",
+      "Tesla",
+      "Marconi"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Steam engine improved industrially by?",
+    "o": [
+      "Newton",
+      "James Watt",
+      "Faraday",
+      "Edison"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Movable-type printing Europe?",
+    "o": [
+      "Gutenberg",
+      "Shakespeare",
+      "Columbus",
+      "Galileo"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Penicillin by?",
+    "o": [
+      "Fleming",
+      "Pasteur",
+      "Koch",
+      "Einstein"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Internet roots in?",
+    "o": [
+      "ARPANET",
+      "Facebook",
+      "Google",
+      "Apple"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Wright brothers first powered flight?",
+    "o": [
+      "1903",
+      "1910",
+      "1890",
+      "1920"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Microwave oven discovery linked to?",
+    "o": [
+      "Cooking show",
+      "Radar research",
+      "TV",
+      "Phone"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Light bulb commercialized notably by?",
+    "o": [
+      "Tesla only",
+      "Edison (development)",
+      "Newton",
+      "Marconi"
+    ],
+    "a": 1
+  }
+]

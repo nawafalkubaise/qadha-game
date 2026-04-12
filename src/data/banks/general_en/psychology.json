@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Freud associated with?",
+    "o": [
+      "Behaviorism only",
+      "Psychoanalysis",
+      "CBT only",
+      "IQ tests"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Working memory capacity?",
+    "o": [
+      "Unlimited",
+      "Limited short-term",
+      "Zero",
+      "Infinite"
+    ],
+    "a": 1
+  },
+  {
+    "q": "OCD involves?",
+    "o": [
+      "Fear of dark",
+      "Obsessions/compulsions",
+      "Amnesia",
+      "Mania only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Positive reinforcement increases?",
+    "o": [
+      "Punished behavior",
+      "Rewarded behavior",
+      "Sleep",
+      "Anger"
+    ],
+    "a": 1
+  },
+  {
+    "q": "EQ measures?",
+    "o": [
+      "Running speed",
+      "Emotional skills",
+      "Height",
+      "Weight"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Clinical depression often needs?",
+    "o": [
+      "Ignore",
+      "Professional help",
+      "Only sports",
+      "Travel only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Fight-or-flight is?",
+    "o": [
+      "Stress response",
+      "Sleep",
+      "Digestion",
+      "Painting"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Rorschach test uses?",
+    "o": [
+      "Inkblots",
+      "Blood pressure",
+      "Hearing",
+      "Taste"
+    ],
+    "a": 0
+  }
+]

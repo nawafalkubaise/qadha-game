@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Chanel founded in?",
+    "o": [
+      "Italy",
+      "France",
+      "UK",
+      "USA"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Blue jeans mass popularized by?",
+    "o": [
+      "Levi Strauss",
+      "Nike",
+      "Adidas",
+      "Zara"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Typical Western suit pieces?",
+    "o": [
+      "Three always",
+      "Jacket and trousers",
+      "Four",
+      "One"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Sari traditional in?",
+    "o": [
+      "Japan",
+      "India",
+      "Korea",
+      "China"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Louis Vuitton known for?",
+    "o": [
+      "Cars",
+      "Luxury leather goods",
+      "Sports",
+      "Phones"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Adidas founded in?",
+    "o": [
+      "USA",
+      "Germany",
+      "UK",
+      "France"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Runway fashion shows highlight?",
+    "o": [
+      "Food",
+      "New collections",
+      "Cars",
+      "Software"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Haute couture means?",
+    "o": [
+      "Mass market",
+      "High-end custom fashion",
+      "Uniforms",
+      "Sportswear only"
+    ],
+    "a": 1
+  }
+]

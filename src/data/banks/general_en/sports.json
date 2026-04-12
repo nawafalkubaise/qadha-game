@@ -1,0 +1,82 @@
+[
+  {
+    "q": "2022 FIFA World Cup winner?",
+    "o": [
+      "France",
+      "Brazil",
+      "Germany",
+      "Argentina"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Basketball players per team on court?",
+    "o": [
+      "4",
+      "6",
+      "5",
+      "7"
+    ],
+    "a": 2
+  },
+  {
+    "q": "40-40 in tennis called?",
+    "o": [
+      "Advantage",
+      "Match point",
+      "Deuce",
+      "Break"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Marathon distance?",
+    "o": [
+      "41.5 km",
+      "42.195 km",
+      "43.1 km",
+      "42.8 km"
+    ],
+    "a": 1
+  },
+  {
+    "q": "2020 Olympics hosted by?",
+    "o": [
+      "China",
+      "Brazil",
+      "Japan",
+      "Korea"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Slam dunk is in?",
+    "o": [
+      "Volleyball",
+      "Tennis",
+      "Basketball",
+      "Football"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Cricket originated in?",
+    "o": [
+      "India",
+      "Australia",
+      "England",
+      "South Africa"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Olympic motto is?",
+    "o": [
+      "Win!",
+      "Faster Higher Stronger",
+      "Best Always",
+      "Go Gold"
+    ],
+    "a": 1
+  }
+]

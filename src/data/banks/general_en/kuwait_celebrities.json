@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Abdullah Al-Ruwaished is famous in?",
+    "o": [
+      "Kuwaiti singing",
+      "Medicine",
+      "Engineering",
+      "Basketball"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Hayat Al-Fahad is known for?",
+    "o": [
+      "Drama acting",
+      "Football",
+      "Aviation",
+      "Economics"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Suad Abdullah is one of Kuwait's famous?",
+    "o": [
+      "Actresses",
+      "Physicists",
+      "Pilots",
+      "Athletes"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Dawood Hussein is known for?",
+    "o": [
+      "Acting",
+      "Swimming",
+      "Lab science",
+      "Architecture"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Faiq Abduljaleel is notable in?",
+    "o": [
+      "Poetry",
+      "Boxing",
+      "Veterinary science",
+      "Physics"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Popular influencer platforms in Kuwait?",
+    "o": [
+      "Snapchat and Instagram",
+      "Fax only",
+      "Radio only",
+      "Print only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Kuwaiti celebrities are often visible in?",
+    "o": [
+      "Media and social platforms",
+      "Oil sector only",
+      "Geology only",
+      "Agriculture only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "This category focuses on?",
+    "o": [
+      "Kuwaiti public figures",
+      "District names",
+      "Global food",
+      "Olympic sports"
+    ],
+    "a": 0
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Apple co-founder?",
+    "o": [
+      "Gates",
+      "Musk",
+      "Steve Jobs",
+      "Bezos"
+    ],
+    "a": 2
+  },
+  {
+    "q": "First iPhone year?",
+    "o": [
+      "2006",
+      "2007",
+      "2008",
+      "2009"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Android creator?",
+    "o": [
+      "Samsung",
+      "Microsoft",
+      "Apple",
+      "Google"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Amazon founder?",
+    "o": [
+      "Gates",
+      "Zuckerberg",
+      "Musk",
+      "Bezos"
+    ],
+    "a": 3
+  },
+  {
+    "q": "WWW stands for?",
+    "o": [
+      "Wide World Web",
+      "World Wide Web",
+      "Web World Wide",
+      "Western Web"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Python is a?",
+    "o": [
+      "CPU microcode layer",
+      "Programming language",
+      "purely visual markup",
+      "embedded database"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Tesla CEO?",
+    "o": [
+      "Bezos",
+      "Gates",
+      "Cook",
+      "Musk"
+    ],
+    "a": 3
+  },
+  {
+    "q": "ChatGPT made by?",
+    "o": [
+      "Google",
+      "Meta",
+      "OpenAI",
+      "Apple"
+    ],
+    "a": 2
+  }
+]

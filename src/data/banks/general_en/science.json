@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Red Planet is?",
+    "o": [
+      "Venus",
+      "Jupiter",
+      "Mars",
+      "Saturn"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Chemical symbol for water?",
+    "o": [
+      "HO",
+      "H2O",
+      "O2H",
+      "WA"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Bones in adult body?",
+    "o": [
+      "196",
+      "206",
+      "216",
+      "202"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Gas plants absorb?",
+    "o": [
+      "Oxygen",
+      "CO₂",
+      "Nitrogen",
+      "Hydrogen"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Speed of light approx?",
+    "o": [
+      "150K km/s",
+      "500K km/s",
+      "300K km/s",
+      "1M km/s"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Organ producing insulin?",
+    "o": [
+      "Liver",
+      "Kidney",
+      "Pancreas",
+      "Heart"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Largest organ of body?",
+    "o": [
+      "Liver",
+      "Heart",
+      "Skin",
+      "Brain"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Blood type universal donor?",
+    "o": [
+      "A",
+      "B",
+      "AB",
+      "O"
+    ],
+    "a": 3
+  }
+]

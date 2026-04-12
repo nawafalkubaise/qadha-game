@@ -1,0 +1,82 @@
+[
+  {
+    "q": "IPO means?",
+    "o": [
+      "Initial public offering",
+      "Private buyout",
+      "Merger",
+      "Bankruptcy"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Steve Jobs co-founded?",
+    "o": [
+      "Microsoft",
+      "Apple",
+      "Google",
+      "Amazon"
+    ],
+    "a": 1
+  },
+  {
+    "q": "LLC protects?",
+    "o": [
+      "Employees only",
+      "Owners from unlimited debt",
+      "Government",
+      "Banks only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Franchise grants?",
+    "o": [
+      "Closure",
+      "Brand and system license",
+      "Liquidation",
+      "Tax exemption"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Acquisition means?",
+    "o": [
+      "Buying another company",
+      "Selling a branch",
+      "Layoffs",
+      "Bond issue"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Business model describes?",
+    "o": [
+      "Building",
+      "How a firm makes money",
+      "Payroll",
+      "Logo"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Free shipping often aims to?",
+    "o": [
+      "Reduce sales",
+      "Boost conversions",
+      "Raise taxes",
+      "Stop ads"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Venture capital invests in?",
+    "o": [
+      "Only governments",
+      "Startups with growth risk",
+      "Only banks",
+      "Only farms"
+    ],
+    "a": 1
+  }
+]

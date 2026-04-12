@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Public parks are generally good for?",
+    "o": [
+      "Family recreation",
+      "Oil refining",
+      "Court hearings",
+      "Aircraft repair"
+    ],
+    "a": 0
+  },
+  {
+    "q": "A waterfront green promenade is mainly for?",
+    "o": [
+      "Walking and leisure",
+      "Mining",
+      "Military port use",
+      "Airport ops"
+    ],
+    "a": 0
+  },
+  {
+    "q": "City parks usually include?",
+    "o": [
+      "Benches and kids areas",
+      "Runways",
+      "Oil rigs",
+      "Rail lines"
+    ],
+    "a": 0
+  },
+  {
+    "q": "In summer, park visits are best at?",
+    "o": [
+      "Evening",
+      "Midday",
+      "Late night only",
+      "Dawn only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Neighborhood parks mainly serve?",
+    "o": [
+      "Local residents",
+      "Maritime shipping",
+      "Tax collection",
+      "Mining"
+    ],
+    "a": 0
+  },
+  {
+    "q": "A common park activity is?",
+    "o": [
+      "Walking",
+      "Deep diving",
+      "Snow skiing",
+      "Formula racing"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Planting trees in parks helps?",
+    "o": [
+      "Improve quality of life",
+      "Increase noise",
+      "Remove shade",
+      "Reduce space use"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Parks are part of a city's?",
+    "o": [
+      "Leisure infrastructure",
+      "Refineries",
+      "Commercial ports",
+      "Mines"
+    ],
+    "a": 0
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "First powered flight Wright brothers?",
+    "o": [
+      "1903",
+      "1918",
+      "1895",
+      "1927"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Boeing mainly makes?",
+    "o": [
+      "Cars",
+      "Aircraft",
+      "Ships",
+      "Trains"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Black box flight recorder color often?",
+    "o": [
+      "Black",
+      "Bright orange",
+      "White",
+      "Blue"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Heathrow airport?",
+    "o": [
+      "Paris",
+      "London",
+      "Berlin",
+      "Madrid"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Autopilot helps with?",
+    "o": [
+      "Landing only",
+      "Flight path/altitude",
+      "Food",
+      "Passengers only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Shortest path on Earth between points?",
+    "o": [
+      "Straight on map paper",
+      "Great circle",
+      "Zigzag",
+      "Random"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Concorde was?",
+    "o": [
+      "Subsonic always",
+      "Supersonic passenger jet",
+      "Blimp",
+      "Glider"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Turbofan vs propeller high speed?",
+    "o": [
+      "Prop always better",
+      "Turbofan more efficient high speed",
+      "No thrust",
+      "For boats"
+    ],
+    "a": 1
+  }
+]

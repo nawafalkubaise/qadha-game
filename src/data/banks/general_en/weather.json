@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Richter scale measures?",
+    "o": [
+      "Wind",
+      "Earthquake magnitude",
+      "Rain",
+      "Temperature"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Atlantic hurricane name?",
+    "o": [
+      "Typhoon",
+      "Hurricane",
+      "Monsoon",
+      "Dust devil"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Anemometer measures?",
+    "o": [
+      "Pressure",
+      "Wind speed",
+      "Humidity",
+      "Lightning"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Lightning vs sound which faster?",
+    "o": [
+      "Sound",
+      "Light",
+      "Same",
+      "Neither"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Low pressure often brings?",
+    "o": [
+      "Always dry",
+      "Clouds and rain possible",
+      "Only polar snow",
+      "Nothing"
+    ],
+    "a": 1
+  },
+  {
+    "q": "100% humidity near?",
+    "o": [
+      "Saturation",
+      "Total dryness",
+      "Freezing",
+      "Zero rain"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Fog is cloud?",
+    "o": [
+      "High",
+      "At ground",
+      "Space",
+      "Ocean"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Absolute zero Kelvin 0 equals?",
+    "o": [
+      "0°C",
+      "-273.15°C",
+      "100°C",
+      "32°F"
+    ],
+    "a": 1
+  }
+]

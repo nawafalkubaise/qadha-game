@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Symbol for gold?",
+    "o": [
+      "Ag",
+      "Au",
+      "Fe",
+      "Pb"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Gas that supports combustion?",
+    "o": [
+      "Nitrogen",
+      "Oxygen",
+      "CO₂",
+      "Helium"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Neutral pH?",
+    "o": [
+      "0",
+      "7",
+      "14",
+      "1"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Water is made of?",
+    "o": [
+      "H and O",
+      "C and N",
+      "Na and Cl",
+      "Fe and O"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Stomach acid mainly?",
+    "o": [
+      "Acetic",
+      "Hydrochloric",
+      "Nitric",
+      "Sulfuric"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Periodic table credited to?",
+    "o": [
+      "Newton",
+      "Mendeleev",
+      "Darwin",
+      "Einstein"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Most plastics derived from?",
+    "o": [
+      "Plants only",
+      "Petroleum",
+      "Metal",
+      "Water"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Exothermic reaction?",
+    "o": [
+      "Absorbs heat",
+      "Releases heat",
+      "No change",
+      "Only cold"
+    ],
+    "a": 1
+  }
+]

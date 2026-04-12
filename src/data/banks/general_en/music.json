@@ -1,0 +1,82 @@
+[
+  {
+    "q": "88 keys instrument?",
+    "o": [
+      "Guitar",
+      "Harp",
+      "Piano",
+      "Violin"
+    ],
+    "a": 2
+  },
+  {
+    "q": "King of Pop?",
+    "o": [
+      "Elvis",
+      "Prince",
+      "Bowie",
+      "Michael Jackson"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Bohemian Rhapsody band?",
+    "o": [
+      "Beatles",
+      "Led Zeppelin",
+      "Pink Floyd",
+      "Queen"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Genre from Jamaica?",
+    "o": [
+      "Jazz",
+      "Blues",
+      "Samba",
+      "Reggae"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Guitar strings count?",
+    "o": [
+      "4",
+      "5",
+      "8",
+      "6"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Beethoven's country?",
+    "o": [
+      "Austria",
+      "France",
+      "Germany",
+      "Italy"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Instrument in an orchestra that conducts?",
+    "o": [
+      "Piano",
+      "Baton",
+      "Violin",
+      "Drum"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Auto-Tune became famous in which decade?",
+    "o": [
+      "1980s",
+      "1990s",
+      "2000s",
+      "2010s"
+    ],
+    "a": 1
+  }
+]

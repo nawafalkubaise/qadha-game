@@ -1,0 +1,82 @@
+[
+  {
+    "q": "First human in space?",
+    "o": [
+      "Armstrong",
+      "Yuri Gagarin",
+      "Aldrin",
+      "Glenn"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Closest planet to the Sun?",
+    "o": [
+      "Venus",
+      "Mercury",
+      "Mars",
+      "Earth"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Planet famous for rings?",
+    "o": [
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune"
+    ],
+    "a": 1
+  },
+  {
+    "q": "James Webb Space Telescope mainly?",
+    "o": [
+      "Visible only",
+      "Infrared",
+      "X-ray only",
+      "Radio only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Milky Way shape?",
+    "o": [
+      "Elliptical",
+      "Spiral",
+      "Irregular",
+      "Spherical"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Sputnik 1 was first?",
+    "o": [
+      "Human flight",
+      "Artificial satellite",
+      "Moon landing",
+      "Space station"
+    ],
+    "a": 1
+  },
+  {
+    "q": "NASA is?",
+    "o": [
+      "Russian",
+      "American",
+      "Chinese",
+      "European"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Moon orbit period around Earth ~?",
+    "o": [
+      "7 days",
+      "27 days",
+      "365 days",
+      "90 days"
+    ],
+    "a": 1
+  }
+]

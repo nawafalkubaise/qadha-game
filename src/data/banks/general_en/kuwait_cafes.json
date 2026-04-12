@@ -1,0 +1,82 @@
+[
+  {
+    "q": "A well-known cafe-heavy area is?",
+    "o": [
+      "Salmiya",
+      "Wafra only",
+      "Islands only",
+      "Abdali only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Most common cafe drink is?",
+    "o": [
+      "Coffee",
+      "Soup",
+      "Broth",
+      "Milk only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Waterfront cafes are common near?",
+    "o": [
+      "Marina and corniche",
+      "Industrial zones only",
+      "Airport",
+      "Farms"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Cafe gatherings are usually?",
+    "o": [
+      "Social",
+      "Judicial",
+      "Medical",
+      "Athletic only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Mall cafes are usually in?",
+    "o": [
+      "Food and dining zones",
+      "Warehouses",
+      "Parking lots",
+      "Roof only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Specialty cafe growth is tied to?",
+    "o": [
+      "Modern coffee culture",
+      "Agriculture",
+      "Fishing",
+      "Aviation"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Iced latte is a?",
+    "o": [
+      "Cold drink",
+      "Dessert",
+      "Main dish",
+      "Salad"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Studying in cafes is common due to?",
+    "o": [
+      "Wi-Fi and seating",
+      "Olympic pools",
+      "Labs",
+      "Hospitals"
+    ],
+    "a": 0
+  }
+]

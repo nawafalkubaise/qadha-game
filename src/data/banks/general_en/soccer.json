@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Players per team on field in football?",
+    "o": [
+      "10",
+      "11",
+      "9",
+      "7"
+    ],
+    "a": 1
+  },
+  {
+    "q": "FIFA World Cup every?",
+    "o": [
+      "2 years",
+      "4 years",
+      "3 years",
+      "5 years"
+    ],
+    "a": 1
+  },
+  {
+    "q": "FIFA HQ city?",
+    "o": [
+      "London",
+      "Zurich",
+      "Paris",
+      "Madrid"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Red card means?",
+    "o": [
+      "Warning",
+      "Sent off",
+      "Substitute",
+      "Corner"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Penalty spot distance ~?",
+    "o": [
+      "9 m",
+      "11 m",
+      "16 m",
+      "5 m"
+    ],
+    "a": 1
+  },
+  {
+    "q": "UEFA Champions League is?",
+    "o": [
+      "Asian",
+      "European clubs",
+      "African",
+      "South American"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Only who may use hands in box (normally)?",
+    "o": [
+      "Striker",
+      "Goalkeeper",
+      "Referee",
+      "Coach"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Offside rule mainly about?",
+    "o": [
+      "Shirt color",
+      "Position ahead of ball and second-last defender",
+      "Shoe size",
+      "Hair"
+    ],
+    "a": 1
+  }
+]

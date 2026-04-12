@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Burj Khalifa in?",
+    "o": [
+      "Qatar",
+      "UAE",
+      "Saudi",
+      "Kuwait"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Taj Mahal in?",
+    "o": [
+      "Pakistan",
+      "India",
+      "Iran",
+      "Bangladesh"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Leaning Tower in?",
+    "o": [
+      "Rome",
+      "Pisa",
+      "Milan",
+      "Naples"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Sagrada Família in?",
+    "o": [
+      "Madrid",
+      "Barcelona",
+      "Seville",
+      "Bilbao"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Sydney Opera House shape like?",
+    "o": [
+      "Pyramid",
+      "Shells/sails",
+      "Cube",
+      "Iron tower"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Petra in?",
+    "o": [
+      "Egypt",
+      "Jordan",
+      "Lebanon",
+      "Iraq"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Eiffel Tower material?",
+    "o": [
+      "Wood",
+      "Iron",
+      "Glass only",
+      "Clay"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Arc de Triomphe era?",
+    "o": [
+      "Louis XIV",
+      "Napoleonic France",
+      "Roman Empire",
+      "Charlemagne"
+    ],
+    "a": 1
+  }
+]

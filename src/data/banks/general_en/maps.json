@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Capital of Japan?",
+    "o": [
+      "Osaka",
+      "Tokyo",
+      "Kyoto",
+      "Yokohama"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Capital of Canada?",
+    "o": [
+      "Toronto",
+      "Ottawa",
+      "Vancouver",
+      "Montreal"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Executive capital of South Africa (one)?",
+    "o": [
+      "Cape Town",
+      "Pretoria",
+      "Johannesburg",
+      "Durban"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Capital of Australia?",
+    "o": [
+      "Sydney",
+      "Canberra",
+      "Melbourne",
+      "Perth"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Capital of Brazil?",
+    "o": [
+      "Rio",
+      "Brasília",
+      "São Paulo",
+      "Salvador"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Administrative capital of Switzerland?",
+    "o": [
+      "Zurich",
+      "Bern",
+      "Geneva",
+      "Basel"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Capital of Turkey?",
+    "o": [
+      "Istanbul",
+      "Ankara",
+      "Izmir",
+      "Antalya"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Capital of Argentina?",
+    "o": [
+      "Córdoba",
+      "Buenos Aires",
+      "Mendoza",
+      "Rosario"
+    ],
+    "a": 1
+  }
+]

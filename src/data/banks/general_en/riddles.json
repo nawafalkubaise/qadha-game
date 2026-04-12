@@ -1,0 +1,82 @@
+[
+  {
+    "q": "The more you take, the larger it becomes?",
+    "o": [
+      "Water",
+      "A hole",
+      "Light",
+      "Food"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Has teeth but cannot bite?",
+    "o": [
+      "Saw",
+      "Comb",
+      "Dog",
+      "Snake"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Runs but never walks?",
+    "o": [
+      "Human",
+      "River",
+      "Robot",
+      "Car"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Green in field, black in market, red at home?",
+    "o": [
+      "Apple",
+      "Tea",
+      "Lettuce",
+      "Pepper"
+    ],
+    "a": 1
+  },
+  {
+    "q": "House with no doors or windows?",
+    "o": [
+      "Igloo",
+      "Spider web",
+      "Tent",
+      "Tower"
+    ],
+    "a": 1
+  },
+  {
+    "q": "I am my parents' child but not my siblings' brother?",
+    "o": [
+      "Cousin",
+      "Me (the speaker)",
+      "Neighbor",
+      "Friend"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Born long ago, but only a month old?",
+    "o": [
+      "Baby",
+      "Moon",
+      "Star",
+      "Year"
+    ],
+    "a": 1
+  },
+  {
+    "q": "What has a neck but no head?",
+    "o": [
+      "Snake",
+      "Bottle",
+      "Giraffe",
+      "Turtle"
+    ],
+    "a": 1
+  }
+]

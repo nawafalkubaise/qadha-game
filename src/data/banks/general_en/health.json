@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Daily fluid intake guideline ~?",
+    "o": [
+      "0.5 L",
+      "~2 L including drinks",
+      "5 L",
+      "10 L"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Adult sleep typically?",
+    "o": [
+      "3-4 h",
+      "7-9 h",
+      "12 h",
+      "1 h"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Vitamin D important for?",
+    "o": [
+      "Hair only",
+      "Bones and immunity",
+      "Nails only",
+      "Skin only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Resting heart rate adult ~?",
+    "o": [
+      "40",
+      "60-100 bpm",
+      "150",
+      "20"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Type 2 diabetes prevention includes?",
+    "o": [
+      "Inactivity",
+      "Diet and exercise",
+      "Smoking",
+      "Sugar only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Vaccines train?",
+    "o": [
+      "Lymph production schedule",
+      "Immune system",
+      "Digestive enzyme mix",
+      "Resting heart rhythm"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Hypertension called silent because?",
+    "o": [
+      "Loud",
+      "Often no symptoms",
+      "Ear pain",
+      "Instant pain"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Handwashing reduces?",
+    "o": [
+      "Sunburn",
+      "Infectious spread",
+      "Lightning",
+      "Earthquakes"
+    ],
+    "a": 1
+  }
+]

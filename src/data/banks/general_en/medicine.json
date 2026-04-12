@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Largest organ?",
+    "o": [
+      "Liver",
+      "Heart",
+      "Skin",
+      "Brain"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Normal body temperature?",
+    "o": [
+      "36.5°C",
+      "37°C",
+      "37.5°C",
+      "36°C"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Blood types count?",
+    "o": [
+      "2",
+      "4",
+      "6",
+      "8"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Insulin treats?",
+    "o": [
+      "Cancer",
+      "Diabetes",
+      "Cold",
+      "Flu"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Vitamin C found in?",
+    "o": [
+      "Meat",
+      "Citrus fruits",
+      "Bread",
+      "Rice"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Heart beats per minute (avg)?",
+    "o": [
+      "40",
+      "60-100",
+      "120",
+      "150"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Antibiotics fight?",
+    "o": [
+      "Viruses",
+      "Bacteria",
+      "Allergies",
+      "Pain"
+    ],
+    "a": 1
+  },
+  {
+    "q": "WHO stands for?",
+    "o": [
+      "World Help Org",
+      "World Health Organization",
+      "World Hospital Order",
+      "Western Health Office"
+    ],
+    "a": 1
+  }
+]

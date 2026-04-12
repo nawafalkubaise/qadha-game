@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback, useRef, useMemo, Fragment } from "react";
 import { KW_MERGED as KW } from "./data/kwBank.js";
+import { loadGeneralArBank, loadGeneralEnBank } from "./data/banksLoader.js";
 import { GCC_BANKS, GCC_COUNTRY_IDS } from "./data/gccBanks.js";
 import { FALLBACK_AR, FALLBACK_EN } from "./triviaFallbacks.js";
 import {
@@ -71,7 +72,7 @@ const CATS=[
 {id:"math",n:"Math",ar:"رياضيات",icon:"🔢",c:"#6366F1"},
 {id:"leaders",n:"Leaders",ar:"قادة",icon:"👑",c:"#6366F1"},
 {id:"ancient",n:"Ancient",ar:"حضارات",icon:"🗿",c:"#D97706"},
-{id:"proverbs",n:"Proverbs",ar:"أمثال",icon:"💬",c:"#A855F7"},
+{id:"proverbs",n:"Complete proverb",ar:"أكمل المثل",icon:"💬",c:"#A855F7"},
 {id:"psychology",n:"Psychology",ar:"علم النفس",icon:"🧠",c:"#C084FC"},
 {id:"olympics",n:"Olympics",ar:"أولمبياد",icon:"🏅",c:"#FBBF24"},
 {id:"inventions",n:"Inventions",ar:"اختراعات",icon:"💡",c:"#FDE68A"},
@@ -99,19 +100,47 @@ const CATS=[
 {id:"boardgames",n:"Board Games",ar:"ألعاب طاولة",icon:"🎲",c:"#FBBF24"},
 {id:"physics",n:"Physics",ar:"الفيزياء",icon:"⚛️",c:"#60A5FA"},
 {id:"biology",n:"Biology",ar:"الأحياء",icon:"🧬",c:"#4ADE80"},
+{id:"kuwait_parliament",n:"Kuwait Parliament",ar:"مجلس الأمة",icon:"🏛️",c:"#DC2626"},
+{id:"kuwait_foods",n:"Kuwaiti Foods",ar:"أكلات كويتية",icon:"🍛",c:"#EA580C"},
+{id:"kuwait_cafes",n:"Kuwait Cafes",ar:"كافيهات الكويت",icon:"☕",c:"#B45309"},
+{id:"kuwait_towers",n:"Kuwait Towers",ar:"أبراج كويتية",icon:"🗼",c:"#0EA5E9"},
+{id:"kuwait_celebrities",n:"Kuwaiti Celebrities",ar:"مشاهير الكويت",icon:"⭐",c:"#A855F7"},
+{id:"kuwait_landmarks",n:"Kuwait Landmarks",ar:"معالم الكويت",icon:"📍",c:"#F43F5E"},
+{id:"kuwait_areas",n:"Kuwait Areas",ar:"مناطق الكويت",icon:"🧭",c:"#10B981"},
+{id:"kuwait_parks",n:"Kuwait Parks",ar:"حدائق الكويت",icon:"🌳",c:"#16A34A"},
+{id:"kuwait_terms",n:"Kuwaiti Terms",ar:"مصطلحات كويتية",icon:"🗣️",c:"#0F766E"},
 {id:"kuwait_malls",n:"Kuwait Malls",ar:"مولات الكويت",icon:"🏬",c:"#0D9488"},
 {id:"kuwait_restaurants",n:"Kuwait Restaurants",ar:"مطاعم مشهورة",icon:"🍽️",c:"#EA580C"},
 ];
 
+/** فئات تظهر فقط عند اختيار دولة الكويت */
+const KUWAIT_ONLY_CAT_IDS = new Set([
+  "kuwait_parliament",
+  "kuwait_foods",
+  "kuwait_cafes",
+  "kuwait_towers",
+  "kuwait_celebrities",
+  "kuwait_landmarks",
+  "kuwait_areas",
+  "kuwait_parks",
+  "kuwait_terms",
+  "kuwait_malls",
+  "kuwait_restaurants",
+]);
+
+function catsForCountryId(cid) {
+  return cid === "kw" ? CATS : CATS.filter((c) => !KUWAIT_ONLY_CAT_IDS.has(c.id));
+}
+
 /** صفوف عرض الفئات (أقسام + بطاقات) */
 const CAT_GROUP_ROWS=[
   {ar:"سيارات",en:"Cars",ids:new Set(["cars"])},
-  {ar:"أماكن وسفر",en:"Places & Travel",ids:new Set(["geography","landmarks","maps","flags","ocean","travel","aviation","space","kuwait_malls","kuwait_restaurants"])},
+  {ar:"أماكن وسفر",en:"Places & Travel",ids:new Set(["geography","landmarks","maps","flags","ocean","travel","aviation","space","kuwait_parliament","kuwait_foods","kuwait_cafes","kuwait_towers","kuwait_celebrities","kuwait_landmarks","kuwait_areas","kuwait_parks","kuwait_malls","kuwait_restaurants"])},
   {ar:"تاريخ ومجتمع",en:"History & Society",ids:new Set(["history","ancient","leaders","politics","law","religion","customs","proverbs","mythology","psychology","social","economics","currencies","tribes"])},
   {ar:"علوم وتقنية",en:"Science & Tech",ids:new Set(["science","chemistry","math","physics","biology","medicine","inventions","tech","weather","gems","dinosaurs"])},
   {ar:"فن وثقافة وإعلام",en:"Arts & Media",ids:new Set(["culture","art","theater","music","dance","movies","anime","comics","photography","horror","architecture","literature","media","fashion","boardgames","riddles"])},
   {ar:"طبيعة وحياة",en:"Nature & Life",ids:new Set(["nature","animals","food","health"])},
-  {ar:"رياضة وأسلوب حياة",en:"Sports & Lifestyle",ids:new Set(["sports","soccer","olympics","gaming","business","brands","language"])},
+  {ar:"رياضة وأسلوب حياة",en:"Sports & Lifestyle",ids:new Set(["sports","soccer","olympics","gaming","business","brands","language","kuwait_terms"])},
 ];
 function groupCatsForUi(catList){
   const rows=[];
@@ -129,13 +158,12 @@ function groupCatsForUi(catList){
 /* ═══════ 🇰🇼 KUWAIT QUESTIONS (60 cats × 8 each) ═══════ */
 
 /* ═══════ 🌍 GENERAL KNOWLEDGE QUESTIONS ═══════ */
-const GEN_AR={"history":[{q:"متى انتهت الحرب العالمية الثانية؟",o:["١٩٤٣","١٩٤٤","١٩٤٥","١٩٤٦"],a:2},{q:"أول إنسان مشى على القمر؟",o:["باز ألدرين","يوري غاغارين","نيل أرمسترونغ","جون غلين"],a:2},{q:"سقط جدار برلين بأي سنة؟",o:["١٩٨٧","١٩٨٩","١٩٩١","١٩٩٣"],a:1},{q:"تيتانيك غرقت بأي سنة؟",o:["١٩١٠","١٩١٢","١٩١٤","١٩١٦"],a:1},{q:"الحرب العالمية الأولى بدأت بـ؟",o:["١٩١٢","١٩١٤","١٩١٦","١٩١٨"],a:1},{q:"منو رسم سقف كنيسة سيستين؟",o:["دافنشي","رافائيل","مايكل أنجلو","بوتيتشيلي"],a:2},{q:"الحضارة الفرعونية بـ؟",o:["العراق","مصر","سوريا","لبنان"],a:1},{q:"الثورة الفرنسية بدأت بـ؟",o:["١٧٨٩","١٧٧٦","١٧٩٩","١٨٠٤"],a:0}],"science":[{q:"الكوكب الأحمر؟",o:["الزهرة","المشتري","المريخ","زحل"],a:2},{q:"رمز الماء الكيميائي؟",o:["HO","H2O","O2H","OH2"],a:1},{q:"كم عظمة بجسم الإنسان؟",o:["١٩٦","٢٠٢","٢٠٦","٢١٦"],a:2},{q:"النباتات تمتص غاز؟",o:["الأوكسجين","ثاني أكسيد الكربون","النيتروجين","الهيدروجين"],a:1},{q:"سرعة الضوء تقريباً؟",o:["٢٠٠ ألف كم/ث","٣٠٠ ألف كم/ث","٤٠٠ ألف كم/ث","٥٠٠ ألف كم/ث"],a:1},{q:"العضو اللي ينتج الأنسولين؟",o:["الكبد","الكلى","البنكرياس","القلب"],a:2},{q:"أكبر عضو بالجسم؟",o:["الكبد","القلب","الجلد","الدماغ"],a:2},{q:"فصيلة الدم المعطي العام؟",o:["A","B","AB","O"],a:3}],"sports":[{q:"منو فاز بكأس العالم ٢٠٢٢؟",o:["فرنسا","البرازيل","ألمانيا","الأرجنتين"],a:3},{q:"كم لاعب بفريق كرة السلة بالملعب؟",o:["٤","٥","٦","٧"],a:1},{q:"مسافة الماراثون؟",o:["٤١.٥ كم","٤٢.١٩٥ كم","٤٣.١ كم","٤٢.٨ كم"],a:1},{q:"أولمبياد ٢٠٢٠ استضافتها؟",o:["الصين","البرازيل","اليابان","كوريا"],a:2},{q:"الكريكيت نشأ بـ؟",o:["الهند","أستراليا","إنجلترا","جنوب أفريقيا"],a:2},{q:"كم شوط بمباراة كرة القدم؟",o:["٢","٣","٤","١"],a:0},{q:"الفيفا تأسست بأي سنة؟",o:["١٩٠٠","١٩٠٤","١٩١٠","١٩٢٠"],a:1},{q:"٤٠-٤٠ بالتنس يسمى؟",o:["أدفانتج","ديوس","بريك","ماتش بوينت"],a:1}],"geography":[{q:"أكبر صحراء بالعالم؟",o:["الصحراء الكبرى","غوبي","القطب الجنوبي","العربية"],a:2},{q:"عاصمة أستراليا؟",o:["سيدني","كانبيرا","ملبورن","بريزبين"],a:1},{q:"أصغر دولة بالعالم؟",o:["موناكو","سان مارينو","لختنشتاين","الفاتيكان"],a:3},{q:"أطول نهر بالعالم؟",o:["الأمازون","المسيسبي","النيل","اليانغتسي"],a:2},{q:"أكبر محيط؟",o:["الأطلسي","الهندي","الهادئ","المتجمد"],a:2},{q:"أكثر دولة سكاناً؟",o:["أمريكا","الهند","الصين","إندونيسيا"],a:1},{q:"جبل إيفرست على حدود؟",o:["الهند-الصين","نيبال-الهند","نيبال-الصين","التبت"],a:2},{q:"نهر الأمازون بأي قارة؟",o:["أفريقيا","أمريكا الجنوبية","آسيا","أمريكا الشمالية"],a:1}],"movies":[{q:"مخرج فيلم إنسيبشن؟",o:["سبيلبرغ","تارانتينو","نولان","سكورسيزي"],a:2},{q:"أعلى فيلم إيرادات؟",o:["تيتانيك","إندغيم","أفاتار","ستار وورز"],a:2},{q:"منو لعب جاك بتيتانيك؟",o:["براد بيت","توم كروز","جوني ديب","دي كابريو"],a:3},{q:"أول فيلم ستار وورز؟",o:["١٩٧٥","١٩٧٧","١٩٧٩","١٩٨١"],a:1},{q:"منو لعب آيرون مان؟",o:["كريس إيفانز","روبرت داوني","كريس هيمسوورث","مارك رافالو"],a:1},{q:"أول فيلم لبيكسار؟",o:["نيمو","توي ستوري","كارز","أب"],a:1},{q:"فيلم العراب من إخراج؟",o:["سكورسيزي","كوبولا","كوبريك","دي بالما"],a:1},{q:"أوسكار أفضل فيلم ٢٠٢٠؟",o:["١٩١٧","جوكر","فورد ضد فيراري","باراسايت"],a:3}],"music":[{q:"آلة فيها ٨٨ مفتاح؟",o:["غيتار","هارب","بيانو","كمان"],a:2},{q:"ملك البوب؟",o:["إلفيس","برنس","بوي","مايكل جاكسون"],a:3},{q:"بوهيميان رابسودي لفرقة؟",o:["بيتلز","ليد زيبلين","بينك فلويد","كوين"],a:3},{q:"الريغي من؟",o:["كوبا","البرازيل","جامايكا","المكسيك"],a:2},{q:"كم وتر بالغيتار؟",o:["٤","٥","٦","٨"],a:2},{q:"بيتهوفن من؟",o:["النمسا","فرنسا","ألمانيا","إيطاليا"],a:2},{q:"أم كلثوم من؟",o:["لبنان","سوريا","مصر","العراق"],a:2},{q:"فيروز من؟",o:["مصر","لبنان","سوريا","فلسطين"],a:1}],"food":[{q:"السوشي من؟",o:["الصين","تايلاند","اليابان","كوريا"],a:2},{q:"الذهب الأحمر؟",o:["الكركم","القرفة","الزعفران","البابريكا"],a:2},{q:"مكون الحمص الرئيسي؟",o:["عدس","بازلاء","حمص","فاصوليا"],a:2},{q:"الكرواسون أصله؟",o:["فرنسا","إيطاليا","النمسا","بلجيكا"],a:2},{q:"التاكو من؟",o:["إسبانيا","البرازيل","المكسيك","الأرجنتين"],a:2},{q:"الكبسة طبق من؟",o:["مصر","السعودية والخليج","لبنان","المغرب"],a:1},{q:"الفلافل أصلها؟",o:["الشام ومصر","الهند","تركيا","إيران"],a:0},{q:"الكيمتشي من؟",o:["اليابان","فيتنام","كوريا","الصين"],a:2}],"nature":[{q:"أسرع حيوان بري؟",o:["الأسد","الحصان","الفهد","الغزال"],a:2},{q:"كم قلب للأخطبوط؟",o:["١","٢","٣","٤"],a:2},{q:"أكبر حيوان ثديي؟",o:["الفيل","الزرافة","الحوت الأزرق","فرس النهر"],a:2},{q:"كم رجل للعنكبوت؟",o:["٦","٨","١٠","١٢"],a:1},{q:"أطول حيوان؟",o:["الفيل","الزرافة","الحصان","الجمل"],a:1},{q:"أسرع طائر؟",o:["النسر","الصقر الشاهين","الباز","البومة"],a:1},{q:"الحيوان اللي ينام ٣ سنوات؟",o:["الدب","الكوالا","الحلزون","الكسلان"],a:2},{q:"مجموعة الأسود تسمى؟",o:["قطيع","سرب","زمرة","لبؤة"],a:2}],"art":[{q:"منو رسم الموناليزا؟",o:["بيكاسو","رافائيل","دافنشي","مايكل أنجلو"],a:2},{q:"ليلة النجوم لمنو؟",o:["مونيه","سيزان","رينوار","فان غوخ"],a:3},{q:"الأوريغامي فن ياباني لـ؟",o:["الفخار","النسيج","طي الورق","الرسم"],a:2},{q:"فريدا كاهلو من؟",o:["إسبانيا","البرازيل","المكسيك","الأرجنتين"],a:2},{q:"البوب آرت أسسها؟",o:["بيكاسو","وارهول","مونيه","دالي"],a:1},{q:"لوحة الصرخة لـ؟",o:["مونيه","مونك","بيكاسو","دالي"],a:1},{q:"الخط العربي يعتبر فن؟",o:["زخرفة عابرة فقط","تراثي عريق","خط لاتيني كلاسيكي","مراسلات إدارية بحتة"],a:1},{q:"السريالية حركة أسسها؟",o:["بيكاسو","دالي","بريتون","موندريان"],a:2}],"literature":[{q:"روميو وجولييت لـ؟",o:["ديكنز","أوستن","شكسبير","همنغواي"],a:2},{q:"رواية ١٩٨٤ لـ؟",o:["هكسلي","برادبري","أورويل","تولكين"],a:2},{q:"ألف ليلة وليلة من؟",o:["التراث الفارسي والعربي","اليوناني","الصيني","الهندي"],a:0},{q:"نجيب محفوظ فاز بـ؟",o:["أوسكار","نوبل","غرامي","بوليتزر"],a:1},{q:"سيد الخواتم لـ؟",o:["لويس","رولينغ","تولكين","مارتن"],a:2},{q:"المتنبي شاعر من؟",o:["العصر الحديث","العصر العباسي","الجاهلية","الأموي"],a:1},{q:"هاري بوتر كتبتها؟",o:["كينغ","ماير","رولينغ","كولينز"],a:2},{q:"دون كيشوت لـ؟",o:["سرفانتس","لوركا","بورخيس","نيرودا"],a:0}],"tech":[{q:"مؤسس أبل؟",o:["غيتس","ماسك","ستيف جوبز","بيزوس"],a:2},{q:"أول آيفون بـ؟",o:["٢٠٠٦","٢٠٠٧","٢٠٠٨","٢٠٠٩"],a:1},{q:"أندرويد من؟",o:["سامسونغ","مايكروسوفت","أبل","غوغل"],a:3},{q:"تشات جي بي تي من؟",o:["غوغل","ميتا","أوبن أي آي","أبل"],a:2},{q:"الذكاء الاصطناعي يعني؟",o:["أتمتة بسيطة دون تعلم","محاكاة ذكاء الإنسان","تعلم آلة بمهام ضيقة","إحصاءات ومجموعات بيانات"],a:1},{q:"أول كمبيوتر بحجم؟",o:["لوح إلكتروني","غرفة كاملة","طابعة مكتبية","ساعة يد"],a:1},{q:"بايثون هو؟",o:["بيئة تشغيل أنظمة","لغة برمجة","مكتبة رسوم فقط","قاعدة بيانات مدمجة"],a:1},{q:"مؤسس أمازون؟",o:["غيتس","زوكربيرغ","ماسك","بيزوس"],a:3}],"medicine":[{q:"درجة حرارة الجسم الطبيعية؟",o:["٣٦.٥°","٣٧°","٣٧.٥°","٣٦°"],a:1},{q:"كم فصيلة دم رئيسية؟",o:["٢","٤","٦","٨"],a:1},{q:"الأنسولين يعالج؟",o:["السرطان","السكري","البرد","الإنفلونزا"],a:1},{q:"فيتامين C بـ؟",o:["اللحم","الحمضيات","الخبز","الرز"],a:1},{q:"نبض القلب الطبيعي؟",o:["٤٠","٦٠-١٠٠","١٢٠","١٥٠"],a:1},{q:"المضادات الحيوية تحارب؟",o:["فيروسات","بكتيريا","حساسية","ألم"],a:1},{q:"أكبر عضو بالجسم؟",o:["الكبد","القلب","الجلد","الدماغ"],a:2},{q:"WHO تعني؟",o:["منظمة مساعدة","منظمة الصحة العالمية","مستشفى عالمي","مكتب صحي"],a:1}],"physics":[{q:"الجاذبية اكتشفها؟",o:["أينشتاين","نيوتن","غاليليو","هوكينغ"],a:1},{q:"E=mc² لـ؟",o:["نيوتن","هوكينغ","أينشتاين","بور"],a:2},{q:"الضوء أسرع بـ؟",o:["الماء","الزجاج","الفراغ","الهواء"],a:2},{q:"وحدة القوة؟",o:["واط","جول","نيوتن","فولت"],a:2},{q:"الصوت أسرع بـ؟",o:["الهواء","الماء","الفراغ","المواد الصلبة"],a:3},{q:"ألوان قوس قزح؟",o:["٥","٦","٧","٨"],a:2},{q:"سرعة الضوء تقريباً؟",o:["١٥٠ ألف","٣٠٠ ألف كم/ث","٥٠٠ ألف","مليون"],a:1},{q:"الصفر المطلق؟",o:["-١٠٠°","-٢٧٣°","-٢٠٠°","٠°"],a:1}],"biology":[{q:"DNA اختصار لـ؟",o:["حمض نووي ريبي منقوص الأكسجين","حمض نووي ريبوزي","سلسلة ببتيدية مزدوجة","بلمر ليبيدي معقد"],a:0},{q:"أكبر خلية بالجسم؟",o:["العصبية","الدم الحمراء","البويضة","الدم البيضاء"],a:2},{q:"التمثيل الضوئي يحتاج؟",o:["ظلام","ضوء الشمس","رياح","مطر"],a:1},{q:"كم كروموسوم؟",o:["٢٣","٤٦","٤٨","٤٤"],a:1},{q:"الميتوكوندريا هي؟",o:["مخ الخلية","محطة طاقة الخلية","جدار","نواة"],a:1},{q:"النباتات خضراء بسبب؟",o:["الماء","الكلوروفيل","التربة","الشمس"],a:1},{q:"أصغر وحدة للحياة؟",o:["الذرة","الجزيء","الخلية","العضو"],a:2},{q:"وزن الدماغ تقريباً؟",o:["٠.٥ كغ","١.٤ كغ","٣ كغ","٥ كغ"],a:1}]};
-const GEN={"history":[{q:"When did World War II end?",o:["1944","1945","1946","1943"],a:2},{q:"Who walked on the moon first?",o:["Buzz Aldrin","Yuri Gagarin","Neil Armstrong","John Glenn"],a:2},{q:"The French Revolution began in?",o:["1789","1776","1799","1812"],a:0},{q:"Who built the Colosseum?",o:["Greeks","Romans","Ottomans","Persians"],a:1},{q:"Berlin Wall fell in?",o:["1991","1987","1989","1993"],a:2},{q:"Who painted Sistine Chapel ceiling?",o:["Da Vinci","Raphael","Michelangelo","Botticelli"],a:2},{q:"Titanic sank in?",o:["1910","1912","1914","1916"],a:1},{q:"Who discovered penicillin?",o:["Einstein","Fleming","Darwin","Newton"],a:1}],"science":[{q:"Red Planet is?",o:["Venus","Jupiter","Mars","Saturn"],a:2},{q:"Chemical symbol for water?",o:["HO","H2O","O2H","WA"],a:1},{q:"Bones in adult body?",o:["196","206","216","202"],a:2},{q:"Gas plants absorb?",o:["Oxygen","CO₂","Nitrogen","Hydrogen"],a:1},{q:"Speed of light approx?",o:["150K km/s","500K km/s","300K km/s","1M km/s"],a:2},{q:"Organ producing insulin?",o:["Liver","Kidney","Pancreas","Heart"],a:2},{q:"Largest organ of body?",o:["Liver","Heart","Skin","Brain"],a:2},{q:"Blood type universal donor?",o:["A","B","AB","O"],a:3}],"sports":[{q:"2022 FIFA World Cup winner?",o:["France","Brazil","Germany","Argentina"],a:3},{q:"Basketball players per team on court?",o:["4","6","5","7"],a:2},{q:"40-40 in tennis called?",o:["Advantage","Match point","Deuce","Break"],a:2},{q:"Marathon distance?",o:["41.5 km","42.195 km","43.1 km","42.8 km"],a:1},{q:"2020 Olympics hosted by?",o:["China","Brazil","Japan","Korea"],a:2},{q:"Slam dunk is in?",o:["Volleyball","Tennis","Basketball","Football"],a:2},{q:"Cricket originated in?",o:["India","Australia","England","South Africa"],a:2},{q:"Olympic motto is?",o:["Win!","Faster Higher Stronger","Best Always","Go Gold"],a:1}],"geography":[{q:"Largest desert?",o:["Sahara","Gobi","Antarctic","Arabian"],a:2},{q:"Capital of Australia?",o:["Sydney","Canberra","Melbourne","Brisbane"],a:1},{q:"Smallest country?",o:["Monaco","San Marino","Liechtenstein","Vatican City"],a:3},{q:"Amazon River continent?",o:["Africa","South America","Asia","N. America"],a:1},{q:"Everest borders?",o:["India-China","Nepal-India","Nepal-China","Tibet-India"],a:2},{q:"Longest river?",o:["Amazon","Mississippi","Nile","Yangtze"],a:2},{q:"Largest ocean?",o:["Atlantic","Indian","Pacific","Arctic"],a:2},{q:"Most populated country?",o:["USA","India","China","Indonesia"],a:1}],"movies":[{q:"Director of Inception?",o:["Spielberg","Tarantino","Nolan","Scorsese"],a:2},{q:"Highest-grossing film ever?",o:["Titanic","Endgame","Avatar","Star Wars"],a:2},{q:"Jack in Titanic?",o:["Brad Pitt","Tom Cruise","Johnny Depp","DiCaprio"],a:3},{q:"2020 Best Picture?",o:["1917","Joker","Ford v Ferrari","Parasite"],a:3},{q:"Godfather directed by?",o:["Scorsese","Kubrick","Coppola","De Palma"],a:2},{q:"First Star Wars year?",o:["1975","1979","1977","1981"],a:2},{q:"Who played Iron Man?",o:["Chris Evans","Robert Downey Jr","Chris Hemsworth","Mark Ruffalo"],a:1},{q:"Pixar's first feature film?",o:["Finding Nemo","Toy Story","Cars","Up"],a:1}],"music":[{q:"88 keys instrument?",o:["Guitar","Harp","Piano","Violin"],a:2},{q:"King of Pop?",o:["Elvis","Prince","Bowie","Michael Jackson"],a:3},{q:"Bohemian Rhapsody band?",o:["Beatles","Led Zeppelin","Pink Floyd","Queen"],a:3},{q:"Genre from Jamaica?",o:["Jazz","Blues","Samba","Reggae"],a:3},{q:"Guitar strings count?",o:["4","5","8","6"],a:3},{q:"Beethoven's country?",o:["Austria","France","Germany","Italy"],a:2},{q:"Instrument in an orchestra that conducts?",o:["Piano","Baton","Violin","Drum"],a:1},{q:"Auto-Tune became famous in which decade?",o:["1980s","1990s","2000s","2010s"],a:1}],"nature":[{q:"Fastest land animal?",o:["Lion","Horse","Cheetah","Gazelle"],a:2},{q:"Octopus hearts?",o:["1","2","4","3"],a:3},{q:"Largest mammal?",o:["Elephant","Giraffe","Blue Whale","Hippo"],a:2},{q:"Spider legs?",o:["6","10","8","12"],a:2},{q:"Group of lions?",o:["Pack","Herd","Pride","Flock"],a:2},{q:"Sleeps up to 3 years?",o:["Bear","Koala","Snail","Sloth"],a:2},{q:"Tallest animal?",o:["Elephant","Giraffe","Horse","Camel"],a:1},{q:"Fastest bird?",o:["Eagle","Falcon (Peregrine)","Hawk","Owl"],a:1}],"food":[{q:"Sushi origin?",o:["China","Thailand","Japan","Korea"],a:2},{q:"Red gold spice?",o:["Turmeric","Cinnamon","Saffron","Paprika"],a:2},{q:"Main ingredient of hummus?",o:["Lentils","Peas","Chickpeas","Beans"],a:2},{q:"Kimchi from?",o:["Japan","Vietnam","South Korea","China"],a:2},{q:"Italy's pasta city?",o:["Rome","Milan","Bologna","Venice"],a:2},{q:"Croissant originated in?",o:["France","Italy","Austria","Belgium"],a:2},{q:"Taco origin country?",o:["Spain","Brazil","Mexico","Argentina"],a:2},{q:"Dim sum from?",o:["Japan","Korea","China","Thailand"],a:2}],"art":[{q:"Mona Lisa painter?",o:["Picasso","Raphael","Da Vinci","Michelangelo"],a:2},{q:"Starry Night painter?",o:["Monet","Cézanne","Renoir","Van Gogh"],a:3},{q:"Dalí's movement?",o:["Cubism","Pop Art","Surrealism","Impressionism"],a:2},{q:"David sculptor?",o:["Da Vinci","Bernini","Donatello","Michelangelo"],a:3},{q:"Frida Kahlo's country?",o:["Spain","Brazil","Mexico","Argentina"],a:2},{q:"Origami is?",o:["Clay art","Weaving","Paper folding","Painting"],a:2},{q:"Andy Warhol's movement?",o:["Cubism","Pop Art","Impressionism","Baroque"],a:1},{q:"The Scream painted by?",o:["Monet","Edvard Munch","Picasso","Dalí"],a:1}],"literature":[{q:"Romeo and Juliet author?",o:["Dickens","Austen","Shakespeare","Hemingway"],a:2},{q:"1984 author?",o:["Huxley","Bradbury","Orwell","Tolkien"],a:2},{q:"Harry Potter author?",o:["King","Meyer","Rowling","Collins"],a:2},{q:"The Alchemist author?",o:["Marquez","Borges","Coelho","Allende"],a:2},{q:"Don Quixote author?",o:["Cervantes","Lorca","Borges","Neruda"],a:0},{q:"The Prince author?",o:["Plato","Aristotle","Machiavelli","Socrates"],a:2},{q:"Lord of the Rings author?",o:["Lewis","Rowling","Tolkien","Martin"],a:2},{q:"Crime and Punishment author?",o:["Tolstoy","Dostoevsky","Chekhov","Pushkin"],a:1}],"tech":[{q:"Apple co-founder?",o:["Gates","Musk","Steve Jobs","Bezos"],a:2},{q:"First iPhone year?",o:["2006","2007","2008","2009"],a:1},{q:"Android creator?",o:["Samsung","Microsoft","Apple","Google"],a:3},{q:"Amazon founder?",o:["Gates","Zuckerberg","Musk","Bezos"],a:3},{q:"WWW stands for?",o:["Wide World Web","World Wide Web","Web World Wide","Western Web"],a:1},{q:"Python is a?",o:["CPU microcode layer","Programming language","purely visual markup","embedded database"],a:1},{q:"Tesla CEO?",o:["Bezos","Gates","Cook","Musk"],a:3},{q:"ChatGPT made by?",o:["Google","Meta","OpenAI","Apple"],a:2}],"flags":[{q:"Japan's flag has?",o:["Star","Moon","Red circle","Dragon"],a:2},{q:"How many stars on US flag?",o:["48","50","52","13"],a:1},{q:"Canada's flag symbol?",o:["Eagle","Maple leaf","Bear","Moose"],a:1},{q:"France's flag colors?",o:["Red-white","Blue-white-red","Green-white","Red-yellow"],a:1},{q:"Crescent and star flag?",o:["Japan","China","Turkey","Brazil"],a:2},{q:"Brazil's flag color?",o:["Red-white","Blue-yellow","Green-yellow","Orange-white"],a:2},{q:"UK flag called?",o:["Stars & Stripes","Union Jack","Tricolor","Rising Sun"],a:1},{q:"Which flag has a dragon?",o:["Japan","China","Wales","Scotland"],a:2}],"economics":[{q:"GDP stands for?",o:["General Daily Product","Gross Domestic Product","Global Data Plan","Grand Dollar Price"],a:1},{q:"World's largest economy?",o:["China","Japan","USA","Germany"],a:2},{q:"Inflation means?",o:["Prices drop","Prices rise","Prices stay","No change"],a:1},{q:"Wall Street is in?",o:["London","Tokyo","New York","Hong Kong"],a:2},{q:"Bitcoin created in?",o:["2005","2009","2013","2017"],a:1},{q:"OPEC deals with?",o:["Technology","Oil","Food","Banking"],a:1},{q:"Euro used by how many countries approx?",o:["10","15","20","27"],a:2},{q:"Richest person changes but often from?",o:["Sports","Tech industry","Oil","Real estate"],a:1}],"medicine":[{q:"Largest organ?",o:["Liver","Heart","Skin","Brain"],a:2},{q:"Normal body temperature?",o:["36.5°C","37°C","37.5°C","36°C"],a:1},{q:"Blood types count?",o:["2","4","6","8"],a:1},{q:"Insulin treats?",o:["Cancer","Diabetes","Cold","Flu"],a:1},{q:"Vitamin C found in?",o:["Meat","Citrus fruits","Bread","Rice"],a:1},{q:"Heart beats per minute (avg)?",o:["40","60-100","120","150"],a:1},{q:"Antibiotics fight?",o:["Viruses","Bacteria","Allergies","Pain"],a:1},{q:"WHO stands for?",o:["World Help Org","World Health Organization","World Hospital Order","Western Health Office"],a:1}],"physics":[{q:"Speed of light approx?",o:["150K km/s","300K km/s","500K km/s","1M km/s"],a:1},{q:"Gravity discovered by?",o:["Einstein","Newton","Galileo","Hawking"],a:1},{q:"E=mc² is by?",o:["Newton","Hawking","Einstein","Bohr"],a:2},{q:"Absolute zero in Celsius?",o:["-100°C","-273°C","-200°C","0°C"],a:1},{q:"Light travels fastest in?",o:["Water","Glass","Vacuum","Air"],a:2},{q:"Unit of force?",o:["Watt","Joule","Newton","Volt"],a:2},{q:"Sound travels fastest in?",o:["Air","Water","Vacuum","Solids"],a:3},{q:"Rainbow colors count?",o:["5","6","7","8"],a:2}],"biology":[{q:"DNA stands for?",o:["Deoxyribonucleic acid","Ribonucleic acid","Dipeptide nucleotide","Amino-acid helix"],a:0},{q:"Largest cell in human body?",o:["Neuron","Red blood cell","Egg cell","White blood cell"],a:2},{q:"Photosynthesis needs?",o:["Complete darkness","Sunlight","Frozen ground","CO₂ alone without light"],a:1},{q:"Humans have how many chromosomes?",o:["23","46","48","44"],a:1},{q:"Mitochondria is the?",o:["Brain","Powerhouse of cell","Wall","Nucleus"],a:1},{q:"Plants are green because of?",o:["Water","Chlorophyll","Soil","Sunlight"],a:1},{q:"Smallest unit of life?",o:["Atom","Molecule","Cell","Organ"],a:2},{q:"Human brain weighs about?",o:["0.5 kg","1.4 kg","3 kg","5 kg"],a:1}]};
-
+const GEN_AR = loadGeneralArBank();
+const GEN = loadGeneralEnBank();
 const fillMissing = (bank, isAr) => {
   const fb = isAr ? FALLBACK_AR : FALLBACK_EN;
   CATS.forEach(cat => {
-    if (!bank[cat.id]) {
+    if (!bank[cat.id] || bank[cat.id].length === 0) {
       if (fb[cat.id]) { bank[cat.id] = fb[cat.id]; }
       else if (isAr && GEN_AR[cat.id]) { bank[cat.id] = GEN_AR[cat.id]; }
       else if (!isAr && GEN[cat.id]) { bank[cat.id] = GEN[cat.id]; }
@@ -205,8 +233,8 @@ const isWorldwideCountry=id=>id==="general_ar"||id==="general_en";
 
 const LN={en:"English",ar:"العربية",fr:"Français",de:"Deutsch",es:"Español",ja:"日本語",tr:"Türkçe",pt:"Português",hi:"हिन्दी"};
 const T={
-  en:{start:"START",mode:"SELECT MODE",duel:"1 vs 1",teamVs:"Team vs Team",back:"← Back",matchN:"Match Name",player:"Player",team:"Team",cats:"Pick 8 Categories",sel:"selected",startM:"GO!",selCats:"Categories →",nextSetup:"Next — team setup",turn:"'s Turn",pts:"pts",bounce:"🔄 STEAL!",steal:"can steal!",fifty:"50/50",ext:"+15s",end:"End",wins:"THE WINNER!",tie:"TIE!",vCard:"✦ VICTORY ✦",rematch:"AGAIN",newCats:"🎯 New categories",menu:"🏠 Menu",country:"Pick Country",loading:"Loading...",setup:"Setup",change:"Change",search:"🔍 Search...",nobody:"Nobody got it!",catWord:"categories"},
-  ar:{start:"يلا",mode:"اختار الوضع",duel:"١ ضد ١",teamVs:"فريق ضد فريق",back:"→ رجوع",matchN:"اسم المباراة",player:"لاعب",team:"فريق",cats:"اختار ٨ فئات",sel:"مختارة",startM:"يلا!",selCats:"→ الفئات",nextSetup:"التالي — إعداد الفريق",turn:" يلعب",pts:"نقطة",bounce:"🔄 سرقة!",steal:"يسرق!",fifty:"٥٠/٥٠",ext:"+١٥ث",end:"إنهاء",wins:"الفريق الفائز!",tie:"تعادل!",vCard:"✦ النصر ✦",rematch:"ثاني",newCats:"🎯 فئات جديدة",menu:"🏠 الرئيسية",country:"اختار الدولة",loading:"نحمّل...",setup:"إعداد",change:"غيّر",search:"🔍 بحث...",nobody:"!محد عرف",catWord:"فئة"},
+  en:{start:"START",mode:"SELECT MODE",duel:"1 vs 1",teamVs:"Team vs Team",back:"← Back",matchN:"Match Name",player:"Player",team:"Team",cats:"Pick 8 Categories",sel:"selected",startM:"GO!",selCats:"Categories →",nextSetup:"Next — team setup",turn:"'s Turn",pts:"pts",bounce:"🔄 STEAL!",steal:"can steal!",fifty:"50/50",ext:"+15s",end:"End",wins:"THE WINNER!",tie:"TIE!",vCard:"✦ VICTORY ✦",rematch:"AGAIN",newCats:"🎯 New categories",menu:"🏠 Menu",country:"Pick Country",loading:"Loading...",setup:"Setup",change:"Change",search:"🔍 Search...",nobody:"Nobody got it!",catWord:"categories",needMatch:"Enter a match name before starting.",needPlayers1v1:"Enter both player names.",needTeams:"Enter both team names.",needCats8:"Pick 8 valid categories for this country (go back to categories)."},
+  ar:{start:"يلا",mode:"اختار الوضع",duel:"١ ضد ١",teamVs:"فريق ضد فريق",back:"→ رجوع",matchN:"اسم المباراة",player:"لاعب",team:"فريق",cats:"اختار ٨ فئات",sel:"مختارة",startM:"يلا!",selCats:"→ الفئات",nextSetup:"التالي — إعداد الفريق",turn:" يلعب",pts:"نقطة",bounce:"🔄 سرقة!",steal:"يسرق!",fifty:"٥٠/٥٠",ext:"+١٥ث",end:"إنهاء",wins:"الفريق الفائز!",tie:"تعادل!",vCard:"✦ النصر ✦",rematch:"ثاني",newCats:"🎯 فئات جديدة",menu:"🏠 الرئيسية",country:"اختار الدولة",loading:"نحمّل...",setup:"إعداد",change:"غيّر",search:"🔍 بحث...",nobody:"!محد عرف",catWord:"فئة",needMatch:"اكتب اسم المباراة قبل البدء.",needPlayers1v1:"اكتب اسم اللاعب الأول والثاني.",needTeams:"اكتب اسم الفريقين.",needCats8:"اختر ٨ فئات صالحة للدولة المختارة (ارجع خطوة الفئات)."},
 };
 /** واجهة المستخدم بالعربية */
 const BI={
@@ -665,7 +693,7 @@ IDs: ${catIds.join(",")}`;
 async function bulkDownload(country,onProgress){
   const cache=loadCache();
   const cacheKey=country.id;
-  const allIds=CATS.map(c=>c.id);
+  const allIds=catsForCountryId(country.id).map(c=>c.id);
   const batchSize=3; // smaller batches for higher response quality
   const batches=[];
   for(let i=0;i<allIds.length;i+=batchSize){batches.push(allIds.slice(i,i+batchSize))}
@@ -711,10 +739,8 @@ function getQuestions(cats,cid,apiResult,remoteOverlay={}){
       allQs=allQs.concat(GCC_BANKS[cid][c.id]);
     }else if(cid==="general_ar"){
       if(GEN_AR[c.id])allQs=allQs.concat(GEN_AR[c.id]);
-      if(FALLBACK_AR[c.id])allQs=allQs.concat(FALLBACK_AR[c.id]);
     }else if(cid==="general_en"){
       if(GEN[c.id])allQs=allQs.concat(GEN[c.id]);
-      if(FALLBACK_EN[c.id])allQs=allQs.concat(FALLBACK_EN[c.id]);
     }
     
     const unique={};
@@ -952,7 +978,9 @@ export default function Qadha(){
       if(nc)setCountry(nc);
     }
     if(Array.isArray(gs.selCatIds)){
-      const next=gs.selCatIds.map(id=>CATS.find(k=>k.id===id)).filter(Boolean);
+      const cidForCats=gs.countryId||country.id;
+      const allowed=new Set(catsForCountryId(cidForCats).map(c=>c.id));
+      const next=gs.selCatIds.map(id=>CATS.find(k=>k.id===id)).filter(c=>c&&allowed.has(c.id));
       setSelCats(next);
     }
     if(gs.phase==="setup"&&scRef.current==="cats")go("setup");
@@ -1026,11 +1054,18 @@ export default function Qadha(){
       else{setRevealed(true);setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);go("grid")},2500)}
     }
   };
+  const catsForCountry=useMemo(()=>catsForCountryId(country.id),[country.id]);
   const startGame=async()=>{
-    if(selCats.length!==8)return;sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);
+    const allowed=new Set(catsForCountry.map(c=>c.id));
+    const clean=selCats.filter(c=>allowed.has(c.id));
+    if(clean.length!==8){alert(tx.needCats8);setSelCats(clean);return;}
+    if(!matchName.trim()){alert(tx.needMatch);return;}
+    if(mode==="1v1"){if(!p1.trim()||!p2.trim()){alert(tx.needPlayers1v1);return;}}
+    else{if(!t1.trim()||!t2.trim()){alert(tx.needTeams);return;}}
+    sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);
     const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);
-    const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);
-    const questions=getQuestions(selCats,country.id,r,remoteOverlay);
+    const r=await genQs(clean,country);clearInterval(pi);setLoadProg(100);
+    const questions=getQuestions(clean,country.id,r,remoteOverlay);
     setQBank(questions);
     setTimeout(()=>{setLoading(false);setScores([0,0]);setUsed({});setUsedQI({});setActive(1);go("grid")},500);
   };
@@ -1041,7 +1076,15 @@ export default function Qadha(){
   const tn=n=>mode==="1v1"?(n===1?(p1||`${tx.player} 1`):(p2||`${tx.player} 2`)):(n===1?(t1||`${tx.team} 1`):(t2||`${tx.team} 2`));
   const turnLabel=n=>(country.lang==="ar"?`${tn(n)} ${T.ar.turn.trim()}`:`${tn(n)}${T.en.turn}`);
   const stealBanner=`${country.lang==="ar"?T.ar.bounce:T.en.bounce} ${country.lang==="ar"?`${tn(active)} ${T.ar.steal}`:`${tn(active)} ${T.en.steal}`}`;
-  const fCats=catQ?CATS.filter(c=>c.n.toLowerCase().includes(catQ.toLowerCase())||c.ar.includes(catQ)):CATS;
+  const fCats=useMemo(()=>catQ?catsForCountry.filter(c=>c.n.toLowerCase().includes(catQ.toLowerCase())||c.ar.includes(catQ)):catsForCountry,[catQ,catsForCountry]);
+  const setupCanGo=useMemo(()=>{
+    if(selCats.length!==8)return false;
+    const allowed=new Set(catsForCountry.map(c=>c.id));
+    if(selCats.some(c=>!allowed.has(c.id)))return false;
+    if(!matchName.trim())return false;
+    if(mode==="1v1")return Boolean(p1.trim()&&p2.trim());
+    return Boolean(t1.trim()&&t2.trim());
+  },[selCats,catsForCountry,matchName,mode,p1,p2,t1,t2]);
   const fCountries=countryQ?COUNTRIES.filter(c=>c.name.toLowerCase().includes(countryQ.toLowerCase())||c.native.includes(countryQ)):COUNTRIES;
   const selSet=new Set(selCats.map(c=>c.id));
   const togCat=useCallback(cat=>{
@@ -1081,7 +1124,10 @@ export default function Qadha(){
     setChatInput("");
   },[chatInput,onlineSession,liveRoom]);
   const catRows=useMemo(()=>groupCatsForUi(fCats),[fCats]);
-  useEffect(()=>{setOpenCatGroupIdx(0)},[country.id]);
+  useEffect(()=>{
+    setOpenCatGroupIdx(0);
+    if(country.id!=="kw")setSelCats(p=>p.filter(c=>!KUWAIT_ONLY_CAT_IDS.has(c.id)));
+  },[country.id]);
   useEffect(()=>{setOpenCatGroupIdx(i=>{const m=Math.max(0,catRows.length-1);return Math.min(i,m)})},[catRows.length]);
   useEffect(()=>{
     if(sc!=="cats"||selCats.length!==8)return;
@@ -1262,7 +1308,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <div style={{marginBottom:14}}><label className="lb">{tx.matchN}</label><input className="inp" value={matchName} onChange={e=>setMatchName(e.target.value)}/></div>
         {mode==="1v1"?<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.player} 1</label><input className="inp" value={p1} onChange={e=>setP1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.player} 2</label><input className="inp" value={p2} onChange={e=>setP2(e.target.value)}/></div></div>:<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.team} 1</label><input className="inp" value={t1} onChange={e=>setT1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.team} 2</label><input className="inp" value={t2} onChange={e=>setT2(e.target.value)}/></div></div>}
         <div style={{marginBottom:18}}><label className="lb">{BI.difficulty}</label><div style={{display:"flex",gap:6,marginTop:6}}><button className={!hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(false)}>{BI.normal}</button><button className={hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(true)}>{BI.hard}</button></div></div>
-        <button className="bg" style={{width:"100%",padding:18,opacity:selCats.length!==8?0.45:1}} disabled={selCats.length!==8} onClick={()=>{sfx.click();startGame()}}>{tx.startM}</button>
+        <button className="bg" style={{width:"100%",padding:18,opacity:setupCanGo?1:0.45}} disabled={!setupCanGo} onClick={()=>{startGame()}}>{tx.startM}</button>
         <button className="bs" style={{width:"100%",marginTop:10}} onClick={()=>go("cats")}>{tx.back}</button>
       </div></div>}
 
@@ -1299,7 +1345,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
           <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(140px,1fr))",gap:10,maxHeight:220,overflowY:"auto"}}>{fCountries.map(c=>(<button key={c.id} type="button" disabled={isOnlineGuest} className="gc hov" style={{padding:"12px 10px",borderRadius:14,border:country.id===c.id?`2px solid ${th.accent}`:`1px solid ${th.cardBd}`,display:"flex",flexDirection:"column",alignItems:"center",gap:6,minHeight:88,opacity:isOnlineGuest?0.55:1,cursor:isOnlineGuest?"not-allowed":"pointer"}} onClick={()=>{if(isOnlineGuest)return;sfx.click();setCountry(c);setSelCats([])}}><CountryFlag country={c} w={40} emojiSize={32} /><span style={{fontSize:12,fontWeight:700,color:th.text,textAlign:"center",lineHeight:1.2}}>{c.native}</span></button>))}</div>
         </div>
         <h2 className="catsTitle"><CountryFlag country={country} className="catsTitleFlag" w={36} emojiSize="clamp(26px,6.5vw,34px)" /><span>{tx.cats}</span></h2>
-        <p className="catsSub">{selCats.length}/8 {tx.sel} · {CATS.length} {tx.catWord} · {country.native}</p>
+        <p className="catsSub">{selCats.length}/8 {tx.sel} · {catsForCountry.length} {tx.catWord} · {country.native}</p>
         <div className="catsSearchRow" style={{opacity:isOnlineGuest?0.55:1}}>
           <input className="catsSearchInp" placeholder={isOnlineGuest?"بحث للمضيف فقط":tx.search} value={catQ} onChange={e=>{if(isOnlineGuest)return;setCatQ(e.target.value)}} aria-label={tx.search} readOnly={isOnlineGuest} disabled={isOnlineGuest}/>
           <button type="button" className="catsSearchBtn" aria-label="بحث" disabled={isOnlineGuest} onClick={()=>{if(isOnlineGuest)return;sfx.click()}}>🔍</button>

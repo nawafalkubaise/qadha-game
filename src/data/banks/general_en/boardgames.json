@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Chess board squares?",
+    "o": [
+      "64",
+      "81",
+      "100",
+      "49"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Monopoly theme?",
+    "o": [
+      "Cooking",
+      "Real estate trading",
+      "Sports",
+      "Space"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Scrabble uses?",
+    "o": [
+      "Numbers",
+      "Letter tiles",
+      "Colors",
+      "Dance"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Risk uses?",
+    "o": [
+      "Cards only",
+      "Dice and world map",
+      "Screen",
+      "Ball"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Go originated in?",
+    "o": [
+      "Europe",
+      "East Asia",
+      "USA",
+      "South Africa"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Dungeons & Dragons is?",
+    "o": [
+      "Board race",
+      "Tabletop RPG",
+      "Cooking",
+      "Music"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Jenga pieces?",
+    "o": [
+      "Plastic",
+      "Wooden blocks",
+      "Metal",
+      "Glass"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Clue/Cluedo is?",
+    "o": [
+      "Soccer",
+      "Murder mystery deduction",
+      "Chess",
+      "Poker"
+    ],
+    "a": 1
+  }
+]

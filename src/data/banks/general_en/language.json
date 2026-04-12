@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Most native speakers globally ~?",
+    "o": [
+      "English only",
+      "Mandarin Chinese",
+      "Arabic only",
+      "Swedish"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Official language of Brazil?",
+    "o": [
+      "Spanish",
+      "Portuguese",
+      "English",
+      "French"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Cyrillic script used in?",
+    "o": [
+      "Spain",
+      "Russia and others",
+      "Japan",
+      "Thailand"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Esperanto is?",
+    "o": [
+      "Ancient language",
+      "Constructed auxiliary language",
+      "Dialect",
+      "Cipher"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Arabic alphabet letters ~?",
+    "o": [
+      "26",
+      "28",
+      "33",
+      "40"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Sanskrit historically tied to?",
+    "o": [
+      "Japan",
+      "India",
+      "Sweden",
+      "Mexico"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Bilingual means?",
+    "o": [
+      "No language",
+      "Two languages",
+      "Silent",
+      "Written only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Braille is for?",
+    "o": [
+      "Deaf",
+      "Blind reading",
+      "Color",
+      "Speed typing"
+    ],
+    "a": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Deepest ocean trench known?",
+    "o": [
+      "Mariana",
+      "Puerto Rico",
+      "Java",
+      "Japan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Largest ocean?",
+    "o": [
+      "Atlantic",
+      "Pacific",
+      "Indian",
+      "Arctic"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Great Barrier Reef off?",
+    "o": [
+      "Africa",
+      "Australia",
+      "Brazil",
+      "India"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Earth surface water ~?",
+    "o": [
+      "50%",
+      "71%",
+      "90%",
+      "30%"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Tsunami often from?",
+    "o": [
+      "Light wind",
+      "Undersea quake/slide",
+      "Moon only",
+      "Drought"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Largest ocean animal?",
+    "o": [
+      "Great white",
+      "Blue whale",
+      "Dolphin",
+      "Seal"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Dead Sea salinity?",
+    "o": [
+      "Fresh",
+      "Very high",
+      "Zero",
+      "Sweet"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Tides mainly from?",
+    "o": [
+      "Moon and sun",
+      "Surface winds alone",
+      "Sudden barometric drops",
+      "Deep ocean currents only"
+    ],
+    "a": 0
+  }
+]

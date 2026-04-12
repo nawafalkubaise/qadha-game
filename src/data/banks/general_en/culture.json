@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Rio Carnival is famous in?",
+    "o": [
+      "Argentina",
+      "Brazil",
+      "Chile",
+      "Venezuela"
+    ],
+    "a": 1
+  },
+  {
+    "q": "UN Arabic Language Day is?",
+    "o": [
+      "18 December",
+      "21 February",
+      "15 September",
+      "4 June"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Halloween traces roots to?",
+    "o": [
+      "Ancient Celtic festivals",
+      "Roman only",
+      "Chinese only",
+      "Indian only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Diwali is a major festival in?",
+    "o": [
+      "Buddhism only",
+      "Hinduism",
+      "Islam only",
+      "Shinto only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Samba is strongly tied to?",
+    "o": [
+      "Argentina",
+      "Brazil",
+      "Cuba",
+      "Mexico"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Kimono is traditional dress from?",
+    "o": [
+      "China",
+      "Korea",
+      "Japan",
+      "Vietnam"
+    ],
+    "a": 2
+  },
+  {
+    "q": "International Museum Day?",
+    "o": [
+      "18 May",
+      "12 April",
+      "7 March",
+      "1 November"
+    ],
+    "a": 0
+  },
+  {
+    "q": "K-pop refers to pop culture from?",
+    "o": [
+      "Japan",
+      "South Korea",
+      "China",
+      "Thailand"
+    ],
+    "a": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Summer Olympics every?",
+    "o": [
+      "2 years",
+      "4 years",
+      "3 years",
+      "1 year"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Olympic flame traditionally lit in?",
+    "o": [
+      "Olympia Greece",
+      "Paris",
+      "New York",
+      "Tokyo"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Breaking debuted at Summer Olympics in?",
+    "o": [
+      "Tokyo 2020",
+      "Paris 2024",
+      "LA 2028",
+      "Never"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Gold medal color?",
+    "o": [
+      "Silver",
+      "Gold",
+      "Bronze",
+      "Green"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Olympic motto Latin?",
+    "o": [
+      "Citius Altius Fortius",
+      "Carpe Diem",
+      "Veni Vidi Vici",
+      "E Pluribus"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Winter Olympics need?",
+    "o": [
+      "Desert",
+      "Snow/ice sports",
+      "Rainforest",
+      "Cities only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "IOC headquarters?",
+    "o": [
+      "New York",
+      "Lausanne",
+      "Geneva",
+      "Paris"
+    ],
+    "a": 1
+  },
+  {
+    "q": "First modern Olympics (1896) in?",
+    "o": [
+      "Paris 1900",
+      "Athens 1896",
+      "London 1908",
+      "Rome 1960"
+    ],
+    "a": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Largest desert?",
+    "o": [
+      "Sahara",
+      "Gobi",
+      "Antarctic",
+      "Arabian"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Capital of Australia?",
+    "o": [
+      "Sydney",
+      "Canberra",
+      "Melbourne",
+      "Brisbane"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Smallest country?",
+    "o": [
+      "Monaco",
+      "San Marino",
+      "Liechtenstein",
+      "Vatican City"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Amazon River continent?",
+    "o": [
+      "Africa",
+      "South America",
+      "Asia",
+      "N. America"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Everest borders?",
+    "o": [
+      "India-China",
+      "Nepal-India",
+      "Nepal-China",
+      "Tibet-India"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Longest river?",
+    "o": [
+      "Amazon",
+      "Mississippi",
+      "Nile",
+      "Yangtze"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Largest ocean?",
+    "o": [
+      "Atlantic",
+      "Indian",
+      "Pacific",
+      "Arctic"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Most populated country?",
+    "o": [
+      "USA",
+      "India",
+      "China",
+      "Indonesia"
+    ],
+    "a": 1
+  }
+]

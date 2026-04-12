@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Kuwait's National Assembly is the?",
+    "o": [
+      "Legislative authority",
+      "Executive branch",
+      "Judiciary",
+      "Municipality"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Usually elected assembly seats are?",
+    "o": [
+      "50",
+      "30",
+      "75",
+      "100"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Assembly building is in?",
+    "o": [
+      "Kuwait City",
+      "Jahra",
+      "Ahmadi",
+      "Fahaheel"
+    ],
+    "a": 0
+  },
+  {
+    "q": "A key parliamentary oversight tool is?",
+    "o": [
+      "Interpellation",
+      "Sports arbitration",
+      "Urban zoning",
+      "Trade license"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Kuwait's constitution was issued in?",
+    "o": [
+      "1962",
+      "1951",
+      "1979",
+      "1988"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Parliamentary elections are organized by?",
+    "o": [
+      "Electoral districts",
+      "Full appointments",
+      "Lottery",
+      "Private voting apps"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Assembly sessions are usually covered by?",
+    "o": [
+      "Official media",
+      "Fax only",
+      "Mail only",
+      "Billboards"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Passing laws typically needs?",
+    "o": [
+      "Assembly approval and constitutional process",
+      "A private company vote",
+      "Municipal vote only",
+      "Club vote"
+    ],
+    "a": 0
+  }
+]

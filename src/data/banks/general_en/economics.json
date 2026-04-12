@@ -1,0 +1,82 @@
+[
+  {
+    "q": "GDP stands for?",
+    "o": [
+      "General Daily Product",
+      "Gross Domestic Product",
+      "Global Data Plan",
+      "Grand Dollar Price"
+    ],
+    "a": 1
+  },
+  {
+    "q": "World's largest economy?",
+    "o": [
+      "China",
+      "Japan",
+      "USA",
+      "Germany"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Inflation means?",
+    "o": [
+      "Prices drop",
+      "Prices rise",
+      "Prices stay",
+      "No change"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Wall Street is in?",
+    "o": [
+      "London",
+      "Tokyo",
+      "New York",
+      "Hong Kong"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Bitcoin created in?",
+    "o": [
+      "2005",
+      "2009",
+      "2013",
+      "2017"
+    ],
+    "a": 1
+  },
+  {
+    "q": "OPEC deals with?",
+    "o": [
+      "Technology",
+      "Oil",
+      "Food",
+      "Banking"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Euro used by how many countries approx?",
+    "o": [
+      "10",
+      "15",
+      "20",
+      "27"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Richest person changes but often from?",
+    "o": [
+      "Sports",
+      "Tech industry",
+      "Oil",
+      "Real estate"
+    ],
+    "a": 1
+  }
+]

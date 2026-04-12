@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Eiffel Tower city?",
+    "o": [
+      "London",
+      "Paris",
+      "Berlin",
+      "Madrid"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Statue of Liberty was a gift from France to?",
+    "o": [
+      "Canada",
+      "United States",
+      "Australia",
+      "Brazil"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Great Wall of China was built mainly for?",
+    "o": [
+      "Trade",
+      "Defense",
+      "Irrigation",
+      "Tourism"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Colosseum is in?",
+    "o": [
+      "Athens",
+      "Rome",
+      "Istanbul",
+      "Cairo"
+    ],
+    "a": 1
+  },
+  {
+    "q": "India Gate is in?",
+    "o": [
+      "Delhi",
+      "Mumbai",
+      "Kolkata",
+      "Bangalore"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Golden Gate Bridge city?",
+    "o": [
+      "New York",
+      "Los Angeles",
+      "San Francisco",
+      "Chicago"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Machu Picchu country?",
+    "o": [
+      "Mexico",
+      "Peru",
+      "Chile",
+      "Colombia"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Arc de Triomphe city?",
+    "o": [
+      "London",
+      "Paris",
+      "Berlin",
+      "Vienna"
+    ],
+    "a": 1
+  }
+]

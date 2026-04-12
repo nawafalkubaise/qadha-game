@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Al-Mubarakiya is a?",
+    "o": [
+      "Heritage landmark market",
+      "Oil zone",
+      "Military base",
+      "Farm"
+    ],
+    "a": 0
+  },
+  {
+    "q": "The Grand Mosque is in?",
+    "o": [
+      "Kuwait City",
+      "Fahaheel",
+      "Jahra",
+      "Wafra"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Bait Al-Sadu represents?",
+    "o": [
+      "Kuwaiti heritage",
+      "Aviation",
+      "Heavy industry",
+      "Nuclear science"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Sheikh Jaber Al-Ahmad Cultural Centre is a?",
+    "o": [
+      "Cultural landmark",
+      "Port",
+      "Airport",
+      "Refinery"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Failaka Island is known for?",
+    "o": [
+      "Archaeology and tourism",
+      "Forests",
+      "Snow",
+      "High mountains"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Kuwait Towers are part of?",
+    "o": [
+      "Kuwait landmarks",
+      "Oil infrastructure",
+      "Factories",
+      "Universities"
+    ],
+    "a": 0
+  },
+  {
+    "q": "The Red Palace is in?",
+    "o": [
+      "Jahra",
+      "Hawalli",
+      "Ahmadi",
+      "Salmiya"
+    ],
+    "a": 0
+  },
+  {
+    "q": "The waterfront is mainly a?",
+    "o": [
+      "Leisure landmark",
+      "Factory",
+      "Airport",
+      "Rail station"
+    ],
+    "a": 0
+  }
+]

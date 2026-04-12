@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Speed of light approx?",
+    "o": [
+      "150K km/s",
+      "300K km/s",
+      "500K km/s",
+      "1M km/s"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Gravity discovered by?",
+    "o": [
+      "Einstein",
+      "Newton",
+      "Galileo",
+      "Hawking"
+    ],
+    "a": 1
+  },
+  {
+    "q": "E=mc² is by?",
+    "o": [
+      "Newton",
+      "Hawking",
+      "Einstein",
+      "Bohr"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Absolute zero in Celsius?",
+    "o": [
+      "-100°C",
+      "-273°C",
+      "-200°C",
+      "0°C"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Light travels fastest in?",
+    "o": [
+      "Water",
+      "Glass",
+      "Vacuum",
+      "Air"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Unit of force?",
+    "o": [
+      "Watt",
+      "Joule",
+      "Newton",
+      "Volt"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Sound travels fastest in?",
+    "o": [
+      "Air",
+      "Water",
+      "Vacuum",
+      "Solids"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Rainbow colors count?",
+    "o": [
+      "5",
+      "6",
+      "7",
+      "8"
+    ],
+    "a": 2
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Fastest land animal?",
+    "o": [
+      "Lion",
+      "Horse",
+      "Cheetah",
+      "Gazelle"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Octopus hearts?",
+    "o": [
+      "1",
+      "2",
+      "4",
+      "3"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Largest mammal?",
+    "o": [
+      "Elephant",
+      "Giraffe",
+      "Blue Whale",
+      "Hippo"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Spider legs?",
+    "o": [
+      "6",
+      "10",
+      "8",
+      "12"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Group of lions?",
+    "o": [
+      "Pack",
+      "Herd",
+      "Pride",
+      "Flock"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Sleeps up to 3 years?",
+    "o": [
+      "Bear",
+      "Koala",
+      "Snail",
+      "Sloth"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Tallest animal?",
+    "o": [
+      "Elephant",
+      "Giraffe",
+      "Horse",
+      "Camel"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Fastest bird?",
+    "o": [
+      "Eagle",
+      "Falcon (Peregrine)",
+      "Hawk",
+      "Owl"
+    ],
+    "a": 1
+  }
+]

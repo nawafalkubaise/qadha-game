@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Diamond is made of?",
+    "o": [
+      "Silicon",
+      "Carbon",
+      "Oxygen",
+      "Iron"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Ruby mineral?",
+    "o": [
+      "Emerald",
+      "Corundum",
+      "Opal",
+      "Pearl"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Emerald color?",
+    "o": [
+      "Red",
+      "Green",
+      "Blue",
+      "Yellow"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Pearl from?",
+    "o": [
+      "Plant",
+      "Mollusk",
+      "Volcano",
+      "Ice"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Mohs scale measures?",
+    "o": [
+      "Hardness",
+      "Color",
+      "Weight",
+      "Clarity only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Opal known for?",
+    "o": [
+      "Solid color",
+      "Play of color",
+      "Transparent only",
+      "Black only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Sapphire is blue variety of?",
+    "o": [
+      "Emerald",
+      "Corundum",
+      "Topaz",
+      "Garnet"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Carat measures?",
+    "o": [
+      "Size of box",
+      "Gem mass",
+      "Price only",
+      "Age"
+    ],
+    "a": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "How many governorates in Kuwait?",
+    "o": [
+      "6",
+      "4",
+      "8",
+      "10"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Salmiya belongs to which governorate?",
+    "o": [
+      "Hawalli",
+      "Capital",
+      "Jahra",
+      "Ahmadi"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Jahra area belongs to?",
+    "o": [
+      "Jahra Governorate",
+      "Capital",
+      "Farwaniya",
+      "Mubarak Al-Kabeer"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Fahaheel is in?",
+    "o": [
+      "Ahmadi Governorate",
+      "Hawalli",
+      "Capital",
+      "Jahra"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Mubarak Al-Kabeer is a?",
+    "o": [
+      "Kuwaiti governorate",
+      "Country",
+      "Island",
+      "Street only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Capital Governorate includes?",
+    "o": [
+      "Kuwait City",
+      "Wafra",
+      "Abdali",
+      "Failaka only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Farwaniya is generally known for?",
+    "o": [
+      "High population density",
+      "No residents",
+      "Snow mountains",
+      "Forests"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Ahmadi is historically linked to?",
+    "o": [
+      "Oil sector",
+      "Rain-fed farming",
+      "Timber industry",
+      "Gold mining"
+    ],
+    "a": 0
+  }
+]

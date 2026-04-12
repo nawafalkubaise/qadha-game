@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Great Pyramids built by?",
+    "o": [
+      "Romans",
+      "Ancient Egyptians",
+      "Greeks",
+      "Vikings"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Mesopotamia means land between rivers?",
+    "o": [
+      "Nile only",
+      "Tigris and Euphrates",
+      "Ganges",
+      "Amazon"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Alexander the Great died in?",
+    "o": [
+      "Greece",
+      "Babylon",
+      "Rome",
+      "Alexandria"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Romans built?",
+    "o": [
+      "Pyramids",
+      "Colosseum",
+      "Taj Mahal",
+      "Great Wall"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Hieroglyphs mainly?",
+    "o": [
+      "China",
+      "Ancient Egypt",
+      "Greece",
+      "Rome"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Phoenicians known for?",
+    "o": [
+      "Farming only",
+      "Trade and alphabet",
+      "Space",
+      "Ice"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Troy war in legend?",
+    "o": [
+      "Spain",
+      "Anatolia",
+      "Italy",
+      "Greece only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Great Wall in?",
+    "o": [
+      "India",
+      "China",
+      "Japan",
+      "Mongolia only"
+    ],
+    "a": 1
+  }
+]

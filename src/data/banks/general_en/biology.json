@@ -1,0 +1,82 @@
+[
+  {
+    "q": "DNA stands for?",
+    "o": [
+      "Deoxyribonucleic acid",
+      "Ribonucleic acid",
+      "Dipeptide nucleotide",
+      "Amino-acid helix"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Largest cell in human body?",
+    "o": [
+      "Neuron",
+      "Red blood cell",
+      "Egg cell",
+      "White blood cell"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Photosynthesis needs?",
+    "o": [
+      "Complete darkness",
+      "Sunlight",
+      "Frozen ground",
+      "CO₂ alone without light"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Humans have how many chromosomes?",
+    "o": [
+      "23",
+      "46",
+      "48",
+      "44"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Mitochondria is the?",
+    "o": [
+      "Brain",
+      "Powerhouse of cell",
+      "Wall",
+      "Nucleus"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Plants are green because of?",
+    "o": [
+      "Water",
+      "Chlorophyll",
+      "Soil",
+      "Sunlight"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Smallest unit of life?",
+    "o": [
+      "Atom",
+      "Molecule",
+      "Cell",
+      "Organ"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Human brain weighs about?",
+    "o": [
+      "0.5 kg",
+      "1.4 kg",
+      "3 kg",
+      "5 kg"
+    ],
+    "a": 1
+  }
+]

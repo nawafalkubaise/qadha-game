@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Instagram owned by?",
+    "o": [
+      "Google",
+      "Meta",
+      "Twitter",
+      "Snap"
+    ],
+    "a": 1
+  },
+  {
+    "q": "TikTok parent company?",
+    "o": [
+      "ByteDance",
+      "Meta",
+      "Apple",
+      "Netflix"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Twitter rebranded to?",
+    "o": [
+      "Threads",
+      "X",
+      "Bluesky",
+      "Mastodon"
+    ],
+    "a": 1
+  },
+  {
+    "q": "WhatsApp co-founder?",
+    "o": [
+      "Jan Koum",
+      "Bezos",
+      "Musk",
+      "Gates"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Snapchat known for?",
+    "o": [
+      "Permanent posts",
+      "Disappearing messages",
+      "Music only",
+      "Shopping only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "YouTube founded ~?",
+    "o": [
+      "2003",
+      "2005",
+      "2007",
+      "2010"
+    ],
+    "a": 1
+  },
+  {
+    "q": "LinkedIn for?",
+    "o": [
+      "Games",
+      "Professional networking",
+      "Cooking",
+      "Sports"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Reddit nickname?",
+    "o": [
+      "Front page of the internet",
+      "Email",
+      "Fax",
+      "Radio"
+    ],
+    "a": 0
+  }
+]

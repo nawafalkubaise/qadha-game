@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Euro used in?",
+    "o": [
+      "Only UK",
+      "Eurozone countries",
+      "Only USA",
+      "All South America"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Yen is currency of?",
+    "o": [
+      "China",
+      "Japan",
+      "Korea",
+      "Thailand"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Pound sterling country?",
+    "o": [
+      "USA",
+      "UK",
+      "Canada",
+      "Australia"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Swiss franc country?",
+    "o": [
+      "Sweden",
+      "Switzerland",
+      "Austria",
+      "Denmark"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Saudi riyal?",
+    "o": [
+      "UAE",
+      "Saudi Arabia",
+      "Qatar",
+      "Kuwait"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Bitcoin is?",
+    "o": [
+      "Central bank note",
+      "Cryptocurrency",
+      "Gold coin",
+      "Silver bar"
+    ],
+    "a": 1
+  },
+  {
+    "q": "IMF headquarters?",
+    "o": [
+      "New York",
+      "Washington DC",
+      "Geneva",
+      "London"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Canadian dollar code?",
+    "o": [
+      "CAD",
+      "EUR",
+      "GBP",
+      "JPY"
+    ],
+    "a": 0
+  }
+]

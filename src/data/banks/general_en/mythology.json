@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Zeus god of?",
+    "o": [
+      "Sea",
+      "Sky and thunder",
+      "War",
+      "Death"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Thor Norse god of?",
+    "o": [
+      "Wisdom",
+      "Thunder",
+      "Sea",
+      "Fire"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Poseidon Greek god of?",
+    "o": [
+      "Sky",
+      "Sea",
+      "War",
+      "Sun"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Odysseus hero of?",
+    "o": [
+      "Iliad",
+      "Odyssey",
+      "Aeneid",
+      "Beowulf"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Anubis head?",
+    "o": [
+      "Hawk",
+      "Jackal",
+      "Lion",
+      "Bull"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Medusa hair?",
+    "o": [
+      "Gold",
+      "Snakes",
+      "Fire",
+      "Water"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Valhalla in?",
+    "o": [
+      "Greek",
+      "Norse",
+      "Egyptian",
+      "Chinese"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Pandora's box myth origin?",
+    "o": [
+      "Roman",
+      "Greek",
+      "Indian",
+      "Norse"
+    ],
+    "a": 1
+  }
+]

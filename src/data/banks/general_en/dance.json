@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Ballet developed strongly in?",
+    "o": [
+      "Italy then France",
+      "Mexico",
+      "Canada",
+      "Japan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Salsa roots?",
+    "o": [
+      "Cuba/Caribbean",
+      "Sweden",
+      "Russia",
+      "Japan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Flamenco from?",
+    "o": [
+      "Portugal",
+      "Spain",
+      "France",
+      "Italy"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Tango strongly linked to?",
+    "o": [
+      "Argentina",
+      "Canada",
+      "Norway",
+      "India"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Hip-hop dance culture began in?",
+    "o": [
+      "New York",
+      "Paris",
+      "London",
+      "Dubai"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Dabke associated with?",
+    "o": [
+      "Levant",
+      "Brazil",
+      "Japan",
+      "Australia"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Classical ballet shoes?",
+    "o": [
+      "Sneakers",
+      "Pointe shoes",
+      "Boots",
+      "Barefoot"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Samba parades famous in?",
+    "o": [
+      "Rio",
+      "Moscow",
+      "Oslo",
+      "Beijing"
+    ],
+    "a": 0
+  }
+]

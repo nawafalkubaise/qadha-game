@@ -7,8 +7,13 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { KW_MERGED as KW } from "../src/data/kwBank.js";
-import { GCC_BANKS } from "../src/data/gccBanks.js";
+import imported from "../src/data/kwImportedBank.json" with { type: "json" };
+import { mergeKwBank } from "../src/data/kwMergeImported.js";
+import {
+  readCountryBankFromFs,
+  readAllGccBanksFromFs,
+  readGeneralBankDisk,
+} from "./lib/readBanksFs.mjs";
 import { FALLBACK_AR, FALLBACK_EN } from "../src/triviaFallbacks.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -18,22 +23,16 @@ const s = fs.readFileSync(qadhaPath, "utf8");
 const catsBlock = s.split("const CATS=")[1].split("];")[0];
 const catIds = [...catsBlock.matchAll(/\{id:"([^"]+)"/g)].map((m) => m[1]);
 
-function extractBetween(startMarker, endMarker) {
-  const a = s.indexOf(startMarker);
-  const b = s.indexOf(endMarker, a);
-  if (a < 0 || b < 0) throw new Error(`Missing: ${startMarker}`);
-  return s.slice(a + startMarker.length, b).trim();
-}
-const genArLiteral = extractBetween("const GEN_AR=", "const GEN=");
-const GEN_AR = new Function(`return ${genArLiteral}`)();
-const genLiteral = extractBetween("const GEN=", "const fillMissing");
-const GEN = new Function(`return ${genLiteral}`)();
+const KW = mergeKwBank(readCountryBankFromFs("kw"), imported);
+const GCC_BANKS = readAllGccBanksFromFs();
+const GEN_AR = readGeneralBankDisk(true, catIds);
+const GEN = readGeneralBankDisk(false, catIds);
 
 function filledBank(base, isAr) {
   const fb = isAr ? FALLBACK_AR : FALLBACK_EN;
   const bank = structuredClone(base);
   for (const id of catIds) {
-    if (bank[id]) continue;
+    if (bank[id] && bank[id].length > 0) continue;
     if (fb[id]) bank[id] = structuredClone(fb[id]);
     else if (isAr && GEN_AR[id]) bank[id] = structuredClone(GEN_AR[id]);
     else if (!isAr && GEN[id]) bank[id] = structuredClone(GEN[id]);

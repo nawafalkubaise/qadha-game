@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Romeo and Juliet author?",
+    "o": [
+      "Dickens",
+      "Austen",
+      "Shakespeare",
+      "Hemingway"
+    ],
+    "a": 2
+  },
+  {
+    "q": "1984 author?",
+    "o": [
+      "Huxley",
+      "Bradbury",
+      "Orwell",
+      "Tolkien"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Harry Potter author?",
+    "o": [
+      "King",
+      "Meyer",
+      "Rowling",
+      "Collins"
+    ],
+    "a": 2
+  },
+  {
+    "q": "The Alchemist author?",
+    "o": [
+      "Marquez",
+      "Borges",
+      "Coelho",
+      "Allende"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Don Quixote author?",
+    "o": [
+      "Cervantes",
+      "Lorca",
+      "Borges",
+      "Neruda"
+    ],
+    "a": 0
+  },
+  {
+    "q": "The Prince author?",
+    "o": [
+      "Plato",
+      "Aristotle",
+      "Machiavelli",
+      "Socrates"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Lord of the Rings author?",
+    "o": [
+      "Lewis",
+      "Rowling",
+      "Tolkien",
+      "Martin"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Crime and Punishment author?",
+    "o": [
+      "Tolstoy",
+      "Dostoevsky",
+      "Chekhov",
+      "Pushkin"
+    ],
+    "a": 1
+  }
+]

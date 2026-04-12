@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Pulitzer Prize domain?",
+    "o": [
+      "Sports",
+      "Journalism and literature",
+      "Medicine",
+      "Physics"
+    ],
+    "a": 1
+  },
+  {
+    "q": "CNN originally headquartered in?",
+    "o": [
+      "New York",
+      "Atlanta",
+      "Washington",
+      "Los Angeles"
+    ],
+    "a": 1
+  },
+  {
+    "q": "BBC is?",
+    "o": [
+      "American",
+      "British",
+      "Australian",
+      "Canadian"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Podcast is?",
+    "o": [
+      "Digital audio show",
+      "Live video only",
+      "Newspaper",
+      "SMS app"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Reuters news agency HQ?",
+    "o": [
+      "Paris",
+      "London",
+      "Berlin",
+      "New York"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Fake news common English term?",
+    "o": [
+      "Deep fake only",
+      "Fake news",
+      "Spam only",
+      "Clickbait only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "YouTube founded around?",
+    "o": [
+      "2003",
+      "2005",
+      "2007",
+      "2010"
+    ],
+    "a": 1
+  },
+  {
+    "q": "LinkedIn focuses on?",
+    "o": [
+      "Games",
+      "Jobs and careers",
+      "Cooking",
+      "Sports"
+    ],
+    "a": 1
+  }
+]

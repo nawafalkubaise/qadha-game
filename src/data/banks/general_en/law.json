@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Universal Declaration of Human Rights?",
+    "o": [
+      "1945",
+      "1948",
+      "1950",
+      "1960"
+    ],
+    "a": 1
+  },
+  {
+    "q": "International Court of Justice?",
+    "o": [
+      "New York",
+      "The Hague",
+      "Geneva",
+      "Brussels"
+    ],
+    "a": 1
+  },
+  {
+    "q": "UN main HQ?",
+    "o": [
+      "Geneva",
+      "New York",
+      "Vienna",
+      "Paris"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Innocent until?",
+    "o": [
+      "Confession",
+      "Proven guilty",
+      "Jail",
+      "Fine"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Civil law often covers?",
+    "o": [
+      "Only theft",
+      "Contracts and private disputes",
+      "War",
+      "Space only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "ICC (criminal court) in?",
+    "o": [
+      "New York",
+      "The Hague",
+      "Geneva",
+      "Rome"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Trademark protects?",
+    "o": [
+      "Brand sign",
+      "House",
+      "Car",
+      "Passport"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Arbitration alternative to?",
+    "o": [
+      "Mandatory accounting audit",
+      "Court trial",
+      "Executive mediation board",
+      "Sports tribunal"
+    ],
+    "a": 1
+  }
+]

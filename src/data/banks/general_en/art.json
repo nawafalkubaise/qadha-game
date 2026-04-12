@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Mona Lisa painter?",
+    "o": [
+      "Picasso",
+      "Raphael",
+      "Da Vinci",
+      "Michelangelo"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Starry Night painter?",
+    "o": [
+      "Monet",
+      "Cézanne",
+      "Renoir",
+      "Van Gogh"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Dalí's movement?",
+    "o": [
+      "Cubism",
+      "Pop Art",
+      "Surrealism",
+      "Impressionism"
+    ],
+    "a": 2
+  },
+  {
+    "q": "David sculptor?",
+    "o": [
+      "Da Vinci",
+      "Bernini",
+      "Donatello",
+      "Michelangelo"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Frida Kahlo's country?",
+    "o": [
+      "Spain",
+      "Brazil",
+      "Mexico",
+      "Argentina"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Origami is?",
+    "o": [
+      "Clay art",
+      "Weaving",
+      "Paper folding",
+      "Painting"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Andy Warhol's movement?",
+    "o": [
+      "Cubism",
+      "Pop Art",
+      "Impressionism",
+      "Baroque"
+    ],
+    "a": 1
+  },
+  {
+    "q": "The Scream painted by?",
+    "o": [
+      "Monet",
+      "Edvard Munch",
+      "Picasso",
+      "Dalí"
+    ],
+    "a": 1
+  }
+]

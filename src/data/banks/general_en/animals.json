@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Fastest bird in a dive (peregrine)?",
+    "o": [
+      "Eagle",
+      "Peregrine falcon",
+      "Owl",
+      "Pigeon"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Giant panda diet mainly?",
+    "o": [
+      "Meat",
+      "Bamboo",
+      "Fish",
+      "Honey"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Only mammal capable of true sustained flight?",
+    "o": [
+      "Mouse",
+      "Bat",
+      "Squirrel",
+      "Lemur"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Blue whale eats mainly?",
+    "o": [
+      "Large fish",
+      "Krill",
+      "Seaweed",
+      "Birds"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Sloth is slow partly due to?",
+    "o": [
+      "Laziness only",
+      "Very low metabolism",
+      "Illness",
+      "Age"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Giraffe tongue is?",
+    "o": [
+      "Short",
+      "Very long",
+      "None",
+      "Thick only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Crocodile habitat?",
+    "o": [
+      "Arctic",
+      "Wetlands and water",
+      "Dry desert",
+      "Mountains"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Bees waggle dance communicates?",
+    "o": [
+      "Fun",
+      "Food location",
+      "Fear",
+      "Mating"
+    ],
+    "a": 1
+  }
+]

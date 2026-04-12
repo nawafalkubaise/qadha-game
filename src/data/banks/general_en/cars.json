@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Model T helped?",
+    "o": [
+      "Luxury only",
+      "Mass car ownership",
+      "Planes",
+      "Trains"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Toyota from?",
+    "o": [
+      "Korea",
+      "Japan",
+      "China",
+      "Germany"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Mercedes-Benz HQ city?",
+    "o": [
+      "Munich",
+      "Stuttgart",
+      "Berlin",
+      "Frankfurt"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Tesla known for?",
+    "o": [
+      "Diesel only",
+      "Electric vehicles",
+      "Steam",
+      "Bicycles"
+    ],
+    "a": 1
+  },
+  {
+    "q": "ABS helps?",
+    "o": [
+      "Go faster",
+      "Prevent wheel lock when braking",
+      "Save fuel",
+      "Cool engine"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Lamborghini began as?",
+    "o": [
+      "Planes",
+      "Tractors then supercars",
+      "Ships",
+      "Bikes"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Self-driving cars rely on?",
+    "o": [
+      "Stone",
+      "Sensors and AI",
+      "Wood",
+      "Wind"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Ferrari logo animal?",
+    "o": [
+      "Bull",
+      "Prancing horse",
+      "Lion",
+      "Eagle"
+    ],
+    "a": 1
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Gandhi led independence movement in?",
+    "o": [
+      "Pakistan",
+      "India",
+      "Sri Lanka",
+      "Nepal"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Nelson Mandela first Black president of?",
+    "o": [
+      "Kenya",
+      "South Africa",
+      "Nigeria",
+      "Ghana"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Churchill UK PM during?",
+    "o": [
+      "WWI only",
+      "WWII",
+      "Vietnam War",
+      "Gulf War"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Napoleon crowned Emperor of?",
+    "o": [
+      "Spain",
+      "France",
+      "Russia",
+      "Italy"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Queen Elizabeth II died in?",
+    "o": [
+      "2016",
+      "2022",
+      "2025",
+      "2010"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Martin Luther King Jr. famous speech?",
+    "o": [
+      "I hate war",
+      "I Have a Dream",
+      "Go backward",
+      "Stay silent"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Che Guevara linked to revolution in?",
+    "o": [
+      "Cuba",
+      "Chile only",
+      "Mexico only",
+      "Brazil"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Anwar Sadat peace treaty with?",
+    "o": [
+      "Syria",
+      "Israel",
+      "Iraq",
+      "Turkey"
+    ],
+    "a": 1
+  }
+]

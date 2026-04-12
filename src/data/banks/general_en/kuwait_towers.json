@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Most iconic towers in Kuwait are?",
+    "o": [
+      "Kuwait Towers",
+      "Leaning Tower",
+      "Eiffel Tower",
+      "Clock Tower"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Kuwait Towers are on the?",
+    "o": [
+      "Coast in Kuwait City",
+      "Jahra inland",
+      "Ahmadi desert",
+      "Failaka center"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Al Hamra Tower is known as?",
+    "o": [
+      "One of the tallest towers",
+      "An airport",
+      "A refinery",
+      "A museum"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Kuwait Towers symbolize?",
+    "o": [
+      "Modern city identity",
+      "Farming",
+      "Railway",
+      "Forests"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tower viewing decks offer?",
+    "o": [
+      "Panoramic views",
+      "Diving trips",
+      "Skiing",
+      "Flying"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Their design reflects?",
+    "o": [
+      "Kuwaiti architectural identity",
+      "Rural European style",
+      "Only Japanese style",
+      "Pharaonic style"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Photos by the towers are common on?",
+    "o": [
+      "National occasions",
+      "Court sessions",
+      "Farm visits",
+      "School exams"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tourism category of the towers?",
+    "o": [
+      "Landmark attraction",
+      "Oil field",
+      "Seaport",
+      "Airport"
+    ],
+    "a": 0
+  }
+]

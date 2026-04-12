@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Japan's flag has?",
+    "o": [
+      "Star",
+      "Moon",
+      "Red circle",
+      "Dragon"
+    ],
+    "a": 2
+  },
+  {
+    "q": "How many stars on US flag?",
+    "o": [
+      "48",
+      "50",
+      "52",
+      "13"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Canada's flag symbol?",
+    "o": [
+      "Eagle",
+      "Maple leaf",
+      "Bear",
+      "Moose"
+    ],
+    "a": 1
+  },
+  {
+    "q": "France's flag colors?",
+    "o": [
+      "Red-white",
+      "Blue-white-red",
+      "Green-white",
+      "Red-yellow"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Crescent and star flag?",
+    "o": [
+      "Japan",
+      "China",
+      "Turkey",
+      "Brazil"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Brazil's flag color?",
+    "o": [
+      "Red-white",
+      "Blue-yellow",
+      "Green-yellow",
+      "Orange-white"
+    ],
+    "a": 2
+  },
+  {
+    "q": "UK flag called?",
+    "o": [
+      "Stars & Stripes",
+      "Union Jack",
+      "Tricolor",
+      "Rising Sun"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Which flag has a dragon?",
+    "o": [
+      "Japan",
+      "China",
+      "Wales",
+      "Scotland"
+    ],
+    "a": 2
+  }
+]

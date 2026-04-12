@@ -8,10 +8,20 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { GCC_BANKS, GCC_COUNTRY_IDS } from "../src/data/gccBanks.js";
-import { KW_MERGED as KW } from "../src/data/kwBank.js";
+import imported from "../src/data/kwImportedBank.json" with { type: "json" };
+import { mergeKwBank } from "../src/data/kwMergeImported.js";
+import {
+  readCountryBankFromFs,
+  readAllGccBanksFromFs,
+  readGeneralBankDisk,
+  GCC_COUNTRY_IDS_FS,
+} from "./lib/readBanksFs.mjs";
 import { FALLBACK_AR } from "../src/triviaFallbacks.js";
 import { FALLBACK_EN } from "../src/triviaFallbacksEn.js";
+
+const KW = mergeKwBank(readCountryBankFromFs("kw"), imported);
+const GCC_BANKS = readAllGccBanksFromFs();
+const GCC_COUNTRY_IDS = GCC_COUNTRY_IDS_FS;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const qadhaPath = path.join(__dirname, "..", "src", "Qadha.jsx");
@@ -28,23 +38,14 @@ const catLabel = (id) => {
   return e ? `${id} (${e.ar})` : id;
 };
 
-function extractBetween(startMarker, endMarker) {
-  const a = s.indexOf(startMarker);
-  const b = s.indexOf(endMarker, a);
-  if (a < 0 || b < 0) throw new Error(`Missing: ${startMarker}`);
-  return s.slice(a + startMarker.length, b).trim();
-}
-
-const genArLiteral = extractBetween("const GEN_AR=", "const GEN=");
-const GEN_AR = new Function(`return ${genArLiteral}`)();
-const genLiteral = extractBetween("const GEN=", "const fillMissing");
-const GEN = new Function(`return ${genLiteral}`)();
+const GEN_AR = readGeneralBankDisk(true, catIds);
+const GEN = readGeneralBankDisk(false, catIds);
 
 function filledBank(base, isAr) {
   const fb = isAr ? FALLBACK_AR : FALLBACK_EN;
   const bank = structuredClone(base);
   for (const id of catIds) {
-    if (bank[id]) continue;
+    if (bank[id] && bank[id].length > 0) continue;
     if (fb[id]) bank[id] = structuredClone(fb[id]);
     else if (isAr && GEN_AR[id]) bank[id] = structuredClone(GEN_AR[id]);
     else if (!isAr && GEN[id]) bank[id] = structuredClone(GEN[id]);
@@ -56,6 +57,14 @@ function filledBank(base, isAr) {
 function normQ(text, isAr) {
   const t = String(text || "").trim().replace(/\s+/g, " ");
   return isAr ? t : t.toLowerCase();
+}
+
+/** مطابقة منطق qHash في src/game/questionCache.js — أسئلة الصور تشترك النص وتختلف بالصورة */
+function qKeyForDupCheck(item) {
+  if (item && item.id) return "id:" + String(item.id);
+  const head = (item?.q || "").substring(0, 40);
+  const img = item?.img ? String(item.img).slice(-56) : "";
+  return head + "|" + img;
 }
 
 /**
@@ -104,9 +113,9 @@ function validateCategory(catId, questions, { bankName, isAr }) {
       }
     }
     if (typeof q === "string" && q.trim()) {
-      const key = normQ(q, isAr);
+      const key = qKeyForDupCheck(item);
       if (seenQ.has(key)) {
-        dupQs.push(`#${idx} يطابق سؤال #${seenQ.get(key)} (نفس النص)`);
+        dupQs.push(`#${idx} يطابق سؤال #${seenQ.get(key)} (نفس المفتاح: نص/صورة/معرّف)`);
       } else {
         seenQ.set(key, idx);
       }

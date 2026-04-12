@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Batman city?",
+    "o": [
+      "Metropolis",
+      "Gotham",
+      "Central City",
+      "Star City"
+    ],
+    "a": 1
+  },
+  {
+    "q": "MCU stands for?",
+    "o": [
+      "Batman",
+      "Marvel Cinematic Universe",
+      "Superman only",
+      "Tintin"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Stan Lee role?",
+    "o": [
+      "Painter only",
+      "Writer/editor pioneer",
+      "Actor only",
+      "Musician"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Spider-Man alter ego?",
+    "o": [
+      "Bruce Wayne",
+      "Peter Parker",
+      "Clark Kent",
+      "Tony Stark"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Manga from?",
+    "o": [
+      "Korea",
+      "Japan",
+      "China",
+      "France"
+    ],
+    "a": 1
+  },
+  {
+    "q": "DC vs Marvel?",
+    "o": [
+      "Same company",
+      "Two publishers",
+      "Sports",
+      "Food"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Asterix origin?",
+    "o": [
+      "USA",
+      "France/Belgium",
+      "Japan",
+      "Egypt"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Calvin and Hobbes format?",
+    "o": [
+      "Anime",
+      "Comic strip",
+      "Novel",
+      "Film"
+    ],
+    "a": 1
+  }
+]

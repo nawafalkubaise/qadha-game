@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Second holiest city in Islam after Mecca?",
+    "o": [
+      "Jerusalem",
+      "Medina",
+      "Damascus",
+      "Baghdad"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Bhagavad Gita is sacred in?",
+    "o": [
+      "Buddhism",
+      "Hinduism",
+      "Sikhism",
+      "Jainism"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Easter celebrates?",
+    "o": [
+      "Birth",
+      "Resurrection",
+      "Ascension",
+      "Baptism"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Kaaba is in?",
+    "o": [
+      "Medina",
+      "Mecca",
+      "Taif",
+      "Jeddah"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Pope is head of largest Christian branch?",
+    "o": [
+      "Eastern Orthodox",
+      "Protestant",
+      "Catholic",
+      "Anglican"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Buddhism originated in?",
+    "o": [
+      "China",
+      "India",
+      "Japan",
+      "Thailand"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Jewish Sabbath day?",
+    "o": [
+      "Friday",
+      "Saturday",
+      "Sunday",
+      "Monday"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Four holy books in Islam include?",
+    "o": [
+      "Gospels Torah Psalms Quran",
+      "Vedas only",
+      "Tripitaka only",
+      "Tripitaka"
+    ],
+    "a": 0
+  }
+]

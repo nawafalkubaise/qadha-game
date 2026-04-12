@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Nike logo?",
+    "o": [
+      "Three stripes",
+      "Swoosh",
+      "Tiger",
+      "Apple"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Coca-Cola brand color?",
+    "o": [
+      "Green",
+      "Red",
+      "Blue",
+      "Yellow"
+    ],
+    "a": 1
+  },
+  {
+    "q": "McDonald's origin?",
+    "o": [
+      "USA",
+      "France",
+      "Japan",
+      "Italy"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Samsung HQ country?",
+    "o": [
+      "Japan",
+      "South Korea",
+      "China",
+      "Taiwan"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Starbucks started selling?",
+    "o": [
+      "Tea",
+      "Coffee beans",
+      "Juice",
+      "Ice cream"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Tesla named after?",
+    "o": [
+      "President",
+      "Nikola Tesla",
+      "City",
+      "River"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Hyundai from?",
+    "o": [
+      "Japan",
+      "South Korea",
+      "China",
+      "Thailand"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Apple logo fruit?",
+    "o": [
+      "Pear",
+      "Apple",
+      "Orange",
+      "Grape"
+    ],
+    "a": 1
+  }
+]

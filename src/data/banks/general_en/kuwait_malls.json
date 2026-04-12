@@ -1,0 +1,82 @@
+[
+  {
+    "q": "A regional shopping center often combines retail with?",
+    "o": [
+      "Parking, A/C, dining, cinema",
+      "Desert farming only",
+      "Shipbuilding",
+      "Air traffic control"
+    ],
+    "a": 0
+  },
+  {
+    "q": "A traditional souk differs from a modern mall mainly by?",
+    "o": [
+      "Open lanes and smaller shops",
+      "Single sealed skyscraper only",
+      "No vendors",
+      "Underwater tunnels only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Food courts in malls are?",
+    "o": [
+      "Cluster of restaurants with shared seating",
+      "Weapons depot",
+      "Livestock pens",
+      "Olympic pools only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Retail tenants usually pay the landlord?",
+    "o": [
+      "Rent or revenue share",
+      "Personal visitor taxes",
+      "Nothing ever",
+      "Only in barter fish"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Interior mall maps help shoppers?",
+    "o": [
+      "Find units and exits",
+      "Predict earthquakes",
+      "Mint currency",
+      "Repair aircraft"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Mixed retail-entertainment venues target?",
+    "o": [
+      "Families and day trips",
+      "Oil refineries",
+      "Container ports",
+      "Freight only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Very large malls may include?",
+    "o": [
+      "Cinemas and play zones",
+      "Only grain silos",
+      "Cattle auctions only",
+      "Nuclear plants"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Escalators in malls mainly move people?",
+    "o": [
+      "Between floors",
+      "Across oceans",
+      "Through customs",
+      "Into vaults"
+    ],
+    "a": 0
+  }
+]

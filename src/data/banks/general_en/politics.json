@@ -1,0 +1,82 @@
+[
+  {
+    "q": "UN headquarters main site?",
+    "o": [
+      "Geneva",
+      "New York",
+      "The Hague",
+      "Vienna"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Permanent UNSC members (five)?",
+    "o": [
+      "NATO only",
+      "China France Russia UK USA",
+      "EU only",
+      "G20"
+    ],
+    "a": 1
+  },
+  {
+    "q": "EU institutional hub often cited?",
+    "o": [
+      "Paris",
+      "Brussels",
+      "Berlin",
+      "Rome"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Cold War mainly between?",
+    "o": [
+      "US and Japan",
+      "US and Soviet Union",
+      "France and Germany",
+      "China and India"
+    ],
+    "a": 1
+  },
+  {
+    "q": "NATO was founded for?",
+    "o": [
+      "Trade",
+      "Collective defense",
+      "Environment",
+      "Health"
+    ],
+    "a": 1
+  },
+  {
+    "q": "First female UK Prime Minister?",
+    "o": [
+      "Thatcher",
+      "Merkel",
+      "May",
+      "Truss"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Soviet Union dissolved in?",
+    "o": [
+      "1989",
+      "1991",
+      "1995",
+      "2001"
+    ],
+    "a": 1
+  },
+  {
+    "q": "OPEC focuses on?",
+    "o": [
+      "Oil",
+      "Natural gas only",
+      "Nuclear",
+      "Coal"
+    ],
+    "a": 0
+  }
+]

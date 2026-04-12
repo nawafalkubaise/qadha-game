@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Jet lag caused by?",
+    "o": [
+      "Hunger",
+      "Time zone shift",
+      "Rain",
+      "Hotel height"
+    ],
+    "a": 1
+  },
+  {
+    "q": "eVisa means?",
+    "o": [
+      "Plastic card",
+      "Electronic visa before travel",
+      "Plane ticket",
+      "Insurance"
+    ],
+    "a": 1
+  },
+  {
+    "q": "UTC reference meridian?",
+    "o": [
+      "Paris",
+      "Greenwich",
+      "New York",
+      "Tokyo"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Lost luggage handled via?",
+    "o": [
+      "Bank",
+      "Airline baggage desk",
+      "Hotel only",
+      "Police only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Budget airlines cut costs by?",
+    "o": [
+      "Eliminating maintenance",
+      "Fees and efficiency",
+      "Government fuel grants",
+      "Single-class wide-body only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Travel insurance often covers?",
+    "o": [
+      "Routine wardrobe purchase",
+      "Trip cancel and medical emergency",
+      "Visa renewal fees",
+      "Airport lounge upgrades"
+    ],
+    "a": 1
+  },
+  {
+    "q": "International travel needs?",
+    "o": [
+      "No ID",
+      "Valid passport usually",
+      "Any student card",
+      "Domestic license alone"
+    ],
+    "a": 1
+  },
+  {
+    "q": "IATA airport codes are?",
+    "o": [
+      "Three letters often",
+      "Two numbers",
+      "Colors",
+      "Shapes"
+    ],
+    "a": 0
+  }
+]

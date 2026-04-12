@@ -1,0 +1,82 @@
+[
+  {
+    "q": "The Shining director?",
+    "o": [
+      "Spielberg",
+      "Kubrick",
+      "Carpenter",
+      "Craven"
+    ],
+    "a": 1
+  },
+  {
+    "q": "It novel author?",
+    "o": [
+      "Stephen King",
+      "Poe",
+      "Lovecraft",
+      "Shelley"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Freddy Krueger from?",
+    "o": [
+      "Halloween",
+      "A Nightmare on Elm Street",
+      "Scream",
+      "Friday 13th"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Psycho director?",
+    "o": [
+      "Kubrick",
+      "Hitchcock",
+      "Carpenter",
+      "Romero"
+    ],
+    "a": 1
+  },
+  {
+    "q": "The Ring originated in?",
+    "o": [
+      "Korea",
+      "Japan",
+      "Thailand",
+      "China"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Ghostface from?",
+    "o": [
+      "Halloween",
+      "Scream",
+      "Saw",
+      "Insidious"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Night of the Living Dead year?",
+    "o": [
+      "1958",
+      "1968",
+      "1978",
+      "1988"
+    ],
+    "a": 1
+  },
+  {
+    "q": "The Exorcist genre?",
+    "o": [
+      "Comedy",
+      "Horror/supernatural",
+      "Cartoon",
+      "Documentary"
+    ],
+    "a": 1
+  }
+]

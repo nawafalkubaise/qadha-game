@@ -1,0 +1,82 @@
+[
+  {
+    "q": "T-Rex diet?",
+    "o": [
+      "Plants",
+      "Carnivore",
+      "Fish only",
+      "Insects only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Dinosaur extinction famous event ~?",
+    "o": [
+      "65 million years ago",
+      "6500 years",
+      "650 years",
+      "6.5 years"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Fossils in rocks?",
+    "o": [
+      "Air",
+      "Sedimentary",
+      "Ice only",
+      "Plastic"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Birds descended from?",
+    "o": [
+      "No",
+      "Theropod dinosaurs",
+      "Fish",
+      "Amphibians only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Triceratops had horns?",
+    "o": [
+      "None",
+      "Three on face",
+      "One",
+      "Ten"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Long-neck giants called?",
+    "o": [
+      "Raptors",
+      "Sauropods",
+      "Birds",
+      "Mammals"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Dinosaurs lived in?",
+    "o": [
+      "Today only",
+      "Mesozoic mainly",
+      "Ice age only",
+      "Future"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Amber can preserve?",
+    "o": [
+      "Water",
+      "Ancient insects",
+      "Gold",
+      "Plastic"
+    ],
+    "a": 1
+  }
+]

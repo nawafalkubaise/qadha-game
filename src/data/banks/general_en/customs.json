@@ -1,0 +1,82 @@
+[
+  {
+    "q": "Eid al-Adha commemorates?",
+    "o": [
+      "Birth",
+      "Sacrifice of Ishmael story",
+      "Migration",
+      "Isra"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Tea as hospitality is common in?",
+    "o": [
+      "Only Brazil",
+      "Japan UK China and more",
+      "Only Canada",
+      "Only Australia"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Handshake less common in some cultures; Japan often uses?",
+    "o": [
+      "High-five",
+      "Bow",
+      "Hug",
+      "Salute"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Christmas celebrated on?",
+    "o": [
+      "November",
+      "25 December (often)",
+      "January only",
+      "April only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Arabic coffee often served with?",
+    "o": [
+      "Milk",
+      "Dates",
+      "Lemon",
+      "Soda"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Henna at celebrations is common in?",
+    "o": [
+      "Only Europe",
+      "South Asia Middle East",
+      "Only Arctic",
+      "Only Antarctica"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Ramadan is month of?",
+    "o": [
+      "Feasting only",
+      "Fasting and reflection",
+      "Harvest only",
+      "New Year only"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Wedding rings worn on left ring finger tradition in many?",
+    "o": [
+      "Western cultures",
+      "None",
+      "Only children",
+      "Only monks"
+    ],
+    "a": 0
+  }
+]
