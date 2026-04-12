@@ -8,6 +8,8 @@ RUN npm ci
 COPY index.html vite.config.js ./
 COPY public ./public
 COPY src ./src
+COPY scripts ./scripts
+COPY githooks ./githooks
 RUN npm run build
 
 FROM node:22-alpine AS runner
