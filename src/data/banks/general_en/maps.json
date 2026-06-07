@@ -1,25 +1,5 @@
 [
   {
-    "q": "Capital of Japan؟",
-    "o": [
-      "Tokyo",
-      "Ankara",
-      "Basel",
-      "Bern"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Capital of Canada؟",
-    "o": [
-      "Ankara",
-      "Antalya",
-      "Tokyo",
-      "Ottawa"
-    ],
-    "a": 3
-  },
-  {
     "q": "Executive capital of South Africa (one)؟",
     "o": [
       "Pretoria",
@@ -30,41 +10,11 @@
     "a": 0
   },
   {
-    "q": "Capital of Australia؟",
-    "o": [
-      "Canberra",
-      "Brasília",
-      "Melbourne",
-      "Pretoria"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Capital of Brazil؟",
-    "o": [
-      "Canberra",
-      "Pretoria",
-      "Salvador",
-      "Brasília"
-    ],
-    "a": 3
-  },
-  {
     "q": "Administrative capital of Switzerland؟",
     "o": [
       "Bern",
       "Basel",
       "Izmir",
-      "Tokyo"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Capital of Turkey؟",
-    "o": [
-      "Ankara",
-      "Antalya",
-      "Ottawa",
       "Tokyo"
     ],
     "a": 0

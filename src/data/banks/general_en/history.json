@@ -14,8 +14,8 @@
     "o": [
       "Neil Armstrong",
       "Ancient Egyptians",
-      "Michelangelo",
-      "Yuri Gagarin"
+      "Lunar calendar",
+      "Michelangelo"
     ],
     "a": 0
   },
@@ -54,8 +54,8 @@
     "o": [
       "Michelangelo",
       "Botticelli",
-      "Neil Armstrong",
-      "Amundsen"
+      "Lunar calendar",
+      "Neil Armstrong"
     ],
     "a": 0
   },
@@ -113,9 +113,9 @@
     "q": "The Great Pyramids were built by؟",
     "o": [
       "Ancient Egyptians",
+      "Lunar calendar",
       "Neil Armstrong",
-      "Babylonians",
-      "Michelangelo"
+      "Babylonians"
     ],
     "a": 0
   },
@@ -198,5 +198,15 @@
       "Britain"
     ],
     "a": 2
+  },
+  {
+    "q": "Chinese New Year follows؟",
+    "o": [
+      "Hijri calendar",
+      "Ancient Egyptians",
+      "Chinese only",
+      "Lunar calendar"
+    ],
+    "a": 3
   }
 ]

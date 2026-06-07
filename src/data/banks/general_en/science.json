@@ -40,16 +40,6 @@
     "a": 0
   },
   {
-    "q": "Speed of light approx؟",
-    "o": [
-      "300K km/s",
-      "150K km/s",
-      "500K km/s",
-      "1M km/s"
-    ],
-    "a": 0
-  },
-  {
     "q": "Organ producing insulin؟",
     "o": [
       "300K km/s",
@@ -146,16 +136,6 @@
       "Mitochondria",
       "300K km/s",
       "Genetic information"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Unit of force؟",
-    "o": [
-      "Newton",
-      "100°C",
-      "Diamond",
-      "Edison"
     ],
     "a": 0
   },

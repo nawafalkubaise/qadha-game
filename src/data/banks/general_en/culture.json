@@ -170,16 +170,6 @@
     "a": 0
   },
   {
-    "q": "Chinese New Year follows؟",
-    "o": [
-      "Lunar calendar",
-      "Hijri calendar",
-      "Chinese only",
-      "No calendar"
-    ],
-    "a": 0
-  },
-  {
     "q": "International Women's Day؟",
     "o": [
       "8 March",
