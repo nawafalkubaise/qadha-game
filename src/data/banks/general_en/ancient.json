@@ -1,82 +1,82 @@
 [
   {
-    "q": "Great Pyramids built by?",
+    "q": "Great Pyramids built by؟",
     "o": [
-      "Romans",
       "Ancient Egyptians",
-      "Greeks",
-      "Vikings"
+      "Ancient Egypt",
+      "Anatolia",
+      "Babylon"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Mesopotamia means land between rivers?",
+    "q": "Mesopotamia means land between rivers؟",
     "o": [
-      "Nile only",
       "Tigris and Euphrates",
-      "Ganges",
-      "Amazon"
+      "Trade and alphabet",
+      "A Nightmare on Elm Street",
+      "A lot / very"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Alexander the Great died in?",
+    "q": "Alexander the Great died in؟",
     "o": [
-      "Greece",
       "Babylon",
-      "Rome",
+      "Anatolia",
+      "Greece",
       "Alexandria"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Romans built?",
+    "q": "Romans built؟",
     "o": [
-      "Pyramids",
       "Colosseum",
-      "Taj Mahal",
-      "Great Wall"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Hieroglyphs mainly?",
-    "o": [
-      "China",
-      "Ancient Egypt",
-      "Greece",
-      "Rome"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Phoenicians known for?",
-    "o": [
-      "Farming only",
-      "Trade and alphabet",
-      "Space",
-      "Ice"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Troy war in legend?",
-    "o": [
-      "Spain",
       "Anatolia",
-      "Italy",
-      "Greece only"
+      "Great Wall",
+      "Pyramids"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Great Wall in?",
+    "q": "Hieroglyphs mainly؟",
     "o": [
-      "India",
-      "China",
-      "Japan",
-      "Mongolia only"
+      "Ancient Egyptians",
+      "Anatolia",
+      "Colosseum",
+      "Ancient Egypt"
     ],
-    "a": 1
+    "a": 3
+  },
+  {
+    "q": "Phoenicians known for؟",
+    "o": [
+      "Trade and alphabet",
+      "Tigris and Euphrates",
+      "A lot / very",
+      "A Nightmare on Elm Street"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Troy war in legend؟",
+    "o": [
+      "Anatolia",
+      "Babylon",
+      "Colosseum",
+      "Ancient Egypt"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Great Wall in؟",
+    "o": [
+      "China",
+      "India",
+      "Japan",
+      "Anatolia"
+    ],
+    "a": 0
   }
 ]

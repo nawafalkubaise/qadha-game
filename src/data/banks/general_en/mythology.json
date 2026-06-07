@@ -1,38 +1,38 @@
 [
   {
-    "q": "Zeus god of?",
+    "q": "Zeus god of؟",
     "o": [
-      "Sea",
       "Sky and thunder",
-      "War",
-      "Death"
+      "A lot / very",
+      "A Nightmare on Elm Street",
+      "A private company vote"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Thor Norse god of?",
+    "q": "Thor Norse god of؟",
     "o": [
-      "Wisdom",
       "Thunder",
-      "Sea",
-      "Fire"
+      "Jackal",
+      "Odyssey",
+      "Snakes"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Poseidon Greek god of?",
+    "q": "Poseidon Greek god of؟",
     "o": [
+      "Sea",
       "Sky",
-      "Sea",
-      "War",
-      "Sun"
+      "Sun",
+      "War"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Odysseus hero of?",
+    "q": "Odysseus hero of؟",
     "o": [
-      "Iliad",
+      "Jackal",
       "Odyssey",
       "Aeneid",
       "Beowulf"
@@ -40,43 +40,43 @@
     "a": 1
   },
   {
-    "q": "Anubis head?",
+    "q": "Anubis head؟",
     "o": [
-      "Hawk",
       "Jackal",
-      "Lion",
-      "Bull"
+      "Aeneid",
+      "Beowulf",
+      "Greek"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Medusa hair?",
+    "q": "Medusa hair؟",
     "o": [
-      "Gold",
-      "Snakes",
-      "Fire",
-      "Water"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Valhalla in?",
-    "o": [
+      "Aeneid",
+      "Beowulf",
       "Greek",
-      "Norse",
-      "Egyptian",
-      "Chinese"
+      "Snakes"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Pandora's box myth origin?",
+    "q": "Valhalla in؟",
     "o": [
-      "Roman",
+      "Death",
       "Greek",
-      "Indian",
+      "Jackal",
       "Norse"
     ],
-    "a": 1
+    "a": 3
+  },
+  {
+    "q": "Pandora's box myth origin؟",
+    "o": [
+      "Death",
+      "Jackal",
+      "Norse",
+      "Greek"
+    ],
+    "a": 3
   }
 ]

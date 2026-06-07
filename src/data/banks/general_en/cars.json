@@ -1,82 +1,82 @@
 [
   {
-    "q": "Model T helped?",
+    "q": "Model T helped؟",
     "o": [
-      "Luxury only",
       "Mass car ownership",
-      "Planes",
-      "Trains"
+      "Sensors and AI",
+      "Tractors then supercars",
+      "Prevent wheel lock when braking"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Toyota from?",
+    "q": "Toyota from؟",
     "o": [
-      "Korea",
       "Japan",
+      "Bull",
       "China",
-      "Germany"
+      "Korea"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Mercedes-Benz HQ city?",
+    "q": "Mercedes-Benz HQ city؟",
     "o": [
-      "Munich",
       "Stuttgart",
+      "Frankfurt",
       "Berlin",
-      "Frankfurt"
+      "Munich"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Tesla known for?",
+    "q": "Tesla known for؟",
     "o": [
-      "Diesel only",
       "Electric vehicles",
-      "Steam",
+      "Prancing horse",
+      "Diesel only",
       "Bicycles"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "ABS helps?",
+    "q": "ABS helps؟",
     "o": [
-      "Go faster",
-      "Prevent wheel lock when braking",
-      "Save fuel",
-      "Cool engine"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Lamborghini began as?",
-    "o": [
-      "Planes",
       "Tractors then supercars",
-      "Ships",
-      "Bikes"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Self-driving cars rely on?",
-    "o": [
-      "Stone",
+      "Mass car ownership",
       "Sensors and AI",
-      "Wood",
-      "Wind"
+      "Prevent wheel lock when braking"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Ferrari logo animal?",
+    "q": "Lamborghini began as؟",
     "o": [
-      "Bull",
-      "Prancing horse",
-      "Lion",
-      "Eagle"
+      "Tractors then supercars",
+      "Mass car ownership",
+      "Prevent wheel lock when braking",
+      "Sensors and AI"
     ],
-    "a": 1
+    "a": 0
+  },
+  {
+    "q": "Self-driving cars rely on؟",
+    "o": [
+      "Sensors and AI",
+      "Mass car ownership",
+      "Tractors then supercars",
+      "Prevent wheel lock when braking"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Ferrari logo animal؟",
+    "o": [
+      "Prancing horse",
+      "Electric vehicles",
+      "Stuttgart",
+      "Berlin"
+    ],
+    "a": 0
   }
 ]

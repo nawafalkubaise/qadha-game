@@ -1,82 +1,82 @@
 [
   {
-    "q": "Largest organ?",
+    "q": "Largest organ؟",
     "o": [
-      "Liver",
       "Heart",
       "Skin",
-      "Brain"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Normal body temperature?",
-    "o": [
-      "36.5°C",
       "37°C",
-      "37.5°C",
-      "36°C"
+      "Brain"
     ],
     "a": 1
   },
   {
-    "q": "Blood types count?",
+    "q": "Normal body temperature؟",
     "o": [
-      "2",
+      "37°C",
+      "36°C",
+      "Brain",
+      "Skin"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Blood types count؟",
+    "o": [
       "4",
+      "2",
       "6",
       "8"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Insulin treats?",
+    "q": "Insulin treats؟",
     "o": [
-      "Cancer",
       "Diabetes",
-      "Cold",
-      "Flu"
+      "Allergies",
+      "Bacteria",
+      "60-100"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Vitamin C found in?",
+    "q": "Vitamin C found in؟",
     "o": [
-      "Meat",
       "Citrus fruits",
-      "Bread",
-      "Rice"
+      "Allergies",
+      "Bacteria",
+      "Diabetes"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Heart beats per minute (avg)?",
+    "q": "Heart beats per minute (avg)؟",
     "o": [
-      "40",
       "60-100",
-      "120",
-      "150"
+      "37°C",
+      "Bacteria",
+      "Diabetes"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Antibiotics fight?",
+    "q": "Antibiotics fight؟",
     "o": [
-      "Viruses",
       "Bacteria",
       "Allergies",
-      "Pain"
+      "Diabetes",
+      "Viruses"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "WHO stands for?",
+    "q": "WHO stands for؟",
     "o": [
+      "World Hospital Order",
       "World Help Org",
       "World Health Organization",
-      "World Hospital Order",
       "Western Health Office"
     ],
-    "a": 1
+    "a": 2
   }
 ]

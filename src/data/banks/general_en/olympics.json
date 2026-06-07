@@ -1,82 +1,82 @@
 [
   {
-    "q": "Summer Olympics every?",
+    "q": "Summer Olympics every؟",
     "o": [
-      "2 years",
       "4 years",
+      "2 years",
       "3 years",
       "1 year"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Olympic flame traditionally lit in?",
+    "q": "Olympic flame traditionally lit in؟",
     "o": [
       "Olympia Greece",
-      "Paris",
-      "New York",
-      "Tokyo"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Breaking debuted at Summer Olympics in?",
-    "o": [
-      "Tokyo 2020",
-      "Paris 2024",
-      "LA 2028",
-      "Never"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Gold medal color?",
-    "o": [
-      "Silver",
-      "Gold",
-      "Bronze",
-      "Green"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Olympic motto Latin?",
-    "o": [
-      "Citius Altius Fortius",
-      "Carpe Diem",
-      "Veni Vidi Vici",
-      "E Pluribus"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Winter Olympics need?",
-    "o": [
-      "Desert",
       "Snow/ice sports",
-      "Rainforest",
+      "Carpe Diem",
       "Cities only"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "IOC headquarters?",
+    "q": "Breaking debuted at Summer Olympics in؟",
     "o": [
-      "New York",
-      "Lausanne",
-      "Geneva",
-      "Paris"
-    ],
-    "a": 1
-  },
-  {
-    "q": "First modern Olympics (1896) in?",
-    "o": [
-      "Paris 1900",
       "Athens 1896",
-      "London 1908",
-      "Rome 1960"
+      "Tokyo 2020",
+      "Paris 2024",
+      "1 year"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Gold medal color؟",
+    "o": [
+      "Green",
+      "-100°C",
+      "-200°C",
+      "Gold"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Olympic motto Latin؟",
+    "o": [
+      "Veni Vidi Vici",
+      "Citius Altius Fortius",
+      "Snow/ice sports",
+      "Olympic pools only"
     ],
     "a": 1
+  },
+  {
+    "q": "Winter Olympics need؟",
+    "o": [
+      "Snow/ice sports",
+      "Olympia Greece",
+      "4 years",
+      "Gold"
+    ],
+    "a": 0
+  },
+  {
+    "q": "IOC headquarters؟",
+    "o": [
+      "Lausanne",
+      "4 years",
+      "New York",
+      "Bronze"
+    ],
+    "a": 0
+  },
+  {
+    "q": "First modern Olympics (1896) in؟",
+    "o": [
+      "London 1908",
+      "Paris 1900",
+      "Paris 2024",
+      "Athens 1896"
+    ],
+    "a": 3
   }
 ]

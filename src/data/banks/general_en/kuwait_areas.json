@@ -1,81 +1,81 @@
 [
   {
-    "q": "How many governorates in Kuwait?",
+    "q": "How many governorates in Kuwait؟",
     "o": [
-      "6",
       "4",
       "8",
-      "10"
+      "10",
+      "6"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "Salmiya belongs to which governorate?",
+    "q": "Salmiya belongs to which governorate؟",
     "o": [
       "Hawalli",
+      "Ahmadi",
       "Capital",
-      "Jahra",
-      "Ahmadi"
+      "Kuwait City"
     ],
     "a": 0
   },
   {
-    "q": "Jahra area belongs to?",
+    "q": "Jahra area belongs to؟",
     "o": [
       "Jahra Governorate",
-      "Capital",
-      "Farwaniya",
-      "Mubarak Al-Kabeer"
+      "Ahmadi Governorate",
+      "Kuwaiti governorate",
+      "Kuwait City"
     ],
     "a": 0
   },
   {
-    "q": "Fahaheel is in?",
+    "q": "Fahaheel is in؟",
     "o": [
       "Ahmadi Governorate",
-      "Hawalli",
-      "Capital",
-      "Jahra"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Mubarak Al-Kabeer is a?",
-    "o": [
+      "Jahra Governorate",
       "Kuwaiti governorate",
-      "Country",
-      "Island",
-      "Street only"
+      "Kuwait City"
     ],
     "a": 0
   },
   {
-    "q": "Capital Governorate includes?",
+    "q": "Mubarak Al-Kabeer is a؟",
+    "o": [
+      "Ahmadi Governorate",
+      "Jahra Governorate",
+      "Country",
+      "Kuwaiti governorate"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Capital Governorate includes؟",
     "o": [
       "Kuwait City",
-      "Wafra",
-      "Abdali",
-      "Failaka only"
+      "Failaka only",
+      "Oil sector",
+      "Ahmadi Governorate"
     ],
     "a": 0
   },
   {
-    "q": "Farwaniya is generally known for?",
+    "q": "Farwaniya is generally known for؟",
     "o": [
       "High population density",
-      "No residents",
-      "Snow mountains",
-      "Forests"
+      "Mubarak Al-Kabeer",
+      "A lot / very",
+      "A Nightmare on Elm Street"
     ],
     "a": 0
   },
   {
-    "q": "Ahmadi is historically linked to?",
+    "q": "Ahmadi is historically linked to؟",
     "o": [
       "Oil sector",
-      "Rain-fed farming",
-      "Timber industry",
-      "Gold mining"
+      "Gold mining",
+      "Kuwait City",
+      "Hawalli"
     ],
     "a": 0
   }

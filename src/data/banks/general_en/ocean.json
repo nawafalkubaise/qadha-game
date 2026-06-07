@@ -1,81 +1,81 @@
 [
   {
-    "q": "Deepest ocean trench known?",
+    "q": "Deepest ocean trench known؟",
     "o": [
+      "Blue whale",
       "Mariana",
-      "Puerto Rico",
-      "Java",
-      "Japan"
+      "Pacific",
+      "Australia"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Largest ocean؟",
+    "o": [
+      "Pacific",
+      "Arctic",
+      "Atlantic",
+      "Indian"
     ],
     "a": 0
   },
   {
-    "q": "Largest ocean?",
+    "q": "Great Barrier Reef off؟",
     "o": [
-      "Atlantic",
-      "Pacific",
-      "Indian",
-      "Arctic"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Great Barrier Reef off?",
-    "o": [
-      "Africa",
-      "Australia",
-      "Brazil",
-      "India"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Earth surface water ~?",
-    "o": [
-      "50%",
-      "71%",
-      "90%",
-      "30%"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Tsunami often from?",
-    "o": [
-      "Light wind",
-      "Undersea quake/slide",
-      "Moon only",
-      "Drought"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Largest ocean animal?",
-    "o": [
-      "Great white",
       "Blue whale",
-      "Dolphin",
-      "Seal"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Dead Sea salinity?",
-    "o": [
-      "Fresh",
       "Very high",
-      "Zero",
-      "Sweet"
+      "Africa",
+      "Australia"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Tides mainly from?",
+    "q": "Earth surface water ~؟",
+    "o": [
+      "71%",
+      "30%",
+      "50%",
+      "90%"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tsunami often from؟",
+    "o": [
+      "71%",
+      "Australia",
+      "Blue whale",
+      "Undersea quake/slide"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Largest ocean animal؟",
+    "o": [
+      "Blue whale",
+      "Australia",
+      "Great white",
+      "Very high"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Dead Sea salinity؟",
+    "o": [
+      "Very high",
+      "Australia",
+      "Blue whale",
+      "Mariana"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tides mainly from؟",
     "o": [
       "Moon and sun",
       "Surface winds alone",
-      "Sudden barometric drops",
-      "Deep ocean currents only"
+      "Deep ocean currents only",
+      "Sudden barometric drops"
     ],
     "a": 0
   }

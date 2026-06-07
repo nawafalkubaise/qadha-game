@@ -1,0 +1,11 @@
+#!/bin/sh
+# رفع تلقائي إلى origin بعد كل commit (المستودع: qadha-game)
+# يتطلب: git remote + upstream (مثلاً: git push -u origin master مرة واحدة)
+
+echo "post-commit: جاري الرفع إلى origin..."
+git push 2>&1
+status=$?
+if [ "$status" != 0 ]; then
+  echo "post-commit: فشل الرفع (شبكة؟ أو لا يوجد upstream). نفّذ يدوياً: git push -u origin master"
+fi
+exit 0

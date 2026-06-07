@@ -1,82 +1,82 @@
 [
   {
-    "q": "Ballet developed strongly in?",
+    "q": "Ballet developed strongly in؟",
     "o": [
+      "A private company vote",
       "Italy then France",
-      "Mexico",
-      "Canada",
-      "Japan"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Salsa roots?",
-    "o": [
-      "Cuba/Caribbean",
-      "Sweden",
-      "Russia",
-      "Japan"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Flamenco from?",
-    "o": [
-      "Portugal",
-      "Spain",
-      "France",
-      "Italy"
+      "A lot / very",
+      "A Nightmare on Elm Street"
     ],
     "a": 1
   },
   {
-    "q": "Tango strongly linked to?",
+    "q": "Salsa roots؟",
+    "o": [
+      "Cuba/Caribbean",
+      "Pointe shoes",
+      "Argentina",
+      "Barefoot"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Flamenco from؟",
+    "o": [
+      "Spain",
+      "Dubai",
+      "Italy",
+      "Japan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tango strongly linked to؟",
     "o": [
       "Argentina",
-      "Canada",
-      "Norway",
-      "India"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Hip-hop dance culture began in?",
-    "o": [
       "New York",
-      "Paris",
-      "London",
-      "Dubai"
+      "Canada",
+      "Cuba/Caribbean"
     ],
     "a": 0
   },
   {
-    "q": "Dabke associated with?",
+    "q": "Hip-hop dance culture began in؟",
+    "o": [
+      "Argentina",
+      "Barefoot",
+      "Levant",
+      "New York"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Dabke associated with؟",
     "o": [
       "Levant",
       "Brazil",
-      "Japan",
-      "Australia"
+      "Spain",
+      "Argentina"
     ],
     "a": 0
   },
   {
-    "q": "Classical ballet shoes?",
+    "q": "Classical ballet shoes؟",
     "o": [
-      "Sneakers",
       "Pointe shoes",
-      "Boots",
+      "Cuba/Caribbean",
+      "Argentina",
       "Barefoot"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Samba parades famous in?",
+    "q": "Samba parades famous in؟",
     "o": [
-      "Rio",
-      "Moscow",
+      "Dubai",
       "Oslo",
-      "Beijing"
+      "Spain",
+      "Rio"
     ],
-    "a": 0
+    "a": 3
   }
 ]

@@ -1,81 +1,81 @@
 [
   {
-    "q": "In Arabian context, a tribe is usually a?",
-    "o": [
-      "Historical kinship-based social grouping",
-      "Modern stock exchange",
-      "Type of currency",
-      "Administrative district only"
-    ],
-    "a": 0
-  },
-  {
-    "q": "The term fakhadh commonly means?",
-    "o": [
-      "Sub-lineage branch within a larger tribal structure",
-      "A capital city",
-      "A legal code",
-      "A banking method"
-    ],
-    "a": 0
-  },
-  {
-    "q": "A shared value in Kuwaiti/Saudi tribal heritage is?",
+    "q": "In Arabian context, a tribe is usually a؟",
     "o": [
       "Hospitality and guest protection",
-      "No guest reception",
-      "Climate zoning",
-      "Import tariffs"
+      "Use multiple corroborated sources",
+      "Water, pasture, and trade routes",
+      "Historical kinship-based social grouping"
+    ],
+    "a": 3
+  },
+  {
+    "q": "The term fakhadh commonly means؟",
+    "o": [
+      "Sub-lineage branch within a larger tribal structure",
+      "Lineage = descent; custom = social practice",
+      "Solidarity, honor, and readiness to support",
+      "Social guest hall and discussion forum"
     ],
     "a": 0
   },
   {
-    "q": "Historic tribal migration in central Arabia was often driven by?",
+    "q": "A shared value in Kuwaiti/Saudi tribal heritage is؟",
     "o": [
       "Water, pasture, and trade routes",
-      "Polar ice",
-      "Subway expansion",
-      "Atlantic shipping lanes"
-    ],
-    "a": 0
-  },
-  {
-    "q": "A Kuwaiti diwaniya traditionally serves as?",
-    "o": [
-      "Social guest hall and discussion forum",
-      "Industrial warehouse",
-      "Rail terminal",
-      "Stadium"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Nakhwa in tribal usage often implies?",
-    "o": [
-      "Solidarity, honor, and readiness to support",
-      "A tax bracket",
-      "A coin type",
-      "A visa category"
-    ],
-    "a": 0
-  },
-  {
-    "q": "For accurate tribal history work, best practice is?",
-    "o": [
+      "Historical kinship-based social grouping",
       "Use multiple corroborated sources",
-      "Use one anonymous post",
-      "Rely on rumor only",
-      "Avoid written material"
+      "Hospitality and guest protection"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Historic tribal migration in central Arabia was often driven by؟",
+    "o": [
+      "Water, pasture, and trade routes",
+      "Hospitality and guest protection",
+      "Historical kinship-based social grouping",
+      "Use multiple corroborated sources"
     ],
     "a": 0
   },
   {
-    "q": "In tribal studies, lineage and custom are best described as?",
+    "q": "A Kuwaiti diwaniya traditionally serves as؟",
     "o": [
       "Lineage = descent; custom = social practice",
-      "Exactly the same concept",
-      "Both weather terms",
-      "Both currency terms"
+      "Solidarity, honor, and readiness to support",
+      "Sub-lineage branch within a larger tribal structure",
+      "Social guest hall and discussion forum"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Nakhwa in tribal usage often implies؟",
+    "o": [
+      "Solidarity, honor, and readiness to support",
+      "Social guest hall and discussion forum",
+      "Lineage = descent; custom = social practice",
+      "Sub-lineage branch within a larger tribal structure"
+    ],
+    "a": 0
+  },
+  {
+    "q": "For accurate tribal history work, best practice is؟",
+    "o": [
+      "Use multiple corroborated sources",
+      "Historical kinship-based social grouping",
+      "Hospitality and guest protection",
+      "Use one anonymous post"
+    ],
+    "a": 0
+  },
+  {
+    "q": "In tribal studies, lineage and custom are best described as؟",
+    "o": [
+      "Lineage = descent; custom = social practice",
+      "Social guest hall and discussion forum",
+      "Solidarity, honor, and readiness to support",
+      "Sub-lineage branch within a larger tribal structure"
     ],
     "a": 0
   }

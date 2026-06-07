@@ -1,82 +1,82 @@
 [
   {
-    "q": "GDP stands for?",
+    "q": "GDP stands for؟",
     "o": [
-      "General Daily Product",
       "Gross Domestic Product",
-      "Global Data Plan",
-      "Grand Dollar Price"
+      "General Daily Product",
+      "Grand Dollar Price",
+      "Global Data Plan"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "World's largest economy?",
+    "q": "World's largest economy؟",
     "o": [
+      "Oil",
       "China",
       "Japan",
-      "USA",
-      "Germany"
+      "USA"
     ],
-    "a": 2
+    "a": 3
   },
   {
-    "q": "Inflation means?",
+    "q": "Inflation means؟",
     "o": [
-      "Prices drop",
       "Prices rise",
+      "Prices drop",
       "Prices stay",
       "No change"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Wall Street is in?",
+    "q": "Wall Street is in؟",
     "o": [
-      "London",
-      "Tokyo",
       "New York",
-      "Hong Kong"
+      "Hong Kong",
+      "London",
+      "Prices rise"
     ],
-    "a": 2
+    "a": 0
   },
   {
-    "q": "Bitcoin created in?",
+    "q": "Bitcoin created in؟",
     "o": [
-      "2005",
       "2009",
+      "2005",
       "2013",
       "2017"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "OPEC deals with?",
+    "q": "OPEC deals with؟",
     "o": [
-      "Technology",
       "Oil",
+      "USA",
       "Food",
-      "Banking"
+      "-273°C"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Euro used by how many countries approx?",
+    "q": "Euro used by how many countries approx؟",
     "o": [
+      "20",
       "10",
       "15",
-      "20",
       "27"
     ],
-    "a": 2
+    "a": 0
   },
   {
-    "q": "Richest person changes but often from?",
+    "q": "Richest person changes but often from؟",
     "o": [
-      "Sports",
       "Tech industry",
-      "Oil",
-      "Real estate"
+      "Prices rise",
+      "Real estate",
+      "New York"
     ],
-    "a": 1
+    "a": 0
   }
 ]

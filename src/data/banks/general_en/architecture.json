@@ -1,82 +1,82 @@
 [
   {
-    "q": "Burj Khalifa in?",
+    "q": "Burj Khalifa in؟",
     "o": [
-      "Qatar",
       "UAE",
-      "Saudi",
-      "Kuwait"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Taj Mahal in?",
-    "o": [
-      "Pakistan",
       "India",
-      "Iran",
-      "Bangladesh"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Leaning Tower in?",
-    "o": [
-      "Rome",
-      "Pisa",
-      "Milan",
-      "Naples"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Sagrada Família in?",
-    "o": [
-      "Madrid",
-      "Barcelona",
-      "Seville",
-      "Bilbao"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Sydney Opera House shape like?",
-    "o": [
-      "Pyramid",
-      "Shells/sails",
-      "Cube",
-      "Iron tower"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Petra in?",
-    "o": [
-      "Egypt",
-      "Jordan",
-      "Lebanon",
-      "Iraq"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Eiffel Tower material?",
-    "o": [
-      "Wood",
       "Iron",
-      "Glass only",
-      "Clay"
+      "Pisa"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Arc de Triomphe era?",
+    "q": "Taj Mahal in؟",
     "o": [
-      "Louis XIV",
-      "Napoleonic France",
+      "Clay",
+      "Iran",
+      "Iron",
+      "India"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Leaning Tower in؟",
+    "o": [
+      "Pisa",
+      "India",
+      "Iron",
+      "Milan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Sagrada Família in؟",
+    "o": [
+      "Barcelona",
+      "Bilbao",
+      "Jordan",
+      "Madrid"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Sydney Opera House shape like؟",
+    "o": [
+      "Shells/sails",
+      "Iron tower",
+      "Barcelona",
+      "Napoleonic France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Petra in؟",
+    "o": [
+      "Jordan",
+      "Bilbao",
+      "India",
+      "Lebanon"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Eiffel Tower material؟",
+    "o": [
+      "Iron",
+      "Clay",
+      "India",
+      "Pisa"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Arc de Triomphe era؟",
+    "o": [
       "Roman Empire",
+      "Shells/sails",
+      "Napoleonic France",
       "Charlemagne"
     ],
-    "a": 1
+    "a": 2
   }
 ]

@@ -1,81 +1,81 @@
 [
   {
-    "q": "Public parks are generally good for?",
+    "q": "Public parks are generally good for؟",
     "o": [
       "Family recreation",
-      "Oil refining",
+      "Aircraft repair",
       "Court hearings",
-      "Aircraft repair"
+      "Local residents"
     ],
     "a": 0
   },
   {
-    "q": "A waterfront green promenade is mainly for?",
+    "q": "A waterfront green promenade is mainly for؟",
     "o": [
       "Walking and leisure",
-      "Mining",
-      "Military port use",
-      "Airport ops"
-    ],
-    "a": 0
-  },
-  {
-    "q": "City parks usually include?",
-    "o": [
       "Benches and kids areas",
-      "Runways",
-      "Oil rigs",
-      "Rail lines"
+      "Improve quality of life",
+      "Military port use"
     ],
     "a": 0
   },
   {
-    "q": "In summer, park visits are best at?",
+    "q": "City parks usually include؟",
+    "o": [
+      "Walking and leisure",
+      "Improve quality of life",
+      "Military port use",
+      "Benches and kids areas"
+    ],
+    "a": 3
+  },
+  {
+    "q": "In summer, park visits are best at؟",
     "o": [
       "Evening",
       "Midday",
-      "Late night only",
+      "Walking",
       "Dawn only"
     ],
     "a": 0
   },
   {
-    "q": "Neighborhood parks mainly serve?",
+    "q": "Neighborhood parks mainly serve؟",
     "o": [
       "Local residents",
+      "Family recreation",
       "Maritime shipping",
-      "Tax collection",
-      "Mining"
+      "Tax collection"
     ],
     "a": 0
   },
   {
-    "q": "A common park activity is?",
+    "q": "A common park activity is؟",
     "o": [
       "Walking",
+      "Evening",
       "Deep diving",
-      "Snow skiing",
-      "Formula racing"
+      "Snow skiing"
     ],
     "a": 0
   },
   {
-    "q": "Planting trees in parks helps?",
+    "q": "Planting trees in parks helps؟",
     "o": [
-      "Improve quality of life",
-      "Increase noise",
-      "Remove shade",
-      "Reduce space use"
+      "Benches and kids areas",
+      "Walking and leisure",
+      "Reduce space use",
+      "Improve quality of life"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "Parks are part of a city's?",
+    "q": "Parks are part of a city's؟",
     "o": [
       "Leisure infrastructure",
-      "Refineries",
       "Commercial ports",
-      "Mines"
+      "Family recreation",
+      "Local residents"
     ],
     "a": 0
   }

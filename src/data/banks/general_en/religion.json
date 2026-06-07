@@ -1,22 +1,202 @@
 [
-  {"q": "Second holiest city in Islam after Mecca?", "o": ["Jerusalem", "Medina", "Damascus", "Baghdad"], "a": 1},
-  {"q": "Bhagavad Gita is sacred in?", "o": ["Buddhism", "Hinduism", "Sikhism", "Jainism"], "a": 1},
-  {"q": "Easter celebrates?", "o": ["Birth", "Resurrection", "Ascension", "Baptism"], "a": 1},
-  {"q": "Kaaba is in?", "o": ["Medina", "Mecca", "Taif", "Jeddah"], "a": 1},
-  {"q": "Pope is head of largest Christian branch?", "o": ["Eastern Orthodox", "Protestant", "Catholic", "Anglican"], "a": 2},
-  {"q": "Buddhism originated in?", "o": ["China", "India", "Japan", "Thailand"], "a": 1},
-  {"q": "Jewish Sabbath day?", "o": ["Friday", "Saturday", "Sunday", "Monday"], "a": 1},
-  {"q": "Four holy books in Islam include?", "o": ["Gospels Torah Psalms Quran", "Vedas only", "Tripitaka only", "Tripitaka"], "a": 0},
-  {"q": "Five Pillars of Islam total?", "o": ["5", "4", "6", "3"], "a": 0},
-  {"q": "Quran revealed in month of?", "o": ["Ramadan", "Shaban", "Muharram", "Dhul Hijjah"], "a": 0},
-  {"q": "Hajj pilgrimage occurs in?", "o": ["Dhul Hijjah", "Ramadan", "Shawwal", "Muharram"], "a": 0},
-  {"q": "Sikhism originated in?", "o": ["Punjab (India)", "Japan", "China", "Iran"], "a": 0},
-  {"q": "Christian Bible consists of?", "o": ["Old and New Testament", "One book only", "Ten books", "One volume"], "a": 0},
-  {"q": "Original Buddha was a prince from?", "o": ["Nepal/India", "China", "Japan", "Thailand"], "a": 0},
-  {"q": "Number of Quran chapters (surahs)?", "o": ["114", "120", "100", "110"], "a": 0},
-  {"q": "Eid al-Adha relates to story of?", "o": ["Prophet Ibrahim", "Prophet Musa", "Prophet Isa", "Prophet Nuh"], "a": 0},
-  {"q": "Most followed religion worldwide?", "o": ["Christianity", "Islam", "Hinduism", "Buddhism"], "a": 0},
-  {"q": "Golden Temple is sacred to?", "o": ["Sikhs", "Hindus", "Buddhists", "Christians"], "a": 0},
-  {"q": "Zakat in Islam means?", "o": ["Giving charity to the needy", "Prayer", "Fasting", "Pilgrimage"], "a": 0},
-  {"q": "Confucianism originated in?", "o": ["China", "India", "Japan", "Korea"], "a": 0}
+  {
+    "q": "Second holiest city in Islam after Mecca؟",
+    "o": [
+      "Medina",
+      "Baghdad",
+      "China",
+      "India"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Bhagavad Gita is sacred in؟",
+    "o": [
+      "Hinduism",
+      "Buddhism",
+      "Catholic",
+      "Jainism"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Easter celebrates؟",
+    "o": [
+      "Resurrection",
+      "Christianity",
+      "Dhul Hijjah",
+      "Nepal/India"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Kaaba is in؟",
+    "o": [
+      "Mecca",
+      "China",
+      "India",
+      "Japan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Pope is head of largest Christian branch؟",
+    "o": [
+      "Catholic",
+      "Anglican",
+      "Hinduism",
+      "Protestant"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Buddhism originated in؟",
+    "o": [
+      "Mecca",
+      "India",
+      "China",
+      "Japan"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Jewish Sabbath day؟",
+    "o": [
+      "Saturday",
+      "Catholic",
+      "Hinduism",
+      "Ramadan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Four holy books in Islam include؟",
+    "o": [
+      "Giving charity to the needy",
+      "Old and New Testament",
+      "One book only",
+      "Gospels Torah Psalms Quran"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Five Pillars of Islam total؟",
+    "o": [
+      "3",
+      "4",
+      "6",
+      "5"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Quran revealed in month of؟",
+    "o": [
+      "Ramadan",
+      "Catholic",
+      "Hinduism",
+      "Medina"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Hajj pilgrimage occurs in؟",
+    "o": [
+      "Christianity",
+      "Nepal/India",
+      "Resurrection",
+      "Dhul Hijjah"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Sikhism originated in؟",
+    "o": [
+      "Punjab (India)",
+      "Christianity",
+      "Prophet Ibrahim",
+      "Resurrection"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Christian Bible consists of؟",
+    "o": [
+      "Old and New Testament",
+      "Gospels Torah Psalms Quran",
+      "Giving charity to the needy",
+      "One book only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Original Buddha was a prince from؟",
+    "o": [
+      "Nepal/India",
+      "Christianity",
+      "Dhul Hijjah",
+      "Resurrection"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Number of Quran chapters (surahs)؟",
+    "o": [
+      "114",
+      "100",
+      "110",
+      "120"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Eid al-Adha relates to story of؟",
+    "o": [
+      "Prophet Ibrahim",
+      "Prophet Musa",
+      "Christianity",
+      "Prophet Isa"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Most followed religion worldwide؟",
+    "o": [
+      "Nepal/India",
+      "Prophet Ibrahim",
+      "Christianity",
+      "Dhul Hijjah"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Golden Temple is sacred to؟",
+    "o": [
+      "Sikhs",
+      "China",
+      "India",
+      "Japan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Zakat in Islam means؟",
+    "o": [
+      "Giving charity to the needy",
+      "Gospels Torah Psalms Quran",
+      "Old and New Testament",
+      "One book only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Confucianism originated in؟",
+    "o": [
+      "China",
+      "India",
+      "Japan",
+      "Korea"
+    ],
+    "a": 0
+  }
 ]

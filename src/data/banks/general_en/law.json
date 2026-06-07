@@ -1,82 +1,82 @@
 [
   {
-    "q": "Universal Declaration of Human Rights?",
+    "q": "Universal Declaration of Human Rights؟",
     "o": [
-      "1945",
       "1948",
+      "1945",
       "1950",
       "1960"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "International Court of Justice?",
+    "q": "International Court of Justice؟",
     "o": [
-      "New York",
       "The Hague",
-      "Geneva",
-      "Brussels"
+      "Brand sign",
+      "Brussels",
+      "Court trial"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "UN main HQ?",
+    "q": "UN main HQ؟",
     "o": [
-      "Geneva",
       "New York",
-      "Vienna",
-      "Paris"
+      "Brand sign",
+      "The Hague",
+      "Court trial"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Innocent until?",
+    "q": "Innocent until؟",
     "o": [
-      "Confession",
       "Proven guilty",
-      "Jail",
-      "Fine"
+      "Court trial",
+      "Brand sign",
+      "Confession"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Civil law often covers?",
+    "q": "Civil law often covers؟",
     "o": [
-      "Only theft",
       "Contracts and private disputes",
-      "War",
-      "Space only"
+      "Three letters often",
+      "A lot / very",
+      "Often no symptoms"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "ICC (criminal court) in?",
+    "q": "ICC (criminal court) in؟",
     "o": [
-      "New York",
       "The Hague",
-      "Geneva",
-      "Rome"
+      "Brand sign",
+      "Court trial",
+      "New York"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Trademark protects?",
+    "q": "Trademark protects؟",
     "o": [
       "Brand sign",
-      "House",
-      "Car",
+      "Court trial",
+      "New York",
       "Passport"
     ],
     "a": 0
   },
   {
-    "q": "Arbitration alternative to?",
+    "q": "Arbitration alternative to؟",
     "o": [
-      "Mandatory accounting audit",
       "Court trial",
-      "Executive mediation board",
-      "Sports tribunal"
+      "Brand sign",
+      "Proven guilty",
+      "The Hague"
     ],
-    "a": 1
+    "a": 0
   }
 ]

@@ -1,82 +1,82 @@
 [
   {
-    "q": "Jet lag caused by?",
+    "q": "Jet lag caused by؟",
     "o": [
-      "Hunger",
       "Time zone shift",
-      "Rain",
-      "Hotel height"
-    ],
-    "a": 1
-  },
-  {
-    "q": "eVisa means?",
-    "o": [
-      "Plastic card",
-      "Electronic visa before travel",
-      "Plane ticket",
-      "Insurance"
-    ],
-    "a": 1
-  },
-  {
-    "q": "UTC reference meridian?",
-    "o": [
-      "Paris",
-      "Greenwich",
-      "New York",
-      "Tokyo"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Lost luggage handled via?",
-    "o": [
-      "Bank",
       "Airline baggage desk",
-      "Hotel only",
-      "Police only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Budget airlines cut costs by?",
-    "o": [
-      "Eliminating maintenance",
       "Fees and efficiency",
-      "Government fuel grants",
-      "Single-class wide-body only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Travel insurance often covers?",
-    "o": [
-      "Routine wardrobe purchase",
-      "Trip cancel and medical emergency",
-      "Visa renewal fees",
-      "Airport lounge upgrades"
-    ],
-    "a": 1
-  },
-  {
-    "q": "International travel needs?",
-    "o": [
-      "No ID",
-      "Valid passport usually",
-      "Any student card",
-      "Domestic license alone"
-    ],
-    "a": 1
-  },
-  {
-    "q": "IATA airport codes are?",
-    "o": [
-      "Three letters often",
-      "Two numbers",
-      "Colors",
-      "Shapes"
+      "Three letters often"
     ],
     "a": 0
+  },
+  {
+    "q": "eVisa means؟",
+    "o": [
+      "Electronic visa before travel",
+      "Trip cancel and medical emergency",
+      "Airline baggage desk",
+      "Fees and efficiency"
+    ],
+    "a": 0
+  },
+  {
+    "q": "UTC reference meridian؟",
+    "o": [
+      "Greenwich",
+      "A little",
+      "New York",
+      "A hole"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Lost luggage handled via؟",
+    "o": [
+      "Airline baggage desk",
+      "Fees and efficiency",
+      "Three letters often",
+      "Valid passport usually"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Budget airlines cut costs by؟",
+    "o": [
+      "Fees and efficiency",
+      "Airline baggage desk",
+      "Government fuel grants",
+      "Three letters often"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Travel insurance often covers؟",
+    "o": [
+      "Trip cancel and medical emergency",
+      "Electronic visa before travel",
+      "Airline baggage desk",
+      "Airport lounge upgrades"
+    ],
+    "a": 0
+  },
+  {
+    "q": "International travel needs؟",
+    "o": [
+      "Valid passport usually",
+      "Airline baggage desk",
+      "Domestic license alone",
+      "Fees and efficiency"
+    ],
+    "a": 0
+  },
+  {
+    "q": "IATA airport codes are؟",
+    "o": [
+      "Fees and efficiency",
+      "Valid passport usually",
+      "Three letters often",
+      "Airline baggage desk"
+    ],
+    "a": 2
   }
 ]

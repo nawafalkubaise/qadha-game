@@ -1,82 +1,82 @@
 [
   {
-    "q": "IPO means?",
+    "q": "IPO means؟",
     "o": [
       "Initial public offering",
-      "Private buyout",
-      "Merger",
-      "Bankruptcy"
+      "Brand and system license",
+      "Buying another company",
+      "How a firm makes money"
     ],
     "a": 0
   },
   {
-    "q": "Steve Jobs co-founded?",
+    "q": "Steve Jobs co-founded؟",
     "o": [
-      "Microsoft",
       "Apple",
-      "Google",
-      "Amazon"
+      "-100°C",
+      "-200°C",
+      "CO₂"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "LLC protects?",
+    "q": "LLC protects؟",
     "o": [
-      "Employees only",
-      "Owners from unlimited debt",
-      "Government",
-      "Banks only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Franchise grants?",
-    "o": [
-      "Closure",
       "Brand and system license",
-      "Liquidation",
-      "Tax exemption"
+      "Buying another company",
+      "How a firm makes money",
+      "Owners from unlimited debt"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Acquisition means?",
+    "q": "Franchise grants؟",
+    "o": [
+      "Brand and system license",
+      "Buying another company",
+      "How a firm makes money",
+      "Initial public offering"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Acquisition means؟",
     "o": [
       "Buying another company",
-      "Selling a branch",
-      "Layoffs",
-      "Bond issue"
+      "Brand and system license",
+      "How a firm makes money",
+      "Initial public offering"
     ],
     "a": 0
   },
   {
-    "q": "Business model describes?",
+    "q": "Business model describes؟",
     "o": [
-      "Building",
       "How a firm makes money",
-      "Payroll",
-      "Logo"
+      "Brand and system license",
+      "Buying another company",
+      "Initial public offering"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Free shipping often aims to?",
+    "q": "Free shipping often aims to؟",
     "o": [
-      "Reduce sales",
       "Boost conversions",
       "Raise taxes",
-      "Stop ads"
+      "Reduce sales",
+      "Amazon"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Venture capital invests in?",
+    "q": "Venture capital invests in؟",
     "o": [
-      "Only governments",
       "Startups with growth risk",
-      "Only banks",
-      "Only farms"
+      "Brand and system license",
+      "Buying another company",
+      "How a firm makes money"
     ],
-    "a": 1
+    "a": 0
   }
 ]

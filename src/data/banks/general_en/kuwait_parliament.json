@@ -1,46 +1,46 @@
 [
   {
-    "q": "Kuwait's National Assembly is the?",
+    "q": "Kuwait's National Assembly is the؟",
     "o": [
       "Legislative authority",
+      "Electoral districts",
       "Executive branch",
-      "Judiciary",
-      "Municipality"
+      "Interpellation"
     ],
     "a": 0
   },
   {
-    "q": "Usually elected assembly seats are?",
+    "q": "Usually elected assembly seats are؟",
     "o": [
+      "40",
+      "60",
       "50",
-      "30",
-      "75",
-      "100"
+      "30"
     ],
-    "a": 0
+    "a": 2
   },
   {
-    "q": "Assembly building is in?",
+    "q": "Assembly building is in؟",
     "o": [
+      "Official media",
       "Kuwait City",
-      "Jahra",
-      "Ahmadi",
-      "Fahaheel"
+      "Fahaheel",
+      "Interpellation"
     ],
-    "a": 0
+    "a": 1
   },
   {
-    "q": "A key parliamentary oversight tool is?",
+    "q": "A key parliamentary oversight tool is؟",
     "o": [
       "Interpellation",
-      "Sports arbitration",
-      "Urban zoning",
-      "Trade license"
+      "Official media",
+      "Trade license",
+      "Urban zoning"
     ],
     "a": 0
   },
   {
-    "q": "Kuwait's constitution was issued in?",
+    "q": "Kuwait's constitution was issued in؟",
     "o": [
       "1962",
       "1951",
@@ -50,32 +50,32 @@
     "a": 0
   },
   {
-    "q": "Parliamentary elections are organized by?",
+    "q": "Parliamentary elections are organized by؟",
     "o": [
       "Electoral districts",
       "Full appointments",
-      "Lottery",
-      "Private voting apps"
+      "Legislative authority",
+      "Interpellation"
     ],
     "a": 0
   },
   {
-    "q": "Assembly sessions are usually covered by?",
+    "q": "Assembly sessions are usually covered by؟",
     "o": [
+      "Billboards",
+      "Electoral districts",
       "Official media",
-      "Fax only",
-      "Mail only",
-      "Billboards"
+      "Interpellation"
     ],
-    "a": 0
+    "a": 2
   },
   {
-    "q": "Passing laws typically needs?",
+    "q": "Passing laws typically needs؟",
     "o": [
       "Assembly approval and constitutional process",
+      "A lot / very",
       "A private company vote",
-      "Municipal vote only",
-      "Club vote"
+      "Municipal vote only"
     ],
     "a": 0
   }

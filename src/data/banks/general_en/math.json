@@ -1,22 +1,202 @@
 [
-  {"q": "Sum of triangle angles?", "o": ["90°", "180°", "270°", "360°"], "a": 1},
-  {"q": "2³ equals?", "o": ["6", "8", "9", "4"], "a": 1},
-  {"q": "Which is prime?", "o": ["1", "2", "9", "15"], "a": 1},
-  {"q": "Circle circumference 2πr, r=3, π≈3.14 ~?", "o": ["9.42", "18.84", "6", "12"], "a": 1},
-  {"q": "3-4-5 triangle relates to?", "o": ["Pythagoras", "Euclid only", "Newton", "Archimedes only"], "a": 0},
-  {"q": "Any number times zero?", "o": ["1", "0", "Undefined", "Same number"], "a": 1},
-  {"q": "Mean of 2,4,6?", "o": ["3", "4", "5", "12"], "a": 1},
-  {"q": "Slope of horizontal line?", "o": ["0", "1", "Undefined", "2"], "a": 0},
-  {"q": "Square root of 144?", "o": ["12", "14", "10", "16"], "a": 0},
-  {"q": "Area of rectangle 5 × 3?", "o": ["15", "8", "16", "20"], "a": 0},
-  {"q": "10% of 200?", "o": ["20", "10", "30", "40"], "a": 0},
-  {"q": "Sum of angles in a square?", "o": ["360°", "180°", "270°", "450°"], "a": 0},
-  {"q": "5! (5 factorial) equals?", "o": ["120", "25", "60", "720"], "a": 0},
-  {"q": "Absolute value of -7?", "o": ["7", "-7", "0", "14"], "a": 0},
-  {"q": "Pi (π) approximately equals?", "o": ["3.14", "2.71", "1.61", "4.00"], "a": 0},
-  {"q": "Volume of cube with side 3 cm?", "o": ["27 cm³", "9 cm³", "18 cm³", "36 cm³"], "a": 0},
-  {"q": "Any number to the power of zero?", "o": ["1", "0", "Same number", "Undefined"], "a": 0},
-  {"q": "Sequence 2,4,8,16 is?", "o": ["Geometric", "Arithmetic", "Random", "Decreasing"], "a": 0},
-  {"q": "Perimeter of square with side 5 cm?", "o": ["20 cm", "25 cm", "15 cm", "10 cm"], "a": 0},
-  {"q": "7 × 8 equals?", "o": ["56", "48", "64", "54"], "a": 0}
+  {
+    "q": "Sum of triangle angles؟",
+    "o": [
+      "180°",
+      "178°",
+      "179°",
+      "181°"
+    ],
+    "a": 0
+  },
+  {
+    "q": "2³ equals؟",
+    "o": [
+      "8",
+      "0",
+      "1",
+      "2"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Which is prime؟",
+    "o": [
+      "0",
+      "1",
+      "4",
+      "2"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Circle circumference 2πr, r=3, π≈3.14 ~؟",
+    "o": [
+      "9.42",
+      "18.84",
+      "6",
+      "12"
+    ],
+    "a": 1
+  },
+  {
+    "q": "3-4-5 triangle relates to؟",
+    "o": [
+      "Pythagoras",
+      "Arithmetic",
+      "Euclid only",
+      "Geometric"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Any number times zero؟",
+    "o": [
+      "1",
+      "2",
+      "4",
+      "0"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Mean of 2,4,6؟",
+    "o": [
+      "0",
+      "1",
+      "2",
+      "4"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Slope of horizontal line؟",
+    "o": [
+      "2",
+      "4",
+      "0",
+      "1"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Square root of 144؟",
+    "o": [
+      "12",
+      "10",
+      "14",
+      "15"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Area of rectangle 5 × 3؟",
+    "o": [
+      "15",
+      "12",
+      "16",
+      "20"
+    ],
+    "a": 0
+  },
+  {
+    "q": "10% of 200؟",
+    "o": [
+      "20",
+      "10",
+      "12",
+      "15"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Sum of angles in a square؟",
+    "o": [
+      "360°",
+      "180°",
+      "20 cm",
+      "358°"
+    ],
+    "a": 0
+  },
+  {
+    "q": "5! (5 factorial) equals؟",
+    "o": [
+      "118",
+      "119",
+      "121",
+      "120"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Absolute value of -7؟",
+    "o": [
+      "7",
+      "0",
+      "1",
+      "2"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Pi (π) approximately equals؟",
+    "o": [
+      "3.14",
+      "1.61",
+      "2.71",
+      "4.00"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Volume of cube with side 3 cm؟",
+    "o": [
+      "27 cm³",
+      "18 cm³",
+      "36 cm³",
+      "9 cm³"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Any number to the power of zero؟",
+    "o": [
+      "0",
+      "2",
+      "4",
+      "1"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Sequence 2,4,8,16 is؟",
+    "o": [
+      "Geometric",
+      "Arithmetic",
+      "Decreasing",
+      "Pythagoras"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Perimeter of square with side 5 cm؟",
+    "o": [
+      "20 cm",
+      "10 cm",
+      "15 cm",
+      "25 cm"
+    ],
+    "a": 0
+  },
+  {
+    "q": "7 × 8 equals؟",
+    "o": [
+      "56",
+      "12",
+      "15",
+      "20"
+    ],
+    "a": 0
+  }
 ]

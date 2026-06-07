@@ -1,82 +1,82 @@
 [
   {
-    "q": "Aperture measured in?",
+    "q": "Aperture measured in؟",
     "o": [
-      "ISO",
       "f-stop",
-      "WB",
-      "FPS"
-    ],
-    "a": 1
-  },
-  {
-    "q": "ISO raises?",
-    "o": [
-      "Shutter only",
-      "Sensor sensitivity to light",
-      "Color only",
-      "Memory"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Wide-angle lens for?",
-    "o": [
-      "Telephoto",
-      "Expansive scenes",
-      "Macro only",
-      "Night only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "RAW vs JPEG?",
-    "o": [
-      "Less data",
-      "More editing latitude",
-      "Video",
-      "Audio"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Bokeh refers to?",
-    "o": [
-      "Darkness",
-      "Blurry background aesthetic",
-      "Flash",
-      "Noise"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Fast shutter freezes?",
-    "o": [
-      "Slow motion blur",
-      "Fast motion",
-      "Color",
-      "Memory"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Tripod reduces?",
-    "o": [
-      "Color",
       "Camera shake",
-      "Battery",
-      "Lens size"
+      "Expansive scenes",
+      "Fast motion"
+    ],
+    "a": 0
+  },
+  {
+    "q": "ISO raises؟",
+    "o": [
+      "Sensor sensitivity to light",
+      "Blurry background aesthetic",
+      "Shallow depth of field",
+      "More editing latitude"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Wide-angle lens for؟",
+    "o": [
+      "Macro only",
+      "Expansive scenes",
+      "Camera shake",
+      "Fast motion"
     ],
     "a": 1
   },
   {
-    "q": "Portrait mode often uses?",
+    "q": "RAW vs JPEG؟",
     "o": [
-      "Ultra-wide",
+      "More editing latitude",
       "Shallow depth of field",
-      "Fisheye",
-      "Macro"
+      "Blurry background aesthetic",
+      "Sensor sensitivity to light"
     ],
-    "a": 1
+    "a": 0
+  },
+  {
+    "q": "Bokeh refers to؟",
+    "o": [
+      "Blurry background aesthetic",
+      "Sensor sensitivity to light",
+      "Shallow depth of field",
+      "More editing latitude"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Fast shutter freezes؟",
+    "o": [
+      "Fast motion",
+      "Camera shake",
+      "Expansive scenes",
+      "f-stop"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tripod reduces؟",
+    "o": [
+      "Fast motion",
+      "Expansive scenes",
+      "Lens size",
+      "Camera shake"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Portrait mode often uses؟",
+    "o": [
+      "Shallow depth of field",
+      "Blurry background aesthetic",
+      "More editing latitude",
+      "Sensor sensitivity to light"
+    ],
+    "a": 0
   }
 ]

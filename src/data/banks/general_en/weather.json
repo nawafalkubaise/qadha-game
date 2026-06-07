@@ -1,82 +1,82 @@
 [
   {
-    "q": "Richter scale measures?",
+    "q": "Richter scale measures؟",
     "o": [
-      "Wind",
       "Earthquake magnitude",
-      "Rain",
-      "Temperature"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Atlantic hurricane name?",
-    "o": [
-      "Typhoon",
-      "Hurricane",
-      "Monsoon",
-      "Dust devil"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Anemometer measures?",
-    "o": [
-      "Pressure",
-      "Wind speed",
-      "Humidity",
-      "Lightning"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Lightning vs sound which faster?",
-    "o": [
-      "Sound",
-      "Light",
-      "Same",
-      "Neither"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Low pressure often brings?",
-    "o": [
+      "-273.15°C",
       "Always dry",
-      "Clouds and rain possible",
-      "Only polar snow",
-      "Nothing"
-    ],
-    "a": 1
-  },
-  {
-    "q": "100% humidity near?",
-    "o": [
-      "Saturation",
-      "Total dryness",
-      "Freezing",
-      "Zero rain"
+      "At ground"
     ],
     "a": 0
   },
   {
-    "q": "Fog is cloud?",
+    "q": "Atlantic hurricane name؟",
     "o": [
-      "High",
-      "At ground",
-      "Space",
-      "Ocean"
+      "Hurricane",
+      "-273.15°C",
+      "Always dry",
+      "At ground"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Absolute zero Kelvin 0 equals?",
+    "q": "Anemometer measures؟",
     "o": [
-      "0°C",
       "-273.15°C",
-      "100°C",
-      "32°F"
+      "Always dry",
+      "At ground",
+      "Wind speed"
     ],
-    "a": 1
+    "a": 3
+  },
+  {
+    "q": "Lightning vs sound which faster؟",
+    "o": [
+      "Light",
+      "-100°C",
+      "Same",
+      "Sound"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Low pressure often brings؟",
+    "o": [
+      "Clouds and rain possible",
+      "Often no symptoms",
+      "Only polar snow",
+      "Three letters often"
+    ],
+    "a": 0
+  },
+  {
+    "q": "100% humidity near؟",
+    "o": [
+      "-273.15°C",
+      "At ground",
+      "Freezing",
+      "Saturation"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Fog is cloud؟",
+    "o": [
+      "At ground",
+      "-273.15°C",
+      "Always dry",
+      "Hurricane"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Absolute zero Kelvin 0 equals؟",
+    "o": [
+      "-273.15°C",
+      "At ground",
+      "Hurricane",
+      "Saturation"
+    ],
+    "a": 0
   }
 ]

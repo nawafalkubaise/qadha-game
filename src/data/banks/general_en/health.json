@@ -1,82 +1,82 @@
 [
   {
-    "q": "Daily fluid intake guideline ~?",
+    "q": "Daily fluid intake guideline ~؟",
     "o": [
-      "0.5 L",
       "~2 L including drinks",
-      "5 L",
-      "10 L"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Adult sleep typically?",
-    "o": [
-      "3-4 h",
-      "7-9 h",
-      "12 h",
-      "1 h"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Vitamin D important for?",
-    "o": [
-      "Hair only",
       "Bones and immunity",
-      "Nails only",
-      "Skin only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Resting heart rate adult ~?",
-    "o": [
-      "40",
-      "60-100 bpm",
-      "150",
-      "20"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Type 2 diabetes prevention includes?",
-    "o": [
-      "Inactivity",
       "Diet and exercise",
-      "Smoking",
-      "Sugar only"
+      "Often no symptoms"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Vaccines train?",
+    "q": "Adult sleep typically؟",
     "o": [
-      "Lymph production schedule",
+      "12 h",
+      "3-4 h",
+      "1 h",
+      "7-9 h"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Vitamin D important for؟",
+    "o": [
+      "Bones and immunity",
+      "Diet and exercise",
+      "~2 L including drinks",
+      "Often no symptoms"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Resting heart rate adult ~؟",
+    "o": [
+      "60-100 bpm",
       "Immune system",
-      "Digestive enzyme mix",
-      "Resting heart rhythm"
+      "1 h",
+      "7-9 h"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Hypertension called silent because?",
+    "q": "Type 2 diabetes prevention includes؟",
     "o": [
-      "Loud",
+      "~2 L including drinks",
       "Often no symptoms",
-      "Ear pain",
-      "Instant pain"
+      "Diet and exercise",
+      "Bones and immunity"
     ],
-    "a": 1
+    "a": 2
   },
   {
-    "q": "Handwashing reduces?",
+    "q": "Vaccines train؟",
     "o": [
-      "Sunburn",
-      "Infectious spread",
-      "Lightning",
-      "Earthquakes"
+      "Immune system",
+      "Earthquakes",
+      "60-100 bpm",
+      "Infectious spread"
     ],
-    "a": 1
+    "a": 0
+  },
+  {
+    "q": "Hypertension called silent because؟",
+    "o": [
+      "~2 L including drinks",
+      "Bones and immunity",
+      "Diet and exercise",
+      "Often no symptoms"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Handwashing reduces؟",
+    "o": [
+      "Infectious spread",
+      "Earthquakes",
+      "Immune system",
+      "60-100 bpm"
+    ],
+    "a": 0
   }
 ]

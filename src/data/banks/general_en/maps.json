@@ -1,82 +1,82 @@
 [
   {
-    "q": "Capital of Japan?",
+    "q": "Capital of Japan؟",
     "o": [
-      "Osaka",
       "Tokyo",
-      "Kyoto",
-      "Yokohama"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Capital of Canada?",
-    "o": [
-      "Toronto",
-      "Ottawa",
-      "Vancouver",
-      "Montreal"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Executive capital of South Africa (one)?",
-    "o": [
-      "Cape Town",
-      "Pretoria",
-      "Johannesburg",
-      "Durban"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Capital of Australia?",
-    "o": [
-      "Sydney",
-      "Canberra",
-      "Melbourne",
-      "Perth"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Capital of Brazil?",
-    "o": [
-      "Rio",
-      "Brasília",
-      "São Paulo",
-      "Salvador"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Administrative capital of Switzerland?",
-    "o": [
-      "Zurich",
-      "Bern",
-      "Geneva",
-      "Basel"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Capital of Turkey?",
-    "o": [
-      "Istanbul",
       "Ankara",
-      "Izmir",
-      "Antalya"
+      "Basel",
+      "Bern"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Capital of Argentina?",
+    "q": "Capital of Canada؟",
     "o": [
-      "Córdoba",
-      "Buenos Aires",
-      "Mendoza",
-      "Rosario"
+      "Ankara",
+      "Antalya",
+      "Tokyo",
+      "Ottawa"
     ],
-    "a": 1
+    "a": 3
+  },
+  {
+    "q": "Executive capital of South Africa (one)؟",
+    "o": [
+      "Pretoria",
+      "Brasília",
+      "Canberra",
+      "Cape Town"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Capital of Australia؟",
+    "o": [
+      "Canberra",
+      "Brasília",
+      "Melbourne",
+      "Pretoria"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Capital of Brazil؟",
+    "o": [
+      "Canberra",
+      "Pretoria",
+      "Salvador",
+      "Brasília"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Administrative capital of Switzerland؟",
+    "o": [
+      "Bern",
+      "Basel",
+      "Izmir",
+      "Tokyo"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Capital of Turkey؟",
+    "o": [
+      "Ankara",
+      "Antalya",
+      "Ottawa",
+      "Tokyo"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Capital of Argentina؟",
+    "o": [
+      "Buenos Aires",
+      "Brasília",
+      "Canberra",
+      "Pretoria"
+    ],
+    "a": 0
   }
 ]

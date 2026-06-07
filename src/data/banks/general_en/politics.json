@@ -1,81 +1,81 @@
 [
   {
-    "q": "UN headquarters main site?",
+    "q": "UN headquarters main site؟",
     "o": [
-      "Geneva",
       "New York",
-      "The Hague",
-      "Vienna"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Permanent UNSC members (five)?",
-    "o": [
-      "NATO only",
-      "China France Russia UK USA",
-      "EU only",
-      "G20"
-    ],
-    "a": 1
-  },
-  {
-    "q": "EU institutional hub often cited?",
-    "o": [
-      "Paris",
       "Brussels",
-      "Berlin",
-      "Rome"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Cold War mainly between?",
-    "o": [
-      "US and Japan",
-      "US and Soviet Union",
-      "France and Germany",
-      "China and India"
-    ],
-    "a": 1
-  },
-  {
-    "q": "NATO was founded for?",
-    "o": [
-      "Trade",
-      "Collective defense",
-      "Environment",
-      "Health"
-    ],
-    "a": 1
-  },
-  {
-    "q": "First female UK Prime Minister?",
-    "o": [
       "Thatcher",
-      "Merkel",
-      "May",
-      "Truss"
+      "The Hague"
     ],
     "a": 0
   },
   {
-    "q": "Soviet Union dissolved in?",
+    "q": "Permanent UNSC members (five)؟",
     "o": [
-      "1989",
-      "1991",
-      "1995",
-      "2001"
+      "China France Russia UK USA",
+      "Five times daily",
+      "US and Soviet Union",
+      "US and Japan"
+    ],
+    "a": 0
+  },
+  {
+    "q": "EU institutional hub often cited؟",
+    "o": [
+      "Brussels",
+      "New York",
+      "Thatcher",
+      "Berlin"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Cold War mainly between؟",
+    "o": [
+      "France and Germany",
+      "US and Japan",
+      "China and India",
+      "US and Soviet Union"
+    ],
+    "a": 3
+  },
+  {
+    "q": "NATO was founded for؟",
+    "o": [
+      "Health",
+      "Collective defense",
+      "Environment",
+      "Brussels"
     ],
     "a": 1
   },
   {
-    "q": "OPEC focuses on?",
+    "q": "First female UK Prime Minister؟",
+    "o": [
+      "Brussels",
+      "New York",
+      "Merkel",
+      "Thatcher"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Soviet Union dissolved in؟",
+    "o": [
+      "1991",
+      "1989",
+      "1995",
+      "2001"
+    ],
+    "a": 0
+  },
+  {
+    "q": "OPEC focuses on؟",
     "o": [
       "Oil",
-      "Natural gas only",
-      "Nuclear",
-      "Coal"
+      "Coal",
+      "-100°C",
+      "-200°C"
     ],
     "a": 0
   }

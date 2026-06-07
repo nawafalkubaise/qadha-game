@@ -1,82 +1,82 @@
 [
   {
-    "q": "Telephone credited to?",
+    "q": "Telephone credited to؟",
     "o": [
-      "Edison",
-      "Bell",
       "Tesla",
-      "Marconi"
+      "-100°C",
+      "-200°C",
+      "Bell"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Steam engine improved industrially by?",
+    "q": "Steam engine improved industrially by؟",
     "o": [
-      "Newton",
+      "ARPANET",
+      "Edison",
       "James Watt",
-      "Faraday",
-      "Edison"
+      "Gutenberg"
     ],
-    "a": 1
+    "a": 2
   },
   {
-    "q": "Movable-type printing Europe?",
+    "q": "Movable-type printing Europe؟",
     "o": [
       "Gutenberg",
-      "Shakespeare",
       "Columbus",
-      "Galileo"
+      "James Watt",
+      "Shakespeare"
     ],
     "a": 0
   },
   {
-    "q": "Penicillin by?",
+    "q": "Penicillin by؟",
     "o": [
       "Fleming",
-      "Pasteur",
-      "Koch",
-      "Einstein"
+      "ARPANET",
+      "Einstein",
+      "Pasteur"
     ],
     "a": 0
   },
   {
-    "q": "Internet roots in?",
+    "q": "Internet roots in؟",
     "o": [
       "ARPANET",
       "Facebook",
-      "Google",
-      "Apple"
+      "Fleming",
+      "Google"
     ],
     "a": 0
   },
   {
-    "q": "Wright brothers first powered flight?",
+    "q": "Wright brothers first powered flight؟",
     "o": [
-      "1903",
       "1910",
-      "1890",
-      "1920"
+      "1920",
+      "1903",
+      "1890"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Microwave oven discovery linked to؟",
+    "o": [
+      "Radar research",
+      "Cooking show",
+      "Edison (development)",
+      "Gutenberg"
     ],
     "a": 0
   },
   {
-    "q": "Microwave oven discovery linked to?",
+    "q": "Light bulb commercialized notably by؟",
     "o": [
-      "Cooking show",
-      "Radar research",
-      "TV",
-      "Phone"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Light bulb commercialized notably by?",
-    "o": [
-      "Tesla only",
       "Edison (development)",
-      "Newton",
-      "Marconi"
+      "Radar research",
+      "ARPANET",
+      "Bell"
     ],
-    "a": 1
+    "a": 0
   }
 ]

@@ -1,22 +1,202 @@
 [
-  {"q": "Gandhi led independence movement in?", "o": ["Pakistan", "India", "Sri Lanka", "Nepal"], "a": 1},
-  {"q": "Nelson Mandela first Black president of?", "o": ["Kenya", "South Africa", "Nigeria", "Ghana"], "a": 1},
-  {"q": "Churchill UK PM during?", "o": ["WWI only", "WWII", "Vietnam War", "Gulf War"], "a": 1},
-  {"q": "Napoleon crowned Emperor of?", "o": ["Spain", "France", "Russia", "Italy"], "a": 1},
-  {"q": "Queen Elizabeth II died in?", "o": ["2016", "2022", "2025", "2010"], "a": 1},
-  {"q": "Martin Luther King Jr. famous speech?", "o": ["I hate war", "I Have a Dream", "Go backward", "Stay silent"], "a": 1},
-  {"q": "Che Guevara linked to revolution in?", "o": ["Cuba", "Chile only", "Mexico only", "Brazil"], "a": 0},
-  {"q": "Anwar Sadat peace treaty with?", "o": ["Syria", "Israel", "Iraq", "Turkey"], "a": 1},
-  {"q": "Gamal Abdel Nasser was president of?", "o": ["Egypt", "Syria", "Iraq", "Jordan"], "a": 0},
-  {"q": "Abraham Lincoln abolished?", "o": ["Slavery in America", "Taxes", "The army", "Education"], "a": 0},
-  {"q": "Alexander the Great was king of?", "o": ["Macedonia", "Rome", "Persia", "Egypt"], "a": 0},
-  {"q": "Saladin liberated Jerusalem in?", "o": ["1187", "1200", "1100", "1250"], "a": 0},
-  {"q": "King Abdulaziz founded?", "o": ["Saudi Arabia", "Kuwait", "Bahrain", "Qatar"], "a": 0},
-  {"q": "Ataturk founded modern?", "o": ["Turkey", "Iran", "Egypt", "Iraq"], "a": 0},
-  {"q": "Cleopatra ruled?", "o": ["Ancient Egypt", "Rome", "Greece", "Persia"], "a": 0},
-  {"q": "Mao Zedong founded?", "o": ["People's Republic of China", "Vietnam", "Korea", "Mongolia"], "a": 0},
-  {"q": "Fidel Castro ruled?", "o": ["Cuba", "Venezuela", "Bolivia", "Argentina"], "a": 0},
-  {"q": "George Washington was the first president of?", "o": ["United States", "France", "UK", "Canada"], "a": 0},
-  {"q": "Julius Caesar was assassinated in?", "o": ["44 BC", "100 BC", "27 BC", "AD 14"], "a": 0},
-  {"q": "Angela Merkel was chancellor of?", "o": ["Germany", "France", "Austria", "Switzerland"], "a": 0}
+  {
+    "q": "Gandhi led independence movement in؟",
+    "o": [
+      "44 BC",
+      "Cuba",
+      "Egypt",
+      "India"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Nelson Mandela first Black president of؟",
+    "o": [
+      "South Africa",
+      "Ancient Egypt",
+      "Saudi Arabia",
+      "United States"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Churchill UK PM during؟",
+    "o": [
+      "WWII",
+      "44 BC",
+      "Cuba",
+      "Egypt"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Napoleon crowned Emperor of؟",
+    "o": [
+      "France",
+      "44 BC",
+      "Austria",
+      "Egypt"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Queen Elizabeth II died in؟",
+    "o": [
+      "2022",
+      "1187",
+      "2010",
+      "2016"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Martin Luther King Jr. famous speech؟",
+    "o": [
+      "I Have a Dream",
+      "I hate war",
+      "Slavery in America",
+      "People's Republic of China"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Che Guevara linked to revolution in؟",
+    "o": [
+      "Cuba",
+      "44 BC",
+      "Egypt",
+      "India"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Anwar Sadat peace treaty with؟",
+    "o": [
+      "44 BC",
+      "Austria",
+      "Egypt",
+      "Israel"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Gamal Abdel Nasser was president of؟",
+    "o": [
+      "Egypt",
+      "44 BC",
+      "Cuba",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Abraham Lincoln abolished؟",
+    "o": [
+      "Slavery in America",
+      "I Have a Dream",
+      "People's Republic of China",
+      "I hate war"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Alexander the Great was king of؟",
+    "o": [
+      "Macedonia",
+      "Ancient Egypt",
+      "France",
+      "Germany"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Saladin liberated Jerusalem in؟",
+    "o": [
+      "1187",
+      "1100",
+      "1200",
+      "1250"
+    ],
+    "a": 0
+  },
+  {
+    "q": "King Abdulaziz founded؟",
+    "o": [
+      "Saudi Arabia",
+      "Ancient Egypt",
+      "South Africa",
+      "United States"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Ataturk founded modern؟",
+    "o": [
+      "44 BC",
+      "Austria",
+      "Egypt",
+      "Turkey"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Cleopatra ruled؟",
+    "o": [
+      "Saudi Arabia",
+      "South Africa",
+      "United States",
+      "Ancient Egypt"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Mao Zedong founded؟",
+    "o": [
+      "People's Republic of China",
+      "Slavery in America",
+      "I hate war",
+      "I Have a Dream"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Fidel Castro ruled؟",
+    "o": [
+      "Cuba",
+      "44 BC",
+      "Egypt",
+      "India"
+    ],
+    "a": 0
+  },
+  {
+    "q": "George Washington was the first president of؟",
+    "o": [
+      "United States",
+      "Ancient Egypt",
+      "Saudi Arabia",
+      "South Africa"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Julius Caesar was assassinated in؟",
+    "o": [
+      "44 BC",
+      "27 BC",
+      "AD 14",
+      "Cuba"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Angela Merkel was chancellor of؟",
+    "o": [
+      "Germany",
+      "Austria",
+      "France",
+      "Israel"
+    ],
+    "a": 0
+  }
 ]

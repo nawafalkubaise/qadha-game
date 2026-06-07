@@ -1,81 +1,81 @@
 [
   {
-    "q": "Naruto about?",
-    "o": [
-      "Pirates",
-      "Ninjas",
-      "Samurai",
-      "Space"
-    ],
-    "a": 1
-  },
-  {
-    "q": "One Piece about?",
-    "o": [
-      "Ninjas",
-      "Pirates",
-      "Soccer",
-      "School"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Dragon Ball by?",
-    "o": [
-      "Oda",
-      "Toriyama",
-      "Kishimoto",
-      "Togashi"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Death Note kills by?",
-    "o": [
-      "Sword",
-      "Writing name",
-      "Poison",
-      "Stare"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Attack on Titan Japanese title genre?",
-    "o": [
-      "Naruto",
-      "Shingeki no Kyojin",
-      "Bleach",
-      "One Piece"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Slam Dunk sport?",
-    "o": [
-      "Soccer",
-      "Basketball",
-      "Swimming",
-      "Tennis"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Detective Conan shrunk by?",
-    "o": [
-      "Magic",
-      "Poison",
-      "Dream",
-      "Training"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Hayao Miyazaki tied to?",
+    "q": "Naruto about؟",
     "o": [
       "Ghibli",
-      "Shonen Jump",
-      "Disney only",
-      "Fox Kids"
+      "Pirates",
+      "Poison",
+      "Ninjas"
+    ],
+    "a": 3
+  },
+  {
+    "q": "One Piece about؟",
+    "o": [
+      "Pirates",
+      "Ghibli",
+      "Ninjas",
+      "Poison"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Dragon Ball by؟",
+    "o": [
+      "Toriyama",
+      "Basketball",
+      "Kishimoto",
+      "Pirates"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Death Note kills by؟",
+    "o": [
+      "Basketball",
+      "Toriyama",
+      "Ghibli",
+      "Writing name"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Attack on Titan Japanese title genre؟",
+    "o": [
+      "A Nightmare on Elm Street",
+      "Crescent and star on green and white",
+      "Shingeki no Kyojin",
+      "Three on face"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Slam Dunk sport؟",
+    "o": [
+      "Basketball",
+      "Swimming",
+      "Toriyama",
+      "Writing name"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Detective Conan shrunk by؟",
+    "o": [
+      "Poison",
+      "Bleach",
+      "Ghibli",
+      "Ninjas"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Hayao Miyazaki tied to؟",
+    "o": [
+      "Ghibli",
+      "Ninjas",
+      "Pirates",
+      "Poison"
     ],
     "a": 0
   }

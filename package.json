@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "prepare": "node scripts/setup-git-hooks.mjs",
     "dev:server": "node server/index.mjs",
     "dev": "concurrently -n server,web -c blue,green \"npm run dev:server\" \"vite\"",
     "dev:client": "vite",
@@ -26,10 +27,14 @@
     "banks:validate": "node scripts/question-bank-tool.mjs validate-all",
     "verify:questions": "node scripts/verify-question-counts.mjs",
     "verify:questions:deep": "node scripts/verify-questions-deep.mjs",
+    "questions:enforce": "node scripts/enforce-question-quality.mjs",
+    "questions:quality": "node scripts/validate-question-quality.mjs",
+    "questions:guard:20": "node scripts/question-guard-20x.mjs",
     "audit:distractors": "node scripts/audit-distractors-quality.mjs",
     "tag:kwbank": "node scripts/tag-kwbank-core.mjs",
     "import:kuwait": "node scripts/import-kuwait-text-questions.mjs",
     "refine:kuwait:distractors": "node scripts/refine-imported-distractors.mjs",
+    "questions:guard": "npm run questions:enforce && npm run questions:quality",
     "verify:dialect:equiv": "node scripts/dialect-equivalence-smoke.mjs",
     "fetch:malls": "node scripts/fetch-mall-assets.mjs",
     "fetch:restaurants": "node scripts/fetch-restaurant-assets.mjs",
@@ -38,6 +43,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "localtunnel": "^2.0.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },
@@ -54,4 +60,3 @@
     "vite": "^8.0.1"
   }
 }
-

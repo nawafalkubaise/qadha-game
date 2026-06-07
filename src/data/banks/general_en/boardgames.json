@@ -1,82 +1,82 @@
 [
   {
-    "q": "Chess board squares?",
+    "q": "Chess board squares؟",
     "o": [
       "64",
-      "81",
-      "100",
-      "49"
+      "38",
+      "51",
+      "77"
     ],
     "a": 0
   },
   {
-    "q": "Monopoly theme?",
+    "q": "Monopoly theme؟",
     "o": [
-      "Cooking",
       "Real estate trading",
-      "Sports",
-      "Space"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Scrabble uses?",
-    "o": [
-      "Numbers",
-      "Letter tiles",
-      "Colors",
-      "Dance"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Risk uses?",
-    "o": [
-      "Cards only",
       "Dice and world map",
-      "Screen",
-      "Ball"
+      "Murder mystery deduction",
+      "Startups with growth risk"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Go originated in?",
+    "q": "Scrabble uses؟",
     "o": [
-      "Europe",
+      "Letter tiles",
+      "Tabletop RPG",
+      "Wooden blocks",
+      "East Asia"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Risk uses؟",
+    "o": [
+      "Dice and world map",
+      "Real estate trading",
+      "Murder mystery deduction",
+      "Startups with growth risk"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Go originated in؟",
+    "o": [
       "East Asia",
-      "USA",
+      "Europe",
+      "Letter tiles",
       "South Africa"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Dungeons & Dragons is?",
+    "q": "Dungeons & Dragons is؟",
     "o": [
-      "Board race",
       "Tabletop RPG",
-      "Cooking",
-      "Music"
+      "Board race",
+      "Letter tiles",
+      "Wooden blocks"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Jenga pieces?",
+    "q": "Jenga pieces؟",
     "o": [
-      "Plastic",
       "Wooden blocks",
-      "Metal",
-      "Glass"
+      "Letter tiles",
+      "Tabletop RPG",
+      "East Asia"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Clue/Cluedo is?",
+    "q": "Clue/Cluedo is؟",
     "o": [
-      "Soccer",
       "Murder mystery deduction",
-      "Chess",
-      "Poker"
+      "Startups with growth risk",
+      "Dice and world map",
+      "Real estate trading"
     ],
-    "a": 1
+    "a": 0
   }
 ]

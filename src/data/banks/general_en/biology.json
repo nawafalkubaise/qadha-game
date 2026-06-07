@@ -1,82 +1,82 @@
 [
   {
-    "q": "DNA stands for?",
+    "q": "DNA stands for؟",
     "o": [
-      "Deoxyribonucleic acid",
-      "Ribonucleic acid",
       "Dipeptide nucleotide",
-      "Amino-acid helix"
+      "Ribonucleic acid",
+      "1.4 kg",
+      "Deoxyribonucleic acid"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Largest cell in human body؟",
+    "o": [
+      "Sunlight",
+      "1.4 kg",
+      "Cell",
+      "Egg cell"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Photosynthesis needs؟",
+    "o": [
+      "Sunlight",
+      "Egg cell",
+      "1.4 kg",
+      "Chlorophyll"
     ],
     "a": 0
   },
   {
-    "q": "Largest cell in human body?",
+    "q": "Humans have how many chromosomes؟",
     "o": [
-      "Neuron",
-      "Red blood cell",
-      "Egg cell",
-      "White blood cell"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Photosynthesis needs?",
-    "o": [
-      "Complete darkness",
-      "Sunlight",
-      "Frozen ground",
-      "CO₂ alone without light"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Humans have how many chromosomes?",
-    "o": [
-      "23",
       "46",
-      "48",
-      "44"
+      "23",
+      "44",
+      "48"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Mitochondria is the?",
+    "q": "Mitochondria is the؟",
     "o": [
-      "Brain",
+      "Amino-acid helix",
       "Powerhouse of cell",
-      "Wall",
-      "Nucleus"
+      "A lot / very",
+      "A Nightmare on Elm Street"
     ],
     "a": 1
   },
   {
-    "q": "Plants are green because of?",
+    "q": "Plants are green because of؟",
     "o": [
-      "Water",
+      "1.4 kg",
       "Chlorophyll",
-      "Soil",
+      "Egg cell",
       "Sunlight"
     ],
     "a": 1
   },
   {
-    "q": "Smallest unit of life?",
+    "q": "Smallest unit of life؟",
     "o": [
-      "Atom",
-      "Molecule",
       "Cell",
+      "Atom",
+      "Brain",
       "Organ"
     ],
-    "a": 2
+    "a": 0
   },
   {
-    "q": "Human brain weighs about?",
+    "q": "Human brain weighs about؟",
     "o": [
-      "0.5 kg",
       "1.4 kg",
+      "0.5 kg",
       "3 kg",
       "5 kg"
     ],
-    "a": 1
+    "a": 0
   }
 ]

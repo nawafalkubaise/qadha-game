@@ -1,81 +1,81 @@
 [
   {
-    "q": "A well-known cafe-heavy area is?",
+    "q": "A well-known cafe-heavy area is؟",
     "o": [
       "Salmiya",
-      "Wafra only",
-      "Islands only",
+      "Coffee",
+      "Social",
       "Abdali only"
     ],
     "a": 0
   },
   {
-    "q": "Most common cafe drink is?",
+    "q": "Most common cafe drink is؟",
     "o": [
       "Coffee",
-      "Soup",
-      "Broth",
-      "Milk only"
+      "Salmiya",
+      "Social",
+      "Cold drink"
     ],
     "a": 0
   },
   {
-    "q": "Waterfront cafes are common near?",
+    "q": "Waterfront cafes are common near؟",
     "o": [
       "Marina and corniche",
-      "Industrial zones only",
-      "Airport",
-      "Farms"
+      "Food and dining zones",
+      "Wi-Fi and seating",
+      "Industrial zones only"
     ],
     "a": 0
   },
   {
-    "q": "Cafe gatherings are usually?",
+    "q": "Cafe gatherings are usually؟",
     "o": [
       "Social",
-      "Judicial",
+      "Coffee",
       "Medical",
-      "Athletic only"
+      "Salmiya"
     ],
     "a": 0
   },
   {
-    "q": "Mall cafes are usually in?",
-    "o": [
-      "Food and dining zones",
-      "Warehouses",
-      "Parking lots",
-      "Roof only"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Specialty cafe growth is tied to?",
+    "q": "Mall cafes are usually in؟",
     "o": [
       "Modern coffee culture",
-      "Agriculture",
-      "Fishing",
-      "Aviation"
+      "Food and dining zones",
+      "Marina and corniche",
+      "Wi-Fi and seating"
     ],
-    "a": 0
+    "a": 1
   },
   {
-    "q": "Iced latte is a?",
+    "q": "Specialty cafe growth is tied to؟",
     "o": [
-      "Cold drink",
-      "Dessert",
-      "Main dish",
-      "Salad"
+      "Marina and corniche",
+      "Wi-Fi and seating",
+      "Modern coffee culture",
+      "Food and dining zones"
     ],
-    "a": 0
+    "a": 2
   },
   {
-    "q": "Studying in cafes is common due to?",
+    "q": "Iced latte is a؟",
+    "o": [
+      "Main dish",
+      "Coffee",
+      "Dessert",
+      "Cold drink"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Studying in cafes is common due to؟",
     "o": [
       "Wi-Fi and seating",
-      "Olympic pools",
-      "Labs",
-      "Hospitals"
+      "Food and dining zones",
+      "Marina and corniche",
+      "Modern coffee culture"
     ],
     "a": 0
   }

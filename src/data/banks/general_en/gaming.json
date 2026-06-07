@@ -1,82 +1,82 @@
 [
   {
-    "q": "Minecraft originally by?",
+    "q": "Minecraft originally by؟",
     "o": [
-      "Mojang",
+      "Ubisoft",
       "Blizzard",
-      "EA",
-      "Ubisoft"
+      "Mojang",
+      "MMORPG"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Mario franchise owner؟",
+    "o": [
+      "Nintendo",
+      "Epic Games",
+      "Microsoft",
+      "Battle royale"
     ],
     "a": 0
   },
   {
-    "q": "Mario franchise owner?",
+    "q": "Fortnite by؟",
     "o": [
-      "Sony",
-      "Nintendo",
-      "Microsoft",
-      "Sega"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Fortnite by?",
-    "o": [
-      "Activision",
       "Epic Games",
-      "Rockstar",
-      "Valve"
+      "Activision",
+      "Nintendo",
+      "Rockstar"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "PlayStation 2 launched ~?",
+    "q": "PlayStation 2 launched ~؟",
     "o": [
-      "1998",
       "2000",
+      "1998",
       "2005",
       "2010"
     ],
-    "a": 1
-  },
-  {
-    "q": "World of Warcraft is?",
-    "o": [
-      "MMORPG",
-      "Racing",
-      "FPS only",
-      "Puzzle"
-    ],
     "a": 0
   },
   {
-    "q": "PUBG genre?",
+    "q": "World of Warcraft is؟",
     "o": [
-      "Battle royale",
+      "Mojang",
       "Puzzle",
-      "Flight sim",
-      "Soccer"
+      "Racing",
+      "MMORPG"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "Steam is a?",
+    "q": "PUBG genre؟",
+    "o": [
+      "Epic Games",
+      "Flight sim",
+      "Nintendo",
+      "Battle royale"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Steam is a؟",
     "o": [
       "Valve game store",
-      "Microsoft OS",
-      "Apple phone",
-      "Google search"
+      "A lot / very",
+      "A Nightmare on Elm Street",
+      "A private company vote"
     ],
     "a": 0
   },
   {
-    "q": "3DS handheld by?",
+    "q": "3DS handheld by؟",
     "o": [
-      "Sony",
       "Nintendo",
-      "Sega",
-      "Atari"
+      "Activision",
+      "Epic Games",
+      "Battle royale"
     ],
-    "a": 1
+    "a": 0
   }
 ]

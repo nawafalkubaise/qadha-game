@@ -1,22 +1,202 @@
 [
-  {"q": "Rio Carnival is famous in?", "o": ["Argentina", "Brazil", "Chile", "Venezuela"], "a": 1},
-  {"q": "UN Arabic Language Day is?", "o": ["18 December", "21 February", "15 September", "4 June"], "a": 0},
-  {"q": "Halloween traces roots to?", "o": ["Ancient Celtic festivals", "Roman only", "Chinese only", "Indian only"], "a": 0},
-  {"q": "Diwali is a major festival in?", "o": ["Buddhism only", "Hinduism", "Islam only", "Shinto only"], "a": 1},
-  {"q": "Samba is strongly tied to?", "o": ["Argentina", "Brazil", "Cuba", "Mexico"], "a": 1},
-  {"q": "Kimono is traditional dress from?", "o": ["China", "Korea", "Japan", "Vietnam"], "a": 2},
-  {"q": "International Museum Day?", "o": ["18 May", "12 April", "7 March", "1 November"], "a": 0},
-  {"q": "K-pop refers to pop culture from?", "o": ["Japan", "South Korea", "China", "Thailand"], "a": 1},
-  {"q": "Tango originated in?", "o": ["Argentina", "Spain", "Portugal", "France"], "a": 0},
-  {"q": "Cannes Film Festival is held in?", "o": ["France", "Italy", "USA", "UK"], "a": 0},
-  {"q": "UNESCO focuses on?", "o": ["Education culture and science", "Trade only", "Military", "Banking"], "a": 0},
-  {"q": "Hanbok is traditional dress from?", "o": ["Korea", "Japan", "China", "Vietnam"], "a": 0},
-  {"q": "Oktoberfest is famous in?", "o": ["Germany", "France", "Italy", "UK"], "a": 0},
-  {"q": "Holi festival of colors is celebrated in?", "o": ["India", "China", "Japan", "Korea"], "a": 0},
-  {"q": "Venice Carnival is famous for?", "o": ["Masks", "Fireworks only", "Horse racing", "Painting"], "a": 0},
-  {"q": "Anime and manga originated in?", "o": ["Japan", "Korea", "China", "USA"], "a": 0},
-  {"q": "Flamenco art combines?", "o": ["Dance singing and guitar", "Swimming and diving", "Boxing and wrestling", "Cooking and sewing"], "a": 0},
-  {"q": "Chinese New Year follows?", "o": ["Lunar calendar", "Solar calendar only", "Hijri calendar", "No calendar"], "a": 0},
-  {"q": "International Women's Day?", "o": ["8 March", "14 February", "1 January", "25 December"], "a": 0},
-  {"q": "Day of the Dead is celebrated in?", "o": ["Mexico", "Spain", "Brazil", "Cuba"], "a": 0}
+  {
+    "q": "Rio Carnival is famous in؟",
+    "o": [
+      "Brazil",
+      "18 May",
+      "8 March",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "UN Arabic Language Day is؟",
+    "o": [
+      "18 December",
+      "15 September",
+      "21 February",
+      "Argentina"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Halloween traces roots to؟",
+    "o": [
+      "Ancient Celtic festivals",
+      "Boxing and wrestling",
+      "Dance singing and guitar",
+      "Education culture and science"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Diwali is a major festival in؟",
+    "o": [
+      "Germany",
+      "Hinduism",
+      "8 March",
+      "Argentina"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Samba is strongly tied to؟",
+    "o": [
+      "Brazil",
+      "18 May",
+      "8 March",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Kimono is traditional dress from؟",
+    "o": [
+      "-273°C",
+      "18 May",
+      "Brazil",
+      "Japan"
+    ],
+    "a": 3
+  },
+  {
+    "q": "International Museum Day؟",
+    "o": [
+      "18 May",
+      "7 March",
+      "8 March",
+      "Brazil"
+    ],
+    "a": 0
+  },
+  {
+    "q": "K-pop refers to pop culture from؟",
+    "o": [
+      "South Korea",
+      "18 December",
+      "Argentina",
+      "Chinese only"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tango originated in؟",
+    "o": [
+      "Argentina",
+      "18 December",
+      "Hinduism",
+      "Portugal"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Cannes Film Festival is held in؟",
+    "o": [
+      "Brazil",
+      "France",
+      "18 May",
+      "8 March"
+    ],
+    "a": 1
+  },
+  {
+    "q": "UNESCO focuses on؟",
+    "o": [
+      "Boxing and wrestling",
+      "Education culture and science",
+      "Dance singing and guitar",
+      "Ancient Celtic festivals"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Hanbok is traditional dress from؟",
+    "o": [
+      "Korea",
+      "-273°C",
+      "18 May",
+      "Brazil"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Oktoberfest is famous in؟",
+    "o": [
+      "18 May",
+      "8 March",
+      "Brazil",
+      "Germany"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Holi festival of colors is celebrated in؟",
+    "o": [
+      "India",
+      "-273°C",
+      "18 May",
+      "Brazil"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Venice Carnival is famous for؟",
+    "o": [
+      "Brazil",
+      "Masks",
+      "-273°C",
+      "18 May"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Anime and manga originated in؟",
+    "o": [
+      "-273°C",
+      "18 May",
+      "Brazil",
+      "Japan"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Flamenco art combines؟",
+    "o": [
+      "Dance singing and guitar",
+      "Boxing and wrestling",
+      "Education culture and science",
+      "Ancient Celtic festivals"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Chinese New Year follows؟",
+    "o": [
+      "Lunar calendar",
+      "Hijri calendar",
+      "Chinese only",
+      "No calendar"
+    ],
+    "a": 0
+  },
+  {
+    "q": "International Women's Day؟",
+    "o": [
+      "8 March",
+      "18 May",
+      "Brazil",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Day of the Dead is celebrated in؟",
+    "o": [
+      "Mexico",
+      "18 May",
+      "8 March",
+      "Brazil"
+    ],
+    "a": 0
+  }
 ]

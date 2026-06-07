@@ -1,82 +1,82 @@
 [
   {
-    "q": "The more you take, the larger it becomes?",
-    "o": [
-      "Water",
-      "A hole",
-      "Light",
-      "Food"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Has teeth but cannot bite?",
-    "o": [
-      "Saw",
-      "Comb",
-      "Dog",
-      "Snake"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Runs but never walks?",
-    "o": [
-      "Human",
-      "River",
-      "Robot",
-      "Car"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Green in field, black in market, red at home?",
-    "o": [
-      "Apple",
-      "Tea",
-      "Lettuce",
-      "Pepper"
-    ],
-    "a": 1
-  },
-  {
-    "q": "House with no doors or windows?",
-    "o": [
-      "Igloo",
-      "Spider web",
-      "Tent",
-      "Tower"
-    ],
-    "a": 1
-  },
-  {
-    "q": "I am my parents' child but not my siblings' brother?",
+    "q": "The more you take, the larger it becomes؟",
     "o": [
       "Cousin",
-      "Me (the speaker)",
-      "Neighbor",
-      "Friend"
+      "Friend",
+      "A hole",
+      "Bottle"
     ],
-    "a": 1
+    "a": 2
   },
   {
-    "q": "Born long ago, but only a month old?",
+    "q": "Has teeth but cannot bite؟",
+    "o": [
+      "Comb",
+      "Moon",
+      "River",
+      "Snake"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Runs but never walks؟",
+    "o": [
+      "River",
+      "A hole",
+      "Apple",
+      "Baby"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Green in field, black in market, red at home؟",
+    "o": [
+      "Tea",
+      "Apple",
+      "Comb",
+      "Moon"
+    ],
+    "a": 0
+  },
+  {
+    "q": "House with no doors or windows؟",
+    "o": [
+      "Spider web",
+      "A hole",
+      "Bottle",
+      "Cousin"
+    ],
+    "a": 0
+  },
+  {
+    "q": "I am my parents' child but not my siblings' brother؟",
+    "o": [
+      "Me (the speaker)",
+      "A lot / very",
+      "A Nightmare on Elm Street",
+      "A private company vote"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Born long ago, but only a month old؟",
     "o": [
       "Baby",
-      "Moon",
-      "Star",
-      "Year"
+      "Comb",
+      "River",
+      "Moon"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "What has a neck but no head?",
+    "q": "What has a neck but no head؟",
     "o": [
-      "Snake",
       "Bottle",
-      "Giraffe",
-      "Turtle"
+      "A hole",
+      "Cousin",
+      "Giraffe"
     ],
-    "a": 1
+    "a": 0
   }
 ]

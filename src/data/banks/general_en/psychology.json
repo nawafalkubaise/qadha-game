@@ -1,81 +1,81 @@
 [
   {
-    "q": "Freud associated with?",
+    "q": "Freud associated with؟",
     "o": [
       "Behaviorism only",
-      "Psychoanalysis",
-      "CBT only",
-      "IQ tests"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Working memory capacity?",
-    "o": [
-      "Unlimited",
-      "Limited short-term",
-      "Zero",
-      "Infinite"
-    ],
-    "a": 1
-  },
-  {
-    "q": "OCD involves?",
-    "o": [
-      "Fear of dark",
-      "Obsessions/compulsions",
-      "Amnesia",
-      "Mania only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Positive reinforcement increases?",
-    "o": [
-      "Punished behavior",
-      "Rewarded behavior",
-      "Sleep",
-      "Anger"
-    ],
-    "a": 1
-  },
-  {
-    "q": "EQ measures?",
-    "o": [
-      "Running speed",
       "Emotional skills",
-      "Height",
-      "Weight"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Clinical depression often needs?",
-    "o": [
-      "Ignore",
       "Professional help",
-      "Only sports",
-      "Travel only"
+      "Psychoanalysis"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Fight-or-flight is?",
+    "q": "Working memory capacity؟",
     "o": [
-      "Stress response",
-      "Sleep",
-      "Digestion",
-      "Painting"
+      "Limited short-term",
+      "Emotional skills",
+      "Obsessions/compulsions",
+      "Professional help"
     ],
     "a": 0
   },
   {
-    "q": "Rorschach test uses?",
+    "q": "OCD involves؟",
+    "o": [
+      "Obsessions/compulsions",
+      "Limited short-term",
+      "Behaviorism only",
+      "Emotional skills"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Positive reinforcement increases؟",
+    "o": [
+      "Rewarded behavior",
+      "Punished behavior",
+      "Behaviorism only",
+      "Emotional skills"
+    ],
+    "a": 0
+  },
+  {
+    "q": "EQ measures؟",
+    "o": [
+      "Emotional skills",
+      "Behaviorism only",
+      "Limited short-term",
+      "Professional help"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Clinical depression often needs؟",
+    "o": [
+      "Professional help",
+      "Behaviorism only",
+      "Emotional skills",
+      "Limited short-term"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Fight-or-flight is؟",
+    "o": [
+      "Stress response",
+      "Behaviorism only",
+      "Emotional skills",
+      "Limited short-term"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Rorschach test uses؟",
     "o": [
       "Inkblots",
-      "Blood pressure",
       "Hearing",
-      "Taste"
+      "Behaviorism only",
+      "Blood pressure"
     ],
     "a": 0
   }

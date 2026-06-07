@@ -1,81 +1,81 @@
 [
   {
-    "q": "A famous Kuwaiti dish is?",
+    "q": "A famous Kuwaiti dish is؟",
     "o": [
-      "Machboos",
-      "Sushi",
-      "Taco",
-      "Pizza"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Harees is often made from?",
-    "o": [
-      "Wheat and meat",
-      "Rice only",
-      "Fish only",
-      "Potato"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Marqooq usually features?",
-    "o": [
-      "Thin dough with stew",
-      "Pasta only",
-      "Toasted bread",
-      "Fruit salad"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Luqaimat is generally a?",
-    "o": [
+      "Chicken",
       "Dessert",
       "Main course",
-      "Salad",
-      "Soup"
+      "Machboos"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "Mutabbaq zubaidi is linked with?",
-    "o": [
-      "Fish",
-      "Chicken",
-      "Beef",
-      "Desserts"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Aish mummawash combines?",
-    "o": [
-      "Rice and lentils",
-      "Rice and pasta",
-      "Wheat and meat",
-      "Bread and dates"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Tashreeb typically includes?",
-    "o": [
-      "Bread with broth",
-      "Raw fish",
-      "Pasta",
-      "Cold sweets"
-    ],
-    "a": 0
-  },
-  {
-    "q": "In diwaniyas, people often serve?",
+    "q": "Harees is often made from؟",
     "o": [
       "Coffee and dates",
-      "Green tea only",
-      "Juice only",
-      "Soup"
+      "Rice and lentils",
+      "Bread with broth",
+      "Wheat and meat"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Marqooq usually features؟",
+    "o": [
+      "Thin dough with stew",
+      "Bread with broth",
+      "Coffee and dates",
+      "Rice and lentils"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Luqaimat is generally a؟",
+    "o": [
+      "Dessert",
+      "Chicken",
+      "Machboos",
+      "Main course"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Mutabbaq zubaidi is linked with؟",
+    "o": [
+      "Fish",
+      "Beef",
+      "Pizza",
+      "Salad"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Aish mummawash combines؟",
+    "o": [
+      "Rice and pasta",
+      "Bread and dates",
+      "Coffee and dates",
+      "Rice and lentils"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Tashreeb typically includes؟",
+    "o": [
+      "Thin dough with stew",
+      "Coffee and dates",
+      "Rice and lentils",
+      "Bread with broth"
+    ],
+    "a": 3
+  },
+  {
+    "q": "In diwaniyas, people often serve؟",
+    "o": [
+      "Coffee and dates",
+      "Rice and lentils",
+      "Wheat and meat",
+      "Bread with broth"
     ],
     "a": 0
   }

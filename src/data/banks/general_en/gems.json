@@ -1,82 +1,82 @@
 [
   {
-    "q": "Diamond is made of?",
+    "q": "Diamond is made of؟",
     "o": [
-      "Silicon",
       "Carbon",
-      "Oxygen",
-      "Iron"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Ruby mineral?",
-    "o": [
-      "Emerald",
-      "Corundum",
-      "Opal",
-      "Pearl"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Emerald color?",
-    "o": [
-      "Red",
       "Green",
-      "Blue",
-      "Yellow"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Pearl from?",
-    "o": [
-      "Plant",
       "Mollusk",
-      "Volcano",
-      "Ice"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Mohs scale measures?",
-    "o": [
-      "Hardness",
-      "Color",
-      "Weight",
-      "Clarity only"
+      "Oxygen"
     ],
     "a": 0
   },
   {
-    "q": "Opal known for?",
+    "q": "Ruby mineral؟",
     "o": [
-      "Solid color",
-      "Play of color",
-      "Transparent only",
-      "Black only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Sapphire is blue variety of?",
-    "o": [
-      "Emerald",
       "Corundum",
-      "Topaz",
-      "Garnet"
+      "Emerald",
+      "Gem mass",
+      "Hardness"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Carat measures?",
+    "q": "Emerald color؟",
     "o": [
-      "Size of box",
-      "Gem mass",
-      "Price only",
-      "Age"
+      "-100°C",
+      "-200°C",
+      "Blue",
+      "Green"
     ],
-    "a": 1
+    "a": 3
+  },
+  {
+    "q": "Pearl from؟",
+    "o": [
+      "Mollusk",
+      "Carbon",
+      "Corundum",
+      "Gem mass"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Mohs scale measures؟",
+    "o": [
+      "Gem mass",
+      "Mollusk",
+      "Hardness",
+      "Corundum"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Opal known for؟",
+    "o": [
+      "Play of color",
+      "A lot / very",
+      "A Nightmare on Elm Street",
+      "A private company vote"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Sapphire is blue variety of؟",
+    "o": [
+      "Corundum",
+      "Emerald",
+      "Gem mass",
+      "Hardness"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Carat measures؟",
+    "o": [
+      "Gem mass",
+      "Corundum",
+      "Hardness",
+      "Mollusk"
+    ],
+    "a": 0
   }
 ]

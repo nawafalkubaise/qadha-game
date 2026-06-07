@@ -1,82 +1,82 @@
 [
   {
-    "q": "Nike logo?",
+    "q": "Nike logo؟",
     "o": [
-      "Three stripes",
+      "Ice cream",
+      "Coffee beans",
       "Swoosh",
-      "Tiger",
       "Apple"
     ],
-    "a": 1
+    "a": 2
   },
   {
-    "q": "Coca-Cola brand color?",
+    "q": "Coca-Cola brand color؟",
     "o": [
-      "Green",
       "Red",
-      "Blue",
-      "Yellow"
-    ],
-    "a": 1
-  },
-  {
-    "q": "McDonald's origin?",
-    "o": [
       "USA",
-      "France",
-      "Japan",
-      "Italy"
+      "Apple",
+      "Blue"
     ],
     "a": 0
   },
   {
-    "q": "Samsung HQ country?",
+    "q": "McDonald's origin؟",
     "o": [
-      "Japan",
-      "South Korea",
-      "China",
-      "Taiwan"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Starbucks started selling?",
-    "o": [
-      "Tea",
-      "Coffee beans",
-      "Juice",
-      "Ice cream"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Tesla named after?",
-    "o": [
-      "President",
-      "Nikola Tesla",
-      "City",
-      "River"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Hyundai from?",
-    "o": [
-      "Japan",
-      "South Korea",
-      "China",
-      "Thailand"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Apple logo fruit?",
-    "o": [
-      "Pear",
+      "Red",
       "Apple",
-      "Orange",
-      "Grape"
+      "Italy",
+      "USA"
     ],
-    "a": 1
+    "a": 3
+  },
+  {
+    "q": "Samsung HQ country؟",
+    "o": [
+      "South Korea",
+      "Coffee beans",
+      "Ice cream",
+      "Nikola Tesla"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Starbucks started selling؟",
+    "o": [
+      "Nikola Tesla",
+      "South Korea",
+      "Ice cream",
+      "Coffee beans"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Tesla named after؟",
+    "o": [
+      "Coffee beans",
+      "South Korea",
+      "President",
+      "Nikola Tesla"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Hyundai from؟",
+    "o": [
+      "Coffee beans",
+      "Nikola Tesla",
+      "Thailand",
+      "South Korea"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Apple logo fruit؟",
+    "o": [
+      "Apple",
+      "Blue",
+      "Grape",
+      "Pear"
+    ],
+    "a": 0
   }
 ]

@@ -1,16 +1,16 @@
 [
   {
-    "q": "T-Rex diet?",
+    "q": "T-Rex diet؟",
     "o": [
-      "Plants",
       "Carnivore",
       "Fish only",
-      "Insects only"
+      "Sauropods",
+      "Sedimentary"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Dinosaur extinction famous event ~?",
+    "q": "Dinosaur extinction famous event ~؟",
     "o": [
       "65 million years ago",
       "6500 years",
@@ -20,63 +20,63 @@
     "a": 0
   },
   {
-    "q": "Fossils in rocks?",
+    "q": "Fossils in rocks؟",
     "o": [
-      "Air",
       "Sedimentary",
-      "Ice only",
-      "Plastic"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Birds descended from?",
-    "o": [
-      "No",
-      "Theropod dinosaurs",
-      "Fish",
-      "Amphibians only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Triceratops had horns?",
-    "o": [
-      "None",
-      "Three on face",
-      "One",
-      "Ten"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Long-neck giants called?",
-    "o": [
-      "Raptors",
+      "Carnivore",
       "Sauropods",
-      "Birds",
-      "Mammals"
+      "Ancient insects"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Dinosaurs lived in?",
+    "q": "Birds descended from؟",
     "o": [
-      "Today only",
-      "Mesozoic mainly",
-      "Ice age only",
-      "Future"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Amber can preserve?",
-    "o": [
-      "Water",
+      "Theropod dinosaurs",
+      "Amphibians only",
       "Ancient insects",
-      "Gold",
-      "Plastic"
+      "Mesozoic mainly"
     ],
-    "a": 1
+    "a": 0
+  },
+  {
+    "q": "Triceratops had horns؟",
+    "o": [
+      "Three on face",
+      "A lot / very",
+      "65 million years ago",
+      "A Nightmare on Elm Street"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Long-neck giants called؟",
+    "o": [
+      "Carnivore",
+      "Sedimentary",
+      "Ancient insects",
+      "Sauropods"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Dinosaurs lived in؟",
+    "o": [
+      "Mesozoic mainly",
+      "Ancient insects",
+      "Theropod dinosaurs",
+      "Carnivore"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Amber can preserve؟",
+    "o": [
+      "Ancient insects",
+      "Mesozoic mainly",
+      "Theropod dinosaurs",
+      "Carnivore"
+    ],
+    "a": 0
   }
 ]

@@ -1,82 +1,82 @@
 [
   {
-    "q": "Fastest land animal?",
+    "q": "Fastest land animal؟",
     "o": [
-      "Lion",
-      "Horse",
       "Cheetah",
-      "Gazelle"
+      "Gazelle",
+      "Giraffe",
+      "Blue Whale"
     ],
-    "a": 2
+    "a": 0
   },
   {
-    "q": "Octopus hearts?",
+    "q": "Octopus hearts؟",
     "o": [
+      "3",
       "1",
       "2",
-      "4",
-      "3"
+      "4"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Largest mammal؟",
+    "o": [
+      "Elephant",
+      "Cheetah",
+      "Giraffe",
+      "Blue Whale"
     ],
     "a": 3
   },
   {
-    "q": "Largest mammal?",
+    "q": "Spider legs؟",
     "o": [
-      "Elephant",
-      "Giraffe",
-      "Blue Whale",
-      "Hippo"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Spider legs?",
-    "o": [
-      "6",
-      "10",
       "8",
-      "12"
+      "3",
+      "6",
+      "10"
     ],
-    "a": 2
+    "a": 0
   },
   {
-    "q": "Group of lions?",
+    "q": "Group of lions؟",
     "o": [
-      "Pack",
-      "Herd",
       "Pride",
-      "Flock"
+      "Flock",
+      "Herd",
+      "Pack"
     ],
-    "a": 2
+    "a": 0
   },
   {
-    "q": "Sleeps up to 3 years?",
+    "q": "Sleeps up to 3 years؟",
     "o": [
+      "Snail",
       "Bear",
       "Koala",
-      "Snail",
-      "Sloth"
+      "Pride"
     ],
-    "a": 2
+    "a": 0
   },
   {
-    "q": "Tallest animal?",
+    "q": "Tallest animal؟",
     "o": [
-      "Elephant",
       "Giraffe",
-      "Horse",
-      "Camel"
+      "Cheetah",
+      "Elephant",
+      "Blue Whale"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Fastest bird?",
+    "q": "Fastest bird؟",
     "o": [
-      "Eagle",
       "Falcon (Peregrine)",
-      "Hawk",
-      "Owl"
+      "Blue Whale",
+      "Cheetah",
+      "Elephant"
     ],
-    "a": 1
+    "a": 0
   }
 ]

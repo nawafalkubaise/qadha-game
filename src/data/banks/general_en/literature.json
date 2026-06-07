@@ -1,22 +1,202 @@
 [
-  {"q": "Romeo and Juliet author?", "o": ["Dickens", "Austen", "Shakespeare", "Hemingway"], "a": 2},
-  {"q": "1984 author?", "o": ["Huxley", "Bradbury", "Orwell", "Tolkien"], "a": 2},
-  {"q": "Harry Potter author?", "o": ["King", "Meyer", "Rowling", "Collins"], "a": 2},
-  {"q": "The Alchemist author?", "o": ["Marquez", "Borges", "Coelho", "Allende"], "a": 2},
-  {"q": "Don Quixote author?", "o": ["Cervantes", "Lorca", "Borges", "Neruda"], "a": 0},
-  {"q": "The Prince author?", "o": ["Plato", "Aristotle", "Machiavelli", "Socrates"], "a": 2},
-  {"q": "Lord of the Rings author?", "o": ["Lewis", "Rowling", "Tolkien", "Martin"], "a": 2},
-  {"q": "Crime and Punishment author?", "o": ["Tolstoy", "Dostoevsky", "Chekhov", "Pushkin"], "a": 1},
-  {"q": "Les Misérables author?", "o": ["Victor Hugo", "Balzac", "Flaubert", "Zola"], "a": 0},
-  {"q": "One Hundred Years of Solitude author?", "o": ["García Márquez", "Borges", "Neruda", "Coelho"], "a": 0},
-  {"q": "Iliad and Odyssey written by?", "o": ["Homer", "Plato", "Aristotle", "Socrates"], "a": 0},
-  {"q": "War and Peace author?", "o": ["Tolstoy", "Dostoevsky", "Chekhov", "Pushkin"], "a": 0},
-  {"q": "Agatha Christie famous for?", "o": ["Mystery novels", "Poetry", "Science fiction", "History"], "a": 0},
-  {"q": "Shakespeare born in?", "o": ["Stratford-upon-Avon", "London", "Oxford", "Cambridge"], "a": 0},
-  {"q": "Naguib Mahfouz won?", "o": ["Nobel Prize", "Oscar", "Grammy", "Pulitzer"], "a": 0},
-  {"q": "The Prophet author?", "o": ["Kahlil Gibran", "Rumi", "Hafez", "Tagore"], "a": 0},
-  {"q": "Brave New World author?", "o": ["Aldous Huxley", "Orwell", "Bradbury", "Wells"], "a": 0},
-  {"q": "Great Gatsby author?", "o": ["F. Scott Fitzgerald", "Hemingway", "Steinbeck", "Faulkner"], "a": 0},
-  {"q": "Sherlock Holmes creator?", "o": ["Arthur Conan Doyle", "Agatha Christie", "Edgar Allan Poe", "Ian Fleming"], "a": 0},
-  {"q": "To Kill a Mockingbird author?", "o": ["Harper Lee", "Steinbeck", "Twain", "Hemingway"], "a": 0}
+  {
+    "q": "Romeo and Juliet author؟",
+    "o": [
+      "Aldous Huxley",
+      "Cervantes",
+      "Dostoevsky",
+      "Shakespeare"
+    ],
+    "a": 3
+  },
+  {
+    "q": "1984 author؟",
+    "o": [
+      "Huxley",
+      "Orwell",
+      "Coelho",
+      "Homer"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Harry Potter author؟",
+    "o": [
+      "Rowling",
+      "Coelho",
+      "Collins",
+      "Orwell"
+    ],
+    "a": 0
+  },
+  {
+    "q": "The Alchemist author؟",
+    "o": [
+      "Coelho",
+      "Allende",
+      "Borges",
+      "Homer"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Don Quixote author؟",
+    "o": [
+      "Dostoevsky",
+      "Harper Lee",
+      "Machiavelli",
+      "Cervantes"
+    ],
+    "a": 3
+  },
+  {
+    "q": "The Prince author؟",
+    "o": [
+      "Machiavelli",
+      "Aldous Huxley",
+      "Aristotle",
+      "Cervantes"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Lord of the Rings author؟",
+    "o": [
+      "Orwell",
+      "Tolkien",
+      "Coelho",
+      "Martin"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Crime and Punishment author؟",
+    "o": [
+      "Cervantes",
+      "Harper Lee",
+      "Machiavelli",
+      "Dostoevsky"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Les Misérables author؟",
+    "o": [
+      "Victor Hugo",
+      "Aldous Huxley",
+      "Cervantes",
+      "Dostoevsky"
+    ],
+    "a": 0
+  },
+  {
+    "q": "One Hundred Years of Solitude author؟",
+    "o": [
+      "Aldous Huxley",
+      "Kahlil Gibran",
+      "Mystery novels",
+      "García Márquez"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Iliad and Odyssey written by؟",
+    "o": [
+      "Homer",
+      "-100°C",
+      "-200°C",
+      "Coelho"
+    ],
+    "a": 0
+  },
+  {
+    "q": "War and Peace author؟",
+    "o": [
+      "Tolstoy",
+      "Chekhov",
+      "Coelho",
+      "Orwell"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Agatha Christie famous for؟",
+    "o": [
+      "Mystery novels",
+      "Aldous Huxley",
+      "García Márquez",
+      "Kahlil Gibran"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Shakespeare born in؟",
+    "o": [
+      "Stratford-upon-Avon",
+      "Aldous Huxley",
+      "García Márquez",
+      "Kahlil Gibran"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Naguib Mahfouz won؟",
+    "o": [
+      "Dostoevsky",
+      "Nobel Prize",
+      "Aldous Huxley",
+      "Cervantes"
+    ],
+    "a": 1
+  },
+  {
+    "q": "The Prophet author؟",
+    "o": [
+      "Kahlil Gibran",
+      "Aldous Huxley",
+      "García Márquez",
+      "Machiavelli"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Brave New World author؟",
+    "o": [
+      "Aldous Huxley",
+      "García Márquez",
+      "Kahlil Gibran",
+      "Machiavelli"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Great Gatsby author؟",
+    "o": [
+      "Arthur Conan Doyle",
+      "Edgar Allan Poe",
+      "Stratford-upon-Avon",
+      "F. Scott Fitzgerald"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Sherlock Holmes creator؟",
+    "o": [
+      "Edgar Allan Poe",
+      "F. Scott Fitzgerald",
+      "Arthur Conan Doyle",
+      "Stratford-upon-Avon"
+    ],
+    "a": 2
+  },
+  {
+    "q": "To Kill a Mockingbird author؟",
+    "o": [
+      "Harper Lee",
+      "Cervantes",
+      "Dostoevsky",
+      "Hemingway"
+    ],
+    "a": 0
+  }
 ]

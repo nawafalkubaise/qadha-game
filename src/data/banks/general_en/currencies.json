@@ -1,76 +1,76 @@
 [
   {
-    "q": "Euro used in?",
+    "q": "Euro used in؟",
     "o": [
-      "Only UK",
       "Eurozone countries",
-      "Only USA",
-      "All South America"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Yen is currency of?",
-    "o": [
-      "China",
-      "Japan",
-      "Korea",
-      "Thailand"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Pound sterling country?",
-    "o": [
-      "USA",
-      "UK",
-      "Canada",
-      "Australia"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Swiss franc country?",
-    "o": [
-      "Sweden",
-      "Switzerland",
-      "Austria",
-      "Denmark"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Saudi riyal?",
-    "o": [
-      "UAE",
-      "Saudi Arabia",
-      "Qatar",
-      "Kuwait"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Bitcoin is?",
-    "o": [
-      "Central bank note",
       "Cryptocurrency",
-      "Gold coin",
-      "Silver bar"
+      "Saudi Arabia",
+      "Switzerland"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "IMF headquarters?",
+    "q": "Yen is currency of؟",
     "o": [
-      "New York",
-      "Washington DC",
-      "Geneva",
-      "London"
+      "Japan",
+      "China",
+      "Korea",
+      "CAD"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Canadian dollar code?",
+    "q": "Pound sterling country؟",
+    "o": [
+      "UK",
+      "CAD",
+      "USA",
+      "China"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Swiss franc country؟",
+    "o": [
+      "Switzerland",
+      "Saudi Arabia",
+      "Washington DC",
+      "Austria"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Saudi riyal؟",
+    "o": [
+      "Saudi Arabia",
+      "Cryptocurrency",
+      "Switzerland",
+      "Washington DC"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Bitcoin is؟",
+    "o": [
+      "Cryptocurrency",
+      "Saudi Arabia",
+      "Washington DC",
+      "Eurozone countries"
+    ],
+    "a": 0
+  },
+  {
+    "q": "IMF headquarters؟",
+    "o": [
+      "Washington DC",
+      "Cryptocurrency",
+      "Saudi Arabia",
+      "Switzerland"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Canadian dollar code؟",
     "o": [
       "CAD",
       "EUR",

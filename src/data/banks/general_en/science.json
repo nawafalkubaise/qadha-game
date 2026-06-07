@@ -1,22 +1,202 @@
 [
-  {"q": "Red Planet is?", "o": ["Venus", "Jupiter", "Mars", "Saturn"], "a": 2},
-  {"q": "Chemical symbol for water?", "o": ["HO", "H2O", "O2H", "WA"], "a": 1},
-  {"q": "Bones in adult body?", "o": ["196", "206", "216", "202"], "a": 2},
-  {"q": "Gas plants absorb?", "o": ["Oxygen", "CO₂", "Nitrogen", "Hydrogen"], "a": 1},
-  {"q": "Speed of light approx?", "o": ["150K km/s", "500K km/s", "300K km/s", "1M km/s"], "a": 2},
-  {"q": "Organ producing insulin?", "o": ["Liver", "Kidney", "Pancreas", "Heart"], "a": 2},
-  {"q": "Largest organ of body?", "o": ["Liver", "Heart", "Skin", "Brain"], "a": 2},
-  {"q": "Blood type universal donor?", "o": ["A", "B", "AB", "O"], "a": 3},
-  {"q": "Atom consists of?", "o": ["Protons neutrons electrons", "Cells only", "Water molecules", "Light only"], "a": 0},
-  {"q": "Who discovered gravity?", "o": ["Newton", "Einstein", "Galileo", "Copernicus"], "a": 0},
-  {"q": "Boiling point of water at sea level?", "o": ["100°C", "90°C", "80°C", "110°C"], "a": 0},
-  {"q": "DNA carries?", "o": ["Genetic information", "Energy only", "Oxygen", "Water"], "a": 0},
-  {"q": "Nearest star to Earth?", "o": ["Sun", "Proxima Centauri", "Sirius", "Betelgeuse"], "a": 0},
-  {"q": "Periodic table organized by?", "o": ["Mendeleev", "Newton", "Einstein", "Darwin"], "a": 0},
-  {"q": "Photosynthesis occurs in?", "o": ["Chloroplasts", "Mitochondria", "Nucleus", "Ribosome"], "a": 0},
-  {"q": "Unit of force?", "o": ["Newton", "Joule", "Watt", "Volt"], "a": 0},
-  {"q": "Planets in solar system?", "o": ["8", "9", "7", "10"], "a": 0},
-  {"q": "Light bulb inventor?", "o": ["Edison", "Tesla", "Faraday", "Ohm"], "a": 0},
-  {"q": "Hardest natural substance?", "o": ["Diamond", "Iron", "Quartz", "Ruby"], "a": 0},
-  {"q": "Sound cannot travel through?", "o": ["Vacuum", "Water", "Air", "Metal"], "a": 0}
+  {
+    "q": "Red Planet is؟",
+    "o": [
+      "Mars",
+      "100°C",
+      "Skin",
+      "Venus"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Chemical symbol for water؟",
+    "o": [
+      "H2O",
+      "CO₂",
+      "O2H",
+      "OH2"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Bones in adult body؟",
+    "o": [
+      "216",
+      "196",
+      "202",
+      "206"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Gas plants absorb؟",
+    "o": [
+      "CO₂",
+      "H2O",
+      "Sun",
+      "100°C"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Speed of light approx؟",
+    "o": [
+      "300K km/s",
+      "150K km/s",
+      "500K km/s",
+      "1M km/s"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Organ producing insulin؟",
+    "o": [
+      "300K km/s",
+      "Diamond",
+      "Mendeleev",
+      "Pancreas"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Largest organ of body؟",
+    "o": [
+      "Skin",
+      "100°C",
+      "Brain",
+      "Heart"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Blood type universal donor؟",
+    "o": [
+      "100°C",
+      "O",
+      "A",
+      "B"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Atom consists of؟",
+    "o": [
+      "Protons neutrons electrons",
+      "A Nightmare on Elm Street",
+      "A private company vote",
+      "A lot / very"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Who discovered gravity؟",
+    "o": [
+      "Newton",
+      "100°C",
+      "Diamond",
+      "Edison"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Boiling point of water at sea level؟",
+    "o": [
+      "100°C",
+      "110°C",
+      "80°C",
+      "90°C"
+    ],
+    "a": 0
+  },
+  {
+    "q": "DNA carries؟",
+    "o": [
+      "Genetic information",
+      "Chloroplasts",
+      "100°C",
+      "300K km/s"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Nearest star to Earth؟",
+    "o": [
+      "Sun",
+      "CO₂",
+      "H2O",
+      "100°C"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Periodic table organized by؟",
+    "o": [
+      "Mendeleev",
+      "300K km/s",
+      "Einstein",
+      "Pancreas"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Photosynthesis occurs in؟",
+    "o": [
+      "Chloroplasts",
+      "Mitochondria",
+      "300K km/s",
+      "Genetic information"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Unit of force؟",
+    "o": [
+      "Newton",
+      "100°C",
+      "Diamond",
+      "Edison"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Planets in solar system؟",
+    "o": [
+      "8",
+      "7",
+      "9",
+      "10"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Light bulb inventor؟",
+    "o": [
+      "Edison",
+      "100°C",
+      "Diamond",
+      "Faraday"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Hardest natural substance؟",
+    "o": [
+      "Diamond",
+      "Edison",
+      "Newton",
+      "Pancreas"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Sound cannot travel through؟",
+    "o": [
+      "100°C",
+      "Diamond",
+      "Edison",
+      "Vacuum"
+    ],
+    "a": 3
+  }
 ]

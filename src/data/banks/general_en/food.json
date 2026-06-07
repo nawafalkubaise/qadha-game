@@ -1,22 +1,202 @@
 [
-  {"q": "Sushi origin?", "o": ["China", "Thailand", "Japan", "Korea"], "a": 2},
-  {"q": "Red gold spice?", "o": ["Turmeric", "Cinnamon", "Saffron", "Paprika"], "a": 2},
-  {"q": "Main ingredient of hummus?", "o": ["Lentils", "Peas", "Chickpeas", "Beans"], "a": 2},
-  {"q": "Kimchi from?", "o": ["Japan", "Vietnam", "South Korea", "China"], "a": 2},
-  {"q": "Italy's pasta city?", "o": ["Rome", "Milan", "Bologna", "Venice"], "a": 2},
-  {"q": "Croissant originated in?", "o": ["France", "Italy", "Austria", "Belgium"], "a": 2},
-  {"q": "Taco origin country?", "o": ["Spain", "Brazil", "Mexico", "Argentina"], "a": 2},
-  {"q": "Dim sum from?", "o": ["Japan", "Korea", "China", "Thailand"], "a": 2},
-  {"q": "Pizza originated in?", "o": ["Italy", "France", "USA", "Spain"], "a": 0},
-  {"q": "Chocolate was first used by?", "o": ["Aztecs and Maya", "Egyptians", "Greeks", "Chinese"], "a": 0},
-  {"q": "Paella is from?", "o": ["Spain", "Italy", "Portugal", "France"], "a": 0},
-  {"q": "Most used spice worldwide?", "o": ["Black pepper", "Saffron", "Turmeric", "Clove"], "a": 0},
-  {"q": "Couscous is traditional in?", "o": ["North Africa", "Gulf", "Levant", "Egypt only"], "a": 0},
-  {"q": "Coffee was first discovered in?", "o": ["Ethiopia", "Brazil", "Colombia", "Yemen"], "a": 0},
-  {"q": "Wasabi comes from?", "o": ["Japan", "China", "Korea", "Thailand"], "a": 0},
-  {"q": "Falafel origin region?", "o": ["Middle East/Egypt", "India", "Turkey", "Iran"], "a": 0},
-  {"q": "Dal (lentil soup) is staple food in?", "o": ["India", "Japan", "Brazil", "Italy"], "a": 0},
-  {"q": "Avocado originated in?", "o": ["Central America", "Africa", "Asia", "Europe"], "a": 0},
-  {"q": "Baguette is from?", "o": ["France", "Italy", "Germany", "Spain"], "a": 0},
-  {"q": "Maple syrup is produced mainly in?", "o": ["Canada", "USA only", "Russia", "Norway"], "a": 0}
+  {
+    "q": "Sushi origin؟",
+    "o": [
+      "Japan",
+      "Canada",
+      "China",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Red gold spice؟",
+    "o": [
+      "Saffron",
+      "Austria",
+      "Bologna",
+      "Canada"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Main ingredient of hummus؟",
+    "o": [
+      "South Korea",
+      "Chickpeas",
+      "Ethiopia",
+      "Fava beans"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Kimchi from؟",
+    "o": [
+      "Black pepper",
+      "Chickpeas",
+      "North Africa",
+      "South Korea"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Italy's pasta city؟",
+    "o": [
+      "Bologna",
+      "Austria",
+      "Canada",
+      "Ethiopia"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Croissant originated in؟",
+    "o": [
+      "Canada",
+      "Austria",
+      "Belgium",
+      "Bologna"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Taco origin country؟",
+    "o": [
+      "Mexico",
+      "Austria",
+      "Bologna",
+      "Brazil"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Dim sum from؟",
+    "o": [
+      "China",
+      "Canada",
+      "France",
+      "India"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Pizza originated in؟",
+    "o": [
+      "Italy",
+      "Canada",
+      "China",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Chocolate was first used by؟",
+    "o": [
+      "Aztecs and Maya",
+      "Ancient Egyptians",
+      "Ancient Romans",
+      "Ancient Greeks"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Paella is from؟",
+    "o": [
+      "Spain",
+      "Canada",
+      "China",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Most used spice worldwide؟",
+    "o": [
+      "Black pepper",
+      "Central America",
+      "North Africa",
+      "South Korea"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Couscous is traditional in؟",
+    "o": [
+      "North Africa",
+      "Black pepper",
+      "Central America",
+      "Eastern Europe"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Coffee was first discovered in؟",
+    "o": [
+      "Ethiopia",
+      "Austria",
+      "Bologna",
+      "Chickpeas"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Wasabi comes from؟",
+    "o": [
+      "Japan",
+      "Canada",
+      "China",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Falafel origin region؟",
+    "o": [
+      "Middle East/Egypt",
+      "Central America",
+      "Southern Europe",
+      "Black pepper"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Dal (lentil soup) is staple food in؟",
+    "o": [
+      "India",
+      "Canada",
+      "China",
+      "France"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Avocado originated in؟",
+    "o": [
+      "Middle East/Egypt",
+      "Central America",
+      "Black pepper",
+      "Mediterranean"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Baguette is from؟",
+    "o": [
+      "Austria",
+      "Belgium",
+      "Bologna",
+      "France"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Maple syrup is produced mainly in؟",
+    "o": [
+      "Canada",
+      "Austria",
+      "Bologna",
+      "China"
+    ],
+    "a": 0
+  }
 ]

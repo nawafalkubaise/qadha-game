@@ -1,22 +1,202 @@
 [
-  {"q": "Eid al-Adha commemorates?", "o": ["Birth", "Sacrifice of Ishmael story", "Migration", "Isra"], "a": 1},
-  {"q": "Tea as hospitality is common in?", "o": ["Only Brazil", "Japan UK China and more", "Only Canada", "Only Australia"], "a": 1},
-  {"q": "Handshake less common in some cultures; Japan often uses?", "o": ["High-five", "Bow", "Hug", "Salute"], "a": 1},
-  {"q": "Christmas celebrated on?", "o": ["November", "25 December (often)", "January only", "April only"], "a": 1},
-  {"q": "Arabic coffee often served with?", "o": ["Milk", "Dates", "Lemon", "Soda"], "a": 1},
-  {"q": "Henna at celebrations is common in?", "o": ["Only Europe", "South Asia Middle East", "Only Arctic", "Only Antarctica"], "a": 1},
-  {"q": "Ramadan is month of?", "o": ["Feasting only", "Fasting and reflection", "Harvest only", "New Year only"], "a": 1},
-  {"q": "Wedding rings worn on left ring finger tradition in many?", "o": ["Western cultures", "None", "Only children", "Only monks"], "a": 0},
-  {"q": "Thanksgiving is a tradition in?", "o": ["USA and Canada", "Only Europe", "Only Asia", "Only Africa"], "a": 0},
-  {"q": "Chinese New Year follows?", "o": ["Lunar calendar", "Solar calendar only", "Hijri calendar", "No calendar"], "a": 0},
-  {"q": "In Japan removing shoes before entering home is?", "o": ["Essential and respectful", "Not practiced", "For children only", "Very rare"], "a": 0},
-  {"q": "Throwing coins in fountains for luck is tradition in?", "o": ["Many Western cultures", "Africa only", "Asia only", "None"], "a": 0},
-  {"q": "Adhan (call to prayer) in Islam is performed?", "o": ["Five times daily", "Once", "In Ramadan only", "Weekly"], "a": 0},
-  {"q": "Cheek kissing as greeting is common in?", "o": ["France Italy and Arab countries", "Japan only", "USA only", "Australia only"], "a": 0},
-  {"q": "Throwing rice at newlyweds symbolizes?", "o": ["Wishing prosperity", "Anger", "Sadness", "Protest"], "a": 0},
-  {"q": "Bowing in Korean culture shows?", "o": ["Respect", "Challenge", "Rejection", "Humor"], "a": 0},
-  {"q": "Gift exchange during holidays exists in?", "o": ["Most cultures", "One culture only", "None", "Europe only"], "a": 0},
-  {"q": "In India white is worn at?", "o": ["Funerals and mourning", "Weddings only", "Happy celebrations", "Daily work"], "a": 0},
-  {"q": "Day of the Dead (Día de los Muertos) is celebrated in?", "o": ["Mexico", "Spain only", "Brazil", "Cuba"], "a": 0},
-  {"q": "Siesta (afternoon nap) tradition is from?", "o": ["Spain and Mediterranean", "Scandinavia", "Japan", "Canada"], "a": 0}
+  {
+    "q": "Eid al-Adha commemorates؟",
+    "o": [
+      "Sacrifice of Ishmael story",
+      "Essential and respectful",
+      "Fasting and reflection",
+      "France Italy and Arab countries"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Tea as hospitality is common in؟",
+    "o": [
+      "Japan UK China and more",
+      "Essential and respectful",
+      "Fasting and reflection",
+      "Funerals and mourning"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Handshake less common in some cultures; Japan often uses؟",
+    "o": [
+      "Bow",
+      "Hug",
+      "Dates",
+      "Lemon"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Christmas celebrated on؟",
+    "o": [
+      "25 December (often)",
+      "~2 L including drinks",
+      "Fasting and reflection",
+      "Five times daily"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Arabic coffee often served with؟",
+    "o": [
+      "Dates",
+      "Lemon",
+      "Mexico",
+      "Milk"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Henna at celebrations is common in؟",
+    "o": [
+      "South Asia Middle East",
+      "25 December (often)",
+      "Essential and respectful",
+      "Fasting and reflection"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Ramadan is month of؟",
+    "o": [
+      "Funerals and mourning",
+      "Japan UK China and more",
+      "Fasting and reflection",
+      "Essential and respectful"
+    ],
+    "a": 2
+  },
+  {
+    "q": "Wedding rings worn on left ring finger tradition in many؟",
+    "o": [
+      "Western cultures",
+      "Most cultures",
+      "Lunar calendar",
+      "Only children"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Thanksgiving is a tradition in؟",
+    "o": [
+      "Funerals and mourning",
+      "USA and Canada",
+      "Fasting and reflection",
+      "Five times daily"
+    ],
+    "a": 1
+  },
+  {
+    "q": "Chinese New Year follows؟",
+    "o": [
+      "Lunar calendar",
+      "Hijri calendar",
+      "Most cultures",
+      "No calendar"
+    ],
+    "a": 0
+  },
+  {
+    "q": "In Japan removing shoes before entering home is؟",
+    "o": [
+      "Essential and respectful",
+      "Fasting and reflection",
+      "Funerals and mourning",
+      "Japan UK China and more"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Throwing coins in fountains for luck is tradition in؟",
+    "o": [
+      "Many Western cultures",
+      "25 December (often)",
+      "Essential and respectful",
+      "Fasting and reflection"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Adhan (call to prayer) in Islam is performed؟",
+    "o": [
+      "Five times daily",
+      "25 December (often)",
+      "In Ramadan only",
+      "USA and Canada"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Cheek kissing as greeting is common in؟",
+    "o": [
+      "France Italy and Arab countries",
+      "Essential and respectful",
+      "Fasting and reflection",
+      "Funerals and mourning"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Throwing rice at newlyweds symbolizes؟",
+    "o": [
+      "Wishing prosperity",
+      "Western cultures",
+      "Lunar calendar",
+      "Most cultures"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Bowing in Korean culture shows؟",
+    "o": [
+      "Brazil",
+      "Mexico",
+      "Challenge",
+      "Respect"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Gift exchange during holidays exists in؟",
+    "o": [
+      "Most cultures",
+      "Western cultures",
+      "Europe only",
+      "Lunar calendar"
+    ],
+    "a": 0
+  },
+  {
+    "q": "In India white is worn at؟",
+    "o": [
+      "Funerals and mourning",
+      "Essential and respectful",
+      "Fasting and reflection",
+      "Japan UK China and more"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Day of the Dead (Día de los Muertos) is celebrated in؟",
+    "o": [
+      "Mexico",
+      "Brazil",
+      "Dates",
+      "Respect"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Siesta (afternoon nap) tradition is from؟",
+    "o": [
+      "Spain and Mediterranean",
+      "Essential and respectful",
+      "Fasting and reflection",
+      "Funerals and mourning"
+    ],
+    "a": 0
+  }
 ]

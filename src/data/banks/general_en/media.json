@@ -1,82 +1,82 @@
 [
   {
-    "q": "Pulitzer Prize domain?",
+    "q": "Pulitzer Prize domain؟",
     "o": [
-      "Sports",
-      "Journalism and literature",
-      "Medicine",
-      "Physics"
-    ],
-    "a": 1
-  },
-  {
-    "q": "CNN originally headquartered in?",
-    "o": [
-      "New York",
-      "Atlanta",
-      "Washington",
-      "Los Angeles"
-    ],
-    "a": 1
-  },
-  {
-    "q": "BBC is?",
-    "o": [
-      "American",
-      "British",
-      "Australian",
-      "Canadian"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Podcast is?",
-    "o": [
+      "Jobs and careers",
       "Digital audio show",
       "Live video only",
-      "Newspaper",
-      "SMS app"
+      "Journalism and literature"
+    ],
+    "a": 3
+  },
+  {
+    "q": "CNN originally headquartered in؟",
+    "o": [
+      "Atlanta",
+      "British",
+      "London",
+      "New York"
     ],
     "a": 0
   },
   {
-    "q": "Reuters news agency HQ?",
+    "q": "BBC is؟",
     "o": [
-      "Paris",
-      "London",
-      "Berlin",
-      "New York"
+      "American",
+      "Atlanta",
+      "Canadian",
+      "British"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Fake news common English term?",
+    "q": "Podcast is؟",
     "o": [
-      "Deep fake only",
+      "Digital audio show",
+      "Jobs and careers",
+      "Live video only",
+      "Journalism and literature"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Reuters news agency HQ؟",
+    "o": [
+      "Atlanta",
+      "Berlin",
+      "British",
+      "London"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Fake news common English term؟",
+    "o": [
       "Fake news",
       "Spam only",
-      "Clickbait only"
+      "Atlanta",
+      "British"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "YouTube founded around?",
+    "q": "YouTube founded around؟",
     "o": [
-      "2003",
       "2005",
+      "2003",
       "2007",
       "2010"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "LinkedIn focuses on?",
+    "q": "LinkedIn focuses on؟",
     "o": [
-      "Games",
       "Jobs and careers",
-      "Cooking",
-      "Sports"
+      "Digital audio show",
+      "Journalism and literature",
+      "Live video only"
     ],
-    "a": 1
+    "a": 0
   }
 ]

@@ -1,81 +1,81 @@
 [
   {
-    "q": "Instagram owned by?",
+    "q": "Instagram owned by؟",
     "o": [
-      "Google",
-      "Meta",
-      "Twitter",
-      "Snap"
-    ],
-    "a": 1
-  },
-  {
-    "q": "TikTok parent company?",
-    "o": [
-      "ByteDance",
       "Meta",
       "Apple",
+      "Bezos",
+      "Snap"
+    ],
+    "a": 0
+  },
+  {
+    "q": "TikTok parent company؟",
+    "o": [
+      "ByteDance",
+      "Jan Koum",
+      "Bluesky",
       "Netflix"
     ],
     "a": 0
   },
   {
-    "q": "Twitter rebranded to?",
+    "q": "Twitter rebranded to؟",
     "o": [
-      "Threads",
       "X",
-      "Bluesky",
-      "Mastodon"
-    ],
-    "a": 1
-  },
-  {
-    "q": "WhatsApp co-founder?",
-    "o": [
-      "Jan Koum",
+      "Apple",
       "Bezos",
-      "Musk",
-      "Gates"
+      "ByteDance"
     ],
     "a": 0
   },
   {
-    "q": "Snapchat known for?",
+    "q": "WhatsApp co-founder؟",
     "o": [
-      "Permanent posts",
+      "Jan Koum",
+      "Bluesky",
+      "ByteDance",
+      "Cooking"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Snapchat known for؟",
+    "o": [
+      "Shopping only",
       "Disappearing messages",
-      "Music only",
-      "Shopping only"
+      "Professional networking",
+      "Permanent posts"
     ],
     "a": 1
   },
   {
-    "q": "YouTube founded ~?",
+    "q": "YouTube founded ~؟",
     "o": [
-      "2003",
       "2005",
+      "2003",
       "2007",
       "2010"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "LinkedIn for?",
+    "q": "LinkedIn for؟",
     "o": [
-      "Games",
-      "Professional networking",
+      "Disappearing messages",
+      "ByteDance",
       "Cooking",
-      "Sports"
+      "Professional networking"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Reddit nickname?",
+    "q": "Reddit nickname؟",
     "o": [
       "Front page of the internet",
-      "Email",
-      "Fax",
-      "Radio"
+      "A Nightmare on Elm Street",
+      "A private company vote",
+      "A lot / very"
     ],
     "a": 0
   }

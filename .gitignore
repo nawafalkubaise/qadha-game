@@ -27,3 +27,12 @@ dist-ssr
 
 # Playwright / browser automation artifacts
 .playwright-mcp/
+
+# Local data backups (safety snapshots, kept out of git)
+src/data/banks_backup_*/
+
+# Temp pipeline artifacts (underscore-prefixed)
+scripts/_*
+
+# Agent runtime / local config
+.claude-flow/

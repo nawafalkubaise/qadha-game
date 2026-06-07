@@ -1,76 +1,76 @@
 [
   {
-    "q": "A regional shopping center often combines retail with?",
+    "q": "A regional shopping center often combines retail with؟",
     "o": [
       "Parking, A/C, dining, cinema",
-      "Desert farming only",
-      "Shipbuilding",
-      "Air traffic control"
+      "Open lanes and smaller shops",
+      "Air traffic control",
+      "Cinemas and play zones"
     ],
     "a": 0
   },
   {
-    "q": "A traditional souk differs from a modern mall mainly by?",
+    "q": "A traditional souk differs from a modern mall mainly by؟",
     "o": [
       "Open lanes and smaller shops",
-      "Single sealed skyscraper only",
-      "No vendors",
-      "Underwater tunnels only"
+      "Cinemas and play zones",
+      "Families and day trips",
+      "Find units and exits"
     ],
     "a": 0
   },
   {
-    "q": "Food courts in malls are?",
+    "q": "Food courts in malls are؟",
     "o": [
+      "Olympic pools only",
       "Cluster of restaurants with shared seating",
-      "Weapons depot",
-      "Livestock pens",
-      "Olympic pools only"
+      "Air traffic control",
+      "Cattle auctions only"
     ],
-    "a": 0
+    "a": 1
   },
   {
-    "q": "Retail tenants usually pay the landlord?",
+    "q": "Retail tenants usually pay the landlord؟",
     "o": [
       "Rent or revenue share",
-      "Personal visitor taxes",
-      "Nothing ever",
-      "Only in barter fish"
+      "Cinemas and play zones",
+      "Families and day trips",
+      "Find units and exits"
     ],
     "a": 0
   },
   {
-    "q": "Interior mall maps help shoppers?",
+    "q": "Interior mall maps help shoppers؟",
     "o": [
       "Find units and exits",
-      "Predict earthquakes",
-      "Mint currency",
-      "Repair aircraft"
+      "Cinemas and play zones",
+      "Families and day trips",
+      "Open lanes and smaller shops"
     ],
     "a": 0
   },
   {
-    "q": "Mixed retail-entertainment venues target?",
+    "q": "Mixed retail-entertainment venues target؟",
     "o": [
       "Families and day trips",
-      "Oil refineries",
-      "Container ports",
-      "Freight only"
+      "Cinemas and play zones",
+      "Find units and exits",
+      "Open lanes and smaller shops"
     ],
     "a": 0
   },
   {
-    "q": "Very large malls may include?",
+    "q": "Very large malls may include؟",
     "o": [
       "Cinemas and play zones",
-      "Only grain silos",
-      "Cattle auctions only",
-      "Nuclear plants"
+      "Families and day trips",
+      "Find units and exits",
+      "Cattle auctions only"
     ],
     "a": 0
   },
   {
-    "q": "Escalators in malls mainly move people?",
+    "q": "Escalators in malls mainly move people؟",
     "o": [
       "Between floors",
       "Across oceans",

@@ -1,81 +1,81 @@
 [
   {
-    "q": "Abdullah Al-Ruwaished is famous in?",
+    "q": "Abdullah Al-Ruwaished is famous in؟",
     "o": [
       "Kuwaiti singing",
-      "Medicine",
-      "Engineering",
+      "Drama acting",
+      "Actresses",
       "Basketball"
     ],
     "a": 0
   },
   {
-    "q": "Hayat Al-Fahad is known for?",
+    "q": "Hayat Al-Fahad is known for؟",
     "o": [
       "Drama acting",
-      "Football",
-      "Aviation",
-      "Economics"
+      "Kuwaiti singing",
+      "Acting",
+      "Actresses"
     ],
     "a": 0
   },
   {
-    "q": "Suad Abdullah is one of Kuwait's famous?",
+    "q": "Suad Abdullah is one of Kuwait's famous؟",
     "o": [
       "Actresses",
+      "Athletes",
       "Physicists",
-      "Pilots",
-      "Athletes"
+      "Acting"
     ],
     "a": 0
   },
   {
-    "q": "Dawood Hussein is known for?",
-    "o": [
-      "Acting",
-      "Swimming",
-      "Lab science",
-      "Architecture"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Faiq Abduljaleel is notable in?",
+    "q": "Dawood Hussein is known for؟",
     "o": [
       "Poetry",
+      "Actresses",
+      "Drama acting",
+      "Acting"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Faiq Abduljaleel is notable in؟",
+    "o": [
+      "Poetry",
+      "Acting",
       "Boxing",
-      "Veterinary science",
       "Physics"
     ],
     "a": 0
   },
   {
-    "q": "Popular influencer platforms in Kuwait?",
-    "o": [
-      "Snapchat and Instagram",
-      "Fax only",
-      "Radio only",
-      "Print only"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Kuwaiti celebrities are often visible in?",
+    "q": "Popular influencer platforms in Kuwait؟",
     "o": [
       "Media and social platforms",
+      "Kuwaiti public figures",
       "Oil sector only",
-      "Geology only",
-      "Agriculture only"
+      "Snapchat and Instagram"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "This category focuses on?",
+    "q": "Kuwaiti celebrities are often visible in؟",
+    "o": [
+      "Oil sector only",
+      "Media and social platforms",
+      "Snapchat and Instagram",
+      "Kuwaiti public figures"
+    ],
+    "a": 1
+  },
+  {
+    "q": "This category focuses on؟",
     "o": [
       "Kuwaiti public figures",
-      "District names",
-      "Global food",
-      "Olympic sports"
+      "Media and social platforms",
+      "Snapchat and Instagram",
+      "Oil sector only"
     ],
     "a": 0
   }

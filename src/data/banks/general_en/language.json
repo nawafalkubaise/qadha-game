@@ -1,80 +1,80 @@
 [
   {
-    "q": "Most native speakers globally ~?",
+    "q": "Most native speakers globally ~؟",
     "o": [
-      "English only",
       "Mandarin Chinese",
-      "Arabic only",
-      "Swedish"
+      "Blind reading",
+      "Two languages",
+      "Arabic only"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Official language of Brazil?",
+    "q": "Official language of Brazil؟",
     "o": [
-      "Spanish",
-      "Portuguese",
+      "Blind reading",
       "English",
-      "French"
+      "French",
+      "Portuguese"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Cyrillic script used in?",
+    "q": "Cyrillic script used in؟",
     "o": [
-      "Spain",
       "Russia and others",
-      "Japan",
-      "Thailand"
+      "A lot / very",
+      "A Nightmare on Elm Street",
+      "Constructed auxiliary language"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Esperanto is?",
+    "q": "Esperanto is؟",
     "o": [
-      "Ancient language",
       "Constructed auxiliary language",
-      "Dialect",
-      "Cipher"
+      "A Nightmare on Elm Street",
+      "A lot / very",
+      "Russia and others"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Arabic alphabet letters ~?",
+    "q": "Arabic alphabet letters ~؟",
     "o": [
-      "26",
       "28",
+      "26",
       "33",
       "40"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Sanskrit historically tied to?",
+    "q": "Sanskrit historically tied to؟",
     "o": [
-      "Japan",
       "India",
-      "Sweden",
-      "Mexico"
+      "-100°C",
+      "Japan",
+      "Spain"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Bilingual means?",
+    "q": "Bilingual means؟",
     "o": [
-      "No language",
-      "Two languages",
-      "Silent",
-      "Written only"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Braille is for?",
-    "o": [
-      "Deaf",
       "Blind reading",
-      "Color",
+      "Mandarin Chinese",
+      "No language",
+      "Two languages"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Braille is for؟",
+    "o": [
+      "Two languages",
+      "Blind reading",
+      "Mandarin Chinese",
       "Speed typing"
     ],
     "a": 1

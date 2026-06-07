@@ -1,46 +1,46 @@
 [
   {
-    "q": "Players per team on field in football?",
+    "q": "Players per team on field in football؟",
     "o": [
-      "10",
       "11",
-      "9",
-      "7"
+      "10",
+      "7",
+      "9"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "FIFA World Cup every?",
+    "q": "FIFA World Cup every؟",
     "o": [
-      "2 years",
       "4 years",
+      "2 years",
       "3 years",
       "5 years"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "FIFA HQ city?",
+    "q": "FIFA HQ city؟",
     "o": [
-      "London",
       "Zurich",
-      "Paris",
+      "4 years",
+      "London",
       "Madrid"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Red card means?",
+    "q": "Red card means؟",
     "o": [
-      "Warning",
-      "Sent off",
+      "Goalkeeper",
       "Substitute",
-      "Corner"
+      "Sent off",
+      "4 years"
     ],
-    "a": 1
+    "a": 2
   },
   {
-    "q": "Penalty spot distance ~?",
+    "q": "Penalty spot distance ~؟",
     "o": [
       "9 m",
       "11 m",
@@ -50,33 +50,33 @@
     "a": 1
   },
   {
-    "q": "UEFA Champions League is?",
+    "q": "UEFA Champions League is؟",
     "o": [
-      "Asian",
       "European clubs",
-      "African",
-      "South American"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Only who may use hands in box (normally)?",
-    "o": [
-      "Striker",
+      "South American",
       "Goalkeeper",
-      "Referee",
-      "Coach"
+      "11 m"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Offside rule mainly about?",
+    "q": "Only who may use hands in box (normally)؟",
     "o": [
-      "Shirt color",
-      "Position ahead of ball and second-last defender",
-      "Shoe size",
-      "Hair"
+      "Goalkeeper",
+      "Sent off",
+      "4 years",
+      "European clubs"
     ],
-    "a": 1
+    "a": 0
+  },
+  {
+    "q": "Offside rule mainly about؟",
+    "o": [
+      "A lot / very",
+      "A Nightmare on Elm Street",
+      "Position ahead of ball and second-last defender",
+      "A private company vote"
+    ],
+    "a": 2
   }
 ]
