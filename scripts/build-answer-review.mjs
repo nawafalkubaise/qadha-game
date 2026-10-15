@@ -28,8 +28,14 @@ const findQ = (file, q) => {
   return bankCache.get(file).find((x) => x.q === q);
 };
 
+/* ما صُحّح فعلاً (review/applied-fixes.json) لا يعود لقائمة المراجعة */
+const fixedKeys = new Set();
+if (fs.existsSync("review/applied-fixes.json"))
+  for (const f of JSON.parse(fs.readFileSync("review/applied-fixes.json", "utf8"))) fixedKeys.add(`${f.file}|${f.beforeQ}`);
+
 const rows = new Map();
 const add = (e, source) => {
+  if (fixedKeys.has(`${e.file}|${e.q}`)) return;
   const bq = findQ(e.file, e.q);
   if (!bq) return; /* السؤال حُذف لاحقاً */
   const key = `${e.file}|${e.q}`;
