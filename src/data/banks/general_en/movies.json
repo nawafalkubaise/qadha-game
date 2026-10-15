@@ -1,138 +1,138 @@
 [
   {
-    "q": "Who directed the film Inception؟",
+    "q": "Who directed the film Inception?",
     "o": [
+      "Steven Spielberg",
+      "James Cameron",
       "Christopher Nolan",
-      "Frank Darabont",
-      "Leonardo DiCaprio",
       "Martin Scorsese"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which film is the highest-grossing film of all time؟",
+    "q": "Which film is the highest-grossing film of all time?",
     "o": [
       "Avatar",
-      "Cannes",
+      "Avengers: Endgame",
       "Titanic",
-      "Parasite"
+      "Star Wars: The Force Awakens"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Which actor played Jack in the film Titanic؟",
+    "q": "Which actor played Jack in the film Titanic?",
     "o": [
+      "Brad Pitt",
+      "Matt Damon",
       "Leonardo DiCaprio",
-      "Christopher Nolan",
-      "Frank Darabont",
-      "Steven Spielberg"
+      "Tom Cruise"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which film won Best Picture at the 2020 Academy Awards ceremony؟",
+    "q": "Which film won Best Picture at the 2020 Academy Awards ceremony?",
     "o": [
-      "Parasite",
-      "Tom Hanks",
-      "Toy Story",
-      "Avatar"
+      "1917",
+      "Joker",
+      "Once Upon a Time in Hollywood",
+      "Parasite"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Who directed The Godfather؟",
+    "q": "Who directed The Godfather?",
     "o": [
+      "Martin Scorsese",
+      "Stanley Kubrick",
       "Francis Ford Coppola",
-      "Robert Downey Jr.",
-      "Space travel and time",
-      "Heath Ledger and Christian Bale"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "In which year was the first Star Wars film released؟",
-    "o": [
-      "1979",
-      "1980",
-      "1977",
-      "1975"
+      "Steven Spielberg"
     ],
     "a": 2,
     "d": 2
   },
   {
-    "q": "Which actor played Iron Man in the Marvel films؟",
+    "q": "In which year was the first Star Wars film released?",
     "o": [
-      "Robert Downey Jr.",
-      "Francis Ford Coppola",
-      "Space travel and time",
-      "Heath Ledger and Christian Bale"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What was Pixar's first feature-length film؟",
-    "o": [
-      "Toy Story",
-      "Parasite",
-      "Tom Hanks",
-      "Avatar"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who directed The Shawshank Redemption؟",
-    "o": [
-      "Frank Darabont",
-      "Christopher Nolan",
-      "Keanu Reeves",
-      "Leonardo DiCaprio"
-    ],
-    "a": 0,
-    "d": 3
-  },
-  {
-    "q": "Who was the first actor to play James Bond in the official film series؟",
-    "o": [
-      "Sean Connery",
-      "Daniel Craig",
-      "Frank Darabont",
-      "George Lazenby"
+      "1977",
+      "1975",
+      "1979",
+      "1980"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What is the film Interstellar mainly about؟",
+    "q": "Which actor played Iron Man in the Marvel films?",
     "o": [
-      "Space travel and time",
-      "A heist inside dreams",
-      "A virtual reality world",
-      "A World War II evacuation"
+      "Chris Evans",
+      "Chris Hemsworth",
+      "Robert Downey Jr.",
+      "Mark Ruffalo"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which actors star in The Dark Knight؟",
+    "q": "What was Pixar's first feature-length film?",
     "o": [
+      "A Bug's Life",
+      "Toy Story",
+      "Finding Nemo",
+      "Monsters, Inc."
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Who directed The Shawshank Redemption?",
+    "o": [
+      "Steven Spielberg",
+      "Frank Darabont",
+      "Rob Reiner",
+      "Robert Zemeckis"
+    ],
+    "a": 1,
+    "d": 3
+  },
+  {
+    "q": "Who was the first actor to play James Bond in the official film series?",
+    "o": [
+      "Roger Moore",
+      "George Lazenby",
+      "Sean Connery",
+      "Daniel Craig"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "What is the film Interstellar mainly about?",
+    "o": [
+      "A heist inside dreams",
+      "Space travel and time",
+      "A World War II evacuation",
+      "A virtual reality world"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Which actors star in The Dark Knight?",
+    "o": [
+      "Ryan Gosling and Harrison Ford",
       "Brad Pitt and Edward Norton",
       "Matt Damon and Ben Affleck",
-      "Ryan Gosling and Harrison Ford",
       "Heath Ledger and Christian Bale"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "What was Disney's first full-length animated feature film؟",
+    "q": "What was Disney's first full-length animated feature film?",
     "o": [
       "Cinderella",
       "Pinocchio",
@@ -143,80 +143,80 @@
     "d": 2
   },
   {
-    "q": "Which actor starred as Neo in The Matrix؟",
+    "q": "Which actor starred as Neo in The Matrix?",
     "o": [
-      "Frank Darabont",
-      "Sean Connery",
-      "The Holocaust",
+      "Tom Cruise",
+      "Will Smith",
+      "Brad Pitt",
       "Keanu Reeves"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "At which film festival is the Palme d'Or awarded؟",
+    "q": "At which film festival is the Palme d'Or awarded?",
     "o": [
-      "Cannes",
-      "Avatar",
+      "Venice",
       "Berlin",
-      "Toronto"
+      "Toronto",
+      "Cannes"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Which actor starred as Forrest Gump؟",
+    "q": "Which actor starred as Forrest Gump?",
     "o": [
-      "Toy Story",
-      "Tom Hanks",
       "Tom Cruise",
-      "Parasite"
+      "Tom Hanks",
+      "Kevin Costner",
+      "Robin Williams"
     ],
     "a": 1,
     "d": 1
   },
   {
-    "q": "How many films are in the Harry Potter film series؟",
+    "q": "How many films are in the Harry Potter film series?",
     "o": [
-      "8",
       "6",
       "7",
-      "10"
+      "10",
+      "8"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Who directed Jurassic Park؟",
+    "q": "Who directed Jurassic Park?",
     "o": [
       "Steven Spielberg",
-      "Christopher Nolan",
-      "Frank Darabont",
-      "James Cameron"
+      "James Cameron",
+      "George Lucas",
+      "Ridley Scott"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What historical event is Schindler's List about؟",
+    "q": "What historical event is Schindler's List about?",
     "o": [
-      "Frank Darabont",
-      "Keanu Reeves",
-      "Sean Connery",
-      "The Holocaust"
+      "The Vietnam War",
+      "The French Revolution",
+      "The Holocaust",
+      "The American Civil War"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Who directed E.T. the Extra-Terrestrial؟",
+    "q": "Who directed E.T. the Extra-Terrestrial?",
     "o": [
+      "George Lucas",
+      "Ron Howard",
       "Steven Spielberg",
-      "Christopher Nolan",
-      "Frank Darabont",
       "James Cameron"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]

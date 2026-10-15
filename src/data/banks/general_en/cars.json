@@ -1,90 +1,90 @@
 [
   {
-    "q": "What did Ford's Model T help bring about؟",
+    "q": "What did Ford's Model T help bring about?",
     "o": [
       "Mass car ownership",
-      "A prancing horse",
-      "Formula One racing",
-      "Wheels locking during braking"
+      "Electric cars",
+      "Self-driving cars",
+      "Formula One racing"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Which country is the carmaker Toyota from؟",
+    "q": "Which country is the carmaker Toyota from?",
     "o": [
       "Japan",
+      "South Korea",
       "China",
-      "Germany",
-      "Tractors"
+      "Germany"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which city is Mercedes-Benz headquartered؟",
+    "q": "In which city is Mercedes-Benz headquartered?",
     "o": [
+      "Munich",
       "Stuttgart",
-      "Frankfurt",
-      "Tractors",
-      "Berlin"
+      "Berlin",
+      "Frankfurt"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "The car company Tesla is best known for what؟",
+    "q": "The car company Tesla is best known for what?",
     "o": [
-      "Electric vehicles",
       "Diesel trucks",
       "Motorcycles",
-      "Bicycles"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What does an anti-lock braking system (ABS) prevent؟",
-    "o": [
-      "Wheels locking during braking",
-      "Sensors and artificial intelligence",
-      "Mass car ownership",
-      "A prancing horse"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What did Lamborghini make before it built supercars؟",
-    "o": [
-      "Tractors",
-      "Airplanes",
       "Bicycles",
-      "Motorboats"
+      "Electric vehicles"
     ],
-    "a": 0,
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "What does an anti-lock braking system (ABS) prevent?",
+    "o": [
+      "Engine overheating",
+      "Wheels locking during braking",
+      "Tire punctures",
+      "Fuel leaks"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What did Lamborghini make before it built supercars?",
+    "o": [
+      "Bicycles",
+      "Airplanes",
+      "Motorboats",
+      "Tractors"
+    ],
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What do self-driving cars rely on to navigate؟",
+    "q": "What do self-driving cars rely on to navigate?",
     "o": [
       "Sensors and artificial intelligence",
-      "Radio instructions from police",
-      "Wheels locking during braking",
-      "A prancing horse"
+      "Only a human driver",
+      "Only a paper map",
+      "Radio instructions from police"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Which animal appears on the Ferrari logo؟",
+    "q": "Which animal appears on the Ferrari logo?",
     "o": [
-      "A prancing horse",
-      "A leaping jaguar",
       "A raging bull",
-      "Mass car ownership"
+      "A leaping jaguar",
+      "A lion",
+      "A prancing horse"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   }
 ]

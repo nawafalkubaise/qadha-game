@@ -1,50 +1,50 @@
 [
   {
-    "q": "In which year was the Universal Declaration of Human Rights adopted؟",
+    "q": "In which year was the Universal Declaration of Human Rights adopted?",
     "o": [
+      "1948",
       "1945",
       "1950",
-      "1960",
-      "1948"
+      "1960"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which city is the International Court of Justice based?",
+    "o": [
+      "Geneva",
+      "The Hague",
+      "New York",
+      "Brussels"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "In which city are the main headquarters of the United Nations?",
+    "o": [
+      "Geneva",
+      "Paris",
+      "Vienna",
+      "New York"
     ],
     "a": 3,
-    "d": 2
-  },
-  {
-    "q": "In which city is the International Court of Justice based؟",
-    "o": [
-      "The Hague",
-      "Brussels",
-      "New York",
-      "Geneva"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "In which city are the main headquarters of the United Nations؟",
-    "o": [
-      "New York",
-      "The Hague",
-      "Geneva",
-      "Paris"
-    ],
-    "a": 0,
     "d": 1
   },
   {
     "q": "Complete the legal principle: \"Innocent until...\"",
     "o": [
-      "Proven guilty",
       "Arrested",
-      "New York",
+      "Charged",
+      "Proven guilty",
       "Sentenced"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does civil law mainly deal with؟",
+    "q": "What does civil law mainly deal with?",
     "o": [
       "Murder trials",
       "Military offenses",
@@ -55,36 +55,36 @@
     "d": 2
   },
   {
-    "q": "In which city is the International Criminal Court based؟",
+    "q": "In which city is the International Criminal Court based?",
     "o": [
+      "Geneva",
+      "Rome",
       "The Hague",
-      "New York",
-      "Strasbourg",
-      "Geneva"
+      "Strasbourg"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What does a trademark protect؟",
+    "q": "What does a trademark protect?",
     "o": [
+      "Brand names and logos",
+      "Inventions",
       "Books and music",
-      "Contracts and private disputes",
-      "A court trial",
-      "Brand names and logos"
+      "Trade secrets"
     ],
-    "a": 3,
+    "a": 0,
     "d": 2
   },
   {
-    "q": "Arbitration is an alternative to what؟",
+    "q": "Arbitration is an alternative to what?",
     "o": [
+      "A police investigation",
       "A court trial",
-      "A tax audit",
       "A parliamentary vote",
-      "Brand names and logos"
+      "A tax audit"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   }
 ]

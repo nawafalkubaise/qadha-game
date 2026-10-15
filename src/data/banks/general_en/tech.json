@@ -1,149 +1,149 @@
 [
   {
-    "q": "Who co-founded Apple؟",
+    "q": "Who co-founded Apple?",
     "o": [
-      "Steve Jobs",
-      "Anthropic",
       "Bill Gates",
-      "ByteDance"
+      "Larry Page",
+      "Jeff Bezos",
+      "Steve Jobs"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "In which year was the first iPhone released؟",
+    "q": "In which year was the first iPhone released?",
     "o": [
-      "2007",
-      "1991",
       "2005",
-      "2006"
+      "2006",
+      "2007",
+      "2008"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Which company develops the Android operating system؟",
+    "q": "Which company develops the Android operating system?",
     "o": [
-      "Fortran",
-      "Google",
       "Apple",
-      "Denmark"
+      "Google",
+      "Microsoft",
+      "Samsung"
     ],
     "a": 1,
     "d": 1
   },
   {
-    "q": "Who founded Amazon؟",
+    "q": "Who founded Amazon?",
     "o": [
-      "Jeff Bezos",
-      "Anthropic",
       "Bill Gates",
-      "ByteDance"
+      "Elon Musk",
+      "Jeff Bezos",
+      "Mark Zuckerberg"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does WWW stand for؟",
+    "q": "What does WWW stand for?",
     "o": [
-      "World Wide Web",
       "Web World Wide",
+      "World Wide Web",
       "Wide World Web",
       "World Web Wide"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is Python in computing؟",
+    "q": "What is Python in computing?",
     "o": [
-      "An operating system",
+      "A programming language",
       "A database system",
-      "Cryptocurrencies like Bitcoin",
-      "A programming language"
+      "An operating system",
+      "A web browser"
     ],
-    "a": 3,
+    "a": 0,
     "d": 1
   },
   {
-    "q": "Who is the CEO of Tesla؟",
+    "q": "Who is the CEO of Tesla?",
     "o": [
+      "Jeff Bezos",
+      "Tim Cook",
       "Elon Musk",
-      "Anthropic",
-      "ByteDance",
-      "Jeff Bezos"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which company created ChatGPT؟",
-    "o": [
-      "OpenAI",
-      "Denmark",
-      "Fortran",
-      "Google"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who founded Facebook؟",
-    "o": [
-      "Kevin Systrom",
-      "Anthropic",
-      "ByteDance",
-      "Mark Zuckerberg"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "Bluetooth is named after a king of which country؟",
-    "o": [
-      "Fortran",
-      "Google",
-      "Denmark",
-      "Finland"
+      "Sundar Pichai"
     ],
     "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Which company created ChatGPT?",
+    "o": [
+      "OpenAI",
+      "Google",
+      "Anthropic",
+      "Meta"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Who founded Facebook?",
+    "o": [
+      "Mark Zuckerberg",
+      "Jack Dorsey",
+      "Larry Page",
+      "Kevin Systrom"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Bluetooth is named after a king of which country?",
+    "o": [
+      "Sweden",
+      "Denmark",
+      "Finland",
+      "Iceland"
+    ],
+    "a": 1,
     "d": 3
   },
   {
-    "q": "Which company makes the Windows operating system؟",
+    "q": "Which company makes the Windows operating system?",
     "o": [
+      "Apple",
       "Microsoft",
-      "Anthropic",
-      "ByteDance",
-      "Elon Musk"
+      "IBM",
+      "Google"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which year did the first website go online؟",
+    "q": "In which year did the first website go online?",
     "o": [
-      "1991",
       "1985",
       "1995",
-      "1998"
+      "1998",
+      "1991"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Which company owns TikTok؟",
+    "q": "Which company owns TikTok?",
     "o": [
+      "Tencent",
+      "Alibaba",
       "ByteDance",
-      "Anthropic",
-      "Elon Musk",
-      "Jeff Bezos"
+      "Huawei"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does cloud computing mean؟",
+    "q": "What does cloud computing mean?",
     "o": [
       "Forecasting the weather with computers",
       "Storing and processing data over the internet",
@@ -154,7 +154,7 @@
     "d": 1
   },
   {
-    "q": "Blockchain technology underpins which of these؟",
+    "q": "Blockchain technology underpins which of these?",
     "o": [
       "Wi-Fi networks",
       "Email delivery",
@@ -165,40 +165,40 @@
     "d": 1
   },
   {
-    "q": "Which space company did Elon Musk found؟",
+    "q": "Which space company did Elon Musk found?",
     "o": [
-      "SpaceX",
-      "Denmark",
-      "Fortran",
-      "Google"
+      "Blue Origin",
+      "Virgin Galactic",
+      "Rocket Lab",
+      "SpaceX"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What does Wi-Fi use to transmit data؟",
+    "q": "What does Wi-Fi use to transmit data?",
     "o": [
-      "Radio waves",
       "Sound waves",
-      "Anthropic",
-      "ByteDance"
+      "Radio waves",
+      "Visible light",
+      "X-rays"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What was the first widely used high-level programming language؟",
+    "q": "What was the first widely used high-level programming language?",
     "o": [
       "Fortran",
-      "Denmark",
-      "Google",
-      "OpenAI"
+      "COBOL",
+      "Python",
+      "C"
     ],
     "a": 0,
     "d": 3
   },
   {
-    "q": "How do 3D printers create objects؟",
+    "q": "How do 3D printers create objects?",
     "o": [
       "By carving a solid block",
       "By pouring material into molds",
@@ -209,14 +209,14 @@
     "d": 1
   },
   {
-    "q": "Which company makes the Claude AI assistant؟",
+    "q": "Which company makes the Claude AI assistant?",
     "o": [
-      "Anthropic",
-      "ByteDance",
-      "Elon Musk",
-      "Jeff Bezos"
+      "OpenAI",
+      "Google",
+      "Microsoft",
+      "Anthropic"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   }
 ]

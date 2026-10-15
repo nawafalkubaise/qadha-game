@@ -1,75 +1,75 @@
 [
   {
-    "q": "What is the second holiest city in Islam after Mecca؟",
+    "q": "What is the second holiest city in Islam after Mecca?",
     "o": [
+      "Jerusalem",
       "Medina",
       "Baghdad",
-      "China",
-      "India"
+      "Damascus"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "The Bhagavad Gita is a sacred text in which religion؟",
+    "q": "The Bhagavad Gita is a sacred text in which religion?",
     "o": [
-      "Hinduism",
       "Buddhism",
       "Jainism",
-      "Ramadan"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What does Easter celebrate؟",
-    "o": [
-      "The baptism of Jesus",
-      "Obligatory charity to the needy",
-      "The birth of Jesus",
-      "The resurrection of Jesus"
+      "Sikhism",
+      "Hinduism"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In which city is the Kaaba located؟",
+    "q": "What does Easter celebrate?",
     "o": [
+      "The resurrection of Jesus",
+      "The birth of Jesus",
+      "The baptism of Jesus",
+      "The Last Supper"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which city is the Kaaba located?",
+    "o": [
+      "Medina",
+      "Jerusalem",
       "Mecca",
-      "Cairo",
-      "China",
-      "India"
+      "Cairo"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "The Pope is the head of which Christian church, the largest in the world؟",
+    "q": "The Pope is the head of which Christian church, the largest in the world?",
     "o": [
-      "Catholic Church",
       "Anglican Church",
-      "Lutheran Church",
-      "Christianity"
+      "Eastern Orthodox Church",
+      "Catholic Church",
+      "Lutheran Church"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which country did Buddhism originate؟",
+    "q": "In which country did Buddhism originate?",
     "o": [
       "China",
       "Japan",
-      "Mecca",
-      "India"
+      "India",
+      "Thailand"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "On which day is the Jewish Sabbath observed؟",
+    "q": "On which day is the Jewish Sabbath observed?",
     "o": [
-      "Hinduism",
-      "Ramadan",
+      "Sunday",
+      "Monday",
       "Wednesday",
       "Saturday"
     ],
@@ -77,146 +77,146 @@
     "d": 1
   },
   {
-    "q": "Which four holy books are recognized in Islam؟",
+    "q": "Which four holy books are recognized in Islam?",
     "o": [
-      "Torah, Psalms, Gospel, and Quran",
-      "Psalms, Hadith, Gospel, and Quran",
       "Torah, Talmud, Gospel, and Quran",
-      "Vedas, Torah, Gospel, and Quran"
+      "Vedas, Torah, Gospel, and Quran",
+      "Torah, Psalms, Gospel, and Quran",
+      "Psalms, Hadith, Gospel, and Quran"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "How many pillars of Islam are there؟",
+    "q": "How many pillars of Islam are there?",
     "o": [
-      "5",
       "3",
       "4",
+      "5",
       "6"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which month did the revelation of the Quran begin؟",
+    "q": "In which month did the revelation of the Quran begin?",
+    "o": [
+      "Muharram",
+      "Ramadan",
+      "Shawwal",
+      "Rajab"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which Islamic month does the Hajj pilgrimage take place?",
     "o": [
       "Ramadan",
-      "Hinduism",
-      "Medina",
-      "Muharram"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which Islamic month does the Hajj pilgrimage take place؟",
-    "o": [
-      "Dhul Hijjah",
-      "Christianity",
-      "Catholic Church",
-      "Hinduism"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which region did Sikhism originate؟",
-    "o": [
-      "Punjab",
-      "Bengal",
-      "China",
-      "Gujarat"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "What two main parts make up the Christian Bible؟",
-    "o": [
-      "Old and New Testaments",
-      "Gospels and Hadith",
-      "Vedas and Upanishads",
-      "The resurrection of Jesus"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The Buddha was born as a prince in Lumbini, in which present-day country؟",
-    "o": [
-      "Nepal",
-      "Bhutan",
-      "China",
-      "India"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "How many chapters (surahs) are in the Quran؟",
-    "o": [
-      "114",
-      "110",
-      "124",
-      "99"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Eid al-Adha commemorates the story of which prophet؟",
-    "o": [
-      "Prophet Ibrahim",
-      "Prophet Musa",
-      "Catholic Church",
-      "Christianity"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which religion has the most followers worldwide؟",
-    "o": [
-      "Catholic Church",
-      "Dhul Hijjah",
-      "Prophet Ibrahim",
-      "Christianity"
+      "Muharram",
+      "Shawwal",
+      "Dhul Hijjah"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "The Golden Temple in Amritsar is sacred to which community؟",
+    "q": "In which region did Sikhism originate?",
     "o": [
-      "Sikhs",
-      "China",
-      "Hindus",
-      "India"
+      "Bengal",
+      "Gujarat",
+      "Kerala",
+      "Punjab"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "What two main parts make up the Christian Bible?",
+    "o": [
+      "Torah and Talmud",
+      "Old and New Testaments",
+      "Vedas and Upanishads",
+      "Gospels and Hadith"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "The Buddha was born as a prince in Lumbini, in which present-day country?",
+    "o": [
+      "Nepal",
+      "Sri Lanka",
+      "Bhutan",
+      "Myanmar"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "How many chapters (surahs) are in the Quran?",
+    "o": [
+      "114",
+      "99",
+      "110",
+      "124"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is Zakat in Islam؟",
+    "q": "Eid al-Adha commemorates the story of which prophet?",
+    "o": [
+      "Prophet Musa",
+      "Prophet Isa",
+      "Prophet Ibrahim",
+      "Prophet Nuh"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Which religion has the most followers worldwide?",
+    "o": [
+      "Christianity",
+      "Islam",
+      "Hinduism",
+      "Buddhism"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "The Golden Temple in Amritsar is sacred to which community?",
+    "o": [
+      "Hindus",
+      "Sikhs",
+      "Jains",
+      "Buddhists"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What is Zakat in Islam?",
     "o": [
       "Obligatory charity to the needy",
+      "Fasting during Ramadan",
       "The pilgrimage to Mecca",
-      "The resurrection of Jesus",
       "The five daily prayers"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which country did Confucianism originate؟",
+    "q": "In which country did Confucianism originate?",
     "o": [
-      "China",
-      "India",
       "Japan",
-      "Korea"
+      "China",
+      "Korea",
+      "Vietnam"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   }
 ]

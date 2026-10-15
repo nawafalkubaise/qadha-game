@@ -1,17 +1,17 @@
 [
   {
-    "q": "How many players does each football (soccer) team have on the field؟",
+    "q": "How many players does each football (soccer) team have on the field?",
     "o": [
+      "9",
       "11",
       "10",
-      "12",
-      "9"
+      "12"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "How often is the FIFA World Cup held؟",
+    "q": "How often is the FIFA World Cup held?",
     "o": [
       "Every 4 years",
       "Every 2 years",
@@ -22,62 +22,62 @@
     "d": 1
   },
   {
-    "q": "In which city is FIFA headquartered؟",
+    "q": "In which city is FIFA headquartered?",
     "o": [
+      "Zurich",
       "Geneva",
-      "Paris",
-      "11 m",
-      "Zurich"
+      "Lausanne",
+      "Paris"
     ],
-    "a": 3,
+    "a": 0,
     "d": 2
   },
   {
-    "q": "In football, what does a red card mean؟",
+    "q": "In football, what does a red card mean?",
     "o": [
-      "The player is sent off",
+      "The player receives a warning",
       "A penalty kick is awarded",
-      "A substitution is made",
-      "The player receives a warning"
+      "The player is sent off",
+      "A substitution is made"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "How far is the penalty spot from the goal line in football؟",
+    "q": "How far is the penalty spot from the goal line in football?",
     "o": [
+      "9 m",
       "11 m",
-      "5.5 m",
       "16.5 m",
-      "9 m"
+      "5.5 m"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What is the UEFA Champions League؟",
+    "q": "What is the UEFA Champions League?",
     "o": [
-      "A European club competition",
       "A South American club competition",
       "A World Cup for nations",
+      "A European club competition",
       "An English domestic league"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which football player is normally allowed to handle the ball inside the penalty area؟",
+    "q": "Which football player is normally allowed to handle the ball inside the penalty area?",
     "o": [
-      "The goalkeeper",
-      "The center-back",
       "The captain",
+      "The center-back",
+      "The goalkeeper",
       "The striker"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What is the offside rule in football mainly about؟",
+    "q": "What is the offside rule in football mainly about?",
     "o": [
       "Touching the ball with the hand",
       "Being ahead of the ball and the second-last defender",

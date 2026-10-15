@@ -1,28 +1,28 @@
 [
   {
-    "q": "Who directed the film The Shining؟",
+    "q": "Who directed the film The Shining?",
     "o": [
+      "Wes Craven",
       "Stanley Kubrick",
-      "Alfred Hitchcock",
       "John Carpenter",
-      "Stephen King"
+      "Alfred Hitchcock"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Who wrote the novel It؟",
+    "q": "Who wrote the novel It?",
     "o": [
-      "Stanley Kubrick",
-      "Alfred Hitchcock",
+      "H. P. Lovecraft",
       "Stephen King",
+      "Edgar Allan Poe",
       "Dean Koontz"
     ],
-    "a": 2,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which film series does Freddy Krueger appear؟",
+    "q": "In which film series does Freddy Krueger appear?",
     "o": [
       "A Nightmare on Elm Street",
       "Friday the 13th",
@@ -33,56 +33,56 @@
     "d": 1
   },
   {
-    "q": "Who directed the film Psycho (1960)؟",
+    "q": "Who directed the film Psycho (1960)?",
     "o": [
-      "Stanley Kubrick",
-      "Supernatural horror",
       "Alfred Hitchcock",
-      "John Carpenter"
+      "Stanley Kubrick",
+      "John Carpenter",
+      "George A. Romero"
     ],
-    "a": 2,
+    "a": 0,
     "d": 1
   },
   {
-    "q": "In which country did the horror story The Ring originate؟",
+    "q": "In which country did the horror story The Ring originate?",
     "o": [
-      "Japan",
+      "South Korea",
       "China",
-      "Scream",
-      "Alfred Hitchcock"
+      "United States",
+      "Japan"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "In which horror film series does the killer Ghostface appear؟",
+    "q": "In which horror film series does the killer Ghostface appear?",
     "o": [
-      "Scream",
-      "Japan",
       "Halloween",
-      "Alfred Hitchcock"
+      "Scream",
+      "Saw",
+      "The Conjuring"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which year was Night of the Living Dead released؟",
+    "q": "In which year was Night of the Living Dead released?",
     "o": [
-      "1968",
       "1958",
+      "1968",
       "1978",
       "1988"
     ],
-    "a": 0,
+    "a": 1,
     "d": 3
   },
   {
-    "q": "What genre is the film The Exorcist؟",
+    "q": "What genre is the film The Exorcist?",
     "o": [
       "Supernatural horror",
-      "Alfred Hitchcock",
       "Romantic comedy",
-      "Science fiction"
+      "Science fiction",
+      "Western"
     ],
     "a": 0,
     "d": 1

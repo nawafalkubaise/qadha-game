@@ -1,61 +1,61 @@
 [
   {
-    "q": "What does GDP stand for؟",
+    "q": "What does GDP stand for?",
     "o": [
-      "Gross Domestic Product",
       "General Daily Product",
-      "Gross Dollar Price",
-      "A general rise in prices"
+      "Global Development Plan",
+      "Gross Domestic Product",
+      "Gross Dollar Price"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which country has the world's largest economy by nominal GDP؟",
+    "q": "Which country has the world's largest economy by nominal GDP?",
     "o": [
+      "China",
+      "Japan",
       "United States",
-      "New York",
-      "Technology",
-      "China"
+      "Germany"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does inflation mean؟",
+    "q": "What does inflation mean?",
     "o": [
-      "Prices staying fixed",
-      "A general rise in prices",
       "A general fall in prices",
+      "A general rise in prices",
+      "Prices staying fixed",
       "A rise in unemployment only"
     ],
     "a": 1,
     "d": 1
   },
   {
-    "q": "In which city is Wall Street؟",
+    "q": "In which city is Wall Street?",
     "o": [
       "New York",
+      "London",
       "Chicago",
-      "Hong Kong",
-      "Technology"
+      "Hong Kong"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which year was Bitcoin launched؟",
+    "q": "In which year was Bitcoin launched?",
     "o": [
-      "2009",
       "2005",
       "2013",
-      "2017"
+      "2017",
+      "2009"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "OPEC is an organization of countries that export which commodity؟",
+    "q": "OPEC is an organization of countries that export which commodity?",
     "o": [
       "Oil",
       "Gold",
@@ -66,25 +66,25 @@
     "d": 1
   },
   {
-    "q": "As of 2026, how many European Union countries use the euro؟",
+    "q": "As of 2026, how many European Union countries use the euro?",
     "o": [
       "21",
-      "12",
       "15",
-      "27"
+      "27",
+      "12"
     ],
     "a": 0,
     "d": 3
   },
   {
-    "q": "Which industry do many of the world's richest people come from today؟",
+    "q": "Which industry do many of the world's richest people come from today?",
     "o": [
-      "Technology",
       "Agriculture",
-      "New York",
+      "Technology",
+      "Fishing",
       "Textiles"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   }
 ]

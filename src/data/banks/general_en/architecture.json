@@ -1,6 +1,6 @@
 [
   {
-    "q": "In which country is the Burj Khalifa؟",
+    "q": "In which country is the Burj Khalifa?",
     "o": [
       "Saudi Arabia",
       "Qatar",
@@ -11,40 +11,40 @@
     "d": 1
   },
   {
-    "q": "In which country is the Taj Mahal؟",
+    "q": "In which country is the Taj Mahal?",
     "o": [
+      "Pakistan",
+      "India",
       "Iran",
-      "Jordan",
-      "Pisa",
-      "India"
+      "Bangladesh"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which Italian city is the famous Leaning Tower?",
+    "o": [
+      "Milan",
+      "Florence",
+      "Venice",
+      "Pisa"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In which Italian city is the famous Leaning Tower؟",
-    "o": [
-      "Pisa",
-      "India",
-      "Milan",
-      "Jordan"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which city is the Sagrada Família؟",
+    "q": "In which city is the Sagrada Família?",
     "o": [
       "Barcelona",
+      "Madrid",
       "Bilbao",
-      "Jordan",
-      "Madrid"
+      "Seville"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "The roof of the Sydney Opera House is designed to resemble what؟",
+    "q": "The roof of the Sydney Opera House is designed to resemble what?",
     "o": [
       "Waves",
       "Sails or shells",
@@ -55,36 +55,36 @@
     "d": 1
   },
   {
-    "q": "In which country is the ancient city of Petra؟",
+    "q": "In which country is the ancient city of Petra?",
     "o": [
-      "Jordan",
+      "Lebanon",
+      "Syria",
       "Egypt",
-      "India",
-      "Lebanon"
+      "Jordan"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What material is the Eiffel Tower mainly made of؟",
+    "q": "What material is the Eiffel Tower mainly made of?",
     "o": [
-      "Aluminum",
-      "Barcelona",
       "Concrete",
+      "Stone",
+      "Aluminum",
       "Wrought iron"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "During which era was the Arc de Triomphe in Paris commissioned؟",
+    "q": "During which era was the Arc de Triomphe in Paris commissioned?",
     "o": [
+      "The Roman Empire",
       "Napoleonic France",
-      "Wrought iron",
-      "Barcelona",
-      "India"
+      "The reign of Charlemagne",
+      "The French Renaissance"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   }
 ]

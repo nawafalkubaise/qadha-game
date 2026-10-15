@@ -1,50 +1,50 @@
 [
   {
-    "q": "Which bird is the fastest in a dive؟",
+    "q": "Which bird is the fastest in a dive?",
     "o": [
-      "Peregrine falcon",
-      "Blue whale",
       "Golden eagle",
+      "Ostrich",
+      "Peregrine falcon",
       "Albatross"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does the giant panda mainly eat؟",
+    "q": "What does the giant panda mainly eat?",
     "o": [
-      "Bamboo",
-      "Fruit",
+      "Fish",
       "Insects",
-      "Krill"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which is the only mammal capable of true sustained flight؟",
-    "o": [
-      "Krill",
-      "Australia",
-      "Bamboo",
-      "Bat"
+      "Fruit",
+      "Bamboo"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What does the blue whale mainly eat؟",
+    "q": "Which is the only mammal capable of true sustained flight?",
     "o": [
-      "Krill",
-      "Bamboo",
-      "Seals",
-      "Squid"
+      "Flying squirrel",
+      "Sugar glider",
+      "Bat",
+      "Colugo"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Why is the sloth so slow-moving؟",
+    "q": "What does the blue whale mainly eat?",
+    "o": [
+      "Squid",
+      "Krill",
+      "Seals",
+      "Seaweed"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Why is the sloth so slow-moving?",
     "o": [
       "It has weak bones",
       "It is always asleep",
@@ -55,75 +55,75 @@
     "d": 2
   },
   {
-    "q": "What is notable about a giraffe's tongue؟",
+    "q": "What is notable about a giraffe's tongue?",
     "o": [
       "It is very long",
       "It is forked",
-      "It is very short",
-      "It cannot fly"
+      "It has no taste buds",
+      "It is very short"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What kind of habitat do crocodiles typically live in؟",
+    "q": "What kind of habitat do crocodiles typically live in?",
     "o": [
-      "By squirting ink",
-      "The location of food",
-      "The Southern Hemisphere",
-      "Wetlands and rivers"
+      "Deserts",
+      "Mountain peaks",
+      "Wetlands and rivers",
+      "Polar ice"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does a honeybee's waggle dance communicate to other bees؟",
+    "q": "What does a honeybee's waggle dance communicate to other bees?",
     "o": [
       "The location of food",
-      "The hive's temperature",
-      "The Southern Hemisphere",
-      "An approaching storm"
+      "The queen's age",
+      "An approaching storm",
+      "The hive's temperature"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What is the largest animal on Earth؟",
+    "q": "What is the largest animal on Earth?",
     "o": [
-      "Whale shark",
-      "Australia",
+      "Blue whale",
       "African elephant",
-      "Blue whale"
+      "Whale shark",
+      "Giraffe"
     ],
-    "a": 3,
+    "a": 0,
     "d": 1
   },
   {
-    "q": "How many hearts does an octopus have؟",
+    "q": "How many hearts does an octopus have?",
     "o": [
-      "3",
       "1",
       "2",
-      "4"
+      "4",
+      "3"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Why do chameleons change color؟",
+    "q": "Why do chameleons change color?",
     "o": [
-      "Communication and temperature regulation",
-      "Using low-frequency infrasound",
-      "Wetlands and rivers",
-      "About 120 km/h"
+      "To see better",
+      "To digest food",
+      "To grow faster",
+      "Communication and temperature regulation"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Dolphins are classified as what؟",
+    "q": "Dolphins are classified as what?",
     "o": [
-      "Bamboo",
+      "Fish",
       "Reptiles",
       "Amphibians",
       "Mammals"
@@ -132,73 +132,73 @@
     "d": 1
   },
   {
-    "q": "The ostrich is the largest living bird. What else is true about it؟",
+    "q": "The ostrich is the largest living bird. What else is true about it?",
     "o": [
       "It cannot fly",
-      "It is very long",
-      "About 120 km/h",
-      "By squirting ink"
+      "It lives only in Australia",
+      "It is a fish eater",
+      "It hibernates in winter"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is the approximate top speed of a cheetah؟",
+    "q": "What is the approximate top speed of a cheetah?",
     "o": [
+      "About 60 km/h",
       "About 120 km/h",
       "About 200 km/h",
-      "About 250 km/h",
-      "About 60 km/h"
+      "About 250 km/h"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "In which part of the world do most penguins live؟",
+    "q": "In which part of the world do most penguins live?",
     "o": [
+      "The Arctic",
+      "North America",
       "The Southern Hemisphere",
-      "The location of food",
-      "Wetlands and rivers",
-      "About 120 km/h"
+      "Northern Europe"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Spiders are not insects because they have how many legs؟",
+    "q": "Spiders are not insects because they have how many legs?",
     "o": [
+      "6",
       "8",
-      "3",
       "4",
-      "6"
+      "10"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Kangaroos are native to which country؟",
+    "q": "Kangaroos are native to which country?",
     "o": [
-      "Blue whale",
-      "Bamboo",
+      "South Africa",
+      "Australia",
       "Brazil",
-      "Australia"
+      "India"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "How does a squid defend itself from predators؟",
+    "q": "How does a squid defend itself from predators?",
     "o": [
       "By playing dead",
-      "About 120 km/h",
-      "By inflating its body",
-      "By squirting ink"
+      "By squirting ink",
+      "By releasing venom spines",
+      "By inflating its body"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "About how many hours a day do cats typically sleep؟",
+    "q": "About how many hours a day do cats typically sleep?",
     "o": [
       "4 to 6 hours",
       "8 hours",
@@ -209,14 +209,14 @@
     "d": 2
   },
   {
-    "q": "How do elephants communicate over long distances؟",
+    "q": "How do elephants communicate over long distances?",
     "o": [
-      "Using low-frequency infrasound",
       "Using ultrasound like bats",
+      "By changing skin color",
       "Using chemical trails",
-      "By changing skin color"
+      "Using low-frequency infrasound"
     ],
-    "a": 0,
+    "a": 3,
     "d": 3
   }
 ]

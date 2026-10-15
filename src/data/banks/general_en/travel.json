@@ -1,17 +1,17 @@
 [
   {
-    "q": "What causes jet lag؟",
+    "q": "What causes jet lag?",
     "o": [
-      "Crossing time zones quickly",
-      "The airline baggage desk",
       "Cabin air pressure",
-      "Extra fees and efficient operations"
+      "Airline food",
+      "Turbulence",
+      "Crossing time zones quickly"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What is an eVisa؟",
+    "q": "What is an eVisa?",
     "o": [
       "An electronic visa obtained before travel",
       "A visa issued on arrival",
@@ -22,21 +22,21 @@
     "d": 1
   },
   {
-    "q": "Which meridian is the reference point for UTC (Coordinated Universal Time)؟",
+    "q": "Which meridian is the reference point for UTC (Coordinated Universal Time)?",
     "o": [
-      "Greenwich",
-      "Washington",
       "Paris",
-      "Rome"
+      "Washington",
+      "Rome",
+      "Greenwich"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "At an airport, where do you usually report lost luggage؟",
+    "q": "At an airport, where do you usually report lost luggage?",
     "o": [
       "The airline baggage desk",
-      "Crossing time zones quickly",
+      "Passport control",
       "The customs office",
       "The duty-free shop"
     ],
@@ -44,47 +44,47 @@
     "d": 1
   },
   {
-    "q": "How do budget airlines mainly keep fares low؟",
+    "q": "How do budget airlines mainly keep fares low?",
     "o": [
-      "Extra fees and efficient operations",
-      "Trip cancellation and medical emergencies",
+      "Government fuel grants",
+      "Larger cabin crews",
       "Free meals for all passengers",
-      "Crossing time zones quickly"
+      "Extra fees and efficient operations"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What does travel insurance often cover؟",
+    "q": "What does travel insurance often cover?",
     "o": [
       "Trip cancellation and medical emergencies",
-      "Extra fees and efficient operations",
-      "Crossing time zones quickly",
-      "A valid passport"
+      "Airport lounge access",
+      "Visa application fees",
+      "Duty-free purchases"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What document do you usually need for international travel؟",
+    "q": "What document do you usually need for international travel?",
     "o": [
-      "A bank statement",
       "A driver's license",
       "A student card",
+      "A bank statement",
       "A valid passport"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "How many letters make up an IATA airport code؟",
+    "q": "How many letters make up an IATA airport code?",
     "o": [
+      "Two",
       "Three",
-      "Five",
       "Four",
-      "Two"
+      "Five"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   }
 ]

@@ -1,145 +1,145 @@
 [
   {
-    "q": "Which city is the executive (administrative) capital of South Africa؟",
+    "q": "Which city is the executive (administrative) capital of South Africa?",
     "o": [
-      "Brasília",
-      "Canberra",
       "Cape Town",
-      "Pretoria"
+      "Bloemfontein",
+      "Pretoria",
+      "Johannesburg"
     ],
-    "a": 3,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Which city is the seat of Switzerland's federal government؟",
+    "q": "Which city is the seat of Switzerland's federal government?",
     "o": [
       "Bern",
-      "Abuja",
-      "Basel",
-      "Rabat"
+      "Zurich",
+      "Geneva",
+      "Basel"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What is the capital of Argentina؟",
+    "q": "What is the capital of Argentina?",
     "o": [
+      "Santiago",
       "Buenos Aires",
       "Montevideo",
-      "Wellington",
-      "Brasília"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What is the capital of Australia؟",
-    "o": [
-      "Canberra",
-      "Brasília",
-      "Melbourne",
-      "Naypyidaw"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What is the capital of Canada؟",
-    "o": [
-      "Abuja",
-      "Ankara",
-      "Astana",
-      "Ottawa"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "What is the capital of Japan؟",
-    "o": [
-      "Astana",
-      "Tokyo",
-      "Abuja",
-      "Ankara"
+      "Lima"
     ],
     "a": 1,
     "d": 1
   },
   {
-    "q": "What is the capital of Turkey؟",
+    "q": "What is the capital of Australia?",
     "o": [
-      "Ankara",
-      "Abuja",
-      "Astana",
-      "Bursa"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "What is the capital of Brazil؟",
-    "o": [
-      "Brasília",
+      "Sydney",
+      "Melbourne",
       "Canberra",
-      "Naypyidaw",
-      "Pretoria"
+      "Perth"
     ],
-    "a": 0,
-    "d": 2
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "What is the capital of Morocco؟",
+    "q": "What is the capital of Canada?",
     "o": [
-      "Rabat",
-      "Abuja",
-      "Ankara",
-      "Astana"
+      "Ottawa",
+      "Toronto",
+      "Vancouver",
+      "Montreal"
     ],
     "a": 0,
-    "d": 2
+    "d": 1
   },
   {
-    "q": "What is the capital of New Zealand؟",
+    "q": "What is the capital of Japan?",
     "o": [
-      "Wellington",
-      "Auckland",
-      "Brasília",
-      "Buenos Aires"
+      "Osaka",
+      "Tokyo",
+      "Kyoto",
+      "Yokohama"
     ],
-    "a": 0,
-    "d": 2
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "What is the capital of Nigeria؟",
+    "q": "What is the capital of Turkey?",
     "o": [
-      "Abuja",
-      "Ankara",
-      "Astana",
-      "Bern"
-    ],
-    "a": 0,
-    "d": 3
-  },
-  {
-    "q": "What is the capital of Kazakhstan؟",
-    "o": [
-      "Astana",
-      "Abuja",
-      "Almaty",
+      "Istanbul",
+      "Izmir",
+      "Bursa",
       "Ankara"
     ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "What is the capital of Brazil?",
+    "o": [
+      "Rio de Janeiro",
+      "Brasília",
+      "São Paulo",
+      "Salvador"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "What is the capital of Morocco?",
+    "o": [
+      "Rabat",
+      "Casablanca",
+      "Marrakesh",
+      "Fez"
+    ],
     "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is the capital of New Zealand?",
+    "o": [
+      "Auckland",
+      "Christchurch",
+      "Wellington",
+      "Hamilton"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "What is the capital of Nigeria?",
+    "o": [
+      "Lagos",
+      "Kano",
+      "Ibadan",
+      "Abuja"
+    ],
+    "a": 3,
     "d": 3
   },
   {
-    "q": "What is the capital of Myanmar؟",
+    "q": "What is the capital of Kazakhstan?",
     "o": [
-      "Naypyidaw",
-      "Brasília",
-      "Canberra",
-      "Mandalay"
+      "Almaty",
+      "Astana",
+      "Shymkent",
+      "Karaganda"
     ],
-    "a": 0,
+    "a": 1,
+    "d": 3
+  },
+  {
+    "q": "What is the capital of Myanmar?",
+    "o": [
+      "Yangon",
+      "Mandalay",
+      "Naypyidaw",
+      "Bago"
+    ],
+    "a": 2,
     "d": 3
   }
 ]

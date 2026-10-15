@@ -1,28 +1,28 @@
 [
   {
-    "q": "Which landmark, made up of three slender towers with blue-green spheres, is Kuwait's most iconic؟",
+    "q": "Which landmark, made up of three slender towers with blue-green spheres, is Kuwait's most iconic?",
     "o": [
-      "Kuwait Towers",
-      "Modern Kuwait",
+      "Liberation Tower",
+      "Al Hamra Tower",
       "Arraya Tower",
-      "Liberation Tower"
+      "Kuwait Towers"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Where are the Kuwait Towers located؟",
+    "q": "Where are the Kuwait Towers located?",
     "o": [
-      "On the Kuwait City waterfront",
-      "Panoramic views of the city",
       "On Failaka Island",
-      "Al Hamra Tower"
+      "In Al Jahra",
+      "In Al Ahmadi",
+      "On the Kuwait City waterfront"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Which skyscraper is the tallest building in Kuwait؟",
+    "q": "Which skyscraper is the tallest building in Kuwait?",
     "o": [
       "Kuwait Towers",
       "Liberation Tower",
@@ -33,7 +33,7 @@
     "d": 2
   },
   {
-    "q": "The Kuwait Towers are widely seen as a symbol of what؟",
+    "q": "The Kuwait Towers are widely seen as a symbol of what?",
     "o": [
       "Modern Kuwait",
       "The pearl-diving era",
@@ -44,14 +44,14 @@
     "d": 2
   },
   {
-    "q": "What do the observation spheres of the Kuwait Towers offer visitors؟",
+    "q": "What do the observation spheres of the Kuwait Towers offer visitors?",
     "o": [
-      "On the Kuwait City waterfront",
       "An underwater aquarium",
-      "A rooftop golf course",
-      "Panoramic views of the city"
+      "Panoramic views of the city",
+      "An indoor ski slope",
+      "A rooftop golf course"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   }
 ]

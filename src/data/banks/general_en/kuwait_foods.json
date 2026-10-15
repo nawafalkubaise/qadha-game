@@ -1,28 +1,28 @@
 [
   {
-    "q": "Which of these is a famous Kuwaiti dish؟",
+    "q": "Which of these is a famous Kuwaiti dish?",
     "o": [
-      "Machboos",
-      "A dessert",
+      "Paella",
+      "Sushi",
       "Lasagna",
-      "Mung beans"
+      "Machboos"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Harees is typically made from what؟",
+    "q": "Harees is typically made from what?",
     "o": [
-      "Wheat and meat",
+      "Rice and lentils",
       "Bread and broth",
       "Coffee and dates",
-      "Rice and lentils"
+      "Wheat and meat"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What does marqooq typically consist of؟",
+    "q": "What does marqooq typically consist of?",
     "o": [
       "Fried fish with rice",
       "Sweet dumplings in syrup",
@@ -33,56 +33,56 @@
     "d": 2
   },
   {
-    "q": "What type of food is luqaimat؟",
+    "q": "What type of food is luqaimat?",
     "o": [
+      "A main course",
       "A dessert",
-      "Machboos",
-      "Mung beans",
-      "A salad"
+      "A salad",
+      "A soup"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Mutabbaq zubaidi is a dish made with which main ingredient؟",
+    "q": "Mutabbaq zubaidi is a dish made with which main ingredient?",
     "o": [
-      "A dessert",
       "Fish",
       "Beef",
+      "Chicken",
       "Lamb"
     ],
-    "a": 1,
+    "a": 0,
     "d": 2
   },
   {
-    "q": "Aish mummawash is rice cooked with what؟",
+    "q": "Aish mummawash is rice cooked with what?",
     "o": [
-      "A dessert",
-      "Chickpeas",
-      "Machboos",
-      "Mung beans"
+      "Pasta",
+      "Dates",
+      "Mung beans",
+      "Chickpeas"
     ],
-    "a": 3,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Tashreeb typically consists of what؟",
+    "q": "Tashreeb typically consists of what?",
     "o": [
-      "Arabic coffee and dates",
-      "Rice with lentils",
-      "Thin dough with stew",
-      "Bread soaked in broth"
-    ],
-    "a": 3,
-    "d": 2
-  },
-  {
-    "q": "What is traditionally served to guests in Kuwaiti diwaniyas؟",
-    "o": [
-      "Arabic coffee and dates",
-      "Bread and broth",
       "Bread soaked in broth",
-      "Rice and lentils"
+      "Thin dough with stew",
+      "Rice with lentils",
+      "Coffee and dates"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is traditionally served to guests in Kuwaiti diwaniyas?",
+    "o": [
+      "Arabic coffee and dates",
+      "Rice and lentils",
+      "Wheat and meat",
+      "Bread and broth"
     ],
     "a": 0,
     "d": 1

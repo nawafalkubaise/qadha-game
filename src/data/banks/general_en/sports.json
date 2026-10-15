@@ -1,222 +1,222 @@
 [
   {
-    "q": "Which country won the 2022 FIFA World Cup؟",
+    "q": "Which country won the 2022 FIFA World Cup?",
     "o": [
+      "France",
       "Argentina",
-      "42.195 km",
-      "Basketball",
-      "Portugal"
+      "Croatia",
+      "Morocco"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "How many players per team are on a basketball court at once؟",
+    "q": "How many players per team are on a basketball court at once?",
     "o": [
       "4",
       "6",
-      "7",
-      "5"
+      "5",
+      "7"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In tennis, what is a score of 40-40 called؟",
+    "q": "In tennis, what is a score of 40-40 called?",
     "o": [
+      "Love",
       "Deuce",
-      "Boxing",
-      "Japan",
-      "London"
+      "Advantage",
+      "Tiebreak"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is the official distance of a marathon؟",
+    "q": "What is the official distance of a marathon?",
     "o": [
-      "42.195 km",
       "41.5 km",
+      "42.195 km",
       "42.8 km",
       "43.1 km"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "Which country hosted the 2020 Summer Olympics؟",
+    "q": "Which country hosted the 2020 Summer Olympics?",
     "o": [
-      "Boxing",
+      "Japan",
       "China",
-      "Deuce",
-      "Japan"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "In which sport is a slam dunk performed؟",
-    "o": [
-      "Basketball",
-      "42.195 km",
-      "Argentina",
-      "Handball"
+      "South Korea",
+      "France"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which country did cricket originate؟",
+    "q": "In which sport is a slam dunk performed?",
     "o": [
-      "Boxing",
-      "Jamaica",
-      "London",
+      "Volleyball",
+      "Basketball",
+      "Handball",
+      "Tennis"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which country did cricket originate?",
+    "o": [
+      "India",
+      "Australia",
+      "Scotland",
       "England"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What is the English translation of the Olympic motto؟",
+    "q": "What is the English translation of the Olympic motto?",
     "o": [
-      "Faster, Higher, Stronger",
-      "Clubs and a small ball",
-      "Open-wheel racing cars",
-      "Play Fair, Play Hard"
+      "Unity, Peace, Glory",
+      "Strength, Honor, Victory",
+      "Play Fair, Play Hard",
+      "Faster, Higher, Stronger"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Which country is Lionel Messi from؟",
+    "q": "Which country is Lionel Messi from?",
     "o": [
       "Argentina",
-      "42.195 km",
-      "Basketball",
-      "Portugal"
+      "Brazil",
+      "Uruguay",
+      "Spain"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which sport was Muhammad Ali a world champion؟",
+    "q": "In which sport was Muhammad Ali a world champion?",
     "o": [
-      "Boxing",
-      "Deuce",
-      "England",
-      "Jamaica"
+      "Wrestling",
+      "Karate",
+      "Judo",
+      "Boxing"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What is the common abbreviation for the English Premier League؟",
+    "q": "What is the common abbreviation for the English Premier League?",
     "o": [
       "EFL",
       "PLE",
-      "UPL",
-      "EPL"
+      "EPL",
+      "UPL"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which city were the 2024 Summer Olympics held?",
+    "o": [
+      "London",
+      "Rome",
+      "Paris",
+      "Madrid"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Which country is sprinter Usain Bolt from?",
+    "o": [
+      "Trinidad and Tobago",
+      "Bahamas",
+      "Barbados",
+      "Jamaica"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In which city were the 2024 Summer Olympics held؟",
+    "q": "What equipment is golf played with?",
     "o": [
-      "Paris",
-      "Boxing",
-      "Deuce",
-      "Japan"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which country is sprinter Usain Bolt from؟",
-    "o": [
-      "Jamaica",
-      "Bahamas",
-      "Barbados",
-      "Boxing"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What equipment is golf played with؟",
-    "o": [
-      "Clubs and a small ball",
       "A racket and a shuttlecock",
+      "Clubs and a small ball",
       "A stick and a puck",
-      "Faster, Higher, Stronger"
+      "A bat and a leather ball"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which country did rugby originate؟",
+    "q": "In which country did rugby originate?",
     "o": [
-      "Boxing",
       "France",
       "Ireland",
+      "New Zealand",
       "England"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "Which country is Cristiano Ronaldo from؟",
+    "q": "Which country is Cristiano Ronaldo from?",
     "o": [
+      "Spain",
       "Portugal",
-      "42.195 km",
-      "Argentina",
-      "Basketball"
+      "Brazil",
+      "Italy"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which city is the Wimbledon tennis tournament held؟",
+    "q": "In which city is the Wimbledon tennis tournament held?",
     "o": [
+      "Manchester",
       "London",
-      "Boxing",
-      "Deuce",
-      "England"
+      "Paris",
+      "Edinburgh"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "How many players does a football (soccer) team have on the field؟",
+    "q": "How many players does a football (soccer) team have on the field?",
     "o": [
       "11",
       "10",
       "12",
-      "5"
+      "9"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What do Formula 1 races feature؟",
+    "q": "What do Formula 1 races feature?",
     "o": [
-      "Open-wheel racing cars",
+      "Motorcycles",
       "Off-road rally cars",
-      "Clubs and a small ball",
-      "Faster, Higher, Stronger"
+      "Trucks",
+      "Open-wheel racing cars"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "In which year was FIFA founded؟",
+    "q": "In which year was FIFA founded?",
     "o": [
-      "1904",
       "1900",
       "1910",
+      "1904",
       "1920"
     ],
-    "a": 0,
+    "a": 2,
     "d": 3
   }
 ]

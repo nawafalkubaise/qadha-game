@@ -1,39 +1,39 @@
 [
   {
-    "q": "What is Souq Al-Mubarakiya؟",
+    "q": "What is Souq Al-Mubarakiya?",
     "o": [
-      "A heritage market",
-      "A leisure landmark",
       "A modern skyscraper",
-      "A national stadium"
+      "A national stadium",
+      "A water tower",
+      "A heritage market"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "In which city is Kuwait's Grand Mosque؟",
+    "q": "In which city is Kuwait's Grand Mosque?",
     "o": [
-      "Kuwait City",
       "Fahaheel",
-      "Ahmadi",
-      "Jahra"
+      "Kuwait City",
+      "Jahra",
+      "Ahmadi"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What does Bait Al-Sadu represent؟",
+    "q": "What does Bait Al-Sadu represent?",
     "o": [
-      "Kuwaiti heritage and Sadu weaving",
-      "Archaeological sites and tourism",
-      "A heritage market",
-      "A leisure landmark"
+      "Heavy industry",
+      "Modern banking",
+      "Oil exports",
+      "Kuwaiti heritage and Sadu weaving"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What is the Sheikh Jaber Al-Ahmad Cultural Centre؟",
+    "q": "What is the Sheikh Jaber Al-Ahmad Cultural Centre?",
     "o": [
       "A shopping mall",
       "A sports stadium",
@@ -44,47 +44,47 @@
     "d": 1
   },
   {
-    "q": "Failaka Island is known for what؟",
+    "q": "Failaka Island is known for what?",
     "o": [
+      "Oil refineries",
       "Archaeological sites and tourism",
-      "Kuwaiti heritage and Sadu weaving",
-      "A heritage market",
+      "Snowy mountains",
       "A large car factory"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "Besides their observation sphere, what do the Kuwait Towers mainly store؟",
+    "q": "Besides their observation sphere, what do the Kuwait Towers mainly store?",
     "o": [
       "Water",
+      "Oil",
       "Grain",
-      "Jahra",
-      "Oil"
+      "Natural gas"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "In which Kuwaiti area is the historic Red Palace؟",
+    "q": "In which Kuwaiti area is the historic Red Palace?",
     "o": [
       "Jahra",
-      "Ahmadi",
-      "Water",
-      "Fahaheel"
+      "Fahaheel",
+      "Salmiya",
+      "Ahmadi"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Kuwait's waterfront is mainly what kind of landmark؟",
+    "q": "Kuwait's waterfront is mainly what kind of landmark?",
     "o": [
-      "A leisure landmark",
-      "A heritage market",
+      "An industrial zone",
       "A military base",
-      "An industrial zone"
+      "A leisure landmark",
+      "An airport"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]

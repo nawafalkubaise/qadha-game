@@ -1,50 +1,50 @@
 [
   {
-    "q": "Eid al-Adha commemorates the story of Ibrahim's willingness to sacrifice whom؟",
+    "q": "Eid al-Adha commemorates the story of Ibrahim's willingness to sacrifice whom?",
     "o": [
-      "Fasting and reflection",
-      "Funerals and mourning",
-      "Essential and respectful",
+      "His father",
+      "His brother",
+      "His camel",
       "His son Ismail"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "Instead of a handshake, people in Japan traditionally greet each other with what؟",
+    "q": "Instead of a handshake, people in Japan traditionally greet each other with what?",
     "o": [
       "A hug",
-      "Dates",
-      "Five",
-      "A bow"
+      "A bow",
+      "A kiss on the cheek",
+      "A high five"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "On which date is Christmas celebrated in most Western countries؟",
+    "q": "On which date is Christmas celebrated in most Western countries?",
     "o": [
       "25 December",
-      "6 December",
       "1 January",
-      "24 November"
+      "24 November",
+      "6 December"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Arabic coffee is traditionally served with what؟",
+    "q": "Arabic coffee is traditionally served with what?",
     "o": [
+      "Lemon",
+      "Milk",
       "Dates",
-      "A bow",
-      "Cheese",
-      "Five"
+      "Cheese"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Applying henna at weddings and celebrations is common in which regions؟",
+    "q": "Applying henna at weddings and celebrations is common in which regions?",
     "o": [
       "Scandinavia",
       "South Asia and the Middle East",
@@ -55,135 +55,135 @@
     "d": 1
   },
   {
-    "q": "Ramadan is the Islamic month of what؟",
+    "q": "Ramadan is the Islamic month of what?",
     "o": [
-      "Funerals and mourning",
-      "United States and Canada",
       "Fasting and reflection",
-      "Essential and respectful"
+      "Pilgrimage to Mecca",
+      "Harvest celebrations",
+      "Mourning the dead"
     ],
-    "a": 2,
+    "a": 0,
     "d": 1
   },
   {
-    "q": "Wearing the wedding ring on the left ring finger is a tradition in which cultures؟",
+    "q": "Wearing the wedding ring on the left ring finger is a tradition in which cultures?",
     "o": [
       "Western cultures",
+      "Ancient Chinese culture",
       "Inuit culture",
-      "Trevi Fountain",
-      "25 December"
+      "Aboriginal Australian culture"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Thanksgiving is a national holiday in which countries؟",
+    "q": "Thanksgiving is a national holiday in which countries?",
     "o": [
+      "United States and Canada",
       "United Kingdom and Ireland",
       "Australia and New Zealand",
+      "France and Belgium"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In Japan, removing your shoes before entering a home is considered what?",
+    "o": [
       "Essential and respectful",
-      "United States and Canada"
+      "Rude",
+      "Optional and rare",
+      "Only for children"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Tossing a coin into which famous Rome fountain is said to ensure you will return to the city?",
+    "o": [
+      "Fountain of the Four Rivers",
+      "Bellagio Fountain",
+      "Jet d'Eau",
+      "Trevi Fountain"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "How many times a day is the Adhan (Islamic call to prayer) made?",
+    "o": [
+      "Three",
+      "Seven",
+      "Five",
+      "Once"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Greeting with kisses on the cheek is common in which countries?",
+    "o": [
+      "Japan, Korea and China",
+      "Finland and Norway",
+      "France, Italy and Arab countries",
+      "Thailand and Vietnam"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What does throwing rice at newlyweds traditionally symbolize?",
+    "o": [
+      "Warding off guests",
+      "Wishing them prosperity and fertility",
+      "Ending the ceremony",
+      "Wishing for rain"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In Korean culture, what does bowing show?",
+    "o": [
+      "Respect",
+      "Anger",
+      "Challenge",
+      "Boredom"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In India, white clothing is traditionally worn at which occasions?",
+    "o": [
+      "Weddings",
+      "Funerals and mourning",
+      "Birthdays",
+      "Harvest festivals"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "In which country did the Día de los Muertos tradition originate?",
+    "o": [
+      "Spain",
+      "Peru",
+      "Colombia",
+      "Mexico"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In Japan, removing your shoes before entering a home is considered what؟",
+    "q": "The siesta, an afternoon nap, is a tradition associated with which country?",
     "o": [
-      "Essential and respectful",
-      "Fasting and reflection",
-      "Funerals and mourning",
-      "United States and Canada"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Tossing a coin into which famous Rome fountain is said to ensure you will return to the city؟",
-    "o": [
-      "Trevi Fountain",
-      "Bellagio Fountain",
-      "Western cultures",
-      "25 December"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "How many times a day is the Adhan (Islamic call to prayer) made؟",
-    "o": [
-      "Five",
-      "A bow",
-      "Dates",
-      "Once"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Greeting with kisses on the cheek is common in which countries؟",
-    "o": [
-      "France, Italy and Arab countries",
-      "Wishing them prosperity and fertility",
-      "Essential and respectful",
-      "Fasting and reflection"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What does throwing rice at newlyweds traditionally symbolize؟",
-    "o": [
-      "Wishing them prosperity and fertility",
-      "France, Italy and Arab countries",
-      "Essential and respectful",
-      "United States and Canada"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In Korean culture, what does bowing show؟",
-    "o": [
-      "Respect",
-      "Boredom",
-      "Mexico",
-      "25 December"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In India, white clothing is traditionally worn at which occasions؟",
-    "o": [
-      "Funerals and mourning",
-      "Essential and respectful",
-      "Fasting and reflection",
-      "United States and Canada"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "In which country did the Día de los Muertos tradition originate؟",
-    "o": [
-      "Mexico",
-      "A bow",
-      "Dates",
-      "Respect"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The siesta, an afternoon nap, is a tradition associated with which country؟",
-    "o": [
-      "Dates",
-      "Five",
+      "Sweden",
       "Spain",
-      "A bow"
+      "Germany",
+      "Russia"
     ],
-    "a": 2,
+    "a": 1,
     "d": 1
   }
 ]

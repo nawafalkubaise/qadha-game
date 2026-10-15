@@ -1,105 +1,105 @@
 [
   {
-    "q": "Who was the first human in space؟",
+    "q": "Who was the first human in space?",
     "o": [
-      "Yuri Gagarin",
+      "Neil Armstrong",
       "Alan Shepard",
-      "Dwarf planet",
-      "John Glenn"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which planet is closest to the Sun؟",
-    "o": [
-      "Mercury",
-      "27 days",
-      "Distance",
-      "Infrared"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which planet is most famous for its rings؟",
-    "o": [
-      "Saturn",
-      "27 days",
-      "Earth",
-      "Jupiter"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The James Webb Space Telescope mainly observes in which type of light؟",
-    "o": [
-      "27 days",
-      "Distance",
-      "Jupiter",
-      "Infrared"
+      "John Glenn",
+      "Yuri Gagarin"
     ],
     "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Which planet is closest to the Sun?",
+    "o": [
+      "Venus",
+      "Mars",
+      "Mercury",
+      "Earth"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Which planet is most famous for its rings?",
+    "o": [
+      "Jupiter",
+      "Saturn",
+      "Uranus",
+      "Neptune"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "The James Webb Space Telescope mainly observes in which type of light?",
+    "o": [
+      "Infrared",
+      "Ultraviolet",
+      "X-ray",
+      "Radio"
+    ],
+    "a": 0,
     "d": 2
   },
   {
-    "q": "What shape is the Milky Way galaxy؟",
+    "q": "What shape is the Milky Way galaxy?",
     "o": [
       "Spiral",
-      "27 days",
-      "Earth",
-      "Jupiter"
+      "Elliptical",
+      "Irregular",
+      "Ring"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Sputnik 1 was the world's first what؟",
+    "q": "Sputnik 1 was the world's first what?",
     "o": [
       "Artificial satellite",
       "Crewed spacecraft",
-      "Dwarf planet",
+      "Moon lander",
       "Space station"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "NASA is the space agency of which country؟",
+    "q": "NASA is the space agency of which country?",
     "o": [
+      "Russia",
+      "China",
       "United States",
-      "Dwarf planet",
-      "Yellow dwarf",
-      "Yuri Gagarin"
+      "Japan"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Roughly how long does the Moon take to orbit the Earth؟",
+    "q": "Roughly how long does the Moon take to orbit the Earth?",
     "o": [
-      "27 days",
+      "7 days",
       "14 days",
-      "365 days",
-      "7 days"
+      "27 days",
+      "365 days"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What is the largest planet in our solar system؟",
+    "q": "What is the largest planet in our solar system?",
     "o": [
       "Jupiter",
-      "27 days",
-      "Distance",
-      "Infrared"
+      "Saturn",
+      "Neptune",
+      "Earth"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is a black hole؟",
+    "q": "What is a black hole?",
     "o": [
       "A cloud of ice and dust",
       "A cluster of young stars",
@@ -110,113 +110,113 @@
     "d": 1
   },
   {
-    "q": "What does the International Space Station orbit؟",
+    "q": "What does the International Space Station orbit?",
     "o": [
-      "Earth",
+      "The Moon",
       "Mars",
-      "NASA",
-      "Saturn"
+      "The Sun",
+      "Earth"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "How has Pluto been classified since 2006؟",
+    "q": "How has Pluto been classified since 2006?",
     "o": [
-      "Dwarf planet",
       "Full planet",
-      "Yellow dwarf",
-      "United States"
+      "Dwarf planet",
+      "Asteroid",
+      "Comet"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What does a light-year measure؟",
+    "q": "What does a light-year measure?",
     "o": [
-      "Distance",
-      "27 days",
+      "Time",
       "Brightness",
-      "Infrared"
+      "Speed",
+      "Distance"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Who was the first Arab astronaut؟",
+    "q": "Who was the first Arab astronaut?",
     "o": [
-      "Sultan Al Neyadi",
       "Hazza Al Mansouri",
-      "Hundreds of billions",
-      "Sultan bin Salman"
+      "Muhammed Faris",
+      "Sultan bin Salman",
+      "Sultan Al Neyadi"
     ],
-    "a": 3,
+    "a": 2,
     "d": 3
   },
   {
-    "q": "What are comets mainly made of؟",
+    "q": "What are comets mainly made of?",
     "o": [
-      "Ice and dust",
-      "Hundreds of billions",
+      "Molten iron",
       "Pure hydrogen gas",
-      "Sultan bin Salman"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Why is Venus often called Earth's twin؟",
-    "o": [
-      "It is similar in size",
-      "It has liquid oceans",
-      "Hundreds of billions",
-      "It supports life"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Which space agency launched the Mars rover Perseverance؟",
-    "o": [
-      "Earth",
-      "JAXA",
-      "ESA",
-      "NASA"
+      "Solid granite",
+      "Ice and dust"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Roughly how many stars does the Milky Way contain؟",
+    "q": "Why is Venus often called Earth's twin?",
     "o": [
-      "Hundreds of billions",
+      "It has liquid oceans",
+      "It has a similar day length",
+      "It supports life",
+      "It is similar in size"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Which space agency launched the Mars rover Perseverance?",
+    "o": [
+      "ESA",
+      "JAXA",
+      "NASA",
+      "Roscosmos"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Roughly how many stars does the Milky Way contain?",
+    "o": [
       "Tens of thousands",
       "About one million",
-      "About ten million"
+      "About ten million",
+      "Hundreds of billions"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "The Moon's surface gravity is about what fraction of Earth's؟",
+    "q": "The Moon's surface gravity is about what fraction of Earth's?",
     "o": [
       "One-sixth",
-      "Distance",
-      "Infrared",
-      "One-half"
+      "One-half",
+      "One-third",
+      "One-tenth"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What type of star is the Sun؟",
+    "q": "What type of star is the Sun?",
     "o": [
-      "Yellow dwarf",
-      "Dwarf planet",
+      "Red giant",
       "White dwarf",
-      "Neutron star"
+      "Neutron star",
+      "Yellow dwarf"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   }
 ]

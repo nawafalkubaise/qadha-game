@@ -1,138 +1,138 @@
 [
   {
-    "q": "Who painted the Mona Lisa؟",
+    "q": "Who painted the Mona Lisa?",
     "o": [
+      "Michelangelo",
+      "Raphael",
       "Leonardo da Vinci",
-      "Picasso and Braque",
-      "Vincent van Gogh",
-      "Grandeur and dramatic detail"
+      "Pablo Picasso"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Who painted The Starry Night؟",
+    "q": "Who painted The Starry Night?",
     "o": [
-      "Leonardo da Vinci",
-      "Picasso and Braque",
-      "The art of paper folding",
+      "Paul Cézanne",
+      "Claude Monet",
+      "Paul Gauguin",
       "Vincent van Gogh"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Salvador Dalí belonged to which art movement؟",
+    "q": "Salvador Dalí belonged to which art movement?",
     "o": [
-      "Surrealism",
-      "Edvard Munch",
-      "Florence",
-      "Michelangelo"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who sculpted the famous statue of David in Florence؟",
-    "o": [
-      "Michelangelo",
-      "Edvard Munch",
+      "Cubism",
       "Impressionism",
-      "Pablo Picasso"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which country was Frida Kahlo from؟",
-    "o": [
-      "Mexico",
-      "Brazil",
-      "France",
+      "Surrealism",
       "Pop Art"
     ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Who sculpted the famous statue of David in Florence?",
+    "o": [
+      "Michelangelo",
+      "Donatello",
+      "Bernini",
+      "Rodin"
+    ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is origami؟",
+    "q": "Which country was Frida Kahlo from?",
+    "o": [
+      "Brazil",
+      "Spain",
+      "Mexico",
+      "Argentina"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What is origami?",
     "o": [
       "The art of paper folding",
-      "Geometric and floral patterns",
-      "Grandeur and dramatic detail",
-      "Leonardo da Vinci"
+      "Flower arranging",
+      "Ink calligraphy",
+      "Clay pottery"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Andy Warhol is a leading figure of which art movement؟",
+    "q": "Andy Warhol is a leading figure of which art movement?",
     "o": [
-      "Pop Art",
-      "Baroque",
       "Cubism",
-      "Florence"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who painted The Scream؟",
-    "o": [
-      "Edvard Munch",
-      "Egon Schiele",
-      "Gustav Klimt",
-      "Impressionism"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who painted Guernica؟",
-    "o": [
-      "Edvard Munch",
-      "Henri Matisse",
-      "Impressionism",
-      "Pablo Picasso"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "In which country did Impressionism originate؟",
-    "o": [
-      "France",
-      "Germany",
-      "Italy",
-      "Mexico"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which city is Michelangelo's statue of David displayed؟",
-    "o": [
-      "Florence",
-      "New York",
+      "Baroque",
       "Pop Art",
       "Surrealism"
     ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "In which museum is the Mona Lisa displayed؟",
-    "o": [
-      "The Louvre",
-      "The Prado",
-      "The Thinker",
-      "The Uffizi"
-    ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What is mosaic art made from؟",
+    "q": "Who painted The Scream?",
+    "o": [
+      "Gustav Klimt",
+      "Edvard Munch",
+      "Vincent van Gogh",
+      "Egon Schiele"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Who painted Guernica?",
+    "o": [
+      "Salvador Dalí",
+      "Joan Miró",
+      "Pablo Picasso",
+      "Henri Matisse"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which country did Impressionism originate?",
+    "o": [
+      "Germany",
+      "France",
+      "Italy",
+      "Spain"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which city is Michelangelo's statue of David displayed?",
+    "o": [
+      "Rome",
+      "Florence",
+      "Venice",
+      "Milan"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "In which museum is the Mona Lisa displayed?",
+    "o": [
+      "The Prado",
+      "The Louvre",
+      "The British Museum",
+      "The Uffizi"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What is mosaic art made from?",
     "o": [
       "Oil paint on canvas",
       "Small pieces of stone or glass",
@@ -143,7 +143,7 @@
     "d": 1
   },
   {
-    "q": "The Dutch painter Rembrandt is best known for what؟",
+    "q": "The Dutch painter Rembrandt is best known for what?",
     "o": [
       "Abstract geometric shapes",
       "Pop Art prints",
@@ -154,67 +154,67 @@
     "d": 2
   },
   {
-    "q": "Claude Monet pioneered which art movement؟",
+    "q": "Claude Monet pioneered which art movement?",
     "o": [
+      "Cubism",
       "Impressionism",
-      "Edvard Munch",
-      "Expressionism",
-      "Michelangelo"
+      "Surrealism",
+      "Expressionism"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Which two artists founded Cubism؟",
+    "q": "Which two artists founded Cubism?",
     "o": [
       "Picasso and Braque",
-      "Dalí and Magritte",
       "Monet and Renoir",
-      "Geometric and floral patterns"
+      "Dalí and Magritte",
+      "Warhol and Lichtenstein"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Which famous sculpture was created by Auguste Rodin؟",
+    "q": "Which famous sculpture was created by Auguste Rodin?",
     "o": [
+      "David",
       "The Thinker",
-      "The Louvre",
-      "Edvard Munch",
-      "Impressionism"
+      "The Little Mermaid",
+      "Venus de Milo"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Islamic art is especially known for what؟",
+    "q": "Islamic art is especially known for what?",
     "o": [
       "Geometric and floral patterns",
-      "Grandeur and dramatic detail",
-      "Abstract splatter painting",
-      "Picasso and Braque"
+      "Realistic human portraits",
+      "Pop Art imagery",
+      "Abstract splatter painting"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which city is the Metropolitan Museum of Art؟",
+    "q": "In which city is the Metropolitan Museum of Art?",
     "o": [
-      "New York",
+      "Washington DC",
       "Chicago",
-      "Florence",
-      "Pop Art"
+      "New York",
+      "Boston"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Baroque art is known for what؟",
+    "q": "Baroque art is known for what?",
     "o": [
       "Grandeur and dramatic detail",
-      "Geometric and floral patterns",
       "Minimalism and simplicity",
-      "Picasso and Braque"
+      "Geometric abstraction",
+      "Comic-book imagery"
     ],
     "a": 0,
     "d": 2

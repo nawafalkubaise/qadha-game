@@ -1,20 +1,20 @@
 [
   {
-    "q": "In Kuwaiti Arabic, what does \"shlonak\" mean؟",
+    "q": "In Kuwaiti Arabic, what does \"shlonak\" mean?",
     "o": [
-      "What's the big deal؟",
-      "What's your name؟",
-      "When are you traveling؟",
-      "How are you؟"
+      "What's your name?",
+      "How are you?",
+      "Where do you live?",
+      "When are you traveling?"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In Kuwaiti Arabic, what does \"waid\" mean؟",
+    "q": "In Kuwaiti Arabic, what does \"waid\" mean?",
     "o": [
       "A lot",
-      "Enter",
+      "A little",
       "Good",
       "Thanks"
     ],
@@ -22,51 +22,51 @@
     "d": 2
   },
   {
-    "q": "In Kuwaiti Arabic, \"eshda'wa\" is commonly used to mean what؟",
+    "q": "In Kuwaiti Arabic, \"eshda'wa\" is commonly used to mean what?",
     "o": [
-      "What's the big deal؟",
-      "How are you؟",
-      "What's your name؟",
+      "What's the big deal?",
+      "How are you?",
+      "What's your name?",
       "See you tomorrow"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "In Kuwaiti Arabic, what does \"desh\" mean؟",
+    "q": "In Kuwaiti Arabic, what does \"desh\" mean?",
     "o": [
-      "Enter",
-      "A lot",
+      "Run",
       "Exit",
-      "Good"
+      "Sit",
+      "Enter"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "In Kuwaiti Arabic, what does \"alheen\" mean؟",
+    "q": "In Kuwaiti Arabic, what does \"alheen\" mean?",
     "o": [
       "Now",
-      "A lot",
-      "Enter",
-      "Good"
+      "Later",
+      "Yesterday",
+      "Never"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In Kuwaiti Arabic, what does \"mo shart\" mean؟",
+    "q": "In Kuwaiti Arabic, what does \"mo shart\" mean?",
     "o": [
-      "Not necessarily",
       "Always required",
       "Forbidden",
+      "Not necessarily",
       "Impossible"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "When is \"ya'teek al-'afiya\" usually said؟",
+    "q": "When is \"ya'teek al-'afiya\" usually said?",
     "o": [
       "As a morning greeting",
       "To say goodbye forever",
@@ -77,10 +77,10 @@
     "d": 2
   },
   {
-    "q": "In Kuwaiti Arabic, what does \"zain\" usually mean؟",
+    "q": "In Kuwaiti Arabic, what does \"zain\" usually mean?",
     "o": [
-      "A lot",
-      "Enter",
+      "Bad",
+      "A little",
       "Tired",
       "Good"
     ],

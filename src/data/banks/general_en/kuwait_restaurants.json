@@ -1,28 +1,28 @@
 [
   {
-    "q": "Global fast-food brands are usually known for what؟",
+    "q": "Global fast-food brands are usually known for what?",
     "o": [
+      "Unique menus at every branch",
       "Recognizable logos and standardized menus",
-      "Fish and shellfish dishes",
-      "Multiple branches under one brand",
-      "Unique menus at every branch"
+      "Only home delivery",
+      "Only seafood"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What do popular seafood restaurants typically serve؟",
+    "q": "What do popular seafood restaurants typically serve?",
     "o": [
       "Fish and shellfish dishes",
-      "A signature dish or style",
-      "Many eateries in one area",
-      "Recognizable logos and standardized menus"
+      "Only desserts",
+      "Only coffee",
+      "Only grilled steak"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "How do mall cafes typically differ from full restaurants؟",
+    "q": "How do mall cafes typically differ from full restaurants?",
     "o": [
       "They only serve multi-course meals",
       "They have no seating",
@@ -33,40 +33,40 @@
     "d": 1
   },
   {
-    "q": "What does a restaurant chain usually mean؟",
+    "q": "What does a restaurant chain usually mean?",
     "o": [
       "Multiple branches under one brand",
-      "Many eateries in one area",
-      "Recognizable logos and standardized menus",
-      "A signature dish or style"
+      "A single restaurant that never expands",
+      "A food truck",
+      "A home kitchen"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is a locally famous restaurant often known for؟",
+    "q": "What is a locally famous restaurant often known for?",
     "o": [
+      "Having no menu",
       "A signature dish or style",
-      "Fish and shellfish dishes",
-      "Many eateries in one area",
-      "Multiple branches under one brand"
+      "Only selling drinks",
+      "Being open one day a year"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What does a coastal fish market mainly sell؟",
+    "q": "What does a coastal fish market mainly sell?",
     "o": [
-      "Fresh seafood",
-      "Car tires",
       "Furniture",
-      "Rare books"
+      "Fresh seafood",
+      "Rare books",
+      "Car tires"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What do eateries in heritage markets often combine؟",
+    "q": "What do eateries in heritage markets often combine?",
     "o": [
       "Fast-food logos with standardized menus",
       "A traditional atmosphere with local food",
@@ -77,14 +77,14 @@
     "d": 1
   },
   {
-    "q": "What does a mall food court bring together؟",
+    "q": "What does a mall food court bring together?",
     "o": [
-      "Many eateries in one area",
       "Many banks in one area",
+      "Many eateries in one area",
       "Many clinics in one area",
-      "A signature dish or style"
+      "Many car dealers in one area"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   }
 ]

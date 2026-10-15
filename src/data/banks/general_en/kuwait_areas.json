@@ -1,72 +1,72 @@
 [
   {
-    "q": "How many governorates does Kuwait have؟",
+    "q": "How many governorates does Kuwait have?",
     "o": [
-      "6",
       "4",
       "5",
-      "8"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Salmiya belongs to which Kuwaiti governorate؟",
-    "o": [
-      "Ahmadi",
-      "Capital",
-      "Jahra",
-      "Hawalli"
+      "8",
+      "6"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "The Jahra area belongs to which governorate؟",
+    "q": "Salmiya belongs to which Kuwaiti governorate?",
     "o": [
-      "Jahra Governorate",
-      "Ahmadi Governorate",
-      "Capital Governorate",
-      "Farwaniya Governorate"
+      "Ahmadi",
+      "Capital",
+      "Hawalli",
+      "Jahra"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Fahaheel is in which Kuwaiti governorate؟",
+    "q": "The Jahra area belongs to which governorate?",
     "o": [
       "Ahmadi Governorate",
-      "Capital Governorate",
+      "Farwaniya Governorate",
+      "Jahra Governorate",
+      "Capital Governorate"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Fahaheel is in which Kuwaiti governorate?",
+    "o": [
+      "Ahmadi Governorate",
+      "Jahra Governorate",
       "Hawalli Governorate",
-      "Jahra Governorate"
+      "Capital Governorate"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What is Mubarak Al-Kabeer in Kuwait؟",
+    "q": "What is Mubarak Al-Kabeer in Kuwait?",
     "o": [
-      "A governorate",
-      "Ahmadi Governorate",
-      "Jahra Governorate",
-      "Kuwait City"
+      "An island",
+      "A shopping mall",
+      "A football stadium",
+      "A governorate"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Which city is part of Kuwait's Capital Governorate؟",
+    "q": "Which city is part of Kuwait's Capital Governorate?",
     "o": [
+      "Fahaheel",
       "Kuwait City",
-      "A governorate",
-      "Ahmadi Governorate",
-      "Fahaheel"
+      "Jahra",
+      "Salmiya"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Farwaniya Governorate is generally known for what؟",
+    "q": "Farwaniya Governorate is generally known for what?",
     "o": [
       "Oil refineries",
       "Islands and beaches",
@@ -77,7 +77,7 @@
     "d": 2
   },
   {
-    "q": "The Ahmadi area is historically linked to which sector؟",
+    "q": "The Ahmadi area is historically linked to which sector?",
     "o": [
       "Gold mining",
       "The oil sector",

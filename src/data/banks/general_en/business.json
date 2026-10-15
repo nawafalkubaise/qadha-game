@@ -1,20 +1,20 @@
 [
   {
-    "q": "What does IPO stand for in business؟",
+    "q": "What does IPO stand for in business?",
     "o": [
       "Initial public offering",
-      "Buying another company",
-      "How a company makes money",
-      "Increase sales conversions"
+      "International profit organization",
+      "Internal price order",
+      "Investment portfolio option"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Steve Jobs co-founded which company؟",
+    "q": "Steve Jobs co-founded which company?",
     "o": [
+      "Microsoft",
       "IBM",
-      "High-growth startups",
       "Apple",
       "Google"
     ],
@@ -22,18 +22,18 @@
     "d": 1
   },
   {
-    "q": "What does a limited liability company (LLC) protect owners from؟",
+    "q": "What does a limited liability company (LLC) protect owners from?",
     "o": [
+      "All taxes",
+      "Competition",
       "Personal liability for business debts",
-      "Employee lawsuits being filed",
-      "How a company makes money",
-      "Increase sales conversions"
+      "Employee lawsuits being filed"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What does a franchise grant to a franchisee؟",
+    "q": "What does a franchise grant to a franchisee?",
     "o": [
       "Ownership of the parent company",
       "A government tax exemption",
@@ -44,44 +44,44 @@
     "d": 2
   },
   {
-    "q": "In business, what does an acquisition mean؟",
+    "q": "In business, what does an acquisition mean?",
     "o": [
+      "Selling shares to the public",
+      "Closing a company",
       "Buying another company",
-      "How a company makes money",
-      "Splitting a company in two",
-      "Closing a company"
+      "Splitting a company in two"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does a business model describe؟",
+    "q": "What does a business model describe?",
     "o": [
+      "A company's office layout",
+      "A company's logo design",
       "How a company makes money",
-      "Buying another company",
-      "A company's legal name",
-      "A company's logo design"
+      "A company's legal name"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Online stores often offer free shipping mainly to do what؟",
+    "q": "Online stores often offer free shipping mainly to do what?",
     "o": [
       "Increase sales conversions",
-      "Buying another company",
-      "How a company makes money",
-      "Initial public offering"
+      "Raise taxes",
+      "Reduce sales",
+      "Lower product quality"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What kind of businesses does venture capital usually invest in؟",
+    "q": "What kind of businesses does venture capital usually invest in?",
     "o": [
       "Government agencies",
-      "Apple",
       "Charities",
+      "Retired family businesses",
       "High-growth startups"
     ],
     "a": 3,

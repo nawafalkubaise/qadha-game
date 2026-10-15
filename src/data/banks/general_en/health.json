@@ -1,50 +1,50 @@
 [
   {
-    "q": "About how much total fluid should an adult drink per day, according to common guidelines؟",
+    "q": "About how much total fluid should an adult drink per day, according to common guidelines?",
     "o": [
       "About 2 liters",
       "About 0.5 liters",
-      "About 10 liters",
-      "About 6 liters"
+      "About 6 liters",
+      "About 10 liters"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "How many hours of sleep do adults typically need per night؟",
+    "q": "How many hours of sleep do adults typically need per night?",
     "o": [
       "3 to 4 hours",
-      "About 2 liters",
-      "Bones and immunity",
+      "5 hours",
+      "12 hours",
       "7 to 9 hours"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Vitamin D is important for which aspects of health؟",
+    "q": "Vitamin D is important for which aspects of health?",
     "o": [
-      "The immune system",
-      "7 to 9 hours",
-      "About 2 liters",
-      "Bones and immunity"
+      "Eyesight only",
+      "Bones and immunity",
+      "Hair color",
+      "Blood type"
     ],
-    "a": 3,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What is the normal resting heart rate range for adults؟",
+    "q": "What is the normal resting heart rate range for adults?",
     "o": [
-      "60 to 100 beats per minute",
+      "20 to 40 beats per minute",
       "120 to 150 beats per minute",
-      "160 to 200 beats per minute",
-      "A healthy diet and regular exercise"
+      "60 to 100 beats per minute",
+      "160 to 200 beats per minute"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What helps prevent type 2 diabetes؟",
+    "q": "What helps prevent type 2 diabetes?",
     "o": [
       "Eating more sugar",
       "Sleeping less",
@@ -55,36 +55,36 @@
     "d": 1
   },
   {
-    "q": "Which body system do vaccines train؟",
+    "q": "Which body system do vaccines train?",
     "o": [
-      "The immune system",
       "The digestive system",
-      "The nervous system",
-      "The skeletal system"
+      "The immune system",
+      "The skeletal system",
+      "The nervous system"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Why is high blood pressure called the \"silent killer\"؟",
+    "q": "Why is high blood pressure called the \"silent killer\"?",
     "o": [
       "It often has no symptoms",
-      "It cannot be measured",
+      "It only occurs at night",
       "It causes total hearing loss",
-      "It only occurs at night"
+      "It cannot be measured"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Regular handwashing mainly helps reduce what؟",
+    "q": "Regular handwashing mainly helps reduce what?",
     "o": [
+      "Blood pressure",
+      "Hair loss",
       "The spread of infections",
-      "It often has no symptoms",
-      "The immune system",
-      "Bones and immunity"
+      "Muscle growth"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]

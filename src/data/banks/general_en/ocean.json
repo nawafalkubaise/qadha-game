@@ -1,50 +1,50 @@
 [
   {
-    "q": "What is the deepest known ocean trench؟",
+    "q": "What is the deepest known ocean trench?",
     "o": [
       "Mariana Trench",
-      "Tonga Trench",
+      "Puerto Rico Trench",
       "Java Trench",
-      "Pacific Ocean"
+      "Tonga Trench"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is the largest ocean on Earth؟",
+    "q": "What is the largest ocean on Earth?",
     "o": [
-      "Arctic Ocean",
       "Atlantic Ocean",
       "Indian Ocean",
+      "Arctic Ocean",
       "Pacific Ocean"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "The Great Barrier Reef lies off the coast of which country؟",
+    "q": "The Great Barrier Reef lies off the coast of which country?",
     "o": [
       "Australia",
-      "Blue whale",
       "Indonesia",
+      "Philippines",
       "Madagascar"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Roughly what percentage of Earth's surface is covered by water؟",
+    "q": "Roughly what percentage of Earth's surface is covered by water?",
     "o": [
-      "71%",
       "51%",
+      "71%",
       "61%",
       "81%"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What most often causes a tsunami؟",
+    "q": "What most often causes a tsunami?",
     "o": [
       "Strong surface winds",
       "An undersea earthquake",
@@ -55,29 +55,29 @@
     "d": 2
   },
   {
-    "q": "What is the largest animal in the ocean؟",
+    "q": "What is the largest animal in the ocean?",
     "o": [
       "Blue whale",
       "Whale shark",
-      "Australia",
+      "Great white shark",
       "Giant squid"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "How does the salinity of the Dead Sea compare with typical ocean water؟",
+    "q": "How does the salinity of the Dead Sea compare with typical ocean water?",
     "o": [
+      "About the same",
       "Much higher",
-      "Much lower",
-      "Australia",
-      "Blue whale"
+      "Slightly lower",
+      "Much lower"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What mainly causes ocean tides؟",
+    "q": "What mainly causes ocean tides?",
     "o": [
       "Surface winds",
       "Deep ocean currents",

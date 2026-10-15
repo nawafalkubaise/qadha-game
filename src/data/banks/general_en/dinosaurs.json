@@ -1,90 +1,90 @@
 [
   {
-    "q": "What did Tyrannosaurus rex eat؟",
+    "q": "What did Tyrannosaurus rex eat?",
     "o": [
+      "Plants only",
       "Meat",
-      "Three",
-      "Ancient insects",
-      "Fish only"
+      "Fish only",
+      "Insects only"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "About when did the dinosaurs go extinct؟",
+    "q": "About when did the dinosaurs go extinct?",
     "o": [
-      "About 66 million years ago",
-      "About 2 billion years ago",
       "About 6,600 years ago",
-      "About 660,000 years ago"
+      "About 660,000 years ago",
+      "About 66 million years ago",
+      "About 2 billion years ago"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which type of rock are fossils most commonly found؟",
+    "q": "In which type of rock are fossils most commonly found?",
     "o": [
       "Igneous rock",
       "Sedimentary rock",
       "Metamorphic rock",
-      "Ancient insects"
+      "Volcanic glass"
     ],
     "a": 1,
     "d": 2
   },
   {
-    "q": "Birds are descended from which group of dinosaurs؟",
+    "q": "Birds are descended from which group of dinosaurs?",
     "o": [
-      "Theropods",
       "Sauropods",
+      "Ceratopsians",
       "Stegosaurs",
-      "Ancient insects"
+      "Theropods"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "How many horns did Triceratops have on its face؟",
+    "q": "How many horns did Triceratops have on its face?",
     "o": [
+      "One",
       "Three",
-      "Five",
-      "Meat",
-      "One"
+      "Two",
+      "Five"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What are the giant long-necked plant-eating dinosaurs called؟",
+    "q": "What are the giant long-necked plant-eating dinosaurs called?",
     "o": [
-      "Sauropods",
-      "Pterosaurs",
       "Theropods",
-      "Ancient insects"
+      "Raptors",
+      "Sauropods",
+      "Pterosaurs"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "In which geological era did dinosaurs live؟",
+    "q": "In which geological era did dinosaurs live?",
     "o": [
-      "The Mesozoic Era",
       "The Cenozoic Era",
       "The Paleozoic Era",
-      "About 66 million years ago"
+      "The Mesozoic Era",
+      "The Precambrian"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What can amber preserve for millions of years؟",
+    "q": "What can amber preserve for millions of years?",
     "o": [
+      "Dinosaur eggs with live embryos",
+      "Liquid water from the Ice Age",
       "Ancient insects",
-      "Sedimentary rock",
-      "Volcanic lava",
-      "Sauropods"
+      "Volcanic lava"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   }
 ]

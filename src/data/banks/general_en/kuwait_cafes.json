@@ -1,79 +1,79 @@
 [
   {
-    "q": "Which Kuwaiti area is well known for its many cafes؟",
+    "q": "Which Kuwaiti area is well known for its many cafes?",
     "o": [
       "Abdali",
-      "Coffee",
       "Wafra",
+      "Shuwaikh Industrial",
       "Salmiya"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "What is the most common drink ordered in Kuwaiti cafes؟",
+    "q": "What is the most common drink ordered in Kuwaiti cafes?",
     "o": [
-      "Coffee",
-      "Salmiya",
       "Milk",
+      "Coffee",
+      "Orange juice",
       "Soda"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Where in Kuwait are waterfront cafes commonly found؟",
+    "q": "Where in Kuwait are waterfront cafes commonly found?",
     "o": [
       "Along the marina and corniche",
-      "In food and dining zones",
-      "They offer Wi-Fi and seating",
-      "A cold coffee drink"
+      "In industrial zones",
+      "In desert camps",
+      "At oil fields"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Where are cafes usually located inside Kuwaiti malls؟",
+    "q": "Where are cafes usually located inside Kuwaiti malls?",
     "o": [
+      "In parking garages",
+      "Next to service elevators",
       "In food and dining zones",
-      "Along the marina and corniche",
-      "They offer Wi-Fi and seating",
-      "A modern coffee culture"
+      "In storage areas"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "The growth of specialty cafes in Kuwait is tied to what؟",
+    "q": "The growth of specialty cafes in Kuwait is tied to what?",
     "o": [
       "A modern coffee culture",
-      "A cold coffee drink",
       "Falling coffee prices worldwide",
-      "In food and dining zones"
+      "A ban on tea",
+      "New oil discoveries"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What kind of drink is an iced latte؟",
+    "q": "What kind of drink is an iced latte?",
     "o": [
       "A cold coffee drink",
-      "A modern coffee culture",
-      "A milkshake dessert",
-      "A soft drink"
+      "A hot tea",
+      "A soft drink",
+      "A milkshake dessert"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Why is studying in cafes common in Kuwait؟",
+    "q": "Why is studying in cafes common in Kuwait?",
     "o": [
-      "They offer Wi-Fi and seating",
-      "Along the marina and corniche",
-      "In food and dining zones",
-      "They are run by schools"
+      "They are open only at dawn",
+      "They sell textbooks",
+      "They are run by schools",
+      "They offer Wi-Fi and seating"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   }
 ]

@@ -1,50 +1,50 @@
 [
   {
-    "q": "In photography, aperture is expressed using what value؟",
+    "q": "In photography, aperture is expressed using what value?",
     "o": [
+      "Shutter speed",
       "ISO",
       "f-stop",
-      "Kelvin",
-      "Camera shake"
+      "Kelvin"
     ],
-    "a": 1,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What does increasing a camera's ISO setting raise؟",
+    "q": "What does increasing a camera's ISO setting raise?",
     "o": [
-      "The sensor's sensitivity to light",
-      "The color temperature",
       "The lens focal length",
-      "A shallow depth of field"
+      "The shutter speed",
+      "The sensor's sensitivity to light",
+      "The color temperature"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What is a wide-angle lens best suited for؟",
+    "q": "What is a wide-angle lens best suited for?",
     "o": [
       "Capturing expansive scenes",
-      "A shallow depth of field",
-      "Compressing distant backgrounds",
-      "More editing flexibility"
+      "Photographing distant wildlife",
+      "Extreme close-ups of tiny objects",
+      "Compressing distant backgrounds"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What is the main advantage of shooting in RAW rather than JPEG؟",
+    "q": "What is the main advantage of shooting in RAW rather than JPEG?",
     "o": [
-      "Compatibility with every app",
       "More editing flexibility",
-      "A shallow depth of field",
-      "Capturing expansive scenes"
+      "Smaller file sizes",
+      "Faster sharing online",
+      "Compatibility with every app"
     ],
-    "a": 1,
+    "a": 0,
     "d": 2
   },
   {
-    "q": "In photography, what does \"bokeh\" refer to؟",
+    "q": "In photography, what does \"bokeh\" refer to?",
     "o": [
       "The aesthetic quality of out-of-focus blur",
       "Blur caused by camera shake",
@@ -55,36 +55,36 @@
     "d": 2
   },
   {
-    "q": "What does a fast shutter speed help to do؟",
+    "q": "What does a fast shutter speed help to do?",
     "o": [
-      "Blur the background",
+      "Freeze fast motion",
       "Brighten dark scenes",
-      "A shallow depth of field",
-      "Freeze fast motion"
+      "Blur the background",
+      "Widen the field of view"
     ],
-    "a": 3,
+    "a": 0,
     "d": 1
   },
   {
-    "q": "What does using a tripod help reduce؟",
+    "q": "What does using a tripod help reduce?",
     "o": [
+      "Lens flare",
       "Camera shake",
       "Image noise",
-      "Lens flare",
       "Chromatic aberration"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What effect does a phone camera's portrait mode usually create؟",
+    "q": "What effect does a phone camera's portrait mode usually create?",
     "o": [
-      "A shallow depth of field",
-      "A long-exposure blur",
       "A wide-angle distortion",
-      "Capturing expansive scenes"
+      "A long-exposure blur",
+      "A shallow depth of field",
+      "An infrared tint"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   }
 ]

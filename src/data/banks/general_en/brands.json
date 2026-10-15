@@ -1,50 +1,50 @@
 [
   {
-    "q": "What is the name of Nike's logo؟",
+    "q": "What is the name of Nike's logo?",
     "o": [
-      "The Swoosh",
-      "The Arrow",
       "The Tick",
-      "The Wave"
+      "The Wave",
+      "The Swoosh",
+      "The Arrow"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What is Coca-Cola's signature brand color؟",
+    "q": "What is Coca-Cola's signature brand color?",
     "o": [
-      "Red",
       "Blue",
+      "Red",
       "Green",
-      "An apple"
+      "Yellow"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which country was McDonald's founded؟",
+    "q": "In which country was McDonald's founded?",
     "o": [
       "United Kingdom",
-      "Nikola Tesla",
-      "South Korea",
+      "Canada",
+      "Australia",
       "United States"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In which country is Samsung headquartered؟",
+    "q": "In which country is Samsung headquartered?",
     "o": [
+      "Japan",
+      "China",
       "South Korea",
-      "Nikola Tesla",
-      "The Swoosh",
-      "United States"
+      "Taiwan"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What did Starbucks originally sell when it opened in 1971؟",
+    "q": "What did Starbucks originally sell when it opened in 1971?",
     "o": [
       "Ice cream",
       "Coffee beans and equipment",
@@ -55,36 +55,36 @@
     "d": 2
   },
   {
-    "q": "The car company Tesla is named after whom؟",
+    "q": "The car company Tesla is named after whom?",
     "o": [
-      "Nikola Tesla",
-      "South Korea",
-      "The Swoosh",
-      "Thomas Edison"
+      "Thomas Edison",
+      "Elon Musk's father",
+      "A Greek god",
+      "Nikola Tesla"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Which country is the carmaker Hyundai from؟",
+    "q": "Which country is the carmaker Hyundai from?",
     "o": [
-      "South Korea",
-      "Nikola Tesla",
-      "The Swoosh",
-      "United States"
+      "Japan",
+      "China",
+      "Thailand",
+      "South Korea"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Which fruit is used in Apple's logo؟",
+    "q": "Which fruit is used in Apple's logo?",
     "o": [
+      "A pear",
       "An apple",
       "A grape",
-      "A peach",
-      "The Swoosh"
+      "A peach"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   }
 ]

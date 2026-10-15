@@ -1,127 +1,127 @@
 [
   {
-    "q": "Which instrument typically has 88 keys؟",
+    "q": "Which instrument typically has 88 keys?",
     "o": [
       "Harp",
-      "Hello",
+      "Piano",
       "Organ",
-      "Piano"
+      "Accordion"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Who is known as the \"King of Pop\"?",
+    "o": [
+      "Elvis Presley",
+      "Michael Jackson",
+      "Prince",
+      "Stevie Wonder"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Which band recorded \"Bohemian Rhapsody\"?",
+    "o": [
+      "Queen",
+      "Led Zeppelin",
+      "The Beatles",
+      "Pink Floyd"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which music genre originated in Jamaica?",
+    "o": [
+      "Salsa",
+      "Samba",
+      "Flamenco",
+      "Reggae"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Who is known as the \"King of Pop\"؟",
+    "q": "How many strings does a standard guitar have?",
     "o": [
-      "Michael Jackson",
-      "Arabic music",
-      "Elvis Presley",
-      "Stevie Wonder"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which band recorded \"Bohemian Rhapsody\"؟",
-    "o": [
-      "Queen",
-      "Hello",
-      "Piano",
-      "Reggae"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which music genre originated in Jamaica؟",
-    "o": [
-      "Reggae",
-      "A baton",
-      "Austria",
-      "Germany"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "How many strings does a standard guitar have؟",
-    "o": [
-      "6",
       "4",
+      "6",
       "5",
       "8"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which country was Ludwig van Beethoven born؟",
+    "q": "In which country was Ludwig van Beethoven born?",
     "o": [
+      "Italy",
       "Germany",
-      "A baton",
-      "Austria",
-      "France"
+      "France",
+      "Poland"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What does an orchestra conductor typically hold to direct the musicians؟",
+    "q": "What does an orchestra conductor typically hold to direct the musicians?",
     "o": [
       "A baton",
-      "A mallet",
-      "Austria",
-      "Germany"
+      "A bow",
+      "A drumstick",
+      "A mallet"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which decade was Auto-Tune software first released؟",
+    "q": "In which decade was Auto-Tune software first released?",
     "o": [
       "1970s",
+      "1990s",
       "1980s",
-      "2000s",
-      "1990s"
+      "2000s"
     ],
-    "a": 3,
+    "a": 1,
     "d": 3
   },
   {
-    "q": "Wolfgang Amadeus Mozart was from which present-day country؟",
+    "q": "Wolfgang Amadeus Mozart was from which present-day country?",
     "o": [
-      "Austria",
-      "A baton",
+      "Italy",
       "France",
-      "Germany"
+      "Hungary",
+      "Austria"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Which English city were the Beatles from؟",
+    "q": "Which English city were the Beatles from?",
     "o": [
-      "Birmingham",
       "Manchester",
-      "New Orleans",
-      "Liverpool"
+      "London",
+      "Liverpool",
+      "Birmingham"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "The oud is a traditional instrument in which music tradition?",
+    "o": [
+      "Japanese music",
+      "Celtic music",
+      "Andean music",
+      "Arabic music"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "The oud is a traditional instrument in which music tradition؟",
-    "o": [
-      "Arabic music",
-      "Andean music",
-      "Celtic music",
-      "Japanese music"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Elvis Presley is known as the \"King of\" which genre؟",
+    "q": "Elvis Presley is known as the \"King of\" which genre?",
     "o": [
       "Jazz",
       "Blues",
@@ -132,29 +132,29 @@
     "d": 1
   },
   {
-    "q": "Which of these hit songs is by British singer Adele؟",
+    "q": "Which of these hit songs is by British singer Adele?",
     "o": [
       "Hello",
-      "Halo",
-      "Piano",
-      "Queen"
+      "Shape of You",
+      "Bad Romance",
+      "Halo"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Which country was Bob Marley from؟",
+    "q": "Which country was Bob Marley from?",
     "o": [
       "Jamaica",
-      "A baton",
-      "Austria",
-      "Barbados"
+      "Trinidad and Tobago",
+      "Barbados",
+      "Cuba"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which US city did rap and hip hop music originate؟",
+    "q": "In which US city did rap and hip hop music originate?",
     "o": [
       "Los Angeles",
       "Atlanta",
@@ -165,58 +165,58 @@
     "d": 2
   },
   {
-    "q": "How many strings does a violin have؟",
+    "q": "How many strings does a violin have?",
     "o": [
-      "4",
       "3",
       "5",
+      "4",
       "6"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which US city did jazz music originate؟",
+    "q": "In which US city did jazz music originate?",
     "o": [
-      "Arabic music",
-      "Liverpool",
       "Nashville",
-      "New Orleans"
+      "New Orleans",
+      "Detroit",
+      "Seattle"
     ],
-    "a": 3,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "Freddie Mercury was the lead singer of which band؟",
+    "q": "Freddie Mercury was the lead singer of which band?",
     "o": [
+      "The Rolling Stones",
       "Queen",
-      "Hello",
-      "Piano",
-      "Reggae"
+      "Led Zeppelin",
+      "The Who"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is Taylor Swift primarily known as؟",
+    "q": "What is Taylor Swift primarily known as?",
     "o": [
+      "A film director",
+      "A fashion designer",
       "A singer-songwriter",
-      "Arabic music",
-      "Michael Jackson",
-      "A baton"
+      "A professional athlete"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which country is the K-pop group BTS from؟",
+    "q": "Which country is the K-pop group BTS from?",
     "o": [
+      "Japan",
+      "China",
       "South Korea",
-      "Arabic music",
-      "Liverpool",
-      "New Orleans"
+      "Thailand"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]

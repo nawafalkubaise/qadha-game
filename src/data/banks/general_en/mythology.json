@@ -1,6 +1,6 @@
 [
   {
-    "q": "In Greek mythology, Zeus is the god of what؟",
+    "q": "In Greek mythology, Zeus is the god of what?",
     "o": [
       "The sea",
       "Sky and thunder",
@@ -11,80 +11,80 @@
     "d": 1
   },
   {
-    "q": "In Norse mythology, Thor is the god of what؟",
+    "q": "In Norse mythology, Thor is the god of what?",
     "o": [
+      "Wisdom",
       "Mischief",
-      "Snakes",
-      "Thunder",
-      "Jackal"
-    ],
-    "a": 2,
-    "d": 1
-  },
-  {
-    "q": "In Greek mythology, Poseidon is the god of what؟",
-    "o": [
-      "The sea",
-      "The sun",
-      "Jackal",
-      "Snakes"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Odysseus is the hero of which epic poem؟",
-    "o": [
-      "The Odyssey",
-      "The Aeneid",
-      "The sea",
-      "Beowulf"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The Egyptian god Anubis is depicted with the head of which animal؟",
-    "o": [
-      "Jackal",
-      "Falcon",
-      "Greek",
-      "Norse"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "In Greek mythology, what does Medusa have instead of hair؟",
-    "o": [
-      "Jackal",
-      "Snakes",
-      "Flames",
-      "Greek"
-    ],
-    "a": 1,
-    "d": 1
-  },
-  {
-    "q": "Valhalla belongs to which mythology؟",
-    "o": [
-      "Greek",
-      "Jackal",
-      "Roman",
-      "Norse"
+      "Love",
+      "Thunder"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "The myth of Pandora's box comes from which mythology؟",
+    "q": "In Greek mythology, Poseidon is the god of what?",
+    "o": [
+      "The underworld",
+      "The sea",
+      "War",
+      "The sun"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Odysseus is the hero of which epic poem?",
+    "o": [
+      "The Aeneid",
+      "Beowulf",
+      "The Epic of Gilgamesh",
+      "The Odyssey"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "The Egyptian god Anubis is depicted with the head of which animal?",
+    "o": [
+      "Falcon",
+      "Jackal",
+      "Ibis",
+      "Cat"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "In Greek mythology, what does Medusa have instead of hair?",
+    "o": [
+      "Feathers",
+      "Flames",
+      "Snakes",
+      "Seaweed"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Valhalla belongs to which mythology?",
     "o": [
       "Greek",
-      "Hindu",
-      "Jackal",
-      "Norse"
+      "Norse",
+      "Egyptian",
+      "Roman"
     ],
-    "a": 0,
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "The myth of Pandora's box comes from which mythology?",
+    "o": [
+      "Norse",
+      "Egyptian",
+      "Greek",
+      "Hindu"
+    ],
+    "a": 2,
     "d": 1
   }
 ]

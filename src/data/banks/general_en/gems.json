@@ -1,39 +1,39 @@
 [
   {
-    "q": "What element is a diamond made of؟",
+    "q": "What element is a diamond made of?",
     "o": [
-      "Calcium",
-      "Green",
+      "Silicon",
+      "Carbon",
       "Oxygen",
-      "Carbon"
+      "Calcium"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Ruby is a variety of which mineral؟",
+    "q": "Ruby is a variety of which mineral?",
     "o": [
       "Beryl",
-      "Carbon",
-      "Green",
+      "Quartz",
+      "Topaz",
       "Corundum"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "What color is an emerald؟",
+    "q": "What color is an emerald?",
     "o": [
-      "Green",
       "Blue",
-      "Carbon",
-      "Mass"
+      "Red",
+      "Purple",
+      "Green"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Which creature produces pearls؟",
+    "q": "Which creature produces pearls?",
     "o": [
       "Corals",
       "Sea urchins",
@@ -44,47 +44,47 @@
     "d": 1
   },
   {
-    "q": "What does the Mohs scale measure؟",
+    "q": "What does the Mohs scale measure?",
     "o": [
-      "Mineral hardness",
-      "Water clarity",
       "Gem weight",
-      "Carbon"
+      "Gem color",
+      "Mineral hardness",
+      "Water clarity"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Opal is known for which optical effect؟",
+    "q": "Opal is known for which optical effect?",
     "o": [
       "Play of color",
       "Glowing in the dark",
       "Being perfectly transparent",
-      "Mollusks such as oysters"
+      "Changing shape"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Sapphire is the blue variety of which mineral؟",
+    "q": "Sapphire is the blue variety of which mineral?",
     "o": [
-      "Corundum",
       "Beryl",
-      "Carbon",
-      "Garnet"
+      "Quartz",
+      "Garnet",
+      "Corundum"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What does the carat measure for gemstones؟",
+    "q": "What does the carat measure for gemstones?",
     "o": [
-      "Mass",
+      "Hardness",
       "Color",
-      "Green",
-      "Carbon"
+      "Clarity",
+      "Mass"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   }
 ]

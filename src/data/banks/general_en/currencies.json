@@ -1,90 +1,90 @@
 [
   {
-    "q": "The euro is the official currency of which group of countries؟",
+    "q": "The euro is the official currency of which group of countries?",
     "o": [
+      "The Gulf states",
+      "All Commonwealth countries",
       "The Eurozone",
-      "Saudi Arabia",
-      "Switzerland",
-      "United Kingdom"
+      "All NATO members"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "The yen is the currency of which country؟",
+    "q": "The yen is the currency of which country?",
     "o": [
-      "Japan",
       "China",
-      "CAD",
+      "South Korea",
+      "Japan",
       "Thailand"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which country uses the pound sterling؟",
+    "q": "Which country uses the pound sterling?",
     "o": [
-      "United Kingdom",
       "United States",
-      "A cryptocurrency",
-      "Saudi Arabia"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The franc is the currency of which European country؟",
-    "o": [
-      "Switzerland",
-      "Saudi Arabia",
-      "The Eurozone",
-      "Washington DC"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "The riyal is the currency of which country؟",
-    "o": [
-      "Saudi Arabia",
-      "Switzerland",
-      "The Eurozone",
+      "Australia",
+      "Ireland",
       "United Kingdom"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What is Bitcoin؟",
+    "q": "The franc is the currency of which European country?",
     "o": [
-      "A cryptocurrency",
-      "United Kingdom",
-      "Washington DC",
-      "Saudi Arabia"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which city is the International Monetary Fund (IMF) headquartered؟",
-    "o": [
-      "Washington DC",
-      "A cryptocurrency",
-      "Saudi Arabia",
+      "Austria",
+      "Belgium",
+      "Sweden",
       "Switzerland"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What is the currency code of the Canadian dollar؟",
+    "q": "The riyal is the currency of which country?",
     "o": [
-      "CND",
-      "CAD",
-      "CDL",
-      "CDN"
+      "Kuwait",
+      "Saudi Arabia",
+      "Egypt",
+      "Jordan"
     ],
     "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What is Bitcoin?",
+    "o": [
+      "A stock exchange",
+      "A cryptocurrency",
+      "A central bank",
+      "A credit card company"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which city is the International Monetary Fund (IMF) headquartered?",
+    "o": [
+      "New York",
+      "Washington DC",
+      "Geneva",
+      "London"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "What is the currency code of the Canadian dollar?",
+    "o": [
+      "CAD",
+      "CDN",
+      "CND",
+      "CDL"
+    ],
+    "a": 0,
     "d": 2
   }
 ]

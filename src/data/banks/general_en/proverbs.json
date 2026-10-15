@@ -2,42 +2,42 @@
   {
     "q": "Complete the Arabic proverb: \"Choose the neighbor before the...\"",
     "o": [
+      "Garden",
       "House",
-      "Body",
-      "Bush",
-      "Cover"
+      "Door",
+      "Market"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
     "q": "Complete the Arabic proverb: \"Patience is the key to...\"",
     "o": [
+      "Wealth",
+      "Knowledge",
       "Relief",
-      "Blanket",
-      "Cover",
-      "Finds"
+      "Power"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
     "q": "Complete the Arabic proverb: \"Whoever strives...\"",
     "o": [
-      "Bush",
-      "Cover",
-      "Finds",
-      "Body"
+      "Loses",
+      "Waits",
+      "Wanders",
+      "Finds"
     ],
-    "a": 2,
+    "a": 3,
     "d": 2
   },
   {
     "q": "Complete the Arabic proverb: \"In its mother's eyes, the monkey is a...\"",
     "o": [
       "Gazelle",
-      "Blanket",
-      "Lining",
+      "Lion",
+      "Horse",
       "Peacock"
     ],
     "a": 0,
@@ -46,34 +46,34 @@
   {
     "q": "Complete the Arabic proverb: \"Stretch your legs according to your...\"",
     "o": [
-      "Blanket",
       "Carpet",
-      "Gazelle",
-      "Lining"
+      "Blanket",
+      "Shadow",
+      "Road"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
     "q": "Complete the proverb: \"Prevention is better than...\"",
     "o": [
-      "Bush",
-      "Cover",
+      "Treatment",
       "Cure",
-      "Body"
+      "Regret",
+      "Medicine"
     ],
-    "a": 2,
+    "a": 1,
     "d": 1
   },
   {
     "q": "Complete the Arabic proverb: \"When the mind is complete...\"",
     "o": [
-      "Speech lessens",
       "Speech doubles",
+      "Wealth grows",
       "Fear disappears",
-      "Wealth grows"
+      "Speech lessens"
     ],
-    "a": 0,
+    "a": 3,
     "d": 3
   },
   {
@@ -90,21 +90,21 @@
   {
     "q": "Complete the proverb: \"Actions speak louder than...\"",
     "o": [
-      "Bush",
-      "Cover",
       "Words",
-      "Body"
+      "Thoughts",
+      "Promises",
+      "Plans"
     ],
-    "a": 2,
+    "a": 0,
     "d": 1
   },
   {
     "q": "Complete the proverb: \"A bird in the hand is worth two in the...\"",
     "o": [
       "Bush",
-      "Body",
       "Cage",
-      "Cover"
+      "Nest",
+      "Sky"
     ],
     "a": 0,
     "d": 1
@@ -113,9 +113,9 @@
     "q": "Complete the proverb: \"The early bird catches the...\"",
     "o": [
       "Worm",
-      "Body",
-      "Bush",
-      "Cover"
+      "Fish",
+      "Seed",
+      "Fly"
     ],
     "a": 0,
     "d": 1
@@ -123,32 +123,32 @@
   {
     "q": "Complete the proverb: \"Don't judge a book by its...\"",
     "o": [
+      "Title",
       "Cover",
       "Author",
-      "Body",
-      "Bush"
+      "Price"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
     "q": "Complete the proverb: \"Every cloud has a silver...\"",
     "o": [
+      "Edge",
       "Border",
-      "Cover",
-      "Lining",
-      "Blanket"
+      "Thread",
+      "Lining"
     ],
-    "a": 2,
+    "a": 3,
     "d": 1
   },
   {
     "q": "Complete the proverb: \"Rome was not built in a...\"",
     "o": [
       "Day",
-      "Way",
-      "Body",
-      "Bush"
+      "Week",
+      "Month",
+      "Year"
     ],
     "a": 0,
     "d": 1
@@ -157,9 +157,9 @@
     "q": "Complete the proverb: \"When in Rome, do as the...\"",
     "o": [
       "Romans do",
-      "Greeks do",
       "Kings do",
-      "Priests do"
+      "Priests do",
+      "Greeks do"
     ],
     "a": 0,
     "d": 1
@@ -167,21 +167,21 @@
   {
     "q": "Complete the saying: \"Knowledge is...\"",
     "o": [
+      "Wealth",
       "Power",
-      "Body",
-      "Bush",
-      "Cover"
+      "Freedom",
+      "Wisdom"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
     "q": "Complete the proverb: \"Necessity is the mother of...\"",
     "o": [
       "Invention",
+      "Wisdom",
       "Patience",
-      "Progress",
-      "Romans do"
+      "Progress"
     ],
     "a": 0,
     "d": 1
@@ -190,9 +190,9 @@
     "q": "Complete the proverb: \"All that glitters is not...\"",
     "o": [
       "Gold",
-      "Body",
-      "Bush",
-      "Cover"
+      "Silver",
+      "Treasure",
+      "Diamond"
     ],
     "a": 0,
     "d": 1
@@ -200,12 +200,12 @@
   {
     "q": "Complete the saying: \"A healthy mind in a healthy...\"",
     "o": [
+      "Home",
+      "Soul",
       "Body",
-      "Bush",
-      "Cover",
-      "Cure"
+      "Society"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
@@ -213,8 +213,8 @@
     "o": [
       "Way",
       "Day",
-      "Body",
-      "Bush"
+      "Reward",
+      "Chance"
     ],
     "a": 0,
     "d": 1

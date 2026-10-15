@@ -1,90 +1,90 @@
 [
   {
-    "q": "Who wrote Hamlet؟",
+    "q": "Who wrote Hamlet?",
     "o": [
-      "William Shakespeare",
       "Christopher Marlowe",
-      "Maurice Maeterlinck",
-      "Peking opera"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which city is Shakespeare's Globe Theatre located؟",
-    "o": [
-      "London",
-      "Bristol",
-      "Dublin",
-      "Milan"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which city is the La Scala opera house located؟",
-    "o": [
-      "Milan",
-      "London",
-      "Naples",
-      "Rome"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Who wrote the play The Blue Bird؟",
-    "o": [
-      "Maurice Maeterlinck",
-      "August Strindberg",
       "William Shakespeare",
-      "Anton Chekhov"
+      "Ben Jonson",
+      "Molière"
     ],
-    "a": 0,
-    "d": 3
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "What is the best-known form of traditional Chinese opera؟",
+    "q": "In which city is Shakespeare's Globe Theatre located?",
     "o": [
-      "Peking opera",
-      "Indonesia",
-      "Kathakali",
-      "Maurice Maeterlinck"
+      "Edinburgh",
+      "Dublin",
+      "Bristol",
+      "London"
     ],
-    "a": 0,
-    "d": 2
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Wayang shadow puppetry is famous in which country؟",
+    "q": "In which city is the La Scala opera house located?",
     "o": [
-      "Indonesia",
-      "New York",
-      "Philippines",
-      "Sophocles"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Which ancient Greek playwright wrote Antigone؟",
-    "o": [
-      "Aeschylus",
-      "Euripides",
-      "Indonesia",
-      "Sophocles"
+      "Rome",
+      "Venice",
+      "Naples",
+      "Milan"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "Broadway is a famous theatre district in which city؟",
+    "q": "Who wrote the play The Blue Bird?",
     "o": [
-      "New York",
-      "Chicago",
-      "Indonesia",
-      "Sophocles"
+      "Henrik Ibsen",
+      "Anton Chekhov",
+      "August Strindberg",
+      "Maurice Maeterlinck"
+    ],
+    "a": 3,
+    "d": 3
+  },
+  {
+    "q": "What is the best-known form of traditional Chinese opera?",
+    "o": [
+      "Peking opera",
+      "Kabuki",
+      "Noh",
+      "Kathakali"
     ],
     "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Wayang shadow puppetry is famous in which country?",
+    "o": [
+      "Philippines",
+      "Vietnam",
+      "Sri Lanka",
+      "Indonesia"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Which ancient Greek playwright wrote Antigone?",
+    "o": [
+      "Aeschylus",
+      "Sophocles",
+      "Euripides",
+      "Aristophanes"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "Broadway is a famous theatre district in which city?",
+    "o": [
+      "Chicago",
+      "Los Angeles",
+      "New York",
+      "Boston"
+    ],
+    "a": 2,
     "d": 1
   }
 ]

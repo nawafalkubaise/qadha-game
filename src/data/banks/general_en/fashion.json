@@ -1,90 +1,90 @@
 [
   {
-    "q": "In which country was the fashion house Chanel founded؟",
+    "q": "In which country was the fashion house Chanel founded?",
     "o": [
+      "Italy",
       "France",
-      "Germany",
-      "India",
-      "Italy"
+      "United Kingdom",
+      "Germany"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Who mass-popularized blue jeans؟",
+    "q": "Who mass-popularized blue jeans?",
     "o": [
-      "Levi Strauss",
-      "Calvin Klein",
       "Coco Chanel",
-      "Ralph Lauren"
+      "Levi Strauss",
+      "Ralph Lauren",
+      "Calvin Klein"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "A typical Western business suit consists of what؟",
+    "q": "A typical Western business suit consists of what?",
     "o": [
-      "A jacket and trousers",
+      "A robe and sash",
       "A tunic and sandals",
-      "A kilt and vest",
-      "A robe and sash"
+      "A jacket and trousers",
+      "A kilt and vest"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which country is the sari a traditional garment؟",
+    "q": "In which country is the sari a traditional garment?",
     "o": [
       "China",
-      "France",
       "Japan",
-      "India"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "Louis Vuitton is best known for what؟",
-    "o": [
-      "Luxury leather goods",
-      "A jacket and trousers",
-      "Designers' new collections",
-      "High-end custom-made fashion"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which country was Adidas founded؟",
-    "o": [
-      "Germany",
-      "France",
       "India",
+      "Indonesia"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Louis Vuitton is best known for what?",
+    "o": [
+      "Sports shoes",
+      "Fast food",
+      "Luxury leather goods",
+      "Electronics"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which country was Adidas founded?",
+    "o": [
+      "France",
+      "Germany",
+      "United States",
       "Italy"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What do runway fashion shows showcase؟",
+    "q": "What do runway fashion shows showcase?",
     "o": [
+      "Second-hand clothes",
       "Designers' new collections",
-      "A jacket and trousers",
-      "High-end custom-made fashion",
-      "Luxury leather goods"
+      "School uniforms",
+      "Military uniforms"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What does haute couture mean؟",
+    "q": "What does haute couture mean?",
     "o": [
+      "Mass-produced clothing",
       "High-end custom-made fashion",
-      "Designers' new collections",
-      "A jacket and trousers",
-      "Luxury leather goods"
+      "Sportswear",
+      "Second-hand fashion"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   }
 ]

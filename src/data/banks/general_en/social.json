@@ -1,90 +1,90 @@
 [
   {
-    "q": "Which company owns Instagram؟",
+    "q": "Which company owns Instagram?",
     "o": [
-      "Apple",
       "Google",
-      "Reddit",
+      "Apple",
+      "Microsoft",
       "Meta"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What is the parent company of TikTok؟",
+    "q": "What is the parent company of TikTok?",
     "o": [
       "ByteDance",
-      "Jan Koum",
+      "Tencent",
       "Alibaba",
-      "Reddit"
+      "Baidu"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What was Twitter rebranded as in 2023؟",
+    "q": "What was Twitter rebranded as in 2023?",
     "o": [
       "X",
+      "Threads",
       "Bluesky",
-      "ByteDance",
-      "Disappearing messages"
+      "Meta"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Who co-founded WhatsApp؟",
+    "q": "Who co-founded WhatsApp?",
     "o": [
-      "Jan Koum",
-      "ByteDance",
+      "Kevin Systrom",
       "Evan Spiegel",
-      "Jack Dorsey"
+      "Jack Dorsey",
+      "Jan Koum"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What is Snapchat best known for؟",
+    "q": "What is Snapchat best known for?",
     "o": [
-      "Disappearing messages",
       "Professional networking",
+      "Disappearing messages",
       "Online shopping",
-      "ByteDance"
+      "Permanent public posts"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which year was YouTube founded؟",
+    "q": "In which year was YouTube founded?",
     "o": [
+      "2003",
       "2007",
-      "2010",
       "2005",
-      "2003"
+      "2010"
     ],
     "a": 2,
     "d": 2
   },
   {
-    "q": "What is LinkedIn mainly used for؟",
+    "q": "What is LinkedIn mainly used for?",
     "o": [
+      "Short videos",
       "Disappearing messages",
-      "Online shopping",
-      "ByteDance",
-      "Professional networking"
+      "Professional networking",
+      "Online shopping"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which website is nicknamed \"the front page of the internet\"؟",
+    "q": "Which website is nicknamed \"the front page of the internet\"?",
     "o": [
-      "Reddit",
-      "Tumblr",
+      "Wikipedia",
       "Yahoo",
-      "ByteDance"
+      "Tumblr",
+      "Reddit"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   }
 ]

@@ -1,39 +1,39 @@
 [
   {
-    "q": "In the Arabian context, what is a tribe usually؟",
+    "q": "In the Arabian context, what is a tribe usually?",
     "o": [
-      "A kinship-based social grouping",
-      "Hospitality and protecting guests",
-      "Water, pasture, and trade routes",
-      "A government ministry"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In Arabian tribal structure, what does the term \"fakhdh\" commonly mean؟",
-    "o": [
-      "A sub-branch of a larger tribe",
-      "The title of a tribal leader",
-      "Honor and readiness to help others",
-      "A social gathering and discussion hall"
-    ],
-    "a": 0,
-    "d": 3
-  },
-  {
-    "q": "Which value is strongly shared in Kuwaiti and Saudi tribal heritage؟",
-    "o": [
-      "Water, pasture, and trade routes",
-      "A kinship-based social grouping",
-      "Avoidance of strangers",
-      "Hospitality and protecting guests"
+      "A government ministry",
+      "A trade union",
+      "A religious order",
+      "A kinship-based social grouping"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Historic tribal migration in central Arabia was often driven by what؟",
+    "q": "In Arabian tribal structure, what does the term \"fakhdh\" commonly mean?",
+    "o": [
+      "The title of a tribal leader",
+      "A guest reception hall",
+      "A sub-branch of a larger tribe",
+      "A type of desert tent"
+    ],
+    "a": 2,
+    "d": 3
+  },
+  {
+    "q": "Which value is strongly shared in Kuwaiti and Saudi tribal heritage?",
+    "o": [
+      "Hospitality and protecting guests",
+      "Strict individualism",
+      "Avoidance of strangers",
+      "Disregard for elders"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Historic tribal migration in central Arabia was often driven by what?",
     "o": [
       "Gold mining",
       "Water, pasture, and trade routes",
@@ -44,7 +44,7 @@
     "d": 2
   },
   {
-    "q": "What does a Kuwaiti diwaniya traditionally serve as؟",
+    "q": "What does a Kuwaiti diwaniya traditionally serve as?",
     "o": [
       "A courtroom",
       "A school",
@@ -55,7 +55,7 @@
     "d": 1
   },
   {
-    "q": "In tribal usage, what does \"nakhwa\" usually imply؟",
+    "q": "In tribal usage, what does \"nakhwa\" usually imply?",
     "o": [
       "Seeking revenge",
       "Displaying wealth",

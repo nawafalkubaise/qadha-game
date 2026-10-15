@@ -1,90 +1,90 @@
 [
   {
-    "q": "What does DNA stand for؟",
+    "q": "What does DNA stand for?",
     "o": [
-      "Deoxyribonucleic acid",
-      "Deoxyamino acid",
+      "Ribonucleic acid",
       "Dinitrogen acid",
-      "Ribonucleic acid"
+      "Deoxyribonucleic acid",
+      "Deoxyamino acid"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What is the largest cell in the human body؟",
+    "q": "What is the largest cell in the human body?",
     "o": [
-      "The egg cell",
-      "The skin cell",
       "The red blood cell",
+      "The skin cell",
+      "The egg cell",
       "The white blood cell"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What energy source powers photosynthesis؟",
+    "q": "What energy source powers photosynthesis?",
     "o": [
       "Sunlight",
+      "Heat from the soil",
       "Moonlight",
-      "The cell",
-      "1.4 kg"
+      "Wind"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "How many chromosomes do humans normally have؟",
+    "q": "How many chromosomes do humans normally have?",
     "o": [
-      "46",
       "23",
       "44",
+      "46",
       "48"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which cell part is called the \"powerhouse of the cell\"؟",
+    "q": "Which cell part is called the \"powerhouse of the cell\"?",
     "o": [
+      "Nucleus",
       "Mitochondria",
-      "Cell membrane",
-      "Chlorophyll",
-      "Ribosome"
+      "Ribosome",
+      "Cell membrane"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Plants are green because of which pigment؟",
+    "q": "Plants are green because of which pigment?",
     "o": [
+      "Carotene",
+      "Melanin",
       "Chlorophyll",
-      "Hemoglobin",
-      "Mitochondria",
-      "Carotene"
+      "Hemoglobin"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What is the smallest unit of life؟",
+    "q": "What is the smallest unit of life?",
     "o": [
-      "The cell",
       "The atom",
       "The organ",
+      "The cell",
       "The tissue"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "About how much does the adult human brain weigh؟",
+    "q": "About how much does the adult human brain weigh?",
     "o": [
-      "1.4 kg",
       "0.5 kg",
+      "1.4 kg",
       "3 kg",
       "5 kg"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   }
 ]

@@ -1,90 +1,90 @@
 [
   {
-    "q": "In which year did the Wright brothers make the first powered flight؟",
+    "q": "In which year did the Wright brothers make the first powered flight?",
     "o": [
-      "1903",
       "1895",
+      "1903",
       "1910",
       "1927"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What does the company Boeing mainly manufacture?",
+    "o": [
+      "Cars",
+      "Aircraft",
+      "Smartphones",
+      "Ships"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What color is an aircraft's \"black box\" flight recorder usually painted?",
+    "o": [
+      "Black",
+      "Bright orange",
+      "Silver",
+      "Dark blue"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "In which city is Heathrow Airport?",
+    "o": [
+      "London",
+      "Manchester",
+      "Paris",
+      "Dublin"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What does the company Boeing mainly manufacture؟",
+    "q": "What does an aircraft's autopilot help control?",
     "o": [
-      "Bright orange",
-      "London",
-      "Ships",
-      "Aircraft"
+      "The cabin lighting",
+      "The passenger meals",
+      "The baggage loading",
+      "The flight path and altitude"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What color is an aircraft's \"black box\" flight recorder usually painted؟",
+    "q": "What is the shortest route between two points on the Earth's surface called?",
     "o": [
-      "Bright orange",
-      "Aircraft",
-      "Dark blue",
-      "Black"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "In which city is Heathrow Airport؟",
-    "o": [
-      "London",
-      "Dublin",
-      "Paris",
-      "Aircraft"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What does an aircraft's autopilot help control؟",
-    "o": [
-      "The flight path and altitude",
-      "The turbofan is more efficient",
-      "A supersonic passenger jet",
-      "The baggage loading"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What is the shortest route between two points on the Earth's surface called؟",
-    "o": [
-      "A great circle route",
       "A rhumb line",
-      "A supersonic passenger jet",
-      "The flight path and altitude"
+      "A great circle route",
+      "The equator",
+      "A meridian"
     ],
-    "a": 0,
+    "a": 1,
     "d": 3
   },
   {
-    "q": "What was the Concorde؟",
+    "q": "What was the Concorde?",
     "o": [
-      "A supersonic passenger jet",
       "A military helicopter",
-      "The flight path and altitude",
-      "The turbofan is more efficient"
+      "A cargo airship",
+      "A supersonic passenger jet",
+      "A space shuttle"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "At high cruising speeds, how does a turbofan compare with a propeller engine؟",
+    "q": "At high cruising speeds, how does a turbofan compare with a propeller engine?",
     "o": [
-      "The turbofan is more efficient",
-      "The flight path and altitude",
-      "A supersonic passenger jet",
-      "A great circle route"
+      "The propeller is always more efficient",
+      "They are exactly equal",
+      "The turbofan cannot fly at high speed",
+      "The turbofan is more efficient"
     ],
-    "a": 0,
+    "a": 3,
     "d": 3
   }
 ]

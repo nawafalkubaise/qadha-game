@@ -1,90 +1,90 @@
 [
   {
-    "q": "What is the fastest land animal؟",
+    "q": "What is the fastest land animal?",
     "o": [
-      "A pride",
-      "Giraffe",
-      "Blue whale",
+      "Lion",
+      "Horse",
+      "Greyhound",
       "Cheetah"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "How many hearts does an octopus have؟",
+    "q": "How many hearts does an octopus have?",
     "o": [
       "1",
       "2",
-      "8",
-      "3"
+      "3",
+      "8"
     ],
-    "a": 3,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What is the largest mammal on Earth؟",
+    "q": "What is the largest mammal on Earth?",
     "o": [
-      "Hippopotamus",
-      "A pride",
+      "Blue whale",
       "African elephant",
-      "Blue whale"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "How many legs does a spider have؟",
-    "o": [
-      "8",
-      "3",
-      "6",
-      "10"
+      "Giraffe",
+      "Hippopotamus"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is a group of lions called؟",
+    "q": "How many legs does a spider have?",
     "o": [
-      "A flock",
-      "A herd",
-      "A pack",
-      "A pride"
+      "6",
+      "8",
+      "10",
+      "12"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Which animal can remain dormant for up to three years؟",
+    "q": "What is a group of lions called?",
     "o": [
-      "Snail",
-      "Bear",
+      "A pack",
+      "A herd",
+      "A pride",
+      "A flock"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Which animal can remain dormant for up to three years?",
+    "o": [
       "Koala",
+      "Bear",
+      "Snail",
       "Sloth"
     ],
-    "a": 0,
+    "a": 2,
     "d": 3
   },
   {
-    "q": "What is the tallest animal in the world؟",
+    "q": "What is the tallest animal in the world?",
     "o": [
-      "A pride",
-      "Cheetah",
       "Elephant",
-      "Giraffe"
+      "Ostrich",
+      "Giraffe",
+      "Moose"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What is the fastest bird in the world؟",
+    "q": "What is the fastest bird in the world?",
     "o": [
+      "Ostrich",
+      "Albatross",
       "Peregrine falcon",
-      "Blue whale",
-      "A pride",
-      "Albatross"
+      "Pelican"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   }
 ]

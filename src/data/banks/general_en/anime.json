@@ -1,39 +1,39 @@
 [
   {
-    "q": "The anime Naruto is about what؟",
+    "q": "The anime Naruto is about what?",
     "o": [
-      "Ninjas",
       "Pirates",
-      "Basketball",
-      "Akira Toriyama"
+      "Ninjas",
+      "Samurai detectives",
+      "Space racers"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "The anime One Piece is about what؟",
+    "q": "The anime One Piece is about what?",
     "o": [
-      "Pirates",
       "Ninjas",
+      "Pirates",
       "Robots",
       "Wizards"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Who created the manga Dragon Ball؟",
+    "q": "Who created the manga Dragon Ball?",
     "o": [
-      "Akira Toriyama",
+      "Masashi Kishimoto",
       "Eiichiro Oda",
       "Hayao Miyazaki",
-      "Masashi Kishimoto"
+      "Akira Toriyama"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "In Death Note, how does the notebook kill a person؟",
+    "q": "In Death Note, how does the notebook kill a person?",
     "o": [
       "By writing their name in it",
       "By drawing their face",
@@ -44,29 +44,29 @@
     "d": 1
   },
   {
-    "q": "What is the Japanese title of Attack on Titan؟",
+    "q": "What is the Japanese title of Attack on Titan?",
     "o": [
       "Shingeki no Kyojin",
-      "Boku no Hero Academia",
       "Kimetsu no Yaiba",
-      "He is given a poison"
+      "Boku no Hero Academia",
+      "Jujutsu Kaisen"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Which sport is the anime Slam Dunk about؟",
+    "q": "Which sport is the anime Slam Dunk about?",
     "o": [
-      "Basketball",
-      "Baseball",
       "Volleyball",
-      "Akira Toriyama"
+      "Basketball",
+      "Soccer",
+      "Baseball"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In Detective Conan, how is Shinichi shrunk into a child؟",
+    "q": "In Detective Conan, how is Shinichi shrunk into a child?",
     "o": [
       "He is cursed by a witch",
       "He is given a poison",
@@ -77,14 +77,14 @@
     "d": 2
   },
   {
-    "q": "Hayao Miyazaki co-founded which animation studio؟",
+    "q": "Hayao Miyazaki co-founded which animation studio?",
     "o": [
-      "Studio Ghibli",
+      "Toei Animation",
       "Studio Pierrot",
-      "Akira Toriyama",
-      "Toei Animation"
+      "Studio Ghibli",
+      "Madhouse"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]

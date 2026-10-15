@@ -1,127 +1,127 @@
 [
   {
-    "q": "What is on Japan's flag؟",
+    "q": "What is on Japan's flag?",
     "o": [
-      "A red circle",
-      "A crescent moon",
       "A maple leaf",
-      "A white cross"
+      "A white cross",
+      "A red circle",
+      "A crescent moon"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "How many stars are on the US flag؟",
+    "q": "How many stars are on the US flag?",
     "o": [
-      "50",
       "13",
+      "50",
       "48",
       "52"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What symbol is in the center of Canada's flag؟",
+    "q": "What symbol is in the center of Canada's flag?",
     "o": [
-      "A maple leaf",
+      "A beaver",
       "A red circle",
-      "The Union Jack",
-      "Black, red and gold"
+      "A star",
+      "A maple leaf"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What are the colors of France's flag؟",
+    "q": "What are the colors of France's flag?",
     "o": [
-      "Blue, white and red",
-      "Black, red and gold",
       "Green, white and red",
-      "Green and yellow"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which country has a red flag with a white crescent and star؟",
-    "o": [
-      "Turkey",
-      "Canada",
-      "Japan",
-      "Mexico"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What are the main colors of Brazil's flag؟",
-    "o": [
-      "Green and yellow",
-      "Red and yellow",
       "Black, red and gold",
-      "Blue and white"
+      "Red and white",
+      "Blue, white and red"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What is the flag of the United Kingdom commonly called؟",
+    "q": "Which country has a red flag with a white crescent and star?",
     "o": [
-      "The Union Jack",
-      "The Maple Leaf",
-      "A maple leaf",
-      "A red circle"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which of these flags features a red dragon؟",
-    "o": [
-      "Wales",
-      "China",
       "Japan",
-      "Mexico"
+      "Canada",
+      "Turkey",
+      "Switzerland"
     ],
-    "a": 0,
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What are the main colors of Brazil's flag?",
+    "o": [
+      "Blue and white",
+      "Green and yellow",
+      "Red and black",
+      "Red and yellow"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What is the flag of the United Kingdom commonly called?",
+    "o": [
+      "The Stars and Stripes",
+      "The Tricolore",
+      "The Maple Leaf",
+      "The Union Jack"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Which of these flags features a red dragon?",
+    "o": [
+      "China",
+      "Wales",
+      "Japan",
+      "Nepal"
+    ],
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What does Saudi Arabia's flag feature؟",
+    "q": "What does Saudi Arabia's flag feature?",
     "o": [
       "The Shahada and a sword",
       "A star and crescent",
-      "Black, red and gold",
-      "Blue, white and red"
+      "An eagle",
+      "A cedar tree"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Which country has the only non-rectangular national flag؟",
+    "q": "Which country has the only non-rectangular national flag?",
     "o": [
-      "Nepal",
       "Bhutan",
-      "Japan",
-      "Mexico"
+      "Nepal",
+      "Switzerland",
+      "Japan"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What are the colors of Germany's flag؟",
+    "q": "What are the colors of Germany's flag?",
     "o": [
+      "Red, white and blue",
       "Black, red and gold",
-      "Blue, white and red",
       "Green, white and red",
-      "Green and yellow"
+      "Blue and yellow"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What symbol is in the center of India's flag؟",
+    "q": "What symbol is in the center of India's flag?",
     "o": [
       "A lotus flower",
       "A tiger",
@@ -132,18 +132,18 @@
     "d": 2
   },
   {
-    "q": "Which country's flag uses the same green, white and red vertical stripes as Italy's but adds an emblem in the center؟",
+    "q": "Which country's flag uses the same green, white and red vertical stripes as Italy's but adds an emblem in the center?",
     "o": [
-      "Mexico",
+      "Ireland",
       "France",
       "Hungary",
-      "Ireland"
+      "Mexico"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "How many colors are on South Africa's flag؟",
+    "q": "How many colors are on South Africa's flag?",
     "o": [
       "6",
       "2",
@@ -154,29 +154,29 @@
     "d": 2
   },
   {
-    "q": "Australia's flag features the Union Jack and which constellation؟",
+    "q": "Australia's flag features the Union Jack and which constellation?",
     "o": [
+      "Orion",
       "The Southern Cross",
-      "Black, red and gold",
-      "Blue, white and red",
-      "Green and yellow"
+      "The Big Dipper",
+      "Cassiopeia"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What is in the center of Mexico's flag؟",
+    "q": "What is in the center of Mexico's flag?",
     "o": [
+      "A maple leaf",
       "An eagle eating a snake",
-      "A star and crescent",
-      "Black, red and gold",
-      "Blue, white and red"
+      "A red sun",
+      "A star and crescent"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What does Pakistan's flag feature؟",
+    "q": "What does Pakistan's flag feature?",
     "o": [
       "A white crescent and star on green and white",
       "A blue wheel",
@@ -187,18 +187,18 @@
     "d": 1
   },
   {
-    "q": "What shape is Switzerland's national flag؟",
+    "q": "What shape is Switzerland's national flag?",
     "o": [
-      "Square",
-      "Mexico",
-      "Nepal",
-      "Turkey"
+      "Triangular",
+      "Circular",
+      "Two stacked triangles",
+      "Square"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What does China's flag show؟",
+    "q": "What does China's flag show?",
     "o": [
       "A red circle on white",
       "Yellow stars on a red background",
@@ -209,14 +209,14 @@
     "d": 1
   },
   {
-    "q": "How many colors are on Kuwait's flag؟",
+    "q": "How many colors are on Kuwait's flag?",
     "o": [
-      "4",
       "2",
       "3",
-      "5"
+      "5",
+      "4"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   }
 ]

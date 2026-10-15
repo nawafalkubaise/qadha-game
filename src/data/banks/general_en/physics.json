@@ -1,90 +1,90 @@
 [
   {
-    "q": "What is the approximate speed of light in a vacuum؟",
+    "q": "What is the approximate speed of light in a vacuum?",
     "o": [
-      "300,000 km/s",
       "150,000 km/s",
-      "3,000,000 km/s",
-      "30,000 km/s"
+      "30,000 km/s",
+      "300,000 km/s",
+      "3,000,000 km/s"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Who formulated the law of universal gravitation؟",
+    "q": "Who formulated the law of universal gravitation?",
     "o": [
-      "Isaac Newton",
-      "300,000 km/s",
+      "Galileo Galilei",
       "Albert Einstein",
-      "Galileo Galilei"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which scientist is famous for the equation E=mc²؟",
-    "o": [
-      "300,000 km/s",
       "Isaac Newton",
-      "Max Planck",
-      "Albert Einstein"
+      "Johannes Kepler"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What is absolute zero, rounded, in degrees Celsius؟",
+    "q": "Which scientist is famous for the equation E=mc²?",
     "o": [
-      "-273°C",
+      "Isaac Newton",
+      "Niels Bohr",
+      "Albert Einstein",
+      "Max Planck"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What is absolute zero, rounded, in degrees Celsius?",
+    "o": [
       "-100°C",
       "-173°C",
+      "-273°C",
       "-200°C"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "In which medium does light travel fastest؟",
+    "q": "In which medium does light travel fastest?",
     "o": [
       "Vacuum",
-      "-273°C",
-      "Diamond",
-      "Glass"
+      "Water",
+      "Glass",
+      "Diamond"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What is the SI unit of force؟",
+    "q": "What is the SI unit of force?",
     "o": [
-      "-273°C",
       "Joule",
-      "Pascal",
-      "Newton"
+      "Newton",
+      "Watt",
+      "Pascal"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which state of matter does sound generally travel fastest؟",
+    "q": "In which state of matter does sound generally travel fastest?",
     "o": [
       "Solids",
-      "-273°C",
+      "Liquids",
       "Gases",
-      "Liquids"
+      "Vacuum"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "How many colors are traditionally counted in a rainbow؟",
+    "q": "How many colors are traditionally counted in a rainbow?",
     "o": [
-      "8",
       "7",
       "5",
-      "6"
+      "6",
+      "8"
     ],
-    "a": 1,
+    "a": 0,
     "d": 1
   }
 ]

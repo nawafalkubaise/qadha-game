@@ -4,6 +4,7 @@ import {
   normalizeArabicFusha,
   pickBestDistractors,
   normComparable,
+  isArabic,
 } from "./lib/questionQuality.mjs";
 
 const ROOT = path.resolve(process.cwd());
@@ -52,6 +53,12 @@ for (const filePath of walkJsonFiles(BANKS_DIR)) {
   let fileChanged = false;
   const updated = data.map((q) => {
     if (!q || !Array.isArray(q.o) || q.o.length !== 4 || !Number.isInteger(q.a) || q.a < 0 || q.a > 3) return q;
+    /* المشتتات مُراجَعة يدوياً — لا نلمس السؤال إلا إذا كانت مشتتاته معطوبة (فارغة/مكررة/تساوي الصحيح) */
+    const correctKey = normComparable(q.o[q.a]);
+    const wrongKeys = q.o.filter((_, i) => i !== q.a).map(normComparable);
+    if (wrongKeys.every((k) => k && k !== correctKey) && new Set(wrongKeys).size === 3) return q;
+    /* لا نطبّق تطبيع الفصحى (؟ وغيرها) على النص الإنجليزي */
+    if (!isArabic(q.q)) return q;
     const nq = normalizeArabicFusha(q.q);
     const no = q.o.map((opt) => normalizeArabicFusha(opt));
     const correct = no[q.a];

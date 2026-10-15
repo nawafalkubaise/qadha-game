@@ -1,90 +1,90 @@
 [
   {
-    "q": "How many squares are on a chess board؟",
+    "q": "How many squares are on a chess board?",
     "o": [
       "48",
+      "64",
       "81",
-      "100",
-      "64"
+      "100"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is the theme of the board game Monopoly؟",
+    "q": "What is the theme of the board game Monopoly?",
     "o": [
-      "A murder mystery deduction game",
-      "A tabletop role-playing game",
-      "Dice and a world map",
+      "Solving a murder mystery",
+      "Conquering the world",
+      "Building words",
       "Buying and trading real estate"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What do players use to make words in Scrabble؟",
+    "q": "What do players use to make words in Scrabble?",
     "o": [
       "Letter tiles",
       "Playing cards",
-      "Wooden blocks",
+      "Dice",
+      "Wooden blocks"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What does the board game Risk use?",
+    "o": [
+      "Letter tiles",
+      "A murder mystery card deck",
+      "Dice and a world map",
+      "Property cards"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which country did the board game Go originate?",
+    "o": [
+      "Japan",
+      "India",
+      "Persia",
       "China"
     ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What does the board game Risk use؟",
-    "o": [
-      "Dice and a world map",
-      "Buying and trading real estate",
-      "A murder mystery card deck",
-      "A murder mystery deduction game"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which country did the board game Go originate؟",
-    "o": [
-      "China",
-      "India",
-      "Japan",
-      "Persia"
-    ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What kind of game is Dungeons & Dragons؟",
+    "q": "What kind of game is Dungeons & Dragons?",
     "o": [
-      "A tabletop role-playing game",
-      "A murder mystery deduction game",
+      "A card trading game",
       "A board racing game",
-      "A card trading game"
+      "A tabletop role-playing game",
+      "A word game"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What are Jenga pieces made of؟",
+    "q": "What are Jenga pieces made of?",
     "o": [
       "Wooden blocks",
+      "Plastic tiles",
       "Glass marbles",
-      "Letter tiles",
       "Paper cards"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What type of game is Clue (Cluedo)؟",
+    "q": "What type of game is Clue (Cluedo)?",
     "o": [
-      "A murder mystery deduction game",
       "A real estate trading game",
-      "A tabletop role-playing game",
-      "A war strategy game"
+      "A war strategy game",
+      "A murder mystery deduction game",
+      "A word puzzle game"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]

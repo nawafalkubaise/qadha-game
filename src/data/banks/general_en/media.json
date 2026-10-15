@@ -1,83 +1,83 @@
 [
   {
-    "q": "The Pulitzer Prize is mainly awarded in which fields؟",
+    "q": "The Pulitzer Prize is mainly awarded in which fields?",
     "o": [
       "Journalism and literature",
+      "Film and television",
       "Science and medicine",
-      "Sports and athletics",
-      "A digital audio show"
+      "Sports and athletics"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "In which US city was CNN originally headquartered؟",
+    "q": "In which US city was CNN originally headquartered?",
     "o": [
-      "Atlanta",
-      "London",
       "New York",
-      "Fake news"
+      "Washington, D.C.",
+      "Atlanta",
+      "Los Angeles"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "The BBC is the national public broadcaster of which country؟",
+    "q": "The BBC is the national public broadcaster of which country?",
     "o": [
       "United Kingdom",
       "Australia",
-      "Fake news",
-      "Atlanta"
+      "Canada",
+      "Ireland"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is a podcast؟",
+    "q": "What is a podcast?",
     "o": [
-      "A digital audio show",
       "A live TV broadcast",
+      "A digital audio show",
       "A printed magazine",
-      "Jobs and careers"
+      "A radio antenna"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which city is the Reuters news agency headquartered؟",
+    "q": "In which city is the Reuters news agency headquartered?",
     "o": [
-      "Atlanta",
-      "Berlin",
       "Paris",
+      "Berlin",
+      "Washington, D.C.",
       "London"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "What term describes false information deliberately presented as news؟",
+    "q": "What term describes false information deliberately presented as news?",
     "o": [
-      "Fake news",
       "Breaking news",
-      "Atlanta",
-      "London"
+      "Fake news",
+      "Op-ed",
+      "Press release"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which year was YouTube founded؟",
+    "q": "In which year was YouTube founded?",
     "o": [
-      "2005",
       "2003",
       "2007",
+      "2005",
       "2010"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What is LinkedIn mainly focused on؟",
+    "q": "What is LinkedIn mainly focused on?",
     "o": [
       "Photo sharing",
       "Video streaming",

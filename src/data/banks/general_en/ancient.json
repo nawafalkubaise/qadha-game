@@ -1,90 +1,90 @@
 [
   {
-    "q": "Which civilization built the Great Pyramids of Giza؟",
+    "q": "Which civilization built the Great Pyramids of Giza?",
     "o": [
+      "Ancient Romans",
+      "Babylonians",
       "Ancient Egyptians",
-      "Ancient Greeks",
-      "Ancient Romans",
-      "Babylonians"
+      "Ancient Greeks"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "The name Mesopotamia means \"land between two rivers\". Which two rivers؟",
+    "q": "The name Mesopotamia means \"land between two rivers\". Which two rivers?",
     "o": [
+      "Nile and Jordan",
       "Tigris and Euphrates",
-      "Danube and Rhine",
       "Indus and Ganges",
-      "Nile and Jordan"
+      "Danube and Rhine"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "In which city did Alexander the Great die؟",
+    "q": "In which city did Alexander the Great die?",
     "o": [
-      "Babylon",
-      "Anatolia",
+      "Alexandria",
       "Athens",
-      "Alexandria"
+      "Babylon",
+      "Persepolis"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Which famous amphitheater did the ancient Romans build؟",
+    "q": "Which famous amphitheater did the ancient Romans build?",
     "o": [
-      "The Colosseum",
       "The Parthenon",
-      "Anatolia",
-      "Ancient Egyptians"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which ancient civilization mainly used hieroglyphs for writing؟",
-    "o": [
-      "Ancient Greeks",
-      "Ancient Romans",
-      "Phoenicians",
-      "Ancient Egyptians"
+      "The Great Wall",
+      "The Hanging Gardens",
+      "The Colosseum"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "The ancient Phoenicians are best known for which achievements؟",
+    "q": "Which ancient civilization mainly used hieroglyphs for writing?",
     "o": [
-      "Sea trade and the alphabet",
-      "Building the pyramids",
-      "Founding the Olympic Games",
-      "Tigris and Euphrates"
+      "Ancient Romans",
+      "Phoenicians",
+      "Ancient Egyptians",
+      "Ancient Greeks"
     ],
-    "a": 0,
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "The ancient Phoenicians are best known for which achievements?",
+    "o": [
+      "Building the pyramids",
+      "Inventing paper",
+      "Sea trade and the alphabet",
+      "Founding the Olympic Games"
+    ],
+    "a": 2,
     "d": 2
   },
   {
-    "q": "In which region was the legendary city of Troy located؟",
+    "q": "In which region was the legendary city of Troy located?",
     "o": [
       "Anatolia",
-      "Babylon",
-      "China",
-      "Crete"
+      "Mesopotamia",
+      "Crete",
+      "Sicily"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "In which country is the Great Wall located؟",
+    "q": "In which country is the Great Wall located?",
     "o": [
-      "China",
       "India",
       "Japan",
-      "Anatolia"
+      "Mongolia",
+      "China"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   }
 ]

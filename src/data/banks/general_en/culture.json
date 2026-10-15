@@ -1,208 +1,208 @@
 [
   {
-    "q": "In which country is the famous Rio Carnival held؟",
+    "q": "In which country is the famous Rio Carnival held?",
     "o": [
-      "Brazil",
-      "18 May",
-      "8 March",
-      "France"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "On which date is UN Arabic Language Day celebrated؟",
-    "o": [
-      "18 December",
-      "1 January",
-      "15 September",
-      "21 February"
-    ],
-    "a": 0,
-    "d": 3
-  },
-  {
-    "q": "Halloween traces its roots to what؟",
-    "o": [
-      "Ancient Celtic festivals",
-      "Chinese harvest festivals",
-      "Dance, singing and guitar",
-      "Education, science and culture"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Diwali is a major festival of which religion؟",
-    "o": [
-      "Hinduism",
-      "8 March",
       "Argentina",
-      "Buddhism"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Samba is strongly associated with which country؟",
-    "o": [
-      "Brazil",
-      "18 May",
-      "8 March",
-      "France"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The kimono is the traditional dress of which country؟",
-    "o": [
-      "Japan",
-      "18 May",
-      "Brazil",
-      "China"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "On which date is International Museum Day celebrated؟",
-    "o": [
-      "18 May",
-      "1 June",
-      "8 March",
-      "Brazil"
-    ],
-    "a": 0,
-    "d": 3
-  },
-  {
-    "q": "K-pop is popular music from which country؟",
-    "o": [
-      "South Korea",
-      "18 December",
-      "Argentina",
-      "8 March"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which country did the tango originate؟",
-    "o": [
-      "18 December",
-      "Hinduism",
       "Portugal",
-      "Argentina"
+      "Brazil",
+      "Mexico"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which country is the Cannes Film Festival held؟",
+    "q": "On which date is UN Arabic Language Day celebrated?",
     "o": [
-      "18 May",
-      "8 March",
-      "Belgium",
-      "France"
+      "21 February",
+      "18 December",
+      "15 September",
+      "1 January"
     ],
-    "a": 3,
-    "d": 1
+    "a": 1,
+    "d": 3
   },
   {
-    "q": "UNESCO focuses on which fields؟",
+    "q": "Halloween traces its roots to what?",
     "o": [
+      "Roman chariot races",
+      "Chinese harvest festivals",
       "Ancient Celtic festivals",
-      "Banking and trade",
-      "Education, science and culture",
-      "Dance, singing and guitar"
+      "Egyptian funeral rites"
     ],
     "a": 2,
     "d": 2
   },
   {
-    "q": "The hanbok is the traditional dress of which country؟",
+    "q": "Diwali is a major festival of which religion?",
     "o": [
-      "Korea",
-      "18 May",
-      "Brazil",
-      "China"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "In which country is Oktoberfest held؟",
-    "o": [
-      "Germany",
-      "18 May",
-      "8 March",
-      "Austria"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which country is Holi, the festival of colors, mainly celebrated؟",
-    "o": [
-      "18 May",
-      "Brazil",
-      "Egypt",
-      "India"
+      "Buddhism",
+      "Islam",
+      "Christianity",
+      "Hinduism"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "The Venice Carnival is famous for what؟",
+    "q": "Samba is strongly associated with which country?",
+    "o": [
+      "Argentina",
+      "Spain",
+      "Brazil",
+      "Cuba"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "The kimono is the traditional dress of which country?",
+    "o": [
+      "Japan",
+      "China",
+      "South Korea",
+      "Vietnam"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "On which date is International Museum Day celebrated?",
+    "o": [
+      "8 March",
+      "1 June",
+      "18 May",
+      "21 September"
+    ],
+    "a": 2,
+    "d": 3
+  },
+  {
+    "q": "K-pop is popular music from which country?",
+    "o": [
+      "South Korea",
+      "Japan",
+      "China",
+      "Thailand"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country did the tango originate?",
+    "o": [
+      "Spain",
+      "Brazil",
+      "Argentina",
+      "Portugal"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which country is the Cannes Film Festival held?",
+    "o": [
+      "Italy",
+      "France",
+      "Spain",
+      "Belgium"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "UNESCO focuses on which fields?",
+    "o": [
+      "Military defense",
+      "Education, science and culture",
+      "Oil production",
+      "Banking and trade"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "The hanbok is the traditional dress of which country?",
+    "o": [
+      "Japan",
+      "China",
+      "Korea",
+      "Vietnam"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "In which country is Oktoberfest held?",
+    "o": [
+      "Austria",
+      "Germany",
+      "Belgium",
+      "Netherlands"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which country is Holi, the festival of colors, mainly celebrated?",
+    "o": [
+      "Thailand",
+      "India",
+      "Indonesia",
+      "Egypt"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "The Venice Carnival is famous for what?",
     "o": [
       "Elaborate masks",
       "Samba parades",
       "Tomato fights",
-      "18 December"
+      "Running of the bulls"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which country did anime and manga originate؟",
+    "q": "In which country did anime and manga originate?",
     "o": [
-      "18 May",
-      "Brazil",
       "China",
-      "Japan"
+      "Japan",
+      "South Korea",
+      "United States"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Flamenco combines which art forms؟",
+    "q": "Flamenco combines which art forms?",
     "o": [
       "Dance, singing and guitar",
       "Boxing and wrestling",
-      "Drumming and fire juggling",
-      "Education, science and culture"
+      "Painting and sculpture",
+      "Drumming and fire juggling"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "On which date is International Women's Day celebrated؟",
+    "q": "On which date is International Women's Day celebrated?",
     "o": [
-      "8 March",
       "18 May",
-      "Brazil",
-      "France"
+      "1 May",
+      "8 March",
+      "14 February"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which country is the Day of the Dead (Día de los Muertos) mainly celebrated؟",
+    "q": "In which country is the Day of the Dead (Día de los Muertos) mainly celebrated?",
     "o": [
-      "18 May",
-      "8 March",
+      "Spain",
       "Brazil",
+      "Argentina",
       "Mexico"
     ],
     "a": 3,

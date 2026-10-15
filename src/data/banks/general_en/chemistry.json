@@ -1,28 +1,28 @@
 [
   {
-    "q": "What is the chemical symbol for gold؟",
+    "q": "What is the chemical symbol for gold?",
     "o": [
-      "Au",
       "Ag",
-      "Gd",
-      "Go"
+      "Au",
+      "Go",
+      "Gd"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Which gas supports combustion؟",
+    "q": "Which gas supports combustion?",
     "o": [
-      "Helium",
       "Nitrogen",
-      "Petroleum",
-      "Oxygen"
+      "Oxygen",
+      "Helium",
+      "Carbon dioxide"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is the pH of a neutral solution؟",
+    "q": "What is the pH of a neutral solution?",
     "o": [
       "7",
       "0",
@@ -33,58 +33,58 @@
     "d": 1
   },
   {
-    "q": "Which elements make up water؟",
+    "q": "Which elements make up water?",
     "o": [
-      "Hydrogen and oxygen",
       "Carbon and nitrogen",
+      "Hydrogen and oxygen",
       "Iron and oxygen",
       "Sodium and chlorine"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Stomach acid is mainly which acid؟",
+    "q": "Stomach acid is mainly which acid?",
     "o": [
-      "Hydrochloric acid",
-      "Acetic acid",
+      "Sulfuric acid",
       "Citric acid",
-      "Dmitri Mendeleev"
+      "Hydrochloric acid",
+      "Acetic acid"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Who is credited with creating the periodic table؟",
+    "q": "Who is credited with creating the periodic table?",
     "o": [
-      "Dmitri Mendeleev",
       "Albert Einstein",
       "Charles Darwin",
-      "Hydrochloric acid"
+      "Isaac Newton",
+      "Dmitri Mendeleev"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Most plastics are made from what raw material؟",
+    "q": "Most plastics are made from what raw material?",
     "o": [
+      "Sand",
       "Iron ore",
       "Cotton",
-      "Oxygen",
       "Petroleum"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What does an exothermic reaction do؟",
+    "q": "What does an exothermic reaction do?",
     "o": [
-      "Releases heat",
       "Absorbs heat",
-      "Dmitri Mendeleev",
-      "Freezes instantly"
+      "Absorbs light only",
+      "Freezes instantly",
+      "Releases heat"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   }
 ]

@@ -1,83 +1,83 @@
 [
   {
-    "q": "Which language has the most native speakers in the world؟",
+    "q": "Which language has the most native speakers in the world?",
     "o": [
+      "Spanish",
       "Mandarin Chinese",
-      "Portuguese",
       "English",
       "Hindi"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   },
   {
-    "q": "What is the official language of Brazil؟",
+    "q": "What is the official language of Brazil?",
     "o": [
-      "Portuguese",
-      "English",
+      "Spanish",
       "French",
-      "Mandarin Chinese"
+      "Portuguese",
+      "English"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which of these countries uses the Cyrillic script؟",
+    "q": "Which of these countries uses the Cyrillic script?",
     "o": [
       "Russia",
+      "Poland",
       "Greece",
-      "Hungary",
-      "India"
+      "Hungary"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What is Esperanto؟",
+    "q": "What is Esperanto?",
     "o": [
       "A constructed international language",
+      "An ancient Roman dialect",
       "A Spanish regional language",
-      "A type of sign language",
-      "An ancient Roman dialect"
+      "A type of sign language"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "How many letters are in the Arabic alphabet؟",
+    "q": "How many letters are in the Arabic alphabet?",
     "o": [
       "26",
       "30",
-      "33",
-      "28"
+      "28",
+      "33"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "The ancient language Sanskrit is historically tied to which country؟",
+    "q": "The ancient language Sanskrit is historically tied to which country?",
     "o": [
       "India",
-      "Egypt",
       "Japan",
+      "Egypt",
       "Mexico"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What does it mean to be bilingual؟",
+    "q": "What does it mean to be bilingual?",
     "o": [
-      "Speaking two languages",
+      "Speaking one language",
       "Speaking three languages",
       "Reading without speaking",
-      "Speaking one language"
+      "Speaking two languages"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "What is Braille used for؟",
+    "q": "What is Braille used for?",
     "o": [
       "Shorthand note-taking",
       "Speed typing",

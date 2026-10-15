@@ -1,94 +1,94 @@
 [
   {
-    "q": "In which year did World War II end؟",
+    "q": "In which year did World War II end?",
     "o": [
-      "1789",
+      "1939",
+      "1944",
       "1945",
-      "1453",
-      "1492"
+      "1947"
     ],
-    "a": 1,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Who was the first person to walk on the Moon؟",
+    "q": "Who was the first person to walk on the Moon?",
     "o": [
-      "Neil Armstrong",
-      "Alexander Fleming",
-      "Michelangelo",
-      "Roald Amundsen"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which year did the French Revolution begin؟",
-    "o": [
-      "1789",
-      "1453",
-      "1492",
-      "1776"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who built the Colosseum in Rome؟",
-    "o": [
-      "The Greeks",
-      "Michelangelo",
-      "The Byzantines",
-      "The Romans"
+      "Buzz Aldrin",
+      "Yuri Gagarin",
+      "John Glenn",
+      "Neil Armstrong"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In which year did the Berlin Wall fall؟",
+    "q": "In which year did the French Revolution begin?",
     "o": [
-      "1989",
-      "1453",
-      "1492",
-      "1789"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who painted the ceiling of the Sistine Chapel؟",
-    "o": [
-      "Michelangelo",
-      "Botticelli",
-      "Neil Armstrong",
-      "Roald Amundsen"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which year did the Titanic sink؟",
-    "o": [
-      "1453",
-      "1492",
+      "1776",
       "1789",
+      "1799",
+      "1812"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Who built the Colosseum in Rome?",
+    "o": [
+      "The Romans",
+      "The Greeks",
+      "The Etruscans",
+      "The Byzantines"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which year did the Berlin Wall fall?",
+    "o": [
+      "1985",
+      "1991",
+      "1979",
+      "1989"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Who painted the ceiling of the Sistine Chapel?",
+    "o": [
+      "Botticelli",
+      "Raphael",
+      "Leonardo da Vinci",
+      "Michelangelo"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which year did the Titanic sink?",
+    "o": [
+      "1905",
+      "1915",
+      "1921",
       "1912"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Who discovered penicillin؟",
+    "q": "Who discovered penicillin?",
     "o": [
       "Alexander Fleming",
-      "Johannes Gutenberg",
-      "Napoleon Bonaparte",
-      "Neil Armstrong"
+      "Louis Pasteur",
+      "Marie Curie",
+      "Joseph Lister"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which year did Columbus first reach the Americas؟",
+    "q": "In which year did Columbus first reach the Americas?",
     "o": [
       "1492",
       "1453",
@@ -99,29 +99,29 @@
     "d": 1
   },
   {
-    "q": "In which year was the Ottoman sultanate abolished, ending the empire؟",
+    "q": "In which year was the Ottoman sultanate abolished, ending the empire?",
     "o": [
+      "1878",
+      "1918",
       "1922",
-      "1453",
-      "1492",
-      "1789"
+      "1945"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Which civilization was the first to develop writing؟",
+    "q": "Which civilization was the first to develop writing?",
     "o": [
       "The Chinese",
-      "Michelangelo",
-      "Neil Armstrong",
+      "The Romans",
+      "The Maya",
       "The Sumerians"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "Who built the Great Pyramids of Giza؟",
+    "q": "Who built the Great Pyramids of Giza?",
     "o": [
       "The Babylonians",
       "The Ancient Egyptians",
@@ -132,102 +132,102 @@
     "d": 1
   },
   {
-    "q": "Who invented the movable-type printing press in Europe؟",
+    "q": "Who invented the movable-type printing press in Europe?",
     "o": [
+      "Leonardo da Vinci",
       "Johannes Gutenberg",
-      "Alexander Fleming",
       "Galileo Galilei",
-      "Napoleon Bonaparte"
+      "Isaac Newton"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which year did India gain independence؟",
+    "q": "In which year did India gain independence?",
     "o": [
-      "1947",
-      "1453",
-      "1492",
-      "1789"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The Cold War was mainly between which two powers؟",
-    "o": [
-      "The USA and the USSR",
-      "The UK and France",
-      "Germany and Italy",
-      "The Ancient Egyptians"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "The Battle of Waterloo ended the rule of whom؟",
-    "o": [
-      "Napoleon Bonaparte",
-      "Alexander Fleming",
-      "Johannes Gutenberg",
-      "Julius Caesar"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which year did World War I begin؟",
-    "o": [
-      "1914",
-      "1453",
-      "1492",
-      "1789"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which country did the Industrial Revolution begin؟",
-    "o": [
-      "France",
-      "Germany",
-      "The Romans",
-      "Britain"
+      "1945",
+      "1950",
+      "1957",
+      "1947"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In which year did Constantinople fall to the Ottomans؟",
+    "q": "The Cold War was mainly between which two powers?",
     "o": [
-      "1453",
+      "China and Japan",
+      "The UK and France",
+      "The USA and the USSR",
+      "Germany and Italy"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "The Battle of Waterloo ended the rule of whom?",
+    "o": [
+      "Louis XIV",
+      "Napoleon Bonaparte",
+      "Julius Caesar",
+      "Alexander the Great"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which year did World War I begin?",
+    "o": [
+      "1905",
+      "1918",
+      "1914",
+      "1939"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which country did the Industrial Revolution begin?",
+    "o": [
+      "France",
+      "Germany",
+      "Britain",
+      "United States"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which year did Constantinople fall to the Ottomans?",
+    "o": [
       "1204",
       "1492",
+      "1453",
       "1517"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Who led the first expedition to reach the South Pole؟",
+    "q": "Who led the first expedition to reach the South Pole?",
     "o": [
+      "Robert Falcon Scott",
+      "Ernest Shackleton",
       "Roald Amundsen",
-      "Alexander Fleming",
-      "Edmund Hillary",
-      "Ernest Shackleton"
+      "Edmund Hillary"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "The date of Chinese New Year is based on which calendar؟",
+    "q": "The date of Chinese New Year is based on which calendar?",
     "o": [
-      "The lunisolar Chinese calendar",
       "The Gregorian calendar",
       "The Hijri calendar",
+      "The lunisolar Chinese calendar",
       "The Julian calendar"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   }
 ]

@@ -1,90 +1,90 @@
 [
   {
-    "q": "In which city is the main headquarters of the United Nations؟",
+    "q": "In which city is the main headquarters of the United Nations?",
     "o": [
       "Geneva",
-      "Paris",
       "New York",
-      "Brussels"
-    ],
-    "a": 2,
-    "d": 1
-  },
-  {
-    "q": "Which countries are the five permanent members of the UN Security Council؟",
-    "o": [
-      "China, France, Russia, UK, USA",
-      "USA, Russia, China, India, Brazil",
-      "USA, UK, France, Germany, Japan",
-      "USA, UK, Russia, Germany, Italy"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Which city is often called the capital of the European Union؟",
-    "o": [
       "Paris",
-      "Brussels",
-      "New York",
-      "Berlin"
+      "Vienna"
     ],
     "a": 1,
     "d": 1
   },
   {
-    "q": "The Cold War was mainly between which two powers؟",
+    "q": "Which countries are the five permanent members of the UN Security Council?",
     "o": [
-      "US and Soviet Union",
-      "US and China",
-      "US and Japan",
-      "UK and Germany"
+      "USA, UK, France, Germany, Japan",
+      "USA, Russia, China, India, Brazil",
+      "USA, UK, Russia, Germany, Italy",
+      "China, France, Russia, UK, USA"
     ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "NATO was founded for what main purpose؟",
-    "o": [
-      "Collective defense",
-      "Margaret Thatcher",
-      "Environmental protection",
-      "Global health"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Who was the first female Prime Minister of the United Kingdom؟",
-    "o": [
-      "Margaret Thatcher",
-      "Barbara Castle",
-      "Collective defense",
-      "Theresa May"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which year was the Soviet Union dissolved؟",
-    "o": [
-      "1991",
-      "1989",
-      "1990",
-      "1993"
-    ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "OPEC is an organization focused on which resource؟",
+    "q": "Which city is often called the capital of the European Union?",
     "o": [
-      "Oil",
-      "Coal",
-      "Gold",
-      "Wheat"
+      "Berlin",
+      "Brussels",
+      "Paris",
+      "Vienna"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "The Cold War was mainly between which two powers?",
+    "o": [
+      "US and Soviet Union",
+      "US and China",
+      "UK and Germany",
+      "US and Japan"
     ],
     "a": 0,
+    "d": 1
+  },
+  {
+    "q": "NATO was founded for what main purpose?",
+    "o": [
+      "Free trade",
+      "Environmental protection",
+      "Collective defense",
+      "Global health"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Who was the first female Prime Minister of the United Kingdom?",
+    "o": [
+      "Theresa May",
+      "Margaret Thatcher",
+      "Liz Truss",
+      "Barbara Castle"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which year was the Soviet Union dissolved?",
+    "o": [
+      "1989",
+      "1991",
+      "1990",
+      "1993"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "OPEC is an organization focused on which resource?",
+    "o": [
+      "Coal",
+      "Gold",
+      "Oil",
+      "Wheat"
+    ],
+    "a": 2,
     "d": 1
   }
 ]

@@ -1,90 +1,90 @@
 [
   {
-    "q": "What does the Richter scale measure؟",
-    "o": [
-      "Earthquake magnitude",
-      "Air pressure",
-      "-273.15°C",
-      "Hurricane"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What is a tropical cyclone called in the Atlantic Ocean؟",
-    "o": [
-      "Hurricane",
-      "-273.15°C",
-      "Saturation",
-      "Wind speed"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "What does an anemometer measure؟",
+    "q": "What does the Richter scale measure?",
     "o": [
       "Wind speed",
-      "-273.15°C",
+      "Rainfall",
       "Air pressure",
-      "Humidity"
+      "Earthquake magnitude"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Why do we see lightning before we hear thunder؟",
+    "q": "What is a tropical cyclone called in the Atlantic Ocean?",
     "o": [
-      "Light travels faster than sound",
-      "Sound travels faster than light",
-      "Thunder happens later",
-      "At ground level"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What weather does low air pressure often bring؟",
-    "o": [
-      "Clouds and rain",
-      "At ground level",
-      "Calm, dry weather",
-      "Light travels faster than sound"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What does 100% relative humidity mean the air has reached؟",
-    "o": [
-      "Saturation",
-      "-273.15°C",
-      "Evaporation",
-      "Freezing"
+      "Hurricane",
+      "Typhoon",
+      "Monsoon",
+      "Tornado"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Fog is essentially a cloud located where؟",
+    "q": "What does an anemometer measure?",
     "o": [
-      "At ground level",
-      "Clouds and rain",
-      "Above 10 km",
-      "In the stratosphere"
+      "Wind speed",
+      "Air pressure",
+      "Humidity",
+      "Rainfall"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Zero Kelvin (absolute zero) equals what temperature in Celsius؟",
+    "q": "Why do we see lightning before we hear thunder?",
     "o": [
-      "-273.15°C",
-      "-373.15°C",
-      "Hurricane",
-      "Saturation"
+      "Sound travels faster than light",
+      "Thunder happens later",
+      "Light travels faster than sound",
+      "Our eyes react faster than our ears"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What weather does low air pressure often bring?",
+    "o": [
+      "Clear skies",
+      "Clouds and rain",
+      "Calm, dry weather",
+      "Extreme heat"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "What does 100% relative humidity mean the air has reached?",
+    "o": [
+      "Saturation",
+      "Freezing",
+      "Evaporation",
+      "Drought"
     ],
     "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Fog is essentially a cloud located where?",
+    "o": [
+      "At ground level",
+      "In the stratosphere",
+      "Above 10 km",
+      "Only over mountains"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Zero Kelvin (absolute zero) equals what temperature in Celsius?",
+    "o": [
+      "0°C",
+      "-100°C",
+      "-373.15°C",
+      "-273.15°C"
+    ],
+    "a": 3,
     "d": 2
   }
 ]

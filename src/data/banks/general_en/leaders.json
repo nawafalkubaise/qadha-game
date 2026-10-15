@@ -1,220 +1,220 @@
 [
   {
-    "q": "Mahatma Gandhi led the independence movement of which country؟",
+    "q": "Mahatma Gandhi led the independence movement of which country?",
     "o": [
-      "India",
-      "44 BC",
-      "Cuba",
-      "Egypt"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Nelson Mandela was the first Black president of which country؟",
-    "o": [
-      "South Africa",
-      "Ancient Egypt",
-      "Saudi Arabia",
-      "United States"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Winston Churchill was the UK Prime Minister during which war؟",
-    "o": [
-      "World War II",
-      "World War I",
-      "The Crimean War",
-      "I Have a Dream"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Napoleon Bonaparte was crowned Emperor of which country؟",
-    "o": [
-      "France",
-      "44 BC",
-      "Austria",
-      "Egypt"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which year did Queen Elizabeth II die؟",
-    "o": [
-      "2022",
-      "1187",
-      "2020",
-      "2021"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What is the name of Martin Luther King Jr.'s most famous speech؟",
-    "o": [
-      "I Have a Dream",
-      "World War II",
-      "People's Republic of China",
-      "The Ballot or the Bullet"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Che Guevara is best known for his role in the revolution of which country؟",
-    "o": [
-      "Cuba",
-      "44 BC",
-      "Chile",
-      "Egypt"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Egyptian president Anwar Sadat signed a peace treaty with which country؟",
-    "o": [
-      "44 BC",
       "Egypt",
-      "France",
-      "Israel"
+      "Kenya",
+      "Indonesia",
+      "India"
     ],
     "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Nelson Mandela was the first Black president of which country?",
+    "o": [
+      "Zimbabwe",
+      "Kenya",
+      "Nigeria",
+      "South Africa"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Winston Churchill was the UK Prime Minister during which war?",
+    "o": [
+      "World War I",
+      "The Crimean War",
+      "World War II",
+      "The Falklands War"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Napoleon Bonaparte was crowned Emperor of which country?",
+    "o": [
+      "Spain",
+      "Austria",
+      "France",
+      "Russia"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In which year did Queen Elizabeth II die?",
+    "o": [
+      "2020",
+      "2021",
+      "2022",
+      "2023"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What is the name of Martin Luther King Jr.'s most famous speech?",
+    "o": [
+      "We Shall Fight on the Beaches",
+      "The Ballot or the Bullet",
+      "I Have a Dream",
+      "Ask Not What Your Country Can Do"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Che Guevara is best known for his role in the revolution of which country?",
+    "o": [
+      "Mexico",
+      "Venezuela",
+      "Cuba",
+      "Chile"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Egyptian president Anwar Sadat signed a peace treaty with which country?",
+    "o": [
+      "Jordan",
+      "Syria",
+      "Israel",
+      "Lebanon"
+    ],
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Gamal Abdel Nasser was the president of which country؟",
+    "q": "Gamal Abdel Nasser was the president of which country?",
     "o": [
+      "Iraq",
+      "Libya",
       "Egypt",
-      "44 BC",
-      "Cuba",
-      "France"
+      "Sudan"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Abraham Lincoln is best known for helping to abolish which practice in the United States?",
+    "o": [
+      "Slavery",
+      "Child labor",
+      "The income tax",
+      "Alcohol sales"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Abraham Lincoln is best known for helping to abolish which practice in the United States؟",
+    "q": "Alexander the Great was king of which kingdom?",
     "o": [
-      "France",
-      "Germany",
-      "Israel",
-      "Slavery"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "Alexander the Great was king of which kingdom؟",
-    "o": [
-      "Ancient Egypt",
+      "Sparta",
       "Athens",
-      "France",
+      "Rome",
       "Macedonia"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "In which year did Saladin liberate Jerusalem؟",
+    "q": "In which year did Saladin liberate Jerusalem?",
     "o": [
-      "1187",
       "1099",
       "1192",
-      "1244"
+      "1244",
+      "1187"
     ],
-    "a": 0,
+    "a": 3,
     "d": 3
   },
   {
-    "q": "King Abdulaziz Al Saud founded which country؟",
+    "q": "King Abdulaziz Al Saud founded which country?",
     "o": [
       "Saudi Arabia",
-      "Ancient Egypt",
-      "South Africa",
-      "United States"
+      "Jordan",
+      "Kuwait",
+      "United Arab Emirates"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Mustafa Kemal Atatürk founded which modern country؟",
+    "q": "Mustafa Kemal Atatürk founded which modern country?",
     "o": [
-      "44 BC",
-      "Egypt",
-      "France",
-      "Turkey"
+      "Iran",
+      "Turkey",
+      "Greece",
+      "Egypt"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Cleopatra was the ruler of which kingdom?",
+    "o": [
+      "Babylon",
+      "Carthage",
+      "Ancient Egypt",
+      "Persia"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Mao Zedong founded which state?",
+    "o": [
+      "Republic of China",
+      "Soviet Union",
+      "People's Republic of China",
+      "North Korea"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "Fidel Castro ruled which country?",
+    "o": [
+      "Venezuela",
+      "Cuba",
+      "Nicaragua",
+      "Bolivia"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "George Washington was the first president of which country?",
+    "o": [
+      "Canada",
+      "United States",
+      "Mexico",
+      "Brazil"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which year was Julius Caesar assassinated?",
+    "o": [
+      "49 BC",
+      "27 BC",
+      "AD 14",
+      "44 BC"
     ],
     "a": 3,
-    "d": 1
-  },
-  {
-    "q": "Cleopatra was the ruler of which kingdom؟",
-    "o": [
-      "Ancient Egypt",
-      "Saudi Arabia",
-      "South Africa",
-      "United States"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Mao Zedong founded which state؟",
-    "o": [
-      "People's Republic of China",
-      "Republic of China",
-      "I Have a Dream",
-      "World War II"
-    ],
-    "a": 0,
     "d": 2
   },
   {
-    "q": "Fidel Castro ruled which country؟",
-    "o": [
-      "Cuba",
-      "44 BC",
-      "Egypt",
-      "India"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "George Washington was the first president of which country؟",
-    "o": [
-      "United States",
-      "Ancient Egypt",
-      "Saudi Arabia",
-      "South Africa"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which year was Julius Caesar assassinated؟",
-    "o": [
-      "44 BC",
-      "27 BC",
-      "49 BC",
-      "AD 14"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Angela Merkel was the chancellor of which country؟",
+    "q": "Angela Merkel was the chancellor of which country?",
     "o": [
       "Germany",
       "Austria",
       "France",
-      "Israel"
+      "Netherlands"
     ],
     "a": 0,
     "d": 1

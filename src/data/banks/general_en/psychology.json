@@ -1,39 +1,39 @@
 [
   {
-    "q": "Sigmund Freud is most associated with which school of thought؟",
+    "q": "Sigmund Freud is most associated with which school of thought?",
     "o": [
       "Behaviorism",
+      "Gestalt psychology",
       "Cognitive psychology",
-      "Psychoanalysis",
-      "Professional help"
-    ],
-    "a": 2,
-    "d": 2
-  },
-  {
-    "q": "How is the capacity of working memory best described؟",
-    "o": [
-      "Limited and short-term",
-      "Limited but permanent",
-      "Obsessions and compulsions",
-      "Unlimited and permanent"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Obsessive-compulsive disorder (OCD) involves what؟",
-    "o": [
-      "Alternating mania and depression",
-      "Hallucinations and delusions",
-      "Limited and short-term",
-      "Obsessions and compulsions"
+      "Psychoanalysis"
     ],
     "a": 3,
     "d": 2
   },
   {
-    "q": "What effect does positive reinforcement have on a behavior؟",
+    "q": "How is the capacity of working memory best described?",
+    "o": [
+      "Limited and short-term",
+      "Unlimited and permanent",
+      "Unlimited but short-term",
+      "Limited but permanent"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Obsessive-compulsive disorder (OCD) involves what?",
+    "o": [
+      "Obsessions and compulsions",
+      "Alternating mania and depression",
+      "Hallucinations and delusions",
+      "Fear of open spaces"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What effect does positive reinforcement have on a behavior?",
     "o": [
       "Makes it less likely to be repeated",
       "Has no effect on it",
@@ -44,47 +44,47 @@
     "d": 1
   },
   {
-    "q": "What does EQ (emotional quotient) measure؟",
+    "q": "What does EQ (emotional quotient) measure?",
     "o": [
-      "Physical endurance",
       "Logical reasoning",
       "Memory capacity",
-      "Emotional intelligence"
+      "Emotional intelligence",
+      "Physical endurance"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What does clinical depression often require?",
+    "o": [
+      "Only extra sleep",
+      "More caffeine",
+      "Willpower alone",
+      "Professional help"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What does clinical depression often require؟",
+    "q": "What is the fight-or-flight reaction?",
     "o": [
-      "Professional help",
-      "Psychoanalysis",
-      "Willpower alone",
-      "Emotional intelligence"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What is the fight-or-flight reaction؟",
-    "o": [
+      "A sleep cycle",
       "A stress response",
       "A digestive reflex",
-      "A memory technique",
-      "A sleep cycle"
+      "A memory technique"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What does the Rorschach test use؟",
+    "q": "What does the Rorschach test use?",
     "o": [
-      "Inkblots",
       "Word lists",
+      "Inkblots",
       "Color cards",
-      "Emotional intelligence"
+      "Jigsaw puzzles"
     ],
-    "a": 0,
+    "a": 1,
     "d": 2
   }
 ]

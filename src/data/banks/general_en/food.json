@@ -1,193 +1,193 @@
 [
   {
-    "q": "Which country is sushi most associated with؟",
+    "q": "Which country is sushi most associated with?",
     "o": [
-      "Japan",
-      "Canada",
       "China",
-      "Egypt"
+      "South Korea",
+      "Japan",
+      "Thailand"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which spice is often called \"red gold\"؟",
+    "q": "Which spice is often called \"red gold\"?",
     "o": [
-      "Saffron",
-      "Austria",
-      "Bologna",
-      "Canada"
+      "Paprika",
+      "Turmeric",
+      "Cinnamon",
+      "Saffron"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "What is the main ingredient of hummus؟",
+    "q": "What is the main ingredient of hummus?",
     "o": [
-      "Chickpeas",
+      "Lentils",
+      "Fava beans",
       "Eggplant",
-      "Ethiopia",
-      "Fava beans"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which country does kimchi come from؟",
-    "o": [
-      "Canada",
-      "China",
-      "Egypt",
-      "Korea"
+      "Chickpeas"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Which Italian city gives its name to the famous meat ragù pasta sauce؟",
+    "q": "Which country does kimchi come from?",
     "o": [
-      "Bologna",
-      "Austria",
-      "Canada",
-      "Ethiopia"
+      "Japan",
+      "Korea",
+      "China",
+      "Vietnam"
     ],
-    "a": 0,
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Which Italian city gives its name to the famous meat ragù pasta sauce?",
+    "o": [
+      "Naples",
+      "Milan",
+      "Bologna",
+      "Turin"
+    ],
+    "a": 2,
     "d": 2
   },
   {
-    "q": "The croissant evolved from the kipferl, a pastry from which country؟",
+    "q": "The croissant evolved from the kipferl, a pastry from which country?",
     "o": [
       "Belgium",
-      "Bologna",
-      "Canada",
+      "Switzerland",
+      "Germany",
       "Austria"
     ],
     "a": 3,
     "d": 3
   },
   {
-    "q": "Which country do tacos come from؟",
+    "q": "Which country do tacos come from?",
     "o": [
-      "Austria",
-      "Bologna",
+      "Spain",
+      "Mexico",
       "Brazil",
-      "Mexico"
+      "Peru"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Which country does dim sum come from?",
+    "o": [
+      "Japan",
+      "India",
+      "Thailand",
+      "China"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Which country does dim sum come from؟",
+    "q": "In which country did pizza originate?",
     "o": [
-      "China",
-      "Canada",
-      "Egypt",
-      "France"
+      "Greece",
+      "France",
+      "Italy",
+      "United States"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which country did pizza originate؟",
+    "q": "Which peoples were the first to use cacao to make chocolate drinks?",
+    "o": [
+      "The Ancient Egyptians",
+      "The Ancient Romans",
+      "The Maya and Aztecs",
+      "The Ancient Greeks"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "Which country does paella come from?",
     "o": [
       "Italy",
-      "Canada",
-      "China",
-      "Egypt"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "Which peoples were the first to use cacao to make chocolate drinks؟",
-    "o": [
-      "The Maya and Aztecs",
-      "The Ancient Egyptians",
-      "The Ancient Greeks",
-      "The Ancient Romans"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Which country does paella come from؟",
-    "o": [
+      "Portugal",
       "Spain",
-      "Canada",
-      "China",
-      "Egypt"
+      "Mexico"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which is the most widely used spice in the world؟",
+    "q": "Which is the most widely used spice in the world?",
     "o": [
       "Black pepper",
-      "North Africa",
-      "Cardamom",
-      "Chickpeas"
+      "Saffron",
+      "Vanilla",
+      "Cardamom"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Couscous is a traditional dish of which region؟",
+    "q": "Couscous is a traditional dish of which region?",
     "o": [
-      "Black pepper",
-      "Central America",
       "Eastern Europe",
+      "Central America",
+      "East Asia",
       "North Africa"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "In which country was coffee first discovered؟",
+    "q": "In which country was coffee first discovered?",
     "o": [
-      "Austria",
-      "Bologna",
-      "Chickpeas",
-      "Ethiopia"
+      "Brazil",
+      "Colombia",
+      "Ethiopia",
+      "Vietnam"
     ],
-    "a": 3,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "Which country does wasabi come from؟",
+    "q": "Which country does wasabi come from?",
     "o": [
       "Japan",
-      "Canada",
       "China",
-      "Egypt"
+      "India",
+      "Thailand"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Falafel is believed to have originated in which country؟",
+    "q": "Falafel is believed to have originated in which country?",
     "o": [
+      "Greece",
+      "Turkey",
       "Egypt",
-      "Canada",
-      "China",
-      "France"
+      "Morocco"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "In which country is dal (lentil stew) a staple food؟",
+    "q": "In which country is dal (lentil stew) a staple food?",
     "o": [
+      "Japan",
       "India",
-      "Canada",
-      "China",
-      "Egypt"
+      "Mexico",
+      "Italy"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which region did the avocado originate؟",
+    "q": "In which region did the avocado originate?",
     "o": [
       "The Middle East",
       "Southern Europe",
@@ -198,22 +198,22 @@
     "d": 2
   },
   {
-    "q": "Which country does the baguette come from؟",
+    "q": "Which country does the baguette come from?",
     "o": [
-      "France",
-      "Austria",
+      "Italy",
       "Belgium",
-      "Bologna"
+      "France",
+      "Austria"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which country produces most of the world's maple syrup؟",
+    "q": "Which country produces most of the world's maple syrup?",
     "o": [
-      "Austria",
-      "Bologna",
-      "China",
+      "United States",
+      "Norway",
+      "Russia",
       "Canada"
     ],
     "a": 3,

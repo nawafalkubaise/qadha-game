@@ -1,79 +1,79 @@
 [
   {
-    "q": "How often are the Summer Olympic Games held؟",
+    "q": "How often are the Summer Olympic Games held?",
     "o": [
       "Every 2 years",
-      "Every 3 years",
-      "Snow and ice sports",
-      "Every 4 years"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "Where is the Olympic flame traditionally lit؟",
-    "o": [
-      "Athens, Greece",
-      "Lausanne, Switzerland",
-      "Rome, Italy",
-      "Olympia, Greece"
-    ],
-    "a": 3,
-    "d": 2
-  },
-  {
-    "q": "At which Summer Olympics did breaking (breakdancing) make its debut؟",
-    "o": [
-      "Paris 2024",
-      "London 2012",
-      "Rio 2016",
-      "Tokyo 2020"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "What is the Olympic motto in Latin؟",
-    "o": [
-      "Citius, Altius, Fortius",
-      "Snow and ice sports",
-      "E Pluribus Unum",
-      "Veni, Vidi, Vici"
-    ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "What kind of sports are featured at the Winter Olympics؟",
-    "o": [
-      "Citius, Altius, Fortius",
-      "Track and field",
       "Every 4 years",
-      "Snow and ice sports"
+      "Every 3 years",
+      "Every year"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "In which city is the International Olympic Committee headquartered؟",
+    "q": "Where is the Olympic flame traditionally lit?",
     "o": [
-      "Lausanne",
-      "Athens",
+      "Olympia, Greece",
+      "Athens, Greece",
+      "Rome, Italy",
+      "Lausanne, Switzerland"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "At which Summer Olympics did breaking (breakdancing) make its debut?",
+    "o": [
+      "Tokyo 2020",
+      "Rio 2016",
+      "Paris 2024",
+      "London 2012"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "What is the Olympic motto in Latin?",
+    "o": [
+      "Veni, Vidi, Vici",
+      "Citius, Altius, Fortius",
+      "Carpe Diem",
+      "E Pluribus Unum"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "What kind of sports are featured at the Winter Olympics?",
+    "o": [
+      "Water sports",
+      "Snow and ice sports",
+      "Combat sports",
+      "Track and field"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "In which city is the International Olympic Committee headquartered?",
+    "o": [
       "Geneva",
+      "Zurich",
+      "Lausanne",
       "Paris"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "In which city were the first modern Olympic Games held in 1896؟",
+    "q": "In which city were the first modern Olympic Games held in 1896?",
     "o": [
-      "Athens",
-      "London",
       "Paris",
-      "Lausanne"
+      "London",
+      "St. Louis",
+      "Athens"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   }
 ]

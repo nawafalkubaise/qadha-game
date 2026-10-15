@@ -1,83 +1,83 @@
 [
   {
-    "q": "Ballet first developed in which countries؟",
+    "q": "Ballet first developed in which countries?",
     "o": [
       "Italy and then France",
-      "England and then the USA",
       "Russia and then China",
+      "England and then the USA",
       "Spain and then Portugal"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Salsa dance has its roots mainly in which country؟",
+    "q": "Salsa dance has its roots mainly in which country?",
     "o": [
-      "Cuba",
+      "Argentina",
       "Spain",
+      "Brazil",
+      "Cuba"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Which country does flamenco come from?",
+    "o": [
+      "Italy",
+      "Spain",
+      "Portugal",
+      "Mexico"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "The tango is most strongly linked to which country?",
+    "o": [
+      "Spain",
+      "Cuba",
       "Brazil",
       "Argentina"
     ],
-    "a": 0,
-    "d": 2
-  },
-  {
-    "q": "Which country does flamenco come from؟",
-    "o": [
-      "Spain",
-      "Cuba",
-      "Italy",
-      "Mexico"
-    ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "The tango is most strongly linked to which country؟",
-    "o": [
-      "Argentina",
-      "New York",
-      "The Levant",
-      "Brazil"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "In which city did hip-hop dance culture begin؟",
+    "q": "In which city did hip-hop dance culture begin?",
     "o": [
       "New York",
-      "Argentina",
-      "Chicago",
-      "The Levant"
+      "Los Angeles",
+      "London",
+      "Chicago"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "The dabke folk dance is associated with which region؟",
+    "q": "The dabke folk dance is associated with which region?",
     "o": [
       "The Levant",
-      "Argentina",
-      "New York",
-      "Pointe shoes"
+      "Scandinavia",
+      "West Africa",
+      "Southeast Asia"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "What special shoes do classical ballet dancers use to dance on their toes؟",
+    "q": "What special shoes do classical ballet dancers use to dance on their toes?",
     "o": [
-      "Pointe shoes",
       "Tap shoes",
-      "The Levant",
-      "Argentina"
+      "Clogs",
+      "Pointe shoes",
+      "Sneakers"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which city are the world's most famous samba parades held؟",
+    "q": "In which city are the world's most famous samba parades held?",
     "o": [
       "Buenos Aires",
       "Lisbon",

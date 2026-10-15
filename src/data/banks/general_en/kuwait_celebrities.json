@@ -1,17 +1,17 @@
 [
   {
-    "q": "Abdullah Al-Ruwaished is famous in which field؟",
+    "q": "Abdullah Al-Ruwaished is famous in which field?",
     "o": [
       "Acting",
+      "Singing",
       "Football",
-      "Poetry",
-      "Singing"
+      "Poetry"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "Hayat Al-Fahad is known for what؟",
+    "q": "Hayat Al-Fahad is known for what?",
     "o": [
       "Singing",
       "Acting in TV drama",
@@ -22,29 +22,29 @@
     "d": 1
   },
   {
-    "q": "Suad Abdullah is one of Kuwait's famous what؟",
+    "q": "Suad Abdullah is one of Kuwait's famous what?",
     "o": [
       "Actresses",
       "Athletes",
-      "Politicians",
-      "Scientists"
+      "Scientists",
+      "Politicians"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Dawood Hussain is known for what؟",
+    "q": "Dawood Hussain is known for what?",
     "o": [
-      "Acting",
       "Poetry",
+      "Football",
       "Singing",
-      "Actresses"
+      "Acting"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Faiq Abduljaleel is notable in which field؟",
+    "q": "Faiq Abduljaleel is notable in which field?",
     "o": [
       "Acting",
       "Poetry and song lyrics",
@@ -55,14 +55,14 @@
     "d": 2
   },
   {
-    "q": "Which social media platforms are especially popular with influencers in Kuwait؟",
+    "q": "Which social media platforms are especially popular with influencers in Kuwait?",
     "o": [
-      "Snapchat and Instagram",
       "LinkedIn and Tumblr",
-      "Poetry and song lyrics",
-      "Acting in TV drama"
+      "MySpace and Orkut",
+      "Snapchat and Instagram",
+      "Flickr and Vine"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]

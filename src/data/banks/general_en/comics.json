@@ -1,28 +1,28 @@
 [
   {
-    "q": "Which city does Batman protect؟",
+    "q": "Which city does Batman protect?",
     "o": [
-      "Central City",
-      "Star City",
       "Metropolis",
-      "Gotham City"
+      "Central City",
+      "Gotham City",
+      "Star City"
     ],
-    "a": 3,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does MCU stand for؟",
+    "q": "What does MCU stand for?",
     "o": [
-      "Movie Comic Universe",
-      "A newspaper comic strip",
       "Marvel Comics Union",
+      "Movie Comic Universe",
+      "Main Character Unit",
       "Marvel Cinematic Universe"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What was Stan Lee's role in comics history؟",
+    "q": "What was Stan Lee's role in comics history?",
     "o": [
       "The founder of DC Comics",
       "A pioneering writer and editor at Marvel",
@@ -33,58 +33,58 @@
     "d": 2
   },
   {
-    "q": "What is Spider-Man's real name؟",
+    "q": "What is Spider-Man's real name?",
     "o": [
       "Peter Parker",
       "Bruce Wayne",
       "Clark Kent",
-      "Gotham City"
+      "Tony Stark"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Which country does manga come from؟",
+    "q": "Which country does manga come from?",
     "o": [
       "China",
-      "France",
-      "Thailand",
-      "Japan"
+      "Japan",
+      "South Korea",
+      "Thailand"
     ],
-    "a": 3,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "DC and Marvel are two rival American comic book what؟",
+    "q": "DC and Marvel are two rival American comic book what?",
     "o": [
-      "Publishers",
-      "Gotham City",
+      "Film festivals",
       "Newspapers",
-      "Peter Parker"
+      "Publishers",
+      "Toy manufacturers"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "In which country was the comic Asterix created؟",
+    "q": "In which country was the comic Asterix created?",
     "o": [
-      "France",
-      "Germany",
       "Italy",
-      "Japan"
+      "Spain",
+      "France",
+      "Germany"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "In what format was Calvin and Hobbes originally published؟",
+    "q": "In what format was Calvin and Hobbes originally published?",
     "o": [
-      "A newspaper comic strip",
       "A graphic novel series",
-      "Marvel Cinematic Universe",
+      "A TV cartoon",
+      "A newspaper comic strip",
       "A manga magazine"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   }
 ]

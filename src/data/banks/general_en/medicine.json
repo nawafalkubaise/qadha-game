@@ -1,17 +1,17 @@
 [
   {
-    "q": "What is the largest organ of the human body؟",
+    "q": "What is the largest organ of the human body?",
     "o": [
+      "Liver",
       "Skin",
-      "37°C",
       "Brain",
-      "Liver"
+      "Lungs"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is the normal human body temperature؟",
+    "q": "What is the normal human body temperature?",
     "o": [
       "37°C",
       "35°C",
@@ -22,69 +22,69 @@
     "d": 1
   },
   {
-    "q": "How many main blood groups are there in the ABO system؟",
+    "q": "How many main blood groups are there in the ABO system?",
     "o": [
-      "4",
       "2",
       "3",
-      "6"
+      "6",
+      "4"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Insulin is used to treat which condition؟",
+    "q": "Insulin is used to treat which condition?",
     "o": [
-      "Bacteria",
-      "Malaria",
-      "60-100",
-      "Diabetes"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "Which foods are well known for being rich in vitamin C؟",
-    "o": [
-      "Citrus fruits",
-      "Bacteria",
       "Diabetes",
-      "Red meat"
+      "Asthma",
+      "Hypertension",
+      "Malaria"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is the normal resting heart rate for adults, in beats per minute؟",
+    "q": "Which foods are well known for being rich in vitamin C?",
     "o": [
-      "60-100",
+      "Red meat",
+      "White rice",
+      "Citrus fruits",
+      "Cheese"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What is the normal resting heart rate for adults, in beats per minute?",
+    "o": [
+      "30-50",
       "120-160",
       "180-220",
-      "30-50"
+      "60-100"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "Antibiotics are used to fight what؟",
+    "q": "Antibiotics are used to fight what?",
     "o": [
       "Viruses",
-      "Bacteria",
       "Allergies",
-      "Diabetes"
+      "Bacteria",
+      "Vitamin deficiencies"
     ],
-    "a": 1,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "What does WHO stand for؟",
+    "q": "What does WHO stand for?",
     "o": [
-      "World Help Organization",
-      "Western Health Office",
+      "World Health Organization",
       "World Hospital Order",
-      "World Health Organization"
+      "World Help Organization",
+      "Western Health Office"
     ],
-    "a": 3,
+    "a": 0,
     "d": 1
   }
 ]

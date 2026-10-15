@@ -1,72 +1,72 @@
 [
   {
-    "q": "Which company originally created Minecraft؟",
+    "q": "Which company originally created Minecraft?",
     "o": [
-      "Mojang",
-      "MMORPG",
       "Ubisoft",
+      "Blizzard",
+      "Mojang",
       "Valve"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which company owns the Mario franchise؟",
+    "q": "Which company owns the Mario franchise?",
     "o": [
-      "Nintendo",
-      "Epic Games",
+      "Sega",
+      "Sony",
       "Microsoft",
-      "Battle royale"
+      "Nintendo"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "Which company developed Fortnite؟",
+    "q": "Which company developed Fortnite?",
     "o": [
       "Epic Games",
       "Activision",
-      "Nintendo",
-      "Rockstar Games"
+      "Rockstar Games",
+      "EA"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "In which year did the PlayStation 2 launch؟",
+    "q": "In which year did the PlayStation 2 launch?",
     "o": [
+      "2000",
       "1997",
       "2004",
-      "2006",
-      "2000"
+      "2006"
     ],
-    "a": 3,
+    "a": 0,
     "d": 2
   },
   {
-    "q": "What genre of game is World of Warcraft؟",
+    "q": "What genre of game is World of Warcraft?",
     "o": [
       "MMORPG",
-      "Mojang",
+      "Racing",
       "Puzzle",
-      "Racing"
+      "Fighting"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What genre of game is PUBG؟",
+    "q": "What genre of game is PUBG?",
     "o": [
       "Flight simulator",
-      "Epic Games",
-      "Nintendo",
+      "Puzzle",
+      "Racing",
       "Battle royale"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What is Steam؟",
+    "q": "What is Steam?",
     "o": [
       "A game console by Sony",
       "A gaming chair brand",
@@ -77,14 +77,14 @@
     "d": 1
   },
   {
-    "q": "Which company made the 3DS handheld console؟",
+    "q": "Which company made the 3DS handheld console?",
     "o": [
+      "Sony",
       "Nintendo",
-      "Epic Games",
-      "Microsoft",
-      "Battle royale"
+      "Sega",
+      "Microsoft"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   }
 ]

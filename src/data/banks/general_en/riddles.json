@@ -1,39 +1,39 @@
 [
   {
-    "q": "Riddle: The more you take away from it, the larger it becomes. What is it؟",
+    "q": "Riddle: The more you take away from it, the larger it becomes. What is it?",
     "o": [
-      "A comb",
-      "A river",
-      "An egg",
-      "A hole"
+      "A shadow",
+      "A hole",
+      "A candle",
+      "A secret"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Riddle: What has teeth but cannot bite?",
+    "o": [
+      "A fork",
+      "A needle",
+      "A spoon",
+      "A comb"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "Riddle: What has teeth but cannot bite؟",
+    "q": "Riddle: What runs but never walks?",
     "o": [
-      "A comb",
-      "A fork",
-      "A hole",
-      "A river"
+      "A river",
+      "A rock",
+      "A tree",
+      "A mountain"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Riddle: What runs but never walks؟",
-    "o": [
-      "A comb",
-      "A hole",
-      "A river",
-      "A bottle"
-    ],
-    "a": 2,
-    "d": 1
-  },
-  {
-    "q": "Riddle: What is green in the field, black in the market, and red at home؟",
+    "q": "Riddle: What is green in the field, black in the market, and red at home?",
     "o": [
       "Tea",
       "Apple",
@@ -44,45 +44,45 @@
     "d": 2
   },
   {
-    "q": "Riddle: What kind of house has no doors and no windows؟",
+    "q": "Riddle: What kind of house has no doors and no windows?",
     "o": [
       "An egg",
-      "A comb",
-      "A hole",
-      "A river"
+      "A tent",
+      "A lighthouse",
+      "A castle"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Riddle: I am my parents' child, yet I am neither my brother nor my sister. Who am I؟",
+    "q": "Riddle: I am my parents' child, yet I am neither my brother nor my sister. Who am I?",
     "o": [
       "Myself",
-      "A comb",
-      "A hole",
-      "A river"
+      "My cousin",
+      "My uncle",
+      "My nephew"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Riddle: What was born long ago, yet is never more than a month old؟",
+    "q": "Riddle: What was born long ago, yet is never more than a month old?",
     "o": [
       "The Moon",
+      "A baby",
       "The Sun",
-      "A bottle",
       "A river"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Riddle: What has a neck but no head؟",
+    "q": "Riddle: What has a neck but no head?",
     "o": [
       "A bottle",
       "A giraffe",
-      "A river",
-      "The Moon"
+      "A swan",
+      "A lamp"
     ],
     "a": 0,
     "d": 1

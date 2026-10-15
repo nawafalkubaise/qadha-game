@@ -1,83 +1,83 @@
 [
   {
-    "q": "Which planet is known as the Red Planet؟",
+    "q": "Which planet is known as the Red Planet?",
     "o": [
       "Mars",
-      "100°C",
-      "Skin",
-      "Venus"
+      "Venus",
+      "Jupiter",
+      "Mercury"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "What is the chemical formula for water؟",
+    "q": "What is the chemical formula for water?",
     "o": [
-      "H₂O",
       "CO₂",
-      "100°C",
-      "Mars"
+      "NaCl",
+      "O₂",
+      "H₂O"
     ],
-    "a": 0,
+    "a": 3,
     "d": 1
   },
   {
-    "q": "How many bones are in the adult human body؟",
+    "q": "How many bones are in the adult human body?",
     "o": [
-      "206",
       "196",
       "216",
+      "206",
       "226"
     ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "Which gas do plants absorb from the air for photosynthesis?",
+    "o": [
+      "Carbon dioxide",
+      "Oxygen",
+      "Nitrogen",
+      "Helium"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which organ produces insulin?",
+    "o": [
+      "Pancreas",
+      "Liver",
+      "Kidneys",
+      "Spleen"
+    ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "Which gas do plants absorb from the air for photosynthesis؟",
+    "q": "What is the largest organ of the human body?",
     "o": [
-      "Chloroplasts",
-      "Dmitri Mendeleev",
-      "Isaac Newton",
-      "Carbon dioxide"
-    ],
-    "a": 3,
-    "d": 1
-  },
-  {
-    "q": "Which organ produces insulin؟",
-    "o": [
-      "A vacuum",
-      "Diamond",
-      "Kidneys",
-      "Pancreas"
-    ],
-    "a": 3,
-    "d": 2
-  },
-  {
-    "q": "What is the largest organ of the human body؟",
-    "o": [
-      "Skin",
-      "100°C",
+      "Liver",
       "Brain",
+      "Skin",
       "Heart"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Which blood type is known as the universal donor؟",
+    "q": "Which blood type is known as the universal donor?",
     "o": [
-      "O negative",
-      "B negative",
       "A positive",
-      "A vacuum"
+      "AB positive",
+      "O negative",
+      "B negative"
     ],
-    "a": 0,
+    "a": 2,
     "d": 2
   },
   {
-    "q": "What particles make up an atom؟",
+    "q": "What particles make up an atom?",
     "o": [
       "Molecules, cells, and tissues",
       "Photons, ions, and gases",
@@ -88,73 +88,73 @@
     "d": 1
   },
   {
-    "q": "Which scientist is credited with discovering the law of gravity؟",
+    "q": "Which scientist is credited with discovering the law of gravity?",
     "o": [
+      "Galileo Galilei",
       "Isaac Newton",
       "Albert Einstein",
-      "Carbon dioxide",
-      "Chloroplasts"
+      "Johannes Kepler"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is the boiling point of water at sea level؟",
+    "q": "What is the boiling point of water at sea level?",
     "o": [
-      "100°C",
+      "90°C",
       "110°C",
       "120°C",
-      "90°C"
-    ],
-    "a": 0,
-    "d": 1
-  },
-  {
-    "q": "What does DNA carry؟",
-    "o": [
-      "Digestive enzymes",
-      "Dmitri Mendeleev",
-      "Electrical signals",
-      "Genetic information"
+      "100°C"
     ],
     "a": 3,
     "d": 1
   },
   {
-    "q": "What is the nearest star to Earth؟",
+    "q": "What does DNA carry?",
     "o": [
-      "The Sun",
-      "A vacuum",
-      "Diamond",
-      "Pancreas"
+      "Oxygen",
+      "Digestive enzymes",
+      "Genetic information",
+      "Electrical signals"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   },
   {
-    "q": "Who is credited with creating the periodic table؟",
+    "q": "What is the nearest star to Earth?",
+    "o": [
+      "Sirius",
+      "Polaris",
+      "Betelgeuse",
+      "The Sun"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Who is credited with creating the periodic table?",
     "o": [
       "Dmitri Mendeleev",
+      "John Dalton",
       "Antoine Lavoisier",
-      "Carbon dioxide",
-      "Genetic information"
+      "Niels Bohr"
     ],
     "a": 0,
     "d": 2
   },
   {
-    "q": "In which part of a plant cell does photosynthesis take place؟",
+    "q": "In which part of a plant cell does photosynthesis take place?",
     "o": [
-      "Chloroplasts",
-      "Carbon dioxide",
-      "Isaac Newton",
-      "Mitochondria"
+      "Mitochondria",
+      "Ribosomes",
+      "Nucleus",
+      "Chloroplasts"
     ],
-    "a": 0,
+    "a": 3,
     "d": 2
   },
   {
-    "q": "How many planets are in our solar system؟",
+    "q": "How many planets are in our solar system?",
     "o": [
       "7",
       "9",
@@ -165,36 +165,36 @@
     "d": 1
   },
   {
-    "q": "Who is commonly credited with inventing the practical light bulb؟",
+    "q": "Who is commonly credited with inventing the practical light bulb?",
     "o": [
+      "Nikola Tesla",
       "Thomas Edison",
-      "Carbon dioxide",
-      "Chloroplasts",
-      "Dmitri Mendeleev"
+      "Alexander Graham Bell",
+      "Michael Faraday"
     ],
-    "a": 0,
+    "a": 1,
     "d": 1
   },
   {
-    "q": "What is the hardest natural substance؟",
+    "q": "What is the hardest natural substance?",
     "o": [
       "Diamond",
-      "A vacuum",
+      "Quartz",
       "Granite",
-      "Pancreas"
+      "Iron"
     ],
     "a": 0,
     "d": 1
   },
   {
-    "q": "Through what can sound not travel؟",
+    "q": "Through what can sound not travel?",
     "o": [
+      "Water",
+      "Steel",
       "A vacuum",
-      "Diamond",
-      "O negative",
-      "Pancreas"
+      "Air"
     ],
-    "a": 0,
+    "a": 2,
     "d": 1
   }
 ]
