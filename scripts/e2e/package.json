@@ -1,0 +1,9 @@
+{
+  "name": "qadha-e2e",
+  "private": true,
+  "type": "module",
+  "description": "تجارب لعب كاملة بالمتصفح (تتطلب Google Chrome و npm run dev في جذر المشروع)",
+  "dependencies": {
+    "playwright-core": "^1"
+  }
+}
