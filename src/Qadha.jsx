@@ -306,6 +306,8 @@ const catBi = (c) => c.ar || c.n;
 const PTS=[200,200,400,400,600,600];
 /** مؤقت أقصر تدريجياً للصفوف الأصعب */
 const PTS_TIMER=[30,30,20,20,12,12];
+/** ثوانٍ إضافية لقراءة الأسئلة الطويلة (السؤال + الخيارات)، بحد أقصى ١٥ */
+const readBonus=q=>{const L=String(q?.q||"").length+(Array.isArray(q?.o)?q.o.join("").length:0);return Math.min(15,Math.max(0,Math.ceil((L-160)/25)))};
 /** عقوبة الإجابة الخاطئة حسب الصف */
 const PTS_PENALTY=[50,50,100,100,150,150];
 /** أنواع صناديق الغموض */
@@ -1026,7 +1028,7 @@ export default function Qadha(){
     return(
       <span
         className="catEmojiSolo"
-        style={{fontSize:fs,lineHeight:1,display:"block"}}
+        style={{fontSize:`clamp(20px,6.5vw,${fs}px)`,lineHeight:1,display:"block"}}
         aria-hidden
       >
         {cat.icon}
@@ -1044,7 +1046,7 @@ export default function Qadha(){
     void bulkDownload(country,null);
   },[sc,country]);
 
-  const go=useCallback(s=>{sfx.stop();setSc(s);setTimeout(()=>{sfx.init();sfx.isAr=rtl},200)},[rtl]);
+  const go=useCallback(s=>{sfx.stop();setSc(s);try{window.scrollTo(0,0)}catch{/* ignore */}setTimeout(()=>{sfx.init();sfx.isAr=rtl},200)},[rtl]);
 
   useEffect(()=>{
     if(sc!=="cats"||!isOnlineHost||!onlineSession?.hostToken)return;
@@ -1216,7 +1218,7 @@ export default function Qadha(){
   };
 
   /** يسحب سؤالاً لم يُعرض في هذه المباراة (إن أمكن) من فئة/مستوى ويعيده بخيارات مخلوطة */
-  const drawQ=(catId,tier)=>{
+  const drawQ=(catId,tier,excludeHash=null)=>{
     const isP2Online=onlineSession&&active===2;
     const activeBankForCat=isP2Online?gridQsP2Ref.current[catId]:null;
     const pack=activeBankForCat||qBank[catId];
@@ -1236,6 +1238,13 @@ export default function Qadha(){
     if(!candidates.length)candidates=qs.map((_,i)=>i).filter(i=>!hset.has(hFor(i)));
     if(!candidates.length){hset=new Set();map.set(catId,hset);candidates=qs.map((_,i)=>i).filter(i=>!us.has(i));}
     if(!candidates.length)candidates=qs.map((_,i)=>i);
+    /* «تبديل»: لا نعيد السؤال المعروض نفسه */
+    if(excludeHash){
+      let c=candidates.filter(i=>hFor(i)!==excludeHash);
+      if(!c.length)c=qs.map((_,i)=>i).filter(i=>hFor(i)!==excludeHash);
+      if(!c.length)return null;
+      candidates=c;
+    }
     const pi=candidates[Math.floor(Math.random()*candidates.length)];
     hset.add(hFor(pi));map.set(catId,hset);
     const nu=new Set(us);nu.add(pi);
@@ -1249,14 +1258,15 @@ export default function Qadha(){
   const showDrawnQ=q=>{
     const shown=q||{q:"?",o:["A","B","C","D"],a:0};
     curQAnswerRef.current=shown.a;setCurQ(shown);
+    return shown;
   };
   const openDdQuestion=(wagerAmount)=>{
     if(!ddWager)return;
     const{ci,ri,cellKey}=ddWager;
     setUsed(p=>({...p,[cellKey]:true}));
-    showDrawnQ(drawQ(selCats[ci].id,rowTierFromRi(ri)));
-    lastCellRef.current={ci,ri};stealTimerRef.current=PTS_TIMER[ri]??45;questionStartRef.current=Date.now();
-    isDailyDoubleRef.current=true;setCurPts(wagerAmount);setDdWager(null);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
+    const qt=(PTS_TIMER[ri]??45)+readBonus(showDrawnQ(drawQ(selCats[ci].id,rowTierFromRi(ri))));
+    lastCellRef.current={ci,ri};stealTimerRef.current=qt;questionStartRef.current=Date.now();
+    isDailyDoubleRef.current=true;setCurPts(wagerAmount);setDdWager(null);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(qt);setTypedAns("");setHiddenOpts([]);go("question");
   };
   const openQ=(ci,ri)=>{
     const k=`${ci}-${ri}`;if(used[k])return;
@@ -1281,11 +1291,11 @@ export default function Qadha(){
     if(dailyDoubles.has(k)){sfx.dailyDouble();setDdWager({cellKey:k,ci,ri,maxWager:Math.max(100,scores[active-1]||100)});return}
     isDailyDoubleRef.current=false;
     setUsed(p=>({...p,[k]:true}));
-    showDrawnQ(drawQ(selCats[ci].id,rowTierFromRi(ri)));
+    const qt=(PTS_TIMER[ri]??45)+readBonus(showDrawnQ(drawQ(selCats[ci].id,rowTierFromRi(ri))));
     lastCellRef.current={ci,ri};
-    stealTimerRef.current=PTS_TIMER[ri]??45;
+    stealTimerRef.current=qt;
     questionStartRef.current=Date.now();
-    setCurPts(PTS[ri]*ptsMult);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
+    setCurPts(PTS[ri]*ptsMult);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(qt);setTypedAns("");setHiddenOpts([]);go("question");
   };
   const checkTyped=(textOverride)=>{
     const typedText=typeof textOverride==="string"?textOverride:typedAns;
@@ -1334,12 +1344,16 @@ export default function Qadha(){
   },[usedExt,answered]);
   const useSwitch=()=>{
     if(usedSwitch||answered||!curQ)return;
-    sfx.click();setUsedSwitch(true);
-    setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-100);return n});
     const ci=lastCellRef.current?.ci;const ri=lastCellRef.current?.ri;
     if(ci!=null&&ri!=null){
-      const newQ=drawQ(selCats[ci].id,rowTierFromRi(ri));
-      if(newQ){showDrawnQ(newQ);setTimer(stealTimerRef.current??45);questionStartRef.current=Date.now();setHiddenOpts([])}
+      const cur=qHash(curQ);const tier=rowTierFromRi(ri);
+      /* نفس المستوى أولاً، ثم أي مستوى آخر؛ وإن لم يوجد بديل لا نخصم ولا نستهلك الوسيلة */
+      let newQ=drawQ(selCats[ci].id,tier,cur);
+      for(const t of ["mid","easy","hard"]){if(newQ)break;if(t!==tier)newQ=drawQ(selCats[ci].id,t,cur)}
+      if(!newQ){sfx.wrong();return}
+      sfx.click();setUsedSwitch(true);
+      setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-100);return n});
+      {showDrawnQ(newQ);const qt=(PTS_TIMER[ri]??45)+readBonus(newQ);stealTimerRef.current=qt;setTimer(qt);questionStartRef.current=Date.now();setHiddenOpts([])}
     }
   };
   const useDoubleChance=useCallback(()=>{
@@ -1582,7 +1596,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .catGroupTab .catGroupTabFlag{font-size:15px;line-height:1}
 .catGroupTab:hover{color:${th.accent};border-color:${th.accentDim}}
 .catGroupTabOn{background:${th.accentDim};border-color:${th.accent};color:${th.accent};box-shadow:0 0 0 2px ${th.accentDim}}
-@media (max-width:520px){.qadha-below-badge{padding-top:calc(env(safe-area-inset-top,0px) + 56px)!important}}
+@media (max-width:520px){.qadha-below-badge{padding-top:calc(env(safe-area-inset-top,0px) + 84px)!important}}
 @media (max-width:480px) and (orientation:portrait){
 .cat-grid{min-height:min(36dvh,300px);max-height:calc(100dvh - 175px);gap:12px;padding-bottom:max(12px,env(safe-area-inset-bottom))}
 .catsCardBody{min-height:clamp(92px,22vw,128px);padding:12px 8px 10px}
@@ -1591,14 +1605,14 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 .catsCardFoot{font-size:10px;min-height:36px;padding:8px 4px}
 .catsStepLbl{font-size:10px;max-width:88px}
 .catsStepCircle{width:42px;height:42px;font-size:16px}
-.grid-cat-lbl{font-size:8px!important;line-height:1.2!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:break-word}
+.grid-cat-lbl{font-size:8px!important;line-height:1.2!important;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;word-break:keep-all;letter-spacing:-0.2px}
 .grid-header-row{flex-wrap:wrap;gap:6px}
 .grid-header-row>div{min-width:0}
 }
 @media (max-width:420px){.qadha-hard-row{flex-direction:column!important;align-items:stretch!important}.qadha-hard-row .bg{width:100%;box-sizing:border-box}}
 @media (prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}}
 `}</style>
-      {sc!=="splash"&&sc!=="online"&&!loading&&<div style={{position:"fixed",top:"max(10px, env(safe-area-inset-top, 0px))",[rtl?"left":"right"]:10,zIndex:999,display:"flex",alignItems:"center",gap:12,flexWrap:"wrap",maxWidth:"min(96vw,420px)",background:th.badge,border:`1px solid ${th.cardBd}`,borderRadius:24,padding:"12px 16px"}}><CountryFlag country={country} className="qadha-badge-flag" w={28} emojiSize={28} /><span style={{fontSize:12,color:th.accent,fontWeight:700}}>{BI.langBadge}</span><div style={{display:"flex",gap:6,marginInlineStart:8}} role="group" aria-label={BI.themeAria}>{[{k:"calm",i:"🌿",t:BI.themeCalm},{k:"night",i:"🌙",t:BI.themeNight},{k:"light",i:"☀️",t:BI.themeLight}].map(({k,i,t})=>(<button key={k} type="button" title={t} onClick={()=>{sfx.click();setThemeMode(k)}} style={{background:themeMode===k?`rgba(${th.accentRgb},.2)`:"transparent",border:`1px solid ${themeMode===k?th.accent:th.cardBd}`,borderRadius:14,padding:"10px 12px",fontSize:24,cursor:"pointer",lineHeight:1}}>{i}</button>))}</div></div>}
+      {sc!=="splash"&&sc!=="online"&&!loading&&<div style={{position:"absolute",top:"max(10px, env(safe-area-inset-top, 0px))",[rtl?"left":"right"]:10,zIndex:999,display:"flex",alignItems:"center",gap:12,flexWrap:"wrap",maxWidth:"min(96vw,420px)",background:th.badge,border:`1px solid ${th.cardBd}`,borderRadius:24,padding:"12px 16px"}}><CountryFlag country={country} className="qadha-badge-flag" w={28} emojiSize={28} /><span style={{fontSize:12,color:th.accent,fontWeight:700}}>{BI.langBadge}</span><div style={{display:"flex",gap:6,marginInlineStart:8}} role="group" aria-label={BI.themeAria}>{[{k:"calm",i:"🌿",t:BI.themeCalm},{k:"night",i:"🌙",t:BI.themeNight},{k:"light",i:"☀️",t:BI.themeLight}].map(({k,i,t})=>(<button key={k} type="button" title={t} onClick={()=>{sfx.click();setThemeMode(k)}} style={{background:themeMode===k?`rgba(${th.accentRgb},.2)`:"transparent",border:`1px solid ${themeMode===k?th.accent:th.cardBd}`,borderRadius:14,padding:"10px 12px",fontSize:24,cursor:"pointer",lineHeight:1}}>{i}</button>))}</div></div>}
 
       {sc==="splash"&&<div style={{...W,paddingLeft:"max(16px,env(safe-area-inset-left))",paddingRight:"max(16px,env(safe-area-inset-right))",paddingBottom:"max(24px,env(safe-area-inset-bottom))"}}><div style={{textAlign:"center",width:"100%",maxWidth:420}}><div style={{fontSize:"clamp(56px,22vw,92px)",animation:"cb 2s ease-in-out infinite",lineHeight:1}}>👑</div><h1 style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(40px,12vw,96px)",fontWeight:900,color:th.gold,textShadow:th.goldGlow,lineHeight:1.05,margin:"12px 0 0"}}>قدها؟</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.8vw,16px)",color:th.textDim,letterSpacing:2,marginTop:10,lineHeight:1.5}}>لعبة أسئلة وثقافة</p><div style={{margin:"clamp(24px,8vw,36px) auto",width:96,maxWidth:"40%",height:3,background:`linear-gradient(90deg,transparent,${th.gold},transparent)`}}/><div><span className="ld"/><span className="ld" style={{animationDelay:".2s"}}/><span className="ld" style={{animationDelay:".4s"}}/></div></div></div>}
 
@@ -1729,14 +1743,14 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 
       {loading&&<div style={W} className="qadha-below-badge"><div style={{textAlign:"center",padding:"clamp(28px,8vw,48px) clamp(16px,5vw,48px)"}}><div style={{fontSize:58,animation:"cb 1.5s ease-in-out infinite",marginBottom:20}}>🧠</div><h2 style={{fontFamily:"'Tajawal',sans-serif",color:th.accent,fontSize:22}}>{tx.loading}</h2><div style={{width:"70%",maxWidth:320,height:7,background:th.gridCell,borderRadius:4,margin:"24px auto",overflow:"hidden"}}><div style={{width:`${loadProg}%`,height:"100%",background:`linear-gradient(90deg,${th.accent},${th.gold})`,borderRadius:4,transition:"width .3s"}}/></div><div style={{display:"flex",justifyContent:"center",alignItems:"center",gap:10,marginTop:16}}><CountryFlag country={country} w={28} emojiSize={28} /><span style={{fontSize:16,color:th.accent}}>{country.native}</span></div></div></div>}
 
-      {sc==="grid"&&!loading&&<div style={{...W,justifyContent:"flex-start",alignItems:"center",paddingTop:14,width:"100%"}} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(1080px,100%)",padding:"12px min(18px,4.5vw) max(16px,env(safe-area-inset-bottom))"}}>
+      {sc==="grid"&&!loading&&<div style={{...W,justifyContent:"flex-start",alignItems:"center",paddingTop:88,width:"100%"}} className="qadha-below-badge"><div style={{width:"100%",maxWidth:"min(1080px,100%)",padding:"12px min(18px,4.5vw) max(16px,env(safe-area-inset-bottom))"}}>
         <div className="grid-header-row" style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:14}}>
           <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===1?th.accent:th.textDim2,fontWeight:700}}>{tn(1)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[0]}</div>{streaks[0]>=2&&<div style={{fontSize:13,color:th.gold}}>{streakMult(streaks[0]).flames} x{streakMult(streaks[0]).mult}</div>}</div>
           <div style={{textAlign:"center"}}><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(17px,4.2vw,21px)",color:th.accent,fontWeight:700,display:"inline-flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}><span>قدها؟</span><CountryFlag country={country} w={22} emojiSize={21} /></div><div style={{fontSize:12,color:th.textDim}}>◀ {turnLabel(active)} ▶</div></div>
           <div style={{textAlign:"center",flex:1}}><div style={{fontSize:15,color:active===2?th.accent:th.textDim2,fontWeight:700}}>{tn(2)}</div><div style={{fontSize:"clamp(32px,7.5vw,42px)",fontWeight:900,fontFamily:"'Tajawal',sans-serif",color:th.scoreTxt}}>{scores[1]}</div>{streaks[1]>=2&&<div style={{fontSize:13,color:th.gold}}>{streakMult(streaks[1]).flames} x{streakMult(streaks[1]).mult}</div>}</div>
         </div>
         <p style={{fontSize:11,color:th.textDim2,textAlign:"center",marginBottom:12,fontFamily:"'Tajawal',sans-serif",lineHeight:1.45}}>{BI.gridTierHint}</p>
-        <div style={{display:"grid",gridTemplateColumns:`minmax(46px,auto) repeat(${selCats.length},1fr)`,gap:6,alignItems:"stretch"}}>
+        <div style={{display:"grid",gridTemplateColumns:`minmax(30px,auto) repeat(${selCats.length},minmax(0,1fr))`,gap:"clamp(3px,0.8vw,6px)",alignItems:"stretch"}}>
           <div aria-hidden style={{minHeight:1}} />
           {selCats.map(cat=>(<div key={cat.id} style={{textAlign:"center",padding:"8px 2px",borderBottom:`2px solid ${cat.c}`,marginBottom:4,position:"relative"}}><div style={{display:"flex",justifyContent:"center",alignItems:"center",minHeight:"clamp(52px,16vw,68px)",flexDirection:"column",gap:3}}><CountryFlag country={country} title={country.native} w={20} emojiSize={15} /><CatIcon cat={cat} sz={56}/></div><div className="grid-cat-lbl" style={{fontSize:9,fontWeight:900,color:isNight?cat.c:th.catMuted,marginTop:3,lineHeight:1.2}}>{catBi(cat)}</div>{catStars[cat.id]?.bonus&&<span style={{position:"absolute",top:2,left:"50%",transform:"translateX(-50%)",fontSize:12}}>⭐</span>}</div>))}
           {PTS.map((pts,ri)=>(
@@ -1745,7 +1759,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
                 <span style={{fontSize:9,fontWeight:800,color:th.accent,lineHeight:1.2}}>{ptsTierLabelAr(pts)}</span>
                 <span style={{fontSize:11,fontWeight:900,color:th.gridPts,marginTop:4}}>{pts}</span>
               </div>
-              {selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];const isDD=dailyDoubles.has(k)&&!u;const isBlind=blindCells.has(k)&&!u;const isMystery=mysteryCells.has(k)&&!u;const isBlocked=blockedCatIdx===ci;return(<button key={k} type="button" onClick={()=>!u&&tapCell(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:isMystery?`linear-gradient(135deg,#FDE047aa,#F59E0Baa)`:isBlocked?`linear-gradient(135deg,#EF444422,#EF444411)`:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:isBlocked?"#EF444444":cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u||isBlocked?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:isBlocked?.35:1,position:"relative"}}>{u?"✓":isMystery?"🎁":isBlind?"❓":pts}{isDD&&<span style={{position:"absolute",top:2,right:3,fontSize:8,opacity:0.4}}>✦</span>}</button>)})}
+              {selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];const isDD=dailyDoubles.has(k)&&!u;const isBlind=blindCells.has(k)&&!u;const isMystery=mysteryCells.has(k)&&!u;const isBlocked=blockedCatIdx===ci;return(<button key={k} type="button" onClick={()=>!u&&tapCell(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:isMystery?`linear-gradient(135deg,#FDE047aa,#F59E0Baa)`:isBlocked?`linear-gradient(135deg,#EF444422,#EF444411)`:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:isBlocked?"#EF444444":cat.c+"44"}`,borderRadius:12,padding:"clamp(10px,2.6vw,15px) 2px",cursor:u||isBlocked?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:isBlocked?.35:1,position:"relative"}}>{u?"✓":isMystery?"🎁":isBlind?"❓":pts}{isDD&&<span style={{position:"absolute",top:2,right:3,fontSize:8,opacity:0.4}}>✦</span>}</button>)})}
             </Fragment>
           ))}
         </div>
@@ -1825,7 +1839,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       </div></div>}
 
       {sc==="results"&&<div style={W} className="qadha-below-badge"><div style={P}>
-        <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"⚡":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:scores[0]===scores[1]?10:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p>
+        <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"⚡":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:(mode==="1v1"?"الفائز!":tx.wins)}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:scores[0]===scores[1]?10:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p>
           {scores[0]===scores[1]&&!isOnlineGuest&&<button className="bg" style={{padding:"14px 32px",marginBottom:20,fontSize:18,borderRadius:16}} onClick={()=>{
             const randomCat=selCats[Math.floor(Math.random()*selCats.length)];
             const q=drawQ(randomCat.id,"hard");
