@@ -130,19 +130,6 @@
     "src": "qadha"
   },
   {
-    "q": "ما اسم بطولة \"موسم الرياض\" للإي-سبورتس؟",
-    "o": [
-      "بطولة Gamers8",
-      "بطولة GameX8",
-      "بطولة Riyadh Play",
-      "بطولة Gulf Gamers"
-    ],
-    "a": 0,
-    "d": 2,
-    "id": "qadha-Q07325",
-    "src": "qadha"
-  },
-  {
     "q": "متى انطلقت بطولة Gamers8؟",
     "o": [
       "2022م",
@@ -211,7 +198,7 @@
     "q": "ما اسم استحواذات سافي الكبرى؟",
     "o": [
       "Riot Games و Valve و Epic Games",
-      "ESL FACEIT Group و Embracer Group و Scopely",
+      "ESL FACEIT Group و Scopely",
       "Ubisoft و Square Enix و Bandai Namco",
       "Rovio و Supercell و Zynga"
     ],

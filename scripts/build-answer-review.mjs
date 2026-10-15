@@ -32,6 +32,9 @@ const findQ = (file, q) => {
 const fixedKeys = new Set();
 if (fs.existsSync("review/applied-fixes.json"))
   for (const f of JSON.parse(fs.readFileSync("review/applied-fixes.json", "utf8"))) fixedKeys.add(`${f.file}|${f.beforeQ}`);
+/* المحذوف والمؤكد سلامته لا يعودان للقائمة */
+for (const file of ["review/deleted-questions.json", "review/reviewed-ok.json"])
+  if (fs.existsSync(file)) for (const f of JSON.parse(fs.readFileSync(file, "utf8"))) fixedKeys.add(`${f.file}|${f.q}`);
 
 const rows = new Map();
 const add = (e, source) => {
