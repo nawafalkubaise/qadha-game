@@ -1,82 +1,90 @@
 [
   {
-    "q": "Instagram owned by؟",
+    "q": "Which company owns Instagram؟",
     "o": [
-      "Meta",
       "Apple",
-      "Bezos",
-      "Snap"
+      "Google",
+      "Reddit",
+      "Meta"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "TikTok parent company؟",
+    "q": "What is the parent company of TikTok؟",
     "o": [
       "ByteDance",
       "Jan Koum",
-      "Bluesky",
-      "Netflix"
+      "Alibaba",
+      "Reddit"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Twitter rebranded to؟",
+    "q": "What was Twitter rebranded as in 2023؟",
     "o": [
       "X",
-      "Apple",
-      "Bezos",
-      "ByteDance"
-    ],
-    "a": 0
-  },
-  {
-    "q": "WhatsApp co-founder؟",
-    "o": [
-      "Jan Koum",
       "Bluesky",
       "ByteDance",
-      "Cooking"
+      "Disappearing messages"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Snapchat known for؟",
+    "q": "Who co-founded WhatsApp؟",
     "o": [
-      "Shopping only",
+      "Jan Koum",
+      "ByteDance",
+      "Evan Spiegel",
+      "Jack Dorsey"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is Snapchat best known for؟",
+    "o": [
       "Disappearing messages",
       "Professional networking",
-      "Permanent posts"
+      "Online shopping",
+      "ByteDance"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "YouTube founded ~؟",
+    "q": "In which year was YouTube founded؟",
     "o": [
-      "2005",
-      "2003",
       "2007",
-      "2010"
+      "2010",
+      "2005",
+      "2003"
     ],
-    "a": 0
+    "a": 2,
+    "d": 2
   },
   {
-    "q": "LinkedIn for؟",
+    "q": "What is LinkedIn mainly used for؟",
     "o": [
       "Disappearing messages",
+      "Online shopping",
       "ByteDance",
-      "Cooking",
       "Professional networking"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Reddit nickname؟",
+    "q": "Which website is nicknamed \"the front page of the internet\"؟",
     "o": [
-      "Front page of the internet",
-      "A Nightmare on Elm Street",
-      "A private company vote",
-      "A lot / very"
+      "Reddit",
+      "Tumblr",
+      "Yahoo",
+      "ByteDance"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

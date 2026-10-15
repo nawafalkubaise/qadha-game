@@ -1,18 +1,23 @@
 /**
  * تحميل بنوك JSON في Vite: src/data/banks/<دولة>/<فئة>.json
+ * كل دولة في chunk مستقل يُجلب عند الطلب عبر banks/<دولة>/index.js
  * (سكربتات Node تستخدم scripts/lib/readBanksFs.mjs)
  */
-const allBankModules = import.meta.glob("./banks/*/*.json", { eager: true });
+const countryChunks = import.meta.glob("./banks/*/index.js");
+
+/** cid → Promise<bank> (نخزّن الوعد نفسه حتى لا يتكرر الجلب) */
+const pending = new Map();
 
 export function loadBankForCountry(countryId) {
-  const bank = {};
-  const prefix = `./banks/${countryId}/`;
-  for (const [p, mod] of Object.entries(allBankModules)) {
-    if (!p.startsWith(prefix) || !p.endsWith(".json")) continue;
-    const catId = p.slice(prefix.length, -5);
-    bank[catId] = Array.isArray(mod.default) ? mod.default : [];
-  }
-  return bank;
+  if (pending.has(countryId)) return pending.get(countryId);
+  const chunk = countryChunks[`./banks/${countryId}/index.js`];
+  const p = chunk
+    ? chunk().then((mod) => ({ ...mod.default }))
+    : Promise.resolve({});
+  /* فشل الشبكة لا يُخزَّن — المحاولة التالية تعيد الجلب */
+  p.catch(() => pending.delete(countryId));
+  pending.set(countryId, p);
+  return p;
 }
 
 export function loadKwBankFlat() {

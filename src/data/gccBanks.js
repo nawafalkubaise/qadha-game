@@ -1,17 +1,15 @@
 /**
  * أسئلة دول الخليج (غير الكويت): ملف لكل فئة تحت
  *   src/data/banks/<sa|ae|qa|bh|om>/<categoryId>.json
+ * تُجلب حزمة الدولة عند الطلب فقط.
  */
 import { loadBankForCountry } from "./banksLoader.js";
 
 export const GCC_COUNTRY_IDS = ["sa", "ae", "qa", "bh", "om"];
 
-const built = {};
-for (const id of GCC_COUNTRY_IDS) {
-  built[id] = loadBankForCountry(id);
+export function loadGccBank(countryId) {
+  return loadBankForCountry(countryId);
 }
-
-export const GCC_BANKS = built;
 
 export function isGccCountryId(cid) {
   return GCC_COUNTRY_IDS.includes(cid);

@@ -1,82 +1,79 @@
 [
   {
-    "q": "A well-known cafe-heavy area is؟",
+    "q": "Which Kuwaiti area is well known for its many cafes؟",
     "o": [
-      "Salmiya",
+      "Abdali",
       "Coffee",
-      "Social",
-      "Abdali only"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Most common cafe drink is؟",
-    "o": [
-      "Coffee",
-      "Salmiya",
-      "Social",
-      "Cold drink"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Waterfront cafes are common near؟",
-    "o": [
-      "Marina and corniche",
-      "Food and dining zones",
-      "Wi-Fi and seating",
-      "Industrial zones only"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Cafe gatherings are usually؟",
-    "o": [
-      "Social",
-      "Coffee",
-      "Medical",
+      "Wafra",
       "Salmiya"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Mall cafes are usually in؟",
+    "q": "What is the most common drink ordered in Kuwaiti cafes؟",
     "o": [
-      "Modern coffee culture",
-      "Food and dining zones",
-      "Marina and corniche",
-      "Wi-Fi and seating"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Specialty cafe growth is tied to؟",
-    "o": [
-      "Marina and corniche",
-      "Wi-Fi and seating",
-      "Modern coffee culture",
-      "Food and dining zones"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Iced latte is a؟",
-    "o": [
-      "Main dish",
       "Coffee",
-      "Dessert",
-      "Cold drink"
+      "Salmiya",
+      "Milk",
+      "Soda"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Studying in cafes is common due to؟",
+    "q": "Where in Kuwait are waterfront cafes commonly found؟",
     "o": [
-      "Wi-Fi and seating",
-      "Food and dining zones",
-      "Marina and corniche",
-      "Modern coffee culture"
+      "Along the marina and corniche",
+      "In food and dining zones",
+      "They offer Wi-Fi and seating",
+      "A cold coffee drink"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Where are cafes usually located inside Kuwaiti malls؟",
+    "o": [
+      "In food and dining zones",
+      "Along the marina and corniche",
+      "They offer Wi-Fi and seating",
+      "A modern coffee culture"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "The growth of specialty cafes in Kuwait is tied to what؟",
+    "o": [
+      "A modern coffee culture",
+      "A cold coffee drink",
+      "Falling coffee prices worldwide",
+      "In food and dining zones"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What kind of drink is an iced latte؟",
+    "o": [
+      "A cold coffee drink",
+      "A modern coffee culture",
+      "A milkshake dessert",
+      "A soft drink"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Why is studying in cafes common in Kuwait؟",
+    "o": [
+      "They offer Wi-Fi and seating",
+      "Along the marina and corniche",
+      "In food and dining zones",
+      "They are run by schools"
+    ],
+    "a": 0,
+    "d": 1
   }
 ]

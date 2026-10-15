@@ -1,82 +1,90 @@
 [
   {
-    "q": "Euro used in؟",
+    "q": "The euro is the official currency of which group of countries؟",
     "o": [
-      "Eurozone countries",
-      "Cryptocurrency",
+      "The Eurozone",
       "Saudi Arabia",
-      "Switzerland"
+      "Switzerland",
+      "United Kingdom"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Yen is currency of؟",
+    "q": "The yen is the currency of which country؟",
     "o": [
       "Japan",
       "China",
-      "Korea",
-      "CAD"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Pound sterling country؟",
-    "o": [
-      "UK",
       "CAD",
-      "USA",
-      "China"
+      "Thailand"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Swiss franc country؟",
+    "q": "Which country uses the pound sterling؟",
+    "o": [
+      "United Kingdom",
+      "United States",
+      "A cryptocurrency",
+      "Saudi Arabia"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "The franc is the currency of which European country؟",
     "o": [
       "Switzerland",
       "Saudi Arabia",
-      "Washington DC",
-      "Austria"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Saudi riyal؟",
-    "o": [
-      "Saudi Arabia",
-      "Cryptocurrency",
-      "Switzerland",
+      "The Eurozone",
       "Washington DC"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Bitcoin is؟",
+    "q": "The riyal is the currency of which country؟",
     "o": [
-      "Cryptocurrency",
       "Saudi Arabia",
-      "Washington DC",
-      "Eurozone countries"
+      "Switzerland",
+      "The Eurozone",
+      "United Kingdom"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "IMF headquarters؟",
+    "q": "What is Bitcoin؟",
+    "o": [
+      "A cryptocurrency",
+      "United Kingdom",
+      "Washington DC",
+      "Saudi Arabia"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which city is the International Monetary Fund (IMF) headquartered؟",
     "o": [
       "Washington DC",
-      "Cryptocurrency",
+      "A cryptocurrency",
       "Saudi Arabia",
       "Switzerland"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Canadian dollar code؟",
+    "q": "What is the currency code of the Canadian dollar؟",
     "o": [
+      "CND",
       "CAD",
-      "EUR",
-      "GBP",
-      "JPY"
+      "CDL",
+      "CDN"
     ],
-    "a": 0
+    "a": 1,
+    "d": 2
   }
 ]

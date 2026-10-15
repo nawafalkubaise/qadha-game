@@ -1,202 +1,222 @@
 [
   {
-    "q": "Romeo and Juliet author؟",
+    "q": "Who wrote Romeo and Juliet؟",
     "o": [
-      "Aldous Huxley",
-      "Cervantes",
-      "Dostoevsky",
-      "Shakespeare"
+      "William Shakespeare",
+      "Christopher Marlowe",
+      "Fyodor Dostoevsky",
+      "Niccolò Machiavelli"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "1984 author؟",
+    "q": "Who wrote the novel 1984؟",
     "o": [
-      "Huxley",
-      "Orwell",
-      "Coelho",
-      "Homer"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Harry Potter author؟",
-    "o": [
-      "Rowling",
-      "Coelho",
-      "Collins",
-      "Orwell"
-    ],
-    "a": 0
-  },
-  {
-    "q": "The Alchemist author؟",
-    "o": [
-      "Coelho",
-      "Allende",
-      "Borges",
-      "Homer"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Don Quixote author؟",
-    "o": [
-      "Dostoevsky",
-      "Harper Lee",
-      "Machiavelli",
-      "Cervantes"
-    ],
-    "a": 3
-  },
-  {
-    "q": "The Prince author؟",
-    "o": [
-      "Machiavelli",
-      "Aldous Huxley",
-      "Aristotle",
-      "Cervantes"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Lord of the Rings author؟",
-    "o": [
-      "Orwell",
-      "Tolkien",
-      "Coelho",
-      "Martin"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Crime and Punishment author؟",
-    "o": [
-      "Cervantes",
-      "Harper Lee",
-      "Machiavelli",
-      "Dostoevsky"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Les Misérables author؟",
-    "o": [
-      "Victor Hugo",
-      "Aldous Huxley",
-      "Cervantes",
-      "Dostoevsky"
-    ],
-    "a": 0
-  },
-  {
-    "q": "One Hundred Years of Solitude author؟",
-    "o": [
+      "George Orwell",
       "Aldous Huxley",
       "Kahlil Gibran",
-      "Mystery novels",
-      "García Márquez"
+      "Leo Tolstoy"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Iliad and Odyssey written by؟",
+    "q": "Who wrote the Harry Potter series؟",
+    "o": [
+      "J. K. Rowling",
+      "J. R. R. Tolkien",
+      "C. S. Lewis",
+      "Arthur Conan Doyle"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Who wrote The Alchemist؟",
+    "o": [
+      "Paulo Coelho",
+      "Aldous Huxley",
+      "George Orwell",
+      "Harper Lee"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Who wrote Don Quixote؟",
+    "o": [
+      "Miguel de Cervantes",
+      "Arthur Conan Doyle",
+      "F. Scott Fitzgerald",
+      "Federico García Lorca"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Who wrote The Prince؟",
+    "o": [
+      "Niccolò Machiavelli",
+      "Fyodor Dostoevsky",
+      "Stratford-upon-Avon",
+      "William Shakespeare"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Who wrote The Lord of the Rings؟",
+    "o": [
+      "J. R. R. Tolkien",
+      "George R. R. Martin",
+      "J. K. Rowling",
+      "Arthur Conan Doyle"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Who wrote Crime and Punishment؟",
+    "o": [
+      "Mystery novels",
+      "Niccolò Machiavelli",
+      "Stratford-upon-Avon",
+      "Fyodor Dostoevsky"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Who wrote Les Misérables؟",
+    "o": [
+      "Aldous Huxley",
+      "Émile Zola",
+      "George Orwell",
+      "Victor Hugo"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Who wrote One Hundred Years of Solitude؟",
+    "o": [
+      "Gabriel García Márquez",
+      "Arthur Conan Doyle",
+      "F. Scott Fitzgerald",
+      "Mario Vargas Llosa"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Which ancient Greek poet is credited with the Iliad and the Odyssey؟",
     "o": [
       "Homer",
-      "-100°C",
-      "-200°C",
-      "Coelho"
+      "Hesiod",
+      "Virgil",
+      "Aldous Huxley"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "War and Peace author؟",
+    "q": "Who wrote War and Peace؟",
     "o": [
-      "Tolstoy",
-      "Chekhov",
-      "Coelho",
-      "Orwell"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Agatha Christie famous for؟",
-    "o": [
-      "Mystery novels",
+      "Leo Tolstoy",
       "Aldous Huxley",
-      "García Márquez",
-      "Kahlil Gibran"
+      "Anton Chekhov",
+      "George Orwell"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Shakespeare born in؟",
+    "q": "Agatha Christie is famous for writing what kind of books؟",
+    "o": [
+      "Aldous Huxley",
+      "Fantasy epics",
+      "Fyodor Dostoevsky",
+      "Mystery novels"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which English town was William Shakespeare born؟",
     "o": [
       "Stratford-upon-Avon",
-      "Aldous Huxley",
-      "García Márquez",
-      "Kahlil Gibran"
+      "Fyodor Dostoevsky",
+      "Niccolò Machiavelli",
+      "William Shakespeare"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Naguib Mahfouz won؟",
+    "q": "Which prize did Egyptian novelist Naguib Mahfouz win in 1988؟",
     "o": [
-      "Dostoevsky",
-      "Nobel Prize",
-      "Aldous Huxley",
-      "Cervantes"
-    ],
-    "a": 1
-  },
-  {
-    "q": "The Prophet author؟",
-    "o": [
-      "Kahlil Gibran",
-      "Aldous Huxley",
-      "García Márquez",
-      "Machiavelli"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Brave New World author؟",
-    "o": [
-      "Aldous Huxley",
-      "García Márquez",
-      "Kahlil Gibran",
-      "Machiavelli"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Great Gatsby author؟",
-    "o": [
+      "Nobel Prize in Literature",
+      "Gabriel García Márquez",
       "Arthur Conan Doyle",
-      "Edgar Allan Poe",
-      "Stratford-upon-Avon",
       "F. Scott Fitzgerald"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Sherlock Holmes creator؟",
+    "q": "Who wrote The Prophet؟",
     "o": [
+      "Kahlil Gibran",
+      "Aldous Huxley",
+      "Ameen Rihani",
+      "George Orwell"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Who wrote Brave New World؟",
+    "o": [
+      "Aldous Huxley",
+      "George Orwell",
+      "Kahlil Gibran",
+      "Leo Tolstoy"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Who wrote The Great Gatsby؟",
+    "o": [
+      "Arthur Conan Doyle",
+      "Gabriel García Márquez",
+      "J. R. R. Tolkien",
+      "F. Scott Fitzgerald"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Who created the detective Sherlock Holmes؟",
+    "o": [
+      "Arthur Conan Doyle",
       "Edgar Allan Poe",
       "F. Scott Fitzgerald",
-      "Arthur Conan Doyle",
-      "Stratford-upon-Avon"
+      "Gabriel García Márquez"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "To Kill a Mockingbird author؟",
+    "q": "Who wrote To Kill a Mockingbird؟",
     "o": [
       "Harper Lee",
-      "Cervantes",
-      "Dostoevsky",
-      "Hemingway"
+      "Leo Tolstoy",
+      "Paulo Coelho",
+      "Victor Hugo"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

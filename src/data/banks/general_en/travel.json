@@ -1,82 +1,90 @@
 [
   {
-    "q": "Jet lag caused by؟",
+    "q": "What causes jet lag؟",
     "o": [
-      "Time zone shift",
-      "Airline baggage desk",
-      "Fees and efficiency",
-      "Three letters often"
+      "Crossing time zones quickly",
+      "The airline baggage desk",
+      "Cabin air pressure",
+      "Extra fees and efficient operations"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "eVisa means؟",
+    "q": "What is an eVisa؟",
     "o": [
-      "Electronic visa before travel",
-      "Trip cancel and medical emergency",
-      "Airline baggage desk",
-      "Fees and efficiency"
+      "An electronic visa obtained before travel",
+      "A visa issued on arrival",
+      "A passport entry stamp",
+      "A frequent flyer card"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "UTC reference meridian؟",
+    "q": "Which meridian is the reference point for UTC (Coordinated Universal Time)؟",
     "o": [
       "Greenwich",
-      "A little",
-      "New York",
-      "A hole"
+      "Washington",
+      "Paris",
+      "Rome"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Lost luggage handled via؟",
+    "q": "At an airport, where do you usually report lost luggage؟",
     "o": [
-      "Airline baggage desk",
-      "Fees and efficiency",
-      "Three letters often",
-      "Valid passport usually"
+      "The airline baggage desk",
+      "Crossing time zones quickly",
+      "The customs office",
+      "The duty-free shop"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Budget airlines cut costs by؟",
+    "q": "How do budget airlines mainly keep fares low؟",
     "o": [
-      "Fees and efficiency",
-      "Airline baggage desk",
-      "Government fuel grants",
-      "Three letters often"
+      "Extra fees and efficient operations",
+      "Trip cancellation and medical emergencies",
+      "Free meals for all passengers",
+      "Crossing time zones quickly"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Travel insurance often covers؟",
+    "q": "What does travel insurance often cover؟",
     "o": [
-      "Trip cancel and medical emergency",
-      "Electronic visa before travel",
-      "Airline baggage desk",
-      "Airport lounge upgrades"
+      "Trip cancellation and medical emergencies",
+      "Extra fees and efficient operations",
+      "Crossing time zones quickly",
+      "A valid passport"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "International travel needs؟",
+    "q": "What document do you usually need for international travel؟",
     "o": [
-      "Valid passport usually",
-      "Airline baggage desk",
-      "Domestic license alone",
-      "Fees and efficiency"
+      "A bank statement",
+      "A driver's license",
+      "A student card",
+      "A valid passport"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "IATA airport codes are؟",
+    "q": "How many letters make up an IATA airport code؟",
     "o": [
-      "Fees and efficiency",
-      "Valid passport usually",
-      "Three letters often",
-      "Airline baggage desk"
+      "Three",
+      "Five",
+      "Four",
+      "Two"
     ],
-    "a": 2
+    "a": 0,
+    "d": 2
   }
 ]

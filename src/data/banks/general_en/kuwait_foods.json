@@ -1,82 +1,90 @@
 [
   {
-    "q": "A famous Kuwaiti dish is؟",
+    "q": "Which of these is a famous Kuwaiti dish؟",
     "o": [
-      "Chicken",
-      "Dessert",
-      "Main course",
-      "Machboos"
+      "Machboos",
+      "A dessert",
+      "Lasagna",
+      "Mung beans"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Harees is often made from؟",
+    "q": "Harees is typically made from what؟",
     "o": [
-      "Coffee and dates",
-      "Rice and lentils",
-      "Bread with broth",
-      "Wheat and meat"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Marqooq usually features؟",
-    "o": [
-      "Thin dough with stew",
-      "Bread with broth",
+      "Wheat and meat",
+      "Bread and broth",
       "Coffee and dates",
       "Rice and lentils"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Luqaimat is generally a؟",
+    "q": "What does marqooq typically consist of؟",
     "o": [
-      "Dessert",
-      "Chicken",
-      "Machboos",
-      "Main course"
+      "Fried fish with rice",
+      "Sweet dumplings in syrup",
+      "Bread soaked in milk",
+      "Thin dough cooked in a meat and vegetable stew"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Mutabbaq zubaidi is linked with؟",
+    "q": "What type of food is luqaimat؟",
     "o": [
+      "A dessert",
+      "Machboos",
+      "Mung beans",
+      "A salad"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Mutabbaq zubaidi is a dish made with which main ingredient؟",
+    "o": [
+      "A dessert",
       "Fish",
       "Beef",
-      "Pizza",
-      "Salad"
+      "Lamb"
     ],
-    "a": 0
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Aish mummawash combines؟",
+    "q": "Aish mummawash is rice cooked with what؟",
     "o": [
-      "Rice and pasta",
-      "Bread and dates",
-      "Coffee and dates",
+      "A dessert",
+      "Chickpeas",
+      "Machboos",
+      "Mung beans"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Tashreeb typically consists of what؟",
+    "o": [
+      "Arabic coffee and dates",
+      "Rice with lentils",
+      "Thin dough with stew",
+      "Bread soaked in broth"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "What is traditionally served to guests in Kuwaiti diwaniyas؟",
+    "o": [
+      "Arabic coffee and dates",
+      "Bread and broth",
+      "Bread soaked in broth",
       "Rice and lentils"
     ],
-    "a": 3
-  },
-  {
-    "q": "Tashreeb typically includes؟",
-    "o": [
-      "Thin dough with stew",
-      "Coffee and dates",
-      "Rice and lentils",
-      "Bread with broth"
-    ],
-    "a": 3
-  },
-  {
-    "q": "In diwaniyas, people often serve؟",
-    "o": [
-      "Coffee and dates",
-      "Rice and lentils",
-      "Wheat and meat",
-      "Bread with broth"
-    ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

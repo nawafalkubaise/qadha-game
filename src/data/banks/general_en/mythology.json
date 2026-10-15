@@ -1,82 +1,90 @@
 [
   {
-    "q": "Zeus god of؟",
+    "q": "In Greek mythology, Zeus is the god of what؟",
     "o": [
+      "The sea",
       "Sky and thunder",
-      "A lot / very",
-      "A Nightmare on Elm Street",
-      "A private company vote"
+      "The underworld",
+      "Wine"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Thor Norse god of؟",
+    "q": "In Norse mythology, Thor is the god of what؟",
     "o": [
+      "Mischief",
+      "Snakes",
       "Thunder",
+      "Jackal"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "In Greek mythology, Poseidon is the god of what؟",
+    "o": [
+      "The sea",
+      "The sun",
       "Jackal",
-      "Odyssey",
       "Snakes"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Poseidon Greek god of؟",
+    "q": "Odysseus is the hero of which epic poem؟",
     "o": [
-      "Sea",
-      "Sky",
-      "Sun",
-      "War"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Odysseus hero of؟",
-    "o": [
-      "Jackal",
-      "Odyssey",
-      "Aeneid",
+      "The Odyssey",
+      "The Aeneid",
+      "The sea",
       "Beowulf"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Anubis head؟",
+    "q": "The Egyptian god Anubis is depicted with the head of which animal؟",
     "o": [
       "Jackal",
-      "Aeneid",
-      "Beowulf",
+      "Falcon",
+      "Greek",
+      "Norse"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In Greek mythology, what does Medusa have instead of hair؟",
+    "o": [
+      "Jackal",
+      "Snakes",
+      "Flames",
       "Greek"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Medusa hair؟",
+    "q": "Valhalla belongs to which mythology؟",
     "o": [
-      "Aeneid",
-      "Beowulf",
       "Greek",
-      "Snakes"
+      "Jackal",
+      "Roman",
+      "Norse"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Valhalla in؟",
+    "q": "The myth of Pandora's box comes from which mythology؟",
     "o": [
-      "Death",
       "Greek",
+      "Hindu",
       "Jackal",
       "Norse"
     ],
-    "a": 3
-  },
-  {
-    "q": "Pandora's box myth origin؟",
-    "o": [
-      "Death",
-      "Jackal",
-      "Norse",
-      "Greek"
-    ],
-    "a": 3
+    "a": 0,
+    "d": 1
   }
 ]

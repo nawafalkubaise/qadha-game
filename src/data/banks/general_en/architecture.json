@@ -1,82 +1,90 @@
 [
   {
-    "q": "Burj Khalifa in؟",
+    "q": "In which country is the Burj Khalifa؟",
     "o": [
-      "UAE",
-      "India",
-      "Iron",
-      "Pisa"
+      "Saudi Arabia",
+      "Qatar",
+      "Kuwait",
+      "United Arab Emirates"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Taj Mahal in؟",
+    "q": "In which country is the Taj Mahal؟",
     "o": [
-      "Clay",
       "Iran",
-      "Iron",
+      "Jordan",
+      "Pisa",
       "India"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Leaning Tower in؟",
+    "q": "In which Italian city is the famous Leaning Tower؟",
     "o": [
       "Pisa",
       "India",
-      "Iron",
-      "Milan"
+      "Milan",
+      "Jordan"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Sagrada Família in؟",
+    "q": "In which city is the Sagrada Família؟",
     "o": [
       "Barcelona",
       "Bilbao",
       "Jordan",
       "Madrid"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Sydney Opera House shape like؟",
+    "q": "The roof of the Sydney Opera House is designed to resemble what؟",
     "o": [
-      "Shells/sails",
-      "Iron tower",
-      "Barcelona",
-      "Napoleonic France"
+      "Waves",
+      "Sails or shells",
+      "Bird wings",
+      "Flower petals"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Petra in؟",
+    "q": "In which country is the ancient city of Petra؟",
     "o": [
       "Jordan",
-      "Bilbao",
+      "Egypt",
       "India",
       "Lebanon"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Eiffel Tower material؟",
+    "q": "What material is the Eiffel Tower mainly made of؟",
     "o": [
-      "Iron",
-      "Clay",
-      "India",
-      "Pisa"
+      "Aluminum",
+      "Barcelona",
+      "Concrete",
+      "Wrought iron"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Arc de Triomphe era؟",
+    "q": "During which era was the Arc de Triomphe in Paris commissioned؟",
     "o": [
-      "Roman Empire",
-      "Shells/sails",
       "Napoleonic France",
-      "Charlemagne"
+      "Wrought iron",
+      "Barcelona",
+      "India"
     ],
-    "a": 2
+    "a": 0,
+    "d": 2
   }
 ]

@@ -1,73 +1,80 @@
 [
   {
-    "q": "Sum of triangle angles؟",
+    "q": "What is the sum of the interior angles of a triangle؟",
     "o": [
-      "180°",
-      "178°",
-      "179°",
-      "181°"
+      "20 cm",
+      "270°",
+      "360°",
+      "180°"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "2³ equals؟",
-    "o": [
-      "8",
-      "0",
-      "1",
-      "2"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Which is prime؟",
+    "q": "What is 2 cubed (2³)؟",
     "o": [
       "0",
-      "1",
-      "4",
-      "2"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Circle circumference 2πr, r=3, π≈3.14 ~؟",
-    "o": [
-      "9.42",
-      "18.84",
-      "6",
-      "12"
-    ],
-    "a": 1
-  },
-  {
-    "q": "3-4-5 triangle relates to؟",
-    "o": [
-      "Pythagoras",
-      "Arithmetic",
-      "Euclid only",
-      "Geometric"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Any number times zero؟",
-    "o": [
       "1",
       "2",
-      "4",
-      "0"
+      "8"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Mean of 2,4,6؟",
+    "q": "Which of these numbers is prime؟",
+    "o": [
+      "0",
+      "1",
+      "4",
+      "2"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Using π ≈ 3.14, what is the circumference of a circle with radius 3؟",
+    "o": [
+      "9.42",
+      "28.26",
+      "18.84",
+      "37.68"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "A triangle with sides 3, 4 and 5 is a classic example of which theorem؟",
+    "o": [
+      "Thales's theorem",
+      "Euler's theorem",
+      "180°",
+      "Pythagorean theorem"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "What do you get when you multiply any number by zero؟",
     "o": [
       "0",
       "1",
       "2",
       "4"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the mean (average) of 2, 4 and 6؟",
+    "o": [
+      "4",
+      "0",
+      "1",
+      "2"
+    ],
+    "a": 0,
+    "d": 1
   },
   {
     "q": "Slope of horizontal line؟",
@@ -80,54 +87,59 @@
     "a": 2
   },
   {
-    "q": "Square root of 144؟",
+    "q": "What is the square root of 144؟",
     "o": [
       "12",
-      "10",
+      "11",
       "14",
       "15"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Area of rectangle 5 × 3؟",
+    "q": "What is the area of a rectangle measuring 5 by 3؟",
     "o": [
-      "15",
-      "12",
       "16",
-      "20"
+      "20",
+      "15",
+      "12"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "10% of 200؟",
+    "q": "What is 10% of 200؟",
     "o": [
       "20",
       "10",
       "12",
       "15"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Sum of angles in a square؟",
+    "q": "What is the sum of the interior angles of a square؟",
     "o": [
-      "360°",
-      "180°",
       "20 cm",
-      "358°"
+      "270°",
+      "360°",
+      "180°"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "5! (5 factorial) equals؟",
+    "q": "What is 5 factorial (5!)؟",
     "o": [
-      "118",
-      "119",
-      "121",
-      "120"
+      "120",
+      "720",
+      "12",
+      "15"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
     "q": "Absolute value of -7؟",
@@ -140,63 +152,69 @@
     "a": 0
   },
   {
-    "q": "Pi (π) approximately equals؟",
+    "q": "What is the approximate value of pi (π)؟",
     "o": [
       "3.14",
+      "1.41",
       "1.61",
-      "2.71",
-      "4.00"
+      "2.71"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Volume of cube with side 3 cm؟",
+    "q": "What is the volume of a cube with sides of 3 cm؟",
     "o": [
       "27 cm³",
       "18 cm³",
-      "36 cm³",
+      "81 cm³",
       "9 cm³"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Any number to the power of zero؟",
+    "q": "What is any nonzero number raised to the power of zero؟",
     "o": [
+      "1",
       "0",
       "2",
-      "4",
-      "1"
+      "4"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Sequence 2,4,8,16 is؟",
+    "q": "What type of sequence is 2, 4, 8, 16؟",
     "o": [
+      "Harmonic",
       "Geometric",
       "Arithmetic",
-      "Decreasing",
-      "Pythagoras"
+      "Fibonacci"
     ],
-    "a": 0
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Perimeter of square with side 5 cm؟",
+    "q": "What is the perimeter of a square with sides of 5 cm؟",
     "o": [
       "20 cm",
       "10 cm",
       "15 cm",
       "25 cm"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "7 × 8 equals؟",
+    "q": "What is 7 × 8؟",
     "o": [
       "56",
       "12",
       "15",
       "20"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

@@ -1,82 +1,90 @@
 [
   {
-    "q": "Minecraft originally by؟",
+    "q": "Which company originally created Minecraft؟",
     "o": [
-      "Ubisoft",
-      "Blizzard",
       "Mojang",
-      "MMORPG"
+      "MMORPG",
+      "Ubisoft",
+      "Valve"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Mario franchise owner؟",
+    "q": "Which company owns the Mario franchise؟",
     "o": [
       "Nintendo",
       "Epic Games",
       "Microsoft",
       "Battle royale"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Fortnite by؟",
+    "q": "Which company developed Fortnite؟",
     "o": [
       "Epic Games",
       "Activision",
       "Nintendo",
-      "Rockstar"
+      "Rockstar Games"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "PlayStation 2 launched ~؟",
+    "q": "In which year did the PlayStation 2 launch؟",
     "o": [
-      "2000",
-      "1998",
-      "2005",
-      "2010"
+      "1997",
+      "2004",
+      "2006",
+      "2000"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "World of Warcraft is؟",
+    "q": "What genre of game is World of Warcraft؟",
     "o": [
+      "MMORPG",
       "Mojang",
       "Puzzle",
-      "Racing",
-      "MMORPG"
+      "Racing"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "PUBG genre؟",
+    "q": "What genre of game is PUBG؟",
     "o": [
+      "Flight simulator",
       "Epic Games",
-      "Flight sim",
       "Nintendo",
       "Battle royale"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Steam is a؟",
+    "q": "What is Steam؟",
     "o": [
-      "Valve game store",
-      "A lot / very",
-      "A Nightmare on Elm Street",
-      "A private company vote"
+      "A game console by Sony",
+      "A gaming chair brand",
+      "A graphics card maker",
+      "A digital game store by Valve"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "3DS handheld by؟",
+    "q": "Which company made the 3DS handheld console؟",
     "o": [
       "Nintendo",
-      "Activision",
       "Epic Games",
+      "Microsoft",
       "Battle royale"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

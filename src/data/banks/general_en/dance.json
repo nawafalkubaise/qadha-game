@@ -1,82 +1,90 @@
 [
   {
-    "q": "Ballet developed strongly in؟",
+    "q": "Ballet first developed in which countries؟",
     "o": [
-      "A private company vote",
-      "Italy then France",
-      "A lot / very",
-      "A Nightmare on Elm Street"
+      "Italy and then France",
+      "England and then the USA",
+      "Russia and then China",
+      "Spain and then Portugal"
     ],
-    "a": 1
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Salsa roots؟",
+    "q": "Salsa dance has its roots mainly in which country؟",
     "o": [
-      "Cuba/Caribbean",
-      "Pointe shoes",
-      "Argentina",
-      "Barefoot"
+      "Cuba",
+      "Spain",
+      "Brazil",
+      "Argentina"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Flamenco from؟",
+    "q": "Which country does flamenco come from؟",
     "o": [
       "Spain",
-      "Dubai",
+      "Cuba",
       "Italy",
-      "Japan"
+      "Mexico"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Tango strongly linked to؟",
+    "q": "The tango is most strongly linked to which country؟",
     "o": [
       "Argentina",
       "New York",
-      "Canada",
-      "Cuba/Caribbean"
+      "The Levant",
+      "Brazil"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Hip-hop dance culture began in؟",
+    "q": "In which city did hip-hop dance culture begin؟",
     "o": [
+      "New York",
       "Argentina",
-      "Barefoot",
-      "Levant",
-      "New York"
+      "Chicago",
+      "The Levant"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Dabke associated with؟",
+    "q": "The dabke folk dance is associated with which region؟",
     "o": [
-      "Levant",
-      "Brazil",
-      "Spain",
-      "Argentina"
+      "The Levant",
+      "Argentina",
+      "New York",
+      "Pointe shoes"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Classical ballet shoes؟",
+    "q": "What special shoes do classical ballet dancers use to dance on their toes؟",
     "o": [
       "Pointe shoes",
-      "Cuba/Caribbean",
-      "Argentina",
-      "Barefoot"
+      "Tap shoes",
+      "The Levant",
+      "Argentina"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Samba parades famous in؟",
+    "q": "In which city are the world's most famous samba parades held؟",
     "o": [
-      "Dubai",
-      "Oslo",
-      "Spain",
-      "Rio"
+      "Buenos Aires",
+      "Lisbon",
+      "Havana",
+      "Rio de Janeiro"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   }
 ]

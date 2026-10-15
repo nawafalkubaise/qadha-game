@@ -1,192 +1,211 @@
 [
   {
-    "q": "Largest desert؟",
+    "q": "What is the largest desert in the world, including polar deserts؟",
     "o": [
       "Antarctica",
       "Brasília",
       "Canberra",
-      "Antarctic"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Capital of Australia؟",
-    "o": [
-      "Canberra",
-      "Antarctic",
-      "Antarctica",
-      "Brasília"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Smallest country؟",
-    "o": [
-      "Vatican City",
-      "Antarctica",
-      "Liechtenstein",
-      "Mariana Trench"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Amazon River continent؟",
-    "o": [
-      "South America",
-      "Mariana Trench",
-      "N. America",
-      "Nepal-China"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Everest borders؟",
-    "o": [
-      "Nepal-China",
-      "Antarctic",
-      "Antarctica",
       "Greenland"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Longest river؟",
+    "q": "What is the capital of Australia؟",
     "o": [
-      "Nile",
-      "Andes",
-      "India",
-      "Lake"
+      "Canberra",
+      "Antarctica",
+      "Brasília",
+      "Greenland"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Most populated country؟",
-    "o": [
-      "India",
-      "Alps",
-      "Andes",
-      "Ankara"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Capital of Canada؟",
-    "o": [
-      "Ottawa",
-      "Andes",
-      "Ankara",
-      "Antalya"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Deepest ocean point؟",
-    "o": [
-      "Mariana Trench",
-      "Philippine Trench",
-      "Tonga Trench",
-      "South America"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Largest country by area؟",
-    "o": [
-      "Russia",
-      "Andes",
-      "Ankara",
-      "Antalya"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Capital of Brazil؟",
+    "q": "What is the smallest country in the world؟",
     "o": [
       "Antarctica",
-      "Canberra",
-      "Brasília",
-      "Antarctic"
+      "Liechtenstein",
+      "San Marino",
+      "Vatican City"
     ],
-    "a": 2
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Dead Sea borders؟",
+    "q": "On which continent is the Amazon River؟",
     "o": [
-      "Turkey and Syria",
-      "Egypt and Libya",
-      "Iran and Iraq",
-      "Jordan and Palestine"
+      "South America",
+      "North America",
+      "Vatican City",
+      "Antarctica"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Longest mountain range؟",
+    "q": "Mount Everest lies on the border of which two countries؟",
     "o": [
-      "Alps",
+      "Bhutan and China",
+      "Nepal and India",
+      "India and Pakistan",
+      "Nepal and China"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Which river is traditionally considered the longest in the world؟",
+    "o": [
+      "Nile",
+      "India",
+      "Lake",
+      "Tokyo"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "As of 2026, which is the world's most populous country؟",
+    "o": [
+      "India",
       "Ankara",
       "China",
-      "Andes"
+      "Jordan"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Capital of Turkey؟",
+    "q": "What is the capital of Canada؟",
     "o": [
+      "Ottawa",
       "Ankara",
-      "Andes",
-      "Antalya",
+      "India",
+      "Jordan"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the deepest point in the ocean؟",
+    "o": [
+      "The Java Trench",
+      "The Puerto Rico Trench",
+      "The Tonga Trench",
+      "The Mariana Trench"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "What is the largest country by area؟",
+    "o": [
+      "Russia",
+      "Ankara",
+      "Canada",
+      "China"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the capital of Brazil؟",
+    "o": [
+      "Brasília",
+      "Antarctica",
+      "Canberra",
+      "Greenland"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which country borders the Dead Sea to the east؟",
+    "o": [
+      "Jordan",
+      "Ankara",
+      "Egypt",
       "India"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Largest island؟",
+    "q": "What is the longest continental mountain range in the world؟",
     "o": [
-      "Greenland",
-      "Antarctic",
+      "The Andes",
+      "The Alps",
       "Antarctica",
       "Brasília"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Continent with no permanent residents؟",
+    "q": "What is the capital of Turkey؟",
     "o": [
-      "Antarctic",
+      "Ankara",
+      "Antalya",
+      "India",
+      "Izmir"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the largest island in the world؟",
+    "o": [
+      "Greenland",
+      "Antarctica",
+      "Brasília",
+      "Canberra"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which continent has no permanent residents؟",
+    "o": [
+      "Antarctica",
       "Australia",
       "Brasília",
-      "Antarctica"
+      "Canberra"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Caspian Sea is the world's largest؟",
+    "q": "The Caspian Sea is the world's largest what؟",
     "o": [
       "Lake",
-      "Andes",
       "Gulf",
-      "India"
+      "India",
+      "Nile"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Capital of Japan؟",
+    "q": "What is the capital of Japan؟",
     "o": [
-      "Tokyo",
-      "Alps",
-      "Andes",
-      "Ankara"
+      "Ankara",
+      "India",
+      "Jordan",
+      "Tokyo"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Strait of Hormuz connects؟",
+    "q": "Which two bodies of water does the Strait of Hormuz connect؟",
     "o": [
-      "Persian Gulf and Gulf of Oman",
-      "Red Sea and Mediterranean",
-      "Black Sea and Mediterranean",
-      "North Sea and Baltic"
+      "The Persian Gulf and the Gulf of Oman",
+      "The Black Sea and the Mediterranean",
+      "The Red Sea and the Mediterranean",
+      "The North Sea and the Baltic"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

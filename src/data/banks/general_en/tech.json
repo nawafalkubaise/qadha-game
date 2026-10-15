@@ -1,202 +1,222 @@
 [
   {
-    "q": "Apple co-founder؟",
+    "q": "Who co-founded Apple؟",
     "o": [
+      "Steve Jobs",
       "Anthropic",
-      "Microsoft",
-      "Radio waves",
-      "Steve Jobs"
+      "Bill Gates",
+      "ByteDance"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "First iPhone year؟",
+    "q": "In which year was the first iPhone released؟",
     "o": [
       "2007",
       "1991",
-      "2006",
-      "2008"
+      "2005",
+      "2006"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Android creator؟",
+    "q": "Which company develops the Android operating system؟",
     "o": [
-      "Google",
-      "Bezos",
       "Fortran",
-      "OpenAI"
+      "Google",
+      "Apple",
+      "Denmark"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Amazon founder؟",
+    "q": "Who founded Amazon؟",
     "o": [
-      "Bezos",
-      "-273°C",
-      "Gates",
-      "Google"
+      "Jeff Bezos",
+      "Anthropic",
+      "Bill Gates",
+      "ByteDance"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "WWW stands for؟",
+    "q": "What does WWW stand for؟",
     "o": [
       "World Wide Web",
       "Web World Wide",
       "Wide World Web",
-      "Adding material layer by layer"
+      "World Web Wide"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Python is a؟",
+    "q": "What is Python in computing؟",
     "o": [
-      "Programming language",
-      "ByteDance (Chinese)",
-      "embedded database",
-      "Anthropic"
+      "An operating system",
+      "A database system",
+      "Cryptocurrencies like Bitcoin",
+      "A programming language"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Tesla CEO؟",
+    "q": "Who is the CEO of Tesla؟",
     "o": [
-      "Musk",
-      "Bezos",
-      "Cook",
-      "Gates"
+      "Elon Musk",
+      "Anthropic",
+      "ByteDance",
+      "Jeff Bezos"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "ChatGPT made by؟",
+    "q": "Which company created ChatGPT؟",
     "o": [
       "OpenAI",
-      "Bezos",
+      "Denmark",
       "Fortran",
       "Google"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Facebook founder؟",
+    "q": "Who founded Facebook؟",
     "o": [
-      "Zuckerberg",
+      "Kevin Systrom",
       "Anthropic",
-      "Microsoft",
-      "Radio waves"
+      "ByteDance",
+      "Mark Zuckerberg"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Bluetooth named after a king from؟",
+    "q": "Bluetooth is named after a king of which country؟",
     "o": [
-      "Denmark (Harald Bluetooth)",
-      "Adding material layer by layer",
-      "Cryptocurrencies like Bitcoin",
-      "SpaceX and co-founded Tesla"
+      "Fortran",
+      "Google",
+      "Denmark",
+      "Finland"
     ],
-    "a": 0
+    "a": 2,
+    "d": 3
   },
   {
-    "q": "Windows OS made by؟",
+    "q": "Which company makes the Windows operating system؟",
     "o": [
       "Microsoft",
       "Anthropic",
-      "Radio waves",
-      "Steve Jobs"
+      "ByteDance",
+      "Elon Musk"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "First website created in؟",
+    "q": "In which year did the first website go online؟",
     "o": [
       "1991",
       "1985",
       "1995",
-      "2000"
+      "1998"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "TikTok is owned by؟",
+    "q": "Which company owns TikTok؟",
     "o": [
-      "embedded database",
-      "Programming language",
+      "ByteDance",
       "Anthropic",
-      "ByteDance (Chinese)"
+      "Elon Musk",
+      "Jeff Bezos"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Cloud computing means؟",
+    "q": "What does cloud computing mean؟",
     "o": [
-      "Storing and processing data online",
-      "Adding material layer by layer",
-      "Cryptocurrencies like Bitcoin",
-      "SpaceX and co-founded Tesla"
+      "Forecasting the weather with computers",
+      "Storing and processing data over the internet",
+      "Storing data only on a local hard drive",
+      "Charging devices wirelessly"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Blockchain underpins؟",
+    "q": "Blockchain technology underpins which of these؟",
     "o": [
-      "Denmark (Harald Bluetooth)",
-      "SpaceX and co-founded Tesla",
+      "Wi-Fi networks",
+      "Email delivery",
       "Cryptocurrencies like Bitcoin",
-      "Adding material layer by layer"
+      "GPS navigation"
     ],
-    "a": 2
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Elon Musk founded؟",
+    "q": "Which space company did Elon Musk found؟",
     "o": [
-      "Cryptocurrencies like Bitcoin",
-      "Denmark (Harald Bluetooth)",
-      "SpaceX and co-founded Tesla",
-      "Adding material layer by layer"
+      "SpaceX",
+      "Denmark",
+      "Fortran",
+      "Google"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Wi-Fi uses؟",
+    "q": "What does Wi-Fi use to transmit data؟",
     "o": [
       "Radio waves",
       "Sound waves",
       "Anthropic",
-      "Microsoft"
+      "ByteDance"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "First high-level programming language؟",
+    "q": "What was the first widely used high-level programming language؟",
     "o": [
+      "Fortran",
+      "Denmark",
       "Google",
-      "OpenAI",
-      "Python",
-      "Fortran"
+      "OpenAI"
     ],
-    "a": 3
+    "a": 0,
+    "d": 3
   },
   {
-    "q": "3D printers create objects by؟",
+    "q": "How do 3D printers create objects؟",
     "o": [
-      "Adding material layer by layer",
-      "Cryptocurrencies like Bitcoin",
-      "Denmark (Harald Bluetooth)",
-      "SpaceX and co-founded Tesla"
+      "By carving a solid block",
+      "By pouring material into molds",
+      "By adding material layer by layer",
+      "By pressing sheet metal"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Claude AI assistant is made by؟",
+    "q": "Which company makes the Claude AI assistant؟",
     "o": [
       "Anthropic",
-      "Microsoft",
-      "Radio waves",
-      "Steve Jobs"
+      "ByteDance",
+      "Elon Musk",
+      "Jeff Bezos"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

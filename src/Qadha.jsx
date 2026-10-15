@@ -1,7 +1,6 @@
 import { useState, useEffect, useCallback, useRef, useMemo, Fragment } from "react";
-import { KW_MERGED as KW } from "./data/kwBank.js";
-import { loadGeneralArBank, loadGeneralEnBank } from "./data/banksLoader.js";
-import { GCC_BANKS, GCC_COUNTRY_IDS } from "./data/gccBanks.js";
+import { loadKwMergedBank } from "./data/kwBank.js";
+import { loadBankForCountry } from "./data/banksLoader.js";
 import { FALLBACK_AR, FALLBACK_EN } from "./triviaFallbacks.js";
 import {
   loadCache,
@@ -159,36 +158,55 @@ function groupCatsForUi(catList){
 /* ═══════ 🇰🇼 KUWAIT QUESTIONS (60 cats × 8 each) ═══════ */
 
 /* ═══════ 🌍 GENERAL KNOWLEDGE QUESTIONS ═══════ */
-const GEN_AR = loadGeneralArBank();
-const GEN = loadGeneralEnBank();
-const fillMissing = (bank, isAr) => {
+/** لوحة واحدة تستهلك ٦ أسئلة لكل فئة */
+const MIN_QS_PER_CAT = 12;
+const fillMissing = async (bank, isAr, cid) => {
   const fb = isAr ? FALLBACK_AR : FALLBACK_EN;
-  CATS.forEach(cat => {
+  const genId = isAr ? "general_ar" : "general_en";
+  let gen = null;
+  for (const cat of CATS) {
     if (!bank[cat.id] || bank[cat.id].length === 0) {
       if (fb[cat.id]) { bank[cat.id] = fb[cat.id]; }
-      else if (isAr && GEN_AR[cat.id]) { bank[cat.id] = GEN_AR[cat.id]; }
-      else if (!isAr && GEN[cat.id]) { bank[cat.id] = GEN[cat.id]; }
       else {
-        bank[cat.id] = Array.from({length:20}, (_,i) => {
-          const a = Math.floor(Math.random()*4);
-          return {
-            q: isAr ? `أي خيار هو الأدق ضمن سياق ${cat.ar}؟ (${i+1})` : `Which option is most precise in ${cat.n}? (${i+1})`,
-            o: isAr
-              ? [`${cat.ar} - خيار دقيق`,`${cat.ar} - خيار قريب`,`${cat.ar} - خيار مشابه`,`${cat.ar} - خيار ملتبس`]
-              : [`${cat.n} - precise option`,`${cat.n} - near option`,`${cat.n} - similar option`,`${cat.n} - tricky option`],
-            a
-          };
-        });
+        /* البنك العام يُجلب فقط إذا ظهر نقص فعلي */
+        if (gen === null) gen = cid === genId ? bank : await loadBankForCountry(genId);
+        if (gen[cat.id]) { bank[cat.id] = gen[cat.id]; }
+        else {
+          bank[cat.id] = Array.from({length:20}, (_,i) => {
+            const a = Math.floor(Math.random()*4);
+            return {
+              q: isAr ? `أي خيار هو الأدق ضمن سياق ${cat.ar}؟ (${i+1})` : `Which option is most precise in ${cat.n}? (${i+1})`,
+              o: isAr
+                ? [`${cat.ar} - خيار دقيق`,`${cat.ar} - خيار قريب`,`${cat.ar} - خيار مشابه`,`${cat.ar} - خيار ملتبس`]
+                : [`${cat.n} - precise option`,`${cat.n} - near option`,`${cat.n} - similar option`,`${cat.n} - tricky option`],
+              a
+            };
+          });
+        }
       }
+    } else if (bank[cat.id].length < MIN_QS_PER_CAT && cid !== genId) {
+      /* فئة شحيحة (أقل من لوحتين): نكمّلها من البنك العام بدل تكرار نفس الأسئلة */
+      if (gen === null) gen = await loadBankForCountry(genId);
+      const have = new Set(bank[cat.id].map(qHash));
+      const extra = (gen[cat.id] || []).filter((q) => !have.has(qHash(q)));
+      if (extra.length) bank[cat.id] = [...bank[cat.id], ...extra];
     }
-  });
+  }
 };
-fillMissing(KW, true);
-fillMissing(GEN_AR, true);
-fillMissing(GEN, false);
-GCC_COUNTRY_IDS.forEach((id) => {
-  fillMissing(GCC_BANKS[id], true);
-});
+
+/** بنك الدولة يُحمَّل عند الطلب (chunk مستقل)، ويُملأ نقصه مرة واحدة. */
+const countryBanks = new Map();
+function getCountryBank(cid) {
+  if (countryBanks.has(cid)) return countryBanks.get(cid);
+  const p = (async () => {
+    const bank = cid === "kw" ? await loadKwMergedBank() : await loadBankForCountry(cid);
+    await fillMissing(bank, cid !== "general_en", cid);
+    return bank;
+  })();
+  p.catch(() => countryBanks.delete(cid));
+  countryBanks.set(cid, p);
+  return p;
+}
 
 /* ═══════ UTILS ═══════ */
 const shuf=a=>{const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]]}return b};
@@ -625,6 +643,13 @@ function hardenTierDistractors(tiers){
       if(!q||!Array.isArray(q.o)||q.o.length!==4||!Number.isInteger(q.a))return q;
       const correct=q.o[q.a];
       const ownWrong=q.o.filter((_,i)=>i!==q.a);
+      /* المشتتات المحفوظة مُراجَعة يدوياً — لا نستبدلها إلا إذا كانت معطوبة (فارغة/مكررة/تساوي الصحيح) */
+      const okWrong=[];
+      for(const w of ownWrong){
+        const n=normAnswerText(w);
+        if(n&&n!==normAnswerText(correct)&&!okWrong.some(x=>normAnswerText(x)===n))okWrong.push(w);
+      }
+      if(okWrong.length===3)return q;
       const smart=smartDistractorsFor(q.q,correct).filter(x=>normAnswerText(x)!==normAnswerText(correct));
       const sameKindPool=answerPool.filter(x=>answerKind(x)===answerKind(correct)&&normAnswerText(x)!==normAnswerText(correct));
       const sameScriptPool=sameKindPool.filter(x=>isArabicText(x)===isArabicText(correct));
@@ -639,10 +664,10 @@ function hardenTierDistractors(tiers){
         .map(c=>({c,s:scoreDistractorFit(correct,c)}))
         .sort((x,y)=>y.s-x.s)
         .map(x=>x.c);
-      const chosen=[...new Set([...smart,...rankedPreferred,...rankedBroad])].slice(0,3);
-      for(const old of ownWrong){
+      const chosen=[...okWrong];
+      for(const c of [...smart,...rankedPreferred,...rankedBroad]){
         if(chosen.length>=3)break;
-        if(normAnswerText(old)!==normAnswerText(correct)&&!chosen.some(x=>normAnswerText(x)===normAnswerText(old)))chosen.push(old);
+        if(!chosen.some(x=>normAnswerText(x)===normAnswerText(c)))chosen.push(c);
       }
       while(chosen.length<3){
         const f=ownWrong.find(x=>!chosen.some(y=>normAnswerText(y)===normAnswerText(x)))||correct;
@@ -762,7 +787,8 @@ async function bulkDownload(country,onProgress){
   return getCacheCount();
 }
 
-function getQuestions(cats,cid,apiResult,remoteOverlay={}){
+async function getQuestions(cats,cid,apiResult,remoteOverlay={}){
+  const bank=await getCountryBank(cid);
   const cache=loadCache();
   const seen=loadSeen();
   const result={};
@@ -774,15 +800,7 @@ function getQuestions(cats,cid,apiResult,remoteOverlay={}){
     if(ov&&Array.isArray(ov))allQs=allQs.concat(ov);
     const cacheKey=`${cid}_${c.id}`;
     if(cache[cacheKey])allQs=allQs.concat(cache[cacheKey]);
-    if(cid==="kw"){
-      if(KW[c.id])allQs=allQs.concat(KW[c.id]);
-    }else if(GCC_BANKS[cid]?.[c.id]){
-      allQs=allQs.concat(GCC_BANKS[cid][c.id]);
-    }else if(cid==="general_ar"){
-      if(GEN_AR[c.id])allQs=allQs.concat(GEN_AR[c.id]);
-    }else if(cid==="general_en"){
-      if(GEN[c.id])allQs=allQs.concat(GEN[c.id]);
-    }
+    if(bank[c.id])allQs=allQs.concat(bank[c.id]);
     
     const unique={};
     // آخر نسخة هي التي تفوز (حتى لا تبقى خيارات قديمة سيئة من الكاش)
@@ -848,6 +866,17 @@ export default function Qadha(){
   const[openCatGroupIdx,setOpenCatGroupIdx]=useState(0);
   const[remoteOverlay,setRemoteOverlay]=useState(()=>readCachedOverlayMeta().overlay);
   const matchQHashesRef=useRef(new Map());
+  /** جولة الانتقام مرة واحدة لكل لاعب في المباراة */
+  const revengeUsedRef=useRef([false,false]);
+  /* أونلاين: أسماء اللاعبين ورهان «مضاعفة» كما يرسلها المضيف، وإشارة إعادة ضبط العدّاد */
+  const[guestNames,setGuestNames]=useState(null);
+  const[guestDd,setGuestDd]=useState(null);
+  const[timerSync,setTimerSync]=useState({v:0,seq:0});
+  const guestTimerSeqRef=useRef(-1);
+  const guestQKeyRef=useRef("");
+  const timerPrevRef=useRef({t:0,q:null,a:1});
+  /** المضيف ينفّذ أفعال الضيف (اختيار خلية/إجابة/وسائل مساعدة) — يُحدَّث كل رسم */
+  const guestActRef=useRef(null);
   const nextSetupBtnRef=useRef(null);
   const scRef=useRef(sc);
   const micStreamRef=useRef(null);
@@ -931,6 +960,7 @@ export default function Qadha(){
         setTimeout(()=>setEmojiFloats(p=>p.slice(1)),2200);
         return;
       }
+      if(msg.type==="guestAct"){if(from!=="host")guestActRef.current?.(msg);return}
       if(msg.type!=="chat")return;
       const txt=String(msg.text||"").trim();
       if(!txt)return;
@@ -1066,7 +1096,12 @@ export default function Qadha(){
         const prev=data.gameState&&typeof data.gameState==="object"?data.gameState:{};
         const safeQ=curQ?{q:curQ.q,o:curQ.o,d:curQ.d,img:curQ.img}:null;
         const gameState={...prev,phase:sc,scores,used,active,curPts,curQ:sc==="question"?safeQ:null,
-          answerReveal:(answered&&revealed&&curQAnswerRef.current!=null)?{correctIdx:curQAnswerRef.current,selA}:null};
+          answerReveal:(answered&&revealed&&curQAnswerRef.current!=null)?{correctIdx:curQAnswerRef.current,selA}:null,
+          /* ما يحتاجه الضيف ليلعب دوره من جهازه (المضيف هو المرجع لكل القواعد) */
+          answered,revealed,selA,firstWrong,hiddenOpts,hard,stealing:bRef.current,names:mode==="1v1"?[p1||`${tx.player} 1`,p2||`${tx.player} 2`]:[t1||`${tx.team} 1`,t2||`${tx.team} 2`],timerSync,
+          powers:{usedFifty,usedExt,usedSwitch,usedDouble},
+          ddWager:ddWager?{ri:ddWager.ri,maxWager:ddWager.maxWager}:null,
+          blinds:[...blindCells],mysteries:[...mysteryCells.keys()]};
         for(let _retry=0;_retry<3;_retry++){
           try{const d=_retry===0?data:await getRoom(code);if(cancelled)return;await putRoomState(code,token,{clientRev:d.rev,gameState});break}catch(e){
             const m=String(e.message||e);
@@ -1076,22 +1111,38 @@ export default function Qadha(){
       }catch{/* ignore */}
     })()},200);
     return()=>{cancelled=true;clearTimeout(t)};
-  },[sc,isOnlineHost,onlineSession?.code,onlineSession?.hostToken,scores,used,active,curQ,curPts,answered,revealed,selA]);
+  },[sc,isOnlineHost,onlineSession?.code,onlineSession?.hostToken,scores,used,active,curQ,curPts,answered,revealed,selA,firstWrong,hiddenOpts,hard,timerSync,usedFifty,usedExt,usedSwitch,usedDouble,ddWager,blindCells,mysteryCells,mode,p1,p2,t1,t2,tx]);
 
   /* ═══ Online guest: receive game state updates ═══ */
   useEffect(()=>{
-    if(!onlineSession||isOnlineHost||(sc!=="grid"&&sc!=="question"&&sc!=="results"))return;
+    if(!onlineSession||isOnlineHost||(sc!=="setup"&&sc!=="grid"&&sc!=="question"&&sc!=="results"))return;
     const gs=liveRoom.room?.gameState;
     if(!gs||typeof gs!=="object")return;
+    const inGame=gs.phase==="grid"||gs.phase==="question"||gs.phase==="results";
+    if(sc==="setup"&&!inGame)return;
     if(Array.isArray(gs.scores))setScores(gs.scores);
     if(gs.used&&typeof gs.used==="object")setUsed(gs.used);
     if(typeof gs.active==="number")setActive(gs.active);
-    if(gs.phase==="grid"&&scRef.current==="question"){setRevealed(false);setAnswered(false);go("grid")}
-    if(gs.phase==="question"&&gs.curQ&&scRef.current==="grid"){setCurQ(gs.curQ);setCurPts(gs.curPts||200);setAnswered(false);setRevealed(false);go("question")}
-    if(gs.answerReveal&&gs.answerReveal.correctIdx!=null){
-      setCurQ(prev=>prev?{...prev,a:gs.answerReveal.correctIdx}:prev);
-      if(gs.answerReveal.selA!=null)setSelA(gs.answerReveal.selA);
-      setRevealed(true);setAnswered(true);
+    if(typeof gs.curPts==="number")setCurPts(gs.curPts);
+    if(Array.isArray(gs.names))setGuestNames(gs.names);
+    if(typeof gs.hard==="boolean")setHard(gs.hard);
+    if(gs.powers){setUsedFifty(!!gs.powers.usedFifty);setUsedExt(!!gs.powers.usedExt);setUsedSwitch(!!gs.powers.usedSwitch);setUsedDouble(!!gs.powers.usedDouble)}
+    setGuestDd(gs.ddWager||null);
+    if(Array.isArray(gs.blinds))setBlindCells(new Set(gs.blinds));
+    if(Array.isArray(gs.mysteries))setMysteryCells(new Map(gs.mysteries.map(k=>[k,"?"])));
+    bRef.current=!!gs.stealing;
+    if(gs.timerSync&&gs.timerSync.seq!==guestTimerSeqRef.current){guestTimerSeqRef.current=gs.timerSync.seq;setTimer(gs.timerSync.v)}
+    if(gs.phase==="grid"&&scRef.current!=="grid"){guestQKeyRef.current="";setRevealed(false);setAnswered(false);go("grid");return}
+    if(gs.phase==="question"&&gs.curQ){
+      const key=gs.curQ.q+"|"+(gs.curQ.o||[]).join("|");
+      if(key!==guestQKeyRef.current){guestQKeyRef.current=key;setCurQ(gs.curQ);curQAnswerRef.current=null}
+      if(scRef.current!=="question")go("question");
+      setAnswered(!!gs.answered);setRevealed(!!gs.revealed);setSelA(gs.selA??null);setFirstWrong(gs.firstWrong??null);
+      setHiddenOpts(Array.isArray(gs.hiddenOpts)?gs.hiddenOpts:[]);
+      if(gs.answerReveal&&gs.answerReveal.correctIdx!=null){
+        curQAnswerRef.current=gs.answerReveal.correctIdx;
+        setCurQ(prev=>prev?{...prev,a:gs.answerReveal.correctIdx}:prev);
+      }
     }
     if(gs.phase==="results"&&scRef.current!=="results")go("results");
   },[onlineSession,isOnlineHost,sc,liveRoom.room,go]);
@@ -1099,6 +1150,11 @@ export default function Qadha(){
   useEffect(()=>{if(sc==="splash"){const t=setTimeout(()=>go("menu"),2800);return()=>clearTimeout(t)}},[sc,go]);
 
   useEffect(()=>{
+    if(sc==="question"&&!answered&&curQ&&isOnlineGuest){
+      /* الضيف يعرض العدّاد فقط — المضيف يقرّر انتهاء الوقت */
+      const iv=setInterval(()=>setTimer(p=>Math.max(0,p-1)),1000);
+      return()=>clearInterval(iv);
+    }
     if(sc==="question"&&!answered&&curQ){
       tRef.current=setInterval(()=>{setTimer(p=>{
         if(p<=0)return 0;
@@ -1110,7 +1166,14 @@ export default function Qadha(){
         return p-1})},1000);
       return()=>{clearInterval(tRef.current);tRef.current=null;sfx.stop()};
     }
-  },[sc,curQ,answered,go]);
+  },[sc,curQ,answered,go,isOnlineGuest]);
+
+  /* المضيف: كل قفزة للعدّاد للأعلى أو سؤال/دور جديد = إعادة ضبط تُرسل للضيف */
+  useEffect(()=>{
+    const pr=timerPrevRef.current;
+    if(isOnlineHost&&(timer>pr.t||curQ!==pr.q||active!==pr.a))setTimerSync(s0=>({v:timer,seq:s0.seq+1}));
+    timerPrevRef.current={t:timer,q:curQ,a:active};
+  },[timer,curQ,active,isOnlineHost]);
 
   const doAns=idx=>{
     if(answered)return;clearInterval(tRef.current);tRef.current=null;sfx.stop();setAnswered(true);setSelA(idx);
@@ -1130,7 +1193,7 @@ export default function Qadha(){
       }
       setTimeout(()=>{bRef.current=false;setRevealed(false);setFirstWrong(null);setSpeedBonus(null);go("grid")},1800);
     }else{
-      if(doubleChanceActive){setDoubleChanceActive(false);sfx.wrong();setCurPts(p=>Math.round(p/2));setTimeout(()=>{setAnswered(false);setSelA(null)},1000);return}
+      if(doubleChanceActive){setDoubleChanceActive(false);sfx.wrong();setCurPts(p=>Math.round(p/2));setTimeout(()=>{setHiddenOpts(h=>[...h,idx]);setAnswered(false);setSelA(null)},1000);return}
       setStreaks(p=>{const n=[...p];n[active-1]=0;return n});setSpeedBonus(null);
       if(isDailyDoubleRef.current){
         sfx.wrong();setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-curPts);return n});
@@ -1152,42 +1215,8 @@ export default function Qadha(){
     }
   };
 
-  const openDdQuestion=(wagerAmount)=>{
-    if(!ddWager)return;
-    const{ci,ri,cellKey}=ddWager;
-    setUsed(p=>({...p,[cellKey]:true}));
-    const catId=selCats[ci].id;const tier=rowTierFromRi(ri);
-    const isP2Online=onlineSession&&active===2;
-    const activeBankForCat=isP2Online?gridQsP2Ref.current[catId]:null;
-    const pack=activeBankForCat||qBank[catId];
-    let qs=[];
-    if(pack&&typeof pack==="object"&&!Array.isArray(pack)&&Array.isArray(pack.easy)){qs=pack[tier]||[];if(!qs.length)qs=[...(pack.easy||[]),...(pack.mid||[]),...(pack.hard||[])]}else if(Array.isArray(pack))qs=pack;
-    if(qs.length>0){const pi=Math.floor(Math.random()*qs.length);const shuffled=shufQ(qs[pi]);curQAnswerRef.current=shuffled.a;setCurQ(shuffled)}else{const fb={q:"?",o:["A","B","C","D"],a:0};curQAnswerRef.current=0;setCurQ(fb)}
-    lastCellRef.current={ci,ri};stealTimerRef.current=PTS_TIMER[ri]??45;questionStartRef.current=Date.now();
-    isDailyDoubleRef.current=true;setCurPts(wagerAmount);setDdWager(null);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
-  };
-  const openQ=(ci,ri)=>{
-    const k=`${ci}-${ri}`;if(used[k])return;
-    if(blockedCatIdx===ci){sfx.wrong();return}
-    sfx.click();
-    if(mysteryCells.has(k)){
-      const type=mysteryCells.get(k);
-      setMysteryCells(prev=>{const m=new Map(prev);m.delete(k);return m});
-      sfx.coin();
-      const labels={double:"نقاط مضاعفة! x2",freeSteal:"سرقة مجانية! 🔓",skipTurn:"تخطي دور الخصم! ⏭️",timeThief:"سرقة وقت! ⏰",bonusPts:"+200 نقطة هدية! 🎁"};
-      setMysteryPopup({type,label:labels[type]||"مفاجأة!"});
-      setTimeout(()=>setMysteryPopup(null),2200);
-      if(type==="double"){setCurPts(p=>p*2)}
-      if(type==="freeSteal"){setFreeStealActive(true)}
-      if(type==="skipTurn"){setSkipTurnActive(true)}
-      if(type==="timeThief"){setUsedTimeThief(true)}
-      if(type==="bonusPts"){setScores(p=>{const n=[...p];n[active-1]+=200;return n})}
-    }
-    if(dailyDoubles.has(k)){sfx.dailyDouble();setDdWager({cellKey:k,ci,ri,maxWager:Math.max(100,scores[active-1]||100)});return}
-    isDailyDoubleRef.current=false;
-    setUsed(p=>({...p,[k]:true}));
-    const catId=selCats[ci].id;
-    const tier=rowTierFromRi(ri);
+  /** يسحب سؤالاً لم يُعرض في هذه المباراة (إن أمكن) من فئة/مستوى ويعيده بخيارات مخلوطة */
+  const drawQ=(catId,tier)=>{
     const isP2Online=onlineSession&&active===2;
     const activeBankForCat=isP2Online?gridQsP2Ref.current[catId]:null;
     const pack=activeBankForCat||qBank[catId];
@@ -1196,40 +1225,75 @@ export default function Qadha(){
       qs=pack[tier]||[];
       if(!qs.length)qs=[...(pack.easy||[]),...(pack.mid||[]),...(pack.hard||[])];
     }else if(Array.isArray(pack))qs=pack;
-    if(qs.length>0){
-      const prev=usedQI[catId]||{easy:[],mid:[],hard:[]};
-      const usedArr=Array.isArray(prev[tier])?prev[tier]:[];
-      const us=new Set(usedArr);
-      const hFor=i=>qHash(qs[i]);
-      const map=matchQHashesRef.current;
-      let hset=map.get(catId)||new Set();
-      let candidates=qs.map((_,i)=>i).filter(i=>!us.has(i)&&!hset.has(hFor(i)));
-      if(!candidates.length)candidates=qs.map((_,i)=>i).filter(i=>!hset.has(hFor(i)));
-      if(!candidates.length){hset=new Set();map.set(catId,hset);candidates=qs.map((_,i)=>i).filter(i=>!us.has(i));}
-      if(!candidates.length)candidates=qs.map((_,i)=>i);
-      const pi=candidates[Math.floor(Math.random()*candidates.length)];
-      hset.add(hFor(pi));map.set(catId,hset);
-      const nu=new Set(us);nu.add(pi);
-      setUsedQI(p=>{
-        const base={easy:[],mid:[],hard:[]};
-        const cur={...base,...p[catId]};
-        return{...p,[catId]:{...cur,[tier]:[...nu]}};
-      });
-      const shuffled=shufQ(qs[pi]);
-      curQAnswerRef.current=shuffled.a;
-      setCurQ(shuffled);
-    }else{const fallback={q:"?",o:["A","B","C","D"],a:0};curQAnswerRef.current=0;setCurQ(fallback)}
+    if(!qs.length)return null;
+    const prev=usedQI[catId]||{easy:[],mid:[],hard:[]};
+    const usedArr=Array.isArray(prev[tier])?prev[tier]:[];
+    const us=new Set(usedArr);
+    const hFor=i=>qHash(qs[i]);
+    const map=matchQHashesRef.current;
+    let hset=map.get(catId)||new Set();
+    let candidates=qs.map((_,i)=>i).filter(i=>!us.has(i)&&!hset.has(hFor(i)));
+    if(!candidates.length)candidates=qs.map((_,i)=>i).filter(i=>!hset.has(hFor(i)));
+    if(!candidates.length){hset=new Set();map.set(catId,hset);candidates=qs.map((_,i)=>i).filter(i=>!us.has(i));}
+    if(!candidates.length)candidates=qs.map((_,i)=>i);
+    const pi=candidates[Math.floor(Math.random()*candidates.length)];
+    hset.add(hFor(pi));map.set(catId,hset);
+    const nu=new Set(us);nu.add(pi);
+    setUsedQI(p=>{
+      const base={easy:[],mid:[],hard:[]};
+      const cur={...base,...p[catId]};
+      return{...p,[catId]:{...cur,[tier]:[...nu]}};
+    });
+    return shufQ(qs[pi]);
+  };
+  const showDrawnQ=q=>{
+    const shown=q||{q:"?",o:["A","B","C","D"],a:0};
+    curQAnswerRef.current=shown.a;setCurQ(shown);
+  };
+  const openDdQuestion=(wagerAmount)=>{
+    if(!ddWager)return;
+    const{ci,ri,cellKey}=ddWager;
+    setUsed(p=>({...p,[cellKey]:true}));
+    showDrawnQ(drawQ(selCats[ci].id,rowTierFromRi(ri)));
+    lastCellRef.current={ci,ri};stealTimerRef.current=PTS_TIMER[ri]??45;questionStartRef.current=Date.now();
+    isDailyDoubleRef.current=true;setCurPts(wagerAmount);setDdWager(null);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
+  };
+  const openQ=(ci,ri)=>{
+    const k=`${ci}-${ri}`;if(used[k])return;
+    if(blockedCatIdx===ci){sfx.wrong();return}
+    sfx.click();
+    /* مفاجآت الصندوق تخص السؤال الذي فُتح معها فقط */
+    setFreeStealActive(false);setSkipTurnActive(false);setUsedTimeThief(false);
+    let ptsMult=1;
+    if(mysteryCells.has(k)){
+      const type=mysteryCells.get(k);
+      setMysteryCells(prev=>{const m=new Map(prev);m.delete(k);return m});
+      sfx.coin();
+      const labels={double:"نقاط مضاعفة! x2",freeSteal:"سرقة مجانية! 🔓",skipTurn:"تخطي دور الخصم! ⏭️",timeThief:"سرقة وقت! ⏰",bonusPts:"+200 نقطة هدية! 🎁"};
+      setMysteryPopup({type,label:labels[type]||"مفاجأة!"});
+      setTimeout(()=>setMysteryPopup(null),2200);
+      if(type==="double"){ptsMult=2}
+      if(type==="freeSteal"){setFreeStealActive(true)}
+      if(type==="skipTurn"){setSkipTurnActive(true)}
+      if(type==="timeThief"){setUsedTimeThief(true)}
+      if(type==="bonusPts"){setScores(p=>{const n=[...p];n[active-1]+=200;return n})}
+    }
+    if(dailyDoubles.has(k)){sfx.dailyDouble();setDdWager({cellKey:k,ci,ri,maxWager:Math.max(100,scores[active-1]||100)});return}
+    isDailyDoubleRef.current=false;
+    setUsed(p=>({...p,[k]:true}));
+    showDrawnQ(drawQ(selCats[ci].id,rowTierFromRi(ri)));
     lastCellRef.current={ci,ri};
     stealTimerRef.current=PTS_TIMER[ri]??45;
     questionStartRef.current=Date.now();
-    setCurPts(PTS[ri]);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
+    setCurPts(PTS[ri]*ptsMult);setAnswered(false);setSelA(null);bRef.current=false;hardCorrectRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(PTS_TIMER[ri]??45);setTypedAns("");setHiddenOpts([]);go("question");
   };
-  const checkTyped=()=>{
-    if(answered||!curQ||!typedAns.trim())return;
+  const checkTyped=(textOverride)=>{
+    const typedText=typeof textOverride==="string"?textOverride:typedAns;
+    if(answered||!curQ||!typedText.trim())return;
     clearInterval(tRef.current);tRef.current=null;sfx.stop();setAnswered(true);
     const correctIdx=curQAnswerRef.current??curQ.a;
     const correct=curQ.o[correctIdx];
-    const typed=typedAns;
+    const typed=typedText;
     const isMatch=isTypedAnswerAccepted(typed,correct);
     if(isMatch){
       hardCorrectRef.current=true;
@@ -1268,26 +1332,45 @@ export default function Qadha(){
     if(usedExt||answered)return;
     sfx.click();setUsedExt(true);setTimer(p=>p+15);
   },[usedExt,answered]);
-  const useSwitch=useCallback(()=>{
+  const useSwitch=()=>{
     if(usedSwitch||answered||!curQ)return;
     sfx.click();setUsedSwitch(true);
     setScores(p=>{const n=[...p];n[active-1]=Math.max(0,n[active-1]-100);return n});
     const ci=lastCellRef.current?.ci;const ri=lastCellRef.current?.ri;
     if(ci!=null&&ri!=null){
-      const catId=selCats[ci].id;const tier=rowTierFromRi(ri);
-      const isP2Online=onlineSession&&active===2;
-      const activeBankForCat=isP2Online?gridQsP2Ref.current[catId]:null;
-      const pack=activeBankForCat||qBank[catId];
-      let qs=[];
-      if(pack&&typeof pack==="object"&&!Array.isArray(pack)&&Array.isArray(pack.easy)){qs=pack[tier]||[];if(!qs.length)qs=[...(pack.easy||[]),...(pack.mid||[]),...(pack.hard||[])]}else if(Array.isArray(pack))qs=pack;
-      if(qs.length>1){const newQ=shufQ(qs[Math.floor(Math.random()*qs.length)]);curQAnswerRef.current=newQ.a;setCurQ(newQ);setTimer(stealTimerRef.current??45);questionStartRef.current=Date.now();setHiddenOpts([])}
+      const newQ=drawQ(selCats[ci].id,rowTierFromRi(ri));
+      if(newQ){showDrawnQ(newQ);setTimer(stealTimerRef.current??45);questionStartRef.current=Date.now();setHiddenOpts([])}
     }
-  },[usedSwitch,answered,curQ,active,selCats,qBank,onlineSession]);
+  };
   const useDoubleChance=useCallback(()=>{
     if(usedDouble||answered||!curQ||hard)return;
     sfx.click();setUsedDouble(true);setDoubleChanceActive(true);
   },[usedDouble,answered,curQ,hard]);
+  /* أونلاين: المضيف = اللاعب ١، الضيف = اللاعب ٢ */
+  const myTurn=!onlineSession||(isOnlineHost?active===1:active===2);
+  const sendGuestAct=m=>{if(liveRoom.connected)liveRoom.sendSignal("host",{type:"guestAct",...m})};
+  const POWERS={fifty:useFiftyFifty,ext:useTimeExt,switch:useSwitch,double:useDoubleChance};
+  useEffect(()=>{
+    guestActRef.current=m=>{
+      if(!isOnlineHost||active!==2||!m)return;
+      const ci=Number(m.ci),ri=Number(m.ri),idx=Number(m.idx);
+      if(m.act==="pick"&&sc==="grid"&&!ddWager&&Number.isInteger(ci)&&Number.isInteger(ri)&&ci>=0&&ci<selCats.length&&ri>=0&&ri<PTS.length)openQ(ci,ri);
+      else if(m.act==="answer"&&sc==="question"&&!hard&&Number.isInteger(idx)&&idx>=0&&idx<4&&!hiddenOpts.includes(idx))doAns(idx);
+      else if(m.act==="typed"&&sc==="question"&&hard)checkTyped(String(m.text||"").slice(0,200));
+      else if(m.act==="power"&&sc==="question"&&POWERS[m.kind])POWERS[m.kind]();
+      else if(m.act==="wager"&&ddWager){const v=Math.round(Number(m.v));if(Number.isFinite(v))openDdQuestion(Math.min(ddWager.maxWager,Math.max(100,v)))}
+    };
+  });
+  /** نقرات اللاعب: الضيف يرسل للمضيف، والمضيف لا يلعب في دور الضيف */
+  const tapCell=(ci,ri)=>{if(isOnlineGuest){if(active===2)sendGuestAct({act:"pick",ci,ri});return}if(myTurn)openQ(ci,ri)};
+  const tapAns=i=>{if(answered||!myTurn)return;if(isOnlineGuest){setAnswered(true);setSelA(i);sendGuestAct({act:"answer",idx:i});return}doAns(i)};
+  const tapTyped=()=>{if(answered||!myTurn||!typedAns.trim())return;if(isOnlineGuest){setAnswered(true);sendGuestAct({act:"typed",text:typedAns});return}checkTyped()};
+  const tapPower=kind=>{if(answered||!myTurn)return;if(isOnlineGuest){sendGuestAct({act:"power",kind});return}POWERS[kind]()};
+  const ddView=isOnlineGuest?(active===2?guestDd:null):(myTurn?ddWager:null);
+  const submitWager=v=>{if(isOnlineGuest)sendGuestAct({act:"wager",v});else openDdQuestion(v)};
   const catsForCountry=useMemo(()=>catsForCountryId(country.id),[country.id]);
+  /* نبدأ جلب حزمة الدولة فور اختيارها حتى تكون جاهزة قبل «ابدأ» */
+  useEffect(()=>{getCountryBank(country.id)},[country.id]);
   const startGame=async()=>{
     const allowed=new Set(catsForCountry.map(c=>c.id));
     const clean=selCats.filter(c=>allowed.has(c.id));
@@ -1295,13 +1378,29 @@ export default function Qadha(){
     if(!matchName.trim()){alert(tx.needMatch);return;}
     if(mode==="1v1"){if(!p1.trim()||!p2.trim()){alert(tx.needPlayers1v1);return;}}
     else{if(!t1.trim()||!t2.trim()){alert(tx.needTeams);return;}}
+    if(!await loadMatchQuestions(clean))return;
+    setTimeout(()=>{setLoading(false);resetMatchState();go("grid")},500);
+  };
+  /** إعادة كل حالة المباراة (بداية جديدة أو «ثاني») */
+  const resetMatchState=()=>{
+    setScores([0,0]);setUsed({});setUsedQI({});setActive(1);setUsedFifty(false);setUsedExt(false);setUsedSwitch(false);setUsedDouble(false);setDoubleChanceActive(false);setHiddenOpts([]);setStreaks([0,0]);setSpeedBonus(null);setDailyDoubles(generateDailyDoubles(8));setDdWager(null);setCatStars({});const bc=generateBlindCells(8);setBlindCells(bc.blinds);setMysteryCells(bc.mysteries);setMysteryPopup(null);setEmojiFloats([]);setRevengeAvail([false,false]);revengeUsedRef.current=[false,false];setUsedTimeThief(false);setUsedCatBlock(false);setBlockedCatIdx(null);setFreeStealActive(false);setSkipTurnActive(false);
+  };
+  /** يحمّل أسئلة الفئات المختارة؛ يعيد false عند الفشل بعد إخفاء شاشة التحميل */
+  const loadMatchQuestions=async(cats)=>{
     sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);
     const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);
-    const r=await genQs(clean,country);clearInterval(pi);setLoadProg(100);
-    const questions=getQuestions(clean,country.id,r,remoteOverlay);
-    setQBank(questions);
-    if(onlineSession){gridQsP2Ref.current=getQuestions(clean,country.id,r,remoteOverlay)}else{gridQsP2Ref.current={}}
-    setTimeout(()=>{setLoading(false);setScores([0,0]);setUsed({});setUsedQI({});setActive(1);setUsedFifty(false);setUsedExt(false);setUsedSwitch(false);setUsedDouble(false);setDoubleChanceActive(false);setHiddenOpts([]);setStreaks([0,0]);setSpeedBonus(null);setDailyDoubles(generateDailyDoubles(8));setDdWager(null);setCatStars({});const bc=generateBlindCells(8);setBlindCells(bc.blinds);setMysteryCells(bc.mysteries);setMysteryPopup(null);setEmojiFloats([]);setRevengeAvail([false,false]);setUsedTimeThief(false);setUsedCatBlock(false);setBlockedCatIdx(null);setFreeStealActive(false);setSkipTurnActive(false);go("grid")},500);
+    try{
+      const r=await genQs(cats,country);
+      const questions=await getQuestions(cats,country.id,r,remoteOverlay);
+      setQBank(questions);
+      gridQsP2Ref.current=onlineSession?await getQuestions(cats,country.id,r,remoteOverlay):{};
+      setLoadProg(100);
+      return true;
+    }catch{
+      setLoading(false);
+      alert("تعذر تحميل الأسئلة. تأكد من الاتصال وحاول مرة ثانية.");
+      return false;
+    }finally{clearInterval(pi)}
   };
 
   const isDone=Object.keys(used).length>=48;
@@ -1311,11 +1410,11 @@ export default function Qadha(){
     const diff=Math.abs(scores[0]-scores[1]);
     if(diff>=500){
       const loser=scores[0]<scores[1]?0:1;
-      setRevengeAvail(p=>{if(p[loser])return p;const n=[...p];n[loser]=true;return n});
+      setRevengeAvail(p=>{if(p[loser]||revengeUsedRef.current[loser])return p;const n=[...p];n[loser]=true;return n});
     }
   },[sc,scores]);
 
-  const tn=n=>mode==="1v1"?(n===1?(p1||`${tx.player} 1`):(p2||`${tx.player} 2`)):(n===1?(t1||`${tx.team} 1`):(t2||`${tx.team} 2`));
+  const tn=n=>(isOnlineGuest&&guestNames)?(guestNames[n-1]||`${tx.player} ${n}`):mode==="1v1"?(n===1?(p1||`${tx.player} 1`):(p2||`${tx.player} 2`)):(n===1?(t1||`${tx.team} 1`):(t2||`${tx.team} 2`));
   const turnLabel=n=>(country.lang==="ar"?`${tn(n)} ${T.ar.turn.trim()}`:`${tn(n)}${T.en.turn}`);
   const stealBanner=`${country.lang==="ar"?T.ar.bounce:T.en.bounce} ${country.lang==="ar"?`${tn(active)} ${T.ar.steal}`:`${tn(active)} ${T.en.steal}`}`;
   const fCats=useMemo(()=>catQ?catsForCountry.filter(c=>c.n.toLowerCase().includes(catQ.toLowerCase())||c.ar.includes(catQ)):catsForCountry,[catQ,catsForCountry]);
@@ -1553,7 +1652,7 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <div style={{marginBottom:14}}><label className="lb">{tx.matchN}</label><input className="inp" value={matchName} onChange={e=>setMatchName(e.target.value)}/></div>
         {mode==="1v1"?<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.player} 1</label><input className="inp" value={p1} onChange={e=>setP1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.player} 2</label><input className="inp" value={p2} onChange={e=>setP2(e.target.value)}/></div></div>:<div style={{display:"flex",gap:10,marginBottom:14}}><div style={{flex:1}}><label className="lb">{tx.team} 1</label><input className="inp" value={t1} onChange={e=>setT1(e.target.value)}/></div><div style={{flex:1}}><label className="lb">{tx.team} 2</label><input className="inp" value={t2} onChange={e=>setT2(e.target.value)}/></div></div>}
         <div style={{marginBottom:18}}><label className="lb">{BI.difficulty}</label><div style={{display:"flex",gap:6,marginTop:6}}><button className={!hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(false)}>{BI.normal}</button><button className={hard?"bg sm":"bs sm"} style={{flex:1}} onClick={()=>setHard(true)}>{BI.hard}</button></div></div>
-        <button className="bg" style={{width:"100%",padding:18,opacity:setupCanGo?1:0.45}} disabled={!setupCanGo} onClick={()=>{startGame()}}>{tx.startM}</button>
+        {isOnlineGuest?<p className="gc" style={{textAlign:"center",fontSize:15,color:th.accent,padding:16}}>بانتظار المضيف يبدأ المباراة… أنت اللاعب الثاني وتجاوب من جهازك.</p>:<button className="bg" style={{width:"100%",padding:18,opacity:setupCanGo?1:0.45}} disabled={!setupCanGo} onClick={()=>{startGame()}}>{tx.startM}</button>}
         <button className="bs" style={{width:"100%",marginTop:10}} onClick={()=>go("cats")}>{tx.back}</button>
       </div></div>}
 
@@ -1646,26 +1745,25 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
                 <span style={{fontSize:9,fontWeight:800,color:th.accent,lineHeight:1.2}}>{ptsTierLabelAr(pts)}</span>
                 <span style={{fontSize:11,fontWeight:900,color:th.gridPts,marginTop:4}}>{pts}</span>
               </div>
-              {selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];const isDD=dailyDoubles.has(k)&&!u;const isBlind=blindCells.has(k)&&!u;const isMystery=mysteryCells.has(k)&&!u;const isBlocked=blockedCatIdx===ci;return(<button key={k} type="button" onClick={()=>!u&&openQ(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:isMystery?`linear-gradient(135deg,#FDE047aa,#F59E0Baa)`:isBlocked?`linear-gradient(135deg,#EF444422,#EF444411)`:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:isBlocked?"#EF444444":cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u||isBlocked?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:isBlocked?.35:1,position:"relative"}}>{u?"✓":isMystery?"🎁":isBlind?"❓":pts}{isDD&&<span style={{position:"absolute",top:2,right:3,fontSize:8,opacity:0.4}}>✦</span>}</button>)})}
+              {selCats.map((cat,ci)=>{const k=`${ci}-${ri}`;const u=used[k];const isDD=dailyDoubles.has(k)&&!u;const isBlind=blindCells.has(k)&&!u;const isMystery=mysteryCells.has(k)&&!u;const isBlocked=blockedCatIdx===ci;return(<button key={k} type="button" onClick={()=>!u&&tapCell(ci,ri)} className={u?"":"gcl"} style={{background:u?th.gridCell:isMystery?`linear-gradient(135deg,#FDE047aa,#F59E0Baa)`:isBlocked?`linear-gradient(135deg,#EF444422,#EF444411)`:`linear-gradient(135deg,${cat.c}12,${cat.c}06)`,border:`1px solid ${u?th.cardBd:isBlocked?"#EF444444":cat.c+"44"}`,borderRadius:12,padding:"15px 5px",cursor:u||isBlocked?"default":"pointer",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(14px,3.4vw,18px)",fontWeight:900,color:u?th.textDim2:th.gridPts,opacity:u?.25:isBlocked?.35:1,position:"relative"}}>{u?"✓":isMystery?"🎁":isBlind?"❓":pts}{isDD&&<span style={{position:"absolute",top:2,right:3,fontSize:8,opacity:0.4}}>✦</span>}</button>)})}
             </Fragment>
           ))}
         </div>
-        {revengeAvail[active-1]&&<div style={{textAlign:"center",marginTop:12}}><button className="bg sm" style={{background:"linear-gradient(135deg,#EF4444,#DC2626)",color:"#fff",padding:"10px 24px",borderRadius:14,fontSize:15,animation:"pl .6s infinite"}} onClick={()=>{
-          setRevengeAvail(p=>{const n=[...p];n[active-1]=false;return n});
+        {revengeAvail[active-1]&&!isOnlineGuest&&myTurn&&<div style={{textAlign:"center",marginTop:12}}><button className="bg sm" style={{background:"linear-gradient(135deg,#EF4444,#DC2626)",color:"#fff",padding:"10px 24px",borderRadius:14,fontSize:15,animation:"pl .6s infinite"}} onClick={()=>{
+          setRevengeAvail(p=>{const n=[...p];n[active-1]=false;return n});revengeUsedRef.current[active-1]=true;
           const randomCat=selCats[Math.floor(Math.random()*selCats.length)];
-          const pack=qBank[randomCat.id];const qs=pack?.hard||[];
-          if(qs.length){const q=shufQ(qs[Math.floor(Math.random()*qs.length)]);curQAnswerRef.current=q.a;setCurQ(q);setCurPts(curPts*3||600);lastCellRef.current=null;stealTimerRef.current=15;questionStartRef.current=Date.now();isDailyDoubleRef.current=false;setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(15);setTypedAns("");setHiddenOpts([]);go("question")}
+          const q=drawQ(randomCat.id,"hard");
+          if(q){showDrawnQ(q);setCurPts(curPts*3||600);lastCellRef.current=null;stealTimerRef.current=15;questionStartRef.current=Date.now();isDailyDoubleRef.current=false;setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(15);setTypedAns("");setHiddenOpts([]);go("question")}
         }}>🔥 جولة الانتقام! x3</button></div>}
         <div style={{display:"flex",justifyContent:"center",gap:8,marginTop:10,flexWrap:"wrap"}}>
           {!onlineSession&&<div style={{display:"flex",gap:4,justifyContent:"center"}}>
             {["😂","😱","👏","🔥","💀"].map(em=><button key={em} type="button" style={{fontSize:18,background:"none",border:"none",cursor:"pointer",padding:"2px 4px"}} onClick={()=>{setEmojiFloats(p=>[...p.slice(-8),{id:Date.now()+Math.random(),emoji:em,x:10+Math.random()*80}]);setTimeout(()=>setEmojiFloats(p=>p.slice(1)),2200)}}>{em}</button>)}
           </div>}
-          {!usedCatBlock&&<button className="bs sm" style={{fontSize:12,padding:"6px 12px",borderRadius:12,color:"#EF4444",borderColor:"#EF444444"}} onClick={()=>{sfx.click();setUsedCatBlock(true);setBlockedCatIdx(active===1?null:null);
-            const opp=active===1?1:0;
+          {!usedCatBlock&&!isOnlineGuest&&<button className="bs sm" style={{fontSize:12,padding:"6px 12px",borderRadius:12,color:"#EF4444",borderColor:"#EF444444"}} onClick={()=>{sfx.click();setUsedCatBlock(true);
             const availCols=selCats.map((_,i)=>i).filter(i=>!Object.keys(used).some(k=>k.startsWith(`${i}-`)));
             if(availCols.length){setBlockedCatIdx(availCols[Math.floor(Math.random()*availCols.length)]);setTimeout(()=>setBlockedCatIdx(null),12000)}
           }}>🚫 حظر فئة</button>}
-          <button className="bs sm" onClick={()=>{sfx.click();wipeQuestionCachesAfterGame();scores[0]>scores[1]?sfx.victory():sfx.defeat();go("results")}}>{tx.end}</button>
+          {!isOnlineGuest&&<button className="bs sm" onClick={()=>{sfx.click();wipeQuestionCachesAfterGame();scores[0]>scores[1]?sfx.victory():sfx.defeat();go("results")}}>{tx.end}</button>}
         </div>
       </div></div>}
 
@@ -1674,13 +1772,13 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
       </div>}
       {emojiFloats.map(e=><span key={e.id} style={{position:"fixed",left:`${e.x}%`,bottom:0,fontSize:32,animation:"floatUp 2s ease-out forwards",pointerEvents:"none",zIndex:1000}}>{e.emoji}</span>)}
       {blockedCatIdx!=null&&<div style={{position:"fixed",top:12,left:"50%",transform:"translateX(-50%)",zIndex:1000,background:"rgba(239,68,68,.9)",color:"#fff",padding:"8px 20px",borderRadius:14,fontSize:14,fontWeight:700}}>🚫 فئة {selCats[blockedCatIdx]?.ar||""} محظورة!</div>}
-      {ddWager&&<div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.7)",display:"flex",alignItems:"center",justifyContent:"center",zIndex:999}} onClick={e=>e.stopPropagation()}>
+      {ddView&&<div style={{position:"fixed",inset:0,background:"rgba(0,0,0,.7)",display:"flex",alignItems:"center",justifyContent:"center",zIndex:999}} onClick={e=>e.stopPropagation()}>
         <div style={{background:th.card,borderRadius:24,padding:"36px 28px",textAlign:"center",maxWidth:380,width:"90%",border:`1px solid ${th.cardBd}`}}>
           <div style={{fontSize:"clamp(28px,6vw,40px)",marginBottom:10}}>مضاعفة! 🎯</div>
           <div style={{fontSize:"clamp(14px,3vw,18px)",color:th.textDim,marginBottom:20}}>اختر مبلغ الرهان</div>
-          <input type="range" min={100} max={ddWager.maxWager} step={50} defaultValue={Math.min(200,ddWager.maxWager)} id="dd-wager-slider" style={{width:"100%",marginBottom:8,accentColor:th.accent}} onChange={e=>{const d=document.getElementById("dd-wager-display");if(d)d.textContent=e.target.value}}/>
-          <div id="dd-wager-display" style={{fontSize:"clamp(24px,5vw,36px)",color:th.gold,marginBottom:20,fontWeight:900}}>{Math.min(200,ddWager.maxWager)}</div>
-          <button onClick={()=>{const v=parseInt(document.getElementById("dd-wager-slider")?.value)||200;openDdQuestion(v)}} style={{padding:"14px 36px",borderRadius:16,background:th.btnBg,color:th.btnText,border:"none",fontSize:"clamp(18px,4vw,24px)",cursor:"pointer",fontWeight:900}}>يلا!</button>
+          <input type="range" min={100} max={ddView.maxWager} step={50} defaultValue={Math.min(200,ddView.maxWager)} id="dd-wager-slider" style={{width:"100%",marginBottom:8,accentColor:th.accent}} onChange={e=>{const d=document.getElementById("dd-wager-display");if(d)d.textContent=e.target.value}}/>
+          <div id="dd-wager-display" style={{fontSize:"clamp(24px,5vw,36px)",color:th.gold,marginBottom:20,fontWeight:900}}>{Math.min(200,ddView.maxWager)}</div>
+          <button onClick={()=>{const v=parseInt(document.getElementById("dd-wager-slider")?.value)||200;submitWager(v)}} style={{padding:"14px 36px",borderRadius:16,background:th.btnBg,color:th.btnText,border:"none",fontSize:"clamp(18px,4vw,24px)",cursor:"pointer",fontWeight:900}}>يلا!</button>
         </div>
       </div>}
 
@@ -1689,10 +1787,10 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
         <div style={{display:"flex",justifyContent:"center",marginBottom:20}}><div style={{width:"clamp(92px,24vw,112px)",height:"clamp(92px,24vw,112px)",borderRadius:"50%",background:timer<=10?"linear-gradient(135deg,#EF4444,#DC2626)":timer<=20?"linear-gradient(135deg,#F59E0B,#D97706)":"linear-gradient(135deg,#8E44AD,#A855F7)",display:"flex",alignItems:"center",justifyContent:"center",fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(34px,8.5vw,42px)",fontWeight:900,animation:timer<=10?"pl .4s infinite":"none",boxShadow:timer<=10?"0 0 30px rgba(255,59,92,.5)":"0 0 15px rgba(168,85,247,.3)"}}>{timer}</div></div>
         {speedBonus&&speedBonus.label&&<div style={{textAlign:"center",marginBottom:10,fontSize:"clamp(16px,3.5vw,22px)",color:th.gold,fontWeight:900,animation:"fadeIn .3s"}}>{speedBonus.label}</div>}
         <div style={{display:"flex",justifyContent:"center",gap:8,marginBottom:14,flexWrap:"wrap"}}>
-          {!hard&&<button type="button" className="bs sm" disabled={usedFifty||answered} style={{opacity:usedFifty?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useFiftyFifty}>{tx.fifty}</button>}
-          <button type="button" className="bs sm" disabled={usedExt||answered} style={{opacity:usedExt?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useTimeExt}>{tx.ext}</button>
-          <button type="button" className="bs sm" disabled={usedSwitch||answered} style={{opacity:usedSwitch?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useSwitch}>🔄 تبديل</button>
-          {!hard&&<button type="button" className="bs sm" disabled={usedDouble||answered} style={{opacity:usedDouble?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={useDoubleChance}>🎯 فرصة ثانية</button>}
+          {!hard&&<button type="button" className="bs sm" disabled={usedFifty||answered} style={{opacity:usedFifty?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={()=>tapPower("fifty")}>{tx.fifty}</button>}
+          <button type="button" className="bs sm" disabled={usedExt||answered} style={{opacity:usedExt?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={()=>tapPower("ext")}>{tx.ext}</button>
+          <button type="button" className="bs sm" disabled={usedSwitch||answered} style={{opacity:usedSwitch?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={()=>tapPower("switch")}>🔄 تبديل</button>
+          {!hard&&<button type="button" className="bs sm" disabled={usedDouble||answered} style={{opacity:usedDouble?.35:1,fontSize:13,padding:"8px 14px",borderRadius:14}} onClick={()=>tapPower("double")}>🎯 فرصة ثانية</button>}
         </div>
         <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",marginBottom:16,padding:"0 4px",flexWrap:"wrap",gap:8}}><span style={{fontFamily:"'Tajawal',sans-serif",fontSize:"clamp(20px,4.8vw,26px)",fontWeight:900,color:th.accent}}>{curPts} {tx.pts} · {ptsTierLabelAr(curPts)}</span><span style={{fontSize:15,color:th.textDim}}>{turnLabel(active)}</span></div>
         <div className="gc" style={{textAlign:"center",padding:"clamp(22px,5.5vw,32px) clamp(20px,4.5vw,28px)",marginBottom:20,borderColor:th.cardBd,borderRadius:22}}>
@@ -1712,14 +1810,14 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
             const ic=i===curQ.a;const isSel=i===selA;const isFirst=i===firstWrong;
             let bg=AB[i],bd=AC[i]+"55",col=th.text;
             if(answered){if(ic&&revealed){bg="rgba(74,222,128,.3)";bd="#4ADE80"}else if(isSel&&!ic){bg="rgba(255,59,92,.3)";bd="#FF3B5C"}else if(isFirst&&revealed){bg="rgba(255,59,92,.15)";bd="rgba(255,59,92,.4)"}else if(revealed){bg=th.gridCell;bd=th.cardBd}}
-            return(<button key={i} type="button" onClick={()=>doAns(i)} disabled={answered} className={!answered?"ob":""} style={{background:bg,border:`3px solid ${bd}`,borderRadius:20,padding:"20px 22px",fontSize:"clamp(17px,4.2vw,21px)",fontWeight:800,color:col,cursor:answered?"default":"pointer",transition:"all .3s",width:"100%",textAlign:rtl?"right":"left",display:"flex",alignItems:"center",gap:14,minHeight:64}}><span style={{fontWeight:900,color:!answered?AC[i]:undefined,flexShrink:0,fontSize:17,width:32,height:32,borderRadius:11,background:!answered?`${AC[i]}22`:"transparent",display:"inline-flex",alignItems:"center",justifyContent:"center"}}>{["A","B","C","D"][i]}</span><span style={{flex:1,lineHeight:1.35,fontWeight:800}}>{opt}{answered&&ic&&revealed&&<span style={{color:"#16A34A",fontWeight:900}}> ✓</span>}{answered&&isSel&&!ic&&<span style={{color:"#FF3B5C",fontWeight:900}}> ✗</span>}{answered&&isFirst&&revealed&&!isSel&&<span style={{color:"#FF3B5C",opacity:.6}}> ✗</span>}</span></button>)
+            return(<button key={i} type="button" onClick={()=>tapAns(i)} disabled={answered||!myTurn} className={!answered?"ob":""} style={{background:bg,border:`3px solid ${bd}`,borderRadius:20,padding:"20px 22px",fontSize:"clamp(17px,4.2vw,21px)",fontWeight:800,color:col,cursor:answered?"default":"pointer",transition:"all .3s",width:"100%",textAlign:rtl?"right":"left",display:"flex",alignItems:"center",gap:14,minHeight:64}}><span style={{fontWeight:900,color:!answered?AC[i]:undefined,flexShrink:0,fontSize:17,width:32,height:32,borderRadius:11,background:!answered?`${AC[i]}22`:"transparent",display:"inline-flex",alignItems:"center",justifyContent:"center"}}>{["A","B","C","D"][i]}</span><span style={{flex:1,lineHeight:1.35,fontWeight:800}}>{opt}{answered&&ic&&revealed&&<span style={{color:"#16A34A",fontWeight:900}}> ✓</span>}{answered&&isSel&&!ic&&<span style={{color:"#FF3B5C",fontWeight:900}}> ✗</span>}{answered&&isFirst&&revealed&&!isSel&&<span style={{color:"#FF3B5C",opacity:.6}}> ✗</span>}</span></button>)
           })}
         </div>}
         
         {hard&&<div style={{marginBottom:18}}>
           <div className="qadha-hard-row" style={{display:"flex",gap:10}}>
-            <input className="inp" style={{flex:1,fontSize:18,padding:"16px 18px"}} placeholder={BI.placeholderAns} value={typedAns} onChange={e=>setTypedAns(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")checkTyped()}} disabled={answered} autoFocus/>
-            <button className="bg" style={{padding:"16px 22px",fontSize:16,opacity:answered?.4:1}} onClick={checkTyped} disabled={answered}>✓</button>
+            <input className="inp" style={{flex:1,fontSize:18,padding:"16px 18px"}} placeholder={BI.placeholderAns} value={typedAns} onChange={e=>setTypedAns(e.target.value)} onKeyDown={e=>{if(e.key==="Enter")tapTyped()}} disabled={answered||!myTurn} autoFocus/>
+            <button className="bg" style={{padding:"16px 22px",fontSize:16,opacity:answered?.4:1}} onClick={tapTyped} disabled={answered||!myTurn}>✓</button>
           </div>
           {answered&&!revealed&&<div style={{textAlign:"center",marginTop:12,fontSize:15,color:"#FF8A5C"}}>{BI.wrongAns}</div>}
           <div style={{textAlign:"center",marginTop:10,fontSize:12,color:th.textDim}}>🔥 {BI.hardBanner}</div>
@@ -1728,15 +1826,15 @@ button{touch-action:manipulation;-webkit-touch-callout:none;user-select:none}
 
       {sc==="results"&&<div style={W} className="qadha-below-badge"><div style={P}>
         <div style={{textAlign:"center"}}><div style={{fontSize:76,animation:scores[0]!==scores[1]?"cb 1s ease-in-out infinite":"none",marginBottom:10}}>{scores[0]===scores[1]?"⚡":"🏆"}</div><h1 className="tl" style={{fontSize:28}}>{scores[0]===scores[1]?tx.tie:tx.wins}</h1><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:32,color:th.accent,fontWeight:900,marginBottom:6}}>{scores[0]!==scores[1]?(scores[0]>scores[1]?tn(1):tn(2)):""}</p><p style={{fontFamily:"'Tajawal',sans-serif",fontSize:24,color:th.accent,marginBottom:scores[0]===scores[1]?10:20}}>{scores[0]!==scores[1]?"!قدها":"🤝"}</p>
-          {scores[0]===scores[1]&&<button className="bg" style={{padding:"14px 32px",marginBottom:20,fontSize:18,borderRadius:16}} onClick={()=>{
+          {scores[0]===scores[1]&&!isOnlineGuest&&<button className="bg" style={{padding:"14px 32px",marginBottom:20,fontSize:18,borderRadius:16}} onClick={()=>{
             const randomCat=selCats[Math.floor(Math.random()*selCats.length)];
-            const pack=qBank[randomCat.id];const qs=pack?.hard||pack?.mid||pack?.easy||[];
-            if(qs.length){const q=shufQ(qs[Math.floor(Math.random()*qs.length)]);curQAnswerRef.current=q.a;setCurQ(q);setCurPts(500);lastCellRef.current=null;stealTimerRef.current=20;questionStartRef.current=Date.now();isDailyDoubleRef.current=false;setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(20);setTypedAns("");setHiddenOpts([]);go("question")}
+            const q=drawQ(randomCat.id,"hard");
+            if(q){showDrawnQ(q);setCurPts(500);lastCellRef.current=null;stealTimerRef.current=20;questionStartRef.current=Date.now();isDailyDoubleRef.current=false;setAnswered(false);setSelA(null);bRef.current=false;setRevealed(false);setFirstWrong(null);setTimer(20);setTypedAns("");setHiddenOpts([]);go("question")}
           }}>جولة حسم! ⚡</button>}
         </div>
         <div className="gc" style={{marginBottom:20,border:`2px solid ${th.accent}`,borderRadius:20,padding:24,position:"relative",overflow:"hidden"}}><div style={{position:"absolute",top:0,left:0,right:0,height:4,background:`linear-gradient(90deg,${th.accent},rgba(${th.accentRgb},.5),${th.accent})`}}/><div style={{textAlign:"center",fontSize:11,color:th.textDim,letterSpacing:4,marginBottom:16}}>{tx.vCard}</div><div style={{display:"flex",justifyContent:"space-around",marginBottom:12}}><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6}}>{tn(1)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[0]>=scores[1]?th.accent:th.textDim2}}>{scores[0]}</div></div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:22,color:th.textDim2,alignSelf:"center"}}>ضد</div><div style={{textAlign:"center"}}><div style={{fontSize:13,color:th.accent,marginBottom:6,opacity:.85}}>{tn(2)}</div><div style={{fontFamily:"'Tajawal',sans-serif",fontSize:46,fontWeight:900,color:scores[1]>=scores[0]?th.accent:th.textDim2}}>{scores[1]}</div></div></div><div style={{textAlign:"center",fontFamily:"'Tajawal',sans-serif",fontSize:14,color:th.textDim2,marginTop:10,display:"flex",alignItems:"center",justifyContent:"center",gap:8,flexWrap:"wrap"}}><span>قدها؟ 👑</span><CountryFlag country={country} w={22} emojiSize={18} /></div></div>
-        <button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{sfx.click();sfx.stop();matchQHashesRef.current=new Map();setLoading(true);setLoadProg(0);const pi=setInterval(()=>setLoadProg(p=>Math.min(p+Math.random()*6+2,92)),400);const r=await genQs(selCats,country);clearInterval(pi);setLoadProg(100);const questions=getQuestions(selCats,country.id,r,remoteOverlay);setQBank(questions);if(onlineSession){gridQsP2Ref.current=getQuestions(selCats,country.id,r,remoteOverlay)}setTimeout(()=>{setLoading(false);setUsed({});setUsedQI({});setScores([0,0]);setActive(1);setUsedFifty(false);setUsedExt(false);setUsedSwitch(false);setUsedDouble(false);setDoubleChanceActive(false);setHiddenOpts([]);setStreaks([0,0]);setSpeedBonus(null);setDailyDoubles(generateDailyDoubles(8));setDdWager(null);setCatStars({});go("grid")},500)}}>{tx.rematch}</button>
-        <button className="bs" style={{width:"100%",padding:16,marginBottom:8}} onClick={()=>{sfx.click();setSelCats([]);go("cats")}}>{tx.newCats}</button>
+        {!isOnlineGuest&&<button className="bg" style={{width:"100%",padding:18,marginBottom:10}} onClick={async()=>{if(!await loadMatchQuestions(selCats))return;setTimeout(()=>{setLoading(false);resetMatchState();go("grid")},500)}}>{tx.rematch}</button>}
+        {!isOnlineGuest&&<button className="bs" style={{width:"100%",padding:16,marginBottom:8}} onClick={()=>{sfx.click();setSelCats([]);go("cats")}}>{tx.newCats}</button>}
         <button className="bs" style={{width:"100%",padding:16}} onClick={()=>{setSelCats([]);go("menu")}}>{tx.menu}</button>
       </div></div>}
 

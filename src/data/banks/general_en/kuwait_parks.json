@@ -1,82 +1,90 @@
 [
   {
-    "q": "Public parks are generally good for؟",
+    "q": "What are public parks generally good for؟",
     "o": [
+      "Court hearings",
       "Family recreation",
       "Aircraft repair",
-      "Court hearings",
-      "Local residents"
+      "Car manufacturing"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "A waterfront green promenade is mainly for؟",
+    "q": "What is a waterfront green promenade mainly used for؟",
     "o": [
       "Walking and leisure",
-      "Benches and kids areas",
-      "Improve quality of life",
-      "Military port use"
-    ],
-    "a": 0
-  },
-  {
-    "q": "City parks usually include؟",
-    "o": [
-      "Walking and leisure",
-      "Improve quality of life",
       "Military port use",
-      "Benches and kids areas"
+      "Benches and children's play areas",
+      "In the evening"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "In summer, park visits are best at؟",
+    "q": "What do city parks usually include؟",
     "o": [
-      "Evening",
-      "Midday",
-      "Walking",
-      "Dawn only"
+      "Benches and children's play areas",
+      "Walking and leisure",
+      "In the evening",
+      "Oil storage tanks"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Neighborhood parks mainly serve؟",
+    "q": "In Kuwait's hot summer, when is the best time to visit a park؟",
+    "o": [
+      "In the evening",
+      "In the early afternoon",
+      "At noon on weekends",
+      "Walking and leisure"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Whom do neighborhood parks mainly serve؟",
     "o": [
       "Local residents",
       "Family recreation",
-      "Maritime shipping",
-      "Tax collection"
+      "Shipping companies",
+      "Tax collectors"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "A common park activity is؟",
+    "q": "Which of these is a common park activity؟",
     "o": [
       "Walking",
-      "Evening",
-      "Deep diving",
-      "Snow skiing"
+      "Ice fishing",
+      "Snow skiing",
+      "Deep-sea diving"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Planting trees in parks helps؟",
+    "q": "How does planting trees in parks help a city؟",
     "o": [
-      "Benches and kids areas",
-      "Walking and leisure",
-      "Reduce space use",
-      "Improve quality of life"
+      "It reduces public space",
+      "It raises noise levels",
+      "It improves the quality of life",
+      "It increases air pollution"
     ],
-    "a": 3
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Parks are part of a city's؟",
+    "q": "Parks are part of a city's what؟",
     "o": [
-      "Leisure infrastructure",
       "Commercial ports",
       "Family recreation",
-      "Local residents"
+      "Leisure infrastructure",
+      "Oil infrastructure"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   }
 ]

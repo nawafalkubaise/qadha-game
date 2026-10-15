@@ -1,202 +1,222 @@
 [
   {
-    "q": "First human in space؟",
+    "q": "Who was the first human in space؟",
     "o": [
       "Yuri Gagarin",
+      "Alan Shepard",
       "Dwarf planet",
-      "Similar size",
-      "Yellow dwarf"
+      "John Glenn"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Closest planet to the Sun؟",
+    "q": "Which planet is closest to the Sun؟",
     "o": [
       "Mercury",
       "27 days",
-      "American",
-      "Distance"
+      "Distance",
+      "Infrared"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Planet famous for rings؟",
+    "q": "Which planet is most famous for its rings؟",
     "o": [
       "Saturn",
       "27 days",
       "Earth",
       "Jupiter"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "James Webb Space Telescope mainly؟",
+    "q": "The James Webb Space Telescope mainly observes in which type of light؟",
     "o": [
-      "Infrared",
       "27 days",
-      "American",
-      "Distance"
+      "Distance",
+      "Jupiter",
+      "Infrared"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Milky Way shape؟",
+    "q": "What shape is the Milky Way galaxy؟",
     "o": [
       "Spiral",
       "27 days",
       "Earth",
       "Jupiter"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Sputnik 1 was first؟",
+    "q": "Sputnik 1 was the world's first what؟",
     "o": [
+      "Artificial satellite",
+      "Crewed spacecraft",
       "Dwarf planet",
-      "Human flight",
-      "Moon landing",
-      "Artificial satellite"
+      "Space station"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "NASA is؟",
+    "q": "NASA is the space agency of which country؟",
     "o": [
-      "27 days",
-      "Chinese",
-      "Distance",
-      "American"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Moon orbit period around Earth ~؟",
-    "o": [
-      "27 days",
-      "0.5 kg",
-      "1 color",
-      "American"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Largest planet in solar system؟",
-    "o": [
-      "Jupiter",
-      "27 days",
-      "American",
-      "Distance"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Black hole is؟",
-    "o": [
-      "Hazza Al Mansouri",
-      "Hundreds of billions of stars",
-      "Region where gravity prevents light escape",
-      "Ice and dust"
-    ],
-    "a": 2
-  },
-  {
-    "q": "ISS orbits around؟",
-    "o": [
-      "Earth",
-      "Mars",
-      "Moon",
-      "NASA"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Pluto is classified as؟",
-    "o": [
-      "Full planet",
-      "Yellow dwarf",
-      "Similar size",
-      "Dwarf planet"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Light-year measures؟",
-    "o": [
-      "27 days",
-      "American",
-      "Infrared",
-      "Distance"
-    ],
-    "a": 3
-  },
-  {
-    "q": "First Arab astronaut؟",
-    "o": [
-      "Sultan bin Salman",
-      "Hazza Al Mansouri",
-      "Ice and dust",
-      "Hundreds of billions of stars"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Comets are mainly made of؟",
-    "o": [
-      "Ice and dust",
-      "Toxic gas only",
-      "Sultan bin Salman",
-      "Hundreds of billions of stars"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Venus is called Earth's twin because؟",
-    "o": [
-      "Similar size",
+      "United States",
       "Dwarf planet",
       "Yellow dwarf",
       "Yuri Gagarin"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Mars rover Perseverance launched by؟",
+    "q": "Roughly how long does the Moon take to orbit the Earth؟",
     "o": [
-      "NASA",
-      "Earth",
-      "JAXA",
-      "ESA"
+      "27 days",
+      "14 days",
+      "365 days",
+      "7 days"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Milky Way contains roughly؟",
+    "q": "What is the largest planet in our solar system؟",
     "o": [
-      "Ice and dust",
-      "One million only",
-      "Sultan bin Salman",
-      "Hundreds of billions of stars"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Moon's gravity compared to Earth is about؟",
-    "o": [
-      "One-sixth",
-      "American",
+      "Jupiter",
+      "27 days",
       "Distance",
       "Infrared"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The Sun is a type of star called؟",
+    "q": "What is a black hole؟",
+    "o": [
+      "A cloud of ice and dust",
+      "A cluster of young stars",
+      "An empty gap between galaxies",
+      "A region where gravity is so strong that light cannot escape"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "What does the International Space Station orbit؟",
+    "o": [
+      "Earth",
+      "Mars",
+      "NASA",
+      "Saturn"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "How has Pluto been classified since 2006؟",
     "o": [
       "Dwarf planet",
-      "Black hole",
-      "Neutron star",
-      "Yellow dwarf"
+      "Full planet",
+      "Yellow dwarf",
+      "United States"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What does a light-year measure؟",
+    "o": [
+      "Distance",
+      "27 days",
+      "Brightness",
+      "Infrared"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Who was the first Arab astronaut؟",
+    "o": [
+      "Sultan Al Neyadi",
+      "Hazza Al Mansouri",
+      "Hundreds of billions",
+      "Sultan bin Salman"
+    ],
+    "a": 3,
+    "d": 3
+  },
+  {
+    "q": "What are comets mainly made of؟",
+    "o": [
+      "Ice and dust",
+      "Hundreds of billions",
+      "Pure hydrogen gas",
+      "Sultan bin Salman"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Why is Venus often called Earth's twin؟",
+    "o": [
+      "It is similar in size",
+      "It has liquid oceans",
+      "Hundreds of billions",
+      "It supports life"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Which space agency launched the Mars rover Perseverance؟",
+    "o": [
+      "Earth",
+      "JAXA",
+      "ESA",
+      "NASA"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Roughly how many stars does the Milky Way contain؟",
+    "o": [
+      "Hundreds of billions",
+      "Tens of thousands",
+      "About one million",
+      "About ten million"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "The Moon's surface gravity is about what fraction of Earth's؟",
+    "o": [
+      "One-sixth",
+      "Distance",
+      "Infrared",
+      "One-half"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What type of star is the Sun؟",
+    "o": [
+      "Yellow dwarf",
+      "Dwarf planet",
+      "White dwarf",
+      "Neutron star"
+    ],
+    "a": 0,
+    "d": 2
   }
 ]

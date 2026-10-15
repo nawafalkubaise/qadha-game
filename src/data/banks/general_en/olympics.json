@@ -1,82 +1,79 @@
 [
   {
-    "q": "Summer Olympics every؟",
+    "q": "How often are the Summer Olympic Games held؟",
     "o": [
-      "4 years",
-      "2 years",
-      "3 years",
-      "1 year"
+      "Every 2 years",
+      "Every 3 years",
+      "Snow and ice sports",
+      "Every 4 years"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Olympic flame traditionally lit in؟",
+    "q": "Where is the Olympic flame traditionally lit؟",
     "o": [
-      "Olympia Greece",
-      "Snow/ice sports",
-      "Carpe Diem",
-      "Cities only"
+      "Athens, Greece",
+      "Lausanne, Switzerland",
+      "Rome, Italy",
+      "Olympia, Greece"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Breaking debuted at Summer Olympics in؟",
+    "q": "At which Summer Olympics did breaking (breakdancing) make its debut؟",
     "o": [
-      "Athens 1896",
-      "Tokyo 2020",
       "Paris 2024",
-      "1 year"
+      "London 2012",
+      "Rio 2016",
+      "Tokyo 2020"
     ],
-    "a": 2
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Gold medal color؟",
+    "q": "What is the Olympic motto in Latin؟",
     "o": [
-      "Green",
-      "-100°C",
-      "-200°C",
-      "Gold"
+      "Citius, Altius, Fortius",
+      "Snow and ice sports",
+      "E Pluribus Unum",
+      "Veni, Vidi, Vici"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Olympic motto Latin؟",
+    "q": "What kind of sports are featured at the Winter Olympics؟",
     "o": [
-      "Veni Vidi Vici",
-      "Citius Altius Fortius",
-      "Snow/ice sports",
-      "Olympic pools only"
+      "Citius, Altius, Fortius",
+      "Track and field",
+      "Every 4 years",
+      "Snow and ice sports"
     ],
-    "a": 1
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Winter Olympics need؟",
-    "o": [
-      "Snow/ice sports",
-      "Olympia Greece",
-      "4 years",
-      "Gold"
-    ],
-    "a": 0
-  },
-  {
-    "q": "IOC headquarters؟",
+    "q": "In which city is the International Olympic Committee headquartered؟",
     "o": [
       "Lausanne",
-      "4 years",
-      "New York",
-      "Bronze"
+      "Athens",
+      "Geneva",
+      "Paris"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "First modern Olympics (1896) in؟",
+    "q": "In which city were the first modern Olympic Games held in 1896؟",
     "o": [
-      "London 1908",
-      "Paris 1900",
-      "Paris 2024",
-      "Athens 1896"
+      "Athens",
+      "London",
+      "Paris",
+      "Lausanne"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   }
 ]

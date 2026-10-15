@@ -1,202 +1,222 @@
 [
   {
-    "q": "2022 FIFA World Cup winner؟",
-    "o": [
-      "Portugal",
-      "Argentina",
-      "42.195 km",
-      "Basketball"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Basketball players per team on court؟",
-    "o": [
-      "5",
-      "4",
-      "6",
-      "7"
-    ],
-    "a": 0
-  },
-  {
-    "q": "40-40 in tennis called؟",
-    "o": [
-      "Boxing",
-      "Break",
-      "China",
-      "Deuce"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Marathon distance؟",
-    "o": [
-      "42.195 km",
-      "41.5 km",
-      "42.8 km",
-      "43.1 km"
-    ],
-    "a": 0
-  },
-  {
-    "q": "2020 Olympics hosted by؟",
-    "o": [
-      "Japan",
-      "Boxing",
-      "Break",
-      "China"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Slam dunk is in؟",
-    "o": [
-      "Basketball",
-      "42.195 km",
-      "Argentina",
-      "Football"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Cricket originated in؟",
-    "o": [
-      "Boxing",
-      "Jamaica",
-      "London",
-      "England"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Olympic motto is؟",
-    "o": [
-      "Club and small ball",
-      "High-speed cars",
-      "Net and ball",
-      "Faster Higher Stronger"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Lionel Messi is from؟",
+    "q": "Which country won the 2022 FIFA World Cup؟",
     "o": [
       "Argentina",
       "42.195 km",
       "Basketball",
       "Portugal"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Muhammad Ali was champion in؟",
+    "q": "How many players per team are on a basketball court at once؟",
     "o": [
-      "Jamaica",
-      "Boxing",
+      "4",
+      "6",
+      "7",
+      "5"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In tennis, what is a score of 40-40 called؟",
+    "o": [
       "Deuce",
+      "Boxing",
+      "Japan",
+      "London"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the official distance of a marathon؟",
+    "o": [
+      "42.195 km",
+      "41.5 km",
+      "42.8 km",
+      "43.1 km"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Which country hosted the 2020 Summer Olympics؟",
+    "o": [
+      "Boxing",
+      "China",
+      "Deuce",
+      "Japan"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which sport is a slam dunk performed؟",
+    "o": [
+      "Basketball",
+      "42.195 km",
+      "Argentina",
+      "Handball"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country did cricket originate؟",
+    "o": [
+      "Boxing",
+      "Jamaica",
+      "London",
       "England"
     ],
-    "a": 1
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "English Premier League abbreviation؟",
+    "q": "What is the English translation of the Olympic motto؟",
     "o": [
-      "EPL",
+      "Faster, Higher, Stronger",
+      "Clubs and a small ball",
+      "Open-wheel racing cars",
+      "Play Fair, Play Hard"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which country is Lionel Messi from؟",
+    "o": [
+      "Argentina",
+      "42.195 km",
+      "Basketball",
+      "Portugal"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which sport was Muhammad Ali a world champion؟",
+    "o": [
+      "Boxing",
       "Deuce",
-      "Japan",
-      "Paris"
-    ],
-    "a": 0
-  },
-  {
-    "q": "2024 Olympics held in؟",
-    "o": [
-      "Boxing",
-      "Break",
-      "Deuce",
-      "Paris"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Usain Bolt is from؟",
-    "o": [
-      "Jamaica",
-      "Boxing",
       "England",
-      "Ethiopia"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Golf is played with؟",
-    "o": [
-      "Stick and large ball",
-      "Net and ball",
-      "Faster Higher Stronger",
-      "Club and small ball"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Rugby originated in؟",
-    "o": [
-      "England",
-      "Boxing",
-      "France",
       "Jamaica"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Cristiano Ronaldo is from؟",
+    "q": "What is the common abbreviation for the English Premier League؟",
+    "o": [
+      "EFL",
+      "PLE",
+      "UPL",
+      "EPL"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which city were the 2024 Summer Olympics held؟",
+    "o": [
+      "Paris",
+      "Boxing",
+      "Deuce",
+      "Japan"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which country is sprinter Usain Bolt from؟",
+    "o": [
+      "Jamaica",
+      "Bahamas",
+      "Barbados",
+      "Boxing"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What equipment is golf played with؟",
+    "o": [
+      "Clubs and a small ball",
+      "A racket and a shuttlecock",
+      "A stick and a puck",
+      "Faster, Higher, Stronger"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country did rugby originate؟",
+    "o": [
+      "Boxing",
+      "France",
+      "Ireland",
+      "England"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Which country is Cristiano Ronaldo from؟",
     "o": [
       "Portugal",
       "42.195 km",
       "Argentina",
       "Basketball"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Wimbledon is held in؟",
+    "q": "In which city is the Wimbledon tennis tournament held؟",
     "o": [
       "London",
       "Boxing",
       "Deuce",
       "England"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Football players per team on field؟",
+    "q": "How many players does a football (soccer) team have on the field؟",
     "o": [
       "11",
       "10",
       "12",
       "5"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Formula 1 races feature؟",
+    "q": "What do Formula 1 races feature؟",
     "o": [
-      "High-speed cars",
-      "42.195 km",
-      "Argentina",
-      "Basketball"
+      "Open-wheel racing cars",
+      "Off-road rally cars",
+      "Clubs and a small ball",
+      "Faster, Higher, Stronger"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "FIFA was founded in؟",
+    "q": "In which year was FIFA founded؟",
     "o": [
       "1904",
       "1900",
       "1910",
       "1920"
     ],
-    "a": 0
+    "a": 0,
+    "d": 3
   }
 ]

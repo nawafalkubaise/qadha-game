@@ -1,82 +1,90 @@
 [
   {
-    "q": "Chanel founded in؟",
+    "q": "In which country was the fashion house Chanel founded؟",
     "o": [
-      "Adidas",
+      "France",
       "Germany",
       "India",
-      "France"
+      "Italy"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Blue jeans mass popularized by؟",
+    "q": "Who mass-popularized blue jeans؟",
     "o": [
       "Levi Strauss",
-      "New collections",
-      "Adidas",
-      "France"
+      "Calvin Klein",
+      "Coco Chanel",
+      "Ralph Lauren"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Typical Western suit pieces؟",
+    "q": "A typical Western business suit consists of what؟",
     "o": [
-      "Luxury leather goods",
-      "Many Western cultures",
-      "Jacket and trousers",
-      "High-end custom fashion"
+      "A jacket and trousers",
+      "A tunic and sandals",
+      "A kilt and vest",
+      "A robe and sash"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Sari traditional in؟",
+    "q": "In which country is the sari a traditional garment؟",
     "o": [
-      "India",
-      "Cars",
       "China",
-      "France"
+      "France",
+      "Japan",
+      "India"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Louis Vuitton known for؟",
+    "q": "Louis Vuitton is best known for what؟",
     "o": [
       "Luxury leather goods",
-      "High-end custom fashion",
-      "Jacket and trousers",
-      "A lot / very"
+      "A jacket and trousers",
+      "Designers' new collections",
+      "High-end custom-made fashion"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Adidas founded in؟",
+    "q": "In which country was Adidas founded؟",
     "o": [
-      "Adidas",
+      "Germany",
       "France",
       "India",
-      "Germany"
+      "Italy"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Runway fashion shows highlight؟",
+    "q": "What do runway fashion shows showcase؟",
     "o": [
-      "New collections",
-      "Levi Strauss",
-      "Adidas",
-      "France"
+      "Designers' new collections",
+      "A jacket and trousers",
+      "High-end custom-made fashion",
+      "Luxury leather goods"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Haute couture means؟",
+    "q": "What does haute couture mean؟",
     "o": [
-      "High-end custom fashion",
-      "Jacket and trousers",
-      "Luxury leather goods",
-      "A lot / very"
+      "High-end custom-made fashion",
+      "Designers' new collections",
+      "A jacket and trousers",
+      "Luxury leather goods"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

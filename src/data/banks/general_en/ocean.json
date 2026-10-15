@@ -1,82 +1,90 @@
 [
   {
-    "q": "Deepest ocean trench known؟",
+    "q": "What is the deepest known ocean trench؟",
     "o": [
+      "Mariana Trench",
+      "Tonga Trench",
+      "Java Trench",
+      "Pacific Ocean"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the largest ocean on Earth؟",
+    "o": [
+      "Arctic Ocean",
+      "Atlantic Ocean",
+      "Indian Ocean",
+      "Pacific Ocean"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "The Great Barrier Reef lies off the coast of which country؟",
+    "o": [
+      "Australia",
       "Blue whale",
-      "Mariana",
-      "Pacific",
-      "Australia"
+      "Indonesia",
+      "Madagascar"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Largest ocean؟",
-    "o": [
-      "Pacific",
-      "Arctic",
-      "Atlantic",
-      "Indian"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Great Barrier Reef off؟",
-    "o": [
-      "Blue whale",
-      "Very high",
-      "Africa",
-      "Australia"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Earth surface water ~؟",
+    "q": "Roughly what percentage of Earth's surface is covered by water؟",
     "o": [
       "71%",
-      "30%",
-      "50%",
-      "90%"
+      "51%",
+      "61%",
+      "81%"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Tsunami often from؟",
+    "q": "What most often causes a tsunami؟",
     "o": [
-      "71%",
-      "Australia",
+      "Strong surface winds",
+      "An undersea earthquake",
+      "The Moon's tidal pull",
+      "Heavy rainfall"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "What is the largest animal in the ocean؟",
+    "o": [
       "Blue whale",
-      "Undersea quake/slide"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Largest ocean animal؟",
-    "o": [
-      "Blue whale",
+      "Whale shark",
       "Australia",
-      "Great white",
-      "Very high"
+      "Giant squid"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Dead Sea salinity؟",
+    "q": "How does the salinity of the Dead Sea compare with typical ocean water؟",
     "o": [
-      "Very high",
+      "Much higher",
+      "Much lower",
       "Australia",
-      "Blue whale",
-      "Mariana"
+      "Blue whale"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Tides mainly from؟",
+    "q": "What mainly causes ocean tides؟",
     "o": [
-      "Moon and sun",
-      "Surface winds alone",
-      "Deep ocean currents only",
-      "Sudden barometric drops"
+      "Surface winds",
+      "Deep ocean currents",
+      "The gravity of the Moon and Sun",
+      "Earthquakes"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   }
 ]

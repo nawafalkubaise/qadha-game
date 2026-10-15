@@ -1,82 +1,90 @@
 [
   {
-    "q": "A regional shopping center often combines retail with؟",
+    "q": "Besides shops, what do large regional malls usually offer؟",
     "o": [
-      "Parking, A/C, dining, cinema",
-      "Open lanes and smaller shops",
-      "Air traffic control",
-      "Cinemas and play zones"
+      "Parking, air conditioning, dining and cinemas",
+      "A cluster of restaurants with shared seating",
+      "It has open lanes and smaller shops",
+      "Rent or a share of revenue"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "A traditional souk differs from a modern mall mainly by؟",
+    "q": "How does a traditional souk mainly differ from a modern mall؟",
     "o": [
-      "Open lanes and smaller shops",
-      "Cinemas and play zones",
-      "Families and day trips",
-      "Find units and exits"
+      "Parking, air conditioning, dining and cinemas",
+      "A cluster of restaurants with shared seating",
+      "Rent or a share of revenue",
+      "It has open lanes and smaller shops"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Food courts in malls are؟",
+    "q": "What is a mall food court؟",
     "o": [
-      "Olympic pools only",
-      "Cluster of restaurants with shared seating",
-      "Air traffic control",
-      "Cattle auctions only"
+      "A cluster of restaurants with shared seating",
+      "Parking, air conditioning, dining and cinemas",
+      "It has open lanes and smaller shops",
+      "Rent or a share of revenue"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Retail tenants usually pay the landlord؟",
+    "q": "What do retail tenants usually pay a mall's landlord؟",
     "o": [
-      "Rent or revenue share",
-      "Cinemas and play zones",
-      "Families and day trips",
-      "Find units and exits"
+      "Rent or a share of revenue",
+      "A cluster of restaurants with shared seating",
+      "It has open lanes and smaller shops",
+      "Parking, air conditioning, dining and cinemas"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Interior mall maps help shoppers؟",
-    "o": [
-      "Find units and exits",
-      "Cinemas and play zones",
-      "Families and day trips",
-      "Open lanes and smaller shops"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Mixed retail-entertainment venues target؟",
-    "o": [
-      "Families and day trips",
-      "Cinemas and play zones",
-      "Find units and exits",
-      "Open lanes and smaller shops"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Very large malls may include؟",
+    "q": "What do interior mall maps help shoppers do؟",
     "o": [
       "Cinemas and play zones",
-      "Families and day trips",
-      "Find units and exits",
-      "Cattle auctions only"
+      "Check the weather",
+      "Families on day trips",
+      "Find stores and exits"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Escalators in malls mainly move people؟",
+    "q": "Mixed retail and entertainment venues mainly target whom؟",
     "o": [
-      "Between floors",
-      "Across oceans",
-      "Through customs",
-      "Into vaults"
+      "Families on day trips",
+      "Factory workers on shift",
+      "Cinemas and play zones",
+      "Find stores and exits"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What do very large malls often include besides shops؟",
+    "o": [
+      "Cinemas and play zones",
+      "Find stores and exits",
+      "Families on day trips",
+      "Move people between floors"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What do escalators in malls mainly do؟",
+    "o": [
+      "Move people between floors",
+      "Move people through customs",
+      "Move cash into vaults",
+      "Move goods across oceans"
+    ],
+    "a": 0,
+    "d": 1
   }
 ]

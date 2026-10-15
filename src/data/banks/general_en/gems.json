@@ -1,82 +1,90 @@
 [
   {
-    "q": "Diamond is made of؟",
+    "q": "What element is a diamond made of؟",
     "o": [
+      "Calcium",
+      "Green",
+      "Oxygen",
+      "Carbon"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Ruby is a variety of which mineral؟",
+    "o": [
+      "Beryl",
       "Carbon",
       "Green",
-      "Mollusk",
-      "Oxygen"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Ruby mineral؟",
-    "o": [
-      "Corundum",
-      "Emerald",
-      "Gem mass",
-      "Hardness"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Emerald color؟",
-    "o": [
-      "-100°C",
-      "-200°C",
-      "Blue",
-      "Green"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Pearl from؟",
-    "o": [
-      "Mollusk",
-      "Carbon",
-      "Corundum",
-      "Gem mass"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Mohs scale measures؟",
-    "o": [
-      "Gem mass",
-      "Mollusk",
-      "Hardness",
       "Corundum"
     ],
-    "a": 2
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Opal known for؟",
+    "q": "What color is an emerald؟",
+    "o": [
+      "Green",
+      "Blue",
+      "Carbon",
+      "Mass"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which creature produces pearls؟",
+    "o": [
+      "Corals",
+      "Sea urchins",
+      "Mollusks such as oysters",
+      "Jellyfish"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "What does the Mohs scale measure؟",
+    "o": [
+      "Mineral hardness",
+      "Water clarity",
+      "Gem weight",
+      "Carbon"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Opal is known for which optical effect؟",
     "o": [
       "Play of color",
-      "A lot / very",
-      "A Nightmare on Elm Street",
-      "A private company vote"
+      "Glowing in the dark",
+      "Being perfectly transparent",
+      "Mollusks such as oysters"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Sapphire is blue variety of؟",
+    "q": "Sapphire is the blue variety of which mineral؟",
     "o": [
       "Corundum",
-      "Emerald",
-      "Gem mass",
-      "Hardness"
+      "Beryl",
+      "Carbon",
+      "Garnet"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Carat measures؟",
+    "q": "What does the carat measure for gemstones؟",
     "o": [
-      "Gem mass",
-      "Corundum",
-      "Hardness",
-      "Mollusk"
+      "Mass",
+      "Color",
+      "Green",
+      "Carbon"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

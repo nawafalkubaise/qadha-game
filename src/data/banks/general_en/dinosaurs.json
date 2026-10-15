@@ -1,82 +1,90 @@
 [
   {
-    "q": "T-Rex diet؟",
+    "q": "What did Tyrannosaurus rex eat؟",
     "o": [
-      "Carnivore",
-      "Fish only",
-      "Sauropods",
-      "Sedimentary"
+      "Meat",
+      "Three",
+      "Ancient insects",
+      "Fish only"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Dinosaur extinction famous event ~؟",
+    "q": "About when did the dinosaurs go extinct؟",
     "o": [
-      "65 million years ago",
-      "6500 years",
-      "650 years",
-      "6.5 years"
+      "About 66 million years ago",
+      "About 2 billion years ago",
+      "About 6,600 years ago",
+      "About 660,000 years ago"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Fossils in rocks؟",
+    "q": "In which type of rock are fossils most commonly found؟",
     "o": [
-      "Sedimentary",
-      "Carnivore",
-      "Sauropods",
+      "Igneous rock",
+      "Sedimentary rock",
+      "Metamorphic rock",
       "Ancient insects"
     ],
-    "a": 0
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Birds descended from؟",
+    "q": "Birds are descended from which group of dinosaurs؟",
     "o": [
-      "Theropod dinosaurs",
-      "Amphibians only",
-      "Ancient insects",
-      "Mesozoic mainly"
+      "Theropods",
+      "Sauropods",
+      "Stegosaurs",
+      "Ancient insects"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Triceratops had horns؟",
+    "q": "How many horns did Triceratops have on its face؟",
     "o": [
-      "Three on face",
-      "A lot / very",
-      "65 million years ago",
-      "A Nightmare on Elm Street"
+      "Three",
+      "Five",
+      "Meat",
+      "One"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Long-neck giants called؟",
+    "q": "What are the giant long-necked plant-eating dinosaurs called؟",
     "o": [
-      "Carnivore",
-      "Sedimentary",
+      "Sauropods",
+      "Pterosaurs",
+      "Theropods",
+      "Ancient insects"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which geological era did dinosaurs live؟",
+    "o": [
+      "The Mesozoic Era",
+      "The Cenozoic Era",
+      "The Paleozoic Era",
+      "About 66 million years ago"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What can amber preserve for millions of years؟",
+    "o": [
       "Ancient insects",
+      "Sedimentary rock",
+      "Volcanic lava",
       "Sauropods"
     ],
-    "a": 3
-  },
-  {
-    "q": "Dinosaurs lived in؟",
-    "o": [
-      "Mesozoic mainly",
-      "Ancient insects",
-      "Theropod dinosaurs",
-      "Carnivore"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Amber can preserve؟",
-    "o": [
-      "Ancient insects",
-      "Mesozoic mainly",
-      "Theropod dinosaurs",
-      "Carnivore"
-    ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

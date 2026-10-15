@@ -1,202 +1,222 @@
 [
   {
-    "q": "Director of Inception؟",
+    "q": "Who directed the film Inception؟",
     "o": [
-      "Nolan",
-      "-100°C",
+      "Christopher Nolan",
+      "Frank Darabont",
+      "Leonardo DiCaprio",
+      "Martin Scorsese"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which film is the highest-grossing film of all time؟",
+    "o": [
       "Avatar",
-      "Cannes"
+      "Cannes",
+      "Titanic",
+      "Parasite"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Highest-grossing film ever؟",
+    "q": "Which actor played Jack in the film Titanic؟",
     "o": [
-      "Avatar",
-      "8 films",
-      "Berlin",
-      "Cannes"
+      "Leonardo DiCaprio",
+      "Christopher Nolan",
+      "Frank Darabont",
+      "Steven Spielberg"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Jack in Titanic؟",
-    "o": [
-      "DiCaprio",
-      "8 films",
-      "Brad Pitt",
-      "Coppola"
-    ],
-    "a": 0
-  },
-  {
-    "q": "2020 Best Picture؟",
+    "q": "Which film won Best Picture at the 2020 Academy Awards ceremony؟",
     "o": [
       "Parasite",
-      "8 films",
-      "Coppola",
-      "DiCaprio"
+      "Tom Hanks",
+      "Toy Story",
+      "Avatar"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Godfather directed by؟",
+    "q": "Who directed The Godfather؟",
     "o": [
-      "Coppola",
-      "8 films",
-      "Avatar",
-      "Berlin"
-    ],
-    "a": 0
-  },
-  {
-    "q": "First Star Wars year؟",
-    "o": [
-      "1977",
-      "1975",
-      "1979",
-      "1981"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Who played Iron Man؟",
-    "o": [
-      "A lot / very",
+      "Francis Ford Coppola",
+      "Robert Downey Jr.",
       "Space travel and time",
-      "Heath Ledger and Christian Bale",
-      "Robert Downey Jr"
+      "Heath Ledger and Christian Bale"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Pixar's first feature film؟",
+    "q": "In which year was the first Star Wars film released؟",
+    "o": [
+      "1979",
+      "1980",
+      "1977",
+      "1975"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "Which actor played Iron Man in the Marvel films؟",
+    "o": [
+      "Robert Downey Jr.",
+      "Francis Ford Coppola",
+      "Space travel and time",
+      "Heath Ledger and Christian Bale"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What was Pixar's first feature-length film؟",
     "o": [
       "Toy Story",
-      "DiCaprio",
       "Parasite",
-      "Snow White"
+      "Tom Hanks",
+      "Avatar"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Shawshank Redemption directed by؟",
+    "q": "Who directed The Shawshank Redemption؟",
+    "o": [
+      "Frank Darabont",
+      "Christopher Nolan",
+      "Keanu Reeves",
+      "Leonardo DiCaprio"
+    ],
+    "a": 0,
+    "d": 3
+  },
+  {
+    "q": "Who was the first actor to play James Bond in the official film series؟",
+    "o": [
+      "Sean Connery",
+      "Daniel Craig",
+      "Frank Darabont",
+      "George Lazenby"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is the film Interstellar mainly about؟",
+    "o": [
+      "Space travel and time",
+      "A heist inside dreams",
+      "A virtual reality world",
+      "A World War II evacuation"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which actors star in The Dark Knight؟",
+    "o": [
+      "Brad Pitt and Edward Norton",
+      "Matt Damon and Ben Affleck",
+      "Ryan Gosling and Harrison Ford",
+      "Heath Ledger and Christian Bale"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "What was Disney's first full-length animated feature film؟",
+    "o": [
+      "Cinderella",
+      "Pinocchio",
+      "Snow White and the Seven Dwarfs",
+      "Bambi"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "Which actor starred as Neo in The Matrix؟",
+    "o": [
+      "Frank Darabont",
+      "Sean Connery",
+      "The Holocaust",
+      "Keanu Reeves"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "At which film festival is the Palme d'Or awarded؟",
+    "o": [
+      "Cannes",
+      "Avatar",
+      "Berlin",
+      "Toronto"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Which actor starred as Forrest Gump؟",
+    "o": [
+      "Toy Story",
+      "Tom Hanks",
+      "Tom Cruise",
+      "Parasite"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "How many films are in the Harry Potter film series؟",
+    "o": [
+      "8",
+      "6",
+      "7",
+      "10"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Who directed Jurassic Park؟",
+    "o": [
+      "Steven Spielberg",
+      "Christopher Nolan",
+      "Frank Darabont",
+      "James Cameron"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What historical event is Schindler's List about؟",
     "o": [
       "Frank Darabont",
       "Keanu Reeves",
       "Sean Connery",
       "The Holocaust"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "James Bond most iconic actor؟",
+    "q": "Who directed E.T. the Extra-Terrestrial؟",
     "o": [
-      "Sean Connery",
+      "Steven Spielberg",
+      "Christopher Nolan",
       "Frank Darabont",
-      "Keanu Reeves",
-      "Snow White"
+      "James Cameron"
     ],
-    "a": 0
-  },
-  {
-    "q": "Interstellar is about؟",
-    "o": [
-      "Space travel and time",
-      "Heath Ledger and Christian Bale",
-      "Robert Downey Jr",
-      "A lot / very"
-    ],
-    "a": 0
-  },
-  {
-    "q": "The Dark Knight stars؟",
-    "o": [
-      "Heath Ledger and Christian Bale",
-      "Front page of the internet",
-      "Space travel and time",
-      "Robert Downey Jr"
-    ],
-    "a": 0
-  },
-  {
-    "q": "First Disney animated feature؟",
-    "o": [
-      "Snow White",
-      "Cinderella",
-      "DiCaprio",
-      "Keanu Reeves"
-    ],
-    "a": 0
-  },
-  {
-    "q": "The Matrix stars؟",
-    "o": [
-      "Keanu Reeves",
-      "Frank Darabont",
-      "Sean Connery",
-      "Snow White"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Palme d'Or is awarded at؟",
-    "o": [
-      "Cannes",
-      "8 films",
-      "Avatar",
-      "Berlin"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Forrest Gump stars؟",
-    "o": [
-      "Tom Hanks",
-      "Brad Pitt",
-      "DiCaprio",
-      "Parasite"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Harry Potter film series has؟",
-    "o": [
-      "10 films",
-      "3 films",
-      "5 films",
-      "8 films"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Jurassic Park directed by؟",
-    "o": [
-      "Spielberg",
-      "DiCaprio",
-      "Parasite",
-      "Snow White"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Schindler's List is about؟",
-    "o": [
-      "The Holocaust",
-      "Frank Darabont",
-      "Keanu Reeves",
-      "Sean Connery"
-    ],
-    "a": 0
-  },
-  {
-    "q": "E.T. the Extra-Terrestrial directed by؟",
-    "o": [
-      "Spielberg",
-      "DiCaprio",
-      "Parasite",
-      "Snow White"
-    ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

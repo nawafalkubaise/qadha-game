@@ -1,82 +1,90 @@
 [
   {
-    "q": "Freud associated with؟",
+    "q": "Sigmund Freud is most associated with which school of thought؟",
     "o": [
-      "Behaviorism only",
-      "Emotional skills",
-      "Professional help",
-      "Psychoanalysis"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Working memory capacity؟",
-    "o": [
-      "Limited short-term",
-      "Emotional skills",
-      "Obsessions/compulsions",
+      "Behaviorism",
+      "Cognitive psychology",
+      "Psychoanalysis",
       "Professional help"
     ],
-    "a": 0
+    "a": 2,
+    "d": 2
   },
   {
-    "q": "OCD involves؟",
+    "q": "How is the capacity of working memory best described؟",
     "o": [
-      "Obsessions/compulsions",
-      "Limited short-term",
-      "Behaviorism only",
-      "Emotional skills"
+      "Limited and short-term",
+      "Limited but permanent",
+      "Obsessions and compulsions",
+      "Unlimited and permanent"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Positive reinforcement increases؟",
+    "q": "Obsessive-compulsive disorder (OCD) involves what؟",
     "o": [
-      "Rewarded behavior",
-      "Punished behavior",
-      "Behaviorism only",
-      "Emotional skills"
+      "Alternating mania and depression",
+      "Hallucinations and delusions",
+      "Limited and short-term",
+      "Obsessions and compulsions"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "EQ measures؟",
+    "q": "What effect does positive reinforcement have on a behavior؟",
     "o": [
-      "Emotional skills",
-      "Behaviorism only",
-      "Limited short-term",
-      "Professional help"
+      "Makes it less likely to be repeated",
+      "Has no effect on it",
+      "Makes it more likely to be repeated",
+      "Makes it instantly forgotten"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Clinical depression often needs؟",
+    "q": "What does EQ (emotional quotient) measure؟",
+    "o": [
+      "Physical endurance",
+      "Logical reasoning",
+      "Memory capacity",
+      "Emotional intelligence"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "What does clinical depression often require؟",
     "o": [
       "Professional help",
-      "Behaviorism only",
-      "Emotional skills",
-      "Limited short-term"
+      "Psychoanalysis",
+      "Willpower alone",
+      "Emotional intelligence"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Fight-or-flight is؟",
+    "q": "What is the fight-or-flight reaction؟",
     "o": [
-      "Stress response",
-      "Behaviorism only",
-      "Emotional skills",
-      "Limited short-term"
+      "A stress response",
+      "A digestive reflex",
+      "A memory technique",
+      "A sleep cycle"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Rorschach test uses؟",
+    "q": "What does the Rorschach test use؟",
     "o": [
       "Inkblots",
-      "Hearing",
-      "Behaviorism only",
-      "Blood pressure"
+      "Word lists",
+      "Color cards",
+      "Emotional intelligence"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

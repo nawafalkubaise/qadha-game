@@ -1,82 +1,90 @@
 [
   {
-    "q": "Telephone credited to؟",
+    "q": "Who is credited with inventing the telephone؟",
     "o": [
-      "Tesla",
-      "-100°C",
-      "-200°C",
-      "Bell"
+      "Alexander Graham Bell",
+      "Thomas Edison",
+      "Nikola Tesla",
+      "Guglielmo Marconi"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Steam engine improved industrially by؟",
+    "q": "Who greatly improved the steam engine for industrial use؟",
     "o": [
-      "ARPANET",
-      "Edison",
       "James Watt",
-      "Gutenberg"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Movable-type printing Europe؟",
-    "o": [
-      "Gutenberg",
-      "Columbus",
-      "James Watt",
-      "Shakespeare"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Penicillin by؟",
-    "o": [
-      "Fleming",
+      "Henry Ford",
       "ARPANET",
-      "Einstein",
-      "Pasteur"
+      "Radar technology"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Internet roots in؟",
+    "q": "Who introduced movable-type printing to Europe؟",
+    "o": [
+      "Johannes Gutenberg",
+      "Alexander Fleming",
+      "Christopher Columbus",
+      "Radar technology"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Who discovered penicillin in 1928؟",
+    "o": [
+      "Albert Einstein",
+      "Johannes Gutenberg",
+      "Radar technology",
+      "Alexander Fleming"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "The internet has its roots in which early network؟",
     "o": [
       "ARPANET",
       "Facebook",
-      "Fleming",
-      "Google"
+      "Google",
+      "James Watt"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Wright brothers first powered flight؟",
+    "q": "In which year did the Wright brothers achieve the first powered flight؟",
     "o": [
-      "1910",
-      "1920",
       "1903",
-      "1890"
+      "1890",
+      "1910",
+      "1920"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Microwave oven discovery linked to؟",
+    "q": "The invention of the microwave oven came out of research in which field؟",
     "o": [
-      "Radar research",
-      "Cooking show",
-      "Edison (development)",
-      "Gutenberg"
+      "Radar technology",
+      "Alexander Fleming",
+      "Johannes Gutenberg",
+      "Nuclear power"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Light bulb commercialized notably by؟",
+    "q": "Who is best known for commercializing the electric light bulb؟",
     "o": [
-      "Edison (development)",
-      "Radar research",
-      "ARPANET",
-      "Bell"
+      "Thomas Edison",
+      "Nikola Tesla",
+      "Radar technology",
+      "Alexander Fleming"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

@@ -1,82 +1,90 @@
 [
   {
-    "q": "IPO means؟",
+    "q": "What does IPO stand for in business؟",
     "o": [
       "Initial public offering",
-      "Brand and system license",
       "Buying another company",
-      "How a firm makes money"
+      "How a company makes money",
+      "Increase sales conversions"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Steve Jobs co-founded؟",
+    "q": "Steve Jobs co-founded which company؟",
     "o": [
+      "IBM",
+      "High-growth startups",
       "Apple",
-      "-100°C",
-      "-200°C",
-      "CO₂"
+      "Google"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "LLC protects؟",
+    "q": "What does a limited liability company (LLC) protect owners from؟",
     "o": [
-      "Brand and system license",
-      "Buying another company",
-      "How a firm makes money",
-      "Owners from unlimited debt"
+      "Personal liability for business debts",
+      "Employee lawsuits being filed",
+      "How a company makes money",
+      "Increase sales conversions"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Franchise grants؟",
+    "q": "What does a franchise grant to a franchisee؟",
     "o": [
-      "Brand and system license",
+      "Ownership of the parent company",
+      "A government tax exemption",
+      "A guaranteed profit",
+      "The right to use a brand and business system"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "In business, what does an acquisition mean؟",
+    "o": [
       "Buying another company",
-      "How a firm makes money",
+      "How a company makes money",
+      "Splitting a company in two",
+      "Closing a company"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What does a business model describe؟",
+    "o": [
+      "How a company makes money",
+      "Buying another company",
+      "A company's legal name",
+      "A company's logo design"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Online stores often offer free shipping mainly to do what؟",
+    "o": [
+      "Increase sales conversions",
+      "Buying another company",
+      "How a company makes money",
       "Initial public offering"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Acquisition means؟",
+    "q": "What kind of businesses does venture capital usually invest in؟",
     "o": [
-      "Buying another company",
-      "Brand and system license",
-      "How a firm makes money",
-      "Initial public offering"
+      "Government agencies",
+      "Apple",
+      "Charities",
+      "High-growth startups"
     ],
-    "a": 0
-  },
-  {
-    "q": "Business model describes؟",
-    "o": [
-      "How a firm makes money",
-      "Brand and system license",
-      "Buying another company",
-      "Initial public offering"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Free shipping often aims to؟",
-    "o": [
-      "Boost conversions",
-      "Raise taxes",
-      "Reduce sales",
-      "Amazon"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Venture capital invests in؟",
-    "o": [
-      "Startups with growth risk",
-      "Brand and system license",
-      "Buying another company",
-      "How a firm makes money"
-    ],
-    "a": 0
+    "a": 3,
+    "d": 1
   }
 ]

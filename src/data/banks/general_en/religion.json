@@ -1,202 +1,222 @@
 [
   {
-    "q": "Second holiest city in Islam after Mecca؟",
+    "q": "What is the second holiest city in Islam after Mecca؟",
     "o": [
       "Medina",
       "Baghdad",
       "China",
       "India"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Bhagavad Gita is sacred in؟",
+    "q": "The Bhagavad Gita is a sacred text in which religion؟",
     "o": [
       "Hinduism",
       "Buddhism",
-      "Catholic",
-      "Jainism"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Easter celebrates؟",
-    "o": [
-      "Resurrection",
-      "Christianity",
-      "Dhul Hijjah",
-      "Nepal/India"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Kaaba is in؟",
-    "o": [
-      "Mecca",
-      "China",
-      "India",
-      "Japan"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Pope is head of largest Christian branch؟",
-    "o": [
-      "Catholic",
-      "Anglican",
-      "Hinduism",
-      "Protestant"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Buddhism originated in؟",
-    "o": [
-      "Mecca",
-      "India",
-      "China",
-      "Japan"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Jewish Sabbath day؟",
-    "o": [
-      "Saturday",
-      "Catholic",
-      "Hinduism",
+      "Jainism",
       "Ramadan"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Four holy books in Islam include؟",
+    "q": "What does Easter celebrate؟",
     "o": [
-      "Giving charity to the needy",
-      "Old and New Testament",
-      "One book only",
-      "Gospels Torah Psalms Quran"
+      "The baptism of Jesus",
+      "Obligatory charity to the needy",
+      "The birth of Jesus",
+      "The resurrection of Jesus"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Five Pillars of Islam total؟",
+    "q": "In which city is the Kaaba located؟",
     "o": [
+      "Mecca",
+      "Cairo",
+      "China",
+      "India"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "The Pope is the head of which Christian church, the largest in the world؟",
+    "o": [
+      "Catholic Church",
+      "Anglican Church",
+      "Lutheran Church",
+      "Christianity"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country did Buddhism originate؟",
+    "o": [
+      "China",
+      "Japan",
+      "Mecca",
+      "India"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "On which day is the Jewish Sabbath observed؟",
+    "o": [
+      "Hinduism",
+      "Ramadan",
+      "Wednesday",
+      "Saturday"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Which four holy books are recognized in Islam؟",
+    "o": [
+      "Torah, Psalms, Gospel, and Quran",
+      "Psalms, Hadith, Gospel, and Quran",
+      "Torah, Talmud, Gospel, and Quran",
+      "Vedas, Torah, Gospel, and Quran"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "How many pillars of Islam are there؟",
+    "o": [
+      "5",
       "3",
       "4",
-      "6",
-      "5"
+      "6"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Quran revealed in month of؟",
+    "q": "In which month did the revelation of the Quran begin؟",
     "o": [
       "Ramadan",
-      "Catholic",
       "Hinduism",
-      "Medina"
+      "Medina",
+      "Muharram"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Hajj pilgrimage occurs in؟",
+    "q": "In which Islamic month does the Hajj pilgrimage take place؟",
     "o": [
-      "Christianity",
-      "Nepal/India",
-      "Resurrection",
-      "Dhul Hijjah"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Sikhism originated in؟",
-    "o": [
-      "Punjab (India)",
-      "Christianity",
-      "Prophet Ibrahim",
-      "Resurrection"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Christian Bible consists of؟",
-    "o": [
-      "Old and New Testament",
-      "Gospels Torah Psalms Quran",
-      "Giving charity to the needy",
-      "One book only"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Original Buddha was a prince from؟",
-    "o": [
-      "Nepal/India",
-      "Christianity",
       "Dhul Hijjah",
-      "Resurrection"
+      "Christianity",
+      "Catholic Church",
+      "Hinduism"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Number of Quran chapters (surahs)؟",
+    "q": "In which region did Sikhism originate؟",
+    "o": [
+      "Punjab",
+      "Bengal",
+      "China",
+      "Gujarat"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What two main parts make up the Christian Bible؟",
+    "o": [
+      "Old and New Testaments",
+      "Gospels and Hadith",
+      "Vedas and Upanishads",
+      "The resurrection of Jesus"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "The Buddha was born as a prince in Lumbini, in which present-day country؟",
+    "o": [
+      "Nepal",
+      "Bhutan",
+      "China",
+      "India"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "How many chapters (surahs) are in the Quran؟",
     "o": [
       "114",
-      "100",
       "110",
-      "120"
+      "124",
+      "99"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Eid al-Adha relates to story of؟",
+    "q": "Eid al-Adha commemorates the story of which prophet؟",
     "o": [
       "Prophet Ibrahim",
       "Prophet Musa",
-      "Christianity",
-      "Prophet Isa"
+      "Catholic Church",
+      "Christianity"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Most followed religion worldwide؟",
+    "q": "Which religion has the most followers worldwide؟",
     "o": [
-      "Nepal/India",
+      "Catholic Church",
+      "Dhul Hijjah",
       "Prophet Ibrahim",
-      "Christianity",
-      "Dhul Hijjah"
+      "Christianity"
     ],
-    "a": 2
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Golden Temple is sacred to؟",
+    "q": "The Golden Temple in Amritsar is sacred to which community؟",
     "o": [
       "Sikhs",
       "China",
-      "India",
-      "Japan"
+      "Hindus",
+      "India"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Zakat in Islam means؟",
+    "q": "What is Zakat in Islam؟",
     "o": [
-      "Giving charity to the needy",
-      "Gospels Torah Psalms Quran",
-      "Old and New Testament",
-      "One book only"
+      "Obligatory charity to the needy",
+      "The pilgrimage to Mecca",
+      "The resurrection of Jesus",
+      "The five daily prayers"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Confucianism originated in؟",
+    "q": "In which country did Confucianism originate؟",
     "o": [
       "China",
       "India",
       "Japan",
       "Korea"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

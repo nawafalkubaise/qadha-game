@@ -1,82 +1,90 @@
 [
   {
-    "q": "Naruto about؟",
+    "q": "The anime Naruto is about what؟",
     "o": [
-      "Ghibli",
-      "Pirates",
-      "Poison",
-      "Ninjas"
-    ],
-    "a": 3
-  },
-  {
-    "q": "One Piece about؟",
-    "o": [
-      "Pirates",
-      "Ghibli",
       "Ninjas",
-      "Poison"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Dragon Ball by؟",
-    "o": [
-      "Toriyama",
+      "Pirates",
       "Basketball",
-      "Kishimoto",
-      "Pirates"
+      "Akira Toriyama"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Death Note kills by؟",
+    "q": "The anime One Piece is about what؟",
     "o": [
-      "Basketball",
-      "Toriyama",
-      "Ghibli",
-      "Writing name"
+      "Pirates",
+      "Ninjas",
+      "Robots",
+      "Wizards"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Attack on Titan Japanese title genre؟",
+    "q": "Who created the manga Dragon Ball؟",
     "o": [
-      "A Nightmare on Elm Street",
-      "Crescent and star on green and white",
+      "Akira Toriyama",
+      "Eiichiro Oda",
+      "Hayao Miyazaki",
+      "Masashi Kishimoto"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In Death Note, how does the notebook kill a person؟",
+    "o": [
+      "By writing their name in it",
+      "By drawing their face",
+      "By tearing out a page",
+      "By burning it"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the Japanese title of Attack on Titan؟",
+    "o": [
       "Shingeki no Kyojin",
-      "Three on face"
+      "Boku no Hero Academia",
+      "Kimetsu no Yaiba",
+      "He is given a poison"
     ],
-    "a": 2
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Slam Dunk sport؟",
+    "q": "Which sport is the anime Slam Dunk about؟",
     "o": [
       "Basketball",
-      "Swimming",
-      "Toriyama",
-      "Writing name"
+      "Baseball",
+      "Volleyball",
+      "Akira Toriyama"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Detective Conan shrunk by؟",
+    "q": "In Detective Conan, how is Shinichi shrunk into a child؟",
     "o": [
-      "Poison",
-      "Bleach",
-      "Ghibli",
-      "Ninjas"
+      "He is cursed by a witch",
+      "He is given a poison",
+      "He falls into a magic river",
+      "He is hit by lightning"
     ],
-    "a": 0
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Hayao Miyazaki tied to؟",
+    "q": "Hayao Miyazaki co-founded which animation studio؟",
     "o": [
-      "Ghibli",
-      "Ninjas",
-      "Pirates",
-      "Poison"
+      "Studio Ghibli",
+      "Studio Pierrot",
+      "Akira Toriyama",
+      "Toei Animation"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

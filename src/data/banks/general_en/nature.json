@@ -1,82 +1,90 @@
 [
   {
-    "q": "Fastest land animal؟",
+    "q": "What is the fastest land animal؟",
     "o": [
-      "Cheetah",
-      "Gazelle",
+      "A pride",
       "Giraffe",
-      "Blue Whale"
+      "Blue whale",
+      "Cheetah"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Octopus hearts؟",
+    "q": "How many hearts does an octopus have؟",
     "o": [
-      "3",
       "1",
       "2",
-      "4"
+      "8",
+      "3"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Largest mammal؟",
+    "q": "What is the largest mammal on Earth؟",
     "o": [
-      "Elephant",
-      "Cheetah",
-      "Giraffe",
-      "Blue Whale"
+      "Hippopotamus",
+      "A pride",
+      "African elephant",
+      "Blue whale"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Spider legs؟",
+    "q": "How many legs does a spider have؟",
     "o": [
       "8",
       "3",
       "6",
       "10"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Group of lions؟",
+    "q": "What is a group of lions called؟",
     "o": [
-      "Pride",
-      "Flock",
-      "Herd",
-      "Pack"
+      "A flock",
+      "A herd",
+      "A pack",
+      "A pride"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Sleeps up to 3 years؟",
+    "q": "Which animal can remain dormant for up to three years؟",
     "o": [
       "Snail",
       "Bear",
       "Koala",
-      "Pride"
+      "Sloth"
     ],
-    "a": 0
+    "a": 0,
+    "d": 3
   },
   {
-    "q": "Tallest animal؟",
+    "q": "What is the tallest animal in the world؟",
     "o": [
-      "Giraffe",
+      "A pride",
       "Cheetah",
       "Elephant",
-      "Blue Whale"
+      "Giraffe"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Fastest bird؟",
+    "q": "What is the fastest bird in the world؟",
     "o": [
-      "Falcon (Peregrine)",
-      "Blue Whale",
-      "Cheetah",
-      "Elephant"
+      "Peregrine falcon",
+      "Blue whale",
+      "A pride",
+      "Albatross"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

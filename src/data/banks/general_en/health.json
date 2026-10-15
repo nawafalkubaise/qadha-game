@@ -1,82 +1,90 @@
 [
   {
-    "q": "Daily fluid intake guideline ~؟",
+    "q": "About how much total fluid should an adult drink per day, according to common guidelines؟",
     "o": [
-      "~2 L including drinks",
+      "About 2 liters",
+      "About 0.5 liters",
+      "About 10 liters",
+      "About 6 liters"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "How many hours of sleep do adults typically need per night؟",
+    "o": [
+      "3 to 4 hours",
+      "About 2 liters",
       "Bones and immunity",
-      "Diet and exercise",
-      "Often no symptoms"
+      "7 to 9 hours"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Adult sleep typically؟",
+    "q": "Vitamin D is important for which aspects of health؟",
     "o": [
-      "12 h",
-      "3-4 h",
-      "1 h",
-      "7-9 h"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Vitamin D important for؟",
-    "o": [
-      "Bones and immunity",
-      "Diet and exercise",
-      "~2 L including drinks",
-      "Often no symptoms"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Resting heart rate adult ~؟",
-    "o": [
-      "60-100 bpm",
-      "Immune system",
-      "1 h",
-      "7-9 h"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Type 2 diabetes prevention includes؟",
-    "o": [
-      "~2 L including drinks",
-      "Often no symptoms",
-      "Diet and exercise",
+      "The immune system",
+      "7 to 9 hours",
+      "About 2 liters",
       "Bones and immunity"
     ],
-    "a": 2
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Vaccines train؟",
+    "q": "What is the normal resting heart rate range for adults؟",
     "o": [
-      "Immune system",
-      "Earthquakes",
-      "60-100 bpm",
-      "Infectious spread"
+      "60 to 100 beats per minute",
+      "120 to 150 beats per minute",
+      "160 to 200 beats per minute",
+      "A healthy diet and regular exercise"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Hypertension called silent because؟",
+    "q": "What helps prevent type 2 diabetes؟",
     "o": [
-      "~2 L including drinks",
-      "Bones and immunity",
-      "Diet and exercise",
-      "Often no symptoms"
+      "Eating more sugar",
+      "Sleeping less",
+      "A healthy diet and regular exercise",
+      "Avoiding all water"
     ],
-    "a": 3
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Handwashing reduces؟",
+    "q": "Which body system do vaccines train؟",
     "o": [
-      "Infectious spread",
-      "Earthquakes",
-      "Immune system",
-      "60-100 bpm"
+      "The immune system",
+      "The digestive system",
+      "The nervous system",
+      "The skeletal system"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Why is high blood pressure called the \"silent killer\"؟",
+    "o": [
+      "It often has no symptoms",
+      "It cannot be measured",
+      "It causes total hearing loss",
+      "It only occurs at night"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Regular handwashing mainly helps reduce what؟",
+    "o": [
+      "The spread of infections",
+      "It often has no symptoms",
+      "The immune system",
+      "Bones and immunity"
+    ],
+    "a": 0,
+    "d": 1
   }
 ]

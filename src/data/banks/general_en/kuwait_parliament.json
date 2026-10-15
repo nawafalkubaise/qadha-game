@@ -1,82 +1,90 @@
 [
   {
-    "q": "Kuwait's National Assembly is the؟",
+    "q": "Kuwait's National Assembly is which branch of authority؟",
     "o": [
-      "Legislative authority",
-      "Electoral districts",
-      "Executive branch",
-      "Interpellation"
+      "The legislative authority",
+      "The executive authority",
+      "The judicial authority",
+      "The military command"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Usually elected assembly seats are؟",
+    "q": "How many elected seats does Kuwait's National Assembly have؟",
     "o": [
-      "40",
-      "60",
       "50",
-      "30"
+      "30",
+      "40",
+      "60"
     ],
-    "a": 2
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Assembly building is in؟",
+    "q": "In which city is Kuwait's National Assembly building؟",
     "o": [
-      "Official media",
       "Kuwait City",
       "Fahaheel",
-      "Interpellation"
+      "Ahmadi",
+      "Jahra"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "A key parliamentary oversight tool is؟",
+    "q": "What is a key oversight tool used by Kuwaiti members of parliament؟",
     "o": [
-      "Interpellation",
-      "Official media",
-      "Trade license",
-      "Urban zoning"
+      "Interpellation of ministers",
+      "Into electoral districts",
+      "Issuing trade licenses",
+      "The legislative authority"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Kuwait's constitution was issued in؟",
+    "q": "In which year was Kuwait's constitution issued؟",
     "o": [
-      "1962",
       "1951",
       "1979",
-      "1988"
+      "1988",
+      "1962"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Parliamentary elections are organized by؟",
+    "q": "How are voters organized for Kuwait's parliamentary elections؟",
     "o": [
-      "Electoral districts",
-      "Full appointments",
-      "Legislative authority",
-      "Interpellation"
+      "Into electoral districts",
+      "Interpellation of ministers",
+      "The legislative authority",
+      "Through official media"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Assembly sessions are usually covered by؟",
+    "q": "How are Kuwait National Assembly sessions usually broadcast to the public؟",
     "o": [
-      "Billboards",
-      "Electoral districts",
-      "Official media",
-      "Interpellation"
+      "Through private letters",
+      "Through radio silence",
+      "Interpellation of ministers",
+      "Through official media"
     ],
-    "a": 2
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Passing laws typically needs؟",
+    "q": "In Kuwait, what does passing a law typically require؟",
     "o": [
-      "Assembly approval and constitutional process",
-      "A lot / very",
+      "Assembly approval and the constitutional process",
       "A private company vote",
-      "Municipal vote only"
+      "A municipal vote only",
+      "A newspaper poll"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

@@ -1,82 +1,90 @@
 [
   {
-    "q": "Most native speakers globally ~؟",
+    "q": "Which language has the most native speakers in the world؟",
     "o": [
       "Mandarin Chinese",
-      "Blind reading",
-      "Two languages",
-      "Arabic only"
+      "Portuguese",
+      "English",
+      "Hindi"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Official language of Brazil؟",
+    "q": "What is the official language of Brazil؟",
     "o": [
-      "Blind reading",
+      "Portuguese",
       "English",
       "French",
-      "Portuguese"
+      "Mandarin Chinese"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Cyrillic script used in؟",
+    "q": "Which of these countries uses the Cyrillic script؟",
     "o": [
-      "Russia and others",
-      "A lot / very",
-      "A Nightmare on Elm Street",
-      "Constructed auxiliary language"
+      "Russia",
+      "Greece",
+      "Hungary",
+      "India"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Esperanto is؟",
+    "q": "What is Esperanto؟",
     "o": [
-      "Constructed auxiliary language",
-      "A Nightmare on Elm Street",
-      "A lot / very",
-      "Russia and others"
+      "A constructed international language",
+      "A Spanish regional language",
+      "A type of sign language",
+      "An ancient Roman dialect"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Arabic alphabet letters ~؟",
+    "q": "How many letters are in the Arabic alphabet؟",
     "o": [
-      "28",
       "26",
+      "30",
       "33",
-      "40"
+      "28"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Sanskrit historically tied to؟",
+    "q": "The ancient language Sanskrit is historically tied to which country؟",
     "o": [
       "India",
-      "-100°C",
+      "Egypt",
       "Japan",
-      "Spain"
+      "Mexico"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Bilingual means؟",
+    "q": "What does it mean to be bilingual؟",
     "o": [
-      "Blind reading",
-      "Mandarin Chinese",
-      "No language",
-      "Two languages"
+      "Speaking two languages",
+      "Speaking three languages",
+      "Reading without speaking",
+      "Speaking one language"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Braille is for؟",
+    "q": "What is Braille used for؟",
     "o": [
-      "Two languages",
-      "Blind reading",
-      "Mandarin Chinese",
-      "Speed typing"
+      "Shorthand note-taking",
+      "Speed typing",
+      "Reading by people who are blind",
+      "Sending telegraph messages"
     ],
-    "a": 1
+    "a": 2,
+    "d": 1
   }
 ]

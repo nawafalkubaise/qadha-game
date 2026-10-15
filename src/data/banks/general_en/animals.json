@@ -1,202 +1,222 @@
 [
   {
-    "q": "Fastest bird in a dive (peregrine)؟",
+    "q": "Which bird is the fastest in a dive؟",
     "o": [
       "Peregrine falcon",
-      "Food location",
-      "Southern hemisphere",
-      "Squirting ink"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Giant panda diet mainly؟",
-    "o": [
-      "8 legs",
-      "Krill",
-      "Mammals",
-      "Bamboo"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Only mammal capable of true sustained flight؟",
-    "o": [
-      "Bat",
-      "Krill",
-      "Lemur",
-      "Mouse"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Blue whale eats mainly؟",
-    "o": [
-      "Krill",
-      "8 legs",
-      "Bamboo",
-      "Birds"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Sloth is slow partly due to؟",
-    "o": [
-      "Very low metabolism",
-      "Wetlands and water",
-      "Communication and temperature",
-      "Infrasound and trumpeting"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Giraffe tongue is؟",
-    "o": [
-      "Very long",
-      "120 km/h",
-      "Arabian Fox",
-      "Australia"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Crocodile habitat؟",
-    "o": [
-      "Communication and temperature",
-      "Infrasound and trumpeting",
-      "Very low metabolism",
-      "Wetlands and water"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Bees waggle dance communicates؟",
-    "o": [
-      "Arabian Fox",
-      "Peregrine falcon",
-      "Squirting ink",
-      "Food location"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Largest animal on Earth؟",
-    "o": [
       "Blue whale",
-      "120 km/h",
-      "Arabian Fox",
-      "Australia"
+      "Golden eagle",
+      "Albatross"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Octopus has how many hearts؟",
+    "q": "What does the giant panda mainly eat؟",
+    "o": [
+      "Bamboo",
+      "Fruit",
+      "Insects",
+      "Krill"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which is the only mammal capable of true sustained flight؟",
+    "o": [
+      "Krill",
+      "Australia",
+      "Bamboo",
+      "Bat"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "What does the blue whale mainly eat؟",
+    "o": [
+      "Krill",
+      "Bamboo",
+      "Seals",
+      "Squid"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Why is the sloth so slow-moving؟",
+    "o": [
+      "It has weak bones",
+      "It is always asleep",
+      "It has very short legs",
+      "It has a very low metabolism"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "What is notable about a giraffe's tongue؟",
+    "o": [
+      "It is very long",
+      "It is forked",
+      "It is very short",
+      "It cannot fly"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What kind of habitat do crocodiles typically live in؟",
+    "o": [
+      "By squirting ink",
+      "The location of food",
+      "The Southern Hemisphere",
+      "Wetlands and rivers"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "What does a honeybee's waggle dance communicate to other bees؟",
+    "o": [
+      "The location of food",
+      "The hive's temperature",
+      "The Southern Hemisphere",
+      "An approaching storm"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is the largest animal on Earth؟",
+    "o": [
+      "Whale shark",
+      "Australia",
+      "African elephant",
+      "Blue whale"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "How many hearts does an octopus have؟",
     "o": [
       "3",
       "1",
       "2",
       "4"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Chameleon changes color for؟",
+    "q": "Why do chameleons change color؟",
     "o": [
-      "Communication and temperature",
-      "Infrasound and trumpeting",
-      "Wetlands and water",
-      "Very low metabolism"
+      "Communication and temperature regulation",
+      "Using low-frequency infrasound",
+      "Wetlands and rivers",
+      "About 120 km/h"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Dolphins are classified as؟",
+    "q": "Dolphins are classified as what؟",
     "o": [
-      "Mammals",
-      "120 km/h",
-      "8 legs",
-      "Bamboo"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Ostrich is the largest bird and؟",
-    "o": [
-      "Cannot fly",
-      "120 km/h",
-      "Arabian Fox",
-      "Australia"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Cheetah top speed reaches؟",
-    "o": [
-      "120 km/h",
-      "118 km/h",
-      "119 km/h",
-      "121 km/h"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Penguins mostly live in؟",
-    "o": [
-      "Southern hemisphere",
-      "Peregrine falcon",
-      "Tropical forests",
-      "Food location"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Spiders are not insects because they have؟",
-    "o": [
-      "8 legs",
-      "6 legs",
       "Bamboo",
-      "Krill"
+      "Reptiles",
+      "Amphibians",
+      "Mammals"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Kangaroos are native to؟",
+    "q": "The ostrich is the largest living bird. What else is true about it؟",
     "o": [
-      "120 km/h",
-      "Arabian Fox",
+      "It cannot fly",
+      "It is very long",
+      "About 120 km/h",
+      "By squirting ink"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the approximate top speed of a cheetah؟",
+    "o": [
+      "About 120 km/h",
+      "About 200 km/h",
+      "About 250 km/h",
+      "About 60 km/h"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which part of the world do most penguins live؟",
+    "o": [
+      "The Southern Hemisphere",
+      "The location of food",
+      "Wetlands and rivers",
+      "About 120 km/h"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Spiders are not insects because they have how many legs؟",
+    "o": [
+      "8",
+      "3",
+      "4",
+      "6"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Kangaroos are native to which country؟",
+    "o": [
       "Blue whale",
+      "Bamboo",
+      "Brazil",
       "Australia"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Squid defends itself by؟",
+    "q": "How does a squid defend itself from predators؟",
     "o": [
-      "Biting only",
-      "Food location",
-      "Peregrine falcon",
-      "Squirting ink"
+      "By playing dead",
+      "About 120 km/h",
+      "By inflating its body",
+      "By squirting ink"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Cats sleep approximately per day؟",
+    "q": "About how many hours a day do cats typically sleep؟",
     "o": [
-      "12-16 hours",
-      "4 hours",
-      "20 hours",
-      "8 hours only"
+      "4 to 6 hours",
+      "8 hours",
+      "20 to 22 hours",
+      "12 to 16 hours"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Elephants communicate using؟",
+    "q": "How do elephants communicate over long distances؟",
     "o": [
-      "Infrasound and trumpeting",
-      "Communication and temperature",
-      "Wetlands and water",
-      "Very low metabolism"
+      "Using low-frequency infrasound",
+      "Using ultrasound like bats",
+      "Using chemical trails",
+      "By changing skin color"
     ],
-    "a": 0
+    "a": 0,
+    "d": 3
   }
 ]

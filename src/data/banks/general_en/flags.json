@@ -1,202 +1,222 @@
 [
   {
-    "q": "Japan's flag has؟",
+    "q": "What is on Japan's flag؟",
     "o": [
-      "Red circle",
-      "6 colors",
-      "Green-yellow",
-      "Maple leaf"
+      "A red circle",
+      "A crescent moon",
+      "A maple leaf",
+      "A white cross"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "How many stars on US flag؟",
+    "q": "How many stars are on the US flag؟",
     "o": [
       "50",
       "13",
       "48",
       "52"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Canada's flag symbol؟",
+    "q": "What symbol is in the center of Canada's flag؟",
     "o": [
-      "Maple leaf",
-      "6 colors",
-      "Green-yellow",
-      "Red circle"
+      "A maple leaf",
+      "A red circle",
+      "The Union Jack",
+      "Black, red and gold"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "France's flag colors؟",
+    "q": "What are the colors of France's flag؟",
     "o": [
-      "Green-yellow",
-      "Maple leaf",
-      "Red circle",
-      "Blue-white-red"
+      "Blue, white and red",
+      "Black, red and gold",
+      "Green, white and red",
+      "Green and yellow"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Crescent and star flag؟",
+    "q": "Which country has a red flag with a white crescent and star؟",
     "o": [
-      "Brazil",
-      "Nepal",
       "Turkey",
-      "Bhutan"
+      "Canada",
+      "Japan",
+      "Mexico"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Brazil's flag color؟",
+    "q": "What are the main colors of Brazil's flag؟",
     "o": [
-      "Green-yellow",
-      "Blue-white-red",
-      "Blue-yellow",
-      "Maple leaf"
+      "Green and yellow",
+      "Red and yellow",
+      "Black, red and gold",
+      "Blue and white"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "UK flag called؟",
+    "q": "What is the flag of the United Kingdom commonly called؟",
     "o": [
-      "Union Jack",
-      "6 colors",
-      "Green-yellow",
-      "Maple leaf"
+      "The Union Jack",
+      "The Maple Leaf",
+      "A maple leaf",
+      "A red circle"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Which flag has a dragon؟",
+    "q": "Which of these flags features a red dragon؟",
     "o": [
+      "Wales",
       "China",
       "Japan",
+      "Mexico"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What does Saudi Arabia's flag feature؟",
+    "o": [
+      "The Shahada and a sword",
+      "A star and crescent",
+      "Black, red and gold",
+      "Blue, white and red"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Which country has the only non-rectangular national flag؟",
+    "o": [
       "Nepal",
-      "Wales"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Saudi flag features؟",
-    "o": [
-      "Star and crescent",
-      "Black red gold",
-      "Eagle eating snake",
-      "Shahada and sword"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Only non-rectangular national flag؟",
-    "o": [
-      "China",
-      "Eagle",
+      "Bhutan",
       "Japan",
-      "Nepal"
+      "Mexico"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Germany's flag colors؟",
+    "q": "What are the colors of Germany's flag؟",
     "o": [
-      "Shahada and sword",
-      "Yellow stars on red",
-      "4 (green white red black)",
-      "Black red gold"
+      "Black, red and gold",
+      "Blue, white and red",
+      "Green, white and red",
+      "Green and yellow"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "India's flag center has؟",
+    "q": "What symbol is in the center of India's flag؟",
     "o": [
-      "Ireland (different order)",
-      "Union Jack and Southern Cross",
-      "Ashoka Chakra (blue wheel)",
-      "4 (green white red black)"
+      "A lotus flower",
+      "A tiger",
+      "A crescent moon",
+      "The Ashoka Chakra (a blue wheel)"
     ],
-    "a": 2
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Italian flag similar to؟",
+    "q": "Which country's flag uses the same green, white and red vertical stripes as Italy's but adds an emblem in the center؟",
     "o": [
-      "Ireland (different order)",
-      "4 (green white red black)",
-      "Ashoka Chakra (blue wheel)",
-      "Union Jack and Southern Cross"
+      "Mexico",
+      "France",
+      "Hungary",
+      "Ireland"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "South Africa's flag has؟",
+    "q": "How many colors are on South Africa's flag؟",
     "o": [
-      "6 colors",
-      "10 colors",
-      "2 colors",
-      "1 color"
+      "6",
+      "2",
+      "4",
+      "10"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Australia's flag features؟",
+    "q": "Australia's flag features the Union Jack and which constellation؟",
     "o": [
-      "4 (green white red black)",
-      "Ashoka Chakra (blue wheel)",
-      "Ireland (different order)",
-      "Union Jack and Southern Cross"
+      "The Southern Cross",
+      "Black, red and gold",
+      "Blue, white and red",
+      "Green and yellow"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Mexico's flag center has؟",
+    "q": "What is in the center of Mexico's flag؟",
     "o": [
-      "Shahada and sword",
-      "Yellow stars on red",
-      "4 (green white red black)",
-      "Eagle eating snake"
+      "An eagle eating a snake",
+      "A star and crescent",
+      "Black, red and gold",
+      "Blue, white and red"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Pakistan's flag features؟",
+    "q": "What does Pakistan's flag feature؟",
     "o": [
-      "Ashoka Chakra (blue wheel)",
-      "Crescent and star on green and white",
-      "Black red gold",
-      "Eagle eating snake"
+      "A white crescent and star on green and white",
+      "A blue wheel",
+      "Black, red and gold stripes",
+      "An eagle eating a snake"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Switzerland's flag shape؟",
+    "q": "What shape is Switzerland's national flag؟",
     "o": [
       "Square",
-      "Bhutan",
-      "Circle",
-      "Nepal"
+      "Mexico",
+      "Nepal",
+      "Turkey"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "China's flag has؟",
+    "q": "What does China's flag show؟",
     "o": [
-      "Yellow stars on red",
-      "4 (green white red black)",
-      "Black red gold",
-      "Eagle eating snake"
+      "A red circle on white",
+      "Yellow stars on a red background",
+      "A white cross on red",
+      "A blue wheel"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Kuwait's flag has how many colors؟",
+    "q": "How many colors are on Kuwait's flag؟",
     "o": [
-      "4 (green white red black)",
-      "Ashoka Chakra (blue wheel)",
-      "Ireland (different order)",
-      "Union Jack and Southern Cross"
+      "4",
+      "2",
+      "3",
+      "5"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

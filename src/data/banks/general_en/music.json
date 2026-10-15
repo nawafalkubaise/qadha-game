@@ -1,202 +1,222 @@
 [
   {
-    "q": "88 keys instrument؟",
+    "q": "Which instrument typically has 88 keys؟",
     "o": [
-      "Piano",
-      "Baton",
-      "Blues",
-      "Harp"
+      "Harp",
+      "Hello",
+      "Organ",
+      "Piano"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "King of Pop؟",
+    "q": "Who is known as the \"King of Pop\"؟",
     "o": [
       "Michael Jackson",
       "Arabic music",
-      "Singer-songwriter",
-      "UK (Liverpool)"
+      "Elvis Presley",
+      "Stevie Wonder"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Bohemian Rhapsody band؟",
+    "q": "Which band recorded \"Bohemian Rhapsody\"؟",
     "o": [
       "Queen",
-      "Baton",
       "Hello",
-      "Piano"
+      "Piano",
+      "Reggae"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Genre from Jamaica؟",
+    "q": "Which music genre originated in Jamaica؟",
     "o": [
       "Reggae",
+      "A baton",
       "Austria",
-      "Baton",
       "Germany"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Guitar strings count؟",
+    "q": "How many strings does a standard guitar have؟",
     "o": [
+      "6",
       "4",
       "5",
-      "8",
-      "6"
+      "8"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Beethoven's country؟",
+    "q": "In which country was Ludwig van Beethoven born؟",
     "o": [
       "Germany",
+      "A baton",
       "Austria",
-      "France",
-      "Jamaica"
+      "France"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Instrument in an orchestra that conducts؟",
+    "q": "What does an orchestra conductor typically hold to direct the musicians؟",
     "o": [
-      "Baton",
-      "Drum",
-      "Hello",
-      "Piano"
+      "A baton",
+      "A mallet",
+      "Austria",
+      "Germany"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Auto-Tune became famous in which decade؟",
+    "q": "In which decade was Auto-Tune software first released؟",
     "o": [
-      "1990s",
+      "1970s",
       "1980s",
       "2000s",
-      "2010s"
+      "1990s"
     ],
-    "a": 0
+    "a": 3,
+    "d": 3
   },
   {
-    "q": "Mozart was from؟",
+    "q": "Wolfgang Amadeus Mozart was from which present-day country؟",
     "o": [
+      "Austria",
+      "A baton",
       "France",
-      "Germany",
-      "Jamaica",
-      "Austria"
+      "Germany"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Beatles were from؟",
+    "q": "Which English city were the Beatles from؟",
+    "o": [
+      "Birmingham",
+      "Manchester",
+      "New Orleans",
+      "Liverpool"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "The oud is a traditional instrument in which music tradition؟",
     "o": [
       "Arabic music",
-      "Michael Jackson",
-      "Singer-songwriter",
-      "UK (Liverpool)"
+      "Andean music",
+      "Celtic music",
+      "Japanese music"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Oud is a traditional instrument in؟",
+    "q": "Elvis Presley is known as the \"King of\" which genre؟",
     "o": [
-      "Arabic music",
-      "Michael Jackson",
-      "South Korea",
-      "UK (Liverpool)"
+      "Jazz",
+      "Blues",
+      "Rock and roll",
+      "Country"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Elvis Presley was the King of؟",
-    "o": [
-      "Rock and Roll",
-      "USA (New York)",
-      "USA (New Orleans)",
-      "Front page of the internet"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Adele is a British singer famous for؟",
+    "q": "Which of these hit songs is by British singer Adele؟",
     "o": [
       "Hello",
-      "Baton",
+      "Halo",
       "Piano",
       "Queen"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Bob Marley was from؟",
+    "q": "Which country was Bob Marley from؟",
     "o": [
       "Jamaica",
+      "A baton",
       "Austria",
-      "Brazil",
-      "Germany"
+      "Barbados"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Rap music originated in؟",
+    "q": "In which US city did rap and hip hop music originate؟",
     "o": [
-      "USA (New Orleans)",
-      "A lot / very",
-      "Rock and Roll",
-      "USA (New York)"
+      "Los Angeles",
+      "Atlanta",
+      "Detroit",
+      "New York City"
     ],
-    "a": 3
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Violin has how many strings؟",
+    "q": "How many strings does a violin have؟",
     "o": [
+      "4",
       "3",
-      "6",
-      "8",
-      "4"
+      "5",
+      "6"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Jazz music originated in؟",
+    "q": "In which US city did jazz music originate؟",
     "o": [
-      "USA (New Orleans)",
-      "USA (New York)",
-      "A lot / very",
-      "Rock and Roll"
+      "Arabic music",
+      "Liverpool",
+      "Nashville",
+      "New Orleans"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Freddie Mercury was lead singer of؟",
+    "q": "Freddie Mercury was the lead singer of which band؟",
     "o": [
       "Queen",
-      "Baton",
       "Hello",
-      "Piano"
+      "Piano",
+      "Reggae"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Taylor Swift is primarily known as؟",
+    "q": "What is Taylor Swift primarily known as؟",
     "o": [
+      "A singer-songwriter",
+      "Arabic music",
       "Michael Jackson",
-      "UK (Liverpool)",
-      "Actress only",
-      "Singer-songwriter"
+      "A baton"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "BTS is a K-pop group from؟",
+    "q": "Which country is the K-pop group BTS from؟",
     "o": [
       "South Korea",
       "Arabic music",
-      "Austria",
-      "Germany"
+      "Liverpool",
+      "New Orleans"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

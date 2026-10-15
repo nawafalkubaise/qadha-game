@@ -1,82 +1,68 @@
 [
   {
-    "q": "Abdullah Al-Ruwaished is famous in؟",
+    "q": "Abdullah Al-Ruwaished is famous in which field؟",
     "o": [
-      "Kuwaiti singing",
-      "Drama acting",
-      "Actresses",
-      "Basketball"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Hayat Al-Fahad is known for؟",
-    "o": [
-      "Drama acting",
-      "Kuwaiti singing",
       "Acting",
-      "Actresses"
+      "Football",
+      "Poetry",
+      "Singing"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Suad Abdullah is one of Kuwait's famous؟",
+    "q": "Hayat Al-Fahad is known for what؟",
+    "o": [
+      "Singing",
+      "Acting in TV drama",
+      "Sports commentary",
+      "Politics"
+    ],
+    "a": 1,
+    "d": 1
+  },
+  {
+    "q": "Suad Abdullah is one of Kuwait's famous what؟",
     "o": [
       "Actresses",
       "Athletes",
-      "Physicists",
-      "Acting"
+      "Politicians",
+      "Scientists"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Dawood Hussein is known for؟",
+    "q": "Dawood Hussain is known for what؟",
     "o": [
-      "Poetry",
-      "Actresses",
-      "Drama acting",
-      "Acting"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Faiq Abduljaleel is notable in؟",
-    "o": [
-      "Poetry",
       "Acting",
+      "Poetry",
+      "Singing",
+      "Actresses"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Faiq Abduljaleel is notable in which field؟",
+    "o": [
+      "Acting",
+      "Poetry and song lyrics",
       "Boxing",
       "Physics"
     ],
-    "a": 0
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Popular influencer platforms in Kuwait؟",
+    "q": "Which social media platforms are especially popular with influencers in Kuwait؟",
     "o": [
-      "Media and social platforms",
-      "Kuwaiti public figures",
-      "Oil sector only",
-      "Snapchat and Instagram"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Kuwaiti celebrities are often visible in؟",
-    "o": [
-      "Oil sector only",
-      "Media and social platforms",
       "Snapchat and Instagram",
-      "Kuwaiti public figures"
+      "LinkedIn and Tumblr",
+      "Poetry and song lyrics",
+      "Acting in TV drama"
     ],
-    "a": 1
-  },
-  {
-    "q": "This category focuses on؟",
-    "o": [
-      "Kuwaiti public figures",
-      "Media and social platforms",
-      "Snapchat and Instagram",
-      "Oil sector only"
-    ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

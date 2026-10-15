@@ -1,202 +1,222 @@
 [
   {
-    "q": "Eiffel Tower city؟",
+    "q": "In which city is the Eiffel Tower located؟",
     "o": [
       "Paris",
       "Athens",
-      "Cairo",
-      "Delhi"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Statue of Liberty was a gift from France to؟",
-    "o": [
-      "Granada (Spain)",
-      "San Francisco",
-      "Abu Dhabi",
-      "United States"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Great Wall of China was built mainly for؟",
-    "o": [
-      "Defense",
-      "Athens",
-      "Istanbul",
-      "Jordan"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Colosseum is in؟",
-    "o": [
-      "Rome",
-      "Cairo",
-      "Delhi",
-      "Dubai"
-    ],
-    "a": 0
-  },
-  {
-    "q": "India Gate is in؟",
-    "o": [
-      "Athens",
       "Dubai",
-      "India",
-      "Delhi"
+      "India"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Golden Gate Bridge city؟",
+    "q": "The Statue of Liberty was a gift from France to which country؟",
     "o": [
-      "Granada (Spain)",
-      "Los Angeles",
       "United States",
-      "San Francisco"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Machu Picchu country؟",
-    "o": [
-      "Chile",
-      "Delhi",
-      "Dubai",
-      "Peru"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Arc de Triomphe city؟",
-    "o": [
-      "Paris",
-      "Athens",
-      "Cairo",
-      "Delhi"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Taj Mahal is in؟",
-    "o": [
-      "India",
-      "Athens",
-      "Delhi",
-      "Dubai"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Burj Khalifa is in؟",
-    "o": [
-      "Athens",
-      "Delhi",
-      "Doha",
-      "Dubai"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Petra ancient city is in؟",
-    "o": [
-      "Jordan",
-      "Athens",
-      "Defense",
-      "Delhi"
-    ],
-    "a": 0
-  },
-  {
-    "q": "How many main pyramids at Giza؟",
-    "o": [
-      "3",
-      "5",
-      "7",
-      "10"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Sydney Opera House is in؟",
-    "o": [
-      "Australia",
-      "Abu Dhabi",
-      "Istanbul",
-      "New Zealand"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Acropolis is in؟",
-    "o": [
-      "Defense",
-      "Delhi",
-      "Dubai",
-      "Athens"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Hagia Sophia is in؟",
-    "o": [
-      "Istanbul",
-      "Abu Dhabi",
-      "Australia",
-      "Defense"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Alhambra palace is in؟",
-    "o": [
-      "Granada (Spain)",
+      "United Kingdom",
       "San Francisco",
-      "United States",
       "Abu Dhabi"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Big Ben is in؟",
+    "q": "What was the Great Wall of China mainly built for؟",
     "o": [
-      "London",
+      "Defense",
       "Athens",
-      "Berlin",
-      "Defense"
+      "Granada",
+      "Istanbul"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Christ the Redeemer is in؟",
+    "q": "In which city is the Colosseum located؟",
     "o": [
-      "Rio de Janeiro",
-      "Atlantic and Pacific",
-      "Baltic and North Sea",
-      "Indian and Pacific"
+      "Rome",
+      "Dubai",
+      "India",
+      "Paris"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Suez Canal connects؟",
+    "q": "In which city is India Gate located؟",
     "o": [
-      "Atlantic and Pacific",
-      "Indian and Pacific",
-      "Red Sea and Mediterranean",
-      "Baltic and North Sea"
-    ],
-    "a": 2
-  },
-  {
-    "q": "Sheikh Zayed Grand Mosque is in؟",
-    "o": [
-      "Athens",
+      "New Delhi",
       "Abu Dhabi",
       "Australia",
       "Istanbul"
     ],
-    "a": 1
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which city is the Golden Gate Bridge located؟",
+    "o": [
+      "San Francisco",
+      "Los Angeles",
+      "San Diego",
+      "United States"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country is Machu Picchu located؟",
+    "o": [
+      "Chile",
+      "Dubai",
+      "India",
+      "Peru"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which city is the Arc de Triomphe located؟",
+    "o": [
+      "Paris",
+      "Athens",
+      "Dubai",
+      "India"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country is the Taj Mahal located؟",
+    "o": [
+      "Athens",
+      "Dubai",
+      "Iran",
+      "India"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which city is the Burj Khalifa located؟",
+    "o": [
+      "Dubai",
+      "Athens",
+      "Doha",
+      "India"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country is the ancient city of Petra located؟",
+    "o": [
+      "Athens",
+      "Defense",
+      "Dubai",
+      "Jordan"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "How many main pyramids stand at Giza؟",
+    "o": [
+      "3",
+      "2",
+      "5",
+      "7"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which country is the Sydney Opera House located؟",
+    "o": [
+      "Australia",
+      "Abu Dhabi",
+      "Istanbul",
+      "New Delhi"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which city is the Acropolis located؟",
+    "o": [
+      "Defense",
+      "Dubai",
+      "Granada",
+      "Athens"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which city is the Hagia Sophia located؟",
+    "o": [
+      "Istanbul",
+      "Abu Dhabi",
+      "Australia",
+      "Defense"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which Spanish city is the Alhambra palace located؟",
+    "o": [
+      "Granada",
+      "Athens",
+      "Defense",
+      "Istanbul"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which city is Big Ben located؟",
+    "o": [
+      "Athens",
+      "Berlin",
+      "Defense",
+      "London"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which city does the Christ the Redeemer statue stand؟",
+    "o": [
+      "Rio de Janeiro",
+      "São Paulo",
+      "Buenos Aires",
+      "Lisbon"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which two bodies of water does the Suez Canal connect؟",
+    "o": [
+      "Red Sea and Mediterranean Sea",
+      "Black Sea and Mediterranean Sea",
+      "Persian Gulf and Arabian Sea",
+      "Atlantic and Pacific Oceans"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which city is the Sheikh Zayed Grand Mosque located؟",
+    "o": [
+      "Abu Dhabi",
+      "Australia",
+      "Istanbul",
+      "New Delhi"
+    ],
+    "a": 0,
+    "d": 1
   }
 ]

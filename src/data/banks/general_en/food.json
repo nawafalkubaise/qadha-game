@@ -1,202 +1,222 @@
 [
   {
-    "q": "Sushi origin؟",
+    "q": "Which country is sushi most associated with؟",
     "o": [
       "Japan",
       "Canada",
       "China",
-      "France"
+      "Egypt"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Red gold spice؟",
+    "q": "Which spice is often called \"red gold\"؟",
     "o": [
       "Saffron",
       "Austria",
       "Bologna",
       "Canada"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Main ingredient of hummus؟",
+    "q": "What is the main ingredient of hummus؟",
     "o": [
-      "South Korea",
       "Chickpeas",
+      "Eggplant",
       "Ethiopia",
       "Fava beans"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Kimchi from؟",
+    "q": "Which country does kimchi come from؟",
     "o": [
-      "Black pepper",
-      "Chickpeas",
-      "North Africa",
-      "South Korea"
+      "Canada",
+      "China",
+      "Egypt",
+      "Korea"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Italy's pasta city؟",
+    "q": "Which Italian city gives its name to the famous meat ragù pasta sauce؟",
     "o": [
       "Bologna",
       "Austria",
       "Canada",
       "Ethiopia"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Croissant originated in؟",
+    "q": "The croissant evolved from the kipferl, a pastry from which country؟",
     "o": [
-      "Canada",
-      "Austria",
       "Belgium",
-      "Bologna"
+      "Bologna",
+      "Canada",
+      "Austria"
     ],
-    "a": 1
+    "a": 3,
+    "d": 3
   },
   {
-    "q": "Taco origin country؟",
+    "q": "Which country do tacos come from؟",
     "o": [
-      "Mexico",
       "Austria",
       "Bologna",
-      "Brazil"
+      "Brazil",
+      "Mexico"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Dim sum from؟",
+    "q": "Which country does dim sum come from؟",
     "o": [
       "China",
       "Canada",
-      "France",
-      "India"
+      "Egypt",
+      "France"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Pizza originated in؟",
+    "q": "In which country did pizza originate؟",
     "o": [
       "Italy",
       "Canada",
       "China",
-      "France"
+      "Egypt"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Chocolate was first used by؟",
+    "q": "Which peoples were the first to use cacao to make chocolate drinks؟",
     "o": [
-      "Aztecs and Maya",
-      "Ancient Egyptians",
-      "Ancient Romans",
-      "Ancient Greeks"
+      "The Maya and Aztecs",
+      "The Ancient Egyptians",
+      "The Ancient Greeks",
+      "The Ancient Romans"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Paella is from؟",
+    "q": "Which country does paella come from؟",
     "o": [
       "Spain",
       "Canada",
       "China",
-      "France"
+      "Egypt"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Most used spice worldwide؟",
+    "q": "Which is the most widely used spice in the world؟",
     "o": [
       "Black pepper",
-      "Central America",
       "North Africa",
-      "South Korea"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Couscous is traditional in؟",
-    "o": [
-      "North Africa",
-      "Black pepper",
-      "Central America",
-      "Eastern Europe"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Coffee was first discovered in؟",
-    "o": [
-      "Ethiopia",
-      "Austria",
-      "Bologna",
+      "Cardamom",
       "Chickpeas"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Wasabi comes from؟",
+    "q": "Couscous is a traditional dish of which region؟",
+    "o": [
+      "Black pepper",
+      "Central America",
+      "Eastern Europe",
+      "North Africa"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "In which country was coffee first discovered؟",
+    "o": [
+      "Austria",
+      "Bologna",
+      "Chickpeas",
+      "Ethiopia"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Which country does wasabi come from؟",
     "o": [
       "Japan",
       "Canada",
       "China",
-      "France"
+      "Egypt"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Falafel origin region؟",
+    "q": "Falafel is believed to have originated in which country؟",
     "o": [
-      "Middle East/Egypt",
-      "Central America",
-      "Southern Europe",
-      "Black pepper"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Dal (lentil soup) is staple food in؟",
-    "o": [
-      "India",
+      "Egypt",
       "Canada",
       "China",
       "France"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Avocado originated in؟",
+    "q": "In which country is dal (lentil stew) a staple food؟",
     "o": [
-      "Middle East/Egypt",
-      "Central America",
-      "Black pepper",
-      "Mediterranean"
+      "India",
+      "Canada",
+      "China",
+      "Egypt"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Baguette is from؟",
+    "q": "In which region did the avocado originate؟",
     "o": [
+      "The Middle East",
+      "Southern Europe",
+      "West Africa",
+      "Central America and Mexico"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "Which country does the baguette come from؟",
+    "o": [
+      "France",
       "Austria",
       "Belgium",
-      "Bologna",
-      "France"
+      "Bologna"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Maple syrup is produced mainly in؟",
+    "q": "Which country produces most of the world's maple syrup؟",
     "o": [
-      "Canada",
       "Austria",
       "Bologna",
-      "China"
+      "China",
+      "Canada"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   }
 ]

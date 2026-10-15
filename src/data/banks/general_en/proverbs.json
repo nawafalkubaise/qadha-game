@@ -1,202 +1,222 @@
 [
   {
-    "q": "Complete: \"The neighbor before the…\" (Arab proverb calque)",
+    "q": "Complete the Arabic proverb: \"Choose the neighbor before the...\"",
     "o": [
-      "Cover",
       "House",
       "Body",
-      "Bush"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Complete: \"Patience is the key to…\"",
-    "o": [
-      "Relief",
-      "Author",
-      "Border",
+      "Bush",
       "Cover"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Complete: \"He who strives…\" (from: whoever strives, finds)",
+    "q": "Complete the Arabic proverb: \"Patience is the key to...\"",
+    "o": [
+      "Relief",
+      "Blanket",
+      "Cover",
+      "Finds"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Complete the Arabic proverb: \"Whoever strives...\"",
     "o": [
       "Bush",
       "Cover",
       "Finds",
       "Body"
     ],
-    "a": 2
+    "a": 2,
+    "d": 2
   },
   {
-    "q": "Complete: \"The monkey in its mother's eye is a…\"",
+    "q": "Complete the Arabic proverb: \"In its mother's eyes, the monkey is a...\"",
     "o": [
-      "Donkey",
+      "Gazelle",
+      "Blanket",
       "Lining",
-      "Gazelle",
-      "Coverlet"
+      "Peacock"
     ],
-    "a": 2
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Complete: \"Stretch your legs according to your…\" (coverlet proverb)",
+    "q": "Complete the Arabic proverb: \"Stretch your legs according to your...\"",
     "o": [
-      "Romans do",
-      "Coverlet",
+      "Blanket",
+      "Carpet",
       "Gazelle",
-      "Invention"
+      "Lining"
     ],
-    "a": 1
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Complete: \"Prevention is better than…\"",
+    "q": "Complete the proverb: \"Prevention is better than...\"",
     "o": [
-      "Cure",
-      "Body",
       "Bush",
-      "Cover"
+      "Cover",
+      "Cure",
+      "Body"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Complete: \"When the mind is complete…\" (speech version)",
+    "q": "Complete the Arabic proverb: \"When the mind is complete...\"",
     "o": [
       "Speech lessens",
       "Speech doubles",
-      "Hope ends",
-      "Invention"
+      "Fear disappears",
+      "Wealth grows"
     ],
-    "a": 0
+    "a": 0,
+    "d": 3
   },
   {
-    "q": "Complete: \"Who seeks the heights…\" (nights version)",
+    "q": "Complete the Arabic proverb: \"Whoever seeks the heights...\"",
     "o": [
-      "Giving charity to the needy",
+      "Sleeps early",
+      "Travels far",
       "Stays up nights",
-      "Takes a nap",
-      "Front page of the internet"
+      "Climbs mountains"
     ],
-    "a": 1
+    "a": 2,
+    "d": 3
   },
   {
-    "q": "Complete: \"Actions speak louder than…\"",
+    "q": "Complete the proverb: \"Actions speak louder than...\"",
     "o": [
       "Bush",
       "Cover",
       "Words",
       "Body"
     ],
-    "a": 2
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Complete: \"A bird in the hand is worth two in the…\"",
+    "q": "Complete the proverb: \"A bird in the hand is worth two in the...\"",
     "o": [
-      "Cage",
-      "Cover",
       "Bush",
-      "Body"
+      "Body",
+      "Cage",
+      "Cover"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"The early bird catches the…\"",
+    "q": "Complete the proverb: \"The early bird catches the...\"",
     "o": [
       "Worm",
       "Body",
       "Bush",
       "Cover"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"Don't judge a book by its…\"",
+    "q": "Complete the proverb: \"Don't judge a book by its...\"",
     "o": [
       "Cover",
-      "Anger",
+      "Author",
       "Body",
       "Bush"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"Every cloud has a silver…\"",
+    "q": "Complete the proverb: \"Every cloud has a silver...\"",
     "o": [
-      "Lining",
-      "Author",
       "Border",
-      "Cover"
+      "Cover",
+      "Lining",
+      "Blanket"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Complete: \"Rome was not built in a…\"",
+    "q": "Complete the proverb: \"Rome was not built in a...\"",
     "o": [
       "Day",
       "Way",
       "Body",
       "Bush"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"When in Rome do as the…\"",
+    "q": "Complete the proverb: \"When in Rome, do as the...\"",
     "o": [
-      "Kings do",
-      "Priests do",
       "Romans do",
-      "Greeks do"
+      "Greeks do",
+      "Kings do",
+      "Priests do"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"Knowledge is…\"",
+    "q": "Complete the saying: \"Knowledge is...\"",
     "o": [
       "Power",
       "Body",
       "Bush",
       "Cover"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"Necessity is the mother of…\"",
+    "q": "Complete the proverb: \"Necessity is the mother of...\"",
     "o": [
-      "Laziness",
-      "Romans do",
       "Invention",
-      "Coverlet"
+      "Patience",
+      "Progress",
+      "Romans do"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"All that glitters is not…\"",
+    "q": "Complete the proverb: \"All that glitters is not...\"",
     "o": [
       "Gold",
       "Body",
       "Bush",
       "Cover"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"A healthy mind in a healthy…\"",
+    "q": "Complete the saying: \"A healthy mind in a healthy...\"",
     "o": [
       "Body",
       "Bush",
       "Cover",
       "Cure"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Complete: \"Where there's a will there's a…\"",
+    "q": "Complete the proverb: \"Where there's a will, there's a...\"",
     "o": [
-      "Body",
-      "Bush",
       "Way",
-      "Day"
+      "Day",
+      "Body",
+      "Bush"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   }
 ]

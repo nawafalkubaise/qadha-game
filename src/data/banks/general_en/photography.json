@@ -1,82 +1,90 @@
 [
   {
-    "q": "Aperture measured in؟",
+    "q": "In photography, aperture is expressed using what value؟",
     "o": [
+      "ISO",
       "f-stop",
-      "Camera shake",
-      "Expansive scenes",
-      "Fast motion"
-    ],
-    "a": 0
-  },
-  {
-    "q": "ISO raises؟",
-    "o": [
-      "Sensor sensitivity to light",
-      "Blurry background aesthetic",
-      "Shallow depth of field",
-      "More editing latitude"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Wide-angle lens for؟",
-    "o": [
-      "Macro only",
-      "Expansive scenes",
-      "Camera shake",
-      "Fast motion"
-    ],
-    "a": 1
-  },
-  {
-    "q": "RAW vs JPEG؟",
-    "o": [
-      "More editing latitude",
-      "Shallow depth of field",
-      "Blurry background aesthetic",
-      "Sensor sensitivity to light"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Bokeh refers to؟",
-    "o": [
-      "Blurry background aesthetic",
-      "Sensor sensitivity to light",
-      "Shallow depth of field",
-      "More editing latitude"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Fast shutter freezes؟",
-    "o": [
-      "Fast motion",
-      "Camera shake",
-      "Expansive scenes",
-      "f-stop"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Tripod reduces؟",
-    "o": [
-      "Fast motion",
-      "Expansive scenes",
-      "Lens size",
+      "Kelvin",
       "Camera shake"
     ],
-    "a": 3
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Portrait mode often uses؟",
+    "q": "What does increasing a camera's ISO setting raise؟",
     "o": [
-      "Shallow depth of field",
-      "Blurry background aesthetic",
-      "More editing latitude",
-      "Sensor sensitivity to light"
+      "The sensor's sensitivity to light",
+      "The color temperature",
+      "The lens focal length",
+      "A shallow depth of field"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is a wide-angle lens best suited for؟",
+    "o": [
+      "Capturing expansive scenes",
+      "A shallow depth of field",
+      "Compressing distant backgrounds",
+      "More editing flexibility"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is the main advantage of shooting in RAW rather than JPEG؟",
+    "o": [
+      "Compatibility with every app",
+      "More editing flexibility",
+      "A shallow depth of field",
+      "Capturing expansive scenes"
+    ],
+    "a": 1,
+    "d": 2
+  },
+  {
+    "q": "In photography, what does \"bokeh\" refer to؟",
+    "o": [
+      "The aesthetic quality of out-of-focus blur",
+      "Blur caused by camera shake",
+      "Lens flare from the sun",
+      "Grain in low-light photos"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What does a fast shutter speed help to do؟",
+    "o": [
+      "Blur the background",
+      "Brighten dark scenes",
+      "A shallow depth of field",
+      "Freeze fast motion"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "What does using a tripod help reduce؟",
+    "o": [
+      "Camera shake",
+      "Image noise",
+      "Lens flare",
+      "Chromatic aberration"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What effect does a phone camera's portrait mode usually create؟",
+    "o": [
+      "A shallow depth of field",
+      "A long-exposure blur",
+      "A wide-angle distortion",
+      "Capturing expansive scenes"
+    ],
+    "a": 0,
+    "d": 2
   }
 ]

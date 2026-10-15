@@ -1,82 +1,90 @@
 [
   {
-    "q": "Model T helped؟",
+    "q": "What did Ford's Model T help bring about؟",
     "o": [
       "Mass car ownership",
-      "Sensors and AI",
-      "Tractors then supercars",
-      "Prevent wheel lock when braking"
+      "A prancing horse",
+      "Formula One racing",
+      "Wheels locking during braking"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Toyota from؟",
+    "q": "Which country is the carmaker Toyota from؟",
     "o": [
       "Japan",
-      "Bull",
       "China",
-      "Korea"
+      "Germany",
+      "Tractors"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Mercedes-Benz HQ city؟",
+    "q": "In which city is Mercedes-Benz headquartered؟",
     "o": [
       "Stuttgart",
       "Frankfurt",
-      "Berlin",
-      "Munich"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Tesla known for؟",
-    "o": [
-      "Electric vehicles",
-      "Prancing horse",
-      "Diesel only",
-      "Bicycles"
-    ],
-    "a": 0
-  },
-  {
-    "q": "ABS helps؟",
-    "o": [
-      "Tractors then supercars",
-      "Mass car ownership",
-      "Sensors and AI",
-      "Prevent wheel lock when braking"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Lamborghini began as؟",
-    "o": [
-      "Tractors then supercars",
-      "Mass car ownership",
-      "Prevent wheel lock when braking",
-      "Sensors and AI"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Self-driving cars rely on؟",
-    "o": [
-      "Sensors and AI",
-      "Mass car ownership",
-      "Tractors then supercars",
-      "Prevent wheel lock when braking"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Ferrari logo animal؟",
-    "o": [
-      "Prancing horse",
-      "Electric vehicles",
-      "Stuttgart",
+      "Tractors",
       "Berlin"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "The car company Tesla is best known for what؟",
+    "o": [
+      "Electric vehicles",
+      "Diesel trucks",
+      "Motorcycles",
+      "Bicycles"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What does an anti-lock braking system (ABS) prevent؟",
+    "o": [
+      "Wheels locking during braking",
+      "Sensors and artificial intelligence",
+      "Mass car ownership",
+      "A prancing horse"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What did Lamborghini make before it built supercars؟",
+    "o": [
+      "Tractors",
+      "Airplanes",
+      "Bicycles",
+      "Motorboats"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What do self-driving cars rely on to navigate؟",
+    "o": [
+      "Sensors and artificial intelligence",
+      "Radio instructions from police",
+      "Wheels locking during braking",
+      "A prancing horse"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which animal appears on the Ferrari logo؟",
+    "o": [
+      "A prancing horse",
+      "A leaping jaguar",
+      "A raging bull",
+      "Mass car ownership"
+    ],
+    "a": 0,
+    "d": 1
   }
 ]

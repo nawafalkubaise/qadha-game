@@ -1,82 +1,57 @@
 [
   {
-    "q": "Most iconic towers in Kuwait are؟",
+    "q": "Which landmark, made up of three slender towers with blue-green spheres, is Kuwait's most iconic؟",
     "o": [
       "Kuwait Towers",
-      "Clock Tower",
-      "Eiffel Tower",
-      "Leaning Tower"
+      "Modern Kuwait",
+      "Arraya Tower",
+      "Liberation Tower"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Kuwait Towers are on the؟",
+    "q": "Where are the Kuwait Towers located؟",
     "o": [
-      "Coast in Kuwait City",
-      "Modern city identity",
-      "One of the tallest towers",
-      "Kuwaiti architectural identity"
+      "On the Kuwait City waterfront",
+      "Panoramic views of the city",
+      "On Failaka Island",
+      "Al Hamra Tower"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Al Hamra Tower is known as؟",
-    "o": [
-      "One of the tallest towers",
-      "Coast in Kuwait City",
-      "Kuwaiti architectural identity",
-      "Modern city identity"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Kuwait Towers symbolize؟",
-    "o": [
-      "Coast in Kuwait City",
-      "Kuwaiti architectural identity",
-      "One of the tallest towers",
-      "Modern city identity"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Tower viewing decks offer؟",
+    "q": "Which skyscraper is the tallest building in Kuwait؟",
     "o": [
       "Kuwait Towers",
-      "National occasions",
-      "Panoramic views",
-      "Diving trips"
+      "Liberation Tower",
+      "Al Hamra Tower",
+      "Arraya Tower"
     ],
-    "a": 2
+    "a": 2,
+    "d": 2
   },
   {
-    "q": "Their design reflects؟",
+    "q": "The Kuwait Towers are widely seen as a symbol of what؟",
     "o": [
-      "Kuwaiti architectural identity",
-      "Modern city identity",
-      "One of the tallest towers",
-      "Coast in Kuwait City"
+      "Modern Kuwait",
+      "The pearl-diving era",
+      "Ottoman rule",
+      "The 1991 liberation"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Photos by the towers are common on؟",
+    "q": "What do the observation spheres of the Kuwait Towers offer visitors؟",
     "o": [
-      "National occasions",
-      "Landmark attraction",
-      "Panoramic views",
-      "Court sessions"
+      "On the Kuwait City waterfront",
+      "An underwater aquarium",
+      "A rooftop golf course",
+      "Panoramic views of the city"
     ],
-    "a": 0
-  },
-  {
-    "q": "Tourism category of the towers؟",
-    "o": [
-      "Landmark attraction",
-      "National occasions",
-      "Kuwait Towers",
-      "Panoramic views"
-    ],
-    "a": 0
+    "a": 3,
+    "d": 1
   }
 ]

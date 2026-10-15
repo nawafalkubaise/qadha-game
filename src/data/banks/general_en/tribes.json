@@ -1,82 +1,68 @@
 [
   {
-    "q": "In Arabian context, a tribe is usually a؟",
+    "q": "In the Arabian context, what is a tribe usually؟",
     "o": [
-      "Hospitality and guest protection",
-      "Use multiple corroborated sources",
+      "A kinship-based social grouping",
+      "Hospitality and protecting guests",
       "Water, pasture, and trade routes",
-      "Historical kinship-based social grouping"
+      "A government ministry"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The term fakhadh commonly means؟",
+    "q": "In Arabian tribal structure, what does the term \"fakhdh\" commonly mean؟",
     "o": [
-      "Sub-lineage branch within a larger tribal structure",
-      "Lineage = descent; custom = social practice",
-      "Solidarity, honor, and readiness to support",
-      "Social guest hall and discussion forum"
+      "A sub-branch of a larger tribe",
+      "The title of a tribal leader",
+      "Honor and readiness to help others",
+      "A social gathering and discussion hall"
     ],
-    "a": 0
+    "a": 0,
+    "d": 3
   },
   {
-    "q": "A shared value in Kuwaiti/Saudi tribal heritage is؟",
-    "o": [
-      "Water, pasture, and trade routes",
-      "Historical kinship-based social grouping",
-      "Use multiple corroborated sources",
-      "Hospitality and guest protection"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Historic tribal migration in central Arabia was often driven by؟",
+    "q": "Which value is strongly shared in Kuwaiti and Saudi tribal heritage؟",
     "o": [
       "Water, pasture, and trade routes",
-      "Hospitality and guest protection",
-      "Historical kinship-based social grouping",
-      "Use multiple corroborated sources"
+      "A kinship-based social grouping",
+      "Avoidance of strangers",
+      "Hospitality and protecting guests"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "A Kuwaiti diwaniya traditionally serves as؟",
+    "q": "Historic tribal migration in central Arabia was often driven by what؟",
     "o": [
-      "Lineage = descent; custom = social practice",
-      "Solidarity, honor, and readiness to support",
-      "Sub-lineage branch within a larger tribal structure",
-      "Social guest hall and discussion forum"
+      "Gold mining",
+      "Water, pasture, and trade routes",
+      "Industrial jobs",
+      "Seasonal festivals"
     ],
-    "a": 3
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Nakhwa in tribal usage often implies؟",
+    "q": "What does a Kuwaiti diwaniya traditionally serve as؟",
     "o": [
-      "Solidarity, honor, and readiness to support",
-      "Social guest hall and discussion forum",
-      "Lineage = descent; custom = social practice",
-      "Sub-lineage branch within a larger tribal structure"
+      "A courtroom",
+      "A school",
+      "A marketplace",
+      "A social gathering and discussion hall"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "For accurate tribal history work, best practice is؟",
+    "q": "In tribal usage, what does \"nakhwa\" usually imply؟",
     "o": [
-      "Use multiple corroborated sources",
-      "Historical kinship-based social grouping",
-      "Hospitality and guest protection",
-      "Use one anonymous post"
+      "Seeking revenge",
+      "Displaying wealth",
+      "Honor and readiness to help others",
+      "Keeping silent"
     ],
-    "a": 0
-  },
-  {
-    "q": "In tribal studies, lineage and custom are best described as؟",
-    "o": [
-      "Lineage = descent; custom = social practice",
-      "Social guest hall and discussion forum",
-      "Solidarity, honor, and readiness to support",
-      "Sub-lineage branch within a larger tribal structure"
-    ],
-    "a": 0
+    "a": 2,
+    "d": 2
   }
 ]

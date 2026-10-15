@@ -45,7 +45,8 @@ export function saveSeen(s) {
 /** مطابقة خفيفة مع الخادم — للعرض السريع؛ السيرفر يستخدم بصمة أقوى */
 export function qHash(q) {
   if (q && q.id) return "id:" + String(q.id);
-  const head = (q.q || "").substring(0, 40);
+  /* النص كاملاً — أول ٤٠ حرفاً كانت تدمج أسئلة مختلفة تبدأ بنفس الصياغة */
+  const head = String(q.q || "").trim();
   const img = q.img ? String(q.img).slice(-56) : "";
   return head + "|" + img;
 }

@@ -1,82 +1,90 @@
 [
   {
-    "q": "Largest organ؟",
+    "q": "What is the largest organ of the human body؟",
     "o": [
-      "Heart",
       "Skin",
       "37°C",
-      "Brain"
+      "Brain",
+      "Liver"
     ],
-    "a": 1
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Normal body temperature؟",
+    "q": "What is the normal human body temperature؟",
     "o": [
       "37°C",
-      "36°C",
-      "Brain",
-      "Skin"
+      "35°C",
+      "39°C",
+      "40°C"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Blood types count؟",
+    "q": "How many main blood groups are there in the ABO system؟",
     "o": [
       "4",
       "2",
-      "6",
-      "8"
+      "3",
+      "6"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Insulin treats؟",
+    "q": "Insulin is used to treat which condition؟",
     "o": [
-      "Diabetes",
-      "Allergies",
       "Bacteria",
-      "60-100"
+      "Malaria",
+      "60-100",
+      "Diabetes"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Vitamin C found in؟",
+    "q": "Which foods are well known for being rich in vitamin C؟",
     "o": [
       "Citrus fruits",
-      "Allergies",
       "Bacteria",
-      "Diabetes"
+      "Diabetes",
+      "Red meat"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Heart beats per minute (avg)؟",
+    "q": "What is the normal resting heart rate for adults, in beats per minute؟",
     "o": [
       "60-100",
-      "37°C",
-      "Bacteria",
-      "Diabetes"
+      "120-160",
+      "180-220",
+      "30-50"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Antibiotics fight؟",
+    "q": "Antibiotics are used to fight what؟",
     "o": [
+      "Viruses",
       "Bacteria",
       "Allergies",
-      "Diabetes",
-      "Viruses"
+      "Diabetes"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "WHO stands for؟",
+    "q": "What does WHO stand for؟",
     "o": [
+      "World Help Organization",
+      "Western Health Office",
       "World Hospital Order",
-      "World Help Org",
-      "World Health Organization",
-      "Western Health Office"
+      "World Health Organization"
     ],
-    "a": 2
+    "a": 3,
+    "d": 1
   }
 ]

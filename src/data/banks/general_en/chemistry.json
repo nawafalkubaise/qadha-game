@@ -1,82 +1,90 @@
 [
   {
-    "q": "Symbol for gold؟",
+    "q": "What is the chemical symbol for gold؟",
     "o": [
       "Au",
       "Ag",
-      "Fe",
-      "Pb"
+      "Gd",
+      "Go"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Gas that supports combustion؟",
+    "q": "Which gas supports combustion؟",
     "o": [
-      "Nitrogen",
-      "Oxygen",
       "Helium",
-      "Mendeleev"
+      "Nitrogen",
+      "Petroleum",
+      "Oxygen"
     ],
-    "a": 1
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Neutral pH؟",
+    "q": "What is the pH of a neutral solution؟",
     "o": [
       "7",
       "0",
       "1",
       "14"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Water is made of؟",
+    "q": "Which elements make up water؟",
     "o": [
-      "H and O",
-      "C and N",
-      "Fe and O",
-      "Na and Cl"
+      "Hydrogen and oxygen",
+      "Carbon and nitrogen",
+      "Iron and oxygen",
+      "Sodium and chlorine"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Stomach acid mainly؟",
+    "q": "Stomach acid is mainly which acid؟",
     "o": [
-      "Releases heat",
-      "Mendeleev",
-      "Petroleum",
-      "Hydrochloric"
+      "Hydrochloric acid",
+      "Acetic acid",
+      "Citric acid",
+      "Dmitri Mendeleev"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Periodic table credited to؟",
+    "q": "Who is credited with creating the periodic table؟",
     "o": [
-      "Petroleum",
-      "Darwin",
-      "Mendeleev",
-      "Einstein"
+      "Dmitri Mendeleev",
+      "Albert Einstein",
+      "Charles Darwin",
+      "Hydrochloric acid"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Most plastics derived from؟",
+    "q": "Most plastics are made from what raw material؟",
     "o": [
-      "Petroleum",
-      "Mendeleev",
-      "Plants only",
-      "Hydrochloric"
+      "Iron ore",
+      "Cotton",
+      "Oxygen",
+      "Petroleum"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Exothermic reaction؟",
+    "q": "What does an exothermic reaction do؟",
     "o": [
       "Releases heat",
       "Absorbs heat",
-      "Hydrochloric",
-      "Mendeleev"
+      "Dmitri Mendeleev",
+      "Freezes instantly"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

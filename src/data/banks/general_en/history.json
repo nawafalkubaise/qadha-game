@@ -1,212 +1,233 @@
 [
   {
-    "q": "When did World War II end؟",
+    "q": "In which year did World War II end؟",
     "o": [
-      "1946",
+      "1789",
+      "1945",
       "1453",
-      "1492",
-      "1789"
+      "1492"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Who walked on the moon first؟",
+    "q": "Who was the first person to walk on the Moon؟",
     "o": [
       "Neil Armstrong",
-      "Ancient Egyptians",
-      "Lunar calendar",
-      "Michelangelo"
+      "Alexander Fleming",
+      "Michelangelo",
+      "Roald Amundsen"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The French Revolution began in؟",
+    "q": "In which year did the French Revolution begin؟",
     "o": [
       "1789",
       "1453",
       "1492",
       "1776"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Who built the Colosseum؟",
+    "q": "Who built the Colosseum in Rome؟",
     "o": [
-      "Romans",
-      "Britain",
-      "Fleming",
-      "Greeks"
+      "The Greeks",
+      "Michelangelo",
+      "The Byzantines",
+      "The Romans"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Berlin Wall fell in؟",
+    "q": "In which year did the Berlin Wall fall؟",
     "o": [
       "1989",
       "1453",
       "1492",
       "1789"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Who painted Sistine Chapel ceiling؟",
+    "q": "Who painted the ceiling of the Sistine Chapel؟",
     "o": [
       "Michelangelo",
       "Botticelli",
-      "Lunar calendar",
-      "Neil Armstrong"
+      "Neil Armstrong",
+      "Roald Amundsen"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Titanic sank in؟",
+    "q": "In which year did the Titanic sink؟",
     "o": [
-      "1912",
       "1453",
       "1492",
-      "1789"
+      "1789",
+      "1912"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
     "q": "Who discovered penicillin؟",
     "o": [
-      "Fleming",
-      "Amundsen",
-      "Britain",
-      "Darwin"
+      "Alexander Fleming",
+      "Johannes Gutenberg",
+      "Napoleon Bonaparte",
+      "Neil Armstrong"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Columbus reached America in؟",
+    "q": "In which year did Columbus first reach the Americas؟",
     "o": [
       "1492",
       "1453",
-      "1470",
-      "1500"
+      "1498",
+      "1519"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The Ottoman Empire fell in؟",
+    "q": "In which year was the Ottoman sultanate abolished, ending the empire؟",
     "o": [
-      "1789",
       "1922",
       "1453",
-      "1492"
+      "1492",
+      "1789"
     ],
-    "a": 1
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "First civilization with writing؟",
+    "q": "Which civilization was the first to develop writing؟",
     "o": [
-      "Amundsen",
-      "Britain",
-      "Chinese",
-      "Sumerian"
-    ],
-    "a": 3
-  },
-  {
-    "q": "The Great Pyramids were built by؟",
-    "o": [
-      "Ancient Egyptians",
-      "Lunar calendar",
+      "The Chinese",
+      "Michelangelo",
       "Neil Armstrong",
-      "Babylonians"
+      "The Sumerians"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Printing press inventor؟",
+    "q": "Who built the Great Pyramids of Giza؟",
     "o": [
-      "Gutenberg",
-      "Amundsen",
-      "Napoleon",
-      "Sumerian"
+      "The Babylonians",
+      "The Ancient Egyptians",
+      "The Persians",
+      "The Romans"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "India gained independence in؟",
+    "q": "Who invented the movable-type printing press in Europe؟",
+    "o": [
+      "Johannes Gutenberg",
+      "Alexander Fleming",
+      "Galileo Galilei",
+      "Napoleon Bonaparte"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which year did India gain independence؟",
     "o": [
       "1947",
       "1453",
       "1492",
       "1789"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The Cold War was between؟",
+    "q": "The Cold War was mainly between which two powers؟",
     "o": [
-      "China and Japan",
-      "UK and France",
+      "The USA and the USSR",
+      "The UK and France",
       "Germany and Italy",
-      "USA and USSR"
+      "The Ancient Egyptians"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Battle of Waterloo ended whose reign؟",
+    "q": "The Battle of Waterloo ended the rule of whom؟",
     "o": [
-      "Alexander",
-      "Amundsen",
-      "Britain",
-      "Napoleon"
+      "Napoleon Bonaparte",
+      "Alexander Fleming",
+      "Johannes Gutenberg",
+      "Julius Caesar"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "WWI started in؟",
+    "q": "In which year did World War I begin؟",
     "o": [
       "1914",
       "1453",
       "1492",
       "1789"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Industrial Revolution began in؟",
+    "q": "In which country did the Industrial Revolution begin؟",
     "o": [
-      "Amundsen",
-      "Fleming",
       "France",
+      "Germany",
+      "The Romans",
       "Britain"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Fall of Constantinople was in؟",
+    "q": "In which year did Constantinople fall to the Ottomans؟",
     "o": [
       "1453",
-      "1400",
+      "1204",
       "1492",
-      "1500"
+      "1517"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "First South Pole expedition led by؟",
+    "q": "Who led the first expedition to reach the South Pole؟",
     "o": [
-      "Fleming",
-      "Gutenberg",
-      "Amundsen",
-      "Britain"
+      "Roald Amundsen",
+      "Alexander Fleming",
+      "Edmund Hillary",
+      "Ernest Shackleton"
     ],
-    "a": 2
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Chinese New Year follows؟",
+    "q": "The date of Chinese New Year is based on which calendar؟",
     "o": [
-      "Hijri calendar",
-      "Ancient Egyptians",
-      "Chinese only",
-      "Lunar calendar"
+      "The lunisolar Chinese calendar",
+      "The Gregorian calendar",
+      "The Hijri calendar",
+      "The Julian calendar"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   }
 ]

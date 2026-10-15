@@ -1,82 +1,90 @@
 [
   {
-    "q": "Al-Mubarakiya is a؟",
+    "q": "What is Souq Al-Mubarakiya؟",
     "o": [
-      "Archaeology and tourism",
-      "Hazza Al Mansouri",
-      "Heritage landmark market",
-      "Mubarak Al-Kabeer"
+      "A heritage market",
+      "A leisure landmark",
+      "A modern skyscraper",
+      "A national stadium"
     ],
-    "a": 2
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The Grand Mosque is in؟",
+    "q": "In which city is Kuwait's Grand Mosque؟",
     "o": [
-      "Kuwait landmarks",
-      "Cultural landmark",
-      "Fahaheel",
-      "Kuwait City"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Bait Al-Sadu represents؟",
-    "o": [
-      "Kuwaiti heritage",
-      "Cultural landmark",
-      "Heavy industry",
-      "Kuwait landmarks"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Sheikh Jaber Al-Ahmad Cultural Centre is a؟",
-    "o": [
-      "Cultural landmark",
-      "Leisure landmark",
-      "Kuwait landmarks",
-      "Kuwaiti heritage"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Failaka Island is known for؟",
-    "o": [
-      "A Nightmare on Elm Street",
-      "Heritage landmark market",
-      "A lot / very",
-      "Archaeology and tourism"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Kuwait Towers are part of؟",
-    "o": [
-      "Kuwait landmarks",
-      "Cultural landmark",
       "Kuwait City",
-      "Kuwaiti heritage"
-    ],
-    "a": 0
-  },
-  {
-    "q": "The Red Palace is in؟",
-    "o": [
-      "Farm",
-      "Snow",
-      "Red",
+      "Fahaheel",
+      "Ahmadi",
       "Jahra"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The waterfront is mainly a؟",
+    "q": "What does Bait Al-Sadu represent؟",
     "o": [
-      "Leisure landmark",
-      "Cultural landmark",
-      "Kuwait landmarks",
-      "Kuwaiti heritage"
+      "Kuwaiti heritage and Sadu weaving",
+      "Archaeological sites and tourism",
+      "A heritage market",
+      "A leisure landmark"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is the Sheikh Jaber Al-Ahmad Cultural Centre؟",
+    "o": [
+      "A shopping mall",
+      "A sports stadium",
+      "A cultural landmark and opera house",
+      "An oil refinery"
+    ],
+    "a": 2,
+    "d": 1
+  },
+  {
+    "q": "Failaka Island is known for what؟",
+    "o": [
+      "Archaeological sites and tourism",
+      "Kuwaiti heritage and Sadu weaving",
+      "A heritage market",
+      "A large car factory"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Besides their observation sphere, what do the Kuwait Towers mainly store؟",
+    "o": [
+      "Water",
+      "Grain",
+      "Jahra",
+      "Oil"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which Kuwaiti area is the historic Red Palace؟",
+    "o": [
+      "Jahra",
+      "Ahmadi",
+      "Water",
+      "Fahaheel"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Kuwait's waterfront is mainly what kind of landmark؟",
+    "o": [
+      "A leisure landmark",
+      "A heritage market",
+      "A military base",
+      "An industrial zone"
+    ],
+    "a": 0,
+    "d": 1
   }
 ]

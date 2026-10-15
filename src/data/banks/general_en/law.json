@@ -1,82 +1,90 @@
 [
   {
-    "q": "Universal Declaration of Human Rights؟",
+    "q": "In which year was the Universal Declaration of Human Rights adopted؟",
     "o": [
-      "1948",
       "1945",
       "1950",
-      "1960"
+      "1960",
+      "1948"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "International Court of Justice؟",
+    "q": "In which city is the International Court of Justice based؟",
     "o": [
       "The Hague",
-      "Brand sign",
       "Brussels",
-      "Court trial"
+      "New York",
+      "Geneva"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "UN main HQ؟",
+    "q": "In which city are the main headquarters of the United Nations؟",
     "o": [
       "New York",
-      "Brand sign",
       "The Hague",
-      "Court trial"
+      "Geneva",
+      "Paris"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Innocent until؟",
+    "q": "Complete the legal principle: \"Innocent until...\"",
     "o": [
       "Proven guilty",
-      "Court trial",
-      "Brand sign",
-      "Confession"
+      "Arrested",
+      "New York",
+      "Sentenced"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Civil law often covers؟",
+    "q": "What does civil law mainly deal with؟",
     "o": [
+      "Murder trials",
+      "Military offenses",
+      "Treason cases",
+      "Contracts and private disputes"
+    ],
+    "a": 3,
+    "d": 2
+  },
+  {
+    "q": "In which city is the International Criminal Court based؟",
+    "o": [
+      "The Hague",
+      "New York",
+      "Strasbourg",
+      "Geneva"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What does a trademark protect؟",
+    "o": [
+      "Books and music",
       "Contracts and private disputes",
-      "Three letters often",
-      "A lot / very",
-      "Often no symptoms"
+      "A court trial",
+      "Brand names and logos"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "ICC (criminal court) in؟",
+    "q": "Arbitration is an alternative to what؟",
     "o": [
-      "The Hague",
-      "Brand sign",
-      "Court trial",
-      "New York"
+      "A court trial",
+      "A tax audit",
+      "A parliamentary vote",
+      "Brand names and logos"
     ],
-    "a": 0
-  },
-  {
-    "q": "Trademark protects؟",
-    "o": [
-      "Brand sign",
-      "Court trial",
-      "New York",
-      "Passport"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Arbitration alternative to؟",
-    "o": [
-      "Court trial",
-      "Brand sign",
-      "Proven guilty",
-      "The Hague"
-    ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

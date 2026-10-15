@@ -1,82 +1,90 @@
 [
   {
-    "q": "Pulitzer Prize domain؟",
+    "q": "The Pulitzer Prize is mainly awarded in which fields؟",
     "o": [
-      "Jobs and careers",
-      "Digital audio show",
-      "Live video only",
-      "Journalism and literature"
+      "Journalism and literature",
+      "Science and medicine",
+      "Sports and athletics",
+      "A digital audio show"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "CNN originally headquartered in؟",
+    "q": "In which US city was CNN originally headquartered؟",
     "o": [
       "Atlanta",
-      "British",
       "London",
-      "New York"
+      "New York",
+      "Fake news"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "BBC is؟",
+    "q": "The BBC is the national public broadcaster of which country؟",
     "o": [
-      "American",
-      "Atlanta",
-      "Canadian",
-      "British"
+      "United Kingdom",
+      "Australia",
+      "Fake news",
+      "Atlanta"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Podcast is؟",
+    "q": "What is a podcast؟",
     "o": [
-      "Digital audio show",
-      "Jobs and careers",
-      "Live video only",
-      "Journalism and literature"
+      "A digital audio show",
+      "A live TV broadcast",
+      "A printed magazine",
+      "Jobs and careers"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Reuters news agency HQ؟",
+    "q": "In which city is the Reuters news agency headquartered؟",
     "o": [
       "Atlanta",
       "Berlin",
-      "British",
+      "Paris",
       "London"
     ],
-    "a": 3
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Fake news common English term؟",
+    "q": "What term describes false information deliberately presented as news؟",
     "o": [
       "Fake news",
-      "Spam only",
+      "Breaking news",
       "Atlanta",
-      "British"
+      "London"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "YouTube founded around؟",
+    "q": "In which year was YouTube founded؟",
     "o": [
       "2005",
       "2003",
       "2007",
       "2010"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "LinkedIn focuses on؟",
+    "q": "What is LinkedIn mainly focused on؟",
     "o": [
+      "Photo sharing",
+      "Video streaming",
       "Jobs and careers",
-      "Digital audio show",
-      "Journalism and literature",
-      "Live video only"
+      "Online dating"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   }
 ]

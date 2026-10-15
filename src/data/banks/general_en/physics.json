@@ -1,82 +1,90 @@
 [
   {
-    "q": "Speed of light approx؟",
+    "q": "What is the approximate speed of light in a vacuum؟",
     "o": [
-      "150K km/s",
-      "500K km/s",
-      "1M km/s",
-      "300K km/s"
+      "300,000 km/s",
+      "150,000 km/s",
+      "3,000,000 km/s",
+      "30,000 km/s"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Gravity discovered by؟",
+    "q": "Who formulated the law of universal gravitation؟",
     "o": [
-      "Newton",
-      "-273°C",
-      "Galileo",
-      "Hawking"
+      "Isaac Newton",
+      "300,000 km/s",
+      "Albert Einstein",
+      "Galileo Galilei"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "E=mc² is by؟",
+    "q": "Which scientist is famous for the equation E=mc²؟",
     "o": [
-      "Einstein",
-      "300K km/s",
-      "Galileo",
-      "Hawking"
+      "300,000 km/s",
+      "Isaac Newton",
+      "Max Planck",
+      "Albert Einstein"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Absolute zero in Celsius؟",
+    "q": "What is absolute zero, rounded, in degrees Celsius؟",
     "o": [
       "-273°C",
       "-100°C",
-      "-200°C",
+      "-173°C",
+      "-200°C"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which medium does light travel fastest؟",
+    "o": [
+      "Vacuum",
+      "-273°C",
+      "Diamond",
       "Glass"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Light travels fastest in؟",
-    "o": [
-      "Newton",
-      "Vacuum",
-      "-273°C",
-      "Galileo"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Unit of force؟",
+    "q": "What is the SI unit of force؟",
     "o": [
       "-273°C",
-      "Galileo",
-      "Solids",
+      "Joule",
+      "Pascal",
       "Newton"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Sound travels fastest in؟",
+    "q": "In which state of matter does sound generally travel fastest؟",
     "o": [
-      "Vacuum",
       "Solids",
       "-273°C",
-      "Newton"
+      "Gases",
+      "Liquids"
     ],
-    "a": 1
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Rainbow colors count؟",
+    "q": "How many colors are traditionally counted in a rainbow؟",
     "o": [
+      "8",
       "7",
       "5",
-      "6",
-      "8"
+      "6"
     ],
-    "a": 0
+    "a": 1,
+    "d": 1
   }
 ]

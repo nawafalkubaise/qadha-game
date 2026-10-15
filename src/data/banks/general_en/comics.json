@@ -1,82 +1,90 @@
 [
   {
-    "q": "Batman city؟",
+    "q": "Which city does Batman protect؟",
     "o": [
-      "Gotham",
-      "Batman",
-      "Japan",
-      "Metropolis"
+      "Central City",
+      "Star City",
+      "Metropolis",
+      "Gotham City"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "MCU stands for؟",
+    "q": "What does MCU stand for؟",
     "o": [
-      "Marvel Cinematic Universe",
-      "Writer/editor pioneer",
-      "A lot / very",
-      "A Nightmare on Elm Street"
+      "Movie Comic Universe",
+      "A newspaper comic strip",
+      "Marvel Comics Union",
+      "Marvel Cinematic Universe"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Stan Lee role؟",
+    "q": "What was Stan Lee's role in comics history؟",
     "o": [
-      "France/Belgium",
-      "Two publishers",
-      "Comic strip",
-      "Writer/editor pioneer"
+      "The founder of DC Comics",
+      "A pioneering writer and editor at Marvel",
+      "A Japanese manga artist",
+      "A newspaper cartoonist for Peanuts"
     ],
-    "a": 3
+    "a": 1,
+    "d": 2
   },
   {
-    "q": "Spider-Man alter ego؟",
+    "q": "What is Spider-Man's real name؟",
     "o": [
       "Peter Parker",
       "Bruce Wayne",
       "Clark Kent",
-      "Comic strip"
+      "Gotham City"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Manga from؟",
+    "q": "Which country does manga come from؟",
     "o": [
-      "-100°C",
       "China",
-      "Gotham",
+      "France",
+      "Thailand",
       "Japan"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "DC vs Marvel؟",
+    "q": "DC and Marvel are two rival American comic book what؟",
     "o": [
-      "Two publishers",
-      "France/Belgium",
-      "Peter Parker",
-      "Same company"
+      "Publishers",
+      "Gotham City",
+      "Newspapers",
+      "Peter Parker"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Asterix origin؟",
+    "q": "In which country was the comic Asterix created؟",
     "o": [
-      "France/Belgium",
-      "Peter Parker",
-      "Two publishers",
-      "Comic strip"
+      "France",
+      "Germany",
+      "Italy",
+      "Japan"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Calvin and Hobbes format؟",
+    "q": "In what format was Calvin and Hobbes originally published؟",
     "o": [
-      "Comic strip",
-      "Peter Parker",
-      "France/Belgium",
-      "Two publishers"
+      "A newspaper comic strip",
+      "A graphic novel series",
+      "Marvel Cinematic Universe",
+      "A manga magazine"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   }
 ]

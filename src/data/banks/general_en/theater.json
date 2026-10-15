@@ -2,81 +2,89 @@
   {
     "q": "Who wrote Hamlet؟",
     "o": [
-      "Shakespeare",
-      "Indonesia",
-      "Maeterlinck",
+      "William Shakespeare",
+      "Christopher Marlowe",
+      "Maurice Maeterlinck",
       "Peking opera"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "The Globe Theatre is linked to؟",
+    "q": "In which city is Shakespeare's Globe Theatre located؟",
     "o": [
       "London",
-      "Athens",
-      "Milan",
-      "Aeschylus"
+      "Bristol",
+      "Dublin",
+      "Milan"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "La Scala opera house is in؟",
+    "q": "In which city is the La Scala opera house located؟",
     "o": [
       "Milan",
-      "House",
       "London",
-      "Paris"
+      "Naples",
+      "Rome"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "The Blue Bird playwright؟",
+    "q": "Who wrote the play The Blue Bird؟",
     "o": [
-      "Maeterlinck",
-      "Indonesia",
+      "Maurice Maeterlinck",
+      "August Strindberg",
+      "William Shakespeare",
+      "Anton Chekhov"
+    ],
+    "a": 0,
+    "d": 3
+  },
+  {
+    "q": "What is the best-known form of traditional Chinese opera؟",
+    "o": [
       "Peking opera",
-      "Shakespeare"
+      "Indonesia",
+      "Kathakali",
+      "Maurice Maeterlinck"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Traditional Chinese opera form often called؟",
-    "o": [
-      "Maeterlinck",
-      "Shakespeare",
-      "Indonesia",
-      "Peking opera"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Wayang shadow puppetry is famous in؟",
+    "q": "Wayang shadow puppetry is famous in which country؟",
     "o": [
       "Indonesia",
-      "Maeterlinck",
       "New York",
-      "Shakespeare"
+      "Philippines",
+      "Sophocles"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Antigone was written by؟",
+    "q": "Which ancient Greek playwright wrote Antigone؟",
     "o": [
-      "Sophocles",
       "Aeschylus",
-      "Aristotle",
-      "Euripides"
+      "Euripides",
+      "Indonesia",
+      "Sophocles"
     ],
-    "a": 0
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Broadway is a theatre district in؟",
+    "q": "Broadway is a famous theatre district in which city؟",
     "o": [
       "New York",
       "Chicago",
       "Indonesia",
       "Sophocles"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

@@ -1,182 +1,200 @@
 [
   {
-    "q": "Red Planet is؟",
+    "q": "Which planet is known as the Red Planet؟",
     "o": [
       "Mars",
       "100°C",
       "Skin",
       "Venus"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Chemical symbol for water؟",
+    "q": "What is the chemical formula for water؟",
     "o": [
-      "H2O",
+      "H₂O",
       "CO₂",
-      "O2H",
-      "OH2"
+      "100°C",
+      "Mars"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Bones in adult body؟",
+    "q": "How many bones are in the adult human body؟",
     "o": [
-      "216",
+      "206",
       "196",
-      "202",
-      "206"
+      "216",
+      "226"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Gas plants absorb؟",
+    "q": "Which gas do plants absorb from the air for photosynthesis؟",
     "o": [
-      "CO₂",
-      "H2O",
-      "Sun",
-      "100°C"
+      "Chloroplasts",
+      "Dmitri Mendeleev",
+      "Isaac Newton",
+      "Carbon dioxide"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Organ producing insulin؟",
+    "q": "Which organ produces insulin؟",
     "o": [
-      "300K km/s",
+      "A vacuum",
       "Diamond",
-      "Mendeleev",
+      "Kidneys",
       "Pancreas"
     ],
-    "a": 3
+    "a": 3,
+    "d": 2
   },
   {
-    "q": "Largest organ of body؟",
+    "q": "What is the largest organ of the human body؟",
     "o": [
       "Skin",
       "100°C",
       "Brain",
       "Heart"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Blood type universal donor؟",
+    "q": "Which blood type is known as the universal donor؟",
     "o": [
-      "100°C",
-      "O",
-      "A",
-      "B"
+      "O negative",
+      "B negative",
+      "A positive",
+      "A vacuum"
     ],
-    "a": 1
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Atom consists of؟",
+    "q": "What particles make up an atom؟",
     "o": [
-      "Protons neutrons electrons",
-      "A Nightmare on Elm Street",
-      "A private company vote",
-      "A lot / very"
+      "Molecules, cells, and tissues",
+      "Photons, ions, and gases",
+      "Protons, neutrons, and electrons",
+      "Quarks only"
     ],
-    "a": 0
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "Who discovered gravity؟",
+    "q": "Which scientist is credited with discovering the law of gravity؟",
     "o": [
-      "Newton",
-      "100°C",
-      "Diamond",
-      "Edison"
+      "Isaac Newton",
+      "Albert Einstein",
+      "Carbon dioxide",
+      "Chloroplasts"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Boiling point of water at sea level؟",
+    "q": "What is the boiling point of water at sea level؟",
     "o": [
       "100°C",
       "110°C",
-      "80°C",
+      "120°C",
       "90°C"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "DNA carries؟",
+    "q": "What does DNA carry؟",
     "o": [
-      "Genetic information",
-      "Chloroplasts",
-      "100°C",
-      "300K km/s"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Nearest star to Earth؟",
-    "o": [
-      "Sun",
-      "CO₂",
-      "H2O",
-      "100°C"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Periodic table organized by؟",
-    "o": [
-      "Mendeleev",
-      "300K km/s",
-      "Einstein",
-      "Pancreas"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Photosynthesis occurs in؟",
-    "o": [
-      "Chloroplasts",
-      "Mitochondria",
-      "300K km/s",
+      "Digestive enzymes",
+      "Dmitri Mendeleev",
+      "Electrical signals",
       "Genetic information"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Planets in solar system؟",
+    "q": "What is the nearest star to Earth؟",
     "o": [
-      "8",
-      "7",
-      "9",
-      "10"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Light bulb inventor؟",
-    "o": [
-      "Edison",
-      "100°C",
+      "The Sun",
+      "A vacuum",
       "Diamond",
-      "Faraday"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Hardest natural substance؟",
-    "o": [
-      "Diamond",
-      "Edison",
-      "Newton",
       "Pancreas"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Sound cannot travel through؟",
+    "q": "Who is credited with creating the periodic table؟",
     "o": [
-      "100°C",
-      "Diamond",
-      "Edison",
-      "Vacuum"
+      "Dmitri Mendeleev",
+      "Antoine Lavoisier",
+      "Carbon dioxide",
+      "Genetic information"
     ],
-    "a": 3
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "In which part of a plant cell does photosynthesis take place؟",
+    "o": [
+      "Chloroplasts",
+      "Carbon dioxide",
+      "Isaac Newton",
+      "Mitochondria"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "How many planets are in our solar system؟",
+    "o": [
+      "7",
+      "9",
+      "10",
+      "8"
+    ],
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "Who is commonly credited with inventing the practical light bulb؟",
+    "o": [
+      "Thomas Edison",
+      "Carbon dioxide",
+      "Chloroplasts",
+      "Dmitri Mendeleev"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "What is the hardest natural substance؟",
+    "o": [
+      "Diamond",
+      "A vacuum",
+      "Granite",
+      "Pancreas"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Through what can sound not travel؟",
+    "o": [
+      "A vacuum",
+      "Diamond",
+      "O negative",
+      "Pancreas"
+    ],
+    "a": 0,
+    "d": 1
   }
 ]

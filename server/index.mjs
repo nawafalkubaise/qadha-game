@@ -389,7 +389,7 @@ app.put("/api/rooms/:code", (req, res) => {
     res.status(409).json({ error: "rev_conflict", serverRev: room.rev });
     return;
   }
-  if ("gameState" in req.body) {
+  if (req.body && typeof req.body === "object" && "gameState" in req.body) {
     room.gameState = req.body.gameState;
   }
   room.rev += 1;

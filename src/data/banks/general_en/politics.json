@@ -1,82 +1,90 @@
 [
   {
-    "q": "UN headquarters main site؟",
+    "q": "In which city is the main headquarters of the United Nations؟",
     "o": [
+      "Geneva",
+      "Paris",
       "New York",
-      "Brussels",
-      "Thatcher",
-      "The Hague"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Permanent UNSC members (five)؟",
-    "o": [
-      "China France Russia UK USA",
-      "Five times daily",
-      "US and Soviet Union",
-      "US and Japan"
-    ],
-    "a": 0
-  },
-  {
-    "q": "EU institutional hub often cited؟",
-    "o": [
-      "Brussels",
-      "New York",
-      "Thatcher",
-      "Berlin"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Cold War mainly between؟",
-    "o": [
-      "France and Germany",
-      "US and Japan",
-      "China and India",
-      "US and Soviet Union"
-    ],
-    "a": 3
-  },
-  {
-    "q": "NATO was founded for؟",
-    "o": [
-      "Health",
-      "Collective defense",
-      "Environment",
       "Brussels"
     ],
-    "a": 1
+    "a": 2,
+    "d": 1
   },
   {
-    "q": "First female UK Prime Minister؟",
+    "q": "Which countries are the five permanent members of the UN Security Council؟",
     "o": [
+      "China, France, Russia, UK, USA",
+      "USA, Russia, China, India, Brazil",
+      "USA, UK, France, Germany, Japan",
+      "USA, UK, Russia, Germany, Italy"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "Which city is often called the capital of the European Union؟",
+    "o": [
+      "Paris",
       "Brussels",
       "New York",
-      "Merkel",
-      "Thatcher"
+      "Berlin"
     ],
-    "a": 3
+    "a": 1,
+    "d": 1
   },
   {
-    "q": "Soviet Union dissolved in؟",
+    "q": "The Cold War was mainly between which two powers؟",
+    "o": [
+      "US and Soviet Union",
+      "US and China",
+      "US and Japan",
+      "UK and Germany"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "NATO was founded for what main purpose؟",
+    "o": [
+      "Collective defense",
+      "Margaret Thatcher",
+      "Environmental protection",
+      "Global health"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Who was the first female Prime Minister of the United Kingdom؟",
+    "o": [
+      "Margaret Thatcher",
+      "Barbara Castle",
+      "Collective defense",
+      "Theresa May"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "In which year was the Soviet Union dissolved؟",
     "o": [
       "1991",
       "1989",
-      "1995",
-      "2001"
+      "1990",
+      "1993"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "OPEC focuses on؟",
+    "q": "OPEC is an organization focused on which resource؟",
     "o": [
       "Oil",
       "Coal",
-      "-100°C",
-      "-200°C"
+      "Gold",
+      "Wheat"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

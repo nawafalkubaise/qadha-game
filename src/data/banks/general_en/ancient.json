@@ -1,82 +1,90 @@
 [
   {
-    "q": "Great Pyramids built by؟",
+    "q": "Which civilization built the Great Pyramids of Giza؟",
     "o": [
       "Ancient Egyptians",
-      "Ancient Egypt",
-      "Anatolia",
-      "Babylon"
+      "Ancient Greeks",
+      "Ancient Romans",
+      "Babylonians"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Mesopotamia means land between rivers؟",
+    "q": "The name Mesopotamia means \"land between two rivers\". Which two rivers؟",
     "o": [
       "Tigris and Euphrates",
-      "Trade and alphabet",
-      "A Nightmare on Elm Street",
-      "A lot / very"
+      "Danube and Rhine",
+      "Indus and Ganges",
+      "Nile and Jordan"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Alexander the Great died in؟",
+    "q": "In which city did Alexander the Great die؟",
     "o": [
       "Babylon",
       "Anatolia",
-      "Greece",
+      "Athens",
       "Alexandria"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Romans built؟",
+    "q": "Which famous amphitheater did the ancient Romans build؟",
     "o": [
-      "Colosseum",
+      "The Colosseum",
+      "The Parthenon",
       "Anatolia",
-      "Great Wall",
-      "Pyramids"
+      "Ancient Egyptians"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Hieroglyphs mainly؟",
+    "q": "Which ancient civilization mainly used hieroglyphs for writing؟",
     "o": [
-      "Ancient Egyptians",
-      "Anatolia",
-      "Colosseum",
-      "Ancient Egypt"
+      "Ancient Greeks",
+      "Ancient Romans",
+      "Phoenicians",
+      "Ancient Egyptians"
     ],
-    "a": 3
+    "a": 3,
+    "d": 1
   },
   {
-    "q": "Phoenicians known for؟",
+    "q": "The ancient Phoenicians are best known for which achievements؟",
     "o": [
-      "Trade and alphabet",
-      "Tigris and Euphrates",
-      "A lot / very",
-      "A Nightmare on Elm Street"
+      "Sea trade and the alphabet",
+      "Building the pyramids",
+      "Founding the Olympic Games",
+      "Tigris and Euphrates"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Troy war in legend؟",
+    "q": "In which region was the legendary city of Troy located؟",
     "o": [
       "Anatolia",
       "Babylon",
-      "Colosseum",
-      "Ancient Egypt"
+      "China",
+      "Crete"
     ],
-    "a": 0
+    "a": 0,
+    "d": 2
   },
   {
-    "q": "Great Wall in؟",
+    "q": "In which country is the Great Wall located؟",
     "o": [
       "China",
       "India",
       "Japan",
       "Anatolia"
     ],
-    "a": 0
+    "a": 0,
+    "d": 1
   }
 ]

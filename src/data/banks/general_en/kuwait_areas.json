@@ -1,82 +1,90 @@
 [
   {
-    "q": "How many governorates in Kuwait؟",
+    "q": "How many governorates does Kuwait have؟",
     "o": [
+      "6",
       "4",
-      "8",
-      "10",
-      "6"
+      "5",
+      "8"
     ],
-    "a": 3
+    "a": 0,
+    "d": 1
   },
   {
-    "q": "Salmiya belongs to which governorate؟",
+    "q": "Salmiya belongs to which Kuwaiti governorate؟",
     "o": [
-      "Hawalli",
       "Ahmadi",
       "Capital",
-      "Kuwait City"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Jahra area belongs to؟",
-    "o": [
-      "Jahra Governorate",
-      "Ahmadi Governorate",
-      "Kuwaiti governorate",
-      "Kuwait City"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Fahaheel is in؟",
-    "o": [
-      "Ahmadi Governorate",
-      "Jahra Governorate",
-      "Kuwaiti governorate",
-      "Kuwait City"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Mubarak Al-Kabeer is a؟",
-    "o": [
-      "Ahmadi Governorate",
-      "Jahra Governorate",
-      "Country",
-      "Kuwaiti governorate"
-    ],
-    "a": 3
-  },
-  {
-    "q": "Capital Governorate includes؟",
-    "o": [
-      "Kuwait City",
-      "Failaka only",
-      "Oil sector",
-      "Ahmadi Governorate"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Farwaniya is generally known for؟",
-    "o": [
-      "High population density",
-      "Mubarak Al-Kabeer",
-      "A lot / very",
-      "A Nightmare on Elm Street"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Ahmadi is historically linked to؟",
-    "o": [
-      "Oil sector",
-      "Gold mining",
-      "Kuwait City",
+      "Jahra",
       "Hawalli"
     ],
-    "a": 0
+    "a": 3,
+    "d": 1
+  },
+  {
+    "q": "The Jahra area belongs to which governorate؟",
+    "o": [
+      "Jahra Governorate",
+      "Ahmadi Governorate",
+      "Capital Governorate",
+      "Farwaniya Governorate"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Fahaheel is in which Kuwaiti governorate؟",
+    "o": [
+      "Ahmadi Governorate",
+      "Capital Governorate",
+      "Hawalli Governorate",
+      "Jahra Governorate"
+    ],
+    "a": 0,
+    "d": 2
+  },
+  {
+    "q": "What is Mubarak Al-Kabeer in Kuwait؟",
+    "o": [
+      "A governorate",
+      "Ahmadi Governorate",
+      "Jahra Governorate",
+      "Kuwait City"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Which city is part of Kuwait's Capital Governorate؟",
+    "o": [
+      "Kuwait City",
+      "A governorate",
+      "Ahmadi Governorate",
+      "Fahaheel"
+    ],
+    "a": 0,
+    "d": 1
+  },
+  {
+    "q": "Farwaniya Governorate is generally known for what؟",
+    "o": [
+      "Oil refineries",
+      "Islands and beaches",
+      "High population density",
+      "Desert farms"
+    ],
+    "a": 2,
+    "d": 2
+  },
+  {
+    "q": "The Ahmadi area is historically linked to which sector؟",
+    "o": [
+      "Gold mining",
+      "The oil sector",
+      "Pearl diving",
+      "Fishing"
+    ],
+    "a": 1,
+    "d": 1
   }
 ]
