@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ACCESS GRANTED</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=VT323&display=swap');
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --green: #00ff41;
+    --green-dim: #00cc33;
+    --green-dark: #00661a;
+    --cyan: #00e5ff;
+    --red: #ff1744;
+    --amber: #ffab00;
+    --bg: #0a0a0a;
+    --panel-bg: rgba(0, 20, 0, 0.85);
+    --border: rgba(0, 255, 65, 0.25);
+    --glow: 0 0 10px rgba(0, 255, 65, 0.4), 0 0 40px rgba(0, 255, 65, 0.1);
+    --font-mono: 'Share Tech Mono', monospace;
+    --font-display: 'VT323', monospace;
+  }
+
+  html, body {
+    height: 100%;
+    overflow: hidden;
+    background: var(--bg);
+    font-family: var(--font-mono);
+    color: var(--green);
+    cursor: none;
+  }
+
+  /* Custom cursor */
+  .cursor {
+    position: fixed;
+    width: 4px;
+    height: 20px;
+    background: var(--green);
+    box-shadow: 0 0 8px var(--green);
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: screen;
+    transition: opacity 0.1s;
+  }
+
+  /* Matrix rain canvas */
+  #matrix {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    opacity: 0.15;
+  }
+
+  /* Scanline overlay */
+  .scanlines {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9998;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.15) 2px,
+      rgba(0, 0, 0, 0.15) 4px
+    );
+  }
+
+  /* CRT flicker */
+  .crt-flicker {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9997;
+    pointer-events: none;
+    animation: flicker 0.08s infinite alternate;
+  }
+  @keyframes flicker {
+    from { opacity: 0.97; }
+    to { opacity: 1; }
+  }
+
+  /* Vignette */
+  .vignette {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9996;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.7) 100%);
+  }
+
+  /* Main grid layout */
+  .grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr 1fr;
+    grid-template-rows: auto 1fr 1fr 0.6fr;
+    gap: 6px;
+    padding: 6px;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  /* Header */
+  .header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4px 12px;
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-display);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  .header .logo {
+    font-size: 20px;
+    color: var(--cyan);
+    text-shadow: 0 0 10px var(--cyan), 0 0 30px rgba(0, 229, 255, 0.3);
+    animation: glitchText 4s infinite;
+  }
+  .header .status {
+    color: var(--red);
+    animation: blink 1s step-end infinite;
+  }
+  .header .time {
+    color: var(--green-dim);
+    font-variant-numeric: tabular-nums;
+  }
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+  @keyframes glitchText {
+    0%, 92%, 100% { transform: none; text-shadow: 0 0 10px var(--cyan), 0 0 30px rgba(0, 229, 255, 0.3); }
+    93% { transform: translate(-2px, 1px) skewX(-1deg); text-shadow: -2px 0 var(--red), 2px 0 var(--cyan); }
+    94% { transform: translate(2px, -1px) skewX(1deg); text-shadow: 2px 0 var(--red), -2px 0 var(--green); }
+    95% { transform: none; }
+  }
+
+  /* Panels */
+  .panel {
+    background: var(--panel-bg);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+  .panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--green), transparent);
+    opacity: 0.6;
+  }
+  .panel-title {
+    font-family: var(--font-display);
+    font-size: 13px;
+    padding: 3px 8px;
+    background: rgba(0, 255, 65, 0.08);
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cyan);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  .panel-title .indicator {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+    animation: pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  .panel-body {
+    flex: 1;
+    overflow: hidden;
+    padding: 6px 8px;
+    font-size: 11.5px;
+    line-height: 1.5;
+    position: relative;
+  }
+  .panel-body.scroll {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--green-dark) transparent;
+  }
+  .panel-body.scroll::-webkit-scrollbar { width: 3px; }
+  .panel-body.scroll::-webkit-scrollbar-thumb { background: var(--green-dark); }
+
+  /* Password cracker panel */
+  .crack-line {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 2px;
+    white-space: nowrap;
+  }
+  .crack-hash { color: var(--green-dark); }
+  .crack-attempt { color: var(--green); }
+  .crack-found {
+    color: var(--red);
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(255, 23, 68, 0.5);
+  }
+  .crack-progress {
+    height: 2px;
+    background: var(--green-dark);
+    margin-top: 6px;
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .crack-progress-bar {
+    height: 100%;
+    background: var(--green);
+    box-shadow: 0 0 6px var(--green);
+    width: 0%;
+    transition: width 0.3s linear;
+  }
+
+  /* Network map */
+  #networkCanvas {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Hex dump */
+  .hex-line {
+    white-space: pre;
+    font-size: 10.5px;
+  }
+  .hex-offset { color: var(--cyan); }
+  .hex-bytes { color: var(--green-dim); }
+  .hex-ascii { color: var(--green); }
+  .hex-highlight { color: var(--red); background: rgba(255, 23, 68, 0.15); }
+
+  /* File tree */
+  .file-line {
+    white-space: nowrap;
+    margin-bottom: 1px;
+  }
+  .file-dir { color: var(--cyan); }
+  .file-exe { color: var(--red); }
+  .file-dat { color: var(--amber); }
+  .file-enc { color: var(--green-dim); }
+
+  /* System log */
+  .log-time { color: var(--green-dark); }
+  .log-warn { color: var(--amber); }
+  .log-err { color: var(--red); }
+  .log-ok { color: var(--green); }
+  .log-info { color: var(--cyan); }
+
+  /* Exploit progress */
+  .exploit-item {
+    margin-bottom: 8px;
+  }
+  .exploit-name {
+    font-size: 10px;
+    color: var(--cyan);
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .exploit-bar {
+    height: 3px;
+    background: rgba(0, 255, 65, 0.1);
+    border-radius: 1px;
+    overflow: hidden;
+  }
+  .exploit-fill {
+    height: 100%;
+    border-radius: 1px;
+    transition: width 0.5s ease-out;
+    width: 0%;
+  }
+  .exploit-fill.active { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .exploit-fill.warn { background: var(--amber); box-shadow: 0 0 6px var(--amber); }
+  .exploit-fill.danger { background: var(--red); box-shadow: 0 0 6px var(--red); }
+
+  /* Bottom bar */
+  .bottom-bar {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 2px 12px;
+    border-top: 1px solid var(--border);
+    font-size: 11px;
+    color: var(--green-dim);
+    font-family: var(--font-display);
+    letter-spacing: 1px;
+  }
+  .bottom-bar span { white-space: nowrap; }
+  .bottom-bar .packets {
+    color: var(--cyan);
+    font-variant-numeric: tabular-nums;
+  }
+  .bottom-bar .bandwidth { color: var(--amber); }
+  .bottom-bar .target { color: var(--red); }
+
+  /* Typing prompt */
+  .prompt {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .prompt-symbol { color: var(--cyan); }
+  .prompt-text { color: var(--green); }
+  .prompt-cursor {
+    display: inline-block;
+    width: 7px;
+    height: 14px;
+    background: var(--green);
+    animation: blink 0.8s step-end infinite;
+    vertical-align: middle;
+  }
+
+  /* Glitch bar */
+  .glitch-bar {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--cyan);
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  /* Access granted overlay */
+  .access-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 9995;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .access-overlay.show { opacity: 1; }
+  .access-text {
+    font-family: var(--font-display);
+    font-size: 72px;
+    letter-spacing: 16px;
+    color: var(--green);
+    text-shadow: 0 0 20px var(--green), 0 0 60px var(--green), 0 0 120px rgba(0,255,65,0.3);
+    animation: accessPulse 1.5s ease-in-out infinite;
+  }
+  @keyframes accessPulse {
+    0%, 100% { text-shadow: 0 0 20px var(--green), 0 0 60px var(--green), 0 0 120px rgba(0,255,65,0.3); }
+    50% { text-shadow: 0 0 40px var(--green), 0 0 80px var(--green), 0 0 160px rgba(0,255,65,0.5); }
+  }
+
+  /* Make specific panels span */
+  .panel-network { grid-row: span 2; }
+  .panel-console { grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+
+<canvas id="matrix"></canvas>
+<div class="scanlines"></div>
+<div class="crt-flicker"></div>
+<div class="vignette"></div>
+<div class="cursor" id="cursor"></div>
+<div class="glitch-bar" id="glitchBar"></div>
+<div class="access-overlay" id="accessOverlay"><div class="access-text">ACCESS GRANTED</div></div>
+
+<div class="grid">
+  <div class="header">
+    <div class="logo" id="logo">⟁ PHANTOM SHELL v4.7.2</div>
+    <div class="status">⚠ INTRUSION ACTIVE</div>
+    <div class="time" id="clock">00:00:00</div>
+  </div>
+
+  <!-- Left column -->
+  <div class="panel">
+    <div class="panel-title"><span>◈ Password Cracker</span><div class="indicator"></div></div>
+    <div class="panel-body scroll" id="cracker"></div>
+  </div>
+
+  <!-- Center column -->
+  <div class="panel panel-network">
+    <div class="panel-title"><span>◈ Network Topology</span><div class="indicator"></div></div>
+    <div class="panel-body"><canvas id="networkCanvas"></canvas></div>
+  </div>
+
+  <!-- Right column -->
+  <div class="panel">
+    <div class="panel-title"><span>◈ Hex Intercept</span><div class="indicator"></div></div>
+    <div class="panel-body scroll" id="hexdump"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title"><span>◈ File Exfiltration</span><div class="indicator"></div></div>
+    <div class="panel-body scroll" id="filetree"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title"><span>◈ Exploit Payload</span><div class="indicator"></div></div>
+    <div class="panel-body" id="exploits"></div>
+  </div>
+
+  <!-- Bottom wide panel -->
+  <div class="panel panel-console">
+    <div class="panel-title"><span>◈ System Log</span><div class="indicator"></div></div>
+    <div class="panel-body scroll" id="syslog"></div>
+  </div>
+
+  <div class="bottom-bar">
+    <span>PROXY CHAIN: 7 NODES</span>
+    <span class="packets" id="packets">PACKETS: 0</span>
+    <span class="bandwidth" id="bandwidth">↑ 0 KB/s ↓ 0 KB/s</span>
+    <span>ENCRYPTION: AES-256-GCM</span>
+    <span class="target">TARGET: 10.13.37.101</span>
+    <span>SESSION: <span id="sessionId">a7f3</span></span>
+  </div>
+</div>
+
+<script>
+// ── Matrix Rain ──
+const matrixCanvas = document.getElementById('matrix');
+const mCtx = matrixCanvas.getContext('2d');
+function resizeMatrix() {
+  matrixCanvas.width = window.innerWidth;
+  matrixCanvas.height = window.innerHeight;
+}
+resizeMatrix();
+window.addEventListener('resize', resizeMatrix);
+
+const matrixChars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789ABCDEF';
+const fontSize = 14;
+let columns = Math.floor(matrixCanvas.width / fontSize);
+let drops = Array(columns).fill(1);
+
+function drawMatrix() {
+  mCtx.fillStyle = 'rgba(10, 10, 10, 0.06)';
+  mCtx.fillRect(0, 0, matrixCanvas.width, matrixCanvas.height);
+  mCtx.fillStyle = '#00ff41';
+  mCtx.font = fontSize + 'px monospace';
+  for (let i = 0; i < drops.length; i++) {
+    const char = matrixChars[Math.floor(Math.random() * matrixChars.length)];
+    mCtx.fillText(char, i * fontSize, drops[i] * fontSize);
+    if (drops[i] * fontSize > matrixCanvas.height && Math.random() > 0.975) drops[i] = 0;
+    drops[i]++;
+  }
+}
+setInterval(drawMatrix, 45);
+
+// ── Custom Cursor ──
+const cursor = document.getElementById('cursor');
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = (e.clientY - 10) + 'px';
+});
+
+// ── Clock ──
+function updateClock() {
+  const now = new Date();
+  document.getElementById('clock').textContent =
+    now.toTimeString().split(' ')[0] + '.' + String(now.getMilliseconds()).padStart(3, '0');
+}
+setInterval(updateClock, 50);
+
+// ── Helpers ──
+function rand(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+function pick(arr) { return arr[Math.floor(Math.random() * arr.length)]; }
+function randHex(len) { return Array.from({length: len}, () => '0123456789abcdef'[rand(0,15)]).join(''); }
+function randIP() { return `${rand(10,223)}.${rand(0,255)}.${rand(0,255)}.${rand(1,254)}`; }
+
+// ── Password Cracker ──
+const crackerEl = document.getElementById('cracker');
+const hashTypes = ['SHA-256','MD5','bcrypt','NTLM','SHA-512','Argon2'];
+const passwords = ['admin123','P@ssw0rd!','hunter2','letmein','trustno1','dragon99','shadow','master','qwerty','abc123','monkey','1234567890','password1','iloveyou','sunshine'];
+let crackerLines = 0;
+function addCrackLine() {
+  const found = Math.random() < 0.03;
+  const hash = randHex(found ? 32 : rand(16, 64));
+  const div = document.createElement('div');
+  div.className = 'crack-line';
+  if (found) {
+    const pw = pick(passwords);
+    div.innerHTML = `<span class="crack-found">■ CRACKED</span> <span class="crack-hash">${hash.slice(0,24)}...</span> <span class="crack-found">→ "${pw}"</span>`;
+  } else {
+    div.innerHTML = `<span class="crack-hash">[${pick(hashTypes)}]</span> <span class="crack-attempt">${hash}</span> <span style="color:var(--green-dark)">✗</span>`;
+  }
+  crackerEl.appendChild(div);
+  crackerLines++;
+  if (crackerLines > 200) { crackerEl.removeChild(crackerEl.firstChild); crackerLines--; }
+  crackerEl.scrollTop = crackerEl.scrollHeight;
+}
+setInterval(addCrackLine, 80);
+
+// ── Hex Dump ──
+const hexEl = document.getElementById('hexdump');
+let hexOffset = 0x00400000;
+let hexLines = 0;
+function addHexLine() {
+  const div = document.createElement('div');
+  div.className = 'hex-line';
+  const offset = hexOffset.toString(16).padStart(8, '0');
+  hexOffset += 16;
+  let bytes = '', ascii = '';
+  const highlightIdx = Math.random() < 0.08 ? rand(0, 15) : -1;
+  for (let i = 0; i < 16; i++) {
+    const b = rand(0, 255);
+    const hex = b.toString(16).padStart(2, '0');
+    const isHighlight = i === highlightIdx;
+    bytes += `<span class="${isHighlight ? 'hex-highlight' : 'hex-bytes'}">${hex}</span>` + (i === 7 ? '  ' : ' ');
+    const ch = (b >= 32 && b < 127) ? String.fromCharCode(b) : '.';
+    ascii += isHighlight ? `<span class="hex-highlight">${ch}</span>` : ch;
+  }
+  div.innerHTML = `<span class="hex-offset">${offset}</span>  ${bytes} <span class="hex-ascii">|${ascii}|</span>`;
+  hexEl.appendChild(div);
+  hexLines++;
+  if (hexLines > 200) { hexEl.removeChild(hexEl.firstChild); hexLines--; }
+  hexEl.scrollTop = hexEl.scrollHeight;
+}
+setInterval(addHexLine, 120);
+
+// ── File Tree ──
+const fileEl = document.getElementById('filetree');
+const dirs = ['/etc/shadow','/var/log/auth.log','/root/.ssh/id_rsa','/usr/share/classified/','/opt/mainframe/core/','/sys/kernel/security/','/home/admin/.bash_history','/proc/self/maps','/dev/shm/.hidden/','/tmp/.cache/payloads/'];
+const files = ['passwd.db','credentials.enc','keychain.dat','wallet.key','session_tokens.bin','api_secrets.json','private.pem','master.key','auth_bypass.so','rootkit.ko','exfil.sh','dump.sql','firewall.rules','vpn.conf','certificates.p12'];
+let fileLines = 0;
+function addFileLine() {
+  const isDir = Math.random() < 0.3;
+  const div = document.createElement('div');
+  div.className = 'file-line';
+  if (isDir) {
+    const d = pick(dirs);
+    div.innerHTML = `<span style="color:var(--green-dark)">[SCAN]</span> <span class="file-dir">📁 ${d}</span>`;
+  } else {
+    const f = pick(files);
+    const size = `${(Math.random() * 9999).toFixed(1)} KB`;
+    const cls = f.endsWith('.enc') || f.endsWith('.pem') || f.endsWith('.key') ? 'file-enc' :
+                f.endsWith('.so') || f.endsWith('.ko') || f.endsWith('.sh') ? 'file-exe' : 'file-dat';
+    const action = pick(['EXFIL','COPY','DECRYPT','EXTRACT','INJECT']);
+    div.innerHTML = `<span style="color:${action==='INJECT'?'var(--red)':'var(--amber)'};">[${action}]</span> <span class="${cls}">${f}</span> <span style="color:var(--green-dark)">${size}</span>`;
+  }
+  fileEl.appendChild(div);
+  fileLines++;
+  if (fileLines > 150) { fileEl.removeChild(fileEl.firstChild); fileLines--; }
+  fileEl.scrollTop = fileEl.scrollHeight;
+}
+setInterval(addFileLine, 300);
+
+// ── Exploit Progress ──
+const exploitEl = document.getElementById('exploits');
+const exploitNames = [
+  'Buffer overflow → kernel32.dll',
+  'SQL injection → auth_db',
+  'RCE payload → /api/exec',
+  'Privilege escalation → root',
+  'Firewall bypass → port 443',
+  'SSH tunnel → 10.13.37.1',
+  'Memory dump → 0xDEADBEEF',
+  'DNS poisoning → ns1.target',
+];
+let exploitWidths = exploitNames.map(() => 0);
+exploitNames.forEach((name, i) => {
+  const div = document.createElement('div');
+  div.className = 'exploit-item';
+  const cls = i < 3 ? 'active' : i < 6 ? 'warn' : 'danger';
+  div.innerHTML = `
+    <div class="exploit-name"><span>${name}</span><span id="ep${i}">0%</span></div>
+    <div class="exploit-bar"><div class="exploit-fill ${cls}" id="ef${i}"></div></div>
+  `;
+  exploitEl.appendChild(div);
+});
+function updateExploits() {
+  exploitNames.forEach((_, i) => {
+    if (exploitWidths[i] < 100) {
+      exploitWidths[i] += Math.random() * 2.5;
+      if (exploitWidths[i] > 100) exploitWidths[i] = 100;
+    } else if (Math.random() < 0.01) {
+      exploitWidths[i] = 0;
+    }
+    const pct = Math.floor(exploitWidths[i]);
+    document.getElementById(`ef${i}`).style.width = pct + '%';
+    document.getElementById(`ep${i}`).textContent = pct + '%';
+  });
+}
+setInterval(updateExploits, 200);
+
+// ── System Log ──
+const syslogEl = document.getElementById('syslog');
+const logMessages = [
+  { cls: 'log-ok', msg: () => `Connection established via proxy ${randIP()}` },
+  { cls: 'log-info', msg: () => `Scanning port ${rand(1,65535)} on ${randIP()}` },
+  { cls: 'log-warn', msg: () => `IDS evasion: rotating cipher suite [${pick(['AES-GCM','ChaCha20','Camellia','Blowfish'])}]` },
+  { cls: 'log-err', msg: () => `ALERT: Firewall rule detected — rerouting through ${randIP()}` },
+  { cls: 'log-ok', msg: () => `Injected payload: ${randHex(8)}.bin (${rand(1,512)} KB)` },
+  { cls: 'log-info', msg: () => `DNS lookup: ${pick(['ns1','ns2','mx','vpn','gw'])}.target.local → ${randIP()}` },
+  { cls: 'log-warn', msg: () => `Brute-force attempt ${rand(1000,9999)}: ${pick(hashTypes)} hash collision` },
+  { cls: 'log-ok', msg: () => `Tunnel active: localhost:${rand(8000,9999)} ↔ ${randIP()}:${rand(1,1024)}` },
+  { cls: 'log-err', msg: () => `Countermeasure detected: deploying polymorphic shellcode` },
+  { cls: 'log-info', msg: () => `Decrypting stream: ${randHex(16)}...` },
+  { cls: 'log-ok', msg: () => `Captured ${rand(1,99)} credentials from memory dump` },
+  { cls: 'log-warn', msg: () => `Obfuscating traffic pattern: ${pick(['jitter','padding','fragmentation','mimicry'])} mode` },
+  { cls: 'log-info', msg: () => `Keylogger buffer: ${rand(100,9999)} keystrokes captured` },
+  { cls: 'log-err', msg: () => `Honeypot detected at ${randIP()} — blacklisting` },
+  { cls: 'log-ok', msg: () => `Exfiltrating ${(Math.random()*50).toFixed(1)} MB via covert channel` },
+];
+let syslogLines = 0;
+function addLogLine() {
+  const entry = pick(logMessages);
+  const div = document.createElement('div');
+  const t = new Date();
+  const ts = t.toTimeString().split(' ')[0];
+  div.innerHTML = `<span class="log-time">[${ts}]</span> <span class="${entry.cls}">${entry.msg()}</span>`;
+  syslogEl.appendChild(div);
+  syslogLines++;
+  if (syslogLines > 300) { syslogEl.removeChild(syslogEl.firstChild); syslogLines--; }
+  syslogEl.scrollTop = syslogEl.scrollHeight;
+}
+setInterval(addLogLine, 250);
+
+// ── Packets counter ──
+let packetCount = 0;
+function updatePackets() {
+  packetCount += rand(5, 45);
+  document.getElementById('packets').textContent = `PACKETS: ${packetCount.toLocaleString()}`;
+  document.getElementById('bandwidth').textContent = `↑ ${rand(50,999)} KB/s ↓ ${rand(100,2500)} KB/s`;
+}
+setInterval(updatePackets, 300);
+
+// ── Session ID rotation ──
+setInterval(() => {
+  document.getElementById('sessionId').textContent = randHex(4);
+}, 5000);
+
+// ── Network Topology Canvas ──
+const netCanvas = document.getElementById('networkCanvas');
+const nCtx = netCanvas.getContext('2d');
+let nodes = [];
+let dataPackets = [];
+
+function resizeNet() {
+  const rect = netCanvas.parentElement.getBoundingClientRect();
+  netCanvas.width = rect.width;
+  netCanvas.height = rect.height;
+  generateNodes();
+}
+
+function generateNodes() {
+  nodes = [];
+  const w = netCanvas.width, h = netCanvas.height;
+  const count = 18;
+  for (let i = 0; i < count; i++) {
+    nodes.push({
+      x: rand(30, w - 30),
+      y: rand(30, h - 30),
+      r: rand(3, 7),
+      label: i === 0 ? 'YOU' : i === count - 1 ? 'TARGET' : randIP(),
+      type: i === 0 ? 'source' : i === count - 1 ? 'target' : (Math.random() < 0.3 ? 'proxy' : 'node'),
+      pulse: 0,
+      connections: [],
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+    });
+  }
+  // Create connections
+  for (let i = 1; i < nodes.length; i++) {
+    const target = rand(0, i - 1);
+    nodes[i].connections.push(target);
+    nodes[target].connections.push(i);
+    if (Math.random() < 0.3 && i > 1) {
+      const extra = rand(0, i - 1);
+      if (extra !== target) {
+        nodes[i].connections.push(extra);
+        nodes[extra].connections.push(i);
+      }
+    }
+  }
+}
+
+function spawnDataPacket() {
+  if (nodes.length < 2) return;
+  const fromIdx = rand(0, nodes.length - 1);
+  const conns = nodes[fromIdx].connections;
+  if (conns.length === 0) return;
+  const toIdx = pick(conns);
+  dataPackets.push({
+    from: fromIdx, to: toIdx,
+    progress: 0,
+    speed: 0.01 + Math.random() * 0.03,
+    color: Math.random() < 0.2 ? '#ff1744' : '#00ff41',
+  });
+}
+
+function drawNetwork() {
+  const w = netCanvas.width, h = netCanvas.height;
+  nCtx.clearRect(0, 0, w, h);
+
+  // Move nodes slightly
+  nodes.forEach(n => {
+    n.x += n.vx;
+    n.y += n.vy;
+    if (n.x < 20 || n.x > w - 20) n.vx *= -1;
+    if (n.y < 20 || n.y > h - 20) n.vy *= -1;
+    n.pulse = (n.pulse + 0.02) % (Math.PI * 2);
+  });
+
+  // Draw connections
+  const drawn = new Set();
+  nodes.forEach((n, i) => {
+    n.connections.forEach(j => {
+      const key = Math.min(i,j) + '-' + Math.max(i,j);
+      if (drawn.has(key)) return;
+      drawn.add(key);
+      nCtx.beginPath();
+      nCtx.moveTo(n.x, n.y);
+      nCtx.lineTo(nodes[j].x, nodes[j].y);
+      nCtx.strokeStyle = 'rgba(0, 255, 65, 0.15)';
+      nCtx.lineWidth = 0.5;
+      nCtx.stroke();
+    });
+  });
+
+  // Draw data packets
+  dataPackets.forEach(p => {
+    p.progress += p.speed;
+    const from = nodes[p.from], to = nodes[p.to];
+    const x = from.x + (to.x - from.x) * p.progress;
+    const y = from.y + (to.y - from.y) * p.progress;
+    nCtx.beginPath();
+    nCtx.arc(x, y, 2, 0, Math.PI * 2);
+    nCtx.fillStyle = p.color;
+    nCtx.shadowColor = p.color;
+    nCtx.shadowBlur = 8;
+    nCtx.fill();
+    nCtx.shadowBlur = 0;
+  });
+  dataPackets = dataPackets.filter(p => p.progress < 1);
+
+  // Draw nodes
+  nodes.forEach(n => {
+    const glow = Math.sin(n.pulse) * 0.3 + 0.7;
+    const color = n.type === 'source' ? '#00e5ff' : n.type === 'target' ? '#ff1744' : n.type === 'proxy' ? '#ffab00' : '#00ff41';
+
+    nCtx.beginPath();
+    nCtx.arc(n.x, n.y, n.r + Math.sin(n.pulse), 0, Math.PI * 2);
+    nCtx.fillStyle = color;
+    nCtx.shadowColor = color;
+    nCtx.shadowBlur = 10 * glow;
+    nCtx.fill();
+    nCtx.shadowBlur = 0;
+
+    nCtx.font = '9px Share Tech Mono';
+    nCtx.fillStyle = `rgba(${n.type === 'target' ? '255,23,68' : '0,255,65'}, ${0.5 + glow * 0.3})`;
+    nCtx.textAlign = 'center';
+    nCtx.fillText(n.label, n.x, n.y + n.r + 12);
+  });
+
+  if (Math.random() < 0.3) spawnDataPacket();
+  requestAnimationFrame(drawNetwork);
+}
+
+setTimeout(() => { resizeNet(); drawNetwork(); }, 100);
+window.addEventListener('resize', () => {
+  resizeMatrix();
+  columns = Math.floor(matrixCanvas.width / fontSize);
+  drops = Array(columns).fill(1);
+  resizeNet();
+});
+
+// ── Glitch effect ──
+const glitchBar = document.getElementById('glitchBar');
+function triggerGlitch() {
+  glitchBar.style.top = rand(0, window.innerHeight) + 'px';
+  glitchBar.style.opacity = '0.7';
+  glitchBar.style.height = rand(1, 5) + 'px';
+  setTimeout(() => { glitchBar.style.opacity = '0'; }, 80);
+  setTimeout(triggerGlitch, rand(2000, 8000));
+}
+triggerGlitch();
+
+// ── Access Granted flash ──
+function flashAccess() {
+  const overlay = document.getElementById('accessOverlay');
+  overlay.classList.add('show');
+  setTimeout(() => overlay.classList.remove('show'), 2500);
+  setTimeout(flashAccess, rand(25000, 45000));
+}
+setTimeout(flashAccess, rand(10000, 20000));
+
+// ── Logo glitch on click ──
+document.addEventListener('click', () => {
+  const logo = document.getElementById('logo');
+  logo.style.animation = 'none';
+  logo.offsetHeight;
+  logo.style.animation = 'glitchText 0.3s 3';
+  setTimeout(() => logo.style.animation = 'glitchText 4s infinite', 900);
+});
+
+// ── Keyboard interaction ──
+document.addEventListener('keydown', (e) => {
+  // Any keypress spawns extra activity
+  for (let i = 0; i < 5; i++) addLogLine();
+  for (let i = 0; i < 3; i++) addCrackLine();
+  addHexLine();
+  addFileLine();
+  packetCount += rand(100, 500);
+
+  // Visual burst
+  glitchBar.style.top = rand(0, window.innerHeight) + 'px';
+  glitchBar.style.opacity = '1';
+  glitchBar.style.height = rand(2, 8) + 'px';
+  glitchBar.style.background = pick(['var(--green)','var(--cyan)','var(--red)']);
+  setTimeout(() => { glitchBar.style.opacity = '0'; }, 50);
+});
+</script>
+</body>
+</html>
