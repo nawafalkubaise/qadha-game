@@ -1,16 +1,16 @@
 [
   {
-    "q": "Great Pyramids built by?",
+    "q": "Great Pyramids built by؟",
     "o": [
-      "Romans",
       "Ancient Egyptians",
-      "Greeks",
-      "Vikings"
+      "Ancient Egypt",
+      "Anatolia",
+      "Babylon"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Mesopotamia means land between rivers?",
+    "q": "Mesopotamia means land between rivers؟",
     "o": [
       "Nile only",
       "Tigris and Euphrates",
@@ -20,37 +20,37 @@
     "a": 1
   },
   {
-    "q": "Alexander the Great died in?",
+    "q": "Alexander the Great died in؟",
     "o": [
-      "Greece",
       "Babylon",
-      "Rome",
+      "Anatolia",
+      "Greece",
       "Alexandria"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Romans built?",
+    "q": "Romans built؟",
     "o": [
-      "Pyramids",
       "Colosseum",
-      "Taj Mahal",
-      "Great Wall"
+      "Anatolia",
+      "Great Wall",
+      "Pyramids"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Hieroglyphs mainly?",
+    "q": "Hieroglyphs mainly؟",
     "o": [
-      "China",
-      "Ancient Egypt",
-      "Greece",
-      "Rome"
+      "Ancient Egyptians",
+      "Anatolia",
+      "Colosseum",
+      "Ancient Egypt"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Phoenicians known for?",
+    "q": "Phoenicians known for؟",
     "o": [
       "Farming only",
       "Trade and alphabet",
@@ -60,23 +60,23 @@
     "a": 1
   },
   {
-    "q": "Troy war in legend?",
+    "q": "Troy war in legend؟",
     "o": [
-      "Spain",
       "Anatolia",
-      "Italy",
-      "Greece only"
+      "Babylon",
+      "Colosseum",
+      "Ancient Egypt"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Great Wall in?",
+    "q": "Great Wall in؟",
     "o": [
-      "India",
       "China",
+      "India",
       "Japan",
-      "Mongolia only"
+      "Anatolia"
     ],
-    "a": 1
+    "a": 0
   }
 ]

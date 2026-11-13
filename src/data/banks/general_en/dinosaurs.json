@@ -1,16 +1,16 @@
 [
   {
-    "q": "T-Rex diet?",
+    "q": "T-Rex diet؟",
     "o": [
-      "Plants",
       "Carnivore",
       "Fish only",
-      "Insects only"
+      "Sauropods",
+      "Sedimentary"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Dinosaur extinction famous event ~?",
+    "q": "Dinosaur extinction famous event ~؟",
     "o": [
       "65 million years ago",
       "6500 years",
@@ -20,27 +20,27 @@
     "a": 0
   },
   {
-    "q": "Fossils in rocks?",
+    "q": "Fossils in rocks؟",
     "o": [
-      "Air",
       "Sedimentary",
-      "Ice only",
-      "Plastic"
+      "Carnivore",
+      "Sauropods",
+      "Ancient insects"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Birds descended from?",
+    "q": "Birds descended from؟",
     "o": [
-      "No",
       "Theropod dinosaurs",
-      "Fish",
-      "Amphibians only"
+      "Amphibians only",
+      "Ancient insects",
+      "Mesozoic mainly"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Triceratops had horns?",
+    "q": "Triceratops had horns؟",
     "o": [
       "None",
       "Three on face",
@@ -50,33 +50,33 @@
     "a": 1
   },
   {
-    "q": "Long-neck giants called?",
+    "q": "Long-neck giants called؟",
     "o": [
-      "Raptors",
-      "Sauropods",
-      "Birds",
-      "Mammals"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Dinosaurs lived in?",
-    "o": [
-      "Today only",
-      "Mesozoic mainly",
-      "Ice age only",
-      "Future"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Amber can preserve?",
-    "o": [
-      "Water",
+      "Carnivore",
+      "Sedimentary",
       "Ancient insects",
-      "Gold",
-      "Plastic"
+      "Sauropods"
     ],
-    "a": 1
+    "a": 3
+  },
+  {
+    "q": "Dinosaurs lived in؟",
+    "o": [
+      "Mesozoic mainly",
+      "Ancient insects",
+      "Theropod dinosaurs",
+      "Carnivore"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Amber can preserve؟",
+    "o": [
+      "Ancient insects",
+      "Mesozoic mainly",
+      "Theropod dinosaurs",
+      "Carnivore"
+    ],
+    "a": 0
   }
 ]

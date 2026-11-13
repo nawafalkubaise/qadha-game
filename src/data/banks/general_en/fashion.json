@@ -1,26 +1,26 @@
 [
   {
-    "q": "Chanel founded in?",
+    "q": "Chanel founded in؟",
     "o": [
+      "Germany",
+      "India",
       "Italy",
-      "France",
-      "UK",
-      "USA"
+      "France"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Blue jeans mass popularized by?",
+    "q": "Blue jeans mass popularized by؟",
     "o": [
       "Levi Strauss",
-      "Nike",
+      "New collections",
       "Adidas",
-      "Zara"
+      "France"
     ],
     "a": 0
   },
   {
-    "q": "Typical Western suit pieces?",
+    "q": "Typical Western suit pieces؟",
     "o": [
       "Three always",
       "Jacket and trousers",
@@ -30,17 +30,17 @@
     "a": 1
   },
   {
-    "q": "Sari traditional in?",
+    "q": "Sari traditional in؟",
     "o": [
-      "Japan",
       "India",
-      "Korea",
-      "China"
+      "China",
+      "France",
+      "Japan"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Louis Vuitton known for?",
+    "q": "Louis Vuitton known for؟",
     "o": [
       "Cars",
       "Luxury leather goods",
@@ -50,27 +50,27 @@
     "a": 1
   },
   {
-    "q": "Adidas founded in?",
+    "q": "Adidas founded in؟",
     "o": [
-      "USA",
-      "Germany",
-      "UK",
-      "France"
+      "France",
+      "India",
+      "Levi Strauss",
+      "Germany"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Runway fashion shows highlight?",
+    "q": "Runway fashion shows highlight؟",
     "o": [
-      "Food",
       "New collections",
+      "Levi Strauss",
       "Cars",
-      "Software"
+      "Food"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Haute couture means?",
+    "q": "Haute couture means؟",
     "o": [
       "Mass market",
       "High-end custom fashion",

@@ -1,0 +1,19 @@
+#!/bin/sh
+# حارس جودة الأسئلة: فصحى + مشتتات ذات صلة قبل كل commit
+
+echo "pre-commit: تحسين جودة الأسئلة..."
+node scripts/enforce-question-quality.mjs || exit 1
+
+# تضمين أي تعديلات تلقائية على ملفات البنوك في نفس commit
+git add src/data/banks
+
+echo "pre-commit: التحقق من جودة الأسئلة..."
+node scripts/validate-question-quality.mjs || exit 1
+
+# عند تعديل/إضافة أسئلة: نفّذ فحصاً متكرراً 20 مرة لضمان الثبات
+if git diff --cached --name-only | grep -E "^src/data/banks/.*\.json$" >/dev/null 2>&1; then
+  echo "pre-commit: detected question bank changes, running 20x guard..."
+  node scripts/question-guard-20x.mjs || exit 1
+fi
+
+exit 0

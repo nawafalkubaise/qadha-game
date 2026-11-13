@@ -1,26 +1,26 @@
 [
   {
-    "q": "The Shining director?",
+    "q": "The Shining director؟",
     "o": [
-      "Spielberg",
       "Kubrick",
-      "Carpenter",
-      "Craven"
-    ],
-    "a": 1
-  },
-  {
-    "q": "It novel author?",
-    "o": [
-      "Stephen King",
-      "Poe",
-      "Lovecraft",
-      "Shelley"
+      "Craven",
+      "Scream",
+      "Carpenter"
     ],
     "a": 0
   },
   {
-    "q": "Freddy Krueger from?",
+    "q": "It novel author؟",
+    "o": [
+      "Stephen King",
+      "Hitchcock",
+      "Horror/supernatural",
+      "Lovecraft"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Freddy Krueger from؟",
     "o": [
       "Halloween",
       "A Nightmare on Elm Street",
@@ -30,53 +30,53 @@
     "a": 1
   },
   {
-    "q": "Psycho director?",
+    "q": "Psycho director؟",
     "o": [
-      "Kubrick",
       "Hitchcock",
       "Carpenter",
+      "Kubrick",
       "Romero"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "The Ring originated in?",
+    "q": "The Ring originated in؟",
     "o": [
-      "Korea",
       "Japan",
-      "Thailand",
-      "China"
+      "China",
+      "Korea",
+      "Scream"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Ghostface from?",
+    "q": "Ghostface from؟",
     "o": [
-      "Halloween",
       "Scream",
-      "Saw",
-      "Insidious"
+      "Japan",
+      "Kubrick",
+      "Halloween"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Night of the Living Dead year?",
+    "q": "Night of the Living Dead year؟",
     "o": [
       "1958",
-      "1968",
       "1978",
-      "1988"
+      "1988",
+      "1968"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "The Exorcist genre?",
+    "q": "The Exorcist genre؟",
     "o": [
-      "Comedy",
       "Horror/supernatural",
+      "Stephen King",
       "Cartoon",
-      "Documentary"
+      "Comedy"
     ],
-    "a": 1
+    "a": 0
   }
 ]

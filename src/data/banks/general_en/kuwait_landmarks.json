@@ -1,6 +1,6 @@
 [
   {
-    "q": "Al-Mubarakiya is a?",
+    "q": "Al-Mubarakiya is a؟",
     "o": [
       "Heritage landmark market",
       "Oil zone",
@@ -10,37 +10,37 @@
     "a": 0
   },
   {
-    "q": "The Grand Mosque is in?",
+    "q": "The Grand Mosque is in؟",
     "o": [
-      "Kuwait City",
+      "Kuwait landmarks",
+      "Cultural landmark",
       "Fahaheel",
-      "Jahra",
-      "Wafra"
+      "Kuwait City"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "Bait Al-Sadu represents?",
+    "q": "Bait Al-Sadu represents؟",
     "o": [
       "Kuwaiti heritage",
-      "Aviation",
+      "Cultural landmark",
       "Heavy industry",
-      "Nuclear science"
+      "Kuwait landmarks"
     ],
     "a": 0
   },
   {
-    "q": "Sheikh Jaber Al-Ahmad Cultural Centre is a?",
+    "q": "Sheikh Jaber Al-Ahmad Cultural Centre is a؟",
     "o": [
       "Cultural landmark",
-      "Port",
-      "Airport",
-      "Refinery"
+      "Leisure landmark",
+      "Kuwait landmarks",
+      "Kuwaiti heritage"
     ],
     "a": 0
   },
   {
-    "q": "Failaka Island is known for?",
+    "q": "Failaka Island is known for؟",
     "o": [
       "Archaeology and tourism",
       "Forests",
@@ -50,32 +50,32 @@
     "a": 0
   },
   {
-    "q": "Kuwait Towers are part of?",
+    "q": "Kuwait Towers are part of؟",
     "o": [
       "Kuwait landmarks",
-      "Oil infrastructure",
-      "Factories",
-      "Universities"
+      "Cultural landmark",
+      "Kuwait City",
+      "Kuwaiti heritage"
     ],
     "a": 0
   },
   {
-    "q": "The Red Palace is in?",
+    "q": "The Red Palace is in؟",
     "o": [
-      "Jahra",
-      "Hawalli",
       "Ahmadi",
-      "Salmiya"
+      "Hawalli",
+      "Salmiya",
+      "Jahra"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "The waterfront is mainly a?",
+    "q": "The waterfront is mainly a؟",
     "o": [
       "Leisure landmark",
-      "Factory",
-      "Airport",
-      "Rail station"
+      "Cultural landmark",
+      "Kuwait landmarks",
+      "Kuwaiti heritage"
     ],
     "a": 0
   }

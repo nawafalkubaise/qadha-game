@@ -1,76 +1,76 @@
 [
   {
-    "q": "Euro used in?",
+    "q": "Euro used in؟",
     "o": [
-      "Only UK",
       "Eurozone countries",
-      "Only USA",
-      "All South America"
+      "Cryptocurrency",
+      "Saudi Arabia",
+      "Switzerland"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Yen is currency of?",
+    "q": "Yen is currency of؟",
     "o": [
-      "China",
       "Japan",
+      "China",
       "Korea",
-      "Thailand"
+      "CAD"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Pound sterling country?",
+    "q": "Pound sterling country؟",
     "o": [
-      "USA",
       "UK",
-      "Canada",
+      "CAD",
+      "USA",
       "Australia"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Swiss franc country?",
+    "q": "Swiss franc country؟",
     "o": [
-      "Sweden",
       "Switzerland",
-      "Austria",
-      "Denmark"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Saudi riyal?",
-    "o": [
-      "UAE",
       "Saudi Arabia",
-      "Qatar",
-      "Kuwait"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Bitcoin is?",
-    "o": [
-      "Central bank note",
-      "Cryptocurrency",
-      "Gold coin",
-      "Silver bar"
-    ],
-    "a": 1
-  },
-  {
-    "q": "IMF headquarters?",
-    "o": [
-      "New York",
       "Washington DC",
-      "Geneva",
-      "London"
+      "Austria"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Canadian dollar code?",
+    "q": "Saudi riyal؟",
+    "o": [
+      "Saudi Arabia",
+      "Cryptocurrency",
+      "Switzerland",
+      "Washington DC"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Bitcoin is؟",
+    "o": [
+      "Cryptocurrency",
+      "Saudi Arabia",
+      "Washington DC",
+      "Eurozone countries"
+    ],
+    "a": 0
+  },
+  {
+    "q": "IMF headquarters؟",
+    "o": [
+      "Washington DC",
+      "Cryptocurrency",
+      "Saudi Arabia",
+      "Switzerland"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Canadian dollar code؟",
     "o": [
       "CAD",
       "EUR",

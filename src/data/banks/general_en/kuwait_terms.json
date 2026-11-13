@@ -1,16 +1,16 @@
 [
   {
-    "q": "In Kuwaiti Arabic, “shlonak” means?",
+    "q": "In Kuwaiti Arabic, “shlonak” means؟",
     "o": [
-      "How are you?",
-      "What's your name?",
-      "Where do you live?",
-      "When are you traveling?"
+      "How are you؟",
+      "What's your name؟",
+      "When are you traveling؟",
+      "Where do you live؟"
     ],
     "a": 0
   },
   {
-    "q": "The word “waid” means?",
+    "q": "The word “waid” means؟",
     "o": [
       "A lot / very",
       "A little",
@@ -20,47 +20,47 @@
     "a": 0
   },
   {
-    "q": "“Eshda'wa” is commonly used as?",
+    "q": "“Eshda'wa” is commonly used as؟",
     "o": [
-      "Come on / why so much?",
-      "Formal confirmation",
-      "Morning greeting",
-      "Farewell"
+      "Come on / why so much؟",
+      "Formal confirmation phrase",
+      "Morning greeting phrase",
+      "Polite farewell phrase"
     ],
     "a": 0
   },
   {
-    "q": "“Desh” in Kuwaiti dialect means?",
-    "o": [
-      "Enter",
-      "Exit",
-      "Sit",
-      "Run"
-    ],
-    "a": 0
-  },
-  {
-    "q": "“Alheen” means?",
+    "q": "“Desh” in Kuwaiti dialect means؟",
     "o": [
       "Now",
-      "Yesterday",
-      "Next year",
-      "Much later"
+      "Run",
+      "Enter",
+      "Exit"
+    ],
+    "a": 2
+  },
+  {
+    "q": "“Alheen” means؟",
+    "o": [
+      "Now",
+      "Enter",
+      "Much later",
+      "Next year"
     ],
     "a": 0
   },
   {
-    "q": "“Mo shart” means?",
+    "q": "“Mo shart” means؟",
     "o": [
-      "Not necessarily",
       "Always required",
       "Forbidden",
-      "Impossible"
+      "Impossible",
+      "Not necessarily"
     ],
-    "a": 0
+    "a": 3
   },
   {
-    "q": "“Ya'teek al-'afiya” is usually said for?",
+    "q": "“Ya'teek al-'afiya” is usually said for؟",
     "o": [
       "Thanks and goodwill",
       "Threatening",
@@ -70,7 +70,7 @@
     "a": 0
   },
   {
-    "q": "“Zain” in Kuwaiti Arabic usually means?",
+    "q": "“Zain” in Kuwaiti Arabic usually means؟",
     "o": [
       "Good / fine",
       "Bad",

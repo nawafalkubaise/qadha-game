@@ -1,82 +1,82 @@
 [
   {
-    "q": "Symbol for gold?",
+    "q": "Symbol for gold؟",
     "o": [
-      "Ag",
       "Au",
+      "Ag",
       "Fe",
       "Pb"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Gas that supports combustion?",
-    "o": [
-      "Nitrogen",
-      "Oxygen",
-      "CO₂",
-      "Helium"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Neutral pH?",
-    "o": [
-      "0",
-      "7",
-      "14",
-      "1"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Water is made of?",
-    "o": [
-      "H and O",
-      "C and N",
-      "Na and Cl",
-      "Fe and O"
     ],
     "a": 0
   },
   {
-    "q": "Stomach acid mainly?",
+    "q": "Gas that supports combustion؟",
     "o": [
-      "Acetic",
-      "Hydrochloric",
-      "Nitric",
-      "Sulfuric"
+      "Nitrogen",
+      "Oxygen",
+      "Helium",
+      "Mendeleev"
     ],
     "a": 1
   },
   {
-    "q": "Periodic table credited to?",
+    "q": "Neutral pH؟",
     "o": [
-      "Newton",
+      "7",
+      "0",
+      "1",
+      "14"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Water is made of؟",
+    "o": [
+      "H and O",
+      "C and N",
+      "Fe and O",
+      "Na and Cl"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Stomach acid mainly؟",
+    "o": [
+      "Releases heat",
       "Mendeleev",
+      "Petroleum",
+      "Hydrochloric"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Periodic table credited to؟",
+    "o": [
+      "Petroleum",
       "Darwin",
+      "Mendeleev",
       "Einstein"
     ],
-    "a": 1
+    "a": 2
   },
   {
-    "q": "Most plastics derived from?",
+    "q": "Most plastics derived from؟",
     "o": [
-      "Plants only",
       "Petroleum",
-      "Metal",
-      "Water"
+      "Mendeleev",
+      "Plants only",
+      "Hydrochloric"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Exothermic reaction?",
+    "q": "Exothermic reaction؟",
     "o": [
-      "Absorbs heat",
       "Releases heat",
-      "No change",
-      "Only cold"
+      "Absorbs heat",
+      "Hydrochloric",
+      "Mendeleev"
     ],
-    "a": 1
+    "a": 0
   }
 ]

@@ -116,6 +116,19 @@ npm run dev
 
 ---
 
+## رفع تلقائي إلى GitHub بعد كل `git commit`
+
+المستودع يضم مجلد **`githooks/`** وخطاف **`post-commit`** يرفع `git push` بعد كل commit ناجح.
+
+- عند **`npm install`** يُشغَّل `prepare` ويضبط: `git config core.hooksPath githooks`
+- يدوياً مرة واحدة إن لزم: `node scripts/setup-git-hooks.mjs`
+
+**مهم:** الحفظ في المحرر **لا** يرفع شيئاً. التسلسل: تعديل → `git add` → `git commit` → ثم يعمل الخطاف ويرفع تلقائياً.
+
+إذا فشل الرفع (لا إنترنت، أو لا يوجد `upstream`): نفّذ مرة واحدة `git push -u origin master` (أو اسم فرعك).
+
+---
+
 ## ملخص سطر واحد
 
 **احفظ:** انسخ مجلد `qadha-game` أو اضغطه ZIP (يفضّل بدون `node_modules` ثم `npm install` عند الفتح).  

@@ -1,16 +1,16 @@
 [
   {
-    "q": "Batman city?",
+    "q": "Batman city؟",
     "o": [
-      "Metropolis",
       "Gotham",
-      "Central City",
+      "Japan",
+      "Metropolis",
       "Star City"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "MCU stands for?",
+    "q": "MCU stands for؟",
     "o": [
       "Batman",
       "Marvel Cinematic Universe",
@@ -20,63 +20,63 @@
     "a": 1
   },
   {
-    "q": "Stan Lee role?",
+    "q": "Stan Lee role؟",
     "o": [
-      "Painter only",
-      "Writer/editor pioneer",
-      "Actor only",
-      "Musician"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Spider-Man alter ego?",
-    "o": [
-      "Bruce Wayne",
-      "Peter Parker",
-      "Clark Kent",
-      "Tony Stark"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Manga from?",
-    "o": [
-      "Korea",
-      "Japan",
-      "China",
-      "France"
-    ],
-    "a": 1
-  },
-  {
-    "q": "DC vs Marvel?",
-    "o": [
-      "Same company",
-      "Two publishers",
-      "Sports",
-      "Food"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Asterix origin?",
-    "o": [
-      "USA",
       "France/Belgium",
-      "Japan",
-      "Egypt"
+      "Two publishers",
+      "Actor only",
+      "Writer/editor pioneer"
     ],
-    "a": 1
+    "a": 3
   },
   {
-    "q": "Calvin and Hobbes format?",
+    "q": "Spider-Man alter ego؟",
     "o": [
-      "Anime",
-      "Comic strip",
-      "Novel",
-      "Film"
+      "Peter Parker",
+      "Bruce Wayne",
+      "Clark Kent",
+      "Comic strip"
     ],
-    "a": 1
+    "a": 0
+  },
+  {
+    "q": "Manga from؟",
+    "o": [
+      "China",
+      "France",
+      "Gotham",
+      "Japan"
+    ],
+    "a": 3
+  },
+  {
+    "q": "DC vs Marvel؟",
+    "o": [
+      "Two publishers",
+      "France/Belgium",
+      "Peter Parker",
+      "Same company"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Asterix origin؟",
+    "o": [
+      "France/Belgium",
+      "Peter Parker",
+      "Two publishers",
+      "Comic strip"
+    ],
+    "a": 0
+  },
+  {
+    "q": "Calvin and Hobbes format؟",
+    "o": [
+      "Comic strip",
+      "Peter Parker",
+      "France/Belgium",
+      "Two publishers"
+    ],
+    "a": 0
   }
 ]

@@ -1,6 +1,6 @@
 [
   {
-    "q": "Ballet developed strongly in?",
+    "q": "Ballet developed strongly in؟",
     "o": [
       "Italy then France",
       "Mexico",
@@ -10,73 +10,73 @@
     "a": 0
   },
   {
-    "q": "Salsa roots?",
+    "q": "Salsa roots؟",
     "o": [
       "Cuba/Caribbean",
-      "Sweden",
-      "Russia",
+      "Pointe shoes",
+      "Argentina",
       "Japan"
     ],
     "a": 0
   },
   {
-    "q": "Flamenco from?",
+    "q": "Flamenco from؟",
     "o": [
-      "Portugal",
       "Spain",
       "France",
-      "Italy"
+      "Italy",
+      "Levant"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Tango strongly linked to?",
+    "q": "Tango strongly linked to؟",
     "o": [
       "Argentina",
-      "Canada",
-      "Norway",
-      "India"
-    ],
-    "a": 0
-  },
-  {
-    "q": "Hip-hop dance culture began in?",
-    "o": [
       "New York",
-      "Paris",
-      "London",
-      "Dubai"
+      "Canada",
+      "Cuba/Caribbean"
     ],
     "a": 0
   },
   {
-    "q": "Dabke associated with?",
+    "q": "Hip-hop dance culture began in؟",
+    "o": [
+      "Argentina",
+      "Dubai",
+      "Levant",
+      "New York"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Dabke associated with؟",
     "o": [
       "Levant",
       "Brazil",
       "Japan",
-      "Australia"
+      "Spain"
     ],
     "a": 0
   },
   {
-    "q": "Classical ballet shoes?",
+    "q": "Classical ballet shoes؟",
     "o": [
-      "Sneakers",
       "Pointe shoes",
-      "Boots",
+      "Cuba/Caribbean",
+      "Argentina",
       "Barefoot"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Samba parades famous in?",
+    "q": "Samba parades famous in؟",
     "o": [
-      "Rio",
-      "Moscow",
       "Oslo",
-      "Beijing"
+      "Spain",
+      "Argentina",
+      "Rio"
     ],
-    "a": 0
+    "a": 3
   }
 ]

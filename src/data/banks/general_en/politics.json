@@ -1,16 +1,16 @@
 [
   {
-    "q": "UN headquarters main site?",
+    "q": "UN headquarters main site؟",
     "o": [
-      "Geneva",
       "New York",
-      "The Hague",
-      "Vienna"
+      "Brussels",
+      "Thatcher",
+      "The Hague"
     ],
-    "a": 1
+    "a": 0
   },
   {
-    "q": "Permanent UNSC members (five)?",
+    "q": "Permanent UNSC members (five)؟",
     "o": [
       "NATO only",
       "China France Russia UK USA",
@@ -20,62 +20,62 @@
     "a": 1
   },
   {
-    "q": "EU institutional hub often cited?",
+    "q": "EU institutional hub often cited؟",
     "o": [
-      "Paris",
       "Brussels",
-      "Berlin",
-      "Rome"
-    ],
-    "a": 1
-  },
-  {
-    "q": "Cold War mainly between?",
-    "o": [
-      "US and Japan",
-      "US and Soviet Union",
-      "France and Germany",
-      "China and India"
-    ],
-    "a": 1
-  },
-  {
-    "q": "NATO was founded for?",
-    "o": [
-      "Trade",
-      "Collective defense",
-      "Environment",
-      "Health"
-    ],
-    "a": 1
-  },
-  {
-    "q": "First female UK Prime Minister?",
-    "o": [
+      "New York",
       "Thatcher",
-      "Merkel",
-      "May",
-      "Truss"
+      "Berlin"
     ],
     "a": 0
   },
   {
-    "q": "Soviet Union dissolved in?",
+    "q": "Cold War mainly between؟",
     "o": [
-      "1989",
-      "1991",
-      "1995",
-      "2001"
+      "France and Germany",
+      "US and Japan",
+      "China and India",
+      "US and Soviet Union"
+    ],
+    "a": 3
+  },
+  {
+    "q": "NATO was founded for؟",
+    "o": [
+      "Health",
+      "Collective defense",
+      "Environment",
+      "Brussels"
     ],
     "a": 1
   },
   {
-    "q": "OPEC focuses on?",
+    "q": "First female UK Prime Minister؟",
+    "o": [
+      "Brussels",
+      "New York",
+      "Merkel",
+      "Thatcher"
+    ],
+    "a": 3
+  },
+  {
+    "q": "Soviet Union dissolved in؟",
+    "o": [
+      "1991",
+      "1989",
+      "1995",
+      "2001"
+    ],
+    "a": 0
+  },
+  {
+    "q": "OPEC focuses on؟",
     "o": [
       "Oil",
-      "Natural gas only",
-      "Nuclear",
-      "Coal"
+      "Coal",
+      "Brussels",
+      "Collective defense"
     ],
     "a": 0
   }
